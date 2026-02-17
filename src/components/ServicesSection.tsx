@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Sparkles, Briefcase, Music, Wine } from "lucide-react";
+import { Sparkles, Briefcase, Music, Wine, Coffee } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface Service {
@@ -16,6 +16,12 @@ const services: Service[] = [
     title: "Fashion Shows & Brand Events",
     description:
       "Défilez dans un décor architectural fort, pensé comme un manifeste visuel. Un espace brut et modulable, idéal pour les défilés, showrooms et lancements de collections.",
+  },
+  {
+    icon: Coffee,
+    title: "Petit Déjeuner",
+    description:
+      "Accueillez vos équipes ou vos clients dès le matin dans un cadre inspirant. Petit déjeuner d\u2019entreprise, breakfast presse ou brunch créatif : un moment convivial pour démarrer la journée autrement.",
   },
   {
     icon: Briefcase,
