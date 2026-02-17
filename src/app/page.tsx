@@ -6,6 +6,7 @@ import { PortfolioSection } from "@/components/PortfolioSection";
 import { EquipmentsSection } from "@/components/EquipmentsSection";
 import { FaqSection } from "@/components/FaqSection";
 import { faqData } from "@/lib/faq-data";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { SITE_URL } from "@/lib/metadata";
@@ -103,6 +104,13 @@ const jsonLdLocalBusiness = {
   ],
   sameAs: ["https://instagram.com/chezlesplombiers"],
   hasMap: "https://maps.google.com/?q=39+rue+des+Bourdonnais+75001+Paris",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "17",
+    bestRating: "5",
+    worstRating: "1",
+  },
 };
 
 // Generate FAQPage schema from the same data rendered in FaqSection
@@ -152,6 +160,7 @@ export default function Home() {
         <ServicesSection />
         <AboutSection />
         <PortfolioSection />
+        <ReviewsSection />
         <EquipmentsSection />
         <FaqSection />
         <ContactSection />
