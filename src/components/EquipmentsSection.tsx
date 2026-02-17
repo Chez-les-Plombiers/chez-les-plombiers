@@ -142,11 +142,12 @@ export function EquipmentsSection() {
                 Accédez aux plans précis du lieu pour toutes vos mesures.
               </p>
               <a
-                href="mailto:contact@chezlesplombiers.fr?subject=Demande%20de%20plans%20du%20lieu"
+                href="/images/floor-plan.png"
+                download="plan-chez-les-plombiers.png"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-sm uppercase tracking-wider hover:border-black hover:bg-black hover:text-white transition-all duration-300"
               >
                 <Download className="w-4 h-4" />
-                Demander les plans
+                Télécharger le plan
               </a>
             </motion.div>
 
@@ -168,11 +169,12 @@ export function EquipmentsSection() {
                 informations et photos du lieu)
               </p>
               <a
-                href="mailto:contact@chezlesplombiers.fr?subject=Demande%20de%20plaquette%20commerciale"
+                href="/documents/plaquette-chez-les-plombiers.pdf"
+                download
                 className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-sm uppercase tracking-wider hover:border-black hover:bg-black hover:text-white transition-all duration-300"
               >
-                <FileText className="w-4 h-4" />
-                Demander la plaquette
+                <Download className="w-4 h-4" />
+                Télécharger la plaquette
               </a>
             </motion.div>
           </div>
