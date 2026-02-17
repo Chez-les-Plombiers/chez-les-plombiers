@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Politique de Confidentialité | Chez Les Plombiers",
   description:
     "Politique de confidentialité et protection des données personnelles du site chezlesplombiers.fr",
+  openGraph: { url: `${SITE_URL}/politique-confidentialite` },
   alternates: { canonical: `${SITE_URL}/politique-confidentialite` },
 };
 

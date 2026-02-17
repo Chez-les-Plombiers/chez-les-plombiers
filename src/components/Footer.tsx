@@ -26,7 +26,7 @@ export function Footer() {
             <h4 className="text-sm uppercase tracking-wider mb-4">
               Navigation
             </h4>
-            <nav className="space-y-3">
+            <nav aria-label="Navigation secondaire" className="space-y-3">
               <Link
                 href="/"
                 className="block text-sm text-gray-400 hover:text-white transition-colors"
@@ -69,18 +69,26 @@ export function Footer() {
           <div>
             <h4 className="text-sm uppercase tracking-wider mb-4">Contact</h4>
             <div className="space-y-3 text-sm text-gray-400">
-              <p>06 88 67 99 81</p>
-              <p>contact@chezlesplombiers.fr</p>
+              <p>
+                <a href="tel:+33688679981" className="hover:text-white transition-colors">
+                  06 88 67 99 81
+                </a>
+              </p>
+              <p>
+                <a href="mailto:contact@chezlesplombiers.fr" className="hover:text-white transition-colors">
+                  contact@chezlesplombiers.fr
+                </a>
+              </p>
               <p>39 rue des Bourdonnais, 75001 Paris</p>
             </div>
           </div>
         </div>
 
         <div className="pt-8 pb-8 border-t border-gray-800">
-          <h4 className="text-sm uppercase tracking-wider mb-6 text-gray-500">
+          <h4 className="text-sm uppercase tracking-wider mb-6 text-gray-400">
             Informations légales
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 text-xs text-gray-500">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 text-xs text-gray-400">
             <p>Chez les Plombiers SAS</p>
             <p>Capital social : 5 000 €</p>
             <p>SIREN : 928 788 157</p>

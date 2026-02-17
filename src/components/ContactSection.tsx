@@ -104,7 +104,7 @@ export function ContactSection() {
                     </div>
                   </motion.div>
                   <div className="flex-1">
-                    <div className="text-[10px] uppercase tracking-[0.25em] text-white/40 mb-2">
+                    <div className="text-[10px] uppercase tracking-[0.25em] text-white/60 mb-2">
                       {info.label}
                     </div>
                     {info.href ? (

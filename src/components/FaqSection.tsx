@@ -29,21 +29,26 @@ function FaqAccordionItem({
         onClick={onToggle}
         className="w-full flex items-center justify-between py-6 text-left group"
         aria-expanded={isOpen}
+        aria-controls={`faq-answer-${index}`}
+        id={`faq-question-${index}`}
       >
-        <h3 className="text-lg lg:text-xl pr-8 transition-colors duration-300 group-hover:text-gray-600">
+        <span className="text-lg lg:text-xl pr-8 transition-colors duration-300 group-hover:text-gray-600">
           {item.question}
-        </h3>
+        </span>
         <div className="flex-shrink-0 w-8 h-8 border border-gray-300 flex items-center justify-center transition-all duration-300 group-hover:border-black">
           {isOpen ? (
-            <Minus className="w-4 h-4" />
+            <Minus className="w-4 h-4" aria-hidden="true" />
           ) : (
-            <Plus className="w-4 h-4" />
+            <Plus className="w-4 h-4" aria-hidden="true" />
           )}
         </div>
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            id={`faq-answer-${index}`}
+            role="region"
+            aria-labelledby={`faq-question-${index}`}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

@@ -42,8 +42,11 @@ export function HeroSection() {
             transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-8xl tracking-tight mb-6">
-              Recevoir Autrement.
+              Lieu Événementiel Paris
             </h1>
+            <p className="text-2xl md:text-3xl lg:text-4xl tracking-tight mb-2 font-light text-white/90">
+              Recevoir Autrement.
+            </p>
           </motion.div>
 
           <motion.p

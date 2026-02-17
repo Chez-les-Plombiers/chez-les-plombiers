@@ -63,6 +63,48 @@ const jsonLdOrganization = {
   foundingDate: "2024-05-02",
 };
 
+const jsonLdLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE_URL}/#localbusiness`,
+  name: "Chez Les Plombiers",
+  description:
+    "Lieu événementiel de 200m² au cœur de Paris 1er. Fashion shows, séminaires, dîners d'exception dans un cadre industriel unique.",
+  url: SITE_URL,
+  telephone: "+33688679981",
+  email: "contact@chezlesplombiers.fr",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "39 rue des Bourdonnais",
+    addressLocality: "Paris",
+    postalCode: "75001",
+    addressCountry: "FR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 48.8588,
+    longitude: 2.3444,
+  },
+  image: `${SITE_URL}/images/hero.png`,
+  priceRange: "€€€",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "10:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "10:00",
+      closes: "18:00",
+    },
+  ],
+  sameAs: ["https://instagram.com/chezlesplombiers"],
+  hasMap: "https://maps.google.com/?q=39+rue+des+Bourdonnais+75001+Paris",
+};
+
 // Generate FAQPage schema from the same data rendered in FaqSection
 const jsonLdFaq = {
   "@context": "https://schema.org",
@@ -98,8 +140,14 @@ export default function Home() {
           __html: JSON.stringify(jsonLdFaq),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdLocalBusiness),
+        }}
+      />
       <Header />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <ServicesSection />
         <AboutSection />

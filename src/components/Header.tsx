@@ -51,7 +51,7 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-8 lg:space-x-12">
+          <nav aria-label="Navigation principale" className="hidden md:flex items-center space-x-8 lg:space-x-12">
             {menuItems.map((item) => (
               <Link
                 key={item.label}
@@ -71,10 +71,12 @@ export function Header() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 transition-colors ${
+            className={`md:hidden p-3 min-h-12 min-w-12 flex items-center justify-center transition-colors ${
               isTransparent ? "text-white" : "text-black"
             }`}
-            aria-label="Menu"
+            aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -94,7 +96,7 @@ export function Header() {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white border-t"
           >
-            <nav className="px-6 py-6 space-y-4">
+            <nav id="mobile-menu" aria-label="Menu mobile" className="px-6 py-6 space-y-4">
               {menuItems.map((item) => (
                 <Link
                   key={item.label}

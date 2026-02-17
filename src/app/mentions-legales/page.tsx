@@ -6,6 +6,7 @@ import { SITE_URL } from "@/lib/metadata";
 export const metadata: Metadata = {
   title: "Mentions Légales | Chez Les Plombiers",
   description: "Mentions légales du site chezlesplombiers.fr",
+  openGraph: { url: `${SITE_URL}/mentions-legales` },
   alternates: { canonical: `${SITE_URL}/mentions-legales` },
 };
 

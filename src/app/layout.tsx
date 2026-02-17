@@ -19,6 +19,8 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://static.axept.io" />
         {/* Google Tag Manager */}
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -40,6 +42,14 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-screen font-sans text-black antialiased">
+        {/* Skip to content */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:text-sm focus:shadow-lg"
+        >
+          Aller au contenu principal
+        </a>
+
         {/* GTM noscript */}
         <noscript>
           <iframe
@@ -61,7 +71,7 @@ export default function RootLayout({
           (function(d, s) {
             var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
             e.async = true;
-            e.src = "//static.axept.io/sdk.js";
+            e.src = "https://static.axept.io/sdk.js";
             t.parentNode.insertBefore(e, t);
           })(document, "script");`}
         </Script>
