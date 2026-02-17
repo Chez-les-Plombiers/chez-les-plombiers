@@ -9,16 +9,19 @@ const projects = [
     title: "Grand Espace Principal",
     category: "Salle de Conférence",
     image: "/images/venue-1.png",
+    alt: "Grand espace principal de 200 m² avec poutres métalliques style Eiffel et murs bruts — Chez Les Plombiers, Paris 1er",
   },
   {
     title: "Espace Modulable",
     category: "Zone de Travail",
     image: "/images/venue-2.png",
+    alt: "Espace modulable avec rideaux séparateurs pour séminaires et conférences — Chez Les Plombiers, Paris 1er",
   },
   {
     title: "Cuisine Équipée",
     category: "Service Traiteur",
     image: "/images/venue-3.png",
+    alt: "Cuisine traiteur professionnelle équipée four, lave-vaisselle et machine à glaçons — Chez Les Plombiers, Paris 1er",
   },
 ];
 
@@ -56,7 +59,7 @@ export function PortfolioSection() {
               <div className="relative aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={project.alt}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

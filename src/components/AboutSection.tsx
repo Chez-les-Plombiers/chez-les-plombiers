@@ -67,7 +67,7 @@ export function AboutSection() {
             <div className="aspect-[4/5] bg-gray-200 overflow-hidden relative">
               <Image
                 src="/images/about.png"
-                alt="Chez Les Plombiers - Notre lieu événementiel"
+                alt="Intérieur de Chez Les Plombiers — espace événementiel brutaliste de 200 m² avec murs en pierre et poutres métalliques, Paris 1er"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"

@@ -4,6 +4,8 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { AboutSection } from "@/components/AboutSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { EquipmentsSection } from "@/components/EquipmentsSection";
+import { FaqSection } from "@/components/FaqSection";
+import { faqData } from "@/lib/faq-data";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { SITE_URL } from "@/lib/metadata";
@@ -61,51 +63,18 @@ const jsonLdOrganization = {
   foundingDate: "2024-05-02",
 };
 
+// Generate FAQPage schema from the same data rendered in FaqSection
 const jsonLdFaq = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Quelle est la capacité de Chez Les Plombiers ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "L'espace peut accueillir jusqu'à 200 personnes en cocktail et 60 à 80 personnes en dîner assis. La surface totale est de 200m² avec 100m² de stockage en sous-sol.",
-      },
+  mainEntity: faqData.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
     },
-    {
-      "@type": "Question",
-      name: "Où se situe Chez Les Plombiers ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Chez Les Plombiers est situé au 39 rue des Bourdonnais, 75001 Paris, en plein cœur du 1er arrondissement.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Quels types d'événements peut-on organiser ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Nous accueillons des fashion shows, événements professionnels (séminaires, lancements de produits, conférences), dîners d'exception, événements culturels (vernissages, expositions) et proposons des prestations premium (traiteur, décoration, sonorisation).",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Quels équipements sont disponibles ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "L'espace dispose d'un vidéoprojecteur 4K, système Sonos et XLR, lumières DMX, fibre dédiée 1 Gb/s, Wi-Fi invité, cuisine traiteur équipée, climatisation réversible et accès PMR.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Comment réserver une visite ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Vous pouvez réserver une visite directement via notre page Calendly ou nous contacter par email à contact@chezlesplombiers.fr ou par WhatsApp au +336 88 67 99 81. Les visites sont possibles du lundi au vendredi de 10h à 18h et le samedi sur rendez-vous.",
-      },
-    },
-  ],
+  })),
 };
 
 export default function Home() {
@@ -136,6 +105,7 @@ export default function Home() {
         <AboutSection />
         <PortfolioSection />
         <EquipmentsSection />
+        <FaqSection />
         <ContactSection />
       </main>
       <Footer />

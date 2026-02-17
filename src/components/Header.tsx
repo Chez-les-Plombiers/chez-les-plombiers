@@ -11,6 +11,7 @@ const menuItems = [
   { label: "L'Appartement Rose", href: "/appartement" },
   { label: "Pricing", href: EXTERNAL_LINKS.pricing, external: true },
   { label: "Infos Techniques", href: "/#equipments" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
 ];
 

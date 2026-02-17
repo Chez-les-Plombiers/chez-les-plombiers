@@ -22,7 +22,7 @@ export function HeroSection() {
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%]">
         <Image
           src="/images/hero.png"
-          alt="Chez Les Plombiers - Lieu événementiel Paris"
+          alt="Chez Les Plombiers — lieu événementiel 200 m² au 39 rue des Bourdonnais, architecture industrielle, Paris 1er"
           fill
           className="object-cover"
           priority

@@ -52,6 +52,12 @@ export function Footer() {
                 Notre Lieu
               </Link>
               <Link
+                href="/#faq"
+                className="block text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                FAQ
+              </Link>
+              <Link
                 href="/#contact"
                 className="block text-sm text-gray-400 hover:text-white transition-colors"
               >

@@ -142,11 +142,11 @@ export function EquipmentsSection() {
                 Accédez aux plans précis du lieu pour toutes vos mesures.
               </p>
               <a
-                href="#"
+                href="mailto:contact@chezlesplombiers.fr?subject=Demande%20de%20plans%20du%20lieu"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-sm uppercase tracking-wider hover:border-black hover:bg-black hover:text-white transition-all duration-300"
               >
                 <Download className="w-4 h-4" />
-                Télécharger le plan
+                Demander les plans
               </a>
             </motion.div>
 
@@ -167,20 +167,13 @@ export function EquipmentsSection() {
                 Téléchargez notre plaquette commerciale (incluant toutes les
                 informations et photos du lieu)
               </p>
-              <div className="space-y-2">
-                <a
-                  href="#"
-                  className="block text-sm uppercase tracking-wider hover:text-gray-600 transition-colors"
-                >
-                  PDF (FR)
-                </a>
-                <a
-                  href="#"
-                  className="block text-sm uppercase tracking-wider hover:text-gray-600 transition-colors"
-                >
-                  PDF (ENG)
-                </a>
-              </div>
+              <a
+                href="mailto:contact@chezlesplombiers.fr?subject=Demande%20de%20plaquette%20commerciale"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-sm uppercase tracking-wider hover:border-black hover:bg-black hover:text-white transition-all duration-300"
+              >
+                <FileText className="w-4 h-4" />
+                Demander la plaquette
+              </a>
             </motion.div>
           </div>
 

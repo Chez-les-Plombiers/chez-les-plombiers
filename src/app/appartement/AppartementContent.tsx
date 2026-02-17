@@ -24,7 +24,7 @@ export function AppartementContent() {
           </video>
           <Image
             src="/images/appartement-hero.png"
-            alt="L'Appartement Rose"
+            alt="L'Appartement Rose — espace intime de 100 m² pour shootings et réunions, Chez Les Plombiers Paris 1er"
             fill
             className="object-cover -z-10"
             priority
@@ -123,7 +123,7 @@ export function AppartementContent() {
             <div className="h-[500px] overflow-hidden bg-gray-100 relative">
               <Image
                 src="/images/appartement-detail.png"
-                alt="L'Appartement Rose - Chez Les Plombiers"
+                alt="Intérieur de L'Appartement Rose — lumière naturelle, mobilier design et ambiance feutrée, Chez Les Plombiers Paris"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
