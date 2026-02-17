@@ -12,13 +12,13 @@ export default function NotFound() {
             404
           </h1>
           <p className="text-xl text-gray-600 mb-10">
-            Cette page n&apos;existe pas ou a été déplacée.
+            Page not found / Page introuvable
           </p>
           <Link
             href="/"
             className="inline-block px-10 py-4 bg-black text-white tracking-wider uppercase text-sm transition-all hover:bg-gray-900"
           >
-            Retour à l&apos;accueil
+            Home / Accueil
           </Link>
         </div>
       </main>

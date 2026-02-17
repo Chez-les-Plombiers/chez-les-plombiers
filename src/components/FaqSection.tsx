@@ -3,8 +3,12 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { faqData } from "@/lib/faq-data";
-import type { FaqItem } from "@/lib/faq-data";
+import { useI18n } from "@/lib/i18n-context";
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
 
 function FaqAccordionItem({
   item,
@@ -66,6 +70,12 @@ function FaqAccordionItem({
 }
 
 export function FaqSection() {
+  const { dict } = useI18n();
+  const faq = dict.faq as {
+    title: string;
+    subtitle: string;
+    items: FaqItem[];
+  };
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -79,15 +89,15 @@ export function FaqSection() {
           className="text-center mb-16 lg:mb-24"
         >
           <h2 className="text-4xl lg:text-6xl mb-6">
-            Questions Fréquentes
+            {faq.title}
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-            Tout ce que vous devez savoir sur notre lieu événementiel
+            {faq.subtitle}
           </p>
         </motion.div>
 
         <div className="border-t border-gray-200">
-          {faqData.map((item, index) => (
+          {faq.items.map((item, index) => (
             <FaqAccordionItem
               key={index}
               item={item}

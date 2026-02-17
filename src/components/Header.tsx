@@ -5,19 +5,37 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
+import { useI18n } from "@/lib/i18n-context";
+import { getAlternatePath } from "@/lib/i18n";
 
-const menuItems = [
-  { label: "L'Appartement Rose", href: "/appartement" },
-  { label: "Pricing", href: EXTERNAL_LINKS.pricing, external: true },
-  { label: "Infos Techniques", href: "/#equipments" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/#contact" },
-];
+interface MenuItem {
+  label: string;
+  href: string;
+  external?: boolean;
+}
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { locale, dict } = useI18n();
+  const pathname = usePathname();
+
+  const header = dict.header as {
+    menuItems: MenuItem[];
+    openMenu: string;
+    closeMenu: string;
+    navLabel: string;
+    mobileNavLabel: string;
+  };
+
+  const menuItems = header.menuItems.map((item) =>
+    item.external ? { ...item, href: EXTERNAL_LINKS.pricing } : item
+  );
+
+  const otherLocale = locale === "fr" ? "en" : "fr";
+  const switchPath = getAlternatePath(pathname, otherLocale);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -40,9 +58,13 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
-          <Link href="/" className="flex-shrink-0">
+          <Link href={locale === "en" ? "/en" : "/"} className="flex-shrink-0">
             <Image
-              src={isTransparent ? "/images/logo/logo-white.png" : "/images/logo/logo-black.png"}
+              src={
+                isTransparent
+                  ? "/images/logo/logo-white.png"
+                  : "/images/logo/logo-black.png"
+              }
               alt="Chez Les Plombiers"
               width={160}
               height={40}
@@ -51,7 +73,10 @@ export function Header() {
             />
           </Link>
 
-          <nav aria-label="Navigation principale" className="hidden md:flex items-center space-x-8 lg:space-x-12">
+          <nav
+            aria-label={header.navLabel}
+            className="hidden md:flex items-center space-x-8 lg:space-x-12"
+          >
             {menuItems.map((item) => (
               <Link
                 key={item.label}
@@ -67,6 +92,18 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+
+            {/* Language switcher */}
+            <Link
+              href={switchPath}
+              className={`text-sm tracking-wider uppercase transition-colors font-medium ${
+                isTransparent
+                  ? "text-white/60 hover:text-white"
+                  : "text-gray-400 hover:text-black"
+              }`}
+            >
+              {otherLocale.toUpperCase()}
+            </Link>
           </nav>
 
           <button
@@ -74,7 +111,9 @@ export function Header() {
             className={`md:hidden p-3 min-h-12 min-w-12 flex items-center justify-center transition-colors ${
               isTransparent ? "text-white" : "text-black"
             }`}
-            aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-label={
+              isMobileMenuOpen ? header.closeMenu : header.openMenu
+            }
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
@@ -96,7 +135,11 @@ export function Header() {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white border-t"
           >
-            <nav id="mobile-menu" aria-label="Menu mobile" className="px-6 py-6 space-y-4">
+            <nav
+              id="mobile-menu"
+              aria-label={header.mobileNavLabel}
+              className="px-6 py-6 space-y-4"
+            >
               {menuItems.map((item) => (
                 <Link
                   key={item.label}
@@ -109,6 +152,15 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+
+              {/* Language switcher mobile */}
+              <Link
+                href={switchPath}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-sm tracking-wider uppercase text-gray-400 hover:text-black transition-colors font-medium"
+              >
+                {otherLocale === "en" ? "English" : "Français"}
+              </Link>
             </nav>
           </motion.div>
         )}

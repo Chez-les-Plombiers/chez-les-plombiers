@@ -3,30 +3,18 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import Image from "next/image";
+import { useI18n } from "@/lib/i18n-context";
 
-const projects = [
-  {
-    title: "Grand Espace Principal",
-    category: "Salle de Conférence",
-    image: "/images/venue-1.png",
-    alt: "Grand espace principal de 200 m² avec poutres métalliques style Eiffel et murs bruts — Chez Les Plombiers, Paris 1er",
-  },
-  {
-    title: "Espace Modulable",
-    category: "Zone de Travail",
-    image: "/images/venue-2.png",
-    alt: "Espace modulable avec rideaux séparateurs pour séminaires et conférences — Chez Les Plombiers, Paris 1er",
-  },
-  {
-    title: "Cuisine Équipée",
-    category: "Service Traiteur",
-    image: "/images/venue-3.png",
-    alt: "Cuisine traiteur professionnelle équipée four, lave-vaisselle et machine à glaçons — Chez Les Plombiers, Paris 1er",
-  },
-];
+const images = ["/images/venue-1.png", "/images/venue-2.png", "/images/venue-3.png"];
 
 export function PortfolioSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const { dict } = useI18n();
+  const portfolio = dict.portfolio as {
+    title: string;
+    subtitle: string;
+    projects: { title: string; category: string; alt: string }[];
+  };
 
   return (
     <section id="portfolio" className="py-24 lg:py-32 bg-white">
@@ -38,14 +26,14 @@ export function PortfolioSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 lg:mb-24"
         >
-          <h2 className="text-4xl lg:text-6xl mb-6">Notre Lieu</h2>
+          <h2 className="text-4xl lg:text-6xl mb-6">{portfolio.title}</h2>
           <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-            Découvrez nos différents espaces
+            {portfolio.subtitle}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {portfolio.projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
@@ -58,7 +46,7 @@ export function PortfolioSection() {
             >
               <div className="relative aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
                 <Image
-                  src={project.image}
+                  src={images[index]}
                   alt={project.alt}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"

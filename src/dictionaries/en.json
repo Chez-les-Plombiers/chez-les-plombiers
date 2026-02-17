@@ -1,0 +1,426 @@
+{
+  "header": {
+    "menuItems": [
+      { "label": "The Pink Apartment", "href": "/en/apartment" },
+      { "label": "Pricing", "external": true },
+      { "label": "Technical Info", "href": "/en/#equipments" },
+      { "label": "FAQ", "href": "/en/#faq" },
+      { "label": "Contact", "href": "/en/#contact" }
+    ],
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "navLabel": "Main navigation",
+    "mobileNavLabel": "Mobile menu"
+  },
+  "hero": {
+    "title": "Event Venue Paris",
+    "subtitle": "Hosting Redefined.",
+    "description": "An exceptional venue in the heart of Paris for your professional events<br class=\"hidden md:block\" />in a unique industrial setting.",
+    "cta": "Book a visit",
+    "imageAlt": "Chez Les Plombiers — 200 m² event venue at 39 rue des Bourdonnais, industrial architecture, Paris 1st"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Tailored solutions for all your events",
+    "items": [
+      {
+        "icon": "Sparkles",
+        "title": "Fashion Shows & Brand Events",
+        "description": "Showcase your collections in a striking architectural setting, designed as a visual statement. A raw, modular space ideal for fashion shows, showrooms and collection launches."
+      },
+      {
+        "icon": "Coffee",
+        "title": "Corporate Breakfast",
+        "description": "Welcome your teams or clients first thing in the morning in an inspiring setting. Corporate breakfast, press breakfast or creative brunch: a convivial moment to start the day differently."
+      },
+      {
+        "icon": "Briefcase",
+        "title": "Professional Events",
+        "description": "Seminars, product launches, conferences in a modular and fully equipped space."
+      },
+      {
+        "icon": "Sparkles",
+        "title": "Exceptional Dinners",
+        "description": "Grand tables and chef's dinners for 40 to 80 guests in a spectacular industrial setting. An immersive gastronomic experience designed as an event in its own right."
+      },
+      {
+        "icon": "Music",
+        "title": "Cultural Events",
+        "description": "Openings, exhibitions and artistic performances in an inspiring venue designed as a contemporary gallery."
+      },
+      {
+        "icon": "Wine",
+        "title": "Premium Services",
+        "description": "Catering, decoration, sound systems: we coordinate all services for you."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "paragraphs": [
+      "<strong>Chez Les Plombiers</strong> is an exceptional event venue located in the heart of Paris, combining industrial charm and contemporary elegance.",
+      "Our unique 200m² space can accommodate up to 200 guests and adapts to all your events. Former industrial facilities transformed into a refined venue, we offer an authentic and modular setting.",
+      "Our team supports you in creating unforgettable moments with personalised service and attention to every detail."
+    ],
+    "stats": [
+      { "value": "200m²", "label": "Modular space" },
+      { "value": "200", "label": "Max capacity" }
+    ],
+    "imageAlt": "Interior of Chez Les Plombiers — 200 m² brutalist event space with stone walls and metal beams, Paris 1st"
+  },
+  "portfolio": {
+    "title": "Our Venue",
+    "subtitle": "Discover our different spaces",
+    "projects": [
+      {
+        "title": "Main Space",
+        "category": "Conference Room",
+        "alt": "200 m² main space with Eiffel-style metal beams and raw walls — Chez Les Plombiers, Paris 1st"
+      },
+      {
+        "title": "Modular Space",
+        "category": "Work Area",
+        "alt": "Modular space with partition curtains for seminars and conferences — Chez Les Plombiers, Paris 1st"
+      },
+      {
+        "title": "Fitted Kitchen",
+        "category": "Catering Service",
+        "alt": "Professional caterer kitchen with oven, dishwasher and ice machine — Chez Les Plombiers, Paris 1st"
+      }
+    ]
+  },
+  "reviews": {
+    "googleLabel": "Google Reviews",
+    "title": "They Trust Us",
+    "ratingLabel": "reviews",
+    "starsLabel": "stars out of 5",
+    "prevLabel": "Previous reviews",
+    "nextLabel": "Next reviews",
+    "carouselLabel": "Google customer reviews"
+  },
+  "equipments": {
+    "title": "Equipment & Information",
+    "subtitle": "All technical and practical information",
+    "downloadsTitle": "Downloads & Legal Information",
+    "plans": {
+      "title": "Floor Plans",
+      "description": "Access precise floor plans for all your measurements.",
+      "cta": "Download floor plan"
+    },
+    "brochure": {
+      "title": "Commercial Brochure",
+      "description": "Download our commercial brochure (including all venue information and photos)",
+      "cta": "Download brochure"
+    },
+    "floorPlanAlt": "Technical floor plan — Chez Les Plombiers",
+    "sections": [
+      {
+        "title": "Surface & Equipment",
+        "items": [
+          "Total surface: 200 m² + 100 m² basement storage",
+          "Ceiling height: 4.5 m"
+        ]
+      },
+      {
+        "title": "Kitchens",
+        "items": [
+          "Day kitchen: microwave, bean-to-cup coffee machine, cutlery, plates, glasses, cups, sink",
+          "U-shaped caterer kitchen: oven, dishwasher, ice machine, fridge, freezer, small sink"
+        ]
+      },
+      {
+        "title": "Restrooms",
+        "items": ["2 toilets (accessible & standard) + 2 basins"]
+      },
+      {
+        "title": "Audio-visual",
+        "items": [
+          "Intuitive iPad-controlled system",
+          "4K Optima 8800 lumens projector (HDMI, Apple TV, AirPlay, Chromecast)",
+          "Sonos system",
+          "XLR system",
+          "DMX lighting (dimmable, warm/cool & colours)"
+        ]
+      },
+      {
+        "title": "Connectivity",
+        "items": [
+          "Dedicated 1 Gb/s symmetrical fibre",
+          "Guest Wi-Fi (custom SSID available)",
+          "RJ45 ports available throughout"
+        ]
+      },
+      {
+        "title": "Capacity",
+        "items": [
+          "Cocktail: 150 – 200 guests",
+          "Dinner: 60 – 80 guests"
+        ]
+      }
+    ],
+    "comfort": {
+      "title": "Comfort & Accessibility",
+      "items": [
+        "36 KvA three-phase power",
+        "Reversible air conditioning",
+        "Easy technical and delivery access",
+        "Cloakroom (rails + hangers)",
+        "Wheelchair access (+ accessible toilet)",
+        "Vehicle access (load ≤ 800 kg/m², structural engineer clearance on request)",
+        "Modular curtains for 3 distinct spaces"
+      ]
+    },
+    "technical": [
+      {
+        "title": "Cyclorama wall",
+        "specs": [
+          "Width: 4.63 m",
+          "Height: 3.40 m",
+          "Projected image (16:9): 4.53 m × 2.55 m"
+        ]
+      },
+      {
+        "title": "Entrances",
+        "specs": ["Entrance 1: W 2.20 m / H 3.50 m", "Entrance 2: W 1.40 m"]
+      },
+      {
+        "title": "Electrical & Rigging",
+        "specs": [
+          "Multiple power outlets (standard & three-phase, 36 KvA) at floor and height level",
+          "Support grids for lighting connected to the DMX system"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our event venue",
+    "items": [
+      {
+        "question": "Where is Chez Les Plombiers located?",
+        "answer": "Chez Les Plombiers is located at 39 rue des Bourdonnais, 75001 Paris, in the heart of the 1st arrondissement, between Les Halles and Pont Neuf, 100 metres from La Samaritaine. The venue is accessible by metro (Les Halles 3 min, Châtelet 4 min) and RER (Châtelet-Les Halles 3 min)."
+      },
+      {
+        "question": "What is the capacity of Chez Les Plombiers?",
+        "answer": "The main space offers 200 m² with 100 m² basement storage and a 4.5-metre ceiling height. It accommodates up to 200 guests for cocktails and 60 to 80 for seated dinners. The Pink Apartment, a complementary 100 m² space, can host up to 50 guests."
+      },
+      {
+        "question": "What are the rental rates?",
+        "answer": "Rates vary by day: from €1,000 excl. VAT on Monday and Sunday, €2,000 on Tuesday and Saturday, €3,000 on Wednesday and Friday, up to €4,000 on Thursday. Half-day rental (7am–1pm or 1:30pm–7:30pm) is available Monday to Wednesday at €1,000 excl. VAT. During Fashion Week, a weekly package is available at €40,000 excl. VAT."
+      },
+      {
+        "question": "What is included in the rental?",
+        "answer": "The rental includes entry and exit cleaning, an on-site venue manager, access to 200 m² basement storage, designer furniture (Pierre Paulin sofa, tables, Pangea armchairs) and a fully equipped kitchen (refrigerator, ice machine, tableware, dishwasher, coffee machine, microwave)."
+      },
+      {
+        "question": "What types of events can be held?",
+        "answer": "Chez Les Plombiers hosts fashion shows, showrooms and collection launches, professional events (seminars, product launches, conferences), exceptional dinners for 40 to 80 guests, cultural events (openings, exhibitions), photo and video shoots, as well as press events and brand experiences."
+      },
+      {
+        "question": "What technical equipment is available?",
+        "answer": "The space features a 4K Optima 8800 lumens projector (HDMI, Apple TV, AirPlay, Chromecast), Sonos and XLR audio systems, dimmable DMX lighting (warm/cool and colours), dedicated 1 Gb/s symmetrical fibre with guest Wi-Fi, a 4.63 m × 3.40 m cyclorama wall, 36 KvA three-phase power and reversible air conditioning."
+      },
+      {
+        "question": "What are the venue operating hours?",
+        "answer": "The venue is accessible from 6am. Public closing is at 1am. The outdoor courtyard can be used until 10pm. Setup and teardown times are billable depending on availability, requested hours and conditions."
+      },
+      {
+        "question": "How do I book Chez Les Plombiers?",
+        "answer": "Start by booking a visit on Calendly to discover the venue. Then send an email to contact@chezlesplombiers.fr or a WhatsApp message to +33 6 88 67 99 81 with your dates, event type, number of guests and time frame to receive a personalised quote. Visits are available Monday to Friday from 10am to 6pm and Saturday by appointment."
+      },
+      {
+        "question": "What is the security deposit?",
+        "answer": "A €5,000 security deposit is required for every booking, payable by bank transfer only. The full rental amount is due at the time of booking, also by bank transfer. The deposit is returned after complete restoration of the venue and identical repositioning of all furniture."
+      },
+      {
+        "question": "Can I place an option on a date?",
+        "answer": "Yes, you can place an option by email. Validity depends on the time before the event: 1 month if the request is made more than 2 months in advance, 7 days if made 1 month before, and according to the remaining time below 3 weeks. Please note: an option is not a firm booking and multiple clients may place an option on the same date."
+      },
+      {
+        "question": "Do you offer additional services?",
+        "answer": "Yes, on request we offer breakfast and catering services, additional cleaning passes (e.g. after setup), furniture removal handling, projector provision, as well as full event direction and management."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's Bring Your Project to Life",
+    "subtitle": "Let's meet to imagine your exceptional event together",
+    "info": [
+      { "label": "Address", "value": "39 rue des Bourdonnais", "subValue": "75001 Paris" },
+      { "label": "Email", "value": "contact@chezlesplombiers.fr" },
+      { "label": "WhatsApp", "value": "+336 88 67 99 81" },
+      { "label": "Instagram", "value": "@chezlesplombiers" }
+    ],
+    "visit": {
+      "title": "Visit & Discover",
+      "description": "Schedule a private visit of our venue and discover how we can bring your event to life.",
+      "cta": "Book an Appointment",
+      "hoursTitle": "Visit hours",
+      "hours": [
+        { "day": "Monday — Friday", "time": "10am — 6pm" },
+        { "day": "Saturday", "time": "By appointment" },
+        { "day": "Sunday", "time": "Closed" }
+      ]
+    }
+  },
+  "footer": {
+    "description": "Exceptional event venue in Paris. A unique space for your private and professional events.",
+    "navTitle": "Navigation",
+    "navLinks": [
+      { "label": "Home", "href": "/en" },
+      { "label": "Services", "href": "/en/#services" },
+      { "label": "About", "href": "/en/#about" },
+      { "label": "Our Venue", "href": "/en/#portfolio" },
+      { "label": "FAQ", "href": "/en/#faq" },
+      { "label": "Contact", "href": "/en/#contact" }
+    ],
+    "contactTitle": "Contact",
+    "legalTitle": "Legal Information",
+    "legalInfo": {
+      "company": "Chez les Plombiers SAS",
+      "capital": "Share capital: €5,000",
+      "siren": "SIREN: 928 788 157",
+      "siret": "SIRET: 928 788 157 00016",
+      "tva": "VAT: FR04 928 788 157",
+      "creation": "Founded: 02/05/2024",
+      "naf": "NAF/APE: 82 30Z – Organisation of fairs, exhibitions and conferences"
+    },
+    "copyright": "Chez Les Plombiers. All rights reserved.",
+    "mentionsLegales": "Legal Notice",
+    "politiqueConfidentialite": "Privacy Policy",
+    "navSecondaryLabel": "Secondary navigation"
+  },
+  "appartement": {
+    "title": "The Pink Apartment",
+    "heroDescription": "An intimate and bright space, designed for exceptional moments. Discover a unique atmosphere combining elegance and creativity.",
+    "cta": "Book The Pink Apartment",
+    "sectionTitle": "A Unique Atmosphere",
+    "sectionDescription": "The Pink Apartment is designed as a timeless sanctuary. With its natural light, refined textures and intimate ambiance, it is ideal for photo shoots, interviews, or confidential meetings.",
+    "surfaceLabel": "Surface",
+    "capacityLabel": "Guests",
+    "equipmentsTitle": "Included equipment",
+    "equipments": ["Fitted kitchen", "Designer furniture", "High-speed Wi-Fi"],
+    "heroImageAlt": "The Pink Apartment — intimate 100 m² space for shoots and meetings, Chez Les Plombiers Paris 1st",
+    "detailImageAlt": "Interior of The Pink Apartment — natural light, designer furniture and intimate ambiance, Chez Les Plombiers Paris"
+  },
+  "mentionsLegales": {
+    "title": "Legal Notice",
+    "editeur": {
+      "title": "Website Publisher",
+      "content": "<strong>Chez les Plombiers SAS</strong><br />39 rue des Bourdonnais, 75001 Paris<br />Share capital: €5,000<br />SIREN: 928 788 157<br />SIRET: 928 788 157 00016<br />Intra-community VAT: FR04 928 788 157<br />NAF/APE: 82 30Z – Organisation of fairs, exhibitions and conferences<br />Founded: 02/05/2024"
+    },
+    "contact": {
+      "title": "Contact",
+      "content": "Email: contact@chezlesplombiers.fr<br />Phone: +33 6 88 67 99 81"
+    },
+    "hebergement": {
+      "title": "Hosting",
+      "content": "This website is hosted by <strong>Vercel Inc.</strong><br />440 N Barranca Ave #4133, Covina, CA 91723, United States"
+    },
+    "propriete": {
+      "title": "Intellectual Property",
+      "content": "All content on this website (text, images, logos, videos) is the exclusive property of Chez les Plombiers SAS, unless otherwise stated. Any reproduction, representation, modification, publication or adaptation of all or part of the website elements is prohibited without prior written authorisation."
+    },
+    "responsabilite": {
+      "title": "Limitation of Liability",
+      "content": "The information on this website is as accurate as possible and the site is updated regularly, but may nonetheless contain inaccuracies, omissions or gaps. Chez les Plombiers SAS cannot be held liable for direct or indirect damages resulting from the use of this website."
+    },
+    "credits": {
+      "title": "Credits",
+      "content": "Design and development: <a href=\"https://www.growth-acceleration.fr\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-black\">Growth Acceleration</a>"
+    }
+  },
+  "politiqueConfidentialite": {
+    "title": "Privacy Policy",
+    "responsable": {
+      "title": "Data Controller",
+      "content": "<strong>Chez les Plombiers SAS</strong><br />39 rue des Bourdonnais, 75001 Paris<br />Email: contact@chezlesplombiers.fr"
+    },
+    "donnees": {
+      "title": "Data Collected",
+      "intro": "We collect the following data as part of our business activities:",
+      "items": [
+        "<strong>Browsing data</strong>: IP address, browser type, pages visited, visit duration (via Google Analytics)",
+        "<strong>Contact data</strong>: surname, first name, email, phone (when you contact us or book a visit via Calendly)",
+        "<strong>Cookies</strong>: analytical and functional cookies, managed via Axeptio"
+      ]
+    },
+    "finalites": {
+      "title": "Purpose of Processing",
+      "intro": "Your data is used to:",
+      "items": [
+        "Respond to your contact and visit booking requests",
+        "Improve our website and analyse traffic (Google Analytics)",
+        "Send you commercial information (with your consent)"
+      ]
+    },
+    "baseLegale": {
+      "title": "Legal Basis",
+      "intro": "The processing of your data is based on:",
+      "items": [
+        "Your consent (cookies, commercial communications)",
+        "Performance of pre-contractual measures (visit request, quote)",
+        "Our legitimate interest (website improvement, traffic statistics)"
+      ]
+    },
+    "conservation": {
+      "title": "Data Retention Period",
+      "content": "Your personal data is retained for a maximum of 3 years from your last contact. Browsing data is retained for a maximum of 13 months."
+    },
+    "droits": {
+      "title": "Your Rights",
+      "intro": "In accordance with the GDPR, you have the following rights:",
+      "items": [
+        "Right of access to your personal data",
+        "Right of rectification",
+        "Right to erasure",
+        "Right to restriction of processing",
+        "Right to data portability",
+        "Right to object"
+      ],
+      "contact": "To exercise these rights, contact us at contact@chezlesplombiers.fr. You may also file a complaint with the CNIL (www.cnil.fr)."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "content": "This website uses cookies to improve your browsing experience and analyse traffic. Cookie preference management is provided by Axeptio. You can change your choices at any time by clicking the Axeptio widget at the bottom of the page."
+    },
+    "sousTraitants": {
+      "title": "Sub-processors and Recipients",
+      "intro": "Your data may be shared with the following sub-processors:",
+      "items": [
+        "<strong>Google Analytics</strong> (traffic analysis) – Google LLC, United States",
+        "<strong>Calendly</strong> (visit booking) – Calendly LLC, United States",
+        "<strong>Vercel</strong> (hosting) – Vercel Inc., United States",
+        "<strong>Axeptio</strong> (cookie management) – Axeptio SAS, France"
+      ]
+    },
+    "miseAJour": {
+      "title": "Updates",
+      "content": "This privacy policy may be updated at any time. Last updated: February 2026."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "description": "This page does not exist or has been moved.",
+    "cta": "Back to home"
+  },
+  "error": {
+    "title": "Error",
+    "description": "An unexpected error occurred.",
+    "cta": "Try again"
+  },
+  "metadata": {
+    "homeTitle": "Chez Les Plombiers | Event Venue Paris 1st",
+    "homeDescription": "200m² event space in the heart of Paris. Fashion shows, seminars, exceptional dinners. 39 rue des Bourdonnais, 75001.",
+    "homeOgDescription": "200m² event space in the heart of Paris. Fashion shows, seminars, exceptional dinners.",
+    "appartementTitle": "The Pink Apartment | Chez Les Plombiers Paris",
+    "appartementDescription": "An intimate 100m² space for 50 guests. Photo shoots, interviews, confidential meetings. Fitted kitchen, designer furniture, high-speed Wi-Fi.",
+    "appartementOgDescription": "An intimate and bright space, designed for exceptional moments.",
+    "mentionsTitle": "Legal Notice | Chez Les Plombiers",
+    "mentionsDescription": "Legal notice for the chezlesplombiers.fr website",
+    "privacyTitle": "Privacy Policy | Chez Les Plombiers",
+    "privacyDescription": "Privacy policy and personal data protection for the chezlesplombiers.fr website"
+  },
+  "skipToContent": "Skip to main content",
+  "calendarDisclaimer": "Prices shown are indicative and subject to change based on demand. Please contact us via WhatsApp for confirmation."
+}

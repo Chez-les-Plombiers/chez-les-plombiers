@@ -2,13 +2,17 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-
-const stats = [
-  { value: "200m²", label: "Espace modulable" },
-  { value: "200", label: "Capacité max" },
-];
+import { useI18n } from "@/lib/i18n-context";
 
 export function AboutSection() {
+  const { dict } = useI18n();
+  const about = dict.about as {
+    title: string;
+    paragraphs: string[];
+    stats: { value: string; label: string }[];
+    imageAlt: string;
+  };
+
   return (
     <section id="about" className="py-24 lg:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -19,28 +23,15 @@ export function AboutSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl lg:text-6xl mb-8">À Propos</h2>
+            <h2 className="text-4xl lg:text-6xl mb-8">{about.title}</h2>
             <div className="space-y-6 text-gray-700 leading-relaxed">
-              <p>
-                <strong>Chez Les Plombiers</strong> est un lieu événementiel
-                d&apos;exception situé au cœur de Paris, alliant charme
-                industriel et élégance contemporaine.
-              </p>
-              <p>
-                Notre espace unique de 200m² peut accueillir jusqu&apos;à 200
-                personnes et s&apos;adapte à tous vos événements. Anciennes
-                installations industrielles transformées en un lieu raffiné,
-                nous offrons un cadre authentique et modulable.
-              </p>
-              <p>
-                Notre équipe vous accompagne pour créer des moments inoubliables
-                avec un service personnalisé et une attention aux moindres
-                détails.
-              </p>
+              {about.paragraphs.map((p, i) => (
+                <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+              ))}
             </div>
 
             <div className="grid grid-cols-2 gap-8 mt-12">
-              {stats.map((stat) => (
+              {about.stats.map((stat) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
@@ -67,7 +58,7 @@ export function AboutSection() {
             <div className="aspect-[4/5] bg-gray-200 overflow-hidden relative">
               <Image
                 src="/images/about.png"
-                alt="Intérieur de Chez Les Plombiers — espace événementiel brutaliste de 200 m² avec murs en pierre et poutres métalliques, Paris 1er"
+                alt={about.imageAlt}
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"

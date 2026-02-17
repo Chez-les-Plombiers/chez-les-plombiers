@@ -5,10 +5,13 @@ import { useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
+import { useI18n } from "@/lib/i18n-context";
 
 export function HeroSection() {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
+  const { dict } = useI18n();
+  const hero = dict.hero as Record<string, string>;
 
   const y = useTransform(scrollY, [0, 800], ["0%", "50%"]);
   const opacity = useTransform(scrollY, [0, 400, 800], [1, 0.8, 0.3]);
@@ -22,7 +25,7 @@ export function HeroSection() {
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%]">
         <Image
           src="/images/hero.png"
-          alt="Chez Les Plombiers — lieu événementiel 200 m² au 39 rue des Bourdonnais, architecture industrielle, Paris 1er"
+          alt={hero.imageAlt}
           fill
           className="object-cover"
           priority
@@ -42,10 +45,10 @@ export function HeroSection() {
             transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-8xl tracking-tight mb-6">
-              Lieu Événementiel Paris
+              {hero.title}
             </h1>
             <p className="text-2xl md:text-3xl lg:text-4xl tracking-tight mb-2 font-light text-white/90">
-              Recevoir Autrement.
+              {hero.subtitle}
             </p>
           </motion.div>
 
@@ -54,12 +57,8 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-12 text-white/90"
-          >
-            Un lieu d&apos;exception en plein cœur de Paris pour vos événements
-            professionnels
-            <br className="hidden md:block" />
-            dans un cadre industriel unique.
-          </motion.p>
+            dangerouslySetInnerHTML={{ __html: hero.description }}
+          />
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -72,7 +71,7 @@ export function HeroSection() {
               rel="noopener noreferrer"
               className="inline-block px-12 py-4 bg-white text-black tracking-wider uppercase text-sm transition-all hover:bg-gray-100"
             >
-              Réserver une visite
+              {hero.cta}
             </a>
           </motion.div>
         </div>

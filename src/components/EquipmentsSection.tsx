@@ -3,84 +3,7 @@
 import { motion } from "motion/react";
 import { Download, FileText } from "lucide-react";
 import Image from "next/image";
-
-const equipments = [
-  {
-    title: "Surface & Équipements",
-    items: [
-      "Surface totale : 200 m² + 100 m² de stockage en sous-sol",
-      "Hauteur sous plafond : 4,5 m",
-    ],
-  },
-  {
-    title: "Cuisines",
-    items: [
-      "Petite cuisine de jour : micro-ondes, machine à café (grains), couverts, assiettes, verres, tasses, évier",
-      "Cuisine traiteur en U : four, lave-vaisselle, machine à glaçons, frigo, congélateur, petit évier",
-    ],
-  },
-  {
-    title: "Sanitaires",
-    items: ["2 WC (PMR & classique) + 2 vasques"],
-  },
-  {
-    title: "Audio-visuel",
-    items: [
-      "Solution intuitive pilotée via iPad",
-      "Vidéoprojecteur 4K Optima 8800 lumens (HDMI, Apple TV, AirPlay, Chromecast)",
-      "Système Sonos",
-      "Système XLR",
-      "Lumières DMX (dimmables, chaud/froid & couleurs)",
-    ],
-  },
-  {
-    title: "Connexion",
-    items: [
-      "Fibre dédiée 1 Gb/s symétrique",
-      "Wi-Fi invité (création de SSID possible)",
-      "Prises RJ45 disponibles partout",
-    ],
-  },
-  {
-    title: "Capacité d\u2019accueil",
-    items: [
-      "Cocktail : 150 – 200 personnes",
-      "Dîner : 60 – 80 personnes",
-    ],
-  },
-];
-
-const comfort = [
-  "36 KvA triphasé",
-  "Climatisation réversible",
-  "Accès technique et livraisons facilité",
-  "Vestiaire (portants + cintres)",
-  "Accès PMR (+ WC PMR)",
-  "Accès véhicules (charge ≤ 800 kg/m², visa BET structure sur demande)",
-  "Rideaux modulables pour 3 espaces distincts",
-];
-
-const technical = [
-  {
-    title: "Mur cyclo",
-    specs: [
-      "Largeur : 4,63 m",
-      "Hauteur : 3,40 m",
-      "Image projetée (16:9) : 4,53 m × 2,55 m",
-    ],
-  },
-  {
-    title: "Entrées",
-    specs: ["Entrée 1 : L 2,20 m / H 3,50 m", "Entrée 2 : L 1,40 m"],
-  },
-  {
-    title: "Électricité & Suspensions",
-    specs: [
-      "Multiples prises électriques (classiques & triphasées, 36 KvA) au sol et en hauteur",
-      "Grilles de support pour accroche lumières raccordées au système DMX",
-    ],
-  },
-];
+import { useI18n } from "@/lib/i18n-context";
 
 function ListItem({ children }: { children: React.ReactNode }) {
   return (
@@ -94,6 +17,19 @@ function ListItem({ children }: { children: React.ReactNode }) {
 }
 
 export function EquipmentsSection() {
+  const { dict } = useI18n();
+  const equipments = dict.equipments as {
+    title: string;
+    subtitle: string;
+    downloadsTitle: string;
+    plans: { title: string; description: string; cta: string };
+    brochure: { title: string; description: string; cta: string };
+    floorPlanAlt: string;
+    sections: { title: string; items: string[] }[];
+    comfort: { title: string; items: string[] };
+    technical: { title: string; specs: string[] }[];
+  };
+
   return (
     <section id="equipments" className="py-24 lg:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -105,10 +41,10 @@ export function EquipmentsSection() {
           className="text-center mb-16 lg:mb-24"
         >
           <h2 className="text-4xl lg:text-6xl mb-6">
-            Équipements & Informations
+            {equipments.title}
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-            Toutes les informations techniques et pratiques
+            {equipments.subtitle}
           </p>
         </motion.div>
 
@@ -121,7 +57,7 @@ export function EquipmentsSection() {
           className="mb-20"
         >
           <h3 className="text-2xl lg:text-3xl mb-8">
-            Téléchargements & Informations légales
+            {equipments.downloadsTitle}
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -136,10 +72,10 @@ export function EquipmentsSection() {
               <div className="absolute top-0 left-0 w-0 h-0.5 bg-black transition-all duration-500 group-hover:w-full" />
               <Download className="w-8 h-8 mb-6 transition-transform duration-500 group-hover:scale-110" />
               <h4 className="text-2xl mb-4 tracking-tight transition-transform duration-500 group-hover:translate-x-1">
-                Plans
+                {equipments.plans.title}
               </h4>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Accédez aux plans précis du lieu pour toutes vos mesures.
+                {equipments.plans.description}
               </p>
               <a
                 href="/images/floor-plan.png"
@@ -147,7 +83,7 @@ export function EquipmentsSection() {
                 className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-sm uppercase tracking-wider hover:border-black hover:bg-black hover:text-white transition-all duration-300"
               >
                 <Download className="w-4 h-4" />
-                Télécharger le plan
+                {equipments.plans.cta}
               </a>
             </motion.div>
 
@@ -162,11 +98,10 @@ export function EquipmentsSection() {
               <div className="absolute top-0 left-0 w-0 h-0.5 bg-black transition-all duration-500 group-hover:w-full" />
               <FileText className="w-8 h-8 mb-6 transition-transform duration-500 group-hover:scale-110" />
               <h4 className="text-2xl mb-4 tracking-tight transition-transform duration-500 group-hover:translate-x-1">
-                Plaquette commerciale
+                {equipments.brochure.title}
               </h4>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Téléchargez notre plaquette commerciale (incluant toutes les
-                informations et photos du lieu)
+                {equipments.brochure.description}
               </p>
               <a
                 href="/documents/plaquette-chez-les-plombiers.pdf"
@@ -174,7 +109,7 @@ export function EquipmentsSection() {
                 className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-sm uppercase tracking-wider hover:border-black hover:bg-black hover:text-white transition-all duration-300"
               >
                 <Download className="w-4 h-4" />
-                Télécharger la plaquette
+                {equipments.brochure.cta}
               </a>
             </motion.div>
           </div>
@@ -184,7 +119,7 @@ export function EquipmentsSection() {
             <div className="bg-white p-4 border border-gray-200 relative">
               <Image
                 src="/images/floor-plan.png"
-                alt="Plan technique du lieu - Chez Les Plombiers"
+                alt={equipments.floorPlanAlt}
                 width={1200}
                 height={800}
                 className="w-full h-auto"
@@ -196,7 +131,7 @@ export function EquipmentsSection() {
 
         {/* Equipment Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-20">
-          {equipments.map((section, index) => (
+          {equipments.sections.map((section, index) => (
             <motion.div
               key={section.title}
               initial={{ opacity: 0, y: 30 }}
@@ -248,7 +183,7 @@ export function EquipmentsSection() {
             <div className="absolute top-0 left-0 w-0 h-0.5 bg-black transition-all duration-500 group-hover:w-full" />
             <div className="flex items-center justify-between mb-8">
               <h4 className="text-2xl tracking-tight transition-transform duration-500 group-hover:translate-x-1">
-                Confort & Accessibilité
+                {equipments.comfort.title}
               </h4>
               <div className="w-10 h-10 border border-gray-300 flex items-center justify-center transition-all duration-500 group-hover:border-black group-hover:rotate-45">
                 <svg
@@ -267,7 +202,7 @@ export function EquipmentsSection() {
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {comfort.map((item, i) => (
+              {equipments.comfort.items.map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -10 }}
@@ -288,7 +223,7 @@ export function EquipmentsSection() {
 
         {/* Technical Specifications */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {technical.map((section, index) => (
+          {equipments.technical.map((section, index) => (
             <motion.div
               key={section.title}
               initial={{ opacity: 0, y: 30 }}

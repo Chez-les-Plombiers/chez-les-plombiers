@@ -1,7 +1,7 @@
-# Chez Les Plombiers — Site Vitrine
+# Chez Les Plombiers — Site Vitrine Bilingue
 
 ## Projet
-Site vitrine pour **Chez Les Plombiers**, lieu événementiel de 200m² au 39 rue des Bourdonnais, 75001 Paris.
+Site vitrine bilingue (FR/EN) pour **Chez Les Plombiers**, lieu événementiel de 200m² au 39 rue des Bourdonnais, 75001 Paris.
 
 **Migré de Figma Sites → Next.js + Vercel le 17/02/2026.** L'ancien site était 100% JavaScript client-side (non crawlable par les AI bots). Le nouveau est SSR/SSG.
 
@@ -19,37 +19,71 @@ npm run build    # Production build (SSG)
 npm run lint     # ESLint
 ```
 
+## i18n — Architecture bilingue
+- **FR = locale par défaut** (pas de préfixe `/fr/` dans l'URL)
+- **EN sous `/en/`** avec slugs traduits
+- **JSON dictionaries** (`src/dictionaries/fr.json`, `en.json`) — pas de librairie i18n externe
+- **React Context** (`useI18n()`) pour passer locale + dict aux composants client
+- **Middleware** réécrit `/` → `/fr/` en interne, redirige les slugs mal localisés
+- **Reviews Google** restent en français (avis authentiques)
+
+### URLs
+```
+/                              → FR (défaut)
+/en/                           → EN
+/appartement                   → FR
+/en/apartment                  → EN (slug traduit)
+/mentions-legales              → FR
+/en/legal-notice               → EN
+/politique-confidentialite     → FR
+/en/privacy-policy             → EN
+```
+
 ## Structure
 ```
-src/app/             # Pages (App Router)
-  page.tsx           # Home (SSG) — 7 sections + JSON-LD
-  appartement/       # L'Appartement Rose
-  mentions-legales/  # Mentions légales
-  politique-confidentialite/  # RGPD
+src/app/
+  layout.tsx         # Root layout minimal (globals.css only)
+  [locale]/
+    layout.tsx       # I18nProvider + GA4/GTM/Axeptio + <html lang={locale}>
+    page.tsx         # Home — 7 sections + 4 JSON-LD (EventVenue, Organization, LocalBusiness, FAQPage)
+    appartement/page.tsx        # L'Appartement Rose (FR)
+    apartment/page.tsx          # The Pink Apartment (EN, re-export)
+    mentions-legales/page.tsx   # Mentions légales (FR)
+    legal-notice/page.tsx       # Legal Notice (EN, re-export)
+    politique-confidentialite/page.tsx  # RGPD (FR)
+    privacy-policy/page.tsx     # Privacy Policy (EN, re-export)
+    not-found.tsx
+    error.tsx
   robots.ts          # robots.txt dynamique (AI bots autorisés)
-  sitemap.ts         # sitemap.xml (4 URLs)
+  sitemap.ts         # sitemap.xml (8 URLs: 4 FR + 4 EN avec hreflang)
   globals.css        # Design tokens Tailwind v4
-  layout.tsx         # RootLayout + GA4/GTM/Axeptio scripts
 
-src/components/      # Composants React
-  Header.tsx         # "use client" — scroll state + mobile menu + logo swap
-  Footer.tsx         # Server component — liens + infos légales
-  HeroSection.tsx    # "use client" — parallax + entrance animations
-  ServicesSection.tsx # "use client" — 6 cards + hover effects (incl. Petit Déjeuner)
-  AboutSection.tsx   # "use client" — texte + stats + image
-  PortfolioSection.tsx # "use client" — 3 images + hover overlay
-  EquipmentsSection.tsx # "use client" — specs techniques + floor plan + downloads
-  FaqSection.tsx     # "use client" — 11 Q&A accordion (données importées de faq-data.ts)
-  ContactSection.tsx # "use client" — 4 contacts + CTA Calendly
+src/components/      # Tous "use client" — utilisent useI18n()
+  Header.tsx         # Scroll state + mobile menu + logo swap + language switcher FR/EN
+  Footer.tsx         # Liens + infos légales (converti en client component pour i18n)
+  HeroSection.tsx    # Parallax + entrance animations
+  ServicesSection.tsx # 6 cards + hover effects (incl. Petit Déjeuner)
+  AboutSection.tsx   # Texte + stats + image (dangerouslySetInnerHTML pour <strong>)
+  PortfolioSection.tsx # 3 images + hover overlay
+  ReviewsSection.tsx # Google reviews carousel (textes FR, labels i18n)
+  EquipmentsSection.tsx # Specs techniques + floor plan + downloads
+  FaqSection.tsx     # 11 Q&A accordion (données depuis dictionnaires)
+  ContactSection.tsx # 4 contacts + CTA Calendly
+  AppartementContent.tsx # Page Appartement Rose
   ScrollAnimation.tsx # Wrapper réutilisable whileInView
 
 src/lib/
+  i18n.ts            # Config locales, slug mapping, getDictionary(), getAlternatePath()
+  i18n-context.tsx   # I18nProvider + useI18n() hook (React Context)
   metadata.ts        # Constantes SEO partagées + liens externes
   analytics.ts       # GA4 typed helper + GTM ID
-  faq-data.ts        # Données FAQ partagées (server + client) — 11 Q&A
+
+src/dictionaries/
+  fr.json            # Dictionnaire français complet (~500 lignes)
+  en.json            # Dictionnaire anglais complet (~500 lignes)
 
 public/
-  llms.txt           # Guide AI crawlers (GPTBot, ClaudeBot, PerplexityBot)
+  llms.txt           # Guide AI crawlers bilingue (GPTBot, ClaudeBot, PerplexityBot)
   documents/
     plaquette-chez-les-plombiers.pdf  # Plaquette commerciale (2.3 MB)
 ```
@@ -66,13 +100,16 @@ public/
 - Instagram: https://instagram.com/chezlesplombiers
 
 ## SEO/GEO
-- JSON-LD: EventVenue, Organization, FAQPage (généré dynamiquement depuis faq-data.ts)
-- robots.txt: AI bots (GPTBot, ClaudeBot, PerplexityBot) autorisés
-- sitemap.xml: 4 URLs
+- **hreflang**: chaque page a `alternates.languages: { fr, en }` dans `generateMetadata`
+- **Canonical**: par langue (chaque version est sa propre canonical)
+- **og:locale**: `fr_FR` / `en_US`
+- **JSON-LD**: EventVenue, Organization, LocalBusiness, FAQPage — tous avec `inLanguage`
+- **robots.txt**: AI bots (GPTBot, ClaudeBot, PerplexityBot) autorisés
+- **sitemap.xml**: 8 URLs (4 FR + 4 EN) avec alternates
 - Open Graph + Twitter Cards sur toutes les pages
-- **llms.txt**: fichier de guidage AI crawlers à la racine du domaine
+- **llms.txt**: fichier de guidage AI crawlers bilingue
 - **FAQ visible**: 11 Q&A en accordion, synchronisée avec le JSON-LD FAQPage
-- **Alt texts enrichis**: descriptions contextuelles sur toutes les images (HeroSection, AboutSection, PortfolioSection, AppartementContent)
+- **Alt texts enrichis**: descriptions contextuelles sur toutes les images
 - **Downloads fonctionnels**: plan (floor-plan.png) + plaquette PDF hébergés sur Vercel
 
 ## Architecture Homepage
@@ -81,9 +118,10 @@ public/
 2. ServicesSection (6 cards dont Petit Déjeuner)
 3. AboutSection (texte + stats + image)
 4. PortfolioSection (3 photos + hover)
-5. EquipmentsSection (specs + downloads + plan)
-6. FaqSection (11 Q&A accordion)
-7. ContactSection (4 contacts + CTA Calendly)
+5. ReviewsSection (Google reviews carousel)
+6. EquipmentsSection (specs + downloads + plan)
+7. FaqSection (11 Q&A accordion)
+8. ContactSection (4 contacts + CTA Calendly)
 
 ## Informations légales
 - Chez les Plombiers SAS — SIREN 928 788 157

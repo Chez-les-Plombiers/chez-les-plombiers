@@ -1,8 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useI18n } from "@/lib/i18n-context";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { locale, dict } = useI18n();
+  const footer = dict.footer as {
+    description: string;
+    navTitle: string;
+    navLinks: { label: string; href: string }[];
+    contactTitle: string;
+    legalTitle: string;
+    legalInfo: Record<string, string>;
+    copyright: string;
+    mentionsLegales: string;
+    politiqueConfidentialite: string;
+    navSecondaryLabel: string;
+  };
+
+  const mentionsPath =
+    locale === "en" ? "/en/legal-notice" : "/mentions-legales";
+  const privacyPath =
+    locale === "en" ? "/en/privacy-policy" : "/politique-confidentialite";
 
   return (
     <footer className="bg-black text-white py-16">
@@ -17,65 +38,48 @@ export function Footer() {
               className="h-8 w-auto mb-6"
             />
             <p className="text-sm text-gray-400 leading-relaxed">
-              Lieu événementiel d&apos;exception à Paris. Un espace unique pour
-              vos événements privés et professionnels.
+              {footer.description}
             </p>
           </div>
 
           <div>
             <h4 className="text-sm uppercase tracking-wider mb-4">
-              Navigation
+              {footer.navTitle}
             </h4>
-            <nav aria-label="Navigation secondaire" className="space-y-3">
-              <Link
-                href="/"
-                className="block text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                Accueil
-              </Link>
-              <Link
-                href="/#services"
-                className="block text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                Services
-              </Link>
-              <Link
-                href="/#about"
-                className="block text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                À Propos
-              </Link>
-              <Link
-                href="/#portfolio"
-                className="block text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                Notre Lieu
-              </Link>
-              <Link
-                href="/#faq"
-                className="block text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                FAQ
-              </Link>
-              <Link
-                href="/#contact"
-                className="block text-sm text-gray-400 hover:text-white transition-colors"
-              >
-                Contact
-              </Link>
+            <nav
+              aria-label={footer.navSecondaryLabel}
+              className="space-y-3"
+            >
+              {footer.navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="block text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
           <div>
-            <h4 className="text-sm uppercase tracking-wider mb-4">Contact</h4>
+            <h4 className="text-sm uppercase tracking-wider mb-4">
+              {footer.contactTitle}
+            </h4>
             <div className="space-y-3 text-sm text-gray-400">
               <p>
-                <a href="tel:+33688679981" className="hover:text-white transition-colors">
+                <a
+                  href="tel:+33688679981"
+                  className="hover:text-white transition-colors"
+                >
                   06 88 67 99 81
                 </a>
               </p>
               <p>
-                <a href="mailto:contact@chezlesplombiers.fr" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:contact@chezlesplombiers.fr"
+                  className="hover:text-white transition-colors"
+                >
                   contact@chezlesplombiers.fr
                 </a>
               </p>
@@ -86,39 +90,40 @@ export function Footer() {
 
         <div className="pt-8 pb-8 border-t border-gray-800">
           <h4 className="text-sm uppercase tracking-wider mb-6 text-gray-400">
-            Informations légales
+            {footer.legalTitle}
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 text-xs text-gray-400">
-            <p>Chez les Plombiers SAS</p>
-            <p>Capital social : 5 000 €</p>
-            <p>SIREN : 928 788 157</p>
-            <p>SIRET : 928 788 157 00016</p>
-            <p>TVA : FR04 928 788 157</p>
+            <p>{footer.legalInfo.company}</p>
+            <p>{footer.legalInfo.capital}</p>
+            <p>{footer.legalInfo.siren}</p>
+            <p>{footer.legalInfo.siret}</p>
+            <p>{footer.legalInfo.tva}</p>
             <p className="sm:col-span-2 lg:col-span-1">
-              Création : 02/05/2024
+              {footer.legalInfo.creation}
             </p>
             <p className="sm:col-span-2 lg:col-span-3">
-              Code NAF / APE : 82 30Z – Organisation de foires, salons
-              professionnels et congrès
+              {footer.legalInfo.naf}
             </p>
           </div>
         </div>
 
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
-            <p>© {currentYear} Chez Les Plombiers. Tous droits réservés.</p>
+            <p>
+              &copy; {currentYear} {footer.copyright}
+            </p>
             <div className="flex space-x-6">
               <Link
-                href="/mentions-legales"
+                href={mentionsPath}
                 className="hover:text-white transition-colors"
               >
-                Mentions Légales
+                {footer.mentionsLegales}
               </Link>
               <Link
-                href="/politique-confidentialite"
+                href={privacyPath}
                 className="hover:text-white transition-colors"
               >
-                Politique de Confidentialité
+                {footer.politiqueConfidentialite}
               </Link>
             </div>
           </div>
