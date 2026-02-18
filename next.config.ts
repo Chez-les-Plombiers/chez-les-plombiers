@@ -46,6 +46,16 @@ const nextConfig: NextConfig = {
         destination: "https://chezlesplombiers.fr/:path*",
         permanent: true,
       },
+      // Fix Google sitelinks pointing to non-existent pages
+      { source: "/l-histoire", destination: "/#about", permanent: true },
+      { source: "/histoire", destination: "/#about", permanent: true },
+      { source: "/photos", destination: "/#portfolio", permanent: true },
+      { source: "/galerie", destination: "/#portfolio", permanent: true },
+      { source: "/equipements", destination: "/#equipments", permanent: true },
+      { source: "/equipements-infos", destination: "/#equipments", permanent: true },
+      { source: "/visiter", destination: "/#contact", permanent: true },
+      { source: "/visite", destination: "/#contact", permanent: true },
+      { source: "/contact", destination: "/#contact", permanent: true },
     ];
   },
 };
