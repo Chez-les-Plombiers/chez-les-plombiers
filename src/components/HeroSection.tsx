@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { ChevronDown } from "lucide-react";
-import Image from "next/image";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { useI18n } from "@/lib/i18n-context";
 
@@ -23,14 +22,16 @@ export function HeroSection() {
       className="relative h-screen overflow-hidden"
     >
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%]">
-        <Image
-          src="/images/hero.png"
-          alt={hero.imageAlt}
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/hero.png"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-black/40" />
       </motion.div>
 
