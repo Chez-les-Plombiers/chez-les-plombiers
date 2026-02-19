@@ -32,7 +32,7 @@ export function HeroSection() {
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/55" />
       </motion.div>
 
       <motion.div
