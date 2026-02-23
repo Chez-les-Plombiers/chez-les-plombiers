@@ -29,14 +29,26 @@ npm run lint     # ESLint
 
 ### URLs
 ```
-/                              → FR (défaut)
-/en/                           → EN
-/appartement                   → FR
-/en/apartment                  → EN (slug traduit)
-/mentions-legales              → FR
-/en/legal-notice               → EN
-/politique-confidentialite     → FR
-/en/privacy-policy             → EN
+/                                        → FR (défaut)
+/en/                                     → EN
+/appartement                             → FR
+/en/apartment                            → EN (slug traduit)
+/services/fashion-shows                  → FR (same slug)
+/en/services/fashion-shows               → EN
+/services/petit-dejeuners                → FR
+/en/services/corporate-breakfasts        → EN
+/services/evenements-professionnels      → FR
+/en/services/professional-events         → EN
+/services/diners-exception               → FR
+/en/services/exceptional-dinners         → EN
+/services/evenements-culturels           → FR
+/en/services/cultural-events             → EN
+/services/seminaires-formations          → FR
+/en/services/seminars-training           → EN
+/mentions-legales                        → FR
+/en/legal-notice                         → EN
+/politique-confidentialite               → FR
+/en/privacy-policy                       → EN
 ```
 
 ## Structure
@@ -54,33 +66,36 @@ src/app/
     privacy-policy/page.tsx     # Privacy Policy (EN, re-export)
     not-found.tsx
     error.tsx
+    services/[slug]/page.tsx   # Pages services dynamiques (6 FR + 6 EN) — 3 JSON-LD (Service, BreadcrumbList, FAQPage)
   robots.ts          # robots.txt dynamique (AI bots autorisés)
-  sitemap.ts         # sitemap.xml (8 URLs: 4 FR + 4 EN avec hreflang)
+  sitemap.ts         # sitemap.xml (20 URLs: 10 FR + 10 EN avec hreflang)
   globals.css        # Design tokens Tailwind v4
 
 src/components/      # Tous "use client" — utilisent useI18n()
   Header.tsx         # Scroll state + mobile menu + logo swap + language switcher FR/EN
   Footer.tsx         # Liens + infos légales (converti en client component pour i18n)
   HeroSection.tsx    # Parallax + entrance animations
-  ServicesSection.tsx # 6 cards + hover effects (incl. Petit Déjeuner)
+  ServicesSection.tsx # 6 cards + hover effects + liens "En savoir plus" → /services/{slug}
   AboutSection.tsx   # Texte + stats + image (dangerouslySetInnerHTML pour <strong>)
   PortfolioSection.tsx # 3 images + hover overlay
-  ReviewsSection.tsx # Google reviews carousel (textes FR, labels i18n)
+  ReviewsSection.tsx # Google reviews carousel (textes FR, labels i18n) — réutilisé sur pages services
   EquipmentsSection.tsx # Specs techniques + floor plan + downloads
   FaqSection.tsx     # 11 Q&A accordion (données depuis dictionnaires)
   ContactSection.tsx # 4 contacts + CTA Calendly
   AppartementContent.tsx # Page Appartement Rose
+  ServicePageContent.tsx # Pages services (hero, specs, features, FAQ accordion, CTA)
   ScrollAnimation.tsx # Wrapper réutilisable whileInView
 
 src/lib/
-  i18n.ts            # Config locales, slug mapping, getDictionary(), getAlternatePath()
+  i18n.ts            # Config locales, slug mapping (pages + services), getDictionary(), getAlternatePath()
   i18n-context.tsx   # I18nProvider + useI18n() hook (React Context)
   metadata.ts        # Constantes SEO partagées + liens externes
   analytics.ts       # GA4 typed helper + GTM ID
+  services-data.ts   # Slugs services FR↔EN, images, resolveServiceSlug()
 
 src/dictionaries/
-  fr.json            # Dictionnaire français complet (~500 lignes)
-  en.json            # Dictionnaire anglais complet (~500 lignes)
+  fr.json            # Dictionnaire français complet (~700 lignes, incl. servicePages)
+  en.json            # Dictionnaire anglais complet (~700 lignes, incl. servicePages)
 
 public/
   llms.txt           # Guide AI crawlers bilingue (GPTBot, ClaudeBot, PerplexityBot)
@@ -104,14 +119,27 @@ public/
 - **hreflang**: chaque page a `alternates.languages: { fr, en }` dans `generateMetadata`
 - **Canonical**: par langue (chaque version est sa propre canonical)
 - **og:locale**: `fr_FR` / `en_US`
-- **JSON-LD**: EventVenue, Organization, LocalBusiness, FAQPage — tous avec `inLanguage`
+- **JSON-LD**: EventVenue, Organization, LocalBusiness, FAQPage (homepage) + Service, BreadcrumbList, FAQPage (pages services) — tous avec `inLanguage`
 - **robots.txt**: AI bots (GPTBot, ClaudeBot, PerplexityBot) autorisés
-- **sitemap.xml**: 8 URLs (4 FR + 4 EN) avec alternates
+- **sitemap.xml**: 20 URLs (10 FR + 10 EN) avec alternates
 - Open Graph + Twitter Cards sur toutes les pages
 - **llms.txt**: fichier de guidage AI crawlers bilingue
 - **FAQ visible**: 11 Q&A en accordion, synchronisée avec le JSON-LD FAQPage
 - **Alt texts enrichis**: descriptions contextuelles sur toutes les images
 - **Downloads fonctionnels**: plan (floor-plan.png) + plaquette PDF hébergés sur Vercel
+
+## Pages Services (/services/[slug])
+6 services, chacun avec page FR + EN (12 pages total) :
+- Fashion Shows (`fashion-shows` / `fashion-shows`)
+- Petit-Déjeuners (`petit-dejeuners` / `corporate-breakfasts`)
+- Évènements Professionnels (`evenements-professionnels` / `professional-events`)
+- Dîners d'Exception (`diners-exception` / `exceptional-dinners`)
+- Évènements Culturels (`evenements-culturels` / `cultural-events`)
+- Séminaires & Formations (`seminaires-formations` / `seminars-training`)
+
+Structure chaque page : Hero (image + overlay) → Description + Specs (2 cols) → Features (3 cols) → ReviewsSection (réutilisé) → FAQ accordion (3-5 Q&A spécifiques) → CTA (Calendly + WhatsApp + email)
+
+Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners` → `/en/services/corporate-breakfasts`)
 
 ## Architecture Homepage
 8 sections dans l'ordre :
