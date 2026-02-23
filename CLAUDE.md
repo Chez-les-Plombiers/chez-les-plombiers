@@ -44,7 +44,7 @@ npm run lint     # ESLint
 src/app/
   layout.tsx         # Root layout minimal (globals.css only)
   [locale]/
-    layout.tsx       # I18nProvider + GA4/GTM/Axeptio + <html lang={locale}>
+    layout.tsx       # I18nProvider + GA4/GTM/Clarity/Axeptio + <html lang={locale}>
     page.tsx         # Home — 7 sections + 4 JSON-LD (EventVenue, Organization, LocalBusiness, FAQPage)
     appartement/page.tsx        # L'Appartement Rose (FR)
     apartment/page.tsx          # The Pink Apartment (EN, re-export)
@@ -91,6 +91,7 @@ public/
 ## Analytics
 - **GA4**: G-P14K1RH61R
 - **GTM**: GTM-PXGXK94F
+- **Clarity**: vju7iukwc9 (raw `<script>` dans `<head>`, pas `<Script>` Next.js)
 - **Axeptio**: 699344885a2a098410f72b36
 
 ## URLs externes
@@ -113,7 +114,7 @@ public/
 - **Downloads fonctionnels**: plan (floor-plan.png) + plaquette PDF hébergés sur Vercel
 
 ## Architecture Homepage
-7 sections dans l'ordre :
+8 sections dans l'ordre :
 1. HeroSection (parallax + vidéo)
 2. ServicesSection (6 cards dont Petit Déjeuner)
 3. AboutSection (texte + stats + image)

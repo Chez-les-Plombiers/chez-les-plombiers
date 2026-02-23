@@ -25,7 +25,7 @@ const reviews: Review[] = [
   { name: "Henri Cochard", rating: 5, text: "Très belle adresse proche du Louvre, avec un vrai cachet 'atelier'. Super équipe, on se sent entre de bonnes mains. À recommander les yeux fermés.", date: "Fév. 2026" },
   { name: "Anne Lemaitre", rating: 5, text: "Parfait pour une soirée d'entreprise ou un séminaire dans Paris centre. Cadre unique et équipe très à l'écoute.", date: "Fév. 2026" },
   { name: "Gabriel Kunde", rating: 5, text: "Lieu exceptionnel, très rare proche du Louvre et de la Samaritaine. Équipe réactive et professionnelle.", date: "Déc. 2025" },
-  { name: "Hortense Gaschignard", rating: 5, text: "Lieu événementiel canon à Paris 1er. Le cadre est fou — on dirait un ancien atelier d'artiste avec les poutres métalliques. Vraiment unique.", date: "Fév. 2026" },
+  { name: "Hortense Gaschignard", rating: 5, text: "Lieu évènementiel canon à Paris 1er. Le cadre est fou — on dirait un ancien atelier d'artiste avec les poutres métalliques. Vraiment unique.", date: "Fév. 2026" },
   { name: "Justin Personnaz", rating: 5, text: "Un lieu d'exception, au cœur de Paris. Exceptionnel.", date: "Fév. 2025" },
   { name: "Elise Louviot", rating: 5, text: "", date: "Fév. 2026" },
   { name: "Charles", rating: 5, text: "", date: "Fév. 2025" },

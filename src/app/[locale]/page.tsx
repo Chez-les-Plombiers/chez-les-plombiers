@@ -35,7 +35,7 @@ export default async function Home({
     name: "Chez Les Plombiers",
     description: isEn
       ? "200m² event space in the heart of Paris. Fashion shows, seminars, exceptional dinners in a unique industrial setting."
-      : "Espace événementiel de 200m² au cœur de Paris. Fashion shows, séminaires, dîners d'exception dans un cadre industriel unique.",
+      : "Espace évènementiel de 200m² au cœur de Paris. Fashion shows, séminaires, dîners d'exception dans un cadre industriel unique.",
     url: pageUrl,
     inLanguage,
     address: {
@@ -64,7 +64,7 @@ export default async function Home({
     logo: `${SITE_URL}/images/logo/logo-black.png`,
     description: isEn
       ? "Exceptional event venue in Paris, combining industrial charm and contemporary elegance."
-      : "Lieu événementiel d'exception à Paris, alliant charme industriel et élégance contemporaine.",
+      : "Lieu évènementiel d'exception à Paris, alliant charme industriel et élégance contemporaine.",
     inLanguage,
     address: {
       "@type": "PostalAddress",
@@ -93,7 +93,7 @@ export default async function Home({
     name: "Chez Les Plombiers",
     description: isEn
       ? "200m² event venue in the heart of Paris 1st. Fashion shows, seminars, exceptional dinners in a unique industrial setting."
-      : "Lieu événementiel de 200m² au cœur de Paris 1er. Fashion shows, séminaires, dîners d'exception dans un cadre industriel unique.",
+      : "Lieu évènementiel de 200m² au cœur de Paris 1er. Fashion shows, séminaires, dîners d'exception dans un cadre industriel unique.",
     url: pageUrl,
     inLanguage,
     telephone: "+33688679981",

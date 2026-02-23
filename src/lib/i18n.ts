@@ -7,6 +7,13 @@ const slugMap: Record<string, string> = {
   appartement: "apartment",
   "mentions-legales": "legal-notice",
   "politique-confidentialite": "privacy-policy",
+  // Service slugs (under /services/)
+  "petit-dejeuners": "corporate-breakfasts",
+  "evenements-professionnels": "professional-events",
+  "diners-exception": "exceptional-dinners",
+  "evenements-culturels": "cultural-events",
+  "seminaires-formations": "seminars-training",
+  // fashion-shows is the same in both languages
 };
 
 const reverseSlugMap: Record<string, string> = Object.fromEntries(

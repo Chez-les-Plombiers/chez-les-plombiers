@@ -1,11 +1,11 @@
 {
   "header": {
     "menuItems": [
-      { "label": "The Pink Apartment", "href": "/en/apartment" },
       { "label": "Pricing", "external": true },
       { "label": "Technical Info", "href": "/en/#equipments" },
       { "label": "FAQ", "href": "/en/#faq" },
-      { "label": "Contact", "href": "/en/#contact" }
+      { "label": "Contact", "href": "/en/#contact" },
+      { "label": "The Pink Apartment", "href": "/en/apartment" }
     ],
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
@@ -22,36 +22,43 @@
   "services": {
     "title": "Our Services",
     "subtitle": "Tailored solutions for all your events",
+    "learnMore": "Learn more",
     "items": [
       {
         "icon": "Sparkles",
         "title": "Fashion Shows & Brand Events",
+        "slug": "fashion-shows",
         "description": "Showcase your collections in a striking architectural setting, designed as a visual statement. A raw, modular space ideal for fashion shows, showrooms and collection launches."
-      },
-      {
-        "icon": "Coffee",
-        "title": "Corporate Breakfast",
-        "description": "Welcome your teams or clients first thing in the morning in an inspiring setting. Corporate breakfast, press breakfast or creative brunch: a convivial moment to start the day differently."
       },
       {
         "icon": "Briefcase",
         "title": "Professional Events",
+        "slug": "professional-events",
         "description": "Seminars, product launches, conferences in a modular and fully equipped space."
       },
       {
         "icon": "Sparkles",
         "title": "Exceptional Dinners",
+        "slug": "exceptional-dinners",
         "description": "Grand tables and chef's dinners for 40 to 80 guests in a spectacular industrial setting. An immersive gastronomic experience designed as an event in its own right."
       },
       {
         "icon": "Music",
         "title": "Cultural Events",
+        "slug": "cultural-events",
         "description": "Openings, exhibitions and artistic performances in an inspiring venue designed as a contemporary gallery."
       },
       {
-        "icon": "Wine",
-        "title": "Premium Services",
-        "description": "Catering, decoration, sound systems: we coordinate all services for you."
+        "icon": "BookOpen",
+        "title": "Seminars & Training",
+        "slug": "seminars-training",
+        "description": "Corporate seminars, training days and workshops in an inspiring setting. A modular and fully equipped space designed to foster focus and creativity for your teams."
+      },
+      {
+        "icon": "Coffee",
+        "title": "Corporate Breakfasts",
+        "slug": "corporate-breakfasts",
+        "description": "Welcome your teams or clients first thing in the morning in an inspiring setting. Corporate breakfast, press breakfast or creative brunch: a convivial moment to start the day differently."
       }
     ]
   },
@@ -397,6 +404,260 @@
     "miseAJour": {
       "title": "Updates",
       "content": "This privacy policy may be updated at any time. Last updated: February 2026."
+    }
+  },
+  "servicePages": {
+    "backToHome": "Back to home",
+    "backToServices": "Our services",
+    "specsTitle": "Key figures",
+    "featuresTitle": "Key benefits",
+    "faqTitle": "Frequently asked questions",
+    "ctaTitle": "Let's plan your event",
+    "ctaDescription": "Contact us to discuss your project and receive a personalised quote.",
+    "ctaCalendly": "Book a visit",
+    "ctaWhatsApp": "WhatsApp",
+    "ctaEmail": "Email us",
+    "services": {
+      "fashion-shows": {
+        "title": "Fashion Shows & Brand Events",
+        "tagline": "Showcase in striking architectural surroundings.",
+        "description": "Chez Les Plombiers offers a raw, spectacular setting for fashion shows, showrooms and collection launches. With 200 m² of modular space, a 4.5-metre ceiling height and a 4.63 m cyclorama wall, our venue transforms into a fashion show stage or high-end showroom. Dimmable DMX lighting, dedicated 1 Gb/s fibre and 36 KvA three-phase power meet the most demanding technical requirements of fashion houses and event agencies.",
+        "specs": [
+          { "value": "200", "unit": "m²", "label": "Modular space" },
+          { "value": "4.5", "unit": "m", "label": "Ceiling height" },
+          { "value": "200", "unit": "", "label": "Cocktail capacity" },
+          { "value": "4.63", "unit": "m", "label": "Cyclorama width" }
+        ],
+        "features": [
+          "Unique brutalist architecture in the heart of Paris 1st",
+          "Professional dimmable DMX lighting — warm/cool and colours",
+          "4.63 m × 3.40 m cyclorama wall for projections and backdrops",
+          "Dedicated 1 Gb/s fibre for live broadcasting and streaming",
+          "36 KvA three-phase power for heavy technical installations",
+          "Easy technical access for setup and deliveries"
+        ],
+        "faq": [
+          {
+            "question": "What is the capacity for a fashion show?",
+            "answer": "The main space accommodates up to 200 guests in cocktail configuration and can be arranged with front row seating and backstage for a fashion show. The 4.5 m ceiling height allows for ambitious stage installations."
+          },
+          {
+            "question": "Can we host a showroom during Fashion Week?",
+            "answer": "Yes, we offer a Fashion Week package at €40,000 excl. VAT for a full week. The space is ideal for showrooms with modular curtains enabling 3 distinct areas."
+          },
+          {
+            "question": "What lighting equipment is available?",
+            "answer": "The venue features a complete DMX lighting system with dimmable warm/cool and colour lights, controlled via iPad. Support grids allow additional lighting to be rigged, connected to the existing DMX system."
+          },
+          {
+            "question": "Is there a backstage area?",
+            "answer": "The space is fully modular thanks to partition curtains. You can create a dedicated backstage area, and a cloakroom with rails and hangers is included. The 100 m² basement provides additional storage."
+          }
+        ],
+        "meta": {
+          "title": "Fashion Shows & Brand Events | Chez Les Plombiers Paris",
+          "description": "Fashion shows, showrooms and collection launches in a 200 m² brutalist space in Paris 1st. DMX lighting, 4.63 m cyclorama wall, Fashion Week packages.",
+          "ogDescription": "Fashion shows and brand events in a spectacular architectural setting in Paris 1st."
+        }
+      },
+      "corporate-breakfasts": {
+        "title": "Corporate Breakfasts",
+        "tagline": "Start the day in an inspiring setting.",
+        "description": "Welcome your teams or clients first thing in the morning in an extraordinary venue. Chez Les Plombiers transforms the traditional corporate breakfast into a memorable experience. Press breakfast, creative brunch or networking breakfast: our professional fitted kitchen and unique brutalist setting create the ideal atmosphere to start the day differently. Half-day rental (7am–1pm) is available Monday to Wednesday from €1,000 excl. VAT.",
+        "specs": [
+          { "value": "200", "unit": "m²", "label": "Modular space" },
+          { "value": "200", "unit": "", "label": "Max capacity" },
+          { "value": "7am", "unit": "", "label": "Access from" },
+          { "value": "€1,000", "unit": "excl.", "label": "Half-day from" }
+        ],
+        "features": [
+          "Fully equipped professional caterer kitchen",
+          "Professional bean-to-cup coffee machine included",
+          "Designer furniture for breakfast configurations",
+          "Half-day rental available Monday to Wednesday",
+          "Access from 6am for setup and preparations",
+          "On-site venue manager included in rental"
+        ],
+        "faq": [
+          {
+            "question": "How many guests can attend a breakfast event?",
+            "answer": "The space accommodates 20 to 200 guests depending on the configuration. For a seated breakfast, up to 80 places are available. In standing cocktail format, up to 200 guests."
+          },
+          {
+            "question": "Is the kitchen equipped for breakfast service?",
+            "answer": "Yes, the day kitchen includes a professional bean-to-cup coffee machine, microwave, complete tableware (cups, plates, cutlery, glasses) and a sink. The U-shaped caterer kitchen features an oven, refrigerator, freezer and dishwasher."
+          },
+          {
+            "question": "What is the rate for a breakfast event?",
+            "answer": "The half-day rate (7am–1pm) is available Monday to Wednesday at €1,000 excl. VAT. This formula is ideal for corporate breakfasts, press breakfasts and creative brunches."
+          }
+        ],
+        "meta": {
+          "title": "Corporate Breakfasts | Chez Les Plombiers Paris",
+          "description": "Corporate breakfasts, press breakfasts and creative brunches in a 200 m² brutalist venue in Paris 1st. Fitted kitchen, half-day from €1,000 excl. VAT.",
+          "ogDescription": "Corporate breakfasts and creative brunches in a unique brutalist setting in Paris 1st."
+        }
+      },
+      "professional-events": {
+        "title": "Professional Events",
+        "tagline": "A setting that elevates your ambitions.",
+        "description": "Product launches, conferences and team buildings in a modular and fully equipped space in the heart of Paris 1st. Chez Les Plombiers combines spectacular brutalist architecture with cutting-edge technology: 4K 8,800-lumen projector, Sonos and XLR audio system, dedicated symmetrical 1 Gb/s fibre. The 200 m² space with 4.5 m ceiling height can be reconfigured in minutes using modular curtains to create up to 3 distinct areas.",
+        "specs": [
+          { "value": "200", "unit": "m²", "label": "Modular space" },
+          { "value": "3", "unit": "", "label": "Configurable areas" },
+          { "value": "8,800", "unit": "lm", "label": "4K projector" },
+          { "value": "1", "unit": "Gb/s", "label": "Dedicated fibre" }
+        ],
+        "features": [
+          "4K Optima 8,800-lumen projector (HDMI, Apple TV, AirPlay)",
+          "Modular curtains creating up to 3 distinct areas",
+          "Dedicated symmetrical 1 Gb/s fibre + customisable guest Wi-Fi",
+          "Professional Sonos and XLR audio system",
+          "Reversible air conditioning for optimal comfort",
+          "Wheelchair accessible with accessible toilet"
+        ],
+        "faq": [
+          {
+            "question": "What is the conference capacity?",
+            "answer": "In conference configuration with seating, the space accommodates up to 150 guests. In post-conference cocktail format, up to 200 guests. Modular curtains allow you to create a main space and breakout rooms."
+          },
+          {
+            "question": "Can we do a presentation with video projection?",
+            "answer": "Yes, the venue features a 4K Optima 8,800-lumen projector onto the 4.63 m × 3.40 m cyclorama wall. Compatible with HDMI, Apple TV, AirPlay and Chromecast. The system is iPad-controlled for intuitive use."
+          },
+          {
+            "question": "Is the Wi-Fi sufficient for a professional event?",
+            "answer": "Absolutely. The dedicated fibre offers symmetrical 1 Gb/s. A guest Wi-Fi network with customisable SSID is available, plus RJ45 ports distributed throughout the space for wired connections."
+          },
+          {
+            "question": "What is the price range?",
+            "answer": "Rates range from €1,000 excl. VAT (Monday, Sunday) to €4,000 excl. VAT (Thursday). Half-day rental is available Monday to Wednesday at €1,000 excl. VAT. A personalised quote is prepared based on your specific needs."
+          }
+        ],
+        "meta": {
+          "title": "Professional Events | Chez Les Plombiers Paris",
+          "description": "Product launches, conferences and team buildings in a 200 m² brutalist space in Paris 1st. 4K projector, 1 Gb/s fibre, 3 modular areas.",
+          "ogDescription": "Professional events in a spectacular architectural setting in the heart of Paris 1st."
+        }
+      },
+      "exceptional-dinners": {
+        "title": "Exceptional Dinners",
+        "tagline": "An immersive gastronomic experience.",
+        "description": "Grand tables and chef's dinners for 40 to 80 guests in a spectacular industrial setting. Chez Les Plombiers offers an immersive gastronomic experience designed as an event in its own right. The professional U-shaped caterer kitchen, equipped with oven, dishwasher, ice machine, refrigerator and freezer, allows your caterer to work in optimal conditions. DMX lighting creates the perfect ambiance for each moment of the meal.",
+        "specs": [
+          { "value": "80", "unit": "", "label": "Max seated guests" },
+          { "value": "200", "unit": "", "label": "Cocktail capacity" },
+          { "value": "4.5", "unit": "m", "label": "Ceiling height" },
+          { "value": "36", "unit": "KvA", "label": "Three-phase power" }
+        ],
+        "features": [
+          "Fully equipped professional U-shaped caterer kitchen",
+          "Dimmable and programmable DMX ambient lighting",
+          "Capacity for 60 to 80 guests for seated dinners",
+          "Designer furniture included (tables, Pangea armchairs)",
+          "Professional ice machine and refrigerator",
+          "Entry and exit cleaning included"
+        ],
+        "faq": [
+          {
+            "question": "How many guests for a seated dinner?",
+            "answer": "The space accommodates 60 to 80 guests in seated dinner configuration. For a cocktail dinner, capacity increases to 200 guests. We can adapt the layout to your requirements."
+          },
+          {
+            "question": "Can we bring our own caterer?",
+            "answer": "Yes, you are free to choose your caterer. Our professional U-shaped kitchen provides an oven, dishwasher, ice machine, refrigerator, freezer and a sink. The space is designed to facilitate the work of any professional caterer."
+          },
+          {
+            "question": "Can the lighting be adapted for dinner?",
+            "answer": "Absolutely. The DMX lighting system is fully dimmable and programmable in warm, cool and colour modes. It allows you to create an intimate ambiance for dinner then switch to a festive mode for the after-party."
+          }
+        ],
+        "meta": {
+          "title": "Exceptional Dinners | Chez Les Plombiers Paris",
+          "description": "Chef's dinners and gastronomic tables for 40 to 80 guests in a 200 m² brutalist venue in Paris 1st. Equipped caterer kitchen, DMX lighting, designer furniture.",
+          "ogDescription": "Exceptional dinners and immersive gastronomic experiences in a brutalist setting in Paris 1st."
+        }
+      },
+      "cultural-events": {
+        "title": "Cultural Events",
+        "tagline": "An inspiring venue designed as a gallery.",
+        "description": "Openings, exhibitions and artistic performances in an inspiring venue designed as a contemporary gallery. The raw stone walls, Eiffel-style metal beams and natural light create the ideal setting for any artistic or cultural project. The 200 m² space with 4.5 m ceiling height offers complete freedom for hanging and installation. The 4.63 m cyclorama wall serves as a projection canvas for video installations and digital performances.",
+        "specs": [
+          { "value": "200", "unit": "m²", "label": "Exhibition space" },
+          { "value": "4.5", "unit": "m", "label": "Free height" },
+          { "value": "200", "unit": "", "label": "Opening capacity" },
+          { "value": "4.63", "unit": "m", "label": "Cyclorama wall" }
+        ],
+        "features": [
+          "Brutalist architecture — stone walls and metal beams",
+          "4.5 m ceiling height for ambitious installations",
+          "4.63 m × 3.40 m cyclorama wall for projections and video art",
+          "Adaptable DMX lighting for any scenography",
+          "Support grids for hanging artwork and lighting",
+          "Paris 1st location — between Les Halles and Pont Neuf"
+        ],
+        "faq": [
+          {
+            "question": "Is the space suitable for an art exhibition?",
+            "answer": "Yes, the venue is designed as a contemporary gallery. The raw stone walls and metal beams create a natural artistic setting. The 4.5 m ceiling height and support grids allow ambitious installations. DMX lighting adapts to any scenography."
+          },
+          {
+            "question": "Can artwork be hung on the walls?",
+            "answer": "Support grids are available for hanging lighting and artwork, connected to the DMX system. For stone walls, temporary hanging solutions are available on request."
+          },
+          {
+            "question": "Is there a space for video projections?",
+            "answer": "The 4.63 m × 3.40 m cyclorama wall is ideal for video projections and digital installations. The 4K Optima 8,800-lumen projector delivers an exceptional 4.53 m × 2.55 m image in 16:9."
+          }
+        ],
+        "meta": {
+          "title": "Cultural Events | Chez Les Plombiers Paris",
+          "description": "Openings, exhibitions and artistic performances in a 200 m² brutalist venue in Paris 1st. Industrial architecture, DMX lighting, 4.63 m cyclorama wall.",
+          "ogDescription": "Cultural events and exhibitions in an inspiring brutalist setting in the heart of Paris 1st."
+        }
+      },
+      "seminars-training": {
+        "title": "Seminars & Training",
+        "tagline": "A setting that stimulates creativity.",
+        "description": "Corporate seminars, training days and workshops in an inspiring off-the-beaten-track setting. Chez Les Plombiers offers a unique environment that breaks with the traditional seminar format. The 200 m² space divides into 3 distinct zones using modular curtains: plenary, workshops and relaxation area. The 4K projector, 1 Gb/s fibre and designer furniture create ideal conditions for productive and memorable days.",
+        "specs": [
+          { "value": "200", "unit": "m²", "label": "Modular space" },
+          { "value": "3", "unit": "", "label": "Distinct areas" },
+          { "value": "150", "unit": "", "label": "Seminar capacity" },
+          { "value": "1", "unit": "Gb/s", "label": "Dedicated fibre" }
+        ],
+        "features": [
+          "3 distinct areas created by modular curtains",
+          "4K projector and professional audio system",
+          "Symmetrical 1 Gb/s fibre + customisable guest Wi-Fi SSID",
+          "Day kitchen with professional bean-to-cup coffee machine",
+          "Reversible air conditioning for year-round comfort",
+          "Central location — Les Halles metro 3 min walk"
+        ],
+        "faq": [
+          {
+            "question": "How many people for a seminar?",
+            "answer": "In seminar configuration with seating, the space accommodates up to 150 people. Modular curtains allow you to create a plenary room and separate workshop spaces simultaneously."
+          },
+          {
+            "question": "Can we organise coffee breaks on-site?",
+            "answer": "Yes, the day kitchen features a professional bean-to-cup coffee machine, microwave and all necessary tableware (cups, glasses, plates). You can also bring in a caterer for lunch."
+          },
+          {
+            "question": "Is the venue easily accessible?",
+            "answer": "Chez Les Plombiers is located at 39 rue des Bourdonnais, Paris 1st, 3 min from Les Halles metro, 4 min from Châtelet and 3 min from Châtelet-Les Halles RER. The space is wheelchair accessible with an accessible toilet. Technical access facilitates deliveries."
+          },
+          {
+            "question": "What is the most economical half-day rate?",
+            "answer": "The half-day rate (7am–1pm or 1:30pm–7:30pm) is available Monday to Wednesday at €1,000 excl. VAT. This is the ideal formula for a morning training session or an afternoon team building."
+          }
+        ],
+        "meta": {
+          "title": "Seminars & Training | Chez Les Plombiers Paris",
+          "description": "Seminars, training and workshops in a 200 m² brutalist space in Paris 1st. 3 modular areas, 4K projector, 1 Gb/s fibre. Half-day from €1,000 excl. VAT.",
+          "ogDescription": "Seminars and training in a unique brutalist setting in the heart of Paris 1st."
+        }
+      }
     }
   },
   "notFound": {

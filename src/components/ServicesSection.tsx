@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Sparkles, Briefcase, Music, Wine, Coffee } from "lucide-react";
+import { Sparkles, Briefcase, Music, BookOpen, Coffee, ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import Link from "next/link";
 import { useI18n } from "@/lib/i18n-context";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -10,16 +11,19 @@ const iconMap: Record<string, LucideIcon> = {
   Coffee,
   Briefcase,
   Music,
-  Wine,
+  BookOpen,
 };
 
 export function ServicesSection() {
-  const { dict } = useI18n();
+  const { dict, locale } = useI18n();
   const services = dict.services as {
     title: string;
     subtitle: string;
-    items: { icon: string; title: string; description: string }[];
+    learnMore: string;
+    items: { icon: string; title: string; slug: string; description: string }[];
   };
+
+  const prefix = locale === "en" ? "/en" : "";
 
   return (
     <section id="services" className="py-24 lg:py-32 bg-white">
@@ -47,7 +51,7 @@ export function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative"
+                className="group relative flex flex-col"
               >
                 <div className="mb-8 relative">
                   <div className="w-16 h-16 border border-gray-300 flex items-center justify-center transition-all duration-500 group-hover:border-black group-hover:rotate-6">
@@ -58,9 +62,16 @@ export function ServicesSection() {
                 <h3 className="text-2xl lg:text-3xl mb-5 font-light tracking-[0.15em] uppercase transition-transform duration-500 group-hover:translate-x-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed tracking-wide transition-colors duration-300 group-hover:text-gray-900">
+                <p className="text-gray-600 leading-relaxed tracking-wide transition-colors duration-300 group-hover:text-gray-900 flex-1">
                   {service.description}
                 </p>
+                <Link
+                  href={`${prefix}/services/${service.slug}`}
+                  className="inline-flex items-center gap-2 mt-6 text-sm uppercase tracking-widest text-gray-500 hover:text-black transition-colors duration-300 self-end"
+                >
+                  {services.learnMore}
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
               </motion.div>
             );
           })}
