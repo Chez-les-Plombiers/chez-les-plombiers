@@ -10,7 +10,9 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "navLabel": "Navigation principale",
-    "mobileNavLabel": "Menu mobile"
+    "mobileNavLabel": "Menu mobile",
+    "ctaQuote": "Demander un devis",
+    "ctaVisit": "Booker une visite"
   },
   "hero": {
     "title": "Lieu Évènementiel Paris",

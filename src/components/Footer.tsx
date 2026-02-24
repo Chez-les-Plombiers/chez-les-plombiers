@@ -69,7 +69,9 @@ export function Footer() {
             <div className="space-y-3 text-sm text-gray-400">
               <p>
                 <a
-                  href="tel:+33688679981"
+                  href="https://wa.me/33688679981"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
                   06 88 67 99 81

@@ -10,7 +10,9 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "navLabel": "Main navigation",
-    "mobileNavLabel": "Mobile menu"
+    "mobileNavLabel": "Mobile menu",
+    "ctaQuote": "Request a quote",
+    "ctaVisit": "Book a visit"
   },
   "hero": {
     "title": "Event Venue Paris",

@@ -28,6 +28,8 @@ export function Header() {
     closeMenu: string;
     navLabel: string;
     mobileNavLabel: string;
+    ctaQuote: string;
+    ctaVisit: string;
   };
 
   const menuItems = header.menuItems.map((item) =>
@@ -93,6 +95,34 @@ export function Header() {
               </Link>
             ))}
 
+            {/* CTA buttons */}
+            <div className="flex items-center gap-3">
+              <a
+                href={EXTERNAL_LINKS.pricing}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`px-4 py-2 text-xs tracking-wider uppercase transition-all ${
+                  isTransparent
+                    ? "bg-white text-black hover:bg-white/90"
+                    : "bg-black text-white hover:bg-black/90"
+                }`}
+              >
+                {header.ctaQuote}
+              </a>
+              <a
+                href={EXTERNAL_LINKS.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`px-4 py-2 text-xs tracking-wider uppercase border transition-all ${
+                  isTransparent
+                    ? "border-white text-white hover:bg-white hover:text-black"
+                    : "border-black text-black hover:bg-black hover:text-white"
+                }`}
+              >
+                {header.ctaVisit}
+              </a>
+            </div>
+
             {/* Language switcher */}
             <Link
               href={switchPath}
@@ -152,6 +182,28 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+
+              {/* CTA buttons mobile */}
+              <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
+                <a
+                  href={EXTERNAL_LINKS.pricing}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block bg-black text-white px-4 py-3 text-sm tracking-wider uppercase text-center transition-colors hover:bg-black/90"
+                >
+                  {header.ctaQuote}
+                </a>
+                <a
+                  href={EXTERNAL_LINKS.calendly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block border border-black text-black px-4 py-3 text-sm tracking-wider uppercase text-center transition-colors hover:bg-black hover:text-white"
+                >
+                  {header.ctaVisit}
+                </a>
+              </div>
 
               {/* Language switcher mobile */}
               <Link
