@@ -143,14 +143,22 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 
 ## Architecture Homepage
 8 sections dans l'ordre :
-1. HeroSection (parallax + vidéo)
+1. HeroSection (parallax + vidéo + 2 CTA : "Demander un devis" → pricing + "Réserver une visite" → Calendly)
 2. ServicesSection (6 cards dont Petit Déjeuner)
 3. AboutSection (texte + stats + image)
 4. PortfolioSection (3 photos + hover)
 5. ReviewsSection (Google reviews carousel)
 6. EquipmentsSection (specs + downloads + plan)
 7. FaqSection (11 Q&A accordion)
-8. ContactSection (4 contacts + CTA Calendly)
+8. ContactSection (4 contacts + 2 CTA : "Demander un devis" → pricing + "Réserver une visite" → Calendly)
+
+### CTA buttons (Hero + Contact)
+- **"Demander un devis"** : bouton plein (bg-white) → `pricing.chezlesplombiers.fr` (external)
+- **"Réserver une visite"** : bouton outline (border-white) → `calendly.com/chezlesplombiers/visite` (external)
+- Labels i18n : `header.ctaQuote` / `hero.cta` dans les dictionnaires FR/EN
+
+### Footer
+- Numéro de téléphone → lien WhatsApp (`wa.me/33688679981`)
 
 ## Informations légales
 - Chez les Plombiers SAS — SIREN 928 788 157
