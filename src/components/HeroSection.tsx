@@ -11,6 +11,7 @@ export function HeroSection() {
   const { scrollY } = useScroll();
   const { dict } = useI18n();
   const hero = dict.hero as Record<string, string>;
+  const header = dict.header as { ctaQuote: string };
 
   const y = useTransform(scrollY, [0, 800], ["0%", "50%"]);
   const opacity = useTransform(scrollY, [0, 400, 800], [1, 0.8, 0.3]);
@@ -65,12 +66,21 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row items-center gap-4"
           >
+            <a
+              href={EXTERNAL_LINKS.pricing}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-12 py-4 bg-white text-black tracking-wider uppercase text-sm transition-all hover:bg-gray-100"
+            >
+              {header.ctaQuote}
+            </a>
             <a
               href={EXTERNAL_LINKS.calendly}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-12 py-4 bg-white text-black tracking-wider uppercase text-sm transition-all hover:bg-gray-100"
+              className="inline-block px-12 py-4 border border-white text-white tracking-wider uppercase text-sm transition-all hover:bg-white hover:text-black"
             >
               {hero.cta}
             </a>

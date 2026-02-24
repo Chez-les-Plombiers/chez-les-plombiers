@@ -17,6 +17,7 @@ const hrefs: (string | null)[] = [
 
 export function ContactSection() {
   const { dict } = useI18n();
+  const header = dict.header as { ctaQuote: string };
   const contact = dict.contact as {
     title: string;
     subtitle: string;
@@ -156,19 +157,34 @@ export function ContactSection() {
                   {contact.visit.description}
                 </p>
 
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <a
-                    href={EXTERNAL_LINKS.calendly}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-white text-black hover:bg-white/90 py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em] transition-all duration-300 text-center"
+                <div className="flex flex-col gap-3">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    {contact.visit.cta}
-                  </a>
-                </motion.div>
+                    <a
+                      href={EXTERNAL_LINKS.pricing}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-white text-black hover:bg-white/90 py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em] transition-all duration-300 text-center"
+                    >
+                      {header.ctaQuote}
+                    </a>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <a
+                      href={EXTERNAL_LINKS.calendly}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full border border-white text-white hover:bg-white hover:text-black py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em] transition-all duration-300 text-center"
+                    >
+                      {contact.visit.cta}
+                    </a>
+                  </motion.div>
+                </div>
 
                 <div className="mt-8 pt-8 border-t border-white/10">
                   <div className="text-sm text-white/50 uppercase tracking-[0.15em] mb-3">
