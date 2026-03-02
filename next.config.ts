@@ -31,19 +31,19 @@ const nextConfig: NextConfig = {
             value: "(?:.*\\.)?vercel\\.app",
           },
         ],
-        destination: "https://chezlesplombiers.fr/:path*",
+        destination: "https://www.chezlesplombiers.fr/:path*",
         permanent: true,
       },
-      // Redirect www to non-www
+      // Redirect non-www to www
       {
         source: "/:path*",
         has: [
           {
             type: "host",
-            value: "www.chezlesplombiers.fr",
+            value: "chezlesplombiers.fr",
           },
         ],
-        destination: "https://chezlesplombiers.fr/:path*",
+        destination: "https://www.chezlesplombiers.fr/:path*",
         permanent: true,
       },
       // Fix Google sitelinks pointing to non-existent pages

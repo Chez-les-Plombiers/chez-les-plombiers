@@ -283,6 +283,16 @@
       { "label": "FAQ", "href": "/#faq" },
       { "label": "Contact", "href": "/#contact" }
     ],
+    "servicesTitle": "Nos Espaces",
+    "servicesLinks": [
+      { "label": "Fashion Shows", "href": "/services/fashion-shows" },
+      { "label": "Évènements Pro", "href": "/services/evenements-professionnels" },
+      { "label": "Dîners d'Exception", "href": "/services/diners-exception" },
+      { "label": "Séminaires", "href": "/services/seminaires-formations" },
+      { "label": "Évènements Culturels", "href": "/services/evenements-culturels" },
+      { "label": "Petit-Déjeuners", "href": "/services/petit-dejeuners" },
+      { "label": "L'Appartement Rose", "href": "/appartement" }
+    ],
     "contactTitle": "Contact",
     "legalTitle": "Informations légales",
     "legalInfo": {
@@ -414,6 +424,7 @@
     "specsTitle": "En chiffres",
     "featuresTitle": "Points forts",
     "faqTitle": "Questions fréquentes",
+    "alsoDiscoverTitle": "Découvrez aussi",
     "ctaTitle": "Organisons votre évènement",
     "ctaDescription": "Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.",
     "ctaCalendly": "Réserver une visite",
@@ -457,9 +468,9 @@
           }
         ],
         "meta": {
-          "title": "Fashion Shows & Brand Events | Chez Les Plombiers Paris",
-          "description": "Défilés de mode, showrooms et lancements de collections dans un espace brutaliste de 200 m² à Paris 1er. Éclairage DMX, mur cyclo 4,63 m, forfait Fashion Week.",
-          "ogDescription": "Défilés de mode et brand events dans un cadre architectural spectaculaire à Paris 1er."
+          "title": "Location Salle Défilé Mode Paris — 200m² | Chez Les Plombiers",
+          "description": "Louez un lieu pour défilé de mode et showroom à Paris 1er : 200m², éclairage DMX, mur cyclo 4,63m. Forfait Fashion Week disponible. Visite gratuite.",
+          "ogDescription": "Lieu pour défilé de mode et showroom à Paris 1er. 200m², éclairage DMX professionnel, mur cyclo 4,63m."
         }
       },
       "petit-dejeuners": {
@@ -495,9 +506,9 @@
           }
         ],
         "meta": {
-          "title": "Petit-Déjeuners d'Entreprise | Chez Les Plombiers Paris",
-          "description": "Petit-déjeuners d'entreprise, breakfasts presse et brunchs créatifs dans un lieu brutaliste de 200 m² à Paris 1er. Cuisine équipée, demi-journée dès 1 000 € HT.",
-          "ogDescription": "Petit-déjeuners d'entreprise et brunchs créatifs dans un cadre brutaliste unique à Paris 1er."
+          "title": "Petit-Déjeuner d'Entreprise Paris 1er — Dès 1 000 € HT | Chez Les Plombiers",
+          "description": "Organisez un petit-déjeuner d'entreprise ou breakfast presse à Paris 1er. Cuisine équipée, 200m², demi-journée dès 1 000 € HT. Réservez une visite.",
+          "ogDescription": "Petit-déjeuner d'entreprise et breakfast presse dans un cadre brutaliste unique à Paris 1er. Dès 1 000 € HT."
         }
       },
       "evenements-professionnels": {
@@ -537,9 +548,9 @@
           }
         ],
         "meta": {
-          "title": "Évènements Professionnels | Chez Les Plombiers Paris",
-          "description": "Lancements de produits, conférences et team buildings dans un espace brutaliste de 200 m² à Paris 1er. Vidéoprojecteur 4K, fibre 1 Gb/s, 3 espaces modulables.",
-          "ogDescription": "Évènements professionnels dans un cadre architectural spectaculaire au cœur de Paris 1er."
+          "title": "Salle Évènement Professionnel Paris Centre — 200m² | Chez Les Plombiers",
+          "description": "Louez une salle pour événement professionnel à Paris 1er : séminaire, lancement produit, conférence. 200m², vidéoprojecteur 4K, 3 espaces modulables.",
+          "ogDescription": "Salle événement professionnel Paris 1er. 200m², vidéoprojecteur 4K, fibre 1 Gb/s, 3 espaces modulables."
         }
       },
       "diners-exception": {
@@ -575,9 +586,9 @@
           }
         ],
         "meta": {
-          "title": "Dîners d'Exception | Chez Les Plombiers Paris",
-          "description": "Dîners de chef et tables gastronomiques de 40 à 80 convives dans un lieu brutaliste de 200 m² à Paris 1er. Cuisine traiteur équipée, éclairage DMX, mobilier design.",
-          "ogDescription": "Dîners d'exception et expériences gastronomiques immersives dans un cadre brutaliste à Paris 1er."
+          "title": "Salle Dîner Privatisé Paris 1er — 40 à 80 Convives | Chez Les Plombiers",
+          "description": "Privatisez un lieu pour dîner d'exception à Paris 1er : 40 à 80 convives, cuisine traiteur équipée, éclairage DMX d'ambiance. Devis gratuit.",
+          "ogDescription": "Lieu privatisable pour dîner d'exception à Paris 1er. 40 à 80 convives, cuisine traiteur, éclairage DMX."
         }
       },
       "evenements-culturels": {
@@ -613,9 +624,9 @@
           }
         ],
         "meta": {
-          "title": "Évènements Culturels | Chez Les Plombiers Paris",
-          "description": "Vernissages, expositions et performances artistiques dans un lieu brutaliste de 200 m² à Paris 1er. Architecture industrielle, éclairage DMX, mur cyclo 4,63 m.",
-          "ogDescription": "Évènements culturels et expositions dans un cadre brutaliste inspirant au cœur de Paris 1er."
+          "title": "Lieu Exposition & Vernissage Paris 1er — 200m² | Chez Les Plombiers",
+          "description": "Louez un lieu pour exposition, vernissage ou performance artistique à Paris 1er. 200m², 4,5m sous plafond, éclairage DMX, mur cyclo 4,63m.",
+          "ogDescription": "Lieu pour exposition et vernissage à Paris 1er. 200m², architecture industrielle, éclairage DMX professionnel."
         }
       },
       "seminaires-formations": {
@@ -655,9 +666,9 @@
           }
         ],
         "meta": {
-          "title": "Séminaires & Formations | Chez Les Plombiers Paris",
-          "description": "Séminaires, formations et workshops dans un espace brutaliste de 200 m² à Paris 1er. 3 espaces modulables, vidéoprojecteur 4K, fibre 1 Gb/s. Demi-journée dès 1 000 € HT.",
-          "ogDescription": "Séminaires et formations dans un cadre brutaliste unique au cœur de Paris 1er."
+          "title": "Salle Séminaire Paris Centre — 150 Personnes | Chez Les Plombiers",
+          "description": "Louez une salle de séminaire atypique à Paris 1er : 150 personnes, 3 espaces modulables, vidéoprojecteur 4K. Demi-journée dès 1 000 € HT.",
+          "ogDescription": "Salle séminaire atypique Paris 1er. 150 personnes, 3 espaces modulables, vidéoprojecteur 4K, fibre 1 Gb/s."
         }
       }
     }
@@ -673,16 +684,16 @@
     "cta": "Réessayer"
   },
   "metadata": {
-    "homeTitle": "Chez Les Plombiers | Lieu Évènementiel Paris 1er",
-    "homeDescription": "Espace évènementiel de 200m² au cœur de Paris. Fashion shows, séminaires, dîners d'exception. 39 rue des Bourdonnais, 75001.",
-    "homeOgDescription": "Espace évènementiel de 200m² au cœur de Paris. Fashion shows, séminaires, dîners d'exception.",
-    "appartementTitle": "L'Appartement Rose | Chez Les Plombiers Paris",
-    "appartementDescription": "Un espace intime de 100m² pour 50 personnes. Shootings photo, interviews, réunions confidentielles. Cuisine équipée, mobilier design, Wi-Fi haut débit.",
-    "appartementOgDescription": "Un espace intime et lumineux, conçu pour des moments d'exception.",
+    "homeTitle": "Lieu Évènementiel Paris 1er — 200m² | Chez Les Plombiers",
+    "homeDescription": "Louez un espace évènementiel unique de 200m² à Paris 1er : séminaires, dîners, défilés, cocktails. Dès 1 000 € HT/jour. Visite gratuite sur rendez-vous.",
+    "homeOgDescription": "Espace évènementiel de 200m² au cœur de Paris 1er. Fashion shows, séminaires, dîners d'exception. Dès 1 000 € HT/jour.",
+    "appartementTitle": "Salle Intimiste 100m² Paris 1er — L'Appartement Rose | Chez Les Plombiers",
+    "appartementDescription": "Espace privatisable de 100m² pour shootings photo, réunions confidentielles et interviews à Paris 1er. Cuisine équipée, mobilier design. Devis gratuit.",
+    "appartementOgDescription": "Espace intimiste de 100m² pour shootings, réunions et interviews à Paris 1er. Cuisine équipée, mobilier design.",
     "mentionsTitle": "Mentions Légales | Chez Les Plombiers",
-    "mentionsDescription": "Mentions légales du site chezlesplombiers.fr",
+    "mentionsDescription": "Mentions légales du site www.chezlesplombiers.fr — Chez les Plombiers SAS, lieu évènementiel Paris 1er.",
     "privacyTitle": "Politique de Confidentialité | Chez Les Plombiers",
-    "privacyDescription": "Politique de confidentialité et protection des données personnelles du site chezlesplombiers.fr"
+    "privacyDescription": "Politique de confidentialité et protection des données personnelles — Chez Les Plombiers, lieu évènementiel Paris 1er."
   },
   "skipToContent": "Aller au contenu principal",
   "calendarDisclaimer": "Les tarifs affichés sont fournis à titre indicatif et sont susceptibles d'évoluer selon la demande. Merci de nous contacter via WhatsApp pour confirmation."

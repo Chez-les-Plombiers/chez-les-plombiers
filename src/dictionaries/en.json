@@ -283,6 +283,16 @@
       { "label": "FAQ", "href": "/en/#faq" },
       { "label": "Contact", "href": "/en/#contact" }
     ],
+    "servicesTitle": "Our Spaces",
+    "servicesLinks": [
+      { "label": "Fashion Shows", "href": "/en/services/fashion-shows" },
+      { "label": "Professional Events", "href": "/en/services/professional-events" },
+      { "label": "Exceptional Dinners", "href": "/en/services/exceptional-dinners" },
+      { "label": "Seminars & Training", "href": "/en/services/seminars-training" },
+      { "label": "Cultural Events", "href": "/en/services/cultural-events" },
+      { "label": "Corporate Breakfasts", "href": "/en/services/corporate-breakfasts" },
+      { "label": "The Pink Apartment", "href": "/en/apartment" }
+    ],
     "contactTitle": "Contact",
     "legalTitle": "Legal Information",
     "legalInfo": {
@@ -414,6 +424,7 @@
     "specsTitle": "Key figures",
     "featuresTitle": "Key benefits",
     "faqTitle": "Frequently asked questions",
+    "alsoDiscoverTitle": "Explore more",
     "ctaTitle": "Let's plan your event",
     "ctaDescription": "Contact us to discuss your project and receive a personalised quote.",
     "ctaCalendly": "Book a visit",
@@ -457,9 +468,9 @@
           }
         ],
         "meta": {
-          "title": "Fashion Shows & Brand Events | Chez Les Plombiers Paris",
-          "description": "Fashion shows, showrooms and collection launches in a 200 m² brutalist space in Paris 1st. DMX lighting, 4.63 m cyclorama wall, Fashion Week packages.",
-          "ogDescription": "Fashion shows and brand events in a spectacular architectural setting in Paris 1st."
+          "title": "Fashion Show Venue Paris — 200m² | Chez Les Plombiers",
+          "description": "Rent a fashion show and showroom venue in Paris 1st: 200m², DMX lighting, 4.63m cyclorama wall. Fashion Week packages available. Free visit.",
+          "ogDescription": "Fashion show and showroom venue in Paris 1st. 200m², professional DMX lighting, 4.63m cyclorama wall."
         }
       },
       "corporate-breakfasts": {
@@ -495,9 +506,9 @@
           }
         ],
         "meta": {
-          "title": "Corporate Breakfasts | Chez Les Plombiers Paris",
-          "description": "Corporate breakfasts, press breakfasts and creative brunches in a 200 m² brutalist venue in Paris 1st. Fitted kitchen, half-day from €1,000 excl. VAT.",
-          "ogDescription": "Corporate breakfasts and creative brunches in a unique brutalist setting in Paris 1st."
+          "title": "Corporate Breakfast Venue Paris 1st — From €1,000 | Chez Les Plombiers",
+          "description": "Host a corporate breakfast or press event in Paris 1st. Fitted kitchen, 200m², half-day from €1,000 excl. VAT. Book a free visit.",
+          "ogDescription": "Corporate breakfast and press event venue in Paris 1st. Fitted kitchen, 200m². From €1,000 excl. VAT."
         }
       },
       "professional-events": {
@@ -537,9 +548,9 @@
           }
         ],
         "meta": {
-          "title": "Professional Events | Chez Les Plombiers Paris",
-          "description": "Product launches, conferences and team buildings in a 200 m² brutalist space in Paris 1st. 4K projector, 1 Gb/s fibre, 3 modular areas.",
-          "ogDescription": "Professional events in a spectacular architectural setting in the heart of Paris 1st."
+          "title": "Professional Event Venue Paris Centre — 200m² | Chez Les Plombiers",
+          "description": "Rent a venue for corporate events in Paris 1st: seminars, product launches, conferences. 200m², 4K projector, 3 modular areas.",
+          "ogDescription": "Corporate event venue in Paris 1st. 200m², 4K projector, 1 Gb/s fibre, 3 modular areas."
         }
       },
       "exceptional-dinners": {
@@ -575,9 +586,9 @@
           }
         ],
         "meta": {
-          "title": "Exceptional Dinners | Chez Les Plombiers Paris",
-          "description": "Chef's dinners and gastronomic tables for 40 to 80 guests in a 200 m² brutalist venue in Paris 1st. Equipped caterer kitchen, DMX lighting, designer furniture.",
-          "ogDescription": "Exceptional dinners and immersive gastronomic experiences in a brutalist setting in Paris 1st."
+          "title": "Private Dining Venue Paris 1st — 40 to 80 Guests | Chez Les Plombiers",
+          "description": "Hire a private dining venue in Paris 1st: 40 to 80 guests, fitted caterer kitchen, DMX ambient lighting. Free quote.",
+          "ogDescription": "Private dining venue in Paris 1st. 40 to 80 guests, fitted caterer kitchen, DMX lighting."
         }
       },
       "cultural-events": {
@@ -613,9 +624,9 @@
           }
         ],
         "meta": {
-          "title": "Cultural Events | Chez Les Plombiers Paris",
-          "description": "Openings, exhibitions and artistic performances in a 200 m² brutalist venue in Paris 1st. Industrial architecture, DMX lighting, 4.63 m cyclorama wall.",
-          "ogDescription": "Cultural events and exhibitions in an inspiring brutalist setting in the heart of Paris 1st."
+          "title": "Exhibition & Gallery Venue Paris 1st — 200m² | Chez Les Plombiers",
+          "description": "Rent a venue for exhibitions, openings and art performances in Paris 1st. 200m², 4.5m ceiling, DMX lighting, 4.63m cyclorama wall.",
+          "ogDescription": "Exhibition and gallery venue in Paris 1st. 200m², industrial architecture, professional DMX lighting."
         }
       },
       "seminars-training": {
@@ -655,9 +666,9 @@
           }
         ],
         "meta": {
-          "title": "Seminars & Training | Chez Les Plombiers Paris",
-          "description": "Seminars, training and workshops in a 200 m² brutalist space in Paris 1st. 3 modular areas, 4K projector, 1 Gb/s fibre. Half-day from €1,000 excl. VAT.",
-          "ogDescription": "Seminars and training in a unique brutalist setting in the heart of Paris 1st."
+          "title": "Seminar Venue Paris Centre — 150 Guests | Chez Les Plombiers",
+          "description": "Rent a unique seminar venue in Paris 1st: 150 guests, 3 modular areas, 4K projector. Half-day from €1,000 excl. VAT.",
+          "ogDescription": "Unique seminar venue in Paris 1st. 150 guests, 3 modular areas, 4K projector, 1 Gb/s fibre."
         }
       }
     }
@@ -673,16 +684,16 @@
     "cta": "Try again"
   },
   "metadata": {
-    "homeTitle": "Chez Les Plombiers | Event Venue Paris 1st",
-    "homeDescription": "200m² event space in the heart of Paris. Fashion shows, seminars, exceptional dinners. 39 rue des Bourdonnais, 75001.",
-    "homeOgDescription": "200m² event space in the heart of Paris. Fashion shows, seminars, exceptional dinners.",
-    "appartementTitle": "The Pink Apartment | Chez Les Plombiers Paris",
-    "appartementDescription": "An intimate 100m² space for 50 guests. Photo shoots, interviews, confidential meetings. Fitted kitchen, designer furniture, high-speed Wi-Fi.",
-    "appartementOgDescription": "An intimate and bright space, designed for exceptional moments.",
+    "homeTitle": "Event Venue Paris 1st — 200m² | Chez Les Plombiers",
+    "homeDescription": "Rent a unique 200m² event space in Paris 1st: seminars, dinners, fashion shows, cocktails. From €1,000/day excl. VAT. Free visit on request.",
+    "homeOgDescription": "200m² event space in the heart of Paris 1st. Fashion shows, seminars, exceptional dinners. From €1,000/day excl. VAT.",
+    "appartementTitle": "Intimate 100m² Venue Paris 1st — The Pink Apartment | Chez Les Plombiers",
+    "appartementDescription": "Private 100m² space for photo shoots, confidential meetings and interviews in Paris 1st. Fitted kitchen, designer furniture. Free quote.",
+    "appartementOgDescription": "Intimate 100m² space for photo shoots, meetings and interviews in Paris 1st. Fitted kitchen, designer furniture.",
     "mentionsTitle": "Legal Notice | Chez Les Plombiers",
-    "mentionsDescription": "Legal notice for the chezlesplombiers.fr website",
+    "mentionsDescription": "Legal notice for www.chezlesplombiers.fr — Chez les Plombiers SAS, event venue Paris 1st.",
     "privacyTitle": "Privacy Policy | Chez Les Plombiers",
-    "privacyDescription": "Privacy policy and personal data protection for the chezlesplombiers.fr website"
+    "privacyDescription": "Privacy policy and personal data protection — Chez Les Plombiers, event venue Paris 1st."
   },
   "skipToContent": "Skip to main content",
   "calendarDisclaimer": "Prices shown are indicative and subject to change based on demand. Please contact us via WhatsApp for confirmation."

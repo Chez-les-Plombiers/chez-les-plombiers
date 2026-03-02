@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "ClaudeBot", allow: "/" },
       { userAgent: "anthropic-ai", allow: "/" },
     ],
-    sitemap: "https://chezlesplombiers.fr/sitemap.xml",
+    sitemap: "https://www.chezlesplombiers.fr/sitemap.xml",
   };
 }

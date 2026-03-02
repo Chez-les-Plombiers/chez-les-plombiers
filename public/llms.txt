@@ -2,30 +2,30 @@
 > Lieu événementiel d'exception à Paris 1er — 200 m² d'architecture brutaliste dans un ancien atelier de plomberie du XVIIe siècle, entre Les Halles et le Pont Neuf.
 
 ## Langues / Languages
-- Français : https://chezlesplombiers.fr
-- English: https://chezlesplombiers.fr/en
+- Français : https://www.chezlesplombiers.fr
+- English: https://www.chezlesplombiers.fr/en
 
 ## Pages principales (FR)
-- [Accueil](https://chezlesplombiers.fr): Espace événementiel, services, équipements techniques, FAQ
-- [L'Appartement Rose](https://chezlesplombiers.fr/appartement): Espace intime de 100 m², jusqu'à 50 personnes, idéal pour shootings et réunions
+- [Accueil](https://www.chezlesplombiers.fr): Espace événementiel, services, équipements techniques, FAQ
+- [L'Appartement Rose](https://www.chezlesplombiers.fr/appartement): Espace intime de 100 m², jusqu'à 50 personnes, idéal pour shootings et réunions
 - [Tarifs et disponibilités](https://pricing.chezlesplombiers.fr): Calendrier de pricing dynamique avec réservation en ligne
-- [Fashion Shows & Brand Events](https://chezlesplombiers.fr/services/fashion-shows): Défilés, showrooms et lancements de collections dans un espace brutaliste de 200 m²
-- [Petit-Déjeuners](https://chezlesplombiers.fr/services/petit-dejeuners): Petits-déjeuners d'entreprise, breakfasts presse et brunchs créatifs
-- [Évènements Professionnels](https://chezlesplombiers.fr/services/evenements-professionnels): Lancements de produits, conférences et team buildings
-- [Dîners d'Exception](https://chezlesplombiers.fr/services/diners-exception): Dîners de chef de 40 à 80 convives
-- [Évènements Culturels](https://chezlesplombiers.fr/services/evenements-culturels): Vernissages, expositions et performances artistiques
-- [Séminaires & Formations](https://chezlesplombiers.fr/services/seminaires-formations): Séminaires, formations et workshops
+- [Fashion Shows & Brand Events](https://www.chezlesplombiers.fr/services/fashion-shows): Défilés, showrooms et lancements de collections dans un espace brutaliste de 200 m²
+- [Petit-Déjeuners](https://www.chezlesplombiers.fr/services/petit-dejeuners): Petits-déjeuners d'entreprise, breakfasts presse et brunchs créatifs
+- [Évènements Professionnels](https://www.chezlesplombiers.fr/services/evenements-professionnels): Lancements de produits, conférences et team buildings
+- [Dîners d'Exception](https://www.chezlesplombiers.fr/services/diners-exception): Dîners de chef de 40 à 80 convives
+- [Évènements Culturels](https://www.chezlesplombiers.fr/services/evenements-culturels): Vernissages, expositions et performances artistiques
+- [Séminaires & Formations](https://www.chezlesplombiers.fr/services/seminaires-formations): Séminaires, formations et workshops
 
 ## Main pages (EN)
-- [Home](https://chezlesplombiers.fr/en): Event venue, services, technical equipment, FAQ
-- [The Pink Apartment](https://chezlesplombiers.fr/en/apartment): Intimate 100 m² space, up to 50 guests, ideal for shoots and meetings
+- [Home](https://www.chezlesplombiers.fr/en): Event venue, services, technical equipment, FAQ
+- [The Pink Apartment](https://www.chezlesplombiers.fr/en/apartment): Intimate 100 m² space, up to 50 guests, ideal for shoots and meetings
 - [Pricing & availability](https://pricing.chezlesplombiers.fr): Dynamic pricing calendar with online booking
-- [Fashion Shows & Brand Events](https://chezlesplombiers.fr/en/services/fashion-shows): Fashion shows, showrooms and collection launches in a 200 m² brutalist space
-- [Corporate Breakfasts](https://chezlesplombiers.fr/en/services/corporate-breakfasts): Corporate breakfasts, press breakfasts and creative brunches
-- [Professional Events](https://chezlesplombiers.fr/en/services/professional-events): Product launches, conferences and team buildings
-- [Exceptional Dinners](https://chezlesplombiers.fr/en/services/exceptional-dinners): Chef's dinners for 40 to 80 guests
-- [Cultural Events](https://chezlesplombiers.fr/en/services/cultural-events): Openings, exhibitions and artistic performances
-- [Seminars & Training](https://chezlesplombiers.fr/en/services/seminars-training): Seminars, training and workshops
+- [Fashion Shows & Brand Events](https://www.chezlesplombiers.fr/en/services/fashion-shows): Fashion shows, showrooms and collection launches in a 200 m² brutalist space
+- [Corporate Breakfasts](https://www.chezlesplombiers.fr/en/services/corporate-breakfasts): Corporate breakfasts, press breakfasts and creative brunches
+- [Professional Events](https://www.chezlesplombiers.fr/en/services/professional-events): Product launches, conferences and team buildings
+- [Exceptional Dinners](https://www.chezlesplombiers.fr/en/services/exceptional-dinners): Chef's dinners for 40 to 80 guests
+- [Cultural Events](https://www.chezlesplombiers.fr/en/services/cultural-events): Openings, exhibitions and artistic performances
+- [Seminars & Training](https://www.chezlesplombiers.fr/en/services/seminars-training): Seminars, training and workshops
 
 ## Informations clés / Key information
 - Adresse / Address: 39 rue des Bourdonnais, 75001 Paris, France

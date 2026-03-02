@@ -2,14 +2,17 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { useI18n } from "@/lib/i18n-context";
+import { SERVICE_FR_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 
 const VIDEO_URL =
   "https://www.dropbox.com/scl/fi/9m9pjrj837t1r19d7mp31/appartement-Rose-Slow.MP4?rlkey=dbwf002s38d9cmzoxts33wzmh&raw=1";
 
 export function AppartementContent() {
-  const { dict } = useI18n();
+  const { dict, locale } = useI18n();
   const appart = dict.appartement as {
     title: string;
     heroDescription: string;
@@ -134,6 +137,40 @@ export function AppartementContent() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-links to services */}
+      <section className="py-16 lg:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <h2 className="text-2xl lg:text-3xl font-light mb-10 tracking-tight">
+            {locale === "en" ? "Explore our main space" : "Découvrez notre espace principal"}
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {SERVICE_FR_SLUGS.slice(0, 6).map((frSlug) => {
+              const servicePages = dict.servicePages as {
+                services: Record<string, { title: string }>;
+              };
+              const dictKey = locale === "en" ? getServiceEnSlug(frSlug) : frSlug;
+              const service = servicePages.services[dictKey];
+              if (!service) return null;
+              const href = locale === "en"
+                ? `/en/services/${getServiceEnSlug(frSlug)}`
+                : `/services/${frSlug}`;
+              return (
+                <Link
+                  key={frSlug}
+                  href={href}
+                  className="group flex items-center justify-between border border-gray-200 bg-white p-5 hover:border-black transition-colors duration-300"
+                >
+                  <span className="text-sm font-medium uppercase tracking-wider group-hover:text-black transition-colors">
+                    {service.title}
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

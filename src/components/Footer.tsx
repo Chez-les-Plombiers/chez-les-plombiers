@@ -11,6 +11,8 @@ export function Footer() {
     description: string;
     navTitle: string;
     navLinks: { label: string; href: string }[];
+    servicesTitle: string;
+    servicesLinks: { label: string; href: string }[];
     contactTitle: string;
     legalTitle: string;
     legalInfo: Record<string, string>;
@@ -28,7 +30,7 @@ export function Footer() {
   return (
     <footer className="bg-black text-white py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <Image
               src="/images/logo/logo-white.png"
@@ -51,6 +53,23 @@ export function Footer() {
               className="space-y-3"
             >
               {footer.navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="block text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <h4 className="text-sm uppercase tracking-wider mb-4">
+              {footer.servicesTitle}
+            </h4>
+            <nav className="space-y-3">
+              {footer.servicesLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}

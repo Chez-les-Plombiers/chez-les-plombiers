@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
-import { SERVICE_IMAGES, getServiceEnSlug } from "@/lib/services-data";
+import { SERVICE_IMAGES, SERVICE_FR_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
 interface ServiceSpec {
@@ -44,6 +44,7 @@ interface ServicePagesDict {
   specsTitle: string;
   featuresTitle: string;
   faqTitle: string;
+  alsoDiscoverTitle: string;
   ctaTitle: string;
   ctaDescription: string;
   ctaCalendly: string;
@@ -249,6 +250,44 @@ export function ServicePageContent({ slug }: { slug: string }) {
             {service.faq.map((item, i) => (
               <FaqItem key={i} item={item} index={i} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-links to other services */}
+      <section className="py-16 lg:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <h2 className="text-2xl lg:text-3xl font-light mb-10 tracking-tight">
+            {servicePages.alsoDiscoverTitle}
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {SERVICE_FR_SLUGS.filter((s) => s !== slug).map((otherSlug) => {
+              const otherDictKey = locale === "en" ? getServiceEnSlug(otherSlug) : otherSlug;
+              const otherService = servicePages.services[otherDictKey];
+              if (!otherService) return null;
+              const otherHref = locale === "en"
+                ? `/en/services/${getServiceEnSlug(otherSlug)}`
+                : `/services/${otherSlug}`;
+              return (
+                <Link
+                  key={otherSlug}
+                  href={otherHref}
+                  className="group border border-gray-200 bg-white p-5 hover:border-black transition-colors duration-300"
+                >
+                  <span className="text-sm font-medium uppercase tracking-wider group-hover:text-black transition-colors">
+                    {otherService.title}
+                  </span>
+                </Link>
+              );
+            })}
+            <Link
+              href={locale === "en" ? "/en/apartment" : "/appartement"}
+              className="group border border-gray-200 bg-white p-5 hover:border-black transition-colors duration-300"
+            >
+              <span className="text-sm font-medium uppercase tracking-wider group-hover:text-black transition-colors">
+                {locale === "en" ? "The Pink Apartment" : "L'Appartement Rose"}
+              </span>
+            </Link>
           </div>
         </div>
       </section>
