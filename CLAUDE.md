@@ -11,6 +11,8 @@ Site vitrine bilingue (FR/EN) pour **Chez Les Plombiers**, lieu événementiel d
 - **Motion** (framer-motion v12+ via `motion/react`) pour les animations
 - **Lucide React** pour les icônes
 - **Vercel** hosting, auto-deploy sur push main
+- **DNS**: Gandi (anycast.me NS), A `76.76.21.21`, CNAME www → `cname.vercel-dns.com`
+- **Domaines Vercel**: `www.chezlesplombiers.fr` (principal) + `chezlesplombiers.fr` (redirect → www)
 
 ## Commandes
 ```bash
@@ -116,17 +118,22 @@ public/
 - Instagram: https://instagram.com/chezlesplombiers
 
 ## SEO/GEO
+- **SITE_URL**: `https://www.chezlesplombiers.fr` (canonical www, non-www redirige 308)
 - **hreflang**: chaque page a `alternates.languages: { fr, en }` dans `generateMetadata`
-- **Canonical**: par langue (chaque version est sa propre canonical)
+- **Canonical**: par langue (chaque version est sa propre canonical), toutes sous `www.`
 - **og:locale**: `fr_FR` / `en_US`
 - **JSON-LD**: EventVenue, Organization, LocalBusiness, FAQPage (homepage) + Service, BreadcrumbList, FAQPage (pages services) — tous avec `inLanguage`
 - **robots.txt**: AI bots (GPTBot, ClaudeBot, PerplexityBot) autorisés
-- **sitemap.xml**: 20 URLs (10 FR + 10 EN) avec alternates
+- **sitemap.xml**: 20 URLs (10 FR + 10 EN) avec alternates, toutes sous `www.`
 - Open Graph + Twitter Cards sur toutes les pages
-- **llms.txt**: fichier de guidage AI crawlers bilingue
+- **llms.txt**: fichier de guidage AI crawlers bilingue (URLs sous `www.`)
+- **Meta titles**: keyword-first (ex: "Lieu Évènementiel Paris 1er — 200m² | Chez Les Plombiers")
+- **Meta descriptions**: data points + CTA (ex: "Dès 1 000 € HT/jour. Visite gratuite sur rendez-vous.")
 - **FAQ visible**: 11 Q&A en accordion, synchronisée avec le JSON-LD FAQPage
 - **Alt texts enrichis**: descriptions contextuelles sur toutes les images
 - **Downloads fonctionnels**: plan (floor-plan.png) + plaquette PDF hébergés sur Vercel
+- **Maillage interne**: cross-links entre pages services, liens Appartement ↔ services, colonne services dans Footer
+- **Redirections legacy**: /visiter, /histoire, /infos → 301 vers anchors homepage (ancien site Figma)
 
 ## Pages Services (/services/[slug])
 6 services, chacun avec page FR + EN (12 pages total) :
@@ -137,28 +144,31 @@ public/
 - Évènements Culturels (`evenements-culturels` / `cultural-events`)
 - Séminaires & Formations (`seminaires-formations` / `seminars-training`)
 
-Structure chaque page : Hero (image + overlay) → Description + Specs (2 cols) → Features (3 cols) → ReviewsSection (réutilisé) → FAQ accordion (3-5 Q&A spécifiques) → CTA (Calendly + WhatsApp + email)
+Structure chaque page : Hero (image + overlay) → Description + Specs (2 cols) → Features (3 cols) → ReviewsSection (réutilisé) → FAQ accordion (3-5 Q&A spécifiques) → Cross-links (5 autres services + Appartement Rose) → CTA (Calendly + WhatsApp + email)
 
 Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners` → `/en/services/corporate-breakfasts`)
 
 ## Architecture Homepage
 8 sections dans l'ordre :
-1. HeroSection (parallax + vidéo + 2 CTA : "Demander un devis" → pricing + "Réserver une visite" → Calendly)
+1. HeroSection (parallax + vidéo + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
 2. ServicesSection (6 cards dont Petit Déjeuner)
 3. AboutSection (texte + stats + image)
 4. PortfolioSection (3 photos + hover)
 5. ReviewsSection (Google reviews carousel)
 6. EquipmentsSection (specs + downloads + plan)
 7. FaqSection (11 Q&A accordion)
-8. ContactSection (4 contacts + 2 CTA : "Demander un devis" → pricing + "Réserver une visite" → Calendly)
+8. ContactSection (4 contacts + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
 
 ### CTA buttons (Hero + Contact)
-- **"Demander un devis"** : bouton plein (bg-white) → `pricing.chezlesplombiers.fr` (external)
+- **"Voir les tarifs"** : bouton plein (bg-white) → `pricing.chezlesplombiers.fr` (external)
 - **"Réserver une visite"** : bouton outline (border-white) → `calendly.com/chezlesplombiers/visite` (external)
 - Labels i18n : `header.ctaQuote` / `hero.cta` dans les dictionnaires FR/EN
 
-### Footer
-- Numéro de téléphone → lien WhatsApp (`wa.me/33688679981`)
+### Footer (4 colonnes)
+- Colonne 1 : Logo + description
+- Colonne 2 : Navigation (Accueil, Appartement, Mentions, Confidentialité)
+- Colonne 3 : Nos Espaces (6 services + Appartement Rose)
+- Colonne 4 : Contact (WhatsApp `wa.me/33688679981`, email, adresse)
 
 ## Informations légales
 - Chez les Plombiers SAS — SIREN 928 788 157
