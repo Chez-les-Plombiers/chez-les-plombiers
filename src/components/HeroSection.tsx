@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { useI18n } from "@/lib/i18n-context";
+import { RippleButton } from "@/components/ui/ripple-button";
 
 export function HeroSection() {
   const containerRef = useRef(null);
@@ -68,22 +69,24 @@ export function HeroSection() {
             transition={{ duration: 1.2, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a
+            <RippleButton
               href={EXTERNAL_LINKS.pricing}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-12 py-4 bg-white text-black tracking-wider uppercase text-sm transition-all hover:bg-gray-100"
+              rippleColor="bg-black"
+              className="px-12 py-4 bg-white text-black tracking-wider uppercase text-sm hover:text-white"
             >
               {header.ctaQuote}
-            </a>
-            <a
+            </RippleButton>
+            <RippleButton
               href={EXTERNAL_LINKS.calendly}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-12 py-4 border border-white text-white tracking-wider uppercase text-sm transition-all hover:bg-white hover:text-black"
+              rippleColor="bg-white"
+              className="px-12 py-4 border border-white text-white tracking-wider uppercase text-sm hover:text-black"
             >
               {hero.cta}
-            </a>
+            </RippleButton>
           </motion.div>
         </div>
 
