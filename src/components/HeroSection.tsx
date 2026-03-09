@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { useI18n } from "@/lib/i18n-context";
@@ -9,10 +9,29 @@ import { RippleButton } from "@/components/ui/ripple-button";
 
 export function HeroSection() {
   const containerRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollY } = useScroll();
   const { dict } = useI18n();
   const hero = dict.hero as Record<string, string>;
   const header = dict.header as { ctaQuote: string };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay blocked — start on first user interaction
+        const startVideo = () => {
+          video.play();
+          document.removeEventListener("touchstart", startVideo);
+          document.removeEventListener("click", startVideo);
+        };
+        document.addEventListener("touchstart", startVideo, { once: true });
+        document.addEventListener("click", startVideo, { once: true });
+      });
+    }
+  }, []);
 
   const y = useTransform(scrollY, [0, 800], ["0%", "50%"]);
   const opacity = useTransform(scrollY, [0, 400, 800], [1, 0.8, 0.3]);
@@ -25,6 +44,7 @@ export function HeroSection() {
     >
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%]">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
