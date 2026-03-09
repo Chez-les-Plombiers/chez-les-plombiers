@@ -79,7 +79,7 @@ src/components/      # Tous "use client" — utilisent useI18n()
   HeroSection.tsx    # Parallax + entrance animations
   ServicesSection.tsx # 6 cards + hover effects + liens "En savoir plus" → /services/{slug}
   AboutSection.tsx   # Texte + stats + image (dangerouslySetInnerHTML pour <strong>)
-  PortfolioSection.tsx # 3 images + hover overlay
+  PortfolioSection.tsx # 12 photos bento grid (3x8) + lightbox + download (JSZip)
   ReviewsSection.tsx # Google reviews carousel (textes FR, labels i18n) — réutilisé sur pages services
   EquipmentsSection.tsx # Specs techniques + floor plan + downloads
   FaqSection.tsx     # 11 Q&A accordion (données depuis dictionnaires)
@@ -101,6 +101,7 @@ src/dictionaries/
 
 public/
   llms.txt           # Guide AI crawlers bilingue (GPTBot, ClaudeBot, PerplexityBot)
+  photos/            # 12 photos portfolio (JPG, ~250-430 KB chacune, 1800px wide)
   documents/
     plaquette-chez-les-plombiers.pdf  # Plaquette commerciale (2.3 MB)
 ```
@@ -150,11 +151,11 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 
 ## Architecture Homepage
 8 sections dans l'ordre :
-1. HeroSection (parallax + vidéo + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
+1. HeroSection (parallax + vidéo autoplay avec fallback touch mobile + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
 2. ServicesSection (6 cards dont Petit Déjeuner)
 3. AboutSection (texte + stats + image)
-4. PortfolioSection (3 photos + hover)
-5. ReviewsSection (Google reviews carousel)
+4. PortfolioSection ("Découvrez Notre Lieu" — 12 photos bento grid + lightbox + download individuel/ZIP)
+5. ReviewsSection (Google reviews grille 3x3 + lien "Voir plus d'avis sur Google")
 6. EquipmentsSection (specs + downloads + plan)
 7. FaqSection (11 Q&A accordion)
 8. ContactSection (4 contacts + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
