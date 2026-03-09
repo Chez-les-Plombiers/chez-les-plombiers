@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useRef, useState, useEffect, useCallback } from "react";
 import { useI18n } from "@/lib/i18n-context";
 
 interface Review {
@@ -32,6 +31,7 @@ const reviews: Review[] = [
 ];
 
 const displayReviews = reviews.filter((r) => r.text.length > 0);
+const GRID_COUNT = 9;
 
 function StarIcon({ className }: { className?: string }) {
   return (
@@ -62,38 +62,13 @@ function GoogleLogo({ className }: { className?: string }) {
   );
 }
 
+const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/Chez+Les+Plombiers/@48.8602622,2.3454547,17z/data=!4m8!3m7!1s0x47e66e1e25b0e72f:0xb0e740c06d8e3c89!8m2!3d48.8602622!4d2.3480296!9m1!1b1!16s%2Fg%2F11y3glbp14";
+
 export function ReviewsSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
   const { dict } = useI18n();
   const rev = dict.reviews as Record<string, string>;
 
-  const checkScroll = useCallback(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 10);
-    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
-  }, []);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    checkScroll();
-    el.addEventListener("scroll", checkScroll, { passive: true });
-    window.addEventListener("resize", checkScroll);
-    return () => {
-      el.removeEventListener("scroll", checkScroll);
-      window.removeEventListener("resize", checkScroll);
-    };
-  }, [checkScroll]);
-
-  const scroll = (direction: "left" | "right") => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const cardWidth = el.querySelector("div")?.offsetWidth ?? 360;
-    el.scrollBy({ left: direction === "left" ? -cardWidth - 24 : cardWidth + 24, behavior: "smooth" });
-  };
+  const gridReviews = displayReviews.slice(0, GRID_COUNT);
 
   const initial = (name: string) => {
     const parts = name.split(" ");
@@ -127,63 +102,54 @@ export function ReviewsSection() {
           </div>
         </motion.div>
 
-        <div className="relative">
-          <button
-            onClick={() => scroll("left")}
-            className={`absolute -left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-200 flex items-center justify-center transition-all duration-300 hover:bg-black hover:text-white hover:border-black ${canScrollLeft ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-            aria-label={rev.prevLabel}
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-          </button>
-
-          <button
-            onClick={() => scroll("right")}
-            className={`absolute -right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-200 flex items-center justify-center transition-all duration-300 hover:bg-black hover:text-white hover:border-black ${canScrollRight ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-            aria-label={rev.nextLabel}
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </button>
-
-          <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            role="region"
-            aria-label={rev.carouselLabel}
-          >
-            {displayReviews.map((review, index) => (
-              <motion.div
-                key={review.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.3) }}
-                className="flex-shrink-0 w-[320px] md:w-[360px] snap-start"
-              >
-                <div className="bg-white border border-gray-100 p-8 h-full flex flex-col transition-all duration-300 hover:border-gray-300 hover:shadow-sm">
-                  <Stars count={review.rating} label={rev.starsLabel} />
-                  <p className="text-gray-700 leading-relaxed mt-5 mb-6 flex-1 text-[15px]">
-                    &ldquo;{review.text}&rdquo;
-                  </p>
-                  <div className="flex items-center gap-3 pt-5 border-t border-gray-100">
-                    <div className="w-10 h-10 bg-black text-white flex items-center justify-center text-sm font-medium uppercase">
-                      {initial(review.name)}
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium">{review.name}</div>
-                      <div className="text-xs text-gray-500">{review.date}</div>
-                    </div>
-                    <GoogleLogo className="w-5 h-5 ml-auto" />
+        {/* Grid 3x3 on desktop, single column on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {gridReviews.map((review, index) => (
+            <motion.div
+              key={review.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.3) }}
+            >
+              <div className="bg-white border border-gray-100 p-8 h-full flex flex-col transition-all duration-300 hover:border-gray-300 hover:shadow-sm">
+                <Stars count={review.rating} label={rev.starsLabel} />
+                <p className="text-gray-700 leading-relaxed mt-5 mb-6 flex-1 text-[15px]">
+                  &ldquo;{review.text}&rdquo;
+                </p>
+                <div className="flex items-center gap-3 pt-5 border-t border-gray-100">
+                  <div className="w-10 h-10 bg-black text-white flex items-center justify-center text-sm font-medium uppercase">
+                    {initial(review.name)}
                   </div>
+                  <div>
+                    <div className="text-sm font-medium">{review.name}</div>
+                    <div className="text-xs text-gray-500">{review.date}</div>
+                  </div>
+                  <GoogleLogo className="w-5 h-5 ml-auto" />
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* See more on Google */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-center mt-12"
+        >
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-black transition-colors duration-200"
+          >
+            <GoogleLogo className="w-4 h-4" />
+            {rev.seeMoreOnGoogle}
+          </a>
+        </motion.div>
       </div>
     </section>
   );

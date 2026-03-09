@@ -105,7 +105,8 @@
     "starsLabel": "stars out of 5",
     "prevLabel": "Previous reviews",
     "nextLabel": "Next reviews",
-    "carouselLabel": "Google customer reviews"
+    "carouselLabel": "Google customer reviews",
+    "seeMoreOnGoogle": "See more reviews on Google"
   },
   "equipments": {
     "title": "Equipment & Information",

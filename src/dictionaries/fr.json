@@ -105,7 +105,8 @@
     "starsLabel": "étoiles sur 5",
     "prevLabel": "Avis précédents",
     "nextLabel": "Avis suivants",
-    "carouselLabel": "Avis clients Google"
+    "carouselLabel": "Avis clients Google",
+    "seeMoreOnGoogle": "Voir plus d'avis sur Google"
   },
   "equipments": {
     "title": "Équipements & Informations",
