@@ -78,25 +78,25 @@
     "imageAlt": "Interior of Chez Les Plombiers — 200 m² brutalist event space with stone walls and metal beams, Paris 1st"
   },
   "portfolio": {
-    "title": "Our Venue",
-    "subtitle": "Discover our different spaces",
-    "projects": [
-      {
-        "title": "Main Space",
-        "category": "Conference Room",
-        "alt": "200 m² main space with Eiffel-style metal beams and raw walls — Chez Les Plombiers, Paris 1st"
-      },
-      {
-        "title": "Modular Space",
-        "category": "Work Area",
-        "alt": "Modular space with partition curtains for seminars and conferences — Chez Les Plombiers, Paris 1st"
-      },
-      {
-        "title": "Fitted Kitchen",
-        "category": "Catering Service",
-        "alt": "Professional caterer kitchen with oven, dishwasher and ice machine — Chez Les Plombiers, Paris 1st"
-      }
-    ]
+    "title": "Discover Our Venue",
+    "subtitle": "200 m² of modular spaces in the heart of Paris. Raw walls, metal beams, polished concrete floors — a unique industrial setting with fitted kitchen, large-format projector and designer furniture.",
+    "downloadAll": "Download all",
+    "downloading": "Preparing...",
+    "download": "Download",
+    "alts": {
+      "canapeRose": "Curved pink sofa and raw industrial walls — lounge area at Chez Les Plombiers, Paris 1st",
+      "panorama": "Panoramic view of the 200 m² main hall with pink sofa and video projection — Chez Les Plombiers",
+      "projectionRideaux": "Video projection on cyclorama with partition curtains — modular space at Chez Les Plombiers",
+      "projectionNetflix": "Large-format projection screen in the main hall — Chez Les Plombiers, Paris 1st",
+      "cyclorama": "Projection cyclorama with exposed stone walls — Chez Les Plombiers",
+      "canapePortes": "Pink sofa and industrial workshop doors — lounge at Chez Les Plombiers",
+      "cuisineOuverte": "Open kitchen with countertop and curtains — Chez Les Plombiers, Paris 1st",
+      "entreeVerriere": "Entrance with workshop glass wall, designer armchairs and kitchenette — Chez Les Plombiers",
+      "fauteuilsDesign": "Colourful designer armchairs and coffee table with curtain backdrop — Chez Les Plombiers salon",
+      "espaceTravail": "Workspace with desk, designer chairs and kitchenette — Chez Les Plombiers",
+      "cuisineEquipee": "U-shaped catering kitchen with Siemens oven and ITV ice machine — Chez Les Plombiers",
+      "sanitaires": "Designer washroom with double basin and mirror — Chez Les Plombiers, Paris 1st"
+    }
   },
   "reviews": {
     "googleLabel": "Google Reviews",

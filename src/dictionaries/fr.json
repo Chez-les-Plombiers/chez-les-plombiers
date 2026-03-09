@@ -78,25 +78,25 @@
     "imageAlt": "Intérieur de Chez Les Plombiers — espace évènementiel brutaliste de 200 m² avec murs en pierre et poutres métalliques, Paris 1er"
   },
   "portfolio": {
-    "title": "Notre Lieu",
-    "subtitle": "Découvrez nos différents espaces",
-    "projects": [
-      {
-        "title": "Grand Espace Principal",
-        "category": "Salle de Conférence",
-        "alt": "Grand espace principal de 200 m² avec poutres métalliques style Eiffel et murs bruts — Chez Les Plombiers, Paris 1er"
-      },
-      {
-        "title": "Espace Modulable",
-        "category": "Zone de Travail",
-        "alt": "Espace modulable avec rideaux séparateurs pour séminaires et conférences — Chez Les Plombiers, Paris 1er"
-      },
-      {
-        "title": "Cuisine Équipée",
-        "category": "Service Traiteur",
-        "alt": "Cuisine traiteur professionnelle équipée four, lave-vaisselle et machine à glaçons — Chez Les Plombiers, Paris 1er"
-      }
-    ]
+    "title": "Découvrez Notre Lieu",
+    "subtitle": "200 m² d'espaces modulables au cœur de Paris. Murs bruts, poutres métalliques, sol béton ciré — un cadre industriel unique avec cuisine équipée, vidéoprojecteur grand format et mobilier design.",
+    "downloadAll": "Tout télécharger",
+    "downloading": "Préparation...",
+    "download": "Télécharger",
+    "alts": {
+      "canapeRose": "Canapé rose courbe et murs bruts industriels — espace lounge Chez Les Plombiers, Paris 1er",
+      "panorama": "Vue panoramique de la grande salle de 200 m² avec canapé rose et vidéoprojection — Chez Les Plombiers",
+      "projectionRideaux": "Vidéoprojection sur cyclorama et rideaux séparateurs — espace modulable Chez Les Plombiers",
+      "projectionNetflix": "Écran de projection grand format dans la salle principale — Chez Les Plombiers, Paris 1er",
+      "cyclorama": "Cyclorama de projection avec murs en pierre apparente — Chez Les Plombiers",
+      "canapePortes": "Canapé rose et portes d'atelier industrielles — lounge Chez Les Plombiers",
+      "cuisineOuverte": "Cuisine ouverte avec plan de travail et rideaux — Chez Les Plombiers, Paris 1er",
+      "entreeVerriere": "Entrée avec verrière d'atelier, fauteuils design et kitchenette — Chez Les Plombiers",
+      "fauteuilsDesign": "Fauteuils design colorés et table basse devant rideaux — salon Chez Les Plombiers",
+      "espaceTravail": "Espace de travail avec bureau, chaises design et kitchenette — Chez Les Plombiers",
+      "cuisineEquipee": "Cuisine traiteur en U avec four Siemens et machine à glaçons ITV — Chez Les Plombiers",
+      "sanitaires": "Sanitaires design avec double vasque et miroir — Chez Les Plombiers, Paris 1er"
+    }
   },
   "reviews": {
     "googleLabel": "Avis Google",
