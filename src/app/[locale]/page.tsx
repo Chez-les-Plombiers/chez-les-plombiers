@@ -9,6 +9,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { InstagramFeed } from "@/components/InstagramFeed";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SITE_URL } from "@/lib/metadata";
 import { getDictionary, type Locale } from "@/lib/i18n";
@@ -195,6 +196,7 @@ export default async function Home({
         <ReviewsSection />
         <EquipmentsSection />
         <FaqSection />
+        <InstagramFeed />
         <ContactSection />
       </main>
       <Footer />
