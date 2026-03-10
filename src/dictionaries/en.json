@@ -1,11 +1,26 @@
 {
   "header": {
     "menuItems": [
-      { "label": "Pricing", "external": true },
-      { "label": "Technical Info", "href": "/en/#equipments" },
-      { "label": "FAQ", "href": "/en/#faq" },
-      { "label": "Contact", "href": "/en/#contact" },
-      { "label": "The Pink Apartment", "href": "/en/apartment" }
+      {
+        "label": "Pricing",
+        "external": true
+      },
+      {
+        "label": "Technical Info",
+        "href": "/en/#equipments"
+      },
+      {
+        "label": "FAQ",
+        "href": "/en/#faq"
+      },
+      {
+        "label": "Contact",
+        "href": "/en/#contact"
+      },
+      {
+        "label": "The Pink Apartment",
+        "href": "/en/apartment"
+      }
     ],
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
@@ -72,8 +87,14 @@
       "Our team supports you in creating unforgettable moments with personalised service and attention to every detail."
     ],
     "stats": [
-      { "value": "200m²", "label": "Modular space" },
-      { "value": "200", "label": "Max capacity" }
+      {
+        "value": "200m²",
+        "label": "Modular space"
+      },
+      {
+        "value": "200",
+        "label": "Max capacity"
+      }
     ],
     "imageAlt": "Interior of Chez Les Plombiers — 200 m² brutalist event space with stone walls and metal beams, Paris 1st"
   },
@@ -140,7 +161,9 @@
       },
       {
         "title": "Restrooms",
-        "items": ["2 toilets (accessible & standard) + 2 basins"]
+        "items": [
+          "2 toilets (accessible & standard) + 2 basins"
+        ]
       },
       {
         "title": "Audio-visual",
@@ -191,7 +214,10 @@
       },
       {
         "title": "Entrances",
-        "specs": ["Entrance 1: W 2.20 m / H 3.50 m", "Entrance 2: W 1.40 m"]
+        "specs": [
+          "Entrance 1: W 2.20 m / H 3.50 m",
+          "Entrance 2: W 1.40 m"
+        ]
       },
       {
         "title": "Electrical & Rigging",
@@ -256,10 +282,23 @@
     "title": "Let's Bring Your Project to Life",
     "subtitle": "Let's meet to imagine your exceptional event together",
     "info": [
-      { "label": "Address", "value": "39 rue des Bourdonnais", "subValue": "75001 Paris" },
-      { "label": "Email", "value": "contact@chezlesplombiers.fr" },
-      { "label": "WhatsApp", "value": "+336 88 67 99 81" },
-      { "label": "Instagram", "value": "@chezlesplombiers" }
+      {
+        "label": "Address",
+        "value": "39 rue des Bourdonnais",
+        "subValue": "75001 Paris"
+      },
+      {
+        "label": "Email",
+        "value": "contact@chezlesplombiers.fr"
+      },
+      {
+        "label": "WhatsApp",
+        "value": "+336 88 67 99 81"
+      },
+      {
+        "label": "Instagram",
+        "value": "@chezlesplombiers"
+      }
     ],
     "visit": {
       "title": "Visit & Discover",
@@ -267,9 +306,18 @@
       "cta": "Book an Appointment",
       "hoursTitle": "Visit hours",
       "hours": [
-        { "day": "Monday — Friday", "time": "10am — 6pm" },
-        { "day": "Saturday", "time": "By appointment" },
-        { "day": "Sunday", "time": "Closed" }
+        {
+          "day": "Monday — Friday",
+          "time": "10am — 6pm"
+        },
+        {
+          "day": "Saturday",
+          "time": "By appointment"
+        },
+        {
+          "day": "Sunday",
+          "time": "Closed"
+        }
       ]
     }
   },
@@ -277,22 +325,61 @@
     "description": "Exceptional event venue in Paris. A unique space for your private and professional events.",
     "navTitle": "Navigation",
     "navLinks": [
-      { "label": "Home", "href": "/en" },
-      { "label": "Services", "href": "/en/#services" },
-      { "label": "About", "href": "/en/#about" },
-      { "label": "Our Venue", "href": "/en/#portfolio" },
-      { "label": "FAQ", "href": "/en/#faq" },
-      { "label": "Contact", "href": "/en/#contact" }
+      {
+        "label": "Home",
+        "href": "/en"
+      },
+      {
+        "label": "Services",
+        "href": "/en/#services"
+      },
+      {
+        "label": "About",
+        "href": "/en/#about"
+      },
+      {
+        "label": "Our Venue",
+        "href": "/en/#portfolio"
+      },
+      {
+        "label": "FAQ",
+        "href": "/en/#faq"
+      },
+      {
+        "label": "Contact",
+        "href": "/en/#contact"
+      }
     ],
     "servicesTitle": "Our Spaces",
     "servicesLinks": [
-      { "label": "Fashion Shows", "href": "/en/services/fashion-shows" },
-      { "label": "Professional Events", "href": "/en/services/professional-events" },
-      { "label": "Exceptional Dinners", "href": "/en/services/exceptional-dinners" },
-      { "label": "Seminars & Training", "href": "/en/services/seminars-training" },
-      { "label": "Cultural Events", "href": "/en/services/cultural-events" },
-      { "label": "Corporate Breakfasts", "href": "/en/services/corporate-breakfasts" },
-      { "label": "The Pink Apartment", "href": "/en/apartment" }
+      {
+        "label": "Fashion Shows",
+        "href": "/en/services/fashion-shows"
+      },
+      {
+        "label": "Professional Events",
+        "href": "/en/services/professional-events"
+      },
+      {
+        "label": "Exceptional Dinners",
+        "href": "/en/services/exceptional-dinners"
+      },
+      {
+        "label": "Seminars & Training",
+        "href": "/en/services/seminars-training"
+      },
+      {
+        "label": "Cultural Events",
+        "href": "/en/services/cultural-events"
+      },
+      {
+        "label": "Corporate Breakfasts",
+        "href": "/en/services/corporate-breakfasts"
+      },
+      {
+        "label": "The Pink Apartment",
+        "href": "/en/apartment"
+      }
     ],
     "contactTitle": "Contact",
     "legalTitle": "Legal Information",
@@ -319,7 +406,11 @@
     "surfaceLabel": "Surface",
     "capacityLabel": "Guests",
     "equipmentsTitle": "Included equipment",
-    "equipments": ["Fitted kitchen", "Designer furniture", "High-speed Wi-Fi"],
+    "equipments": [
+      "Fitted kitchen",
+      "Designer furniture",
+      "High-speed Wi-Fi"
+    ],
     "heroImageAlt": "The Pink Apartment — intimate 100 m² space for shoots and meetings, Chez Les Plombiers Paris 1st",
     "detailImageAlt": "Interior of The Pink Apartment — natural light, designer furniture and intimate ambiance, Chez Les Plombiers Paris"
   },
@@ -437,10 +528,26 @@
         "tagline": "Showcase in striking architectural surroundings.",
         "description": "Chez Les Plombiers offers a raw, spectacular setting for fashion shows, showrooms and collection launches. With 200 m² of modular space, a 4.5-metre ceiling height and a 4.63 m cyclorama wall, our venue transforms into a fashion show stage or high-end showroom. Dimmable DMX lighting, dedicated 1 Gb/s fibre and 36 KvA three-phase power meet the most demanding technical requirements of fashion houses and event agencies.",
         "specs": [
-          { "value": "200", "unit": "m²", "label": "Modular space" },
-          { "value": "4.5", "unit": "m", "label": "Ceiling height" },
-          { "value": "200", "unit": "", "label": "Cocktail capacity" },
-          { "value": "4.63", "unit": "m", "label": "Cyclorama width" }
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Modular space"
+          },
+          {
+            "value": "4.5",
+            "unit": "m",
+            "label": "Ceiling height"
+          },
+          {
+            "value": "200",
+            "unit": "",
+            "label": "Cocktail capacity"
+          },
+          {
+            "value": "4.63",
+            "unit": "m",
+            "label": "Cyclorama width"
+          }
         ],
         "features": [
           "Unique brutalist architecture in the heart of Paris 1st",
@@ -472,17 +579,34 @@
           "title": "Fashion Show Venue Paris — 200m² | Chez Les Plombiers",
           "description": "Rent a fashion show and showroom venue in Paris 1st: 200m², DMX lighting, 4.63m cyclorama wall. Fashion Week packages available. Free visit.",
           "ogDescription": "Fashion show and showroom venue in Paris 1st. 200m², professional DMX lighting, 4.63m cyclorama wall."
-        }
+        },
+        "descriptionExtended": "Located at 39 rue des Bourdonnais, in the heart of Paris 1st arrondissement, steps from the Louvre and Les Halles, Chez Les Plombiers is the go-to venue for fashion shows and brand events in Paris. During Fashion Week, our space hosts collection presentations, press days and pop-up showrooms. Modular curtains create a dedicated backstage area with wardrobe racks, while the main space transforms into a runway with front row seating. Ground-floor technical access makes scenic equipment deliveries easy, and the 100 m² basement provides extra storage for your collections and gear."
       },
       "corporate-breakfasts": {
         "title": "Corporate Breakfasts",
         "tagline": "Start the day in an inspiring setting.",
         "description": "Welcome your teams or clients first thing in the morning in an extraordinary venue. Chez Les Plombiers transforms the traditional corporate breakfast into a memorable experience. Press breakfast, creative brunch or networking breakfast: our professional fitted kitchen and unique brutalist setting create the ideal atmosphere to start the day differently. Half-day rental (7am–1pm) is available Monday to Wednesday from €1,000 excl. VAT.",
         "specs": [
-          { "value": "200", "unit": "m²", "label": "Modular space" },
-          { "value": "200", "unit": "", "label": "Max capacity" },
-          { "value": "7am", "unit": "", "label": "Access from" },
-          { "value": "€1,000", "unit": "excl.", "label": "Half-day from" }
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Modular space"
+          },
+          {
+            "value": "200",
+            "unit": "",
+            "label": "Max capacity"
+          },
+          {
+            "value": "7am",
+            "unit": "",
+            "label": "Access from"
+          },
+          {
+            "value": "€1,000",
+            "unit": "excl.",
+            "label": "Half-day from"
+          }
         ],
         "features": [
           "Fully equipped professional caterer kitchen",
@@ -510,17 +634,34 @@
           "title": "Corporate Breakfast Venue Paris 1st — From €1,000 | Chez Les Plombiers",
           "description": "Host a corporate breakfast or press event in Paris 1st. Fitted kitchen, 200m², half-day from €1,000 excl. VAT. Book a free visit.",
           "ogDescription": "Corporate breakfast and press event venue in Paris 1st. Fitted kitchen, 200m². From €1,000 excl. VAT."
-        }
+        },
+        "descriptionExtended": "Ideally located in Paris 1st, just minutes from Châtelet and Les Halles stations, Chez Les Plombiers is the perfect venue for a professional breakfast that stands out. Whether it's a press breakfast for a product launch, a team brunch to boost cohesion, or a networking breakfast among executives, our 200 m² space adapts to every format. The professional U-shaped kitchen, equipped with an oven, refrigerator, freezer and dishwasher, lets your caterer or team prepare food on-site. Natural lighting and the brutalist architectural setting create a warm, inspiring atmosphere from the early hours."
       },
       "professional-events": {
         "title": "Professional Events",
         "tagline": "A setting that elevates your ambitions.",
         "description": "Product launches, conferences and team buildings in a modular and fully equipped space in the heart of Paris 1st. Chez Les Plombiers combines spectacular brutalist architecture with cutting-edge technology: 4K 8,800-lumen projector, Sonos and XLR audio system, dedicated symmetrical 1 Gb/s fibre. The 200 m² space with 4.5 m ceiling height can be reconfigured in minutes using modular curtains to create up to 3 distinct areas.",
         "specs": [
-          { "value": "200", "unit": "m²", "label": "Modular space" },
-          { "value": "3", "unit": "", "label": "Configurable areas" },
-          { "value": "8,800", "unit": "lm", "label": "4K projector" },
-          { "value": "1", "unit": "Gb/s", "label": "Dedicated fibre" }
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Modular space"
+          },
+          {
+            "value": "3",
+            "unit": "",
+            "label": "Configurable areas"
+          },
+          {
+            "value": "8,800",
+            "unit": "lm",
+            "label": "4K projector"
+          },
+          {
+            "value": "1",
+            "unit": "Gb/s",
+            "label": "Dedicated fibre"
+          }
         ],
         "features": [
           "4K Optima 8,800-lumen projector (HDMI, Apple TV, AirPlay)",
@@ -552,17 +693,34 @@
           "title": "Professional Event Venue Paris Centre — 200m² | Chez Les Plombiers",
           "description": "Rent a venue for corporate events in Paris 1st: seminars, product launches, conferences. 200m², 4K projector, 3 modular areas.",
           "ogDescription": "Corporate event venue in Paris 1st. 200m², 4K projector, 1 Gb/s fibre, 3 modular areas."
-        }
+        },
+        "descriptionExtended": "In the heart of Paris 1st, between the Louvre and Forum des Halles, Chez Les Plombiers reinvents professional events in a unique architectural setting. Whether you're organising a product launch for 200 cocktail guests, a press conference filmed in 4K, or a creative team building, our venue adapts in minutes. Separator curtains configure up to 3 distinct zones: a plenary facing the cyclorama wall, a networking area with bar, and an intimate corner for press meetings. An on-site technical manager assists with audiovisual setup, sound and lighting."
       },
       "exceptional-dinners": {
         "title": "Exceptional Dinners",
         "tagline": "An immersive gastronomic experience.",
         "description": "Grand tables and chef's dinners for 40 to 80 guests in a spectacular industrial setting. Chez Les Plombiers offers an immersive gastronomic experience designed as an event in its own right. The professional U-shaped caterer kitchen, equipped with oven, dishwasher, ice machine, refrigerator and freezer, allows your caterer to work in optimal conditions. DMX lighting creates the perfect ambiance for each moment of the meal.",
         "specs": [
-          { "value": "80", "unit": "", "label": "Max seated guests" },
-          { "value": "200", "unit": "", "label": "Cocktail capacity" },
-          { "value": "4.5", "unit": "m", "label": "Ceiling height" },
-          { "value": "36", "unit": "KvA", "label": "Three-phase power" }
+          {
+            "value": "80",
+            "unit": "",
+            "label": "Max seated guests"
+          },
+          {
+            "value": "200",
+            "unit": "",
+            "label": "Cocktail capacity"
+          },
+          {
+            "value": "4.5",
+            "unit": "m",
+            "label": "Ceiling height"
+          },
+          {
+            "value": "36",
+            "unit": "KvA",
+            "label": "Three-phase power"
+          }
         ],
         "features": [
           "Fully equipped professional U-shaped caterer kitchen",
@@ -590,17 +748,34 @@
           "title": "Private Dining Venue Paris 1st — 40 to 80 Guests | Chez Les Plombiers",
           "description": "Hire a private dining venue in Paris 1st: 40 to 80 guests, fitted caterer kitchen, DMX ambient lighting. Free quote.",
           "ogDescription": "Private dining venue in Paris 1st. 40 to 80 guests, fitted caterer kitchen, DMX lighting."
-        }
+        },
+        "descriptionExtended": "In the heart of Paris 1st arrondissement, Chez Les Plombiers turns every dinner into an exceptional event. The brutalist architecture with exposed stone walls, Eiffel-style metal beams and 4.5-metre ceiling height creates a unique atmosphere for gala dinners, fundraising evenings or brand dinners. The space suits both large 80-guest banquets and more intimate 40-person formats with island seating. Modular curtains separate the welcome cocktail area from the main dining room. Your caterer will find everything needed in our professional kitchen for impeccable service."
       },
       "cultural-events": {
         "title": "Cultural Events",
         "tagline": "An inspiring venue designed as a gallery.",
         "description": "Openings, exhibitions and artistic performances in an inspiring venue designed as a contemporary gallery. The raw stone walls, Eiffel-style metal beams and natural light create the ideal setting for any artistic or cultural project. The 200 m² space with 4.5 m ceiling height offers complete freedom for hanging and installation. The 4.63 m cyclorama wall serves as a projection canvas for video installations and digital performances.",
         "specs": [
-          { "value": "200", "unit": "m²", "label": "Exhibition space" },
-          { "value": "4.5", "unit": "m", "label": "Free height" },
-          { "value": "200", "unit": "", "label": "Opening capacity" },
-          { "value": "4.63", "unit": "m", "label": "Cyclorama wall" }
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Exhibition space"
+          },
+          {
+            "value": "4.5",
+            "unit": "m",
+            "label": "Free height"
+          },
+          {
+            "value": "200",
+            "unit": "",
+            "label": "Opening capacity"
+          },
+          {
+            "value": "4.63",
+            "unit": "m",
+            "label": "Cyclorama wall"
+          }
         ],
         "features": [
           "Brutalist architecture — stone walls and metal beams",
@@ -628,17 +803,34 @@
           "title": "Exhibition & Gallery Venue Paris 1st — 200m² | Chez Les Plombiers",
           "description": "Rent a venue for exhibitions, openings and art performances in Paris 1st. 200m², 4.5m ceiling, DMX lighting, 4.63m cyclorama wall.",
           "ogDescription": "Exhibition and gallery venue in Paris 1st. 200m², industrial architecture, professional DMX lighting."
-        }
+        },
+        "descriptionExtended": "Located at 39 rue des Bourdonnais in Paris 1st, just steps from the Centre Pompidou and the Louvre, Chez Les Plombiers is an exhibition and cultural events venue that blends industrial heritage with contemporary creation. The raw stone walls and metal beams naturally dialogue with artworks, whether painting, sculpture, photography or digital installations. The 4.5 m ceiling height and 4.63 m cyclorama wall open unique possibilities for video projections and immersive performances. The professional DMX lighting system lets you precisely stage each space and highlight works with precision."
       },
       "seminars-training": {
         "title": "Seminars & Training",
         "tagline": "A setting that stimulates creativity.",
         "description": "Corporate seminars, training days and workshops in an inspiring off-the-beaten-track setting. Chez Les Plombiers offers a unique environment that breaks with the traditional seminar format. The 200 m² space divides into 3 distinct zones using modular curtains: plenary, workshops and relaxation area. The 4K projector, 1 Gb/s fibre and designer furniture create ideal conditions for productive and memorable days.",
         "specs": [
-          { "value": "200", "unit": "m²", "label": "Modular space" },
-          { "value": "3", "unit": "", "label": "Distinct areas" },
-          { "value": "150", "unit": "", "label": "Seminar capacity" },
-          { "value": "1", "unit": "Gb/s", "label": "Dedicated fibre" }
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Modular space"
+          },
+          {
+            "value": "3",
+            "unit": "",
+            "label": "Distinct areas"
+          },
+          {
+            "value": "150",
+            "unit": "",
+            "label": "Seminar capacity"
+          },
+          {
+            "value": "1",
+            "unit": "Gb/s",
+            "label": "Dedicated fibre"
+          }
         ],
         "features": [
           "3 distinct areas created by modular curtains",
@@ -670,7 +862,8 @@
           "title": "Seminar Venue Paris Centre — 150 Guests | Chez Les Plombiers",
           "description": "Rent a unique seminar venue in Paris 1st: 150 guests, 3 modular areas, 4K projector. Half-day from €1,000 excl. VAT.",
           "ogDescription": "Unique seminar venue in Paris 1st. 150 guests, 3 modular areas, 4K projector, 1 Gb/s fibre."
-        }
+        },
+        "descriptionExtended": "In Paris 1st, between the Louvre and Les Halles, Chez Les Plombiers offers a seminar setting that breaks the mould of the classic meeting room. Brutalist architecture, exposed stone walls and natural light stimulate creativity and foster exchange. The space divides into 3 modular zones via separator curtains: a plenary with 4K projector and sound system for presentations, a workshop area for group work, and a lounge corner with coffee and refreshments. The dedicated 1 Gbps fibre ensures smooth video calls and reliable network access for all participants. Design furniture — chairs, tables and stools — is included in the rental."
       }
     }
   },

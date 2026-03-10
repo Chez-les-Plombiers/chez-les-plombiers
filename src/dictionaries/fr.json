@@ -1,11 +1,26 @@
 {
   "header": {
     "menuItems": [
-      { "label": "Pricing", "external": true },
-      { "label": "Infos Techniques", "href": "/#equipments" },
-      { "label": "FAQ", "href": "/#faq" },
-      { "label": "Contact", "href": "/#contact" },
-      { "label": "L'Appartement Rose", "href": "/appartement" }
+      {
+        "label": "Pricing",
+        "external": true
+      },
+      {
+        "label": "Infos Techniques",
+        "href": "/#equipments"
+      },
+      {
+        "label": "FAQ",
+        "href": "/#faq"
+      },
+      {
+        "label": "Contact",
+        "href": "/#contact"
+      },
+      {
+        "label": "L'Appartement Rose",
+        "href": "/appartement"
+      }
     ],
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
@@ -40,7 +55,7 @@
       },
       {
         "icon": "Sparkles",
-        "title": "Dîners d\u2019exception",
+        "title": "Dîners d’exception",
         "slug": "diners-exception",
         "description": "Grandes tables et dîners de chef réunissant 40 à 80 convives dans un cadre industriel spectaculaire. Une expérience gastronomique immersive pensée comme un événement à part entière."
       },
@@ -60,7 +75,7 @@
         "icon": "Coffee",
         "title": "Petit-Déjeuners",
         "slug": "petit-dejeuners",
-        "description": "Accueillez vos équipes ou vos clients dès le matin dans un cadre inspirant. Petit déjeuner d\u2019entreprise, breakfast presse ou brunch créatif : un moment convivial pour démarrer la journée autrement."
+        "description": "Accueillez vos équipes ou vos clients dès le matin dans un cadre inspirant. Petit déjeuner d’entreprise, breakfast presse ou brunch créatif : un moment convivial pour démarrer la journée autrement."
       }
     ]
   },
@@ -72,8 +87,14 @@
       "Notre équipe vous accompagne pour créer des moments inoubliables avec un service personnalisé et une attention aux moindres détails."
     ],
     "stats": [
-      { "value": "200m²", "label": "Espace modulable" },
-      { "value": "200", "label": "Capacité max" }
+      {
+        "value": "200m²",
+        "label": "Espace modulable"
+      },
+      {
+        "value": "200",
+        "label": "Capacité max"
+      }
     ],
     "imageAlt": "Intérieur de Chez Les Plombiers — espace évènementiel brutaliste de 200 m² avec murs en pierre et poutres métalliques, Paris 1er"
   },
@@ -140,7 +161,9 @@
       },
       {
         "title": "Sanitaires",
-        "items": ["2 WC (PMR & classique) + 2 vasques"]
+        "items": [
+          "2 WC (PMR & classique) + 2 vasques"
+        ]
       },
       {
         "title": "Audio-visuel",
@@ -161,7 +184,7 @@
         ]
       },
       {
-        "title": "Capacité d\u2019accueil",
+        "title": "Capacité d’accueil",
         "items": [
           "Cocktail : 150 – 200 personnes",
           "Dîner : 60 – 80 personnes"
@@ -191,7 +214,10 @@
       },
       {
         "title": "Entrées",
-        "specs": ["Entrée 1 : L 2,20 m / H 3,50 m", "Entrée 2 : L 1,40 m"]
+        "specs": [
+          "Entrée 1 : L 2,20 m / H 3,50 m",
+          "Entrée 2 : L 1,40 m"
+        ]
       },
       {
         "title": "Électricité & Suspensions",
@@ -256,10 +282,23 @@
     "title": "Concrétisons Votre Projet",
     "subtitle": "Rencontrons-nous pour imaginer ensemble votre événement d'exception",
     "info": [
-      { "label": "Adresse", "value": "39 rue des Bourdonnais", "subValue": "75001 Paris" },
-      { "label": "Email", "value": "contact@chezlesplombiers.fr" },
-      { "label": "WhatsApp", "value": "+336 88 67 99 81" },
-      { "label": "Instagram", "value": "@chezlesplombiers" }
+      {
+        "label": "Adresse",
+        "value": "39 rue des Bourdonnais",
+        "subValue": "75001 Paris"
+      },
+      {
+        "label": "Email",
+        "value": "contact@chezlesplombiers.fr"
+      },
+      {
+        "label": "WhatsApp",
+        "value": "+336 88 67 99 81"
+      },
+      {
+        "label": "Instagram",
+        "value": "@chezlesplombiers"
+      }
     ],
     "visit": {
       "title": "Visite & Découverte",
@@ -267,9 +306,18 @@
       "cta": "Prendre Rendez-Vous",
       "hoursTitle": "Horaires de visite",
       "hours": [
-        { "day": "Lundi — Vendredi", "time": "10h00 — 18h00" },
-        { "day": "Samedi", "time": "Sur rendez-vous" },
-        { "day": "Dimanche", "time": "Fermé" }
+        {
+          "day": "Lundi — Vendredi",
+          "time": "10h00 — 18h00"
+        },
+        {
+          "day": "Samedi",
+          "time": "Sur rendez-vous"
+        },
+        {
+          "day": "Dimanche",
+          "time": "Fermé"
+        }
       ]
     }
   },
@@ -277,22 +325,61 @@
     "description": "Lieu évènementiel d'exception à Paris. Un espace unique pour vos événements privés et professionnels.",
     "navTitle": "Navigation",
     "navLinks": [
-      { "label": "Accueil", "href": "/" },
-      { "label": "Services", "href": "/#services" },
-      { "label": "À Propos", "href": "/#about" },
-      { "label": "Notre Lieu", "href": "/#portfolio" },
-      { "label": "FAQ", "href": "/#faq" },
-      { "label": "Contact", "href": "/#contact" }
+      {
+        "label": "Accueil",
+        "href": "/"
+      },
+      {
+        "label": "Services",
+        "href": "/#services"
+      },
+      {
+        "label": "À Propos",
+        "href": "/#about"
+      },
+      {
+        "label": "Notre Lieu",
+        "href": "/#portfolio"
+      },
+      {
+        "label": "FAQ",
+        "href": "/#faq"
+      },
+      {
+        "label": "Contact",
+        "href": "/#contact"
+      }
     ],
     "servicesTitle": "Nos Espaces",
     "servicesLinks": [
-      { "label": "Fashion Shows", "href": "/services/fashion-shows" },
-      { "label": "Évènements Pro", "href": "/services/evenements-professionnels" },
-      { "label": "Dîners d'Exception", "href": "/services/diners-exception" },
-      { "label": "Séminaires", "href": "/services/seminaires-formations" },
-      { "label": "Évènements Culturels", "href": "/services/evenements-culturels" },
-      { "label": "Petit-Déjeuners", "href": "/services/petit-dejeuners" },
-      { "label": "L'Appartement Rose", "href": "/appartement" }
+      {
+        "label": "Fashion Shows",
+        "href": "/services/fashion-shows"
+      },
+      {
+        "label": "Évènements Pro",
+        "href": "/services/evenements-professionnels"
+      },
+      {
+        "label": "Dîners d'Exception",
+        "href": "/services/diners-exception"
+      },
+      {
+        "label": "Séminaires",
+        "href": "/services/seminaires-formations"
+      },
+      {
+        "label": "Évènements Culturels",
+        "href": "/services/evenements-culturels"
+      },
+      {
+        "label": "Petit-Déjeuners",
+        "href": "/services/petit-dejeuners"
+      },
+      {
+        "label": "L'Appartement Rose",
+        "href": "/appartement"
+      }
     ],
     "contactTitle": "Contact",
     "legalTitle": "Informations légales",
@@ -319,7 +406,11 @@
     "surfaceLabel": "Surface",
     "capacityLabel": "Personnes",
     "equipmentsTitle": "Équipements inclus",
-    "equipments": ["Cuisine équipée", "Mobilier design", "Wi-Fi haut débit"],
+    "equipments": [
+      "Cuisine équipée",
+      "Mobilier design",
+      "Wi-Fi haut débit"
+    ],
     "heroImageAlt": "L'Appartement Rose — espace intime de 100 m² pour shootings et réunions, Chez Les Plombiers Paris 1er",
     "detailImageAlt": "Intérieur de L'Appartement Rose — lumière naturelle, mobilier design et ambiance feutrée, Chez Les Plombiers Paris"
   },
@@ -437,10 +528,26 @@
         "tagline": "Défilez dans un décor architectural fort.",
         "description": "Chez Les Plombiers offre un cadre brut et spectaculaire pour les défilés de mode, showrooms et lancements de collections. Avec 200 m² modulables, une hauteur sous plafond de 4,5 mètres et un mur cyclo de 4,63 m, notre espace se transforme en scène de fashion show ou en showroom haut de gamme. L'éclairage DMX dimmable, la fibre dédiée 1 Gb/s et l'alimentation triphasée 36 KvA répondent aux exigences techniques les plus pointues des maisons de mode et des agences événementielles.",
         "specs": [
-          { "value": "200", "unit": "m²", "label": "Surface modulable" },
-          { "value": "4,5", "unit": "m", "label": "Hauteur sous plafond" },
-          { "value": "200", "unit": "", "label": "Capacité cocktail" },
-          { "value": "4,63", "unit": "m", "label": "Mur cyclo largeur" }
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Surface modulable"
+          },
+          {
+            "value": "4,5",
+            "unit": "m",
+            "label": "Hauteur sous plafond"
+          },
+          {
+            "value": "200",
+            "unit": "",
+            "label": "Capacité cocktail"
+          },
+          {
+            "value": "4,63",
+            "unit": "m",
+            "label": "Mur cyclo largeur"
+          }
         ],
         "features": [
           "Architecture brutaliste unique au cœur de Paris 1er",
@@ -472,17 +579,34 @@
           "title": "Location Salle Défilé Mode Paris — 200m² | Chez Les Plombiers",
           "description": "Louez un lieu pour défilé de mode et showroom à Paris 1er : 200m², éclairage DMX, mur cyclo 4,63m. Forfait Fashion Week disponible. Visite gratuite.",
           "ogDescription": "Lieu pour défilé de mode et showroom à Paris 1er. 200m², éclairage DMX professionnel, mur cyclo 4,63m."
-        }
+        },
+        "descriptionExtended": "Situé au 39 rue des Bourdonnais, en plein cœur de Paris 1er à deux pas du Louvre et des Halles, Chez Les Plombiers est le lieu de référence pour les défilés de mode et événements de marque à Paris. Pendant la Fashion Week, notre espace accueille des présentations de collections, des press days et des pop-up showrooms. Les rideaux modulables permettent de créer un backstage dédié avec vestiaire et portants, tandis que l'espace principal se transforme en podium avec front row. L'accès technique au rez-de-chaussée facilite les livraisons de matériel scénique, et le sous-sol de 100 m² offre un stockage complémentaire pour vos collections et équipements."
       },
       "petit-dejeuners": {
         "title": "Petit-Déjeuners",
         "tagline": "Démarrez la journée dans un cadre inspirant.",
         "description": "Accueillez vos équipes ou vos clients dès le matin dans un lieu hors du commun. Chez Les Plombiers transforme le traditionnel petit-déjeuner d'entreprise en un moment mémorable. Breakfast presse, brunch créatif ou petit-déjeuner de networking : notre cuisine équipée professionnelle et notre cadre brutaliste unique créent l'atmosphère idéale pour commencer la journée autrement. La demi-journée (7h-13h) est disponible du lundi au mercredi à partir de 1 000 € HT.",
         "specs": [
-          { "value": "200", "unit": "m²", "label": "Surface modulable" },
-          { "value": "200", "unit": "", "label": "Capacité max" },
-          { "value": "7h", "unit": "", "label": "Accès dès" },
-          { "value": "1 000", "unit": "€ HT", "label": "Demi-journée dès" }
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Surface modulable"
+          },
+          {
+            "value": "200",
+            "unit": "",
+            "label": "Capacité max"
+          },
+          {
+            "value": "7h",
+            "unit": "",
+            "label": "Accès dès"
+          },
+          {
+            "value": "1 000",
+            "unit": "€ HT",
+            "label": "Demi-journée dès"
+          }
         ],
         "features": [
           "Cuisine traiteur professionnelle entièrement équipée",
@@ -510,17 +634,34 @@
           "title": "Petit-Déjeuner d'Entreprise Paris 1er — Dès 1 000 € HT | Chez Les Plombiers",
           "description": "Organisez un petit-déjeuner d'entreprise ou breakfast presse à Paris 1er. Cuisine équipée, 200m², demi-journée dès 1 000 € HT. Réservez une visite.",
           "ogDescription": "Petit-déjeuner d'entreprise et breakfast presse dans un cadre brutaliste unique à Paris 1er. Dès 1 000 € HT."
-        }
+        },
+        "descriptionExtended": "Idéalement situé à Paris 1er, à proximité immédiate des stations Châtelet et Les Halles, Chez Les Plombiers est le lieu parfait pour organiser un petit-déjeuner professionnel qui sort de l'ordinaire. Que ce soit un breakfast presse pour le lancement d'un produit, un brunch d'équipe pour renforcer la cohésion, ou un petit-déjeuner de networking entre dirigeants, notre espace de 200 m² s'adapte à tous les formats. La cuisine professionnelle en U, équipée d'un four, réfrigérateur, congélateur et lave-vaisselle, permet à votre traiteur ou à votre équipe de préparer les mets sur place. L'éclairage naturel et le cadre architectural brutaliste créent une ambiance chaleureuse et inspirante dès les premières heures."
       },
       "evenements-professionnels": {
         "title": "Évènements Professionnels",
         "tagline": "Un cadre qui élève vos ambitions.",
         "description": "Lancements de produits, conférences et team buildings dans un espace modulable et équipé au cœur de Paris 1er. Chez Les Plombiers allie architecture brutaliste spectaculaire et technologie de pointe : vidéoprojecteur 4K de 8800 lumens, système audio Sonos et XLR, fibre dédiée 1 Gb/s symétrique. L'espace de 200 m² avec 4,5 m de hauteur sous plafond se reconfigure en quelques minutes grâce aux rideaux modulables pour créer jusqu'à 3 espaces distincts.",
         "specs": [
-          { "value": "200", "unit": "m²", "label": "Surface modulable" },
-          { "value": "3", "unit": "", "label": "Espaces configurables" },
-          { "value": "8800", "unit": "lm", "label": "Vidéoprojecteur 4K" },
-          { "value": "1", "unit": "Gb/s", "label": "Fibre dédiée" }
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Surface modulable"
+          },
+          {
+            "value": "3",
+            "unit": "",
+            "label": "Espaces configurables"
+          },
+          {
+            "value": "8800",
+            "unit": "lm",
+            "label": "Vidéoprojecteur 4K"
+          },
+          {
+            "value": "1",
+            "unit": "Gb/s",
+            "label": "Fibre dédiée"
+          }
         ],
         "features": [
           "Vidéoprojecteur 4K Optima 8800 lumens (HDMI, Apple TV, AirPlay)",
@@ -552,17 +693,34 @@
           "title": "Salle Évènement Professionnel Paris Centre — 200m² | Chez Les Plombiers",
           "description": "Louez une salle pour événement professionnel à Paris 1er : séminaire, lancement produit, conférence. 200m², vidéoprojecteur 4K, 3 espaces modulables.",
           "ogDescription": "Salle événement professionnel Paris 1er. 200m², vidéoprojecteur 4K, fibre 1 Gb/s, 3 espaces modulables."
-        }
+        },
+        "descriptionExtended": "Au cœur de Paris 1er, entre le Louvre et le Forum des Halles, Chez Les Plombiers réinvente l'événement professionnel dans un cadre architectural unique. Que vous organisiez un lancement de produit pour 200 invités en cocktail, une conférence de presse filmée en 4K, ou un team building créatif, notre lieu s'adapte en quelques minutes. Les rideaux séparateurs permettent de configurer jusqu'à 3 espaces distincts : une plénière face au mur cyclo, un espace networking avec bar, et un coin plus intime pour les rencontres presse. Le régisseur technique sur place vous accompagne dans l'installation et la gestion de l'audiovisuel, du son et de la lumière."
       },
       "diners-exception": {
         "title": "Dîners d'Exception",
         "tagline": "Une expérience gastronomique immersive.",
         "description": "Grandes tables et dîners de chef réunissant 40 à 80 convives dans un cadre industriel spectaculaire. Chez Les Plombiers offre une expérience gastronomique immersive pensée comme un évènement à part entière. La cuisine traiteur professionnelle en U, équipée d'un four, lave-vaisselle, machine à glaçons, réfrigérateur et congélateur, permet à votre traiteur de travailler dans des conditions optimales. L'éclairage DMX crée l'ambiance parfaite pour chaque moment du repas.",
         "specs": [
-          { "value": "80", "unit": "", "label": "Convives max assis" },
-          { "value": "200", "unit": "", "label": "Capacité cocktail" },
-          { "value": "4,5", "unit": "m", "label": "Hauteur sous plafond" },
-          { "value": "36", "unit": "KvA", "label": "Puissance triphasée" }
+          {
+            "value": "80",
+            "unit": "",
+            "label": "Convives max assis"
+          },
+          {
+            "value": "200",
+            "unit": "",
+            "label": "Capacité cocktail"
+          },
+          {
+            "value": "4,5",
+            "unit": "m",
+            "label": "Hauteur sous plafond"
+          },
+          {
+            "value": "36",
+            "unit": "KvA",
+            "label": "Puissance triphasée"
+          }
         ],
         "features": [
           "Cuisine traiteur professionnelle en U entièrement équipée",
@@ -590,17 +748,34 @@
           "title": "Salle Dîner Privatisé Paris 1er — 40 à 80 Convives | Chez Les Plombiers",
           "description": "Privatisez un lieu pour dîner d'exception à Paris 1er : 40 à 80 convives, cuisine traiteur équipée, éclairage DMX d'ambiance. Devis gratuit.",
           "ogDescription": "Lieu privatisable pour dîner d'exception à Paris 1er. 40 à 80 convives, cuisine traiteur, éclairage DMX."
-        }
+        },
+        "descriptionExtended": "Au cœur du 1er arrondissement de Paris, Chez Les Plombiers transforme chaque dîner en un événement d'exception. L'architecture brutaliste avec ses murs en pierre brute, ses poutres métalliques style Eiffel et sa hauteur sous plafond de 4,5 mètres crée une atmosphère unique pour vos dîners de gala, soirées de levée de fonds ou dîners de marque. L'espace se prête aussi bien aux grandes tablées de 80 convives qu'aux formats plus intimes de 40 personnes avec îlots. Les rideaux modulables permettent de séparer l'espace cocktail d'accueil de la salle à manger principale. Votre traiteur trouvera dans notre cuisine professionnelle tout le nécessaire pour un service irréprochable."
       },
       "evenements-culturels": {
         "title": "Évènements Culturels",
         "tagline": "Un lieu inspirant pensé comme une galerie.",
         "description": "Vernissages, expositions et performances artistiques dans un lieu inspirant pensé comme une galerie contemporaine. Les murs en pierre brute, les poutres métalliques style Eiffel et la lumière naturelle créent un écrin idéal pour tout projet artistique ou culturel. L'espace de 200 m² avec 4,5 m de hauteur sous plafond offre une liberté totale d'accrochage et d'installation. Le mur cyclo de 4,63 m sert de toile de projection pour les installations vidéo et les performances numériques.",
         "specs": [
-          { "value": "200", "unit": "m²", "label": "Surface d'exposition" },
-          { "value": "4,5", "unit": "m", "label": "Hauteur libre" },
-          { "value": "200", "unit": "", "label": "Capacité vernissage" },
-          { "value": "4,63", "unit": "m", "label": "Mur cyclo" }
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Surface d'exposition"
+          },
+          {
+            "value": "4,5",
+            "unit": "m",
+            "label": "Hauteur libre"
+          },
+          {
+            "value": "200",
+            "unit": "",
+            "label": "Capacité vernissage"
+          },
+          {
+            "value": "4,63",
+            "unit": "m",
+            "label": "Mur cyclo"
+          }
         ],
         "features": [
           "Architecture brutaliste — murs en pierre et poutres métalliques",
@@ -628,17 +803,34 @@
           "title": "Lieu Exposition & Vernissage Paris 1er — 200m² | Chez Les Plombiers",
           "description": "Louez un lieu pour exposition, vernissage ou performance artistique à Paris 1er. 200m², 4,5m sous plafond, éclairage DMX, mur cyclo 4,63m.",
           "ogDescription": "Lieu pour exposition et vernissage à Paris 1er. 200m², architecture industrielle, éclairage DMX professionnel."
-        }
+        },
+        "descriptionExtended": "Situé au 39 rue des Bourdonnais à Paris 1er, à quelques pas du Centre Pompidou et du Louvre, Chez Les Plombiers est un lieu d'exposition et d'événements culturels qui marie héritage industriel et création contemporaine. Les murs en pierre brute et les poutres métalliques offrent un dialogue naturel avec les œuvres d'art, qu'il s'agisse de peinture, sculpture, photographie ou installations numériques. La hauteur sous plafond de 4,5 m et le mur cyclo de 4,63 m ouvrent des possibilités uniques pour les projections vidéo et les performances immersives. Le système d'éclairage DMX professionnel permet de scénariser chaque espace et de mettre en valeur les œuvres avec précision."
       },
       "seminaires-formations": {
         "title": "Séminaires & Formations",
         "tagline": "Un cadre qui stimule la créativité.",
         "description": "Séminaires d'entreprise, journées de formation et workshops dans un cadre inspirant hors des sentiers battus. Chez Les Plombiers offre un environnement unique qui casse les codes du séminaire classique. L'espace de 200 m² se divise en 3 zones distinctes grâce aux rideaux modulables : plénière, ateliers et espace détente. Le vidéoprojecteur 4K, la fibre 1 Gb/s et le mobilier design créent les conditions idéales pour des journées productives et mémorables.",
         "specs": [
-          { "value": "200", "unit": "m²", "label": "Surface modulable" },
-          { "value": "3", "unit": "", "label": "Espaces distincts" },
-          { "value": "150", "unit": "", "label": "Capacité séminaire" },
-          { "value": "1", "unit": "Gb/s", "label": "Fibre dédiée" }
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Surface modulable"
+          },
+          {
+            "value": "3",
+            "unit": "",
+            "label": "Espaces distincts"
+          },
+          {
+            "value": "150",
+            "unit": "",
+            "label": "Capacité séminaire"
+          },
+          {
+            "value": "1",
+            "unit": "Gb/s",
+            "label": "Fibre dédiée"
+          }
         ],
         "features": [
           "3 espaces distincts créés par rideaux modulables",
@@ -670,7 +862,8 @@
           "title": "Salle Séminaire Paris Centre — 150 Personnes | Chez Les Plombiers",
           "description": "Louez une salle de séminaire atypique à Paris 1er : 150 personnes, 3 espaces modulables, vidéoprojecteur 4K. Demi-journée dès 1 000 € HT.",
           "ogDescription": "Salle séminaire atypique Paris 1er. 150 personnes, 3 espaces modulables, vidéoprojecteur 4K, fibre 1 Gb/s."
-        }
+        },
+        "descriptionExtended": "À Paris 1er, entre le Louvre et Les Halles, Chez Les Plombiers propose un cadre de séminaire qui casse les codes de la salle de réunion classique. L'architecture brutaliste, les murs en pierre apparente et la lumière naturelle stimulent la créativité et favorisent les échanges. L'espace se divise en 3 zones modulables grâce aux rideaux séparateurs : une plénière avec vidéoprojecteur 4K et système audio pour les présentations, un espace atelier pour le travail en sous-groupes, et un coin détente avec café et collations. La fibre dédiée 1 Gb/s garantit des visioconférences fluides et un accès réseau fiable pour tous les participants. Le mobilier design — chaises, tables et tabourets — est inclus dans la location."
       }
     }
   },

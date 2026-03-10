@@ -32,6 +32,7 @@ interface ServiceData {
   title: string;
   tagline: string;
   description: string;
+  descriptionExtended?: string;
   specs: ServiceSpec[];
   features: string[];
   faq: ServiceFaq[];
@@ -163,9 +164,12 @@ export function ServicePageContent({ slug }: { slug: string }) {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
-                {service.description}
-              </p>
+              <div className="space-y-6 text-lg lg:text-xl text-gray-700 leading-relaxed">
+                <p>{service.description}</p>
+                {service.descriptionExtended && (
+                  <p>{service.descriptionExtended}</p>
+                )}
+              </div>
             </motion.div>
 
             <motion.div
