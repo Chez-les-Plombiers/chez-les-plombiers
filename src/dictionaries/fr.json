@@ -6,16 +6,12 @@
         "external": true
       },
       {
+        "label": "Photos",
+        "href": "/#portfolio"
+      },
+      {
         "label": "Infos Techniques",
         "href": "/#equipments"
-      },
-      {
-        "label": "FAQ",
-        "href": "/#faq"
-      },
-      {
-        "label": "Contact",
-        "href": "/#contact"
       },
       {
         "label": "L'Appartement Rose",

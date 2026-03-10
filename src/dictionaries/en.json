@@ -6,16 +6,12 @@
         "external": true
       },
       {
+        "label": "Photos",
+        "href": "/en/#portfolio"
+      },
+      {
         "label": "Technical Info",
         "href": "/en/#equipments"
-      },
-      {
-        "label": "FAQ",
-        "href": "/en/#faq"
-      },
-      {
-        "label": "Contact",
-        "href": "/en/#contact"
       },
       {
         "label": "The Pink Apartment",
