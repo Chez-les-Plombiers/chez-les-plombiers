@@ -886,5 +886,10 @@
     "privacyDescription": "Privacy policy and personal data protection — Chez Les Plombiers, event venue Paris 1st."
   },
   "skipToContent": "Skip to main content",
-  "calendarDisclaimer": "Prices shown are indicative and subject to change based on demand. Please contact us via WhatsApp for confirmation."
+  "calendarDisclaimer": "Prices shown are indicative and subject to change based on demand. Please contact us via WhatsApp for confirmation.",
+  "virtualTour": {
+    "label": "Virtual tour",
+    "title": "Explore the venue in 3D",
+    "description": "Walk through the 200 m² of Chez Les Plombiers as if you were there. Navigate freely to discover every corner of the space."
+  }
 }

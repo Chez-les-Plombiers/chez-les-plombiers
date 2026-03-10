@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ServicesSection } from "@/components/ServicesSection";
+import { VirtualTour } from "@/components/VirtualTour";
 import { AboutSection } from "@/components/AboutSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { EquipmentsSection } from "@/components/EquipmentsSection";
@@ -188,6 +189,7 @@ export default async function Home({
       <main id="main-content">
         <HeroSection />
         <ServicesSection />
+        <VirtualTour />
         <AboutSection />
         <PortfolioSection />
         <ReviewsSection />

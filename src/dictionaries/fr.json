@@ -886,5 +886,10 @@
     "privacyDescription": "Politique de confidentialité et protection des données personnelles — Chez Les Plombiers, lieu évènementiel Paris 1er."
   },
   "skipToContent": "Aller au contenu principal",
-  "calendarDisclaimer": "Les tarifs affichés sont fournis à titre indicatif et sont susceptibles d'évoluer selon la demande. Merci de nous contacter via WhatsApp pour confirmation."
+  "calendarDisclaimer": "Les tarifs affichés sont fournis à titre indicatif et sont susceptibles d'évoluer selon la demande. Merci de nous contacter via WhatsApp pour confirmation.",
+  "virtualTour": {
+    "label": "Visite virtuelle",
+    "title": "Explorez le lieu en 3D",
+    "description": "Parcourez les 200 m² de Chez Les Plombiers comme si vous y étiez. Naviguez librement dans l'espace pour découvrir chaque recoin du lieu."
+  }
 }
