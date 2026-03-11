@@ -14,6 +14,10 @@
         "href": "/#equipments"
       },
       {
+        "label": "Studio",
+        "href": "/studio"
+      },
+      {
         "label": "L'Appartement Rose",
         "href": "/appartement"
       }
@@ -883,7 +887,130 @@
     "mentionsTitle": "Mentions Légales | Chez Les Plombiers",
     "mentionsDescription": "Mentions légales du site www.chezlesplombiers.fr — Chez les Plombiers SAS, lieu évènementiel Paris 1er.",
     "privacyTitle": "Politique de Confidentialité | Chez Les Plombiers",
-    "privacyDescription": "Politique de confidentialité et protection des données personnelles — Chez Les Plombiers, lieu évènementiel Paris 1er."
+    "privacyDescription": "Politique de confidentialité et protection des données personnelles — Chez Les Plombiers, lieu évènementiel Paris 1er.",
+    "studioTitle": "Studio Photo & Vidéo Paris 1er — 130m² Cyclorama | Chez Les Plombiers",
+    "studioDescription": "Louez un studio photo et vidéo de 130m² à Paris 1er : mur cyclorama, grille technique plafond, 36 kVA, sol résine époxy. Plateau nu pour professionnels."
+  },
+  "studio": {
+    "title": "Studio",
+    "heroTagline": "130 m² de plateau brut au cœur de Paris 1er. Cyclorama intégré, grille technique, 36 kVA.",
+    "heroImageAlt": "Studio photo avec mur cyclorama blanc et grille technique au plafond — Chez Les Plombiers Paris 1er",
+    "accroche": "Un plateau brut et architectural au cœur de Paris 1er. Résine époxy, cyclorama intégré, grille technique, 36 kVA. Aucun compromis.",
+    "keyFigures": [
+      { "value": "130 m²", "label": "Surface plateau" },
+      { "value": "4,11 m", "label": "Hauteur sous plafond" },
+      { "value": "36 kVA", "label": "Puissance électrique" },
+      { "value": "4,63 m", "label": "Cyclorama" }
+    ],
+    "seoDescription": "<p>Installé au rez-de-chaussée du 39 rue des Bourdonnais, à moins de cinq minutes à pied de Châtelet — Les Halles, le studio Chez Les Plombiers offre un plateau de tournage et de prise de vue de 130 m² en plein cœur de Paris 1er.</p><p>Le mur cyclorama de 4,63 m × 3,40 m, le sol en résine époxy blanche et la hauteur sous plafond de 4,11 m en font un espace polyvalent pour les shootings mode, les campagnes publicitaires, les tournages vidéo et les contenus digitaux. La grille technique au plafond permet l'accroche directe de pieds colonne, pinces crapauds, magic arms et bras articulés — sans installation au sol.</p><p>L'accès plain-pied avec double porte de 2,21 m × 2,71 m facilite le chargement de matériel lourd et permet de rentrer un véhicule directement sur le plateau — idéal pour les shootings automobile. L'alimentation triphasée de 36 kVA supporte les configurations d'éclairage les plus exigeantes. Cuisine équipée, espace vestiaire avec portants, postes maquillage et régie complètent le dispositif.</p>",
+    "specsTitle": "Caractéristiques techniques",
+    "specGroups": [
+      {
+        "title": "Plateau & dimensions",
+        "items": [
+          { "label": "Surface totale", "value": "~130 m²" },
+          { "label": "Mur cyclorama", "value": "4,63 m × 3,40 m" },
+          { "label": "Hauteur sous plafond", "value": "4,11 m" },
+          { "label": "Longueur plateau", "value": "8,98 m" },
+          { "label": "Sol", "value": "Résine époxy blanche" },
+          { "label": "Fenêtres", "value": "Double verrière atelier (cour + rue)" },
+          { "label": "Grille technique", "value": "Pieds colonne, pinces crapauds, magic arms, bras articulés" }
+        ]
+      },
+      {
+        "title": "Accès & logistique",
+        "items": [
+          { "label": "Niveau", "value": "RDC, plain-pied" },
+          { "label": "Entrée principale", "value": "Double battant 2,21 × 2,71 m" },
+          { "label": "Entrée secondaire", "value": "Sur rue" },
+          { "label": "Adresse", "value": "39 rue des Bourdonnais, Paris 1er" },
+          { "label": "Métro", "value": "Châtelet / Les Halles (< 5 min)" },
+          { "label": "Accès véhicule", "value": "Entrée voiture possible (double porte 2,21 × 2,71 m)" }
+        ]
+      },
+      {
+        "title": "Électricité & réseau",
+        "items": [
+          { "label": "Puissance", "value": "36 kVA" },
+          { "label": "Triphasé", "value": "Disponible" },
+          { "label": "Wifi", "value": "Haut débit" },
+          { "label": "Filaire", "value": "Prise RJ45" }
+        ]
+      },
+      {
+        "title": "Espaces annexes",
+        "items": [
+          { "label": "Cuisine", "value": "Équipée complète" },
+          { "label": "Vestiaire", "value": "Portants & stylisme" },
+          { "label": "Maquillage", "value": "1 poste minimum" },
+          { "label": "Régie", "value": "Espace dédié" }
+        ]
+      }
+    ],
+    "prestationsTitle": "Prestations incluses",
+    "prestationsIntro": "Tout est prévu pour que vos équipes se concentrent sur la création.",
+    "prestations": [
+      "Cuisine équipée : four, frigo, congélateur, lave-vaisselle",
+      "Machine à café et machine à glaçons",
+      "Bar",
+      "Espace vestiaire & stylisme avec portants",
+      "Poste maquillage avec miroir Hollywood",
+      "Sanitaires",
+      "Espace régie dédié",
+      "Wifi haut débit + prise RJ45",
+      "Tringles à rideaux"
+    ],
+    "useCasesTitle": "Pour quels usages",
+    "useCases": [
+      "Shooting mode",
+      "Campagne publicitaire",
+      "Tournage vidéo",
+      "Clip musical",
+      "Contenu digital",
+      "Lookbook",
+      "Packshot",
+      "Interview & podcast",
+      "Tournage automobile"
+    ],
+    "galleryTitle": "Le studio en images",
+    "galleryDownloadAll": "Télécharger toutes les photos",
+    "galleryDownloading": "Téléchargement...",
+    "galleryDownload": "Télécharger",
+    "planTitle": "Plan technique",
+    "planDescription": "Consultez les dimensions précises et les vues cotées du plateau pour préparer votre installation.",
+    "planDownload": "Télécharger le plan",
+    "tarifsTitle": "Tarifs",
+    "tarifsPlaceholder": "Contactez-nous pour un devis personnalisé adapté à la durée et au type de production.",
+    "faqTitle": "Questions fréquentes",
+    "faqItems": [
+      {
+        "question": "Peut-on rentrer une voiture dans le studio ?",
+        "answer": "Oui. L'accès plain-pied et la double porte de 2,21 m × 2,71 m permettent de faire entrer un véhicule directement sur le plateau. Idéal pour les shootings et tournages automobile."
+      },
+      {
+        "question": "Quel matériel est inclus dans la location ?",
+        "answer": "Le studio est livré vide en matériel d'éclairage : vous apportez vos flashs, continus et accessoires. En revanche, la grille technique au plafond, les tringles à rideaux, la cuisine équipée, le poste maquillage, l'espace vestiaire et le wifi haut débit sont inclus."
+      },
+      {
+        "question": "Y a-t-il un parking à proximité ?",
+        "answer": "Le parking public le plus proche est le Parking Rivoli Sébastopol (2 min à pied). Pour le déchargement, un arrêt minute est possible devant l'entrée sur la rue des Bourdonnais."
+      },
+      {
+        "question": "Quels sont les horaires d'accès ?",
+        "answer": "Le studio est accessible de 8h à 22h, 7 jours sur 7. Des horaires étendus peuvent être organisés sur demande pour les tournages de nuit."
+      },
+      {
+        "question": "Comment réserver le studio ?",
+        "answer": "Envoyez votre demande par email ou WhatsApp avec vos dates, le type de production et la durée souhaitée. Nous vous répondons sous 24 heures avec un devis personnalisé."
+      },
+      {
+        "question": "Le studio est-il adapté aux tournages vidéo ?",
+        "answer": "Absolument. La hauteur sous plafond de 4,11 m, l'alimentation triphasée 36 kVA, le sol en résine époxy et le mur cyclorama blanc en font un plateau polyvalent pour la vidéo, le clip musical et la publicité."
+      }
+    ],
+    "ctaTitle": "Réserver le studio",
+    "ctaDescription": "Envoyez-nous votre demande par email ou WhatsApp. Réponse sous 24h.",
+    "ctaButton": "Nous contacter"
   },
   "skipToContent": "Aller au contenu principal",
   "calendarDisclaimer": "Les tarifs affichés sont fournis à titre indicatif et sont susceptibles d'évoluer selon la demande. Merci de nous contacter via WhatsApp pour confirmation.",

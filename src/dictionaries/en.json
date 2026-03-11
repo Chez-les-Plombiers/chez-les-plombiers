@@ -14,6 +14,10 @@
         "href": "/en/#equipments"
       },
       {
+        "label": "Studio",
+        "href": "/en/studio"
+      },
+      {
         "label": "The Pink Apartment",
         "href": "/en/apartment"
       }
@@ -883,7 +887,130 @@
     "mentionsTitle": "Legal Notice | Chez Les Plombiers",
     "mentionsDescription": "Legal notice for www.chezlesplombiers.fr — Chez les Plombiers SAS, event venue Paris 1st.",
     "privacyTitle": "Privacy Policy | Chez Les Plombiers",
-    "privacyDescription": "Privacy policy and personal data protection — Chez Les Plombiers, event venue Paris 1st."
+    "privacyDescription": "Privacy policy and personal data protection — Chez Les Plombiers, event venue Paris 1st.",
+    "studioTitle": "Photo & Video Studio Paris 1st — 130m² Cyclorama | Chez Les Plombiers",
+    "studioDescription": "Rent a 130m² photo and video studio in Paris 1st: cyclorama wall, technical ceiling grid, 36 kVA, epoxy floor. Bare studio for professionals."
+  },
+  "studio": {
+    "title": "Studio",
+    "heroTagline": "130 m² of raw studio space in the heart of Paris 1st. Built-in cyclorama, ceiling grid, 36 kVA.",
+    "heroImageAlt": "Photo studio with white cyclorama wall and technical ceiling grid — Chez Les Plombiers Paris 1st",
+    "accroche": "A raw, architectural studio in the heart of Paris 1st. Epoxy floor, built-in cyclorama, technical ceiling grid, 36 kVA. No compromise.",
+    "keyFigures": [
+      { "value": "130 m²", "label": "Studio area" },
+      { "value": "4.11 m", "label": "Ceiling height" },
+      { "value": "36 kVA", "label": "Power supply" },
+      { "value": "4.63 m", "label": "Cyclorama" }
+    ],
+    "seoDescription": "<p>Located on the ground floor of 39 rue des Bourdonnais, less than five minutes' walk from Châtelet — Les Halles, the Chez Les Plombiers studio offers a 130 m² shooting and filming space in the heart of Paris 1st arrondissement.</p><p>The 4.63 m × 3.40 m cyclorama wall, white epoxy resin floor and 4.11 m ceiling height make it a versatile space for fashion shoots, advertising campaigns, video production and digital content. The technical ceiling grid allows direct rigging of column stands, clamps, magic arms and articulated arms — with no floor-based setup required.</p><p>Step-free ground floor access through a 2.21 m × 2.71 m double door makes heavy equipment loading effortless and allows driving a vehicle directly onto the studio floor — ideal for automotive shoots. The 36 kVA three-phase power supply supports the most demanding lighting configurations. A fitted kitchen, wardrobe area with clothes racks, make-up stations and a dedicated control room complete the setup.</p>",
+    "specsTitle": "Technical specifications",
+    "specGroups": [
+      {
+        "title": "Studio & dimensions",
+        "items": [
+          { "label": "Total area", "value": "~130 m²" },
+          { "label": "Cyclorama wall", "value": "4.63 m × 3.40 m" },
+          { "label": "Ceiling height", "value": "4.11 m" },
+          { "label": "Studio length", "value": "8.98 m" },
+          { "label": "Floor", "value": "White epoxy resin" },
+          { "label": "Windows", "value": "Double workshop windows (courtyard + street)" },
+          { "label": "Ceiling grid", "value": "Column stands, clamps, magic arms, articulated arms" }
+        ]
+      },
+      {
+        "title": "Access & logistics",
+        "items": [
+          { "label": "Level", "value": "Ground floor, step-free" },
+          { "label": "Main entrance", "value": "Double door 2.21 × 2.71 m" },
+          { "label": "Secondary entrance", "value": "Street-side" },
+          { "label": "Address", "value": "39 rue des Bourdonnais, Paris 1st" },
+          { "label": "Metro", "value": "Châtelet / Les Halles (< 5 min)" },
+          { "label": "Vehicle access", "value": "Car entry possible (double door 2.21 × 2.71 m)" }
+        ]
+      },
+      {
+        "title": "Power & network",
+        "items": [
+          { "label": "Capacity", "value": "36 kVA" },
+          { "label": "Three-phase", "value": "Available" },
+          { "label": "Wi-Fi", "value": "High speed" },
+          { "label": "Wired", "value": "RJ45 port" }
+        ]
+      },
+      {
+        "title": "Support spaces",
+        "items": [
+          { "label": "Kitchen", "value": "Fully equipped" },
+          { "label": "Wardrobe", "value": "Racks & styling" },
+          { "label": "Make-up", "value": "1 station minimum" },
+          { "label": "Control room", "value": "Dedicated space" }
+        ]
+      }
+    ],
+    "prestationsTitle": "Included amenities",
+    "prestationsIntro": "Everything your crew needs to focus on creating.",
+    "prestations": [
+      "Fitted kitchen: oven, fridge, freezer, dishwasher",
+      "Coffee machine and ice maker",
+      "Bar",
+      "Wardrobe & styling area with clothes racks",
+      "Make-up station with Hollywood mirror",
+      "Restrooms",
+      "Dedicated control room",
+      "High-speed Wi-Fi + RJ45 port",
+      "Curtain rails"
+    ],
+    "useCasesTitle": "What it's made for",
+    "useCases": [
+      "Fashion shoot",
+      "Ad campaign",
+      "Video production",
+      "Music video",
+      "Digital content",
+      "Lookbook",
+      "Packshot",
+      "Interview & podcast",
+      "Car shoot"
+    ],
+    "galleryTitle": "The studio in pictures",
+    "galleryDownloadAll": "Download all photos",
+    "galleryDownloading": "Downloading...",
+    "galleryDownload": "Download",
+    "planTitle": "Technical plan",
+    "planDescription": "View precise dimensions and annotated studio views to prepare your setup.",
+    "planDownload": "Download plan",
+    "tarifsTitle": "Pricing",
+    "tarifsPlaceholder": "Contact us for a custom quote tailored to your production duration and type.",
+    "faqTitle": "Frequently asked questions",
+    "faqItems": [
+      {
+        "question": "Can you drive a car into the studio?",
+        "answer": "Yes. The step-free ground floor access and the 2.21 m × 2.71 m double door allow you to drive a vehicle directly onto the studio floor. Ideal for automotive shoots and commercials."
+      },
+      {
+        "question": "What equipment is included in the rental?",
+        "answer": "The studio comes empty in terms of lighting gear — you bring your own strobes, continuous lights and accessories. However, the ceiling grid, curtain rails, fitted kitchen, make-up station, wardrobe area and high-speed Wi-Fi are all included."
+      },
+      {
+        "question": "Is there parking nearby?",
+        "answer": "The closest public car park is Parking Rivoli Sébastopol (2 min walk). For unloading, a brief stop is possible in front of the entrance on rue des Bourdonnais."
+      },
+      {
+        "question": "What are the opening hours?",
+        "answer": "The studio is accessible from 8 AM to 10 PM, 7 days a week. Extended hours can be arranged upon request for overnight shoots."
+      },
+      {
+        "question": "How do I book the studio?",
+        "answer": "Send your request by email or WhatsApp with your dates, production type and desired duration. We'll get back to you within 24 hours with a custom quote."
+      },
+      {
+        "question": "Is the studio suitable for video production?",
+        "answer": "Absolutely. The 4.11 m ceiling height, 36 kVA three-phase power supply, white epoxy resin floor and cyclorama wall make it a versatile set for video production, music videos and commercials."
+      }
+    ],
+    "ctaTitle": "Book the studio",
+    "ctaDescription": "Send your request by email or WhatsApp. Response within 24h.",
+    "ctaButton": "Contact us"
   },
   "skipToContent": "Skip to main content",
   "calendarDisclaimer": "Prices shown are indicative and subject to change based on demand. Please contact us via WhatsApp for confirmation.",

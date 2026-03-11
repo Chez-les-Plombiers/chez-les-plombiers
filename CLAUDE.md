@@ -145,20 +145,23 @@ public/
 - Évènements Culturels (`evenements-culturels` / `cultural-events`)
 - Séminaires & Formations (`seminaires-formations` / `seminars-training`)
 
-Structure chaque page : Hero (image + overlay) → Description + Specs (2 cols) → Features (3 cols) → ReviewsSection (réutilisé) → FAQ accordion (3-5 Q&A spécifiques) → Cross-links (5 autres services + Appartement Rose) → CTA (Calendly + WhatsApp + email)
+Structure chaque page : Hero (image + overlay) → Description + descriptionExtended + Specs (2 cols) → Features (3 cols) → ReviewsSection (réutilisé) → FAQ accordion (3-5 Q&A spécifiques) → Cross-links (5 autres services + Appartement Rose) → CTA (Calendly + WhatsApp + email)
+
+Chaque service a un champ `descriptionExtended` (~100 mots) en plus de `description` (~70 mots) pour enrichir le contenu SEO (total ~180 mots par page).
 
 Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners` → `/en/services/corporate-breakfasts`)
 
 ## Architecture Homepage
-8 sections dans l'ordre :
+9 sections dans l'ordre :
 1. HeroSection (parallax + vidéo autoplay avec fallback touch mobile + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
 2. ServicesSection (6 cards dont Petit Déjeuner)
-3. AboutSection (texte + stats + image)
-4. PortfolioSection ("Découvrez Notre Lieu" — 12 photos bento grid + lightbox + download individuel/ZIP)
-5. ReviewsSection (Google reviews grille 3x3 + lien "Voir plus d'avis sur Google")
-6. EquipmentsSection (specs + downloads + plan)
-7. FaqSection (11 Q&A accordion)
-8. ContactSection (4 contacts + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
+3. VirtualTour (iframe Matterport 3D — https://my.matterport.com/show/?m=ucvB4GW2Go6)
+4. AboutSection (texte + stats + image)
+5. PortfolioSection ("Découvrez Notre Lieu" — 12 photos bento grid + lightbox + download individuel/ZIP)
+6. ReviewsSection (Google reviews grille 3x3 + lien "Voir plus d'avis sur Google")
+7. EquipmentsSection (specs + downloads + plan)
+8. FaqSection (11 Q&A accordion)
+9. ContactSection (4 contacts + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
 
 ### CTA buttons (Hero + Contact)
 - **"Voir les tarifs"** : bouton plein (bg-white) → `pricing.chezlesplombiers.fr` (external)
