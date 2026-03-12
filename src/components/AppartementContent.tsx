@@ -141,6 +141,29 @@ export function AppartementContent() {
         </div>
       </section>
 
+      {/* Visite virtuelle Matterport */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <h2 className="text-4xl mb-4 tracking-tight text-center">
+            {locale === "en" ? "Virtual Tour" : "Visite Virtuelle"}
+          </h2>
+          <p className="text-gray-500 text-center mb-12 text-lg">
+            {locale === "en"
+              ? "Explore The Pink Apartment in 3D"
+              : "Explorez L'Appartement Rose en 3D"}
+          </p>
+          <div className="relative w-full aspect-video">
+            <iframe
+              src="https://my.matterport.com/show/?m=Km2zRqQTaKz"
+              className="absolute inset-0 w-full h-full"
+              allowFullScreen
+              allow="autoplay; fullscreen; web-share; xr-spatial-tracking"
+              title={locale === "en" ? "Virtual tour — The Pink Apartment" : "Visite virtuelle — L'Appartement Rose"}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Cross-links to services */}
       <section className="py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
