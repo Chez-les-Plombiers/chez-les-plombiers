@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: "/documents/:path*.pdf",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
     ];
   },
   async redirects() {
