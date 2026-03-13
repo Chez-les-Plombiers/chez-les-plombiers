@@ -20,6 +20,7 @@ export async function generateMetadata({
   return {
     title: meta.mentionsTitle,
     description: meta.mentionsDescription,
+    robots: { index: false, follow: true },
     openGraph: { url: pageUrl },
     alternates: {
       canonical: pageUrl,

@@ -342,6 +342,10 @@
         "href": "/#portfolio"
       },
       {
+        "label": "Studio Photo & Vidéo",
+        "href": "/studio"
+      },
+      {
         "label": "FAQ",
         "href": "/#faq"
       },
@@ -375,6 +379,10 @@
       {
         "label": "Petit-Déjeuners",
         "href": "/services/petit-dejeuners"
+      },
+      {
+        "label": "Studio Photo & Vidéo",
+        "href": "/studio"
       },
       {
         "label": "L'Appartement Rose",

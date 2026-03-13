@@ -20,6 +20,7 @@ export async function generateMetadata({
   return {
     title: meta.privacyTitle,
     description: meta.privacyDescription,
+    robots: { index: false, follow: true },
     openGraph: { url: pageUrl },
     alternates: {
       canonical: pageUrl,

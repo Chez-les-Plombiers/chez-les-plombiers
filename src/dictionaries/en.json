@@ -342,6 +342,10 @@
         "href": "/en/#portfolio"
       },
       {
+        "label": "Photo & Video Studio",
+        "href": "/en/studio"
+      },
+      {
         "label": "FAQ",
         "href": "/en/#faq"
       },
@@ -375,6 +379,10 @@
       {
         "label": "Corporate Breakfasts",
         "href": "/en/services/corporate-breakfasts"
+      },
+      {
+        "label": "Photo & Video Studio",
+        "href": "/en/studio"
       },
       {
         "label": "The Pink Apartment",
