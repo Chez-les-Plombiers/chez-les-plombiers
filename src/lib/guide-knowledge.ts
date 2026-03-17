@@ -29,6 +29,7 @@ VENUE KNOWLEDGE BASE:
 - Address: 39 rue des Bourdonnais, 75001 Paris
 - Nearest metro: Châtelet — Les Halles (lines 1, 4, 7, 11, 14, RER A/B/D) — less than 5 minutes walk
 - Other nearby stations: Pont Neuf (line 7), Louvre-Rivoli (line 1)
+- **Courtyard gate (portail/grille)**: at the entrance of the courtyard, enter code **5409** to open the gate. This is the first thing you need to do when arriving.
 - Ground floor, double door entry (2.21m × 2.71m) — vehicle access possible
 - The venue is between Le Louvre and Les Halles, right in the historic heart of Paris
 
@@ -138,21 +139,55 @@ Two networks available:
 - Ideal for photo shoots, interviews, confidential meetings, and small private events
 - Separate entrance possible
 
-## Projector
-- **Optoma ZU820T** — DuraCore Laser, DLP, WUXGA (1920×1200), 8,800 lumens, contrast 3,000,000:1
-- Projection size at the venue: 4.63m wide × 3.50m tall
-- Compatible aspect ratios: 16:10 (native), 16:9, 4:3
-- 4K and HDR compatible — ideal for video, presentations, and immersive content
-- Motorised zoom (1.6x) and lens shift (vertical ±55%, horizontal ±25%)
-- Screen size range: 1.27m to 7.62m diagonal (50" to 300")
-- Built-in speakers: 2 × 10W (but venue audio goes through Sonos — see Sound System section)
-- Noise level: 29–36 dB
-- **Inputs available at the venue**:
-  - Apple TV → HDMI channel 1
-  - HDMI wall socket (control corner) → HDMI channel 2
-  - Switch channels with the black remote (channel button)
-- The projector also has: 1× HDBaseT, 2× HDMI 2.0, 1× VGA, RJ45 (LAN)
-- If sound goes through HDMI, make sure to select the **VP** source in the **UCP** app on the iPad
+## Projector — Optoma ZU820T (full specs)
+**At the venue**: projection 4.63m wide × 3.50m tall. 4K and HDR compatible.
+**How to connect at the venue**:
+- Apple TV → HDMI channel 1
+- HDMI wall socket (control corner) → HDMI channel 2
+- Switch channels with the black remote (channel button)
+- If sound goes through HDMI, select the **VP** source in the **UCP** app on the iPad
+
+**Display/image**:
+- Display technology: DLP
+- Resolution: WUXGA (1920×1200)
+- Brightness: 8,800 lumens (ANSI: 7,400)
+- Contrast ratio: 3,000,000:1 (full on/off: 1,100:1)
+- Native aspect ratio: 16:10 — compatible: 4:3, 16:9, 16:10
+- Keystone correction: ±30° horizontal, ±30° vertical
+- Uniformity: 95%
+- Screen size: 1.27m–7.62m (50"–300") diagonal
+
+**Light source**:
+- Type: DuraCore Laser — life: 30,000 hours
+
+**Optical**:
+- Throw ratio: 1.25:1–2:1
+- Projection distance: 1.33m–13.06m
+- Zoom: 1.6x motorised
+- Focal length: 18.72–29.59mm
+- Lens shift: vertical ±55%, horizontal ±25%
+
+**Connectivity**:
+- Inputs: 1× HDBaseT, 2× HDMI 2.0, 1× VGA, 1× 3D sync, 1× Audio 3.5mm
+- Outputs: 1× HDMI 2.0, 1× 3D sync, 1× USB-A power 1.5A, 1× Audio 3.5mm
+- Control: 1× 12V trigger, 1× wired remote, 1× RJ45, 1× RS232
+- LAN: yes (wired) — no wireless
+
+**General**:
+- Noise level: 29dB (min) — 36dB (max)
+- 3D: Full 3D
+- 24/7 operation: yes — 360° operation: yes
+- Remote: backlit ProAV remote
+- Speakers: 2× 10W (but venue audio goes through Sonos — see Sound System)
+- OSD languages: 9 (EN, FR, DE, IT, PT, RU, ZH-simplified, ES, ZH-traditional)
+
+**Power**:
+- Supply: AC 90–264V 50/60Hz
+- Consumption: 260W (min) — 520W (max) — 0.5W (standby)
+
+**Dimensions & weight**:
+- 486 × 432.5 × 176mm (W×D×H)
+- Net weight: 14kg — Gross: 17.5kg
 
 ## Nearby — Useful Addresses
 - Restaurants & food: Les Halles area (2 min walk) — dozens of restaurants and cafés
@@ -182,6 +217,7 @@ BASE DE CONNAISSANCES DU LIEU :
 ## Accès & Entrée
 - Adresse : 39 rue des Bourdonnais, 75001 Paris
 - Métro le plus proche : Châtelet — Les Halles (lignes 1, 4, 7, 11, 14, RER A/B/D)
+- **Grille / portail de la cour** : à l'entrée de la cour, composez le code **5409** pour ouvrir la grille. C'est la première chose à faire en arrivant.
 - Rez-de-chaussée, double porte (2,21m × 2,71m) — accès véhicule possible
 
 ## Récupérer les clés
@@ -290,21 +326,55 @@ Deux réseaux disponibles :
 - Idéal pour shootings photo, interviews, réunions confidentielles et petits événements privés
 - Entrée séparée possible
 
-## Vidéoprojecteur
-- **Optoma ZU820T** — Laser DuraCore, DLP, WUXGA (1920×1200), 8 800 lumens, contraste 3 000 000:1
-- Taille de projection dans le lieu : 4,63m de large × 3,50m de haut
-- Ratios compatibles : 16:10 (natif), 16:9, 4:3
-- Compatible 4K et HDR — idéal pour vidéo, présentations et contenus immersifs
-- Zoom motorisé (1.6x) et lens shift (vertical ±55%, horizontal ±25%)
-- Taille d'écran possible : 1,27m à 7,62m de diagonale (50" à 300")
-- Enceintes intégrées : 2 × 10W (mais le son du lieu passe par Sonos — voir section Système Audio)
-- Niveau sonore : 29–36 dB
-- **Entrées disponibles dans le lieu** :
-  - Apple TV → canal HDMI 1
-  - Prise HDMI murale (coin régie) → canal HDMI 2
-  - Changer de canal avec la télécommande noire (bouton canal)
-- Le projecteur dispose aussi de : 1× HDBaseT, 2× HDMI 2.0, 1× VGA, RJ45 (LAN)
-- Si le son passe par HDMI, bien penser à sélectionner la source **VP** dans l'application **UCP** sur l'iPad
+## Vidéoprojecteur — Optoma ZU820T (fiche technique complète)
+**Dans le lieu** : projection 4,63m de large × 3,50m de haut. Compatible 4K et HDR.
+**Comment se connecter dans le lieu** :
+- Apple TV → canal HDMI 1
+- Prise HDMI murale (coin régie) → canal HDMI 2
+- Changer de canal avec la télécommande noire (bouton canal)
+- Si le son passe par HDMI, sélectionner la source **VP** dans l'application **UCP** sur l'iPad
+
+**Affichage/image** :
+- Technologie : DLP
+- Résolution : WUXGA (1920×1200)
+- Luminosité : 8 800 lumens (ANSI : 7 400)
+- Contraste : 3 000 000:1 (full on/off : 1 100:1)
+- Ratio natif : 16:10 — compatibles : 4:3, 16:9, 16:10
+- Correction trapèze : ±30° horizontal, ±30° vertical
+- Uniformité : 95%
+- Taille d'écran : 1,27m–7,62m (50"–300") de diagonale
+
+**Source lumineuse** :
+- Type : Laser DuraCore — durée de vie : 30 000 heures
+
+**Optique** :
+- Throw ratio : 1,25:1–2:1
+- Distance de projection : 1,33m–13,06m
+- Zoom : 1,6x motorisé
+- Focale : 18,72–29,59mm
+- Lens shift : vertical ±55%, horizontal ±25%
+
+**Connectique** :
+- Entrées : 1× HDBaseT, 2× HDMI 2.0, 1× VGA, 1× 3D sync, 1× Audio 3,5mm
+- Sorties : 1× HDMI 2.0, 1× 3D sync, 1× USB-A power 1,5A, 1× Audio 3,5mm
+- Contrôle : 1× trigger 12V, 1× télécommande filaire, 1× RJ45, 1× RS232
+- Réseau : LAN filaire (oui) — sans fil (non)
+
+**Général** :
+- Niveau sonore : 29dB (min) — 36dB (max)
+- 3D : Full 3D
+- Fonctionnement 24/7 : oui — fonctionnement 360° : oui
+- Télécommande : ProAV rétroéclairée
+- Enceintes : 2× 10W (mais le son du lieu passe par Sonos — voir section Système Audio)
+- Langues OSD : 9 (FR, EN, DE, IT, PT, RU, ZH simplifié, ES, ZH traditionnel)
+
+**Alimentation** :
+- AC 90–264V 50/60Hz
+- Consommation : 260W (min) — 520W (max) — 0,5W (veille)
+
+**Dimensions & poids** :
+- 486 × 432,5 × 176mm (L×P×H)
+- Poids net : 14kg — Brut : 17,5kg
 
 ## À Proximité — Adresses Utiles
 - Restaurants & food : quartier des Halles (2 min à pied) — dizaines de restaurants et cafés
