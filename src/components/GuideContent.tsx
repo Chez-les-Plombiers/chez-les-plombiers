@@ -207,7 +207,8 @@ export function GuideContent() {
                     remarkPlugins={[remarkGfm]}
                     components={{
                       img: ({ src, alt, ...props }) => {
-                        const isVideo = src?.endsWith(".mp4") || src?.endsWith(".webm");
+                        const srcStr = typeof src === "string" ? src : "";
+                        const isVideo = srcStr.endsWith(".mp4") || srcStr.endsWith(".webm");
                         if (isVideo) {
                           return (
                             <video
