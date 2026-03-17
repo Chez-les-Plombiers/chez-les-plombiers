@@ -420,7 +420,24 @@
       "High-speed Wi-Fi"
     ],
     "heroImageAlt": "The Pink Apartment — intimate 100 m² space for shoots and meetings, Chez Les Plombiers Paris 1st",
-    "detailImageAlt": "Interior of The Pink Apartment — natural light, designer furniture and intimate ambiance, Chez Les Plombiers Paris"
+    "detailImageAlt": "Interior of The Pink Apartment — natural light, designer furniture and intimate ambiance, Chez Les Plombiers Paris",
+    "galleryTitle": "Discover The Pink Apartment",
+    "gallerySubtitle": "An intimate, sunlit space, entirely pink, connected to the main lounge through a monumental door.",
+    "downloadAll": "Download all photos",
+    "downloading": "Downloading…",
+    "download": "Download",
+    "galleryAlts": {
+      "01": "Pink room with black table, Bertoia chairs and globe pendant lights — natural light, painted mouldings",
+      "02": "Pink room window side with round pendant lights and designer table — The Pink Apartment Paris",
+      "03": "Pink room with astronaut figurine, opening to the main space — Chez Les Plombiers",
+      "04": "Black table and Bertoia chairs in the all-pink room with designer pendant lights",
+      "05": "Transition between the pink room and the main space — designer chair and natural light",
+      "06": "Main lounge with patterned sofas, designer lamps, TV screen and white beams",
+      "07": "Lounge view with Fellini Roma poster, designer sofas and pink door in background",
+      "08": "Pink room entrance from the main space — pink door and Fellini Roma poster",
+      "09": "Panoramic view of the lounge — pink lamps, sofas, Fellini poster and pink apartment door",
+      "10": "Wide view of the main lounge — designer furniture, white beams and air conditioning"
+    }
   },
   "mentionsLegales": {
     "title": "Legal Notice",

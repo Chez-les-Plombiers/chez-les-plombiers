@@ -420,7 +420,24 @@
       "Wi-Fi haut débit"
     ],
     "heroImageAlt": "L'Appartement Rose — espace intime de 100 m² pour shootings et réunions, Chez Les Plombiers Paris 1er",
-    "detailImageAlt": "Intérieur de L'Appartement Rose — lumière naturelle, mobilier design et ambiance feutrée, Chez Les Plombiers Paris"
+    "detailImageAlt": "Intérieur de L'Appartement Rose — lumière naturelle, mobilier design et ambiance feutrée, Chez Les Plombiers Paris",
+    "galleryTitle": "Découvrez L'Appartement Rose",
+    "gallerySubtitle": "Un espace intimiste et lumineux, entièrement rose, relié au salon principal par une porte monumentale.",
+    "downloadAll": "Télécharger toutes les photos",
+    "downloading": "Téléchargement en cours…",
+    "download": "Télécharger",
+    "galleryAlts": {
+      "01": "Salle rose avec table noire, chaises Bertoia et suspensions boules — lumière naturelle, boiseries peintes",
+      "02": "Vue de la salle rose côté fenêtres avec suspensions rondes et table design — L'Appartement Rose Paris",
+      "03": "Salle rose avec figurine astronaute, ouverture vers l'espace principal — Chez Les Plombiers",
+      "04": "Table noire et chaises Bertoia dans la salle entièrement rose avec suspensions design",
+      "05": "Transition entre la salle rose et l'espace principal — chaise design et lumière naturelle",
+      "06": "Salon principal avec canapés à motifs, lampes design, écran TV et poutres blanches",
+      "07": "Vue du salon avec affiche Fellini Roma, canapés design et porte rose en arrière-plan",
+      "08": "Entrée de la salle rose depuis l'espace principal — porte rose et affiche Fellini Roma",
+      "09": "Vue panoramique du salon — lampes roses, canapés, affiche Fellini et porte de l'appartement rose",
+      "10": "Vue large du salon principal — mobilier design, poutres blanches et climatisation"
+    }
   },
   "mentionsLegales": {
     "title": "Mentions Légales",
