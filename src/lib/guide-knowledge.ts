@@ -45,40 +45,55 @@ VENUE KNOWLEDGE BASE:
 
 ## Electricity & Lighting
 - Three-phase power supply: 36 kVA — supports heavy lighting and production setups
-- Main breaker panel: [LOCATION TO BE FILLED BY FRED]
-- Lighting zones: [TO BE FILLED - which switches control what]
-- Dimmer controls: [TO BE FILLED]
-- The 36 kVA supply supports the most demanding professional lighting configurations
+- **Main breaker panel**: located in the utility room, at the back of the main hall on the left, behind a code-locked door. The code changes every week — it is sent to each client by message when the booking is confirmed. It's the same code as for the key box and the basement door. Type the code then press the "key" button. To open the panel inside: press the small button in the center below each handle to unlock it, then turn the handle.
+- **Lighting controls** — two screens:
+  - A screen at the main entrance, behind the door on the right wall
+  - An iPad at the back left, in the control corner (left behind the cyclo wall), via the **Kiosc** app (black icon with a colored circle)
+- **5 preset scenes**: Ménage (brightest), Journée, Soirée, Nocturne, Fête
+- **Custom mode**: all lights turn off first. Then select the lights to modify (e.g. Appliques > Cuisine, or Appliques > Tout for all wall lights), then choose intensity and color. Important: always select the lights BEFORE choosing the color. Color changes only apply to the entrance zone (the curtains) — for other zones, you can only choose "warm" or "cold" and intensity.
+- **Dimmers**: yes, built into the control tablets (the two screens described above)
 
 ## Wi-Fi
-- Network name: [TO BE FILLED BY FRED]
-- Password: [TO BE FILLED BY FRED]
-- High-speed broadband available throughout the venue
+Two networks available:
+- **Chez les Plombiers Guest** — password: **bienvenue** (lowercase). Guest network, internet access only.
+- **Chez les Plombiers** — password: **supermario** (lowercase, no space). Admin network. You MUST be on this network to use the sound system (Sonos, Airplay, Spotify Connect) and the projector (Apple TV).
 
 ## Kitchen
 - Fully equipped kitchen available to all clients
-- Coffee machine: [TYPE/LOCATION TO BE FILLED BY FRED]
+- **Coffee machine**: bean-to-cup machine, located in the day kitchen (on the left when entering). Coffee beans available on-site. Below the machine: drawer with cups and sugar.
+- **Microwave**: far left of the day kitchen, inside a cupboard.
 - Fridge: yes, available for storing food and drinks
-- Dishwasher: [TO BE FILLED]
-- Glasses, plates, cutlery: [TO BE FILLED]
+- **Dishwasher**: in the main kitchen (U-shaped kitchen)
+- **Cutlery**: in the drawers below the coffee machine
+- **Glasses**: in the cupboard to the right of the coffee machine
 - The kitchen is professional-grade and can support catering operations
 
 ## Sound System
-- [EQUIPMENT TO BE FILLED BY FRED]
-- Bluetooth pairing: [INSTRUCTIONS TO BE FILLED]
-- Aux input: [LOCATION TO BE FILLED]
-- Speakers: [TO BE FILLED]
+- **Sonos** integrated system, with speakers calibrated specifically for the venue (certain frequencies adjusted to minimize neighbour disturbance). It is **forbidden** to add extra speakers or monitor speakers.
+- **Via Sonos (Wi-Fi)**: connect to the **Chez les Plombiers** network (NOT the Guest network), then stream via Airplay, Spotify Connect, or the Sonos app on the iPad.
+- **Via XLR**: two XLR jacks (stereo) available in the small alcove to the left of the cyclo wall. To use them: open the **UCP** app on the iPad (control corner), select the room(s) (Entrée / Salle 2 / Salle 3), then choose the **DJ** source. If sound goes through HDMI (projector), choose the **VP** source.
+- **No Jack input**. XLR only.
+- No Bluetooth connection — audio goes through Wi-Fi (Sonos/Airplay) or XLR only.
 
 ## Heating / Air Conditioning
-- [TYPE AND CONTROLS TO BE FILLED BY FRED]
-- Thermostat location: [TO BE FILLED]
+- **Daikin** reversible system (heating + air conditioning)
+- **Thermostats**:
+  - One unit to the right of the coffee machine
+  - Two units to the right of the utility room door in the back hall, facing the pink sofa
+- Also controllable from the iPad in the control corner (left behind the cyclo wall) via the **Daikin** app (choose heating or cooling mode)
 
 ## Cleaning & Waste
-- Bins location: [TO BE FILLED BY FRED]
-- Recycling: [TO BE FILLED]
-- Cleaning supplies: [TO BE FILLED]
-- End of event checklist: [TO BE FILLED]
+- **Recycling bins**: in the day kitchen (left side, near the coffee machine) — 3 separate bins: glass, yellow bin (plastic/paper/metal), general waste
+- **Wardrobe**: 3 clothing racks behind the curtain, with nearly unlimited hangers. A 4th rack is available if needed. Sufficient for most events.
+- **Toilets**: 2 toilets — one wheelchair-accessible (PMR), one standard
 - Please leave the venue in a reasonable state after your event
+
+## End of Event — Key Return
+- Turn off all lights
+- Lock the venue
+- Put the key back in the key box
+- Scramble the digits after closing the box
+- (If a security team is present, they handle the closing)
 
 ## Rules & Regulations
 - Noise curfew: [TO BE FILLED BY FRED]
@@ -120,6 +135,14 @@ VENUE KNOWLEDGE BASE:
 - Designer furniture and decor
 - Ideal for photo shoots, interviews, confidential meetings, and small private events
 - Separate entrance possible
+
+## Projector
+- **Optoma ZU820T** — 8,800 lumens — projection size: 4.63m wide × 3.50m tall
+- **Connections**:
+  - Apple TV → HDMI channel 1
+  - HDMI wall socket (control corner) → HDMI channel 2
+  - Switch channels with the black remote (channel button)
+- If sound goes through HDMI, make sure to select the **VP** source in the **UCP** app on the iPad
 
 ## Nearby — Useful Addresses
 - Restaurants & food: Les Halles area (2 min walk) — dozens of restaurants and cafés
@@ -164,39 +187,55 @@ BASE DE CONNAISSANCES DU LIEU :
 
 ## Électricité & Éclairage
 - Alimentation triphasée : 36 kVA — supporte les configurations d'éclairage les plus exigeantes
-- Tableau électrique principal : [EMPLACEMENT À REMPLIR PAR FRED]
-- Zones d'éclairage : [À REMPLIR - quels interrupteurs contrôlent quoi]
-- Variateurs : [À REMPLIR]
+- **Tableau électrique** : dans le local technique, au fond de la salle principale à gauche, derrière une porte à code. Le code change chaque semaine — il est communiqué par message à chaque client lors de la confirmation de réservation. C'est le même code que pour la boîte à clé et la porte du sous-sol. Il faut taper le code puis appuyer sur le bouton "clef". Pour ouvrir le tableau à l'intérieur : appuyer sur le petit bouton au centre en dessous de chaque poignée pour la déverrouiller, puis tourner la poignée.
+- **Commandes d'éclairage** — deux écrans :
+  - Un écran à l'entrée principale, derrière la porte à droite sur le mur
+  - Un iPad au fond à gauche, dans le coin régie (à gauche derrière le mur cyclo), via l'application **Kiosc** (icône noire avec un rond de couleur)
+- **5 scénarios** : Ménage (le plus puissant), Journée, Soirée, Nocturne, Fête
+- **Mode Custom** : toutes les lumières s'éteignent au lancement. Il faut ensuite sélectionner les lumières à modifier (ex : Appliques > Cuisine, ou Appliques > Tout pour toutes les appliques), puis choisir l'intensité et la couleur. Important : toujours sélectionner les lumières AVANT de choisir la couleur. Les changements de couleur s'appliquent uniquement à la zone entrée (les rideaux) — pour les autres zones, on ne peut choisir que "chaud" ou "froid" et la puissance.
+- **Variateurs** : oui, intégrés directement sur les tablettes de commande (les deux écrans décrits ci-dessus)
 
 ## Wi-Fi
-- Nom du réseau : [À REMPLIR PAR FRED]
-- Mot de passe : [À REMPLIR PAR FRED]
-- Internet haut débit disponible dans tout le lieu
+Deux réseaux disponibles :
+- **Chez les Plombiers Guest** → mot de passe : **bienvenue** (en minuscules). Réseau invités, accès internet uniquement.
+- **Chez les Plombiers** → mot de passe : **supermario** (en minuscules, attaché). Réseau admin. Il faut être connecté à ce réseau pour utiliser la musique (Sonos, Airplay, Spotify Connect) et le vidéoprojecteur (Apple TV).
 
 ## Cuisine
 - Cuisine entièrement équipée, accessible à tous les clients
-- Machine à café : [TYPE/EMPLACEMENT À REMPLIR PAR FRED]
+- **Machine à café** : machine à grains, dans la cuisine de jour (à gauche en entrant). Café en grains disponible sur place. En dessous de la machine : tiroir avec tasses et sucre.
+- **Micro-ondes** : tout à gauche de la cuisine de jour, dans un placard.
 - Réfrigérateur : oui, disponible pour stocker nourriture et boissons
-- Lave-vaisselle : [À REMPLIR]
-- Verres, assiettes, couverts : [À REMPLIR]
+- **Lave-vaisselle** : dans la cuisine principale (cuisine en U)
+- **Couverts** : dans les tiroirs sous la machine à café
+- **Verres** : dans le placard à droite de la machine à café
 - La cuisine est professionnelle et peut supporter des opérations de traiteur
 
 ## Système Audio
-- [ÉQUIPEMENT À REMPLIR PAR FRED]
-- Appairage Bluetooth : [INSTRUCTIONS À REMPLIR]
-- Entrée auxiliaire : [EMPLACEMENT À REMPLIR]
-- Enceintes : [À REMPLIR]
+- Système **Sonos** intégré, avec enceintes calibrées spécifiquement pour le lieu (certaines fréquences ajustées pour minimiser la gêne des voisins). Il est **interdit** d'ajouter des enceintes supplémentaires ou des enceintes de retour.
+- **Via Sonos (Wi-Fi)** : se connecter au réseau **Chez les Plombiers** (pas le réseau Guest), puis diffuser via Airplay, Spotify Connect ou l'app Sonos sur l'iPad.
+- **Via prises XLR** : deux prises XLR (stéréo) dans la petite alcôve à gauche du mur cyclo. Pour les utiliser : ouvrir l'application **UCP** sur l'iPad (coin régie), sélectionner la ou les salles (Entrée / Salle 2 / Salle 3), puis choisir la source **DJ**. Si le son passe par HDMI (vidéoprojecteur), choisir la source **VP**.
+- **Pas d'entrée Jack**. Uniquement XLR.
+- Pas de Bluetooth — le son passe par Wi-Fi (Sonos/Airplay) ou XLR uniquement.
 
 ## Chauffage / Climatisation
-- [TYPE ET COMMANDES À REMPLIR PAR FRED]
-- Emplacement thermostat : [À REMPLIR]
+- Système **Daikin** réversible (chauffage + climatisation)
+- **Boîtiers de réglage** :
+  - Un boîtier à droite de la machine à café
+  - Deux boîtiers à droite de la porte du local technique dans la salle du fond, en face du canapé rose
+- Contrôlable aussi depuis l'iPad dans le coin régie (à gauche derrière le mur cyclo) via l'application **Daikin** (choix des modes chauffe/climatisation)
 
 ## Ménage & Déchets
-- Emplacement poubelles : [À REMPLIR PAR FRED]
-- Tri sélectif : [À REMPLIR]
-- Produits de ménage : [À REMPLIR]
-- Checklist fin d'événement : [À REMPLIR]
+- **Poubelles tri sélectif** : dans la cuisine de jour (à gauche, côté machine à café) — 3 poubelles distinctes : verre, poubelle jaune (plastique/papier/métal), tout-venant
+- **Vestiaire** : 3 portants derrière le rideau, avec un nombre de cintres quasi illimité. Un 4e portant est disponible si besoin. Capacité suffisante pour la majorité des événements.
+- **Toilettes** : 2 WC — un WC PMR (accessible handicapé) et un WC standard
 - Merci de laisser le lieu dans un état correct après votre événement
+
+## Fin d'événement — Remise des clés
+- Éteindre toutes les lumières
+- Fermer le lieu à clé
+- Remettre la clé dans la boîte à clé
+- Brouiller les chiffres après avoir refermé la boîte
+- (Si une équipe sécurité est présente, elle s'occupe de la fermeture)
 
 ## Règles & Réglementation
 - Couvre-feu bruit : [À REMPLIR PAR FRED]
@@ -238,6 +277,14 @@ BASE DE CONNAISSANCES DU LIEU :
 - Mobilier design et décoration soignée
 - Idéal pour shootings photo, interviews, réunions confidentielles et petits événements privés
 - Entrée séparée possible
+
+## Vidéoprojecteur
+- **Optoma ZU820T** — 8 800 lumens — projection : 4,63m de large × 3,50m de haut
+- **Connexions** :
+  - Apple TV → canal HDMI 1
+  - Prise HDMI murale (coin régie) → canal HDMI 2
+  - Changer de canal avec la télécommande noire (bouton canal)
+- Si le son passe par HDMI, bien penser à sélectionner la source **VP** dans l'application **UCP** sur l'iPad
 
 ## À Proximité — Adresses Utiles
 - Restaurants & food : quartier des Halles (2 min à pied) — dizaines de restaurants et cafés
