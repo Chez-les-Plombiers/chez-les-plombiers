@@ -139,11 +139,19 @@ Two networks available:
 - Separate entrance possible
 
 ## Projector
-- **Optoma ZU820T** — 8,800 lumens — projection size: 4.63m wide × 3.50m tall
-- **Connections**:
+- **Optoma ZU820T** — DuraCore Laser, DLP, WUXGA (1920×1200), 8,800 lumens, contrast 3,000,000:1
+- Projection size at the venue: 4.63m wide × 3.50m tall
+- Compatible aspect ratios: 16:10 (native), 16:9, 4:3
+- 4K and HDR compatible — ideal for video, presentations, and immersive content
+- Motorised zoom (1.6x) and lens shift (vertical ±55%, horizontal ±25%)
+- Screen size range: 1.27m to 7.62m diagonal (50" to 300")
+- Built-in speakers: 2 × 10W (but venue audio goes through Sonos — see Sound System section)
+- Noise level: 29–36 dB
+- **Inputs available at the venue**:
   - Apple TV → HDMI channel 1
   - HDMI wall socket (control corner) → HDMI channel 2
   - Switch channels with the black remote (channel button)
+- The projector also has: 1× HDBaseT, 2× HDMI 2.0, 1× VGA, RJ45 (LAN)
 - If sound goes through HDMI, make sure to select the **VP** source in the **UCP** app on the iPad
 
 ## Nearby — Useful Addresses
@@ -283,11 +291,19 @@ Deux réseaux disponibles :
 - Entrée séparée possible
 
 ## Vidéoprojecteur
-- **Optoma ZU820T** — 8 800 lumens — projection : 4,63m de large × 3,50m de haut
-- **Connexions** :
+- **Optoma ZU820T** — Laser DuraCore, DLP, WUXGA (1920×1200), 8 800 lumens, contraste 3 000 000:1
+- Taille de projection dans le lieu : 4,63m de large × 3,50m de haut
+- Ratios compatibles : 16:10 (natif), 16:9, 4:3
+- Compatible 4K et HDR — idéal pour vidéo, présentations et contenus immersifs
+- Zoom motorisé (1.6x) et lens shift (vertical ±55%, horizontal ±25%)
+- Taille d'écran possible : 1,27m à 7,62m de diagonale (50" à 300")
+- Enceintes intégrées : 2 × 10W (mais le son du lieu passe par Sonos — voir section Système Audio)
+- Niveau sonore : 29–36 dB
+- **Entrées disponibles dans le lieu** :
   - Apple TV → canal HDMI 1
   - Prise HDMI murale (coin régie) → canal HDMI 2
   - Changer de canal avec la télécommande noire (bouton canal)
+- Le projecteur dispose aussi de : 1× HDBaseT, 2× HDMI 2.0, 1× VGA, RJ45 (LAN)
 - Si le son passe par HDMI, bien penser à sélectionner la source **VP** dans l'application **UCP** sur l'iPad
 
 ## À Proximité — Adresses Utiles
