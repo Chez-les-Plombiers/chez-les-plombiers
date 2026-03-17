@@ -7,6 +7,7 @@ const slugMap: Record<string, string> = {
   appartement: "apartment",
   "mentions-legales": "legal-notice",
   "politique-confidentialite": "privacy-policy",
+  "notre-chef": "our-chef",
   // Service slugs (under /services/)
   "petit-dejeuners": "corporate-breakfasts",
   "evenements-professionnels": "professional-events",

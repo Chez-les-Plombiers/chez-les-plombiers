@@ -55,6 +55,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/notre-chef`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/notre-chef`,
+          en: `${baseUrl}/en/our-chef`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/our-chef`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     // Service pages
     {
       url: `${baseUrl}/services/fashion-shows`,

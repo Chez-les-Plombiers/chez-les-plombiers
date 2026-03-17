@@ -897,7 +897,9 @@
     "privacyTitle": "Privacy Policy | Chez Les Plombiers",
     "privacyDescription": "Privacy policy and personal data protection — Chez Les Plombiers, event venue Paris 1st.",
     "studioTitle": "Photo & Video Studio Paris 1st — 130m² Cyclorama | Chez Les Plombiers",
-    "studioDescription": "Rent a 130m² photo and video studio in Paris 1st: cyclorama wall, technical ceiling grid, 36 kVA, epoxy floor. Bare studio for professionals."
+    "studioDescription": "Rent a 130m² photo and video studio in Paris 1st: cyclorama wall, technical ceiling grid, 36 kVA, epoxy floor. Bare studio for professionals.",
+    "chefTitle": "Chef Mathias Rouveure — Event Caterer Paris | Chez Les Plombiers",
+    "chefDescription": "Meet Mathias Rouveure (Homemade), partner chef at Chez Les Plombiers. EHL graduate, he blends food, art and music into bespoke culinary experiences in Paris 1st."
   },
   "studio": {
     "title": "Studio",
@@ -1019,6 +1021,66 @@
     "ctaTitle": "Book the studio",
     "ctaDescription": "Send your request by email or WhatsApp. Response within 24h.",
     "ctaButton": "Contact us"
+  },
+  "chef": {
+    "heroOvertitle": "Partner Chef",
+    "heroTitle": "Mathias Rouveure",
+    "heroSubtitle": "Gastronomy as an experience. Every dish tells a story, every event becomes a moment to remember.",
+    "heroImageAlt": "Table set for an exceptional dinner — Chef Mathias Rouveure at Chez Les Plombiers Paris 1st",
+    "accrocheLabel": "Our Vision",
+    "accrocheTitle": "A chef, a venue, <strong>a vision</strong>",
+    "accrocheText": "Chez les Plombiers is not a restaurant. It's an exceptional venue that chose to partner with a culinary artist whose vision matches its own. Mathias Rouveure transforms every event into a multisensory experience — food, art and emotion in a raw, architectural setting.",
+    "portraitMeta": "Exclusive Partner Chef",
+    "portraitName": "Mathias Rouveure",
+    "portraitBio1": "A graduate of the École hôtelière de Lausanne (EHL), Mathias Rouveure founded Homemade in 2022 with one conviction: gastronomy is a living art that deserves to be experienced, not just tasted.",
+    "portraitBio2": "His approach blends food, art and music to create multisensory experiences. Every event becomes a bespoke culinary narrative — from an intimate private dinner to a product launch for 200 guests.",
+    "portraitSignature": "\"Serious about quality, never about ourselves.\"",
+    "portraitImageAlt": "Chef Mathias Rouveure — founder of Homemade, partner chef at Chez Les Plombiers",
+    "logosLabel": "They trust him",
+    "logosTitle": "Client <strong>references</strong>",
+    "logos": ["Dior", "Chanel", "Hermès", "Cartier", "Piaget", "Audemars Piguet", "Nike", "TF1", "Galeries Lafayette"],
+    "galleryLabel": "Portfolio",
+    "galleryTitle": "Culinary <strong>creations</strong>",
+    "galleryItems": [
+      { "label": "Main photo", "desc": "Culinary artwork / artistic composition" },
+      { "label": "Photo 2", "desc": "Plating / dish detail" },
+      { "label": "Photo 3", "desc": "Event atmosphere" },
+      { "label": "Photo 4", "desc": "Cocktail / canapés" },
+      { "label": "Photo 5", "desc": "Staging / mise en scène" },
+      { "label": "Photo 6", "desc": "Guests / service" }
+    ],
+    "prestationsLabel": "Experiences",
+    "prestationsTitle": "Our culinary <strong>formats</strong>",
+    "prestations": [
+      {
+        "number": "01",
+        "title": "Exceptional dinner",
+        "description": "Bespoke tasting menu, plated service, optional wine pairing. A complete gastronomic experience.",
+        "capacity": "40 to 80 guests"
+      },
+      {
+        "number": "02",
+        "title": "Cocktail reception",
+        "description": "Creative canapés, artistic compositions, roaming service. Elegance in motion.",
+        "capacity": "80 to 150 guests"
+      },
+      {
+        "number": "03",
+        "title": "Creative brunch",
+        "description": "Curated buffet, live cooking stations, edible artworks. Breakfast reinvented.",
+        "capacity": "40 to 100 guests"
+      },
+      {
+        "number": "04",
+        "title": "Immersive experience",
+        "description": "Bespoke concept: food + art + music + full scenography. Your vision, his signature.",
+        "capacity": "On request"
+      }
+    ],
+    "ctaTitle": "Imagine your <strong>event</strong>",
+    "ctaSubtitle": "Contact us to create a bespoke culinary experience together in an exceptional setting.",
+    "ctaContact": "Contact us",
+    "ctaHomemade": "Discover Homemade"
   },
   "skipToContent": "Skip to main content",
   "calendarDisclaimer": "Prices shown are indicative and subject to change based on demand. Please contact us via WhatsApp for confirmation.",

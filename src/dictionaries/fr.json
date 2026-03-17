@@ -897,7 +897,9 @@
     "privacyTitle": "Politique de Confidentialité | Chez Les Plombiers",
     "privacyDescription": "Politique de confidentialité et protection des données personnelles — Chez Les Plombiers, lieu évènementiel Paris 1er.",
     "studioTitle": "Studio Photo & Vidéo Paris 1er — 130m² Cyclorama | Chez Les Plombiers",
-    "studioDescription": "Louez un studio photo et vidéo de 130m² à Paris 1er : mur cyclorama, grille technique plafond, 36 kVA, sol résine époxy. Plateau nu pour professionnels."
+    "studioDescription": "Louez un studio photo et vidéo de 130m² à Paris 1er : mur cyclorama, grille technique plafond, 36 kVA, sol résine époxy. Plateau nu pour professionnels.",
+    "chefTitle": "Chef Mathias Rouveure — Traiteur Événementiel Paris | Chez Les Plombiers",
+    "chefDescription": "Découvrez Mathias Rouveure (Homemade), chef partenaire de Chez Les Plombiers. Diplômé EHL, il fusionne food, art et musique pour des expériences culinaires sur mesure à Paris 1er."
   },
   "studio": {
     "title": "Studio",
@@ -1019,6 +1021,66 @@
     "ctaTitle": "Réserver le studio",
     "ctaDescription": "Envoyez-nous votre demande par email ou WhatsApp. Réponse sous 24h.",
     "ctaButton": "Nous contacter"
+  },
+  "chef": {
+    "heroOvertitle": "Chef Partenaire",
+    "heroTitle": "Mathias Rouveure",
+    "heroSubtitle": "La gastronomie comme expérience. Chaque plat raconte une histoire, chaque événement devient un moment de vie.",
+    "heroImageAlt": "Table dressée pour un dîner d'exception — Chef Mathias Rouveure chez Les Plombiers Paris 1er",
+    "accrocheLabel": "Notre Vision",
+    "accrocheTitle": "Un chef, un lieu, <strong>une vision</strong>",
+    "accrocheText": "Chez les Plombiers n'est pas un restaurant. C'est un lieu d'exception qui a choisi de s'associer à un artiste culinaire dont la vision correspond à la sienne. Mathias Rouveure transforme chaque événement en expérience multisensorielle — food, art et émotion dans un cadre brut et architectural.",
+    "portraitMeta": "Chef Partenaire Privilégié",
+    "portraitName": "Mathias Rouveure",
+    "portraitBio1": "Diplômé de l'École hôtelière de Lausanne (EHL), Mathias Rouveure fonde Homemade en 2022 avec une conviction : la gastronomie est un art vivant qui mérite d'être vécu, pas seulement dégusté.",
+    "portraitBio2": "Son approche fusionne food, art et musique pour créer des expériences multisensorielles. Chaque événement devient une narration culinaire pensée sur mesure — du dîner privé intime au lancement de produit pour 200 convives.",
+    "portraitSignature": "« Serious about quality, never about ourselves. »",
+    "portraitImageAlt": "Chef Mathias Rouveure — fondateur de Homemade, chef partenaire Chez Les Plombiers",
+    "logosLabel": "Ils lui font confiance",
+    "logosTitle": "Références <strong>clients</strong>",
+    "logos": ["Dior", "Chanel", "Hermès", "Cartier", "Piaget", "Audemars Piguet", "Nike", "TF1", "Galeries Lafayette"],
+    "galleryLabel": "Portfolio",
+    "galleryTitle": "Créations <strong>culinaires</strong>",
+    "galleryItems": [
+      { "label": "Photo principale", "desc": "Tableau culinaire / composition artistique" },
+      { "label": "Photo 2", "desc": "Dressage / détail plat" },
+      { "label": "Photo 3", "desc": "Ambiance événement" },
+      { "label": "Photo 4", "desc": "Cocktail / pièces" },
+      { "label": "Photo 5", "desc": "Mise en scène" },
+      { "label": "Photo 6", "desc": "Convives / service" }
+    ],
+    "prestationsLabel": "Expériences",
+    "prestationsTitle": "Nos formats <strong>culinaires</strong>",
+    "prestations": [
+      {
+        "number": "01",
+        "title": "Dîner d'exception",
+        "description": "Menu dégustation sur mesure, service à l'assiette, accord mets-vins optionnel. Une expérience gastronomique complète.",
+        "capacity": "40 à 80 convives"
+      },
+      {
+        "number": "02",
+        "title": "Cocktail dînatoire",
+        "description": "Pièces cocktail créatives, compositions artistiques, service volant. L'élégance en mouvement.",
+        "capacity": "80 à 150 convives"
+      },
+      {
+        "number": "03",
+        "title": "Brunch créatif",
+        "description": "Buffet scénographié, stations live cooking, œuvres comestibles. Le petit-déjeuner réinventé.",
+        "capacity": "40 à 100 convives"
+      },
+      {
+        "number": "04",
+        "title": "Expérience immersive",
+        "description": "Concept sur mesure : food + art + musique + scénographie complète. Votre vision, sa signature.",
+        "capacity": "Sur devis"
+      }
+    ],
+    "ctaTitle": "Imaginez votre <strong>événement</strong>",
+    "ctaSubtitle": "Contactez-nous pour créer ensemble une expérience culinaire sur mesure dans un cadre d'exception.",
+    "ctaContact": "Nous contacter",
+    "ctaHomemade": "Découvrir Homemade"
   },
   "skipToContent": "Aller au contenu principal",
   "calendarDisclaimer": "Les tarifs affichés sont fournis à titre indicatif et sont susceptibles d'évoluer selon la demande. Merci de nous contacter via WhatsApp pour confirmation.",
