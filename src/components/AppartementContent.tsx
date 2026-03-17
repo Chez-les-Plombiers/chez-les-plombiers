@@ -9,6 +9,7 @@ import JSZip from "jszip";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { useI18n } from "@/lib/i18n-context";
 import { SERVICE_FR_SLUGS, getServiceEnSlug } from "@/lib/services-data";
+import { ReviewsSection } from "@/components/ReviewsSection";
 
 const appartPhotos = Array.from({ length: 10 }, (_, i) => {
   const num = String(i + 1).padStart(2, "0");
@@ -168,57 +169,46 @@ export function AppartementContent() {
 
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl mb-6 tracking-tight">
-                {appart.sectionTitle}
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                {appart.sectionDescription}
-              </p>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl mb-6 tracking-tight">
+              {appart.sectionTitle}
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              {appart.sectionDescription}
+            </p>
 
-              <div className="grid grid-cols-2 gap-x-8 gap-y-8 mb-10 border-y border-gray-200 py-8">
-                <div className="flex flex-col">
-                  <span className="text-6xl font-light tracking-tighter mb-2">
-                    100
-                    <span className="text-2xl ml-1 align-top">m&sup2;</span>
-                  </span>
-                  <span className="text-sm uppercase tracking-widest text-gray-500 font-medium">
-                    {appart.surfaceLabel}
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-6xl font-light tracking-tighter mb-2">
-                    50
-                  </span>
-                  <span className="text-sm uppercase tracking-widest text-gray-500 font-medium">
-                    {appart.capacityLabel}
-                  </span>
-                </div>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-8 mb-10 border-y border-gray-200 py-8 max-w-md mx-auto">
+              <div className="flex flex-col">
+                <span className="text-6xl font-light tracking-tighter mb-2">
+                  100
+                  <span className="text-2xl ml-1 align-top">m&sup2;</span>
+                </span>
+                <span className="text-sm uppercase tracking-widest text-gray-500 font-medium">
+                  {appart.surfaceLabel}
+                </span>
               </div>
-
-              <div>
-                <h3 className="text-sm uppercase tracking-widest text-gray-900 mb-4 font-semibold">
-                  {appart.equipmentsTitle}
-                </h3>
-                <ul className="grid grid-cols-1 gap-3 text-gray-600">
-                  {appart.equipments.map((item) => (
-                    <li key={item} className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-black mr-3 rounded-full" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex flex-col">
+                <span className="text-6xl font-light tracking-tighter mb-2">
+                  50
+                </span>
+                <span className="text-sm uppercase tracking-widest text-gray-500 font-medium">
+                  {appart.capacityLabel}
+                </span>
               </div>
             </div>
-            <div className="h-[500px] overflow-hidden bg-gray-100 relative">
-              <Image
-                src="/images/appartement-detail.png"
-                alt={appart.detailImageAlt}
-                fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+
+            <div>
+              <h3 className="text-sm uppercase tracking-widest text-gray-900 mb-4 font-semibold">
+                {appart.equipmentsTitle}
+              </h3>
+              <ul className="inline-grid grid-cols-1 gap-3 text-gray-600 text-left">
+                {appart.equipments.map((item) => (
+                  <li key={item} className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-black mr-3 rounded-full" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -382,6 +372,9 @@ export function AppartementContent() {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews */}
+      <ReviewsSection />
 
       {/* Cross-links to services */}
       <section className="py-16 lg:py-20 bg-gray-50">
