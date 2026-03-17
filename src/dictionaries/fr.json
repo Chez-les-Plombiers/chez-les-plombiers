@@ -899,7 +899,9 @@
     "studioTitle": "Studio Photo & Vidéo Paris 1er — 130m² Cyclorama | Chez Les Plombiers",
     "studioDescription": "Louez un studio photo et vidéo de 130m² à Paris 1er : mur cyclorama, grille technique plafond, 36 kVA, sol résine époxy. Plateau nu pour professionnels.",
     "chefTitle": "Chef Mathias Rouveure — Traiteur Événementiel Paris | Chez Les Plombiers",
-    "chefDescription": "Découvrez Mathias Rouveure (Homemade), chef partenaire de Chez Les Plombiers. Diplômé EHL, il fusionne food, art et musique pour des expériences culinaires sur mesure à Paris 1er."
+    "chefDescription": "Découvrez Mathias Rouveure (Homemade), chef partenaire de Chez Les Plombiers. Diplômé EHL, il fusionne food, art et musique pour des expériences culinaires sur mesure à Paris 1er.",
+    "guideTitle": "Guide Pratique | Chez Les Plombiers",
+    "guideDescription": "Votre assistant pratique pour votre événement chez Les Plombiers. Trouvez instantanément les réponses à vos questions."
   },
   "studio": {
     "title": "Studio",
@@ -1021,6 +1023,24 @@
     "ctaTitle": "Réserver le studio",
     "ctaDescription": "Envoyez-nous votre demande par email ou WhatsApp. Réponse sous 24h.",
     "ctaButton": "Nous contacter"
+  },
+  "guide": {
+    "title": "Guide Pratique",
+    "subtitle": "Posez votre question, notre assistant vous répond instantanément.",
+    "placeholder": "Comment allumer la lumière ?",
+    "suggestionsLabel": "Questions fréquentes",
+    "suggestions": [
+      "Où se garer ?",
+      "Quel est le code Wi-Fi ?",
+      "Comment allumer la lumière ?",
+      "Où trouver du café ?",
+      "Comment brancher la sono ?",
+      "Où sont les poubelles ?"
+    ],
+    "errorMessage": "Une erreur est survenue. Veuillez réessayer.",
+    "retryButton": "Réessayer",
+    "poweredBy": "Chez Les Plombiers — Assistant IA",
+    "contactFallback": "Besoin d'aide ? WhatsApp : +33 6 88 67 99 81"
   },
   "chef": {
     "heroOvertitle": "Chef Partenaire",

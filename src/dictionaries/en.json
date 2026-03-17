@@ -899,7 +899,9 @@
     "studioTitle": "Photo & Video Studio Paris 1st — 130m² Cyclorama | Chez Les Plombiers",
     "studioDescription": "Rent a 130m² photo and video studio in Paris 1st: cyclorama wall, technical ceiling grid, 36 kVA, epoxy floor. Bare studio for professionals.",
     "chefTitle": "Chef Mathias Rouveure — Event Caterer Paris | Chez Les Plombiers",
-    "chefDescription": "Meet Mathias Rouveure (Homemade), partner chef at Chez Les Plombiers. EHL graduate, he blends food, art and music into bespoke culinary experiences in Paris 1st."
+    "chefDescription": "Meet Mathias Rouveure (Homemade), partner chef at Chez Les Plombiers. EHL graduate, he blends food, art and music into bespoke culinary experiences in Paris 1st.",
+    "guideTitle": "Practical Guide | Chez Les Plombiers",
+    "guideDescription": "Your practical assistant for your event at Chez Les Plombiers. Get instant answers to your questions."
   },
   "studio": {
     "title": "Studio",
@@ -1021,6 +1023,24 @@
     "ctaTitle": "Book the studio",
     "ctaDescription": "Send your request by email or WhatsApp. Response within 24h.",
     "ctaButton": "Contact us"
+  },
+  "guide": {
+    "title": "Practical Guide",
+    "subtitle": "Ask your question, our assistant answers instantly.",
+    "placeholder": "How do I turn on the lights?",
+    "suggestionsLabel": "Common questions",
+    "suggestions": [
+      "Where to park?",
+      "What's the Wi-Fi password?",
+      "How to turn on the lights?",
+      "Where to find coffee?",
+      "How to connect to the speakers?",
+      "Where are the bins?"
+    ],
+    "errorMessage": "Something went wrong. Please try again.",
+    "retryButton": "Try again",
+    "poweredBy": "Chez Les Plombiers — AI Assistant",
+    "contactFallback": "Need help? WhatsApp: +33 6 88 67 99 81"
   },
   "chef": {
     "heroOvertitle": "Partner Chef",

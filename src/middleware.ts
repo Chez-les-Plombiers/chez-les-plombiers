@@ -17,6 +17,7 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/images") ||
     pathname.startsWith("/videos") ||
     pathname.startsWith("/documents") ||
+    pathname.startsWith("/guide/images") ||
     pathname.endsWith(".ico") ||
     pathname.endsWith(".png") ||
     pathname.endsWith(".jpg") ||
