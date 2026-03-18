@@ -549,8 +549,8 @@
     "ctaEmail": "Nous écrire",
     "services": {
       "fashion-shows": {
-        "title": "Fashion Shows & Brand Events",
-        "tagline": "Défilez dans un décor architectural fort.",
+        "title": "Défilés de Mode & Brand Events",
+        "tagline": "Lieu de défilé et showroom au cœur de Paris 1er.",
         "description": "Chez Les Plombiers offre un cadre brut et spectaculaire pour les défilés de mode, showrooms et lancements de collections. Avec 200 m² modulables, une hauteur sous plafond de 4,5 mètres et un mur cyclo de 4,63 m, notre espace se transforme en scène de fashion show ou en showroom haut de gamme. L'éclairage DMX dimmable, la fibre dédiée 1 Gb/s et l'alimentation triphasée 36 KvA répondent aux exigences techniques les plus pointues des maisons de mode et des agences événementielles.",
         "specs": [
           {
@@ -608,8 +608,8 @@
         "descriptionExtended": "Situé au 39 rue des Bourdonnais, en plein cœur de Paris 1er à deux pas du Louvre et des Halles, Chez Les Plombiers est le lieu de référence pour les défilés de mode et événements de marque à Paris. Pendant la Fashion Week, notre espace accueille des présentations de collections, des press days et des pop-up showrooms. Les rideaux modulables permettent de créer un backstage dédié avec vestiaire et portants, tandis que l'espace principal se transforme en podium avec front row. L'accès technique au rez-de-chaussée facilite les livraisons de matériel scénique, et le sous-sol de 100 m² offre un stockage complémentaire pour vos collections et équipements."
       },
       "petit-dejeuners": {
-        "title": "Petit-Déjeuners",
-        "tagline": "Démarrez la journée dans un cadre inspirant.",
+        "title": "Petit-Déjeuners d'Entreprise",
+        "tagline": "Breakfast professionnel dans un cadre unique à Paris 1er.",
         "description": "Accueillez vos équipes ou vos clients dès le matin dans un lieu hors du commun. Chez Les Plombiers transforme le traditionnel petit-déjeuner d'entreprise en un moment mémorable. Breakfast presse, brunch créatif ou petit-déjeuner de networking : notre cuisine équipée professionnelle et notre cadre brutaliste unique créent l'atmosphère idéale pour commencer la journée autrement. La demi-journée (7h-13h) est disponible du lundi au mercredi à partir de 1 000 € HT.",
         "specs": [
           {
@@ -664,7 +664,7 @@
       },
       "evenements-professionnels": {
         "title": "Évènements Professionnels",
-        "tagline": "Un cadre qui élève vos ambitions.",
+        "tagline": "Conférence, lancement de produit et team building à Paris 1er.",
         "description": "Lancements de produits, conférences et team buildings dans un espace modulable et équipé au cœur de Paris 1er. Chez Les Plombiers allie architecture brutaliste spectaculaire et technologie de pointe : vidéoprojecteur 4K de 8800 lumens, système audio Sonos et XLR, fibre dédiée 1 Gb/s symétrique. L'espace de 200 m² avec 4,5 m de hauteur sous plafond se reconfigure en quelques minutes grâce aux rideaux modulables pour créer jusqu'à 3 espaces distincts.",
         "specs": [
           {
@@ -723,7 +723,7 @@
       },
       "diners-exception": {
         "title": "Dîners d'Exception",
-        "tagline": "Une expérience gastronomique immersive.",
+        "tagline": "Dîner de gala et soirée privatisée au cœur de Paris 1er.",
         "description": "Grandes tables et dîners de chef réunissant 40 à 80 convives dans un cadre industriel spectaculaire. Chez Les Plombiers offre une expérience gastronomique immersive pensée comme un évènement à part entière. La cuisine traiteur professionnelle en U, équipée d'un four, lave-vaisselle, machine à glaçons, réfrigérateur et congélateur, permet à votre traiteur de travailler dans des conditions optimales. L'éclairage DMX crée l'ambiance parfaite pour chaque moment du repas.",
         "specs": [
           {
@@ -777,8 +777,8 @@
         "descriptionExtended": "Au cœur du 1er arrondissement de Paris, Chez Les Plombiers transforme chaque dîner en un événement d'exception. L'architecture brutaliste avec ses murs en pierre brute, ses poutres métalliques style Eiffel et sa hauteur sous plafond de 4,5 mètres crée une atmosphère unique pour vos dîners de gala, soirées de levée de fonds ou dîners de marque. L'espace se prête aussi bien aux grandes tablées de 80 convives qu'aux formats plus intimes de 40 personnes avec îlots. Les rideaux modulables permettent de séparer l'espace cocktail d'accueil de la salle à manger principale. Votre traiteur trouvera dans notre cuisine professionnelle tout le nécessaire pour un service irréprochable."
       },
       "evenements-culturels": {
-        "title": "Évènements Culturels",
-        "tagline": "Un lieu inspirant pensé comme une galerie.",
+        "title": "Expositions & Évènements Culturels",
+        "tagline": "Galerie éphémère et performances artistiques à Paris 1er.",
         "description": "Vernissages, expositions et performances artistiques dans un lieu inspirant pensé comme une galerie contemporaine. Les murs en pierre brute, les poutres métalliques style Eiffel et la lumière naturelle créent un écrin idéal pour tout projet artistique ou culturel. L'espace de 200 m² avec 4,5 m de hauteur sous plafond offre une liberté totale d'accrochage et d'installation. Le mur cyclo de 4,63 m sert de toile de projection pour les installations vidéo et les performances numériques.",
         "specs": [
           {
@@ -833,7 +833,7 @@
       },
       "seminaires-formations": {
         "title": "Séminaires & Formations",
-        "tagline": "Un cadre qui stimule la créativité.",
+        "tagline": "Salle de séminaire atypique au cœur de Paris 1er.",
         "description": "Séminaires d'entreprise, journées de formation et workshops dans un cadre inspirant hors des sentiers battus. Chez Les Plombiers offre un environnement unique qui casse les codes du séminaire classique. L'espace de 200 m² se divise en 3 zones distinctes grâce aux rideaux modulables : plénière, ateliers et espace détente. Le vidéoprojecteur 4K, la fibre 1 Gb/s et le mobilier design créent les conditions idéales pour des journées productives et mémorables.",
         "specs": [
           {
@@ -921,7 +921,7 @@
     "guideDescription": "Votre assistant pratique pour votre événement chez Les Plombiers. Trouvez instantanément les réponses à vos questions."
   },
   "studio": {
-    "title": "Studio",
+    "title": "Studio Photo & Vidéo",
     "heroTagline": "130 m² de plateau brut au cœur de Paris 1er. Cyclorama intégré, grille technique, 36 kVA.",
     "heroImageAlt": "Studio photo avec mur cyclorama blanc et grille technique au plafond — Chez Les Plombiers Paris 1er",
     "accroche": "Un plateau brut et architectural au cœur de Paris 1er. Résine époxy, cyclorama intégré, grille technique, 36 kVA. Aucun compromis.",

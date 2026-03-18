@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
+import { trackEvent } from "@/lib/analytics";
 import { SERVICE_IMAGES, SERVICE_FR_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
@@ -316,6 +317,12 @@ export function ServicePageContent({ slug }: { slug: string }) {
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("contact_click", {
+                    method: "calendly",
+                    destination: EXTERNAL_LINKS.calendly,
+                  })
+                }
                 className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
                 <Calendar className="w-4 h-4" />
@@ -325,6 +332,12 @@ export function ServicePageContent({ slug }: { slug: string }) {
                 href={EXTERNAL_LINKS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("contact_click", {
+                    method: "whatsapp",
+                    destination: EXTERNAL_LINKS.whatsapp,
+                  })
+                }
                 className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -332,6 +345,12 @@ export function ServicePageContent({ slug }: { slug: string }) {
               </a>
               <a
                 href={EXTERNAL_LINKS.email}
+                onClick={() =>
+                  trackEvent("contact_click", {
+                    method: "email",
+                    destination: EXTERNAL_LINKS.email,
+                  })
+                }
                 className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
                 <Mail className="w-4 h-4" />

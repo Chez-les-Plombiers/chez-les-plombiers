@@ -12,12 +12,13 @@ declare global {
 export const GA_MEASUREMENT_ID = "G-P14K1RH61R";
 export const GTM_ID = "GTM-PXGXK94F";
 
-type EventName = "cta_click" | "section_view" | "nav_click";
+type EventName = "cta_click" | "section_view" | "nav_click" | "contact_click";
 
 interface EventParams {
   cta_click: { label: string; destination: string };
   section_view: { section: string };
   nav_click: { label: string; destination: string };
+  contact_click: { method: string; destination: string };
 }
 
 export function trackEvent<T extends EventName>(

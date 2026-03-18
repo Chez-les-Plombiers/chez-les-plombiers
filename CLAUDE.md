@@ -51,6 +51,8 @@ npm run lint     # ESLint
 /en/legal-notice                         → EN
 /politique-confidentialite               → FR
 /en/privacy-policy                       → EN
+/guide                                   → FR (chatbot AI concierge)
+/en/guide                                → EN (chatbot AI concierge)
 ```
 
 ## Structure
@@ -80,12 +82,13 @@ src/components/      # Tous "use client" — utilisent useI18n()
   ServicesSection.tsx # 6 cards + hover effects + liens "En savoir plus" → /services/{slug}
   AboutSection.tsx   # Texte + stats + image (dangerouslySetInnerHTML pour <strong>)
   PortfolioSection.tsx # 12 photos bento grid (3x8) + lightbox + download (JSZip)
-  ReviewsSection.tsx # Google reviews carousel (textes FR, labels i18n) — réutilisé sur pages services
+  ReviewsSection.tsx # Google reviews carousel (textes FR, labels i18n) — réutilisé sur pages services + Appartement Rose
   EquipmentsSection.tsx # Specs techniques + floor plan + downloads
   FaqSection.tsx     # 11 Q&A accordion (données depuis dictionnaires)
   ContactSection.tsx # 4 contacts + CTA Calendly
-  AppartementContent.tsx # Page Appartement Rose
+  AppartementContent.tsx # Page Appartement Rose (galerie 10 photos bento + lightbox + ZIP download + reviews Google)
   ServicePageContent.tsx # Pages services (hero, specs, features, FAQ accordion, CTA)
+  GuideContent.tsx   # Chat AI concierge multi-turn (streaming, bulles user/assistant, markdown)
   ScrollAnimation.tsx # Wrapper réutilisable whileInView
 
 src/lib/
@@ -94,6 +97,7 @@ src/lib/
   metadata.ts        # Constantes SEO partagées + liens externes
   analytics.ts       # GA4 typed helper + GTM ID
   services-data.ts   # Slugs services FR↔EN, images, resolveServiceSlug()
+  guide-knowledge.ts # Knowledge base AI concierge (system prompt FR/EN + infos lieu)
 
 src/dictionaries/
   fr.json            # Dictionnaire français complet (~700 lignes, incl. servicePages)
@@ -102,6 +106,7 @@ src/dictionaries/
 public/
   llms.txt           # Guide AI crawlers bilingue (GPTBot, ClaudeBot, PerplexityBot)
   photos/            # 12 photos portfolio (JPG, ~250-430 KB chacune, 1800px wide)
+  photos/appartement/ # 10 photos Appartement Rose (JPG, ~400-680 KB, 1800px wide)
   documents/
     plaquette-chez-les-plombiers.pdf  # Plaquette commerciale (2.3 MB)
 ```
@@ -173,6 +178,20 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 - Colonne 2 : Navigation (Accueil, Appartement, Mentions, Confidentialité)
 - Colonne 3 : Nos Espaces (6 services + Appartement Rose)
 - Colonne 4 : Contact (WhatsApp `wa.me/33688679981`, email, adresse)
+
+## Guide AI Concierge (/guide)
+Page chatbot pour les clients ayant réservé le lieu. Interface de chat multi-turn avec streaming.
+
+- **Route API** : `/api/guide` (POST) — envoie l'historique de conversation à Claude Haiku 4.5
+- **Knowledge base** : `src/lib/guide-knowledge.ts` — system prompt FR/EN avec toutes les infos pratiques du lieu
+- **Composant** : `GuideContent.tsx` — chat avec bulles user/assistant, suggestions initiales, markdown riche
+- **Règles du chatbot** :
+  - Vouvoiement obligatoire (FR), ton formel poli (EN)
+  - WhatsApp toujours en lien cliquable → `wa.me/33688679981`
+  - Réponses uniquement sur le lieu et son utilisation pratique
+  - Max 20 turns de conversation
+- **Infos renseignées** : grille/portail cour (code 5409), Wi-Fi (2 réseaux), éclairage (Kiosc, 5 scénarios, mode custom), cuisine (café, lave-vaisselle, verres), sono (Sonos + XLR via UCP), chauffage (Daikin), vidéoprojecteur (Optoma ZU820T, fiche technique complète), poubelles tri, vestiaire, toilettes, fin d'événement
+- **Infos encore manquantes** : couvre-feu bruit, responsable du lieu (nom + tel)
 
 ## Informations légales
 - Chez les Plombiers SAS — SIREN 928 788 157

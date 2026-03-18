@@ -5,6 +5,7 @@ import { MapPin, Mail, Phone, Instagram, Calendar } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
+import { trackEvent } from "@/lib/analytics";
 
 const icons: LucideIcon[] = [MapPin, Mail, Phone, Instagram];
 
@@ -118,6 +119,12 @@ export function ContactSection() {
                             info.label === "WhatsApp"
                               ? "noopener noreferrer"
                               : undefined
+                          }
+                          onClick={() =>
+                            trackEvent("contact_click", {
+                              method: info.label.toLowerCase(),
+                              destination: href,
+                            })
                           }
                           className="tracking-tight hover:text-white/70 transition-colors duration-300 block"
                         >

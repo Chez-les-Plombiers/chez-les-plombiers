@@ -549,8 +549,8 @@
     "ctaEmail": "Email us",
     "services": {
       "fashion-shows": {
-        "title": "Fashion Shows & Brand Events",
-        "tagline": "Showcase in striking architectural surroundings.",
+        "title": "Fashion Shows & Brand Events in Paris",
+        "tagline": "Fashion show and showroom venue in the heart of Paris 1st.",
         "description": "Chez Les Plombiers offers a raw, spectacular setting for fashion shows, showrooms and collection launches. With 200 m² of modular space, a 4.5-metre ceiling height and a 4.63 m cyclorama wall, our venue transforms into a fashion show stage or high-end showroom. Dimmable DMX lighting, dedicated 1 Gb/s fibre and 36 KvA three-phase power meet the most demanding technical requirements of fashion houses and event agencies.",
         "specs": [
           {
@@ -609,7 +609,7 @@
       },
       "corporate-breakfasts": {
         "title": "Corporate Breakfasts",
-        "tagline": "Start the day in an inspiring setting.",
+        "tagline": "Professional breakfast in a unique setting in Paris 1st.",
         "description": "Welcome your teams or clients first thing in the morning in an extraordinary venue. Chez Les Plombiers transforms the traditional corporate breakfast into a memorable experience. Press breakfast, creative brunch or networking breakfast: our professional fitted kitchen and unique brutalist setting create the ideal atmosphere to start the day differently. Half-day rental (7am–1pm) is available Monday to Wednesday from €1,000 excl. VAT.",
         "specs": [
           {
@@ -664,7 +664,7 @@
       },
       "professional-events": {
         "title": "Professional Events",
-        "tagline": "A setting that elevates your ambitions.",
+        "tagline": "Conference, product launch and team building in Paris 1st.",
         "description": "Product launches, conferences and team buildings in a modular and fully equipped space in the heart of Paris 1st. Chez Les Plombiers combines spectacular brutalist architecture with cutting-edge technology: 4K 8,800-lumen projector, Sonos and XLR audio system, dedicated symmetrical 1 Gb/s fibre. The 200 m² space with 4.5 m ceiling height can be reconfigured in minutes using modular curtains to create up to 3 distinct areas.",
         "specs": [
           {
@@ -723,7 +723,7 @@
       },
       "exceptional-dinners": {
         "title": "Exceptional Dinners",
-        "tagline": "An immersive gastronomic experience.",
+        "tagline": "Private dining and gala events in the heart of Paris 1st.",
         "description": "Grand tables and chef's dinners for 40 to 80 guests in a spectacular industrial setting. Chez Les Plombiers offers an immersive gastronomic experience designed as an event in its own right. The professional U-shaped caterer kitchen, equipped with oven, dishwasher, ice machine, refrigerator and freezer, allows your caterer to work in optimal conditions. DMX lighting creates the perfect ambiance for each moment of the meal.",
         "specs": [
           {
@@ -777,8 +777,8 @@
         "descriptionExtended": "In the heart of Paris 1st arrondissement, Chez Les Plombiers turns every dinner into an exceptional event. The brutalist architecture with exposed stone walls, Eiffel-style metal beams and 4.5-metre ceiling height creates a unique atmosphere for gala dinners, fundraising evenings or brand dinners. The space suits both large 80-guest banquets and more intimate 40-person formats with island seating. Modular curtains separate the welcome cocktail area from the main dining room. Your caterer will find everything needed in our professional kitchen for impeccable service."
       },
       "cultural-events": {
-        "title": "Cultural Events",
-        "tagline": "An inspiring venue designed as a gallery.",
+        "title": "Exhibitions & Cultural Events",
+        "tagline": "Pop-up gallery and artistic performances in Paris 1st.",
         "description": "Openings, exhibitions and artistic performances in an inspiring venue designed as a contemporary gallery. The raw stone walls, Eiffel-style metal beams and natural light create the ideal setting for any artistic or cultural project. The 200 m² space with 4.5 m ceiling height offers complete freedom for hanging and installation. The 4.63 m cyclorama wall serves as a projection canvas for video installations and digital performances.",
         "specs": [
           {
@@ -833,7 +833,7 @@
       },
       "seminars-training": {
         "title": "Seminars & Training",
-        "tagline": "A setting that stimulates creativity.",
+        "tagline": "Unique seminar venue in the heart of Paris 1st.",
         "description": "Corporate seminars, training days and workshops in an inspiring off-the-beaten-track setting. Chez Les Plombiers offers a unique environment that breaks with the traditional seminar format. The 200 m² space divides into 3 distinct zones using modular curtains: plenary, workshops and relaxation area. The 4K projector, 1 Gb/s fibre and designer furniture create ideal conditions for productive and memorable days.",
         "specs": [
           {
@@ -921,7 +921,7 @@
     "guideDescription": "Your practical assistant for your event at Chez Les Plombiers. Get instant answers to your questions."
   },
   "studio": {
-    "title": "Studio",
+    "title": "Photo & Video Studio",
     "heroTagline": "130 m² of raw studio space in the heart of Paris 1st. Built-in cyclorama, ceiling grid, 36 kVA.",
     "heroImageAlt": "Photo studio with white cyclorama wall and technical ceiling grid — Chez Les Plombiers Paris 1st",
     "accroche": "A raw, architectural studio in the heart of Paris 1st. Epoxy floor, built-in cyclorama, technical ceiling grid, 36 kVA. No compromise.",
