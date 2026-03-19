@@ -15,6 +15,7 @@
 - [Dîners d'Exception](https://www.chezlesplombiers.fr/services/diners-exception): Dîners de chef de 40 à 80 convives
 - [Évènements Culturels](https://www.chezlesplombiers.fr/services/evenements-culturels): Vernissages, expositions et performances artistiques
 - [Séminaires & Formations](https://www.chezlesplombiers.fr/services/seminaires-formations): Séminaires, formations et workshops
+- [Événements Auto & Moto](https://www.chezlesplombiers.fr/services/evenements-auto-moto): Showroom automobile avec accès direct sur rue, lancements et expositions de véhicules
 
 ## Main pages (EN)
 - [Home](https://www.chezlesplombiers.fr/en): Event venue, services, technical equipment, FAQ
@@ -26,13 +27,15 @@
 - [Exceptional Dinners](https://www.chezlesplombiers.fr/en/services/exceptional-dinners): Chef's dinners for 40 to 80 guests
 - [Cultural Events](https://www.chezlesplombiers.fr/en/services/cultural-events): Openings, exhibitions and artistic performances
 - [Seminars & Training](https://www.chezlesplombiers.fr/en/services/seminars-training): Seminars, training and workshops
+- [Automotive Events](https://www.chezlesplombiers.fr/en/services/automotive-events): Automotive showroom with direct street access, vehicle launches and exhibitions
 
 ## Informations clés / Key information
 - Adresse / Address: 39 rue des Bourdonnais, 75001 Paris, France
 - Capacité / Capacity: 60-80 personnes (dîner/dinner) à 200 personnes (cocktail)
 - Surface: 200 m² + 100 m² de stockage en sous-sol / basement storage
 - Hauteur sous plafond / Ceiling height: 4,5 m
-- Types d'événements / Event types: fashion shows, showrooms Fashion Week, séminaires/seminars, lancements de produits/product launches, conférences/conferences, dîners d'exception/exceptional dinners, vernissages/openings, expositions/exhibitions, shootings photo/vidéo, tournages/productions
+- Types d'événements / Event types: fashion shows, showrooms Fashion Week, séminaires/seminars, lancements de produits/product launches, conférences/conferences, dîners d'exception/exceptional dinners, vernissages/openings, expositions/exhibitions, shootings photo/vidéo, tournages/productions, événements automobiles/automotive events, showrooms éphémères/pop-up showrooms
+- Accès véhicule / Vehicle access: accès direct sur rue depuis la rue des Bourdonnais / direct street access from rue des Bourdonnais — rare pour un lieu événementiel parisien / rare for a Parisian event venue
 - Tarifs / Rates: de 1 000 € HT/jour (lundi, dimanche) à 4 000 € HT/jour (jeudi) — forfait Fashion Week 40 000 € HT/semaine
 - Horaires / Hours: accès dès 6h / access from 6am, fermeture au public à 1h / public close 1am, cour jusqu'à 22h / courtyard until 10pm
 - Contact: contact@chezlesplombiers.fr / +33 6 88 67 99 81

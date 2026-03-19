@@ -47,6 +47,8 @@ npm run lint     # ESLint
 /en/services/cultural-events             → EN
 /services/seminaires-formations          → FR
 /en/services/seminars-training           → EN
+/services/evenements-auto-moto           → FR
+/en/services/automotive-events           → EN
 /mentions-legales                        → FR
 /en/legal-notice                         → EN
 /politique-confidentialite               → FR
@@ -70,16 +72,16 @@ src/app/
     privacy-policy/page.tsx     # Privacy Policy (EN, re-export)
     not-found.tsx
     error.tsx
-    services/[slug]/page.tsx   # Pages services dynamiques (6 FR + 6 EN) — 3 JSON-LD (Service, BreadcrumbList, FAQPage)
+    services/[slug]/page.tsx   # Pages services dynamiques (7 FR + 7 EN) — 3 JSON-LD (Service, BreadcrumbList, FAQPage)
   robots.ts          # robots.txt dynamique (AI bots autorisés)
-  sitemap.ts         # sitemap.xml (20 URLs: 10 FR + 10 EN avec hreflang)
+  sitemap.ts         # sitemap.xml (22 URLs: 11 FR + 11 EN avec hreflang)
   globals.css        # Design tokens Tailwind v4
 
 src/components/      # Tous "use client" — utilisent useI18n()
   Header.tsx         # Scroll state + mobile menu + logo swap + language switcher FR/EN
   Footer.tsx         # Liens + infos légales (converti en client component pour i18n)
   HeroSection.tsx    # Parallax + entrance animations
-  ServicesSection.tsx # 6 cards + hover effects + liens "En savoir plus" → /services/{slug}
+  ServicesSection.tsx # 7 cards + hover effects + liens "En savoir plus" → /services/{slug}
   AboutSection.tsx   # Texte + stats + image (dangerouslySetInnerHTML pour <strong>)
   PortfolioSection.tsx # 12 photos bento grid (3x8) + lightbox + download (JSZip)
   ReviewsSection.tsx # Google reviews carousel (textes FR, labels i18n) — réutilisé sur pages services + Appartement Rose
@@ -87,7 +89,7 @@ src/components/      # Tous "use client" — utilisent useI18n()
   FaqSection.tsx     # 11 Q&A accordion (données depuis dictionnaires)
   ContactSection.tsx # 4 contacts + CTA Calendly
   AppartementContent.tsx # Page Appartement Rose (galerie 10 photos bento + lightbox + ZIP download + reviews Google)
-  ServicePageContent.tsx # Pages services (hero, specs, features, FAQ accordion, CTA)
+  ServicePageContent.tsx # Pages services (hero, specs, features, galerie bento + lightbox, FAQ accordion, CTA)
   GuideContent.tsx   # Chat AI concierge multi-turn (streaming, bulles user/assistant, markdown)
   ScrollAnimation.tsx # Wrapper réutilisable whileInView
 
@@ -96,17 +98,21 @@ src/lib/
   i18n-context.tsx   # I18nProvider + useI18n() hook (React Context)
   metadata.ts        # Constantes SEO partagées + liens externes
   analytics.ts       # GA4 typed helper + GTM ID
-  services-data.ts   # Slugs services FR↔EN, images, resolveServiceSlug()
+  services-data.ts   # Slugs services FR↔EN, images, SERVICE_GALLERY, resolveServiceSlug()
   guide-knowledge.ts # Knowledge base AI concierge (system prompt FR/EN + infos lieu)
 
 src/dictionaries/
-  fr.json            # Dictionnaire français complet (~700 lignes, incl. servicePages)
-  en.json            # Dictionnaire anglais complet (~700 lignes, incl. servicePages)
+  fr.json            # Dictionnaire français complet (~800 lignes, incl. servicePages)
+  en.json            # Dictionnaire anglais complet (~800 lignes, incl. servicePages)
 
 public/
   llms.txt           # Guide AI crawlers bilingue (GPTBot, ClaudeBot, PerplexityBot)
   photos/            # 12 photos portfolio (JPG, ~250-430 KB chacune, 1800px wide)
   photos/appartement/ # 10 photos Appartement Rose (JPG, ~400-680 KB, 1800px wide)
+  images/services/gallery/  # Galeries photos services (JPG, ~340 KB, 1600px wide)
+    diners-exception/       # 15 photos
+    fashion-shows/          # 24 photos
+    evenements-auto-moto/   # 23 photos
   documents/
     plaquette-chez-les-plombiers.pdf  # Plaquette commerciale (2.3 MB)
 ```
@@ -130,7 +136,7 @@ public/
 - **og:locale**: `fr_FR` / `en_US`
 - **JSON-LD**: EventVenue, Organization, LocalBusiness, FAQPage (homepage) + Service, BreadcrumbList, FAQPage (pages services) — tous avec `inLanguage`
 - **robots.txt**: AI bots (GPTBot, ClaudeBot, PerplexityBot) autorisés
-- **sitemap.xml**: 20 URLs (10 FR + 10 EN) avec alternates, toutes sous `www.`
+- **sitemap.xml**: 22 URLs (11 FR + 11 EN) avec alternates, toutes sous `www.`
 - Open Graph + Twitter Cards sur toutes les pages
 - **llms.txt**: fichier de guidage AI crawlers bilingue (URLs sous `www.`)
 - **Meta titles**: keyword-first (ex: "Lieu Évènementiel Paris 1er — 200m² | Chez Les Plombiers")
@@ -142,15 +148,16 @@ public/
 - **Redirections legacy**: /visiter, /histoire, /infos → 301 vers anchors homepage (ancien site Figma)
 
 ## Pages Services (/services/[slug])
-6 services, chacun avec page FR + EN (12 pages total) :
-- Fashion Shows (`fashion-shows` / `fashion-shows`)
+7 services, chacun avec page FR + EN (14 pages total) :
+- Fashion Shows (`fashion-shows` / `fashion-shows`) — galerie 24 photos
 - Petit-Déjeuners (`petit-dejeuners` / `corporate-breakfasts`)
 - Évènements Professionnels (`evenements-professionnels` / `professional-events`)
-- Dîners d'Exception (`diners-exception` / `exceptional-dinners`)
+- Dîners d'Exception (`diners-exception` / `exceptional-dinners`) — galerie 15 photos
 - Évènements Culturels (`evenements-culturels` / `cultural-events`)
 - Séminaires & Formations (`seminaires-formations` / `seminars-training`)
+- Événements Auto & Moto (`evenements-auto-moto` / `automotive-events`) — galerie 23 photos
 
-Structure chaque page : Hero (image + overlay) → Description + descriptionExtended + Specs (2 cols) → Features (3 cols) → ReviewsSection (réutilisé) → FAQ accordion (3-5 Q&A spécifiques) → Cross-links (5 autres services + Appartement Rose) → CTA (Calendly + WhatsApp + email)
+Structure chaque page : Hero (image + overlay) → Description + descriptionExtended + Specs (2 cols) → Features (3 cols) → [Galerie bento + lightbox si photos] → ReviewsSection (réutilisé) → FAQ accordion (3-5 Q&A spécifiques) → Cross-links (6 autres services + Appartement Rose) → CTA (Calendly + WhatsApp + email)
 
 Chaque service a un champ `descriptionExtended` (~100 mots) en plus de `description` (~70 mots) pour enrichir le contenu SEO (total ~180 mots par page).
 
@@ -159,7 +166,7 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 ## Architecture Homepage
 9 sections dans l'ordre :
 1. HeroSection (parallax + vidéo autoplay avec fallback touch mobile + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
-2. ServicesSection (6 cards dont Petit Déjeuner)
+2. ServicesSection (7 cards dont Petit Déjeuner et Auto & Moto)
 3. VirtualTour (iframe Matterport 3D — https://my.matterport.com/show/?m=ucvB4GW2Go6)
 4. AboutSection (texte + stats + image)
 5. PortfolioSection ("Découvrez Notre Lieu" — 12 photos bento grid + lightbox + download individuel/ZIP)
@@ -176,7 +183,7 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 ### Footer (4 colonnes)
 - Colonne 1 : Logo + description
 - Colonne 2 : Navigation (Accueil, Appartement, Mentions, Confidentialité)
-- Colonne 3 : Nos Espaces (6 services + Appartement Rose)
+- Colonne 3 : Nos Espaces (7 services + Studio + Appartement Rose)
 - Colonne 4 : Contact (WhatsApp `wa.me/33688679981`, email, adresse)
 
 ## Guide AI Concierge (/guide)
