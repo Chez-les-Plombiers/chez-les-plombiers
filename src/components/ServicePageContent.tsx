@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,14 +8,17 @@ import {
   Check,
   ArrowLeft,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Calendar,
   MessageCircle,
   Mail,
+  X,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { trackEvent } from "@/lib/analytics";
-import { SERVICE_IMAGES, SERVICE_FR_SLUGS, getServiceEnSlug } from "@/lib/services-data";
+import { SERVICE_IMAGES, SERVICE_GALLERY, SERVICE_FR_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
 interface ServiceSpec {
@@ -45,6 +48,7 @@ interface ServicePagesDict {
   backToServices: string;
   specsTitle: string;
   featuresTitle: string;
+  galleryTitle: string;
   faqTitle: string;
   alsoDiscoverTitle: string;
   ctaTitle: string;
@@ -97,6 +101,31 @@ function FaqItem({ item, index }: { item: ServiceFaq; index: number }) {
   );
 }
 
+/**
+ * Compute bento grid position for a photo at given index.
+ * Repeating pattern every 6 items / 4 rows:
+ *   [BIG 2×2] [small] → row 1-2
+ *              [small]
+ *   [small] [BIG 2×2] → row 3-4
+ *   [small]
+ */
+function getBentoStyle(index: number): React.CSSProperties {
+  const block = Math.floor(index / 6);
+  const pos = index % 6;
+  const baseRow = block * 4 + 1;
+
+  const positions: Record<number, React.CSSProperties> = {
+    0: { gridColumn: "1 / 3", gridRow: `${baseRow} / ${baseRow + 2}` },
+    1: { gridColumn: "3 / 4", gridRow: `${baseRow} / ${baseRow + 1}` },
+    2: { gridColumn: "3 / 4", gridRow: `${baseRow + 1} / ${baseRow + 2}` },
+    3: { gridColumn: "1 / 2", gridRow: `${baseRow + 2} / ${baseRow + 3}` },
+    4: { gridColumn: "2 / 4", gridRow: `${baseRow + 2} / ${baseRow + 4}` },
+    5: { gridColumn: "1 / 2", gridRow: `${baseRow + 3} / ${baseRow + 4}` },
+  };
+
+  return positions[pos] || {};
+}
+
 export function ServicePageContent({ slug }: { slug: string }) {
   const { dict, locale } = useI18n();
   const servicePages = dict.servicePages as ServicePagesDict;
@@ -105,7 +134,37 @@ export function ServicePageContent({ slug }: { slug: string }) {
   const dictKey = locale === "en" ? getServiceEnSlug(slug) : slug;
   const service = servicePages.services[dictKey];
   const image = SERVICE_IMAGES[slug] || "/images/hero.png";
+  const gallery = SERVICE_GALLERY[slug] || [];
   const prefix = locale === "en" ? "/en" : "";
+
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const goNext = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev !== null ? (prev + 1) % gallery.length : null
+    );
+  }, [gallery.length]);
+  const goPrev = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev !== null ? (prev - 1 + gallery.length) % gallery.length : null
+    );
+  }, [gallery.length]);
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") goPrev();
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [lightboxIndex, closeLightbox, goNext, goPrev]);
 
   if (!service) return null;
 
@@ -235,6 +294,135 @@ export function ServicePageContent({ slug }: { slug: string }) {
           </div>
         </div>
       </section>
+
+      {/* Gallery Bento */}
+      {gallery.length > 0 && (
+        <section className="py-20 lg:py-28 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl lg:text-5xl font-light mb-16 tracking-tight"
+            >
+              {servicePages.galleryTitle}
+            </motion.h2>
+
+            {/* Desktop bento (3 cols) */}
+            <div
+              className="hidden md:grid grid-cols-3 gap-2"
+              style={{ gridAutoRows: "200px" }}
+            >
+              {gallery.map((src, i) => (
+                <motion.div
+                  key={src}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: (i % 6) * 0.04 }}
+                  className="relative overflow-hidden bg-gray-100 group cursor-pointer"
+                  style={getBentoStyle(i)}
+                  onClick={() => setLightboxIndex(i)}
+                >
+                  <Image
+                    src={src}
+                    alt={`${service.title} — photo ${i + 1}`}
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Mobile grid (2 cols) */}
+            <div className="grid md:hidden grid-cols-2 gap-2">
+              {gallery.map((src, i) => (
+                <motion.div
+                  key={src}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.4, delay: (i % 4) * 0.05 }}
+                  className={`relative overflow-hidden bg-gray-100 cursor-pointer ${
+                    i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"
+                  }`}
+                  onClick={() => setLightboxIndex(i)}
+                >
+                  <Image
+                    src={src}
+                    alt={`${service.title} — photo ${i + 1}`}
+                    fill
+                    sizes="50vw"
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Lightbox */}
+          <AnimatePresence>
+            {lightboxIndex !== null && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+                onClick={closeLightbox}
+              >
+                <button
+                  onClick={closeLightbox}
+                  className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors cursor-pointer z-10"
+                  aria-label="Fermer"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); goPrev(); }}
+                  className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white/50 hover:text-white transition-colors cursor-pointer z-10"
+                  aria-label="Précédent"
+                >
+                  <ChevronLeft className="w-8 h-8" />
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); goNext(); }}
+                  className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white/50 hover:text-white transition-colors cursor-pointer z-10"
+                  aria-label="Suivant"
+                >
+                  <ChevronRight className="w-8 h-8" />
+                </button>
+                <motion.div
+                  key={lightboxIndex}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="relative max-w-[90vw] max-h-[85vh] w-full h-full"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Image
+                    src={gallery[lightboxIndex]}
+                    alt={`${service.title} — photo ${lightboxIndex + 1}`}
+                    fill
+                    sizes="90vw"
+                    className="object-contain"
+                    priority
+                  />
+                </motion.div>
+                <p className="absolute bottom-6 left-0 right-0 text-center text-white/50 text-sm z-10">
+                  {lightboxIndex + 1} / {gallery.length}
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </section>
+      )}
 
       {/* Reviews */}
       <ReviewsSection />

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Sparkles, Briefcase, Music, BookOpen, Coffee, ArrowRight } from "lucide-react";
+import { Sparkles, Briefcase, Music, BookOpen, Coffee, Car, ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n-context";
@@ -12,6 +12,7 @@ const iconMap: Record<string, LucideIcon> = {
   Briefcase,
   Music,
   BookOpen,
+  Car,
 };
 
 export function ServicesSection() {

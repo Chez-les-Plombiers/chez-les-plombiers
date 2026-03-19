@@ -76,6 +76,12 @@
         "title": "Petit-Déjeuners",
         "slug": "petit-dejeuners",
         "description": "Accueillez vos équipes ou vos clients dès le matin dans un cadre inspirant. Petit déjeuner d’entreprise, breakfast presse ou brunch créatif : un moment convivial pour démarrer la journée autrement."
+      },
+      {
+        "icon": "Car",
+        "title": "Événements Auto & Moto",
+        "slug": "evenements-auto-moto",
+        "description": "Présentez vos véhicules dans un lieu avec accès direct sur rue en plein cœur de Paris 1er. Lancements automobiles, expositions de collection et showrooms éphémères dans un cadre industriel spectaculaire."
       }
     ]
   },
@@ -381,6 +387,10 @@
         "href": "/services/petit-dejeuners"
       },
       {
+        "label": "Auto & Moto",
+        "href": "/services/evenements-auto-moto"
+      },
+      {
         "label": "Studio Photo & Vidéo",
         "href": "/studio"
       },
@@ -544,6 +554,7 @@
     "alsoDiscoverTitle": "Découvrez aussi",
     "ctaTitle": "Organisons votre évènement",
     "ctaDescription": "Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.",
+    "galleryTitle": "En images",
     "ctaCalendly": "Réserver une visite",
     "ctaWhatsApp": "WhatsApp",
     "ctaEmail": "Nous écrire",
@@ -889,6 +900,65 @@
           "ogDescription": "Salle séminaire atypique Paris 1er. 150 personnes, 3 espaces modulables, vidéoprojecteur 4K, fibre 1 Gb/s."
         },
         "descriptionExtended": "À Paris 1er, entre le Louvre et Les Halles, Chez Les Plombiers propose un cadre de séminaire qui casse les codes de la salle de réunion classique. L'architecture brutaliste, les murs en pierre apparente et la lumière naturelle stimulent la créativité et favorisent les échanges. L'espace se divise en 3 zones modulables grâce aux rideaux séparateurs : une plénière avec vidéoprojecteur 4K et système audio pour les présentations, un espace atelier pour le travail en sous-groupes, et un coin détente avec café et collations. La fibre dédiée 1 Gb/s garantit des visioconférences fluides et un accès réseau fiable pour tous les participants. Le mobilier design — chaises, tables et tabourets — est inclus dans la location."
+      },
+      "evenements-auto-moto": {
+        "title": "Événements Auto & Moto",
+        "tagline": "Showroom automobile avec accès direct sur rue à Paris 1er.",
+        "description": "Chez Les Plombiers est l'un des rares lieux événementiels parisiens offrant un accès direct sur rue, permettant d'exposer des véhicules au cœur de Paris 1er. Lancements automobiles, présentations de collections, showrooms éphémères ou événements presse : notre espace de 200 m² à l'architecture brutaliste spectaculaire met en scène vos véhicules dans un cadre unique. Porsche, marques de prestige et constructeurs innovants nous font déjà confiance pour leurs événements parisiens.",
+        "specs": [
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Surface d'exposition"
+          },
+          {
+            "value": "4,5",
+            "unit": "m",
+            "label": "Hauteur sous plafond"
+          },
+          {
+            "value": "200",
+            "unit": "",
+            "label": "Capacité cocktail"
+          },
+          {
+            "value": "36",
+            "unit": "KvA",
+            "label": "Puissance triphasée"
+          }
+        ],
+        "features": [
+          "Accès direct sur rue — entrée de véhicules depuis la rue des Bourdonnais",
+          "200 m² d'espace d'exposition avec 4,5 m de hauteur sous plafond",
+          "Éclairage DMX professionnel pour mise en valeur des véhicules",
+          "Alimentation triphasée 36 KvA pour installations techniques",
+          "Mur cyclo 4,63 m pour projections et branding",
+          "Localisation premium Paris 1er — entre le Louvre et Les Halles"
+        ],
+        "faq": [
+          {
+            "question": "Peut-on faire entrer un véhicule dans le lieu ?",
+            "answer": "Oui, c'est notre principal atout. Chez Les Plombiers dispose d'un accès direct sur la rue des Bourdonnais, permettant l'entrée de véhicules (voitures, motos, véhicules de collection) directement dans l'espace d'exposition. C'est extrêmement rare pour un lieu événementiel en plein centre de Paris."
+          },
+          {
+            "question": "Quelles marques ont déjà exposé chez vous ?",
+            "answer": "Nous avons accueilli Porsche pour des événements de présentation de véhicules. Notre espace séduit les marques automobiles et moto de prestige qui recherchent un cadre industriel authentique au cœur de Paris pour leurs lancements et showrooms éphémères."
+          },
+          {
+            "question": "Quel type d'événement automobile peut-on organiser ?",
+            "answer": "Lancements de nouveaux modèles, showrooms éphémères pendant les salons, événements presse, soirées de marque, expositions de véhicules de collection, présentations privées pour clients VIP. L'espace se prête à tous les formats, du cocktail automobile au dîner de gala autour d'un véhicule."
+          },
+          {
+            "question": "Quelles sont les dimensions de l'accès véhicule ?",
+            "answer": "L'accès se fait par la porte principale donnant sur la rue des Bourdonnais. Nous vous invitons à nous contacter pour vérifier les dimensions exactes par rapport à votre véhicule. Un repérage technique préalable est inclus dans notre accompagnement."
+          }
+        ],
+        "meta": {
+          "title": "Lieu Événement Automobile Paris — Showroom Accès Rue | Chez Les Plombiers",
+          "description": "Louez un lieu pour événement automobile à Paris 1er avec accès direct sur rue. Showroom éphémère, lancement auto & moto. 200m², éclairage DMX. Porsche nous fait confiance.",
+          "ogDescription": "Lieu événement automobile Paris 1er avec accès direct sur rue. Showroom éphémère, lancements auto & moto. 200m²."
+        },
+        "descriptionExtended": "Au 39 rue des Bourdonnais, en plein cœur de Paris 1er entre le Louvre et Les Halles, Chez Les Plombiers offre ce que très peu de lieux événementiels parisiens peuvent proposer : un accès direct sur rue permettant d'introduire des véhicules dans l'espace d'exposition. Cette caractéristique unique, combinée à notre architecture brutaliste spectaculaire — murs en pierre brute, poutres métalliques style Eiffel, 4,5 m de hauteur sous plafond — fait de notre lieu le showroom éphémère idéal pour les marques automobiles et moto. L'éclairage DMX professionnel permet une mise en lumière cinématographique de chaque véhicule, tandis que le mur cyclo de 4,63 m sert de toile de fond pour le branding et les projections. L'alimentation triphasée 36 KvA supporte les installations techniques les plus exigeantes."
       }
     }
   },

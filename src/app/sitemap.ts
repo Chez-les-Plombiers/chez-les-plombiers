@@ -182,5 +182,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/services/evenements-auto-moto`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/services/evenements-auto-moto`,
+          en: `${baseUrl}/en/services/automotive-events`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/services/automotive-events`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 }

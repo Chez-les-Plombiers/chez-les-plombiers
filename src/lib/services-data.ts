@@ -6,6 +6,7 @@ export const SERVICE_SLUGS = {
   "diners-exception": "exceptional-dinners",
   "evenements-culturels": "cultural-events",
   "seminaires-formations": "seminars-training",
+  "evenements-auto-moto": "automotive-events",
 } as const;
 
 export type ServiceSlugFr = keyof typeof SERVICE_SLUGS;
@@ -29,6 +30,20 @@ export const SERVICE_IMAGES: Record<string, string> = {
   "diners-exception": "/images/services/diners-exception.png",
   "evenements-culturels": "/images/services/evenements-culturels.png",
   "seminaires-formations": "/images/services/seminaires-formations.png",
+  "evenements-auto-moto": "/images/services/evenements-auto-moto.jpg",
+};
+
+// Gallery images per service (slug → array of image paths)
+export const SERVICE_GALLERY: Record<string, string[]> = {
+  "diners-exception": Array.from({ length: 15 }, (_, i) =>
+    `/images/services/gallery/diners-exception/${String(i + 1).padStart(2, "0")}.jpg`
+  ),
+  "fashion-shows": Array.from({ length: 24 }, (_, i) =>
+    `/images/services/gallery/fashion-shows/${String(i + 1).padStart(2, "0")}.jpg`
+  ),
+  "evenements-auto-moto": Array.from({ length: 23 }, (_, i) =>
+    `/images/services/gallery/evenements-auto-moto/${String(i + 1).padStart(2, "0")}.jpg`
+  ),
 };
 
 /**

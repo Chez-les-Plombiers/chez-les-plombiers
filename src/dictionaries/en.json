@@ -76,6 +76,12 @@
         "title": "Corporate Breakfasts",
         "slug": "corporate-breakfasts",
         "description": "Welcome your teams or clients first thing in the morning in an inspiring setting. Corporate breakfast, press breakfast or creative brunch: a convivial moment to start the day differently."
+      },
+      {
+        "icon": "Car",
+        "title": "Automotive Events",
+        "slug": "automotive-events",
+        "description": "Showcase your vehicles in a venue with direct street access in the heart of Paris 1st. Automotive launches, collection exhibitions and pop-up showrooms in a spectacular industrial setting."
       }
     ]
   },
@@ -381,6 +387,10 @@
         "href": "/en/services/corporate-breakfasts"
       },
       {
+        "label": "Automotive Events",
+        "href": "/en/services/automotive-events"
+      },
+      {
         "label": "Photo & Video Studio",
         "href": "/en/studio"
       },
@@ -544,6 +554,7 @@
     "alsoDiscoverTitle": "Explore more",
     "ctaTitle": "Let's plan your event",
     "ctaDescription": "Contact us to discuss your project and receive a personalised quote.",
+    "galleryTitle": "Gallery",
     "ctaCalendly": "Book a visit",
     "ctaWhatsApp": "WhatsApp",
     "ctaEmail": "Email us",
@@ -889,6 +900,65 @@
           "ogDescription": "Unique seminar venue in Paris 1st. 150 guests, 3 modular areas, 4K projector, 1 Gb/s fibre."
         },
         "descriptionExtended": "In Paris 1st, between the Louvre and Les Halles, Chez Les Plombiers offers a seminar setting that breaks the mould of the classic meeting room. Brutalist architecture, exposed stone walls and natural light stimulate creativity and foster exchange. The space divides into 3 modular zones via separator curtains: a plenary with 4K projector and sound system for presentations, a workshop area for group work, and a lounge corner with coffee and refreshments. The dedicated 1 Gbps fibre ensures smooth video calls and reliable network access for all participants. Design furniture — chairs, tables and stools — is included in the rental."
+      },
+      "automotive-events": {
+        "title": "Automotive Events",
+        "tagline": "Automotive showroom with direct street access in Paris 1st.",
+        "description": "Chez Les Plombiers is one of the few Parisian event venues offering direct street access, allowing vehicles to be displayed in the heart of Paris 1st. Automotive launches, collection presentations, pop-up showrooms and press events: our 200 m² space with spectacular brutalist architecture showcases your vehicles in a unique setting. Porsche, prestige brands and innovative manufacturers already trust us for their Parisian events.",
+        "specs": [
+          {
+            "value": "200",
+            "unit": "m²",
+            "label": "Exhibition space"
+          },
+          {
+            "value": "4.5",
+            "unit": "m",
+            "label": "Ceiling height"
+          },
+          {
+            "value": "200",
+            "unit": "",
+            "label": "Cocktail capacity"
+          },
+          {
+            "value": "36",
+            "unit": "KvA",
+            "label": "Three-phase power"
+          }
+        ],
+        "features": [
+          "Direct street access — vehicle entry from rue des Bourdonnais",
+          "200 m² exhibition space with 4.5 m ceiling height",
+          "Professional DMX lighting for vehicle showcasing",
+          "36 KvA three-phase power for technical installations",
+          "4.63 m cyclorama wall for projections and branding",
+          "Premium Paris 1st location — between the Louvre and Les Halles"
+        ],
+        "faq": [
+          {
+            "question": "Can a vehicle be brought inside the venue?",
+            "answer": "Yes, this is our key advantage. Chez Les Plombiers has direct street access from rue des Bourdonnais, allowing vehicles (cars, motorcycles, classic cars) to enter the exhibition space directly. This is extremely rare for an event venue in central Paris."
+          },
+          {
+            "question": "Which brands have exhibited at your venue?",
+            "answer": "We have hosted Porsche for vehicle presentation events. Our space attracts prestige automotive and motorcycle brands looking for an authentic industrial setting in the heart of Paris for their launches and pop-up showrooms."
+          },
+          {
+            "question": "What type of automotive event can be organised?",
+            "answer": "New model launches, pop-up showrooms during motor shows, press events, brand evenings, classic car exhibitions, private VIP client presentations. The space suits all formats, from an automotive cocktail to a gala dinner around a vehicle."
+          },
+          {
+            "question": "What are the vehicle access dimensions?",
+            "answer": "Access is through the main entrance on rue des Bourdonnais. We invite you to contact us to verify exact dimensions for your vehicle. A technical site visit is included as part of our support."
+          }
+        ],
+        "meta": {
+          "title": "Automotive Event Venue Paris — Showroom with Street Access | Chez Les Plombiers",
+          "description": "Rent an automotive event venue in Paris 1st with direct street access. Pop-up showroom, car & motorcycle launches. 200m², DMX lighting. Trusted by Porsche.",
+          "ogDescription": "Automotive event venue in Paris 1st with direct street access. Pop-up showroom, car & motorcycle launches. 200m²."
+        },
+        "descriptionExtended": "At 39 rue des Bourdonnais, in the heart of Paris 1st between the Louvre and Les Halles, Chez Les Plombiers offers what very few Parisian event venues can: direct street access allowing vehicles into the exhibition space. This unique feature, combined with our spectacular brutalist architecture — raw stone walls, Eiffel-style metal beams, 4.5 m ceiling height — makes our venue the ideal pop-up showroom for automotive and motorcycle brands. Professional DMX lighting enables cinematic vehicle showcasing, while the 4.63 m cyclorama wall serves as a backdrop for branding and projections. The 36 KvA three-phase power supports the most demanding technical installations."
       }
     }
   },

@@ -14,6 +14,7 @@ const slugMap: Record<string, string> = {
   "diners-exception": "exceptional-dinners",
   "evenements-culturels": "cultural-events",
   "seminaires-formations": "seminars-training",
+  "evenements-auto-moto": "automotive-events",
   // fashion-shows is the same in both languages
 };
 
