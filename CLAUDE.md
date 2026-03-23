@@ -134,9 +134,9 @@ public/
 - **hreflang**: chaque page a `alternates.languages: { fr, en }` dans `generateMetadata`
 - **Canonical**: par langue (chaque version est sa propre canonical), toutes sous `www.`
 - **og:locale**: `fr_FR` / `en_US`
-- **JSON-LD**: EventVenue, Organization, LocalBusiness, FAQPage (homepage) + Service, BreadcrumbList, FAQPage (pages services) — tous avec `inLanguage`
+- **JSON-LD**: EventVenue, Organization, LocalBusiness, FAQPage (homepage) + Service, BreadcrumbList, FAQPage (pages services) + EventVenue, LocalBusiness, FAQPage, BreadcrumbList (pages SEO) — tous avec `inLanguage`
 - **robots.txt**: AI bots (GPTBot, ClaudeBot, PerplexityBot) autorisés
-- **sitemap.xml**: 22 URLs (11 FR + 11 EN) avec alternates, toutes sous `www.`
+- **sitemap.xml**: 30 URLs (15 FR + 15 EN) avec alternates, toutes sous `www.`
 - Open Graph + Twitter Cards sur toutes les pages
 - **llms.txt**: fichier de guidage AI crawlers bilingue (URLs sous `www.`)
 - **Meta titles**: keyword-first (ex: "Lieu Évènementiel Paris 1er — 200m² | Chez Les Plombiers")
@@ -144,8 +144,22 @@ public/
 - **FAQ visible**: 11 Q&A en accordion, synchronisée avec le JSON-LD FAQPage
 - **Alt texts enrichis**: descriptions contextuelles sur toutes les images
 - **Downloads fonctionnels**: plan (floor-plan.png) + plaquette PDF hébergés sur Vercel
-- **Maillage interne**: cross-links entre pages services, liens Appartement ↔ services, colonne services dans Footer
+- **Maillage interne**: cross-links entre pages services, liens Appartement ↔ services, colonne services dans Footer, pages SEO ↔ services
 - **Redirections legacy**: /visiter, /histoire, /infos → 301 vers anchors homepage (ancien site Figma)
+- **Pages SEO (23/03/2026)**: 4 landing pages non-branded avec FAQ 6 Q&A + galerie photos + Reviews Google
+
+## Pages SEO Landing Pages (racine)
+4 pages ciblant le trafic non-branded, chacune avec page FR + EN (8 pages total) :
+- Lieu Événementiel Paris (`lieu-evenementiel-paris` / `event-venue-paris`) — page pilier, 10 photos, priority 0.9
+- Espace Atypique Paris (`espace-atypique-paris` / `unique-venue-paris`) — angle industriel/unique, 10 photos, Matterport 3D
+- Séminaire Entreprise Paris (`seminaire-entreprise-paris` / `corporate-seminar-paris`) — intent corporate, 8 photos
+- Shooting Voiture Paris (`shooting-voiture-paris` / `car-photoshoot-paris`) — niche auto, 10 photos portrait, grille aspect-[3/4]
+
+Structure chaque page : Hero (image + overlay + CTA) → Section descriptive (2 cols) → 6 USPs grille 3x2 → Types d'événements (cards avec liens services) → [Matterport 3D si atypique] → Galerie photos + lightbox → ReviewsSection (réutilisé) → FAQ accordion (6 Q&A) → CTA (Calendly/WhatsApp/Email)
+
+Composants : `LieuEvenementielContent.tsx`, `EspaceAtypiqueContent.tsx`, `SeminaireEntrepriseContent.tsx`, `ShootingVoitureContent.tsx`
+
+Dict keys : `lieuEvenementiel`, `espaceAtypique`, `seminaireEntreprise`, `shootingVoiture`
 
 ## Pages Services (/services/[slug])
 7 services, chacun avec page FR + EN (14 pages total) :
@@ -183,7 +197,7 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 ### Footer (4 colonnes)
 - Colonne 1 : Logo + description
 - Colonne 2 : Navigation (Accueil, Appartement, Mentions, Confidentialité)
-- Colonne 3 : Nos Espaces (7 services + Studio + Appartement Rose)
+- Colonne 3 : Nos Espaces (7 services + 4 pages SEO + Studio + Appartement Rose)
 - Colonne 4 : Contact (WhatsApp `wa.me/33688679981`, email, adresse)
 
 ## Guide AI Concierge (/guide)
