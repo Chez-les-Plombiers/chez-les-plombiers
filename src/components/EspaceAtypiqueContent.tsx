@@ -495,7 +495,7 @@ export function EspaceAtypiqueContent() {
                   alt={data.gallery.alts[i] || `Photo ${i + 1}`}
                   fill
                   sizes="(max-width: 1024px) 50vw, 33vw"
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
@@ -522,7 +522,7 @@ export function EspaceAtypiqueContent() {
                   alt={data.gallery.alts[i] || `Photo ${i + 1}`}
                   fill
                   sizes="50vw"
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   loading="lazy"
                 />
               </motion.div>
