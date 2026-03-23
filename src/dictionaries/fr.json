@@ -391,6 +391,22 @@
         "href": "/services/evenements-auto-moto"
       },
       {
+        "label": "Lieu Événementiel Paris",
+        "href": "/lieu-evenementiel-paris"
+      },
+      {
+        "label": "Espace Atypique",
+        "href": "/espace-atypique-paris"
+      },
+      {
+        "label": "Séminaire Entreprise",
+        "href": "/seminaire-entreprise-paris"
+      },
+      {
+        "label": "Shooting Voiture",
+        "href": "/shooting-voiture-paris"
+      },
+      {
         "label": "Studio Photo & Vidéo",
         "href": "/studio"
       },
@@ -988,7 +1004,16 @@
     "chefTitle": "Chef Mathias Rouveure — Traiteur Événementiel Paris | Chez Les Plombiers",
     "chefDescription": "Découvrez Mathias Rouveure (Homemade), chef partenaire de Chez Les Plombiers. Diplômé EHL, il fusionne food, art et musique pour des expériences culinaires sur mesure à Paris 1er.",
     "guideTitle": "Guide Pratique | Chez Les Plombiers",
-    "guideDescription": "Votre assistant pratique pour votre événement chez Les Plombiers. Trouvez instantanément les réponses à vos questions."
+    "guideDescription": "Votre assistant pratique pour votre événement chez Les Plombiers. Trouvez instantanément les réponses à vos questions.",
+    "seminaireTitle": "Séminaire Entreprise Paris 1er — Lieu 200m² | CLP",
+    "seminaireDescription": "Organisez votre séminaire d'entreprise à Paris 1er. 200m², 80 places assises, cuisine pro, vidéoprojecteur 8 800 lm, Wi-Fi. Dès 1 000€ HT/jour. Visite gratuite.",
+    "seminaireOgDescription": "Lieu de séminaire d'entreprise à Paris 1er. 200m² modulables, vidéoprojecteur Optoma, cuisine pro, éclairage scénographique. Dès 1 000€ HT/jour.",
+    "shootingVoitureTitle": "Shooting Voiture Paris — Studio Auto 200m² | CLP",
+    "shootingVoitureDescription": "Studio shooting voiture à Paris 1er. 200m², accès direct rue, cyclorama, éclairage pro Kiosc. Véhicules entrent dans l'espace. Dès 1 000€ HT/jour. Visite gratuite.",
+    "shootingVoitureOgDescription": "Lieu de shooting automobile à Paris 1er avec accès véhicules direct rue. 200m², cyclorama, éclairage Kiosc, vidéoprojecteur Optoma. Dès 1 000€ HT/jour.",
+    "lieuEvenementielTitle": "Lieu Événementiel Paris 1er — 200m² Centre | Chez Les Plombiers",
+    "lieuEvenementielDescription": "Lieu événementiel de 200m² au cœur de Paris 1er, métro Châtelet. Cuisine pro, cyclorama, éclairage scénographique. Dès 1 000€ HT/jour. Visite gratuite.",
+    "lieuEvenementielOgDescription": "Espace événementiel modulable de 200m² à Paris 1er. Cuisine pro équipée, cyclorama, éclairage Kiosc, sono Sonos. Dès 1 000€ HT/jour."
   },
   "studio": {
     "title": "Studio Photo & Vidéo",
@@ -996,10 +1021,22 @@
     "heroImageAlt": "Studio photo avec mur cyclorama blanc et grille technique au plafond — Chez Les Plombiers Paris 1er",
     "accroche": "Un plateau brut et architectural au cœur de Paris 1er. Résine époxy, cyclorama intégré, grille technique, 36 kVA. Aucun compromis.",
     "keyFigures": [
-      { "value": "130 m²", "label": "Surface plateau" },
-      { "value": "4,11 m", "label": "Hauteur sous plafond" },
-      { "value": "36 kVA", "label": "Puissance électrique" },
-      { "value": "4,63 m", "label": "Cyclorama" }
+      {
+        "value": "130 m²",
+        "label": "Surface plateau"
+      },
+      {
+        "value": "4,11 m",
+        "label": "Hauteur sous plafond"
+      },
+      {
+        "value": "36 kVA",
+        "label": "Puissance électrique"
+      },
+      {
+        "value": "4,63 m",
+        "label": "Cyclorama"
+      }
     ],
     "seoDescription": "<p>Installé au rez-de-chaussée du 39 rue des Bourdonnais, à moins de cinq minutes à pied de Châtelet — Les Halles, le studio Chez Les Plombiers offre un plateau de tournage et de prise de vue de 130 m² en plein cœur de Paris 1er.</p><p>Le mur cyclorama de 4,63 m × 3,40 m, le sol en résine époxy blanche et la hauteur sous plafond de 4,11 m en font un espace polyvalent pour les shootings mode, les campagnes publicitaires, les tournages vidéo et les contenus digitaux. La grille technique au plafond permet l'accroche directe de pieds colonne, pinces crapauds, magic arms et bras articulés — sans installation au sol.</p><p>L'accès plain-pied avec double porte de 2,21 m × 2,71 m facilite le chargement de matériel lourd et permet de rentrer un véhicule directement sur le plateau — idéal pour les shootings automobile. L'alimentation triphasée de 36 kVA supporte les configurations d'éclairage les plus exigeantes. Cuisine équipée, espace vestiaire avec portants, postes maquillage et régie complètent le dispositif.</p>",
     "specsTitle": "Caractéristiques techniques",
@@ -1007,42 +1044,105 @@
       {
         "title": "Plateau & dimensions",
         "items": [
-          { "label": "Surface totale", "value": "~130 m²" },
-          { "label": "Mur cyclorama", "value": "4,63 m × 3,40 m" },
-          { "label": "Hauteur sous plafond", "value": "4,11 m" },
-          { "label": "Longueur plateau", "value": "8,98 m" },
-          { "label": "Sol", "value": "Résine époxy blanche" },
-          { "label": "Fenêtres", "value": "Double verrière atelier (cour + rue)" },
-          { "label": "Grille technique", "value": "Pieds colonne, pinces crapauds, magic arms, bras articulés" }
+          {
+            "label": "Surface totale",
+            "value": "~130 m²"
+          },
+          {
+            "label": "Mur cyclorama",
+            "value": "4,63 m × 3,40 m"
+          },
+          {
+            "label": "Hauteur sous plafond",
+            "value": "4,11 m"
+          },
+          {
+            "label": "Longueur plateau",
+            "value": "8,98 m"
+          },
+          {
+            "label": "Sol",
+            "value": "Résine époxy blanche"
+          },
+          {
+            "label": "Fenêtres",
+            "value": "Double verrière atelier (cour + rue)"
+          },
+          {
+            "label": "Grille technique",
+            "value": "Pieds colonne, pinces crapauds, magic arms, bras articulés"
+          }
         ]
       },
       {
         "title": "Accès & logistique",
         "items": [
-          { "label": "Niveau", "value": "RDC, plain-pied" },
-          { "label": "Entrée principale", "value": "Double battant 2,21 × 2,71 m" },
-          { "label": "Entrée secondaire", "value": "Sur rue" },
-          { "label": "Adresse", "value": "39 rue des Bourdonnais, Paris 1er" },
-          { "label": "Métro", "value": "Châtelet / Les Halles (< 5 min)" },
-          { "label": "Accès véhicule", "value": "Entrée voiture possible (double porte 2,21 × 2,71 m)" }
+          {
+            "label": "Niveau",
+            "value": "RDC, plain-pied"
+          },
+          {
+            "label": "Entrée principale",
+            "value": "Double battant 2,21 × 2,71 m"
+          },
+          {
+            "label": "Entrée secondaire",
+            "value": "Sur rue"
+          },
+          {
+            "label": "Adresse",
+            "value": "39 rue des Bourdonnais, Paris 1er"
+          },
+          {
+            "label": "Métro",
+            "value": "Châtelet / Les Halles (< 5 min)"
+          },
+          {
+            "label": "Accès véhicule",
+            "value": "Entrée voiture possible (double porte 2,21 × 2,71 m)"
+          }
         ]
       },
       {
         "title": "Électricité & réseau",
         "items": [
-          { "label": "Puissance", "value": "36 kVA" },
-          { "label": "Triphasé", "value": "Disponible" },
-          { "label": "Wifi", "value": "Haut débit" },
-          { "label": "Filaire", "value": "Prise RJ45" }
+          {
+            "label": "Puissance",
+            "value": "36 kVA"
+          },
+          {
+            "label": "Triphasé",
+            "value": "Disponible"
+          },
+          {
+            "label": "Wifi",
+            "value": "Haut débit"
+          },
+          {
+            "label": "Filaire",
+            "value": "Prise RJ45"
+          }
         ]
       },
       {
         "title": "Espaces annexes",
         "items": [
-          { "label": "Cuisine", "value": "Équipée complète" },
-          { "label": "Vestiaire", "value": "Portants & stylisme" },
-          { "label": "Maquillage", "value": "1 poste minimum" },
-          { "label": "Régie", "value": "Espace dédié" }
+          {
+            "label": "Cuisine",
+            "value": "Équipée complète"
+          },
+          {
+            "label": "Vestiaire",
+            "value": "Portants & stylisme"
+          },
+          {
+            "label": "Maquillage",
+            "value": "1 poste minimum"
+          },
+          {
+            "label": "Régie",
+            "value": "Espace dédié"
+          }
         ]
       }
     ],
@@ -1145,16 +1245,44 @@
     "portraitImageAlt": "Chef Mathias Rouveure — fondateur de Homemade, chef partenaire Chez Les Plombiers",
     "logosLabel": "Ils lui font confiance",
     "logosTitle": "Références <strong>clients</strong>",
-    "logos": ["Dior", "Chanel", "Hermès", "Cartier", "Piaget", "Audemars Piguet", "Nike", "TF1", "Galeries Lafayette"],
+    "logos": [
+      "Dior",
+      "Chanel",
+      "Hermès",
+      "Cartier",
+      "Piaget",
+      "Audemars Piguet",
+      "Nike",
+      "TF1",
+      "Galeries Lafayette"
+    ],
     "galleryLabel": "Portfolio",
     "galleryTitle": "Créations <strong>culinaires</strong>",
     "galleryItems": [
-      { "label": "Photo principale", "desc": "Tableau culinaire / composition artistique" },
-      { "label": "Photo 2", "desc": "Dressage / détail plat" },
-      { "label": "Photo 3", "desc": "Ambiance événement" },
-      { "label": "Photo 4", "desc": "Cocktail / pièces" },
-      { "label": "Photo 5", "desc": "Mise en scène" },
-      { "label": "Photo 6", "desc": "Convives / service" }
+      {
+        "label": "Photo principale",
+        "desc": "Tableau culinaire / composition artistique"
+      },
+      {
+        "label": "Photo 2",
+        "desc": "Dressage / détail plat"
+      },
+      {
+        "label": "Photo 3",
+        "desc": "Ambiance événement"
+      },
+      {
+        "label": "Photo 4",
+        "desc": "Cocktail / pièces"
+      },
+      {
+        "label": "Photo 5",
+        "desc": "Mise en scène"
+      },
+      {
+        "label": "Photo 6",
+        "desc": "Convives / service"
+      }
     ],
     "prestationsLabel": "Expériences",
     "prestationsTitle": "Nos formats <strong>culinaires</strong>",
@@ -1195,5 +1323,585 @@
     "label": "Visite virtuelle",
     "title": "Explorez le lieu en 3D",
     "description": "Parcourez les 200 m² de Chez Les Plombiers comme si vous y étiez. Naviguez librement dans l'espace pour découvrir chaque recoin du lieu."
+  },
+  "seminaireEntreprise": {
+    "hero": {
+      "title": "Séminaire d'Entreprise à Paris — Lieu Unique de 200 m² en Plein Centre",
+      "subtitle": "Le séminaire dont votre équipe se souviendra.",
+      "description": "Oubliez les salles d'hôtel beiges et les néons. Chez Les Plombiers, votre séminaire se déroule dans 200 m² d'architecture industrielle au cœur de Paris 1er. Vidéoprojecteur 8 800 lumens, cuisine pro, Wi-Fi haut débit — tout est inclus. Vos équipes sortent de leur zone de confort dès la porte franchie.",
+      "ctaQuote": "Demander un devis",
+      "ctaVisit": "Réserver une visite",
+      "imageAlt": "Salle de séminaire Chez Les Plombiers Paris 1er — espace industriel atypique avec éclairage scénographique"
+    },
+    "about": {
+      "title": "Un Lieu de Séminaire Hors du Commun",
+      "paragraph1": "Le marché de la salle de séminaire à Paris centre est saturé de configurations interchangeables. Moquette, néons, murs blancs — difficile de stimuler la créativité dans ces conditions. Chez Les Plombiers est un espace séminaire atypique qui casse les codes : 4,5 m sous plafond, béton ciré, poutres métalliques d'origine, éclairage scénographique modulable. Vos collaborateurs sentent la différence dès l'entrée. L'environnement industriel crée une rupture avec le quotidien corporate et libère l'énergie collective.",
+      "paragraph2": "Atypique ne veut pas dire impratique. Notre lieu de séminaire d'entreprise de 200 m² à Paris 1er offre tout l'équipement technique d'une salle de conférence haut de gamme : vidéoprojecteur Optoma ZU820T (8 800 lumens), sonorisation Sonos avec entrées XLR pour micros, Wi-Fi haut débit, éclairage Kiosc avec mode séminaire dédié. L'espace est modulable en format théâtre, U, îlots ou plénière. La cuisine professionnelle gère pauses café, déjeuners traiteur et cocktails de clôture sans logistique externe.",
+      "imageAlt": "Configuration séminaire dans l'espace industriel Chez Les Plombiers Paris 1er"
+    },
+    "usps": {
+      "title": "Équipements Tout Inclus",
+      "items": [
+        {
+          "icon": "Building2",
+          "title": "Anti-salle-de-réunion",
+          "description": "4,5 m sous plafond, béton ciré, poutres métalliques. Vos équipes sortent de leur zone de confort dès la porte franchie. L'environnement industriel stimule la créativité et l'engagement bien plus qu'une salle d'hôtel classique."
+        },
+        {
+          "icon": "LayoutGrid",
+          "title": "3 espaces en 1",
+          "description": "Rideaux modulables pour créer 3 zones distinctes : plénière face au cyclorama, espace workshop en parallèle, coin détente et networking. Un seul lieu pour toute votre journée de séminaire."
+        },
+        {
+          "icon": "Projector",
+          "title": "Tech prête à l'emploi",
+          "description": "Vidéoprojecteur Optoma ZU820T (8 800 lumens), sono Sonos + XLR, Wi-Fi haut débit symétrique avec prises RJ45 disponibles. Votre équipe IT n'a rien à installer. Zéro galère technique."
+        },
+        {
+          "icon": "UtensilsCrossed",
+          "title": "Catering sur place",
+          "description": "Cuisine traiteur complète avec four, lave-vaisselle, machine à glaçons, réfrigérateur et congélateur. Votre traiteur installe son service dans des conditions professionnelles. Petit-déj, déjeuner, pauses café : tout dans le même lieu."
+        },
+        {
+          "icon": "Clock",
+          "title": "Demi-journée possible",
+          "description": "Du lundi au mercredi, réservez de 7h à 13h ou de 13h30 à 19h30, à partir de 1 000 € HT. Idéal pour un séminaire d'équipe d'une matinée ou un workshop d'après-midi."
+        },
+        {
+          "icon": "MapPin",
+          "title": "Paris 1er hypercentre",
+          "description": "Vos collaborateurs viennent de La Défense, de Boulogne, de banlieue sud ? Châtelet-Les Halles est le nœud central du RER et du métro parisien. Lignes 1, 4, 7, 11, 14 à 3 minutes à pied."
+        }
+      ]
+    },
+    "formats": {
+      "title": "Formats de Séminaires",
+      "items": [
+        {
+          "title": "Séminaire de Direction",
+          "description": "Un cadre premium pour vos réunions stratégiques. 200 m² privatisés, confidentialité garantie. L'Appartement Rose à l'étage pour les apartés."
+        },
+        {
+          "title": "Team Building",
+          "description": "L'environnement industriel crée la rupture avec les bureaux. Ateliers collaboratifs, jeux d'équipe, sessions créatives — l'espace se prête à tous les formats participatifs."
+        },
+        {
+          "title": "Formation & Workshop",
+          "description": "Configuration en îlots ou en U, vidéoprojecteur grand format, Wi-Fi fibre. Les conditions optimales pour des sessions de travail intenses et productives."
+        },
+        {
+          "title": "Convention & Plénière",
+          "description": "Format théâtre face au cyclorama, projection 8 800 lumens, micro et sono pro. Parfait pour les assemblées générales, les conventions d'équipe et les présentations plénières. 80 places assises."
+        },
+        {
+          "title": "Journée d'Étude",
+          "description": "Séminaire le matin, déjeuner dans le même espace, ateliers l'après-midi. La cuisine pro sur place simplifie toute la logistique restauration."
+        }
+      ]
+    },
+    "location": {
+      "title": "Localisation Idéale",
+      "subtitle": "Le point le plus accessible de Paris pour vos collaborateurs",
+      "address": "39 rue des Bourdonnais, 75001 Paris",
+      "metro": "Métro Châtelet — 3 min à pied",
+      "metroLines": "Lignes 1, 4, 7, 11, 14",
+      "rer": "RER A, B, D via Les Halles",
+      "parkings": "Parkings publics à proximité immédiate",
+      "hotels": "Hôtels et restaurants dans toutes les gammes à quelques pas",
+      "pmr": "Accessible PMR"
+    },
+    "gallery": {
+      "title": "Notre Espace en Images"
+    },
+    "faq": {
+      "title": "Questions Fréquentes",
+      "items": [
+        {
+          "question": "Quelle capacité pour un séminaire d'entreprise ?",
+          "answer": "Notre espace de 200 m² accueille jusqu'à 80 personnes en configuration assise, idéale pour les séminaires en format théâtre, en U ou en îlots de travail. Pour les formats mixtes (plénière le matin, ateliers l'après-midi), l'espace modulable permet de reconfigurer la salle en cours de journée. En cocktail pour la pause networking ou l'afterwork de clôture, nous accueillons jusqu'à 150 personnes. Le lieu est accessible PMR et dispose de vestiaires pour le confort de vos collaborateurs."
+        },
+        {
+          "question": "Quels équipements techniques sont inclus ?",
+          "answer": "Le tarif de base inclut l'ensemble des équipements nécessaires : vidéoprojecteur Optoma ZU820T (WUXGA, 8 800 lumens) pour des présentations sur grand écran, sonorisation Sonos avec entrées XLR pour micros, Wi-Fi haut débit, éclairage scénographique Kiosc avec mode séminaire prédéfini. La cuisine professionnelle équipée permet de gérer les pauses café, les déjeuners traiteur et les cocktails de clôture sans logistique externe. Le régisseur technique est présent sur place pour vous accompagner."
+        },
+        {
+          "question": "Peut-on organiser un team building ou offsite ?",
+          "answer": "Absolument. Notre espace atypique au cadre industriel est idéal pour les team buildings et les offsites d'entreprise. Le changement de décor stimule la créativité et l'engagement de vos équipes. Les 200 m² permettent d'alterner entre sessions de travail en groupe, ateliers participatifs et moments de convivialité. La cuisine pro facilite l'organisation de pauses gourmandes et de déjeuners sur place. L'éclairage Kiosc permet de varier les ambiances entre sessions de travail concentré et moments de détente."
+        },
+        {
+          "question": "Comment se rendre à votre lieu de séminaire ?",
+          "answer": "Chez Les Plombiers est situé au 39 rue des Bourdonnais, 75001 Paris, à 3 minutes à pied du métro Châtelet. Cette station est desservie par 5 lignes de métro (1, 4, 7, 11 et 14), ce qui en fait le point le plus accessible de Paris pour vos collaborateurs venant de toute l'Île-de-France. Le RER A, B et D sont accessibles via Les Halles à deux pas. Le quartier offre de nombreuses options d'hébergement et de restauration. Plusieurs parkings publics se trouvent à proximité immédiate."
+        },
+        {
+          "question": "Quel budget pour un séminaire d'une journée ?",
+          "answer": "La location de notre espace pour un séminaire démarre à 1 000 € HT par jour, équipements inclus (vidéoprojecteur, sono, Wi-Fi, éclairage Kiosc, cuisine pro, régisseur, ménage). La demi-journée est possible du lundi au mercredi. Le budget total dépend des prestations complémentaires : traiteur, mobilier spécifique, équipement additionnel. Nous vous accompagnons dans la planification et recommandons des traiteurs partenaires. Grille tarifaire complète sur pricing.chezlesplombiers.fr."
+        },
+        {
+          "question": "Peut-on organiser un séminaire sur plusieurs jours ?",
+          "answer": "Oui, nous accueillons régulièrement des séminaires de 2 à 3 jours. Des tarifs dégressifs s'appliquent pour les locations multi-jours — consultez pricing.chezlesplombiers.fr. La localisation à Paris 1er, à proximité du métro Châtelet, facilite l'hébergement : de nombreux hôtels sont accessibles à pied, dans toutes les gammes de prix. La cuisine pro permet de gérer les pauses et déjeuners chaque jour. Nous assurons la mise en place et le rangement entre chaque journée selon votre programme."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Organisez Votre Prochain Séminaire",
+      "subtitle": "Un devis en 24h. Envoyez-nous votre brief par WhatsApp ou email.",
+      "whatsapp": "Demander un devis",
+      "calendly": "Réserver une visite",
+      "email": "Nous écrire"
+    }
+  },
+  "espaceAtypique": {
+    "hero": {
+      "h1": "Espace Atypique à Paris — Lieu Événementiel au Charme Industriel",
+      "subtitle": "Un lieu qui a une histoire à raconter.",
+      "description": "Ancienne plomberie industrielle reconvertie en espace événementiel de 200 m² à Paris 1er. Tuyaux apparents, poutres métalliques, béton ciré — et un canapé Pierre Paulin rose au milieu. Chez Les Plombiers, le contraste brut/raffiné crée un cadre que vos invités n'oublieront pas.",
+      "ctaMatterport": "Explorer en 3D",
+      "ctaCalendly": "Réserver une visite"
+    },
+    "story": {
+      "title": "L'Histoire du Lieu",
+      "paragraph1": "Chez Les Plombiers n'est pas un loft événementiel Paris centre comme les autres. C'est une ancienne plomberie industrielle dont l'ADN architectural est intact : les tuyaux apparents courent au plafond, les poutres métalliques style Eiffel rythment l'espace, les murs en pierre brute racontent un siècle d'histoire. Ce lieu de caractère Paris offre un cadre brut et authentique que les décors factices ne reproduiront jamais. Quand vos invités franchissent la porte du 39 rue des Bourdonnais, l'effet est immédiat.",
+      "paragraph2": "Mais l'atypique ne rime pas avec rustique. Cet espace événementiel original Paris marie le brut et le raffiné avec une précision millimétrée. Le béton ciré au sol dialogue avec un canapé Pierre Paulin rose. L'éclairage scénographique Kiosc transforme l'atmosphère en quelques secondes grâce à 5 ambiances prédéfinies et un mode custom pilotable en DMX. Le cyclorama intégré et le vidéoprojecteur Optoma permettent des projections immersives. Et à l'étage, L'Appartement Rose — 100 m² entièrement roses — pousse le contraste encore plus loin. C'est un lieu tendance événement Paris impossible à dupliquer."
+    },
+    "usps": {
+      "title": "Ce qui Rend Notre Espace Unique",
+      "items": [
+        {
+          "icon": "Building2",
+          "title": "Héritage industriel authentique",
+          "description": "Les tuyaux, les poutres métalliques, les murs en pierre brute ne sont pas décoratifs. Ils sont l'ADN du bâtiment — l'ancienne plomberie qui donne son nom au lieu. Chaque élément architectural est d'origine."
+        },
+        {
+          "icon": "Palette",
+          "title": "Contraste brut/raffiné",
+          "description": "Béton ciré + canapé Pierre Paulin rose. Tuyaux au plafond + éclairage DMX chromatique. Murs bruts + Appartement Rose intégralement rose à l'étage. Ce mélange de brutalité et de raffinement est notre signature."
+        },
+        {
+          "icon": "ScanEye",
+          "title": "Visite Matterport 3D",
+          "description": "Explorez le lieu à distance avant de vous déplacer. La visite virtuelle 3D couvre l'intégralité de l'espace et permet à votre équipe ou votre client de valider le lieu sans rendez-vous préalable."
+        },
+        {
+          "icon": "Sun",
+          "title": "Éclairage Kiosc — 5 ambiances + custom",
+          "description": "L'éclairage scénographique transforme radicalement l'espace. Cocktail, dîner, séminaire, fashion show, exposition : chaque scénario est prédéfini. Le mode custom offre un contrôle total de la lumière pour vos scénographies sur mesure."
+        },
+        {
+          "icon": "Heart",
+          "title": "L'Appartement Rose — Un lieu dans le lieu",
+          "description": "100 m² à l'étage, entièrement roses, pour les VIP, les interviews, les réunions confidentielles. Un espace complémentaire qui double vos possibilités et ajoute un deuxième univers à votre événement."
+        },
+        {
+          "icon": "Projector",
+          "title": "Cyclorama + vidéoprojection grand format",
+          "description": "Mur cyclo de 4,63 m × 3,40 m, image projetée via l'Optoma ZU820T (8 800 lumens). Transformable en galerie numérique, en décor immersif, en backdrop de shooting. Un canvas créatif intégré dans l'espace."
+        }
+      ]
+    },
+    "events": {
+      "title": "Événements qui Subliment un Espace Atypique",
+      "items": [
+        {
+          "title": "Fashion Shows",
+          "description": "Le contraste industriel magnifie les créations. Cyclorama en fond de podium, éclairage DMX modulable, 4,5 m sous plafond pour les structures scéniques.",
+          "image": "/images/services/gallery/fashion-shows/01.jpg",
+          "link": "/services/fashion-shows"
+        },
+        {
+          "title": "Soirées Corporate",
+          "description": "Le cadre atypique génère un effet \"wow\" immédiat. Vidéoprojecteur 8 800 lumens pour vos présentations grand format. Jusqu'à 150 personnes debout.",
+          "image": "/photos/projection-rideaux.jpg",
+          "link": "/services/evenements-professionnels"
+        },
+        {
+          "title": "Expositions",
+          "description": "Murs neutres, éclairage pilotable, charge au sol 800 kg/m². Un espace privatisable Paris 1er qui s'efface derrière les œuvres.",
+          "image": "/photos/cyclorama-projection.jpg",
+          "link": "/services/evenements-culturels"
+        },
+        {
+          "title": "Shootings Photo",
+          "description": "Cyclorama intégré, éclairage scénographique, accès direct rue pour le matériel. Un studio de création dans un décor industriel authentique.",
+          "image": "/images/services/gallery/evenements-auto-moto/03.jpg",
+          "link": "/shooting-voiture-paris"
+        }
+      ]
+    },
+    "matterport": {
+      "title": "Visite Virtuelle 3D",
+      "subtitle": "Explorez Notre Espace Atypique depuis votre écran",
+      "iframeTitle": "Visite virtuelle 3D — Chez Les Plombiers"
+    },
+    "gallery": {
+      "title": "Notre Espace en Images",
+      "photos": [
+        "/photos/entree-verriere.jpg",
+        "/photos/canape-rose.jpg",
+        "/photos/canape-portes-atelier.jpg",
+        "/photos/projection-rideaux.jpg",
+        "/photos/cyclorama-projection.jpg",
+        "/photos/sanitaires.jpg",
+        "/images/services/gallery/fashion-shows/01.jpg",
+        "/images/services/gallery/fashion-shows/05.jpg",
+        "/images/services/gallery/fashion-shows/10.jpg",
+        "/images/services/gallery/evenements-auto-moto/03.jpg"
+      ],
+      "alts": [
+        "Verrière d'atelier à l'entrée du lieu de caractère Paris 1er",
+        "Canapé Pierre Paulin rose sur béton ciré — contraste brut raffiné de l'espace atypique",
+        "Espace atypique Chez Les Plombiers — portes atelier et canapé dans le loft industriel",
+        "Projection vidéo sur rideaux dans l'espace événementiel original Paris",
+        "Cyclorama intégré avec projection vidéo dans l'espace événementiel",
+        "Sanitaires design dans le lieu atypique événementiel Paris centre",
+        "Fashion show dans l'espace atypique industriel Chez Les Plombiers",
+        "Défilé de mode dans le cadre brut et élégant du loft événementiel",
+        "Présentation créateur dans le lieu de caractère Paris 1er",
+        "Événement automobile dans l'espace brut Paris avec accès direct rue"
+      ]
+    },
+    "faq": {
+      "title": "Questions Fréquentes — Espace Atypique Paris",
+      "items": [
+        {
+          "question": "Qu'est-ce qui rend votre espace atypique par rapport aux autres lieux événementiels parisiens ?",
+          "answer": "Chez Les Plombiers se distingue par son héritage industriel authentique marié à des équipements de pointe. Contrairement aux salles classiques et hôtels parisiens, notre espace de 200 m² offre un cadre brut et contemporain avec des volumes généreux — 4,5 m sous plafond, poutres métalliques d'origine, murs en pierre brute. L'éclairage scénographique Kiosc (5 ambiances + mode custom) transforme radicalement l'atmosphère en quelques secondes. Le cyclorama professionnel, l'accès direct véhicules depuis la rue et la cuisine pro équipée complètent un ensemble introuvable à Paris 1er."
+        },
+        {
+          "question": "Peut-on personnaliser entièrement la décoration de votre espace atypique ?",
+          "answer": "Oui, la personnalisation est au cœur de notre concept. Notre espace de 200 m² est livré en configuration \"toile blanche\" : vous intégrez votre propre scénographie, mobilier, signalétique et éléments de décoration. L'éclairage Kiosc vous donne un contrôle total sur l'ambiance lumineuse avec 5 scénarios prédéfinis et un mode custom pilotable en DMX. Nous travaillons régulièrement avec des décorateurs et scénographes événementiels qui apprécient la flexibilité totale de l'espace."
+        },
+        {
+          "question": "Votre espace atypique est-il adapté aux lancements de produit et soirées de marque ?",
+          "answer": "Parfaitement. Notre lieu est régulièrement choisi pour des lancements de produit, des press days et des soirées de marque. Le cadre industriel apporte une authenticité recherchée par les directeurs artistiques. Le cyclorama offre un fond neutre pour les mises en scène produit. Le vidéoprojecteur Optoma ZU820T (8 800 lumens) permet des projections grand format impactantes. L'espace accueille jusqu'à 150 personnes debout, avec la cuisine pro pour gérer traiteur et cocktails."
+        },
+        {
+          "question": "Votre lieu atypique convient-il pour un shooting photo professionnel ?",
+          "answer": "Absolument. Notre espace est équipé pour la production visuelle professionnelle : cyclorama intégré de 4,63 m × 3,40 m, éclairage scénographique Kiosc modulable, vidéoprojecteur Optoma pour projections de fond créatives. Les 200 m² offrent suffisamment de recul pour toutes les focales. L'accès direct rue permet de faire entrer des véhicules ou du matériel de production volumineux."
+        },
+        {
+          "question": "Combien de personnes peut accueillir votre espace atypique à Paris ?",
+          "answer": "Notre espace événementiel de 200 m² accueille jusqu'à 150 personnes en configuration cocktail debout et 80 personnes en configuration assise (dîner, séminaire, conférence). L'espace est entièrement modulable : les configurations s'adaptent à chaque événement. Le lieu est accessible PMR et situé à 3 minutes du métro Châtelet (5 lignes)."
+        },
+        {
+          "question": "Quel est le budget pour privatiser votre espace atypique à Paris 1er ?",
+          "answer": "La privatisation de Chez Les Plombiers démarre à 1 000 € HT par jour, équipements inclus : cuisine professionnelle, éclairage scénographique Kiosc, sonorisation Sonos avec entrées XLR, régisseur technique et ménage. Le tarif varie selon la durée, le jour de la semaine et les options complémentaires. Consultez notre grille tarifaire complète sur pricing.chezlesplombiers.fr."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Découvrez Votre Futur Espace Événementiel",
+      "subtitle": "Explorez Chez Les Plombiers en 3D, puis venez le voir en vrai.",
+      "ctaMatterport": "Explorer en 3D",
+      "ctaCalendly": "Réserver une visite",
+      "ctaWhatsApp": "WhatsApp"
+    },
+    "meta": {
+      "title": "Espace Atypique Paris — Lieu Événementiel Industriel | CLP",
+      "description": "Espace événementiel atypique de 200 m² à Paris 1er. Cadre industriel unique, éclairage Kiosc, cyclorama. 150 pers. debout. Dès 1 000 € HT. Visite gratuite.",
+      "ogTitle": "Espace Atypique Paris — Lieu Événementiel Industriel | Chez Les Plombiers",
+      "ogDescription": "Lieu événementiel atypique de 200 m² au cœur de Paris 1er. Charme industriel, éclairage scénographique modulable, accès direct rue."
+    }
+  },
+  "shootingVoiture": {
+    "hero": {
+      "title": "Shooting Voiture à Paris — Studio Automobile avec Accès Direct Véhicules",
+      "subtitle": "Le seul studio photo de Paris centre où la voiture entre par la porte.",
+      "description": "Chez Les Plombiers, les véhicules entrent directement dans l'espace depuis la rue. 200 m² au sol, cyclorama intégré, éclairage DMX professionnel, 36 KvA triphasé. Au 39 rue des Bourdonnais, Paris 1er, à 3 minutes du métro Châtelet. Un studio automobile clé en main en plein centre de Paris.",
+      "ctaQuote": "Demander un devis",
+      "ctaGallery": "Voir la galerie Auto"
+    },
+    "access": {
+      "sectionTitle": "Le Seul Espace Photo Auto avec Accès Rue à Paris 1er",
+      "paragraph1": "Trouver un studio photo voiture Paris intra-muros où le véhicule entre de plain-pied, c'est un défi que la plupart des producteurs connaissent. Monte-charge, rampes, sous-sols exigus : la logistique d'un shooting automobile Paris centre est habituellement un cauchemar. Chez Les Plombiers résout ce problème en une porte. L'accès direct depuis la rue des Bourdonnais (L 2,20 m / H 3,50 m) permet l'entrée de voitures, motos et utilitaires dans un espace de 200 m² au sol, avec 4,5 m de hauteur sous plafond. Pas de manœuvre complexe, pas de véhicule à désosser.",
+      "paragraph2": "Au-delà de l'accès, Chez Les Plombiers est un véritable espace photo automobile Paris équipé pour la production professionnelle. Le cyclorama intégré de 4,63 m x 3,40 m offre un fond neutre pour les prises de vue catalogue. L'éclairage scénographique Kiosc (5 ambiances + mode custom DMX) donne un contrôle total sur la lumière. Le vidéoprojecteur Optoma ZU820T (8 800 lumens) permet de projeter des décors virtuels en fond. La puissance électrique de 36 KvA triphasé alimente flashs, générateurs HMI et tout l'arsenal d'un shooting automobile pro. La charge au sol de 800 kg/m² supporte tous les véhicules de série.",
+      "imageAlt": "Porte d'accès véhicule grand format depuis la rue des Bourdonnais — studio shooting automobile Chez Les Plombiers Paris 1er"
+    },
+    "usps": {
+      "sectionTitle": "Équipements Shooting Automobile",
+      "items": [
+        {
+          "icon": "Car",
+          "title": "Accès véhicule direct depuis la rue",
+          "description": "Porte d'entrée L 2,20 m / H 3,50 m. Le véhicule entre directement dans l'espace depuis la rue des Bourdonnais — pas de rampe, pas de monte-charge, pas de sous-sol. C'est le point différenciant majeur de ce studio automobile Paris centre."
+        },
+        {
+          "icon": "Frame",
+          "title": "Cyclorama 4,63 m x 3,40 m",
+          "description": "Fond de studio intégré, idéal pour les shots frontaux et 3/4. Possibilité de projection via l'Optoma ZU820T (8 800 lumens) pour des fonds dynamiques ou des mises en scène numériques."
+        },
+        {
+          "icon": "Lightbulb",
+          "title": "Éclairage DMX professionnel Kiosc",
+          "description": "Lumière dimmable chaud/froid et couleurs, grilles de support pour accrocher vos sources supplémentaires raccordées au DMX. Le directeur photo dispose d'un canvas de lumière complet dès l'arrivée."
+        },
+        {
+          "icon": "Zap",
+          "title": "36 KvA triphasé",
+          "description": "Assez de puissance pour alimenter flashs, générateurs HMI et tout l'arsenal d'un shooting automobile professionnel. Prises au sol et en hauteur. Pas de groupe électrogène à louer."
+        },
+        {
+          "icon": "MapPin",
+          "title": "Paris 1er = backdrop urbain à 2 pas",
+          "description": "Shots en intérieur dans le studio, puis sortie dans la rue pour des photos en contexte parisien : Pont Neuf, Louvre, Les Halles. Deux univers visuels en une seule journée de production."
+        },
+        {
+          "icon": "Warehouse",
+          "title": "800 kg/m² de charge au sol",
+          "description": "Une Porsche 911 pèse ~1 500 kg sur 4 roues, soit ~375 kg/m² par point d'appui. La dalle supporte sans problème tous les véhicules de série. Visa BET structure disponible sur demande pour vos productions."
+        }
+      ]
+    },
+    "productions": {
+      "sectionTitle": "Types de Productions Automobiles",
+      "items": [
+        {
+          "title": "Shooting catalogue constructeurs",
+          "description": "Photos catalogue, fiches produit, visuels concessionnaire. Cyclorama en fond neutre, éclairage maîtrisé, recul suffisant pour toutes les focales sur 200 m²."
+        },
+        {
+          "title": "Lancement véhicule & presse",
+          "description": "Shooting presse en journée, cocktail VIP le soir dans le même espace. L'éclairage Kiosc passe du mode studio au mode réception en quelques secondes."
+        },
+        {
+          "title": "Tournage vidéo & digital",
+          "description": "Contenu réseaux sociaux, YouTube, films de marque. Sono Sonos + XLR pour l'audio, éclairage modulable, backdrop industriel authentique qui donne du caractère à l'image."
+        },
+        {
+          "title": "Événement auto-moto privé",
+          "description": "Présentation privée, reveal, soirée marque. Jusqu'à 150 personnes debout autour du véhicule exposé. Accueil VIP dans L'Appartement Rose à l'étage."
+        },
+        {
+          "title": "Éditorial magazine",
+          "description": "Le cadre industriel — béton ciré, poutres métalliques, tuyaux apparents — offre un décor brut et esthétique très prisé dans l'univers éditorial auto et lifestyle."
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle": "Galerie — Événements Auto & Moto"
+    },
+    "whyUs": {
+      "sectionTitle": "Pourquoi CLP pour Votre Shooting Auto",
+      "items": [
+        {
+          "title": "Logistique simplifiée — accès direct rue",
+          "description": "Pas de monte-charge, pas de rampe, pas de manœuvre complexe. Le véhicule entre directement par la porte depuis la rue des Bourdonnais. En plein Paris 1er, c'est un avantage concurrentiel que personne ne réplique."
+        },
+        {
+          "title": "Cadre industriel authentique — le décor est déjà là",
+          "description": "Les tuyaux, les poutres, le béton : le lieu offre un décor brut et contemporain sans rien installer. Les directeurs photo gagnent du temps de préparation et obtiennent une esthétique que les studios blancs ne peuvent pas reproduire."
+        },
+        {
+          "title": "Flexibilité totale — journée, soirée, multi-jours",
+          "description": "Shooting en journée, lancement le soir, production sur 3 jours : le lieu s'adapte à votre planning. Tarifs dégressifs multi-jours. Devis personnalisé après visite gratuite de l'espace."
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": "Questions Fréquentes — Shooting Voiture Paris",
+      "items": [
+        {
+          "question": "Les voitures peuvent-elles vraiment entrer dans votre espace à Paris 1er ?",
+          "answer": "Oui, c'est notre atout majeur et unique à Paris centre. Notre espace au 39 rue des Bourdonnais dispose d'un accès direct depuis la rue, avec une porte de 2,20 m de large et 3,50 m de haut. Voitures, motos et certains véhicules utilitaires entrent de plain-pied. La surface de 200 m² offre assez d'espace pour positionner le véhicule, installer l'éclairage professionnel et conserver le recul nécessaire pour les prises de vue. Cet accès direct simplifie considérablement la logistique par rapport aux studios classiques nécessitant un monte-charge."
+        },
+        {
+          "question": "Quels équipements sont disponibles pour un shooting automobile ?",
+          "answer": "Notre espace est équipé pour la production visuelle professionnelle : cyclorama intégré de 4,63 m x 3,40 m pour fond neutre, éclairage scénographique Kiosc avec 5 ambiances et mode custom DMX, vidéoprojecteur Optoma ZU820T (8 800 lumens) pour décors virtuels projetés en fond, sono Sonos avec entrées XLR pour les tournages vidéo. La puissance électrique de 36 KvA triphasé alimente tout votre matériel. Vous pouvez compléter avec vos propres sources — les grilles d'accroche et les 200 m² offrent toute la place nécessaire."
+        },
+        {
+          "question": "Quel type de shooting automobile peut-on réaliser chez vous ?",
+          "answer": "Nous accueillons tous types de productions automobiles : shootings catalogue pour constructeurs et concessionnaires, présentations presse et lancements de véhicules, tournages vidéo et création de contenu digital (réseaux sociaux, YouTube, films de marque), éditoriaux magazine, et événements privés autour de l'automobile et de la moto. Le cadre industriel authentique offre une esthétique brute et contemporaine très prisée dans l'univers auto. Nous avons déjà accueilli des événements Porsche dans notre espace."
+        },
+        {
+          "question": "Quel est le tarif pour un shooting voiture d'une journée ?",
+          "answer": "La location de notre espace pour un shooting automobile démarre à 1 000 € HT par jour, équipements inclus (cyclorama, éclairage Kiosc, vidéoprojecteur Optoma, sono, régisseur, ménage). Ce tarif couvre la journée complète avec accès véhicules. Pour les productions multi-jours, des tarifs dégressifs s'appliquent — consultez pricing.chezlesplombiers.fr. Le lieu peut être combiné avec L'Appartement Rose à l'étage pour des shootings lifestyle. Devis personnalisé après visite gratuite."
+        },
+        {
+          "question": "Comment gérer la logistique d'un shooting voiture en plein Paris ?",
+          "answer": "La logistique est simplifiée grâce à notre accès direct rue. Le véhicule entre directement dans l'espace depuis la rue des Bourdonnais — pas de monte-charge, pas de rampe, pas de manœuvre complexe. La rue permet un arrêt court pour le chargement/déchargement du matériel. Le métro Châtelet à 3 minutes permet à votre équipe (photographe, styliste, maquilleur, client) d'arriver facilement. La cuisine pro offre un espace de pause pour les longues journées de production. Le sous-sol de 100 m² sert de stockage sécurisé pour le matériel."
+        },
+        {
+          "question": "Peut-on combiner shooting voiture et événement dans votre lieu ?",
+          "answer": "Absolument, c'est l'un de nos points forts. Shooting automobile en journée, lancement ou cocktail VIP le soir : l'espace se transforme en quelques minutes. L'éclairage Kiosc passe du mode studio au mode cocktail instantanément. Nous accueillons régulièrement des événements auto-moto complets : présentation du véhicule, shooting presse, puis réception privée. L'espace de 200 m² et l'accès véhicule direct depuis la rue permettent cette polyvalence. Retrouvez nos références sur notre page événements auto & moto."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Réservez Votre Studio Auto",
+      "subtitle": "Disponibilités et devis en 2h. Envoyez votre brief par WhatsApp.",
+      "whatsapp": "Demander un devis",
+      "calendly": "Réserver une visite",
+      "gallery": "Voir nos références auto"
+    }
+  },
+  "lieuEvenementiel": {
+    "hero": {
+      "title": "Lieu Événementiel à Paris 1er — 200 m² au Cœur de la Capitale",
+      "subtitle": "Le lieu que vous ne trouverez pas sur un catalogue.",
+      "description": "Chez Les Plombiers est un espace événementiel de 200 m² au 39 rue des Bourdonnais, Paris 1er. Ancienne plomberie industrielle reconvertie, le lieu allie charme brut et équipements professionnels pour accueillir vos événements de 30 à 150 personnes. Cuisine pro, cyclorama, éclairage scénographique — tout est inclus.",
+      "cta": "Réserver une visite",
+      "ctaPricing": "Voir les tarifs"
+    },
+    "space": {
+      "title": "Notre Espace",
+      "content1": "Au cœur du 1er arrondissement, à trois minutes du métro Châtelet, Chez Les Plombiers est une salle de réception Paris centre qui redéfinit les codes de l'événementiel. Ce lieu privatisé Paris de 200 m² offre des volumes généreux — 4,5 m sous plafond, murs en pierre brute, poutres métalliques d'origine — dans un espace modulable événementiel capable de s'adapter à chaque configuration. Du cocktail debout pour 150 convives au dîner assis de 80 personnes, chaque mètre carré se réinvente selon votre projet.",
+      "content2": "Ce nouveau lieu événementiel Paris se distingue par un équipement technique complet inclus dans chaque location : éclairage scénographique Kiosc (5 ambiances + mode custom), vidéoprojecteur Optoma ZU820T de 8 800 lumens, sonorisation Sonos avec entrées XLR, et cuisine professionnelle équipée pour votre traiteur. L'accès direct depuis la rue permet l'entrée de véhicules et de matériel volumineux — un atout rare pour un espace événementiel Paris centre. Le lieu est accessible PMR et dispose d'un régisseur technique sur place."
+    },
+    "usps": {
+      "title": "Pourquoi Chez Les Plombiers",
+      "items": [
+        {
+          "title": "Emplacement — Paris 1er, Métro Châtelet",
+          "description": "39 rue des Bourdonnais, en plein cœur de la capitale. Le métro Châtelet (lignes 1, 4, 7, 11, 14) est à 3 minutes à pied. Vos invités viennent de La Défense, de banlieue ou de l'étranger : ils trouvent."
+        },
+        {
+          "title": "200 m² entièrement modulables",
+          "description": "Un espace unique qui se transforme selon vos besoins. Configuration cocktail, dîner assis, conférence en théâtre, ateliers en îlots — vous dessinez le plan, nous installons. Rideaux séparateurs pour créer jusqu'à 3 espaces distincts."
+        },
+        {
+          "title": "Équipement technique pro inclus",
+          "description": "Vidéoprojecteur Optoma ZU820T (8 800 lumens), éclairage scénographique Kiosc DMX, sono Sonos avec entrées XLR, Wi-Fi haut débit. Pas de prestataire AV supplémentaire à budgéter. Tout est prêt à l'emploi."
+        },
+        {
+          "title": "Cuisine professionnelle complète",
+          "description": "Pas un évier et un micro-ondes : un vrai office traiteur en U avec four, lave-vaisselle, machine à glaçons, réfrigérateur et congélateur. Votre traiteur travaille dans des conditions professionnelles."
+        },
+        {
+          "title": "Accès direct véhicule depuis la rue",
+          "description": "Porte de 2,20 m de large et 3,50 m de haut. Les véhicules, le matériel scénique et les installations volumineuses entrent directement dans l'espace. À Paris centre, c'est quasiment unique."
+        },
+        {
+          "title": "Régisseur et ménage inclus",
+          "description": "Le régisseur technique est présent sur place pour accompagner votre événement. Le ménage d'entrée et de sortie est compris dans le tarif. Pas de surprise à la facturation."
+        }
+      ]
+    },
+    "events": {
+      "title": "Les Événements que Nous Accueillons",
+      "items": [
+        {
+          "title": "Fashion Shows et Brand Events",
+          "description": "Cyclorama intégré, éclairage modulable, 4,5 m sous plafond. Le cadre industriel crée un backdrop spectaculaire pour vos défilés et lancements de produit.",
+          "href": "/services/fashion-shows"
+        },
+        {
+          "title": "Dîners d'Exception et Réceptions",
+          "description": "80 personnes assises dans un cadre intimiste et raffiné. Cuisine pro pour votre traiteur. Éclairage tamisé Kiosc pour une ambiance sur mesure.",
+          "href": "/services/diners-exception"
+        },
+        {
+          "title": "Séminaires et Team Buildings",
+          "description": "Vidéoprojecteur 8 800 lumens, Wi-Fi haut débit, 3 espaces modulables. L'environnement industriel stimule la créativité de vos équipes.",
+          "href": "/seminaire-entreprise-paris"
+        },
+        {
+          "title": "Shootings Photo et Vidéo",
+          "description": "Cyclorama 4,63 m x 3,40 m, éclairage DMX, accès véhicule direct. Un studio clé en main au cœur de Paris pour vos productions visuelles.",
+          "href": "/shooting-voiture-paris"
+        },
+        {
+          "title": "Événements Culturels et Expositions",
+          "description": "Murs neutres, éclairage scénographique pilotable, charge au sol de 800 kg/m². Un espace qui s'adapte à chaque scénographie.",
+          "href": "/services/evenements-culturels"
+        }
+      ]
+    },
+    "whyUs": {
+      "title": "Pourquoi Nous Choisir",
+      "items": [
+        {
+          "title": "Localisation exceptionnelle — Paris 1er, Métro Châtelet",
+          "description": "Le nœud de transport le plus connecté de Paris : 5 lignes de métro, RER A, B et D à proximité. Restaurants, hôtels et parkings à moins de 5 minutes à pied. Vos invités arrivent sans difficulté."
+        },
+        {
+          "title": "Un cadre industriel atypique et modulable",
+          "description": "Les tuyaux apparents, les poutres métalliques, le béton ciré : un lieu de caractère qui génère l'effet \"wow\" dès l'entrée. Et pourtant, chaque configuration est possible grâce aux 200 m² entièrement flexibles."
+        },
+        {
+          "title": "Tarifs transparents dès 1 000 € HT/jour",
+          "description": "Équipements techniques, régisseur, ménage : tout est inclus dans le tarif de base. Consultez notre grille tarifaire détaillée sur pricing.chezlesplombiers.fr et obtenez un devis personnalisé après votre visite gratuite."
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Galerie Photos",
+      "photos": [
+        {
+          "src": "/images/hero.png",
+          "alt": "Espace événementiel Chez Les Plombiers Paris 1er — vue générale des 200 m² avec poutres métalliques et éclairage scénographique Kiosc"
+        },
+        {
+          "src": "/photos/panorama-grande-salle.jpg",
+          "alt": "Configuration cocktail debout dans le lieu événementiel Paris centre avec éclairage ambiance chaude"
+        },
+        {
+          "src": "/photos/entree-verriere.jpg",
+          "alt": "Vue de la verrière d'atelier et entrée du lieu événementiel atypique Paris"
+        },
+        {
+          "src": "/photos/cuisine-equipee.jpg",
+          "alt": "Cuisine professionnelle équipée pour traiteur dans l'espace événementiel Paris 1er arrondissement"
+        },
+        {
+          "src": "/photos/fauteuils-design.jpg",
+          "alt": "Mobilier design dans la salle de réception Paris centre"
+        },
+        {
+          "src": "/photos/canape-rose.jpg",
+          "alt": "Éclairage scénographique Kiosc DMX — ambiance colorée dans la salle de réception Paris centre"
+        },
+        {
+          "src": "/images/venue-1.png",
+          "alt": "Configuration dîner assis 80 personnes dans le lieu privatisé Paris 1er"
+        },
+        {
+          "src": "/images/venue-2.png",
+          "alt": "Vidéoprojecteur Optoma ZU820T en projection grand format dans l'espace événementiel"
+        },
+        {
+          "src": "/images/venue-3.png",
+          "alt": "Accès direct véhicule depuis la rue des Bourdonnais — porte grand format du lieu événementiel"
+        },
+        {
+          "src": "/photos/cyclorama-projection.jpg",
+          "alt": "Cyclorama professionnel intégré dans l'espace de shooting Chez Les Plombiers Paris"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Questions Fréquentes — Lieu Événementiel Paris",
+      "items": [
+        {
+          "question": "Quelle est la capacité d'accueil de votre lieu événementiel à Paris ?",
+          "answer": "Notre espace événementiel de 200 m² au 39 rue des Bourdonnais, Paris 1er, accueille jusqu'à 150 personnes en configuration cocktail debout et 80 personnes en configuration assise. L'espace est entièrement modulable : vous pouvez agencer la salle selon vos besoins, que ce soit pour un dîner avec scène, un cocktail dînatoire avec espaces de circulation, ou un séminaire en format théâtre. Les rideaux séparateurs permettent de créer jusqu'à 3 zones distinctes. L'accès direct depuis la rue facilite également l'entrée de mobilier et d'installations volumineuses."
+        },
+        {
+          "question": "Où se situe exactement votre lieu événementiel dans Paris ?",
+          "answer": "Chez Les Plombiers se trouve au 39 rue des Bourdonnais, 75001 Paris, en plein cœur du 1er arrondissement. Le métro Châtelet, desservi par les lignes 1, 4, 7, 11 et 14, est à 3 minutes à pied. C'est le nœud de transport le plus connecté de la capitale : RER A, B et D sont accessibles depuis Les Halles. Le quartier offre de nombreuses options de restauration et d'hébergement, un atout décisif pour vos invités venant de province ou de l'étranger. Le lieu est accessible PMR."
+        },
+        {
+          "question": "Quels types d'événements peut-on organiser dans votre espace parisien ?",
+          "answer": "Notre lieu événementiel accueille une grande variété de formats : fashion shows et présentations de marque, dîners d'exception, cocktails et réceptions, séminaires d'entreprise et team buildings, shootings photo et vidéo grâce à notre cyclorama professionnel, événements culturels et expositions, ainsi que des événements automobiles grâce à l'accès véhicules direct. L'éclairage scénographique Kiosc avec 5 scénarios prédéfinis et mode custom permet d'adapter l'ambiance à chaque occasion. Nous avons accueilli des défilés, des press days, des conférences et des soirées de lancement."
+        },
+        {
+          "question": "Quel est le tarif de location de votre lieu événementiel à Paris 1er ?",
+          "answer": "La location de notre espace événementiel démarre à 1 000 € HT par jour. Ce tarif inclut l'ensemble des équipements : cuisine professionnelle équipée, éclairage scénographique Kiosc, sonorisation Sonos avec connexion XLR, régisseur technique et ménage d'entrée/sortie. La demi-journée est possible du lundi au mercredi. Le tarif final dépend de la durée, du jour de la semaine et des prestations complémentaires souhaitées. Consultez notre grille tarifaire sur pricing.chezlesplombiers.fr ou réservez une visite gratuite pour obtenir un devis sur mesure."
+        },
+        {
+          "question": "Votre lieu événementiel est-il équipé pour les tournages et shootings ?",
+          "answer": "Absolument. Notre espace dispose d'un cyclorama professionnel de 4,63 m x 3,40 m et d'un vidéoprojecteur Optoma ZU820T (WUXGA, 8 800 lumens) pour projections de fond créatives. L'éclairage scénographique Kiosc offre 5 scénarios lumineux plus un mode custom pilotable en DMX. La sono Sonos avec entrées XLR complète l'équipement pour les tournages vidéo. Avec 200 m², une puissance de 36 KvA triphasé et un accès direct rue pour le matériel volumineux ou les véhicules, Chez Les Plombiers est un studio de création clé en main."
+        },
+        {
+          "question": "Comment réserver une visite de votre espace événementiel à Paris ?",
+          "answer": "Réserver une visite est simple et gratuit. Prenez rendez-vous directement via notre page Calendly, contactez-nous par WhatsApp au 06 88 67 99 81 pour une réponse rapide, ou envoyez un email à contact@chezlesplombiers.fr. Nous proposons des visites du lundi au samedi, de 10h à 18h. Lors de la visite, notre équipe étudie votre projet pour vous proposer une configuration et un devis sur mesure. Vous pouvez aussi explorer le lieu à distance grâce à notre visite virtuelle 3D Matterport."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Réservez Votre Visite Gratuite",
+      "subtitle": "Découvrez 200 m² d'exception au cœur de Paris 1er. Notre équipe vous accueille sur rendez-vous.",
+      "calendly": "Réserver une visite",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    }
   }
 }

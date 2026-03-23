@@ -391,6 +391,22 @@
         "href": "/en/services/automotive-events"
       },
       {
+        "label": "Event Venue Paris",
+        "href": "/event-venue-paris"
+      },
+      {
+        "label": "Unique Venue",
+        "href": "/unique-venue-paris"
+      },
+      {
+        "label": "Corporate Seminar",
+        "href": "/corporate-seminar-paris"
+      },
+      {
+        "label": "Car Photoshoot",
+        "href": "/car-photoshoot-paris"
+      },
+      {
         "label": "Photo & Video Studio",
         "href": "/en/studio"
       },
@@ -988,7 +1004,16 @@
     "chefTitle": "Chef Mathias Rouveure — Event Caterer Paris | Chez Les Plombiers",
     "chefDescription": "Meet Mathias Rouveure (Homemade), partner chef at Chez Les Plombiers. EHL graduate, he blends food, art and music into bespoke culinary experiences in Paris 1st.",
     "guideTitle": "Practical Guide | Chez Les Plombiers",
-    "guideDescription": "Your practical assistant for your event at Chez Les Plombiers. Get instant answers to your questions."
+    "guideDescription": "Your practical assistant for your event at Chez Les Plombiers. Get instant answers to your questions.",
+    "seminaireTitle": "Corporate Seminar Paris 1st — 200 sqm Venue | CLP",
+    "seminaireDescription": "Host your corporate seminar in Paris 1st. 200 sqm, 80 seated, professional kitchen, 8,800 lm projector, Wi-Fi. From 1,000 EUR + VAT/day. Free visit.",
+    "seminaireOgDescription": "Corporate seminar venue in Paris 1st. 200 sqm, Optoma projector, professional kitchen, stage lighting. From 1,000 EUR + VAT/day.",
+    "shootingVoitureTitle": "Car Photoshoot Paris — 200 sqm Auto Studio | CLP",
+    "shootingVoitureDescription": "Automotive photo studio in Paris 1st. 200 sqm, direct street access, cyclorama, professional Kiosc lighting. Cars drive into the space. From 1,000 EUR + VAT/day. Free visit.",
+    "shootingVoitureOgDescription": "Automotive shoot venue in Paris 1st with direct street vehicle access. 200 sqm, cyclorama, Kiosc lighting, Optoma projector. From 1,000 EUR + VAT/day.",
+    "lieuEvenementielTitle": "Event Venue Paris 1st — 200sqm Central | Chez Les Plombiers",
+    "lieuEvenementielDescription": "200sqm event venue in the heart of Paris 1st, Chatelet metro. Professional kitchen, cyclorama, stage lighting. From 1,000€+VAT/day. Free visit.",
+    "lieuEvenementielOgDescription": "Modular 200sqm event space in Paris 1st. Equipped kitchen, cyclorama, Kiosc lighting, Sonos sound. From 1,000€+VAT/day."
   },
   "studio": {
     "title": "Photo & Video Studio",
@@ -996,10 +1021,22 @@
     "heroImageAlt": "Photo studio with white cyclorama wall and technical ceiling grid — Chez Les Plombiers Paris 1st",
     "accroche": "A raw, architectural studio in the heart of Paris 1st. Epoxy floor, built-in cyclorama, technical ceiling grid, 36 kVA. No compromise.",
     "keyFigures": [
-      { "value": "130 m²", "label": "Studio area" },
-      { "value": "4.11 m", "label": "Ceiling height" },
-      { "value": "36 kVA", "label": "Power supply" },
-      { "value": "4.63 m", "label": "Cyclorama" }
+      {
+        "value": "130 m²",
+        "label": "Studio area"
+      },
+      {
+        "value": "4.11 m",
+        "label": "Ceiling height"
+      },
+      {
+        "value": "36 kVA",
+        "label": "Power supply"
+      },
+      {
+        "value": "4.63 m",
+        "label": "Cyclorama"
+      }
     ],
     "seoDescription": "<p>Located on the ground floor of 39 rue des Bourdonnais, less than five minutes' walk from Châtelet — Les Halles, the Chez Les Plombiers studio offers a 130 m² shooting and filming space in the heart of Paris 1st arrondissement.</p><p>The 4.63 m × 3.40 m cyclorama wall, white epoxy resin floor and 4.11 m ceiling height make it a versatile space for fashion shoots, advertising campaigns, video production and digital content. The technical ceiling grid allows direct rigging of column stands, clamps, magic arms and articulated arms — with no floor-based setup required.</p><p>Step-free ground floor access through a 2.21 m × 2.71 m double door makes heavy equipment loading effortless and allows driving a vehicle directly onto the studio floor — ideal for automotive shoots. The 36 kVA three-phase power supply supports the most demanding lighting configurations. A fitted kitchen, wardrobe area with clothes racks, make-up stations and a dedicated control room complete the setup.</p>",
     "specsTitle": "Technical specifications",
@@ -1007,42 +1044,105 @@
       {
         "title": "Studio & dimensions",
         "items": [
-          { "label": "Total area", "value": "~130 m²" },
-          { "label": "Cyclorama wall", "value": "4.63 m × 3.40 m" },
-          { "label": "Ceiling height", "value": "4.11 m" },
-          { "label": "Studio length", "value": "8.98 m" },
-          { "label": "Floor", "value": "White epoxy resin" },
-          { "label": "Windows", "value": "Double workshop windows (courtyard + street)" },
-          { "label": "Ceiling grid", "value": "Column stands, clamps, magic arms, articulated arms" }
+          {
+            "label": "Total area",
+            "value": "~130 m²"
+          },
+          {
+            "label": "Cyclorama wall",
+            "value": "4.63 m × 3.40 m"
+          },
+          {
+            "label": "Ceiling height",
+            "value": "4.11 m"
+          },
+          {
+            "label": "Studio length",
+            "value": "8.98 m"
+          },
+          {
+            "label": "Floor",
+            "value": "White epoxy resin"
+          },
+          {
+            "label": "Windows",
+            "value": "Double workshop windows (courtyard + street)"
+          },
+          {
+            "label": "Ceiling grid",
+            "value": "Column stands, clamps, magic arms, articulated arms"
+          }
         ]
       },
       {
         "title": "Access & logistics",
         "items": [
-          { "label": "Level", "value": "Ground floor, step-free" },
-          { "label": "Main entrance", "value": "Double door 2.21 × 2.71 m" },
-          { "label": "Secondary entrance", "value": "Street-side" },
-          { "label": "Address", "value": "39 rue des Bourdonnais, Paris 1st" },
-          { "label": "Metro", "value": "Châtelet / Les Halles (< 5 min)" },
-          { "label": "Vehicle access", "value": "Car entry possible (double door 2.21 × 2.71 m)" }
+          {
+            "label": "Level",
+            "value": "Ground floor, step-free"
+          },
+          {
+            "label": "Main entrance",
+            "value": "Double door 2.21 × 2.71 m"
+          },
+          {
+            "label": "Secondary entrance",
+            "value": "Street-side"
+          },
+          {
+            "label": "Address",
+            "value": "39 rue des Bourdonnais, Paris 1st"
+          },
+          {
+            "label": "Metro",
+            "value": "Châtelet / Les Halles (< 5 min)"
+          },
+          {
+            "label": "Vehicle access",
+            "value": "Car entry possible (double door 2.21 × 2.71 m)"
+          }
         ]
       },
       {
         "title": "Power & network",
         "items": [
-          { "label": "Capacity", "value": "36 kVA" },
-          { "label": "Three-phase", "value": "Available" },
-          { "label": "Wi-Fi", "value": "High speed" },
-          { "label": "Wired", "value": "RJ45 port" }
+          {
+            "label": "Capacity",
+            "value": "36 kVA"
+          },
+          {
+            "label": "Three-phase",
+            "value": "Available"
+          },
+          {
+            "label": "Wi-Fi",
+            "value": "High speed"
+          },
+          {
+            "label": "Wired",
+            "value": "RJ45 port"
+          }
         ]
       },
       {
         "title": "Support spaces",
         "items": [
-          { "label": "Kitchen", "value": "Fully equipped" },
-          { "label": "Wardrobe", "value": "Racks & styling" },
-          { "label": "Make-up", "value": "1 station minimum" },
-          { "label": "Control room", "value": "Dedicated space" }
+          {
+            "label": "Kitchen",
+            "value": "Fully equipped"
+          },
+          {
+            "label": "Wardrobe",
+            "value": "Racks & styling"
+          },
+          {
+            "label": "Make-up",
+            "value": "1 station minimum"
+          },
+          {
+            "label": "Control room",
+            "value": "Dedicated space"
+          }
         ]
       }
     ],
@@ -1145,16 +1245,44 @@
     "portraitImageAlt": "Chef Mathias Rouveure — founder of Homemade, partner chef at Chez Les Plombiers",
     "logosLabel": "They trust him",
     "logosTitle": "Client <strong>references</strong>",
-    "logos": ["Dior", "Chanel", "Hermès", "Cartier", "Piaget", "Audemars Piguet", "Nike", "TF1", "Galeries Lafayette"],
+    "logos": [
+      "Dior",
+      "Chanel",
+      "Hermès",
+      "Cartier",
+      "Piaget",
+      "Audemars Piguet",
+      "Nike",
+      "TF1",
+      "Galeries Lafayette"
+    ],
     "galleryLabel": "Portfolio",
     "galleryTitle": "Culinary <strong>creations</strong>",
     "galleryItems": [
-      { "label": "Main photo", "desc": "Culinary artwork / artistic composition" },
-      { "label": "Photo 2", "desc": "Plating / dish detail" },
-      { "label": "Photo 3", "desc": "Event atmosphere" },
-      { "label": "Photo 4", "desc": "Cocktail / canapés" },
-      { "label": "Photo 5", "desc": "Staging / mise en scène" },
-      { "label": "Photo 6", "desc": "Guests / service" }
+      {
+        "label": "Main photo",
+        "desc": "Culinary artwork / artistic composition"
+      },
+      {
+        "label": "Photo 2",
+        "desc": "Plating / dish detail"
+      },
+      {
+        "label": "Photo 3",
+        "desc": "Event atmosphere"
+      },
+      {
+        "label": "Photo 4",
+        "desc": "Cocktail / canapés"
+      },
+      {
+        "label": "Photo 5",
+        "desc": "Staging / mise en scène"
+      },
+      {
+        "label": "Photo 6",
+        "desc": "Guests / service"
+      }
     ],
     "prestationsLabel": "Experiences",
     "prestationsTitle": "Our culinary <strong>formats</strong>",
@@ -1195,5 +1323,585 @@
     "label": "Virtual tour",
     "title": "Explore the venue in 3D",
     "description": "Walk through the 200 m² of Chez Les Plombiers as if you were there. Navigate freely to discover every corner of the space."
+  },
+  "seminaireEntreprise": {
+    "hero": {
+      "title": "Corporate Seminar in Paris — Unique 200 sqm Venue in the City Centre",
+      "subtitle": "The seminar your team will actually remember.",
+      "description": "Forget beige hotel conference rooms and strip lighting. At Chez Les Plombiers, your corporate seminar takes place in 200 sqm of industrial architecture in the heart of Paris 1st. 8,800-lumen projector, professional kitchen, high-speed Wi-Fi — all included. Your teams break out of their routine the moment they walk through the door.",
+      "ctaQuote": "Request a quote",
+      "ctaVisit": "Book a visit",
+      "imageAlt": "Chez Les Plombiers seminar venue Paris 1st — distinctive industrial space with stage lighting"
+    },
+    "about": {
+      "title": "A Seminar Venue Like No Other",
+      "paragraph1": "The Paris seminar venue market is saturated with interchangeable setups. Carpeted floors, fluorescent lights, white walls — hardly the conditions that foster creative thinking. Chez Les Plombiers is a distinctive corporate venue that breaks the mould: 4.5 m ceiling height, polished concrete, original steel beams, programmable stage lighting. Your colleagues feel the difference from the first step inside. The industrial environment creates a clean break from the office and unlocks collective energy.",
+      "paragraph2": "Distinctive does not mean impractical. Our 200 sqm corporate seminar venue in Paris 1st delivers every piece of technology a high-end conference room provides: Optoma ZU820T projector (8,800 lumens), Sonos sound system with XLR inputs for microphones, high-speed Wi-Fi, Kiosc lighting with a dedicated seminar preset. The space reconfigures into theatre, U-shape, breakout islands, or plenary format. The professional kitchen handles coffee breaks, catered lunches, and closing cocktails without external logistics.",
+      "imageAlt": "Corporate seminar setup in the industrial space at Chez Les Plombiers Paris 1st"
+    },
+    "usps": {
+      "title": "All-Inclusive Equipment",
+      "items": [
+        {
+          "icon": "Building2",
+          "title": "The anti-meeting-room",
+          "description": "4.5 m ceiling height, polished concrete, steel beams. Your teams step outside their comfort zone from the moment they arrive. The industrial setting stimulates creativity and engagement far more effectively than a conventional hotel function room."
+        },
+        {
+          "icon": "LayoutGrid",
+          "title": "3 spaces in 1",
+          "description": "Modular curtains create 3 distinct zones: plenary facing the cyclorama, parallel workshop area, and a networking lounge. One venue for your entire seminar day — no need to book multiple rooms."
+        },
+        {
+          "icon": "Projector",
+          "title": "Plug-and-play technology",
+          "description": "Optoma ZU820T projector (8,800 lumens), Sonos speakers with XLR inputs, high-speed symmetrical Wi-Fi with RJ45 sockets available. Your IT team has nothing to install. Zero technical headaches."
+        },
+        {
+          "icon": "UtensilsCrossed",
+          "title": "On-site catering",
+          "description": "A full catering kitchen with oven, dishwasher, ice machine, refrigerator, and freezer. Your caterer sets up in professional conditions. Breakfast, lunch, coffee breaks — everything happens under one roof."
+        },
+        {
+          "icon": "Clock",
+          "title": "Half-day option available",
+          "description": "Monday to Wednesday, book 7 am–1 pm or 1:30 pm–7:30 pm from 1,000 EUR + VAT. Ideal for a morning team seminar or an afternoon strategy workshop."
+        },
+        {
+          "icon": "MapPin",
+          "title": "Paris hypercentre",
+          "description": "Colleagues commuting from La Défense, the western suburbs, or the southern banlieue? Châtelet-Les Halles is the central hub of the Paris RER and metro network. Lines 1, 4, 7, 11, and 14 — all within a 3-minute walk."
+        }
+      ]
+    },
+    "formats": {
+      "title": "Seminar Formats We Host",
+      "items": [
+        {
+          "title": "Executive Seminar",
+          "description": "A premium setting for strategic discussions. 200 sqm fully privatised, confidentiality assured. The Pink Apartment upstairs for private breakout conversations."
+        },
+        {
+          "title": "Team Building",
+          "description": "The industrial environment creates a clean break from the office. Collaborative workshops, team challenges, creative sessions — the space lends itself to every participatory format."
+        },
+        {
+          "title": "Training & Workshop",
+          "description": "Island or U-shape configuration, large-format projector, fibre Wi-Fi. Optimal conditions for intensive, productive working sessions."
+        },
+        {
+          "title": "Convention & Plenary",
+          "description": "Theatre format facing the cyclorama, 8,800-lumen projection, microphone and professional sound. Ideal for general assemblies, team conventions, and plenary presentations. Up to 80 seated."
+        },
+        {
+          "title": "Study Day",
+          "description": "Seminar in the morning, lunch in the same space, workshops in the afternoon. The on-site professional kitchen simplifies all catering logistics."
+        }
+      ]
+    },
+    "location": {
+      "title": "Ideal Location",
+      "subtitle": "The most accessible point in Paris for your colleagues",
+      "address": "39 rue des Bourdonnais, 75001 Paris",
+      "metro": "Châtelet Metro — 3-minute walk",
+      "metroLines": "Lines 1, 4, 7, 11, 14",
+      "rer": "RER A, B, D via Les Halles",
+      "parkings": "Public car parks in the immediate vicinity",
+      "hotels": "Hotels and restaurants across all price ranges within walking distance",
+      "pmr": "Wheelchair accessible"
+    },
+    "gallery": {
+      "title": "Our Space in Pictures"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "What is the capacity for a corporate seminar?",
+          "answer": "Our 200 sqm space accommodates up to 80 people in a seated configuration, suitable for theatre, U-shape, or breakout island formats. For mixed-format days (plenary in the morning, workshops in the afternoon), the modular space allows reconfiguration during the day. For networking breaks or closing drinks in cocktail format, we accommodate up to 150 guests. The venue is wheelchair accessible and includes cloakroom facilities."
+        },
+        {
+          "question": "What technical equipment is included?",
+          "answer": "The base rate includes all essential equipment: Optoma ZU820T projector (WUXGA, 8,800 lumens) for impactful large-screen presentations, Sonos sound system with XLR inputs for microphones, high-speed Wi-Fi, Kiosc stage lighting with a dedicated seminar preset. The fully equipped professional kitchen handles coffee breaks, catered lunches, and closing cocktails without external logistics. An on-site technical manager is present throughout your event."
+        },
+        {
+          "question": "Can we organise a team building or offsite?",
+          "answer": "Absolutely. Our distinctive industrial space is ideal for team building events and corporate offsites. The change of scenery stimulates creativity and engagement. The 200 sqm allow you to alternate between group working sessions, participatory workshops, and social moments. The professional kitchen facilitates on-site catering for breaks and lunches. Kiosc lighting lets you shift the ambiance between focused work sessions and relaxed networking time."
+        },
+        {
+          "question": "How do we get to your seminar venue?",
+          "answer": "Chez Les Plombiers is at 39 rue des Bourdonnais, 75001 Paris, a 3-minute walk from Châtelet metro. This station is served by 5 metro lines (1, 4, 7, 11, and 14), making it the most accessible point in Paris for colleagues travelling from across the Île-de-France region. RER A, B, and D are reachable via Les Halles nearby. The neighbourhood offers abundant accommodation and dining options. Several public car parks are located in the immediate vicinity."
+        },
+        {
+          "question": "What budget for a one-day seminar?",
+          "answer": "Hire of our space for a seminar starts at 1,000 EUR + VAT per day, with all equipment included (projector, sound, Wi-Fi, Kiosc lighting, professional kitchen, technical manager, cleaning). Half-day hire is available Monday to Wednesday. The total budget depends on additional services such as catering, specific furniture, or extra AV equipment. We assist with planning and can recommend partner caterers. Full pricing at pricing.chezlesplombiers.fr."
+        },
+        {
+          "question": "Can we organise a multi-day seminar?",
+          "answer": "Yes, we regularly host 2 to 3-day seminars. Reduced rates apply for multi-day bookings — see pricing.chezlesplombiers.fr. Our location in Paris 1st, close to Châtelet metro, makes accommodation easy: numerous hotels are within walking distance across all price ranges. The professional kitchen handles daily breaks and lunches. We manage setup and turnaround between each day according to your programme."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Plan Your Next Seminar",
+      "subtitle": "Quote within 24 hours. Send us your brief via WhatsApp or email.",
+      "whatsapp": "Request a quote",
+      "calendly": "Book a visit",
+      "email": "Email us"
+    }
+  },
+  "espaceAtypique": {
+    "hero": {
+      "h1": "Unique Venue in Paris — Industrial Event Space with Character",
+      "subtitle": "A venue with a story to tell.",
+      "description": "A former industrial plumbing workshop transformed into a 200 sqm event space in Paris 1st. Exposed pipes, steel beams, polished concrete — and a pink Pierre Paulin sofa in the middle. At Chez Les Plombiers, the raw-meets-refined contrast creates a setting your guests will remember long after the event.",
+      "ctaMatterport": "Explore in 3D",
+      "ctaCalendly": "Book a visit"
+    },
+    "story": {
+      "title": "The Story of the Venue",
+      "paragraph1": "Chez Les Plombiers is not another industrial-chic loft in central Paris. It is a genuine former plumbing workshop whose architectural DNA remains intact: exposed pipes running along the ceiling, Eiffel-style steel beams framing the space, raw stone walls bearing a century of history. This distinctive Paris venue delivers an authenticity that fabricated industrial decor simply cannot replicate. The moment your guests step through the door at 39 rue des Bourdonnais, the impact is immediate and visceral.",
+      "paragraph2": "Yet distinctive does not mean rough. This original Paris event space marries raw and refined with precision. Polished concrete floors meet a pink Pierre Paulin sofa. Exposed ceiling pipes meet chromatic DMX lighting. Raw stone walls meet The Pink Apartment — 100 sqm of entirely pink space on the upper floor. The Kiosc stage lighting transforms the atmosphere in seconds with 5 presets and a custom DMX mode. The integrated cyclorama and Optoma projector enable immersive projections. This is a unique venue in central Paris that is impossible to duplicate."
+    },
+    "usps": {
+      "title": "What Makes Our Space Unique",
+      "items": [
+        {
+          "icon": "Building2",
+          "title": "Authentic industrial heritage",
+          "description": "The pipes, the steel beams, the raw stone walls are not decorative additions. They are the building's DNA — the original plumbing workshop that gives the venue its name. Every architectural element is genuine."
+        },
+        {
+          "icon": "Palette",
+          "title": "Raw meets refined",
+          "description": "Polished concrete + pink Pierre Paulin sofa. Exposed pipes + chromatic DMX lighting. Raw walls + The Pink Apartment entirely in pink upstairs. This blend of industrial grit and refined design is our signature."
+        },
+        {
+          "icon": "ScanEye",
+          "title": "Matterport 3D virtual tour",
+          "description": "Explore the venue remotely before visiting in person. The immersive 3D tour covers the entire space and lets your team or client validate the venue without scheduling a physical visit first."
+        },
+        {
+          "icon": "Sun",
+          "title": "Kiosc lighting — 5 presets + custom",
+          "description": "The programmable stage lighting radically transforms the space. Cocktail, dinner, seminar, fashion show, exhibition: each scenario is preset. Custom DMX mode offers full creative control for bespoke scenic designs."
+        },
+        {
+          "icon": "Heart",
+          "title": "The Pink Apartment — A venue within the venue",
+          "description": "100 sqm on the upper floor, entirely in pink, for VIP hospitality, interviews, or confidential meetings. A complementary space that doubles your possibilities and adds a second world to your event."
+        },
+        {
+          "icon": "Projector",
+          "title": "Cyclorama + large-format projection",
+          "description": "4.63 m x 3.40 m cyclorama wall, projected image via the Optoma ZU820T (8,800 lumens). Transformable into a digital gallery, an immersive backdrop, or a photo shoot set. A built-in creative canvas."
+        }
+      ]
+    },
+    "events": {
+      "title": "Events That Shine in a Unique Venue",
+      "items": [
+        {
+          "title": "Fashion Shows",
+          "description": "The industrial contrast elevates the collections. Cyclorama as runway backdrop, adjustable DMX lighting, 4.5 m ceiling clearance for scenic structures.",
+          "image": "/images/services/gallery/fashion-shows/01.jpg",
+          "link": "/services/fashion-shows"
+        },
+        {
+          "title": "Corporate Events",
+          "description": "The distinctive setting delivers an instant \"wow\" factor. 8,800-lumen projector for large-format presentations. Up to 150 guests standing.",
+          "image": "/photos/projection-rideaux.jpg",
+          "link": "/services/professional-events"
+        },
+        {
+          "title": "Exhibitions",
+          "description": "Neutral walls, programmable lighting, 800 kg/sqm floor load. A private event space Paris 1st that steps back and lets the art speak.",
+          "image": "/photos/cyclorama-projection.jpg",
+          "link": "/services/cultural-events"
+        },
+        {
+          "title": "Photo Shoots",
+          "description": "Integrated cyclorama, stage lighting, direct street access for equipment. A creative production studio wrapped in an authentic industrial setting.",
+          "image": "/images/services/gallery/evenements-auto-moto/03.jpg",
+          "link": "/shooting-voiture-paris"
+        }
+      ]
+    },
+    "matterport": {
+      "title": "3D Virtual Tour",
+      "subtitle": "Explore Our Unique Space from Your Screen",
+      "iframeTitle": "3D virtual tour — Chez Les Plombiers"
+    },
+    "gallery": {
+      "title": "Our Space in Pictures",
+      "photos": [
+        "/photos/entree-verriere.jpg",
+        "/photos/canape-rose.jpg",
+        "/photos/canape-portes-atelier.jpg",
+        "/photos/projection-rideaux.jpg",
+        "/photos/cyclorama-projection.jpg",
+        "/photos/sanitaires.jpg",
+        "/images/services/gallery/fashion-shows/01.jpg",
+        "/images/services/gallery/fashion-shows/05.jpg",
+        "/images/services/gallery/fashion-shows/10.jpg",
+        "/images/services/gallery/evenements-auto-moto/03.jpg"
+      ],
+      "alts": [
+        "Glass workshop canopy at the entrance of the character venue Paris 1st",
+        "Pink Pierre Paulin sofa on polished concrete — raw-meets-refined contrast",
+        "Unique venue Chez Les Plombiers — workshop doors and sofa in the industrial loft",
+        "Video projection on curtains in the original Paris event space",
+        "Integrated cyclorama with video projection in the event space",
+        "Designer bathroom facilities in the distinctive Paris event venue",
+        "Fashion show in the unique industrial event space Chez Les Plombiers",
+        "Runway show in the raw, elegant setting of the industrial event loft",
+        "Designer presentation in the character venue Paris 1st",
+        "Automotive event in the raw Paris venue with direct street access"
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions — Unique Venue Paris",
+      "items": [
+        {
+          "question": "What makes your venue unique compared to other event spaces in Paris?",
+          "answer": "Chez Les Plombiers stands apart through its authentic industrial heritage combined with cutting-edge equipment. Unlike conventional hotel ballrooms and generic event spaces, our 200 sqm venue offers a raw, contemporary setting with generous volumes — 4.5 m ceiling height, original steel beams, exposed stone walls. The Kiosc stage lighting (5 presets + custom DMX mode) transforms the atmosphere in seconds. The professional cyclorama, direct street-level vehicle access, and fully equipped catering kitchen complete a package that simply does not exist elsewhere in Paris 1st."
+        },
+        {
+          "question": "Can we fully customise the decor of your unique venue?",
+          "answer": "Yes, customisation is central to our concept. Our 200 sqm space is delivered in a \"blank canvas\" configuration: you integrate your own set design, furniture, signage, and decorative elements. The Kiosc lighting gives you complete control over the ambiance with 5 presets and a custom DMX mode. We regularly work with event decorators and scenic designers who value the total creative freedom the space provides."
+        },
+        {
+          "question": "Is your unique venue suitable for product launches and brand events?",
+          "answer": "Perfectly so. Our venue is regularly chosen for product launches, press days, and brand events. The industrial setting provides the authenticity that creative directors seek. The cyclorama offers a neutral background for product staging. The Optoma ZU820T projector (8,800 lumens) enables impactful large-format projections. The space accommodates up to 150 guests standing, with the professional kitchen handling catering and cocktails."
+        },
+        {
+          "question": "Is your unique venue suitable for professional photo shoots?",
+          "answer": "Absolutely. Our space is equipped for professional visual production: an integrated 4.63 m x 3.40 m cyclorama, adjustable Kiosc stage lighting, and an Optoma projector for creative background projections. The 200 sqm provide sufficient depth for any focal length. Direct street access allows vehicles or large production equipment into the space."
+        },
+        {
+          "question": "How many guests can your unique Paris venue accommodate?",
+          "answer": "Our 200 sqm event space accommodates up to 150 guests for a standing cocktail and 80 for a seated arrangement (dinner, seminar, conference). The space is fully modular and adapts to each event format. The venue is wheelchair accessible and located a 3-minute walk from Chatelet metro (5 lines)."
+        },
+        {
+          "question": "What is the budget to hire your unique venue in Paris 1st?",
+          "answer": "Hire of Chez Les Plombiers starts at 1,000 EUR + VAT per day, with equipment included: professional kitchen, Kiosc stage lighting, Sonos sound system with XLR inputs, on-site technical manager, and cleaning. The rate varies by duration, day of the week, and optional add-ons. Full pricing is available at pricing.chezlesplombiers.fr."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Discover Your Next Event Space",
+      "subtitle": "Explore Chez Les Plombiers in 3D, then come and see it for yourself.",
+      "ctaMatterport": "Explore in 3D",
+      "ctaCalendly": "Book a visit",
+      "ctaWhatsApp": "WhatsApp"
+    },
+    "meta": {
+      "title": "Unique Venue Paris — Industrial Event Space | CLP",
+      "description": "Unique 200 sqm event venue in Paris 1st. Authentic industrial character, Kiosc lighting, cyclorama. 150 guests standing. From 1,000 EUR + VAT. Free visit.",
+      "ogTitle": "Unique Venue Paris — Industrial Event Space | Chez Les Plombiers",
+      "ogDescription": "Unique 200 sqm event venue in Paris 1st. Authentic industrial character, Kiosc lighting, cyclorama. 150 guests standing."
+    }
+  },
+  "shootingVoiture": {
+    "hero": {
+      "title": "Car Photoshoot in Paris — Automotive Studio with Direct Vehicle Access",
+      "subtitle": "The only photo studio in central Paris where the car drives in through the door.",
+      "description": "At Chez Les Plombiers, vehicles enter the space directly from the street. 200 sqm of floor space, integrated cyclorama, professional DMX lighting, 36 kVA three-phase power. At 39 rue des Bourdonnais, Paris 1st, 3 minutes from Chatelet metro. A turnkey automotive studio in the heart of Paris.",
+      "ctaQuote": "Request a quote",
+      "ctaGallery": "View Auto gallery"
+    },
+    "access": {
+      "sectionTitle": "The Only Auto Photo Space with Street Access in Paris 1st",
+      "paragraph1": "Finding an automotive photo studio in central Paris where the vehicle enters at street level is a challenge most producers know well. Freight lifts, ramps, cramped basements: the logistics of a car photoshoot in central Paris are typically a nightmare. Chez Les Plombiers solves this in one doorway. Direct street-level access from rue des Bourdonnais (2.20 m wide x 3.50 m high) allows cars, motorcycles, and commercial vehicles into a 200 sqm ground-floor space with 4.5 m ceiling height. No complex manoeuvres, no disassembly required.",
+      "paragraph2": "Beyond the access, Chez Les Plombiers is a fully equipped automotive photography space built for professional production. The integrated 4.63 m x 3.40 m cyclorama provides a neutral background for catalogue shots. The Kiosc stage lighting (5 presets + custom DMX mode) gives complete control over the light. The Optoma ZU820T projector (8,800 lumens) enables virtual background projections. Three-phase 36 kVA power feeds strobes, HMI generators, and the full arsenal of a professional automotive shoot. The 800 kg/sqm floor load capacity supports every production vehicle.",
+      "imageAlt": "Large-format vehicle access door from rue des Bourdonnais — Chez Les Plombiers automotive photo studio Paris 1st"
+    },
+    "usps": {
+      "sectionTitle": "Automotive Shoot Equipment",
+      "items": [
+        {
+          "icon": "Car",
+          "title": "Direct vehicle access from the street",
+          "description": "Door measuring 2.20 m wide by 3.50 m high. The vehicle drives directly into the space from rue des Bourdonnais — no ramp, no freight lift, no basement. This is the defining advantage of this automotive studio in central Paris."
+        },
+        {
+          "icon": "Frame",
+          "title": "Cyclorama — 4.63 m x 3.40 m",
+          "description": "Integrated studio backdrop, ideal for front and three-quarter shots. Projection capability via the Optoma ZU820T (8,800 lumens) for dynamic backgrounds or digital staging."
+        },
+        {
+          "icon": "Lightbulb",
+          "title": "Professional DMX lighting — Kiosc",
+          "description": "Dimmable warm/cool and colour lighting, overhead rigging grids for mounting additional fixtures on the DMX bus. The director of photography has a complete lighting canvas from the moment they arrive."
+        },
+        {
+          "icon": "Zap",
+          "title": "36 kVA three-phase power",
+          "description": "Sufficient power to run strobes, HMI generators, and the full arsenal of a professional automotive shoot. Floor and overhead outlets. No need to hire an external generator."
+        },
+        {
+          "icon": "MapPin",
+          "title": "Paris 1st = urban backdrop two steps away",
+          "description": "Interior shots in the studio, then step outside for location photography in a Parisian context: Pont Neuf, Louvre, Les Halles. Two visual worlds in a single production day."
+        },
+        {
+          "icon": "Warehouse",
+          "title": "800 kg/sqm floor load capacity",
+          "description": "A Porsche 911 weighs approximately 1,500 kg on 4 wheels — roughly 375 kg/sqm per contact point. The slab comfortably supports every production vehicle. Structural engineering report available on request."
+        }
+      ]
+    },
+    "productions": {
+      "sectionTitle": "Automotive Productions We Host",
+      "items": [
+        {
+          "title": "Catalogue photo shoot",
+          "description": "Catalogue imagery, product sheets, dealer visuals. Cyclorama neutral background, controlled lighting, sufficient depth across the 200 sqm for every focal length."
+        },
+        {
+          "title": "Vehicle launch & press",
+          "description": "Press shoot during the day, VIP cocktail in the evening — in the same space. Kiosc lighting transitions from studio mode to reception mode in seconds."
+        },
+        {
+          "title": "Video & digital content",
+          "description": "Social media content, YouTube films, brand videos. Sonos + XLR audio, adjustable lighting, authentic industrial backdrop that gives the image character."
+        },
+        {
+          "title": "Private auto-moto event",
+          "description": "Private reveal, press unveiling, brand evening. Up to 150 guests standing around the exhibited vehicle. VIP hosting in The Pink Apartment upstairs."
+        },
+        {
+          "title": "Magazine editorial",
+          "description": "The industrial setting — polished concrete, steel beams, exposed pipes — delivers a raw, aesthetic backdrop highly sought after in the automotive and lifestyle editorial world."
+        }
+      ]
+    },
+    "gallery": {
+      "sectionTitle": "Gallery — Automotive Events"
+    },
+    "whyUs": {
+      "sectionTitle": "Why CLP for Your Car Photoshoot",
+      "items": [
+        {
+          "title": "Simplified logistics — direct street access",
+          "description": "No freight lift, no ramp, no complex manoeuvres. The vehicle drives directly through the door from rue des Bourdonnais. In the heart of Paris 1st, this is a competitive advantage that no one else can replicate."
+        },
+        {
+          "title": "Authentic industrial setting — the set is already built",
+          "description": "The pipes, the beams, the concrete: the venue provides a raw, contemporary backdrop without installing anything. Directors of photography save preparation time and achieve an aesthetic that white-box studios cannot reproduce."
+        },
+        {
+          "title": "Total flexibility — day, evening, multi-day",
+          "description": "Shoot during the day, launch event in the evening, three-day production run: the venue adapts to your schedule. Reduced multi-day rates available. Personalised quote following a complimentary visit."
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": "FAQ — Car Photoshoot Paris",
+      "items": [
+        {
+          "question": "Can cars actually enter your space in Paris 1st?",
+          "answer": "Yes — this is our defining advantage and unique in central Paris. Our space at 39 rue des Bourdonnais has direct access from the street through a door measuring 2.20 m wide by 3.50 m high. Cars, motorcycles, and select commercial vehicles enter at street level. The 200 sqm floor area provides ample room to position the vehicle, set up professional lighting, and maintain the distance needed for your shots. This direct access dramatically simplifies logistics compared to conventional studios that rely on freight lifts."
+        },
+        {
+          "question": "What equipment is available for an automotive shoot?",
+          "answer": "Our space is equipped for professional visual production: an integrated 4.63 m x 3.40 m cyclorama for neutral backgrounds, Kiosc stage lighting with 5 presets and custom DMX mode, an Optoma ZU820T projector (8,800 lumens) for virtual background projections, and Sonos speakers with XLR inputs for video production audio. Three-phase 36 kVA power runs your entire equipment suite. You can supplement with your own fixtures — overhead rigging grids and 200 sqm of floor space give you all the room you need."
+        },
+        {
+          "question": "What types of automotive shoots can you accommodate?",
+          "answer": "We host all types of automotive productions: catalogue shoots for manufacturers and dealerships, press presentations and vehicle launches, video production and digital content creation (social media, YouTube, brand films), magazine editorials, and private events centred on cars and motorcycles. The authentic industrial setting provides a raw, contemporary aesthetic highly sought after in the automotive world. We have previously hosted Porsche events in our space."
+        },
+        {
+          "question": "What is the rate for a one-day car photoshoot?",
+          "answer": "Hire for an automotive shoot starts at 1,000 EUR + VAT per day, with equipment included (cyclorama, Kiosc lighting, Optoma projector, sound system, on-site manager, cleaning). This covers the full day with vehicle access. For multi-day productions, reduced rates apply — see pricing.chezlesplombiers.fr. The venue can be combined with The Pink Apartment upstairs for lifestyle shoots. Personalised quote following a complimentary visit."
+        },
+        {
+          "question": "How do you handle the logistics of a car shoot in central Paris?",
+          "answer": "Logistics are simplified by our direct street-level access. The vehicle drives straight into the space from rue des Bourdonnais — no freight lift, no ramp, no complex manoeuvres. The street allows short-term stopping for equipment loading and unloading. Chatelet metro, 3 minutes away, provides easy access for your crew (photographer, stylist, makeup artist, client). The professional kitchen offers a break area for long production days. The 100 sqm basement provides secure equipment storage."
+        },
+        {
+          "question": "Can we combine a car photoshoot with an event at your venue?",
+          "answer": "Absolutely — this is one of our key strengths. Automotive shoot during the day, launch event or VIP cocktail in the evening: the space transforms in minutes. Kiosc lighting switches instantly from studio mode to cocktail mode. We regularly host complete automotive events: vehicle presentation, press shoot, followed by a private reception. The 200 sqm and direct vehicle access from the street make this versatility possible. See our references on our automotive events page."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Book Your Automotive Studio",
+      "subtitle": "Availability and quote within 2 hours. Send your brief via WhatsApp.",
+      "whatsapp": "Request a quote",
+      "calendly": "Book a visit",
+      "gallery": "See our automotive references"
+    }
+  },
+  "lieuEvenementiel": {
+    "hero": {
+      "title": "Event Venue in Paris 1st — 200 sqm in the Heart of the Capital",
+      "subtitle": "The venue you won't find in a catalogue.",
+      "description": "Chez Les Plombiers is a 200 sqm event space at 39 rue des Bourdonnais, Paris 1st arrondissement. A former industrial plumbing workshop reborn as a premium venue, it pairs raw character with professional-grade equipment. From intimate dinners to large-scale receptions — catering kitchen, cyclorama, and stage lighting included.",
+      "cta": "Book a visit",
+      "ctaPricing": "View pricing"
+    },
+    "space": {
+      "title": "Our Space",
+      "content1": "In the heart of the 1st arrondissement, three minutes from Chatelet metro, Chez Les Plombiers is a central Paris reception hall that redefines event hosting. This 200 sqm private venue Paris offers generous proportions — 4.5 m ceiling height, exposed stone walls, original steel beams — within a fully adaptable event space designed to suit every configuration. From a standing cocktail for 150 guests to a seated dinner for 80, every square metre reshapes itself around your brief.",
+      "content2": "What sets this Paris event venue apart is a comprehensive technical setup included with every booking: Kiosc stage lighting (5 presets plus custom DMX mode), an Optoma ZU820T projector delivering 8,800 lumens, Sonos sound system with XLR inputs, and a fully equipped professional kitchen for your caterer. Street-level vehicle access allows cars and large equipment directly into the space — a rare advantage for a central Paris venue. The space is wheelchair accessible and staffed with an on-site technical manager."
+    },
+    "usps": {
+      "title": "Why Chez Les Plombiers",
+      "items": [
+        {
+          "title": "Location — Paris 1st, Chatelet Metro",
+          "description": "39 rue des Bourdonnais, in the absolute centre of Paris. Chatelet metro (lines 1, 4, 7, 11, 14) is a 3-minute walk. Whether your guests arrive from La Defense, the suburbs, or abroad — they get here easily."
+        },
+        {
+          "title": "200 sqm, fully adaptable",
+          "description": "One space, every configuration. Cocktail reception, seated dinner, theatre-style conference, breakout workshops — you design the layout, we set it up. Dividing curtains create up to 3 distinct zones."
+        },
+        {
+          "title": "Professional AV equipment included",
+          "description": "Optoma ZU820T projector (8,800 lumens), Kiosc DMX stage lighting, Sonos speakers with XLR inputs, high-speed Wi-Fi. No need to budget for an external AV provider. Everything is ready to go."
+        },
+        {
+          "title": "Full professional kitchen",
+          "description": "Not a sink and a microwave — a proper catering station with oven, dishwasher, ice machine, refrigerator, and freezer. Your caterer works in professional conditions from start to finish."
+        },
+        {
+          "title": "Street-level vehicle access",
+          "description": "Door measuring 2.20 m wide by 3.50 m high. Cars, stage equipment, and oversized installations enter directly from the street. In central Paris, this is virtually unheard of."
+        },
+        {
+          "title": "Technical manager and cleaning included",
+          "description": "An on-site technical manager supports your event from setup to teardown. Pre-event and post-event cleaning is included in the rate. No hidden charges."
+        }
+      ]
+    },
+    "events": {
+      "title": "Events We Host",
+      "items": [
+        {
+          "title": "Fashion Shows and Brand Events",
+          "description": "Integrated cyclorama, adjustable lighting, 4.5 m ceiling clearance. The industrial backdrop creates a striking setting for runway shows and product launches.",
+          "href": "/services/fashion-shows"
+        },
+        {
+          "title": "Fine Dining and Receptions",
+          "description": "80 seated guests in an intimate, refined atmosphere. Professional kitchen for your caterer. Custom Kiosc lighting to set the perfect mood.",
+          "href": "/services/exceptional-dinners"
+        },
+        {
+          "title": "Corporate Seminars and Team Building",
+          "description": "8,800-lumen projector, high-speed Wi-Fi, 3 configurable zones. The industrial setting energises your teams and sparks creative thinking.",
+          "href": "/corporate-seminar-paris"
+        },
+        {
+          "title": "Photo and Video Shoots",
+          "description": "4.63 m x 3.40 m cyclorama, DMX lighting, direct street access for vehicles. A turnkey production studio in the heart of Paris.",
+          "href": "/car-photoshoot-paris"
+        },
+        {
+          "title": "Cultural Events and Exhibitions",
+          "description": "Neutral walls, programmable lighting, 800 kg/sqm floor load capacity. A space that steps back and lets the work take centre stage.",
+          "href": "/services/cultural-events"
+        }
+      ]
+    },
+    "whyUs": {
+      "title": "Why Choose Us",
+      "items": [
+        {
+          "title": "Unbeatable Location — Paris 1st, Chatelet Metro",
+          "description": "The most connected transport hub in Paris: 5 metro lines, RER A, B, and D nearby. Restaurants, hotels, and parking within a 5-minute walk. Your guests arrive without hassle, wherever they come from."
+        },
+        {
+          "title": "A Distinctive Industrial Setting",
+          "description": "Exposed pipes, steel beams, polished concrete — a venue with genuine character that delivers a \"wow\" the moment guests walk in. Yet fully flexible, with 200 sqm that adapt to every configuration imaginable."
+        },
+        {
+          "title": "Transparent Pricing from 1,000 EUR + VAT/day",
+          "description": "Technical equipment, on-site manager, cleaning — all included in the base rate. No hidden extras for power outlets or overtime. Full pricing available at pricing.chezlesplombiers.fr. Personalised quote after your complimentary visit."
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Photo Gallery",
+      "photos": [
+        {
+          "src": "/images/hero.png",
+          "alt": "Chez Les Plombiers event venue Paris 1st — full view of the 200 sqm space with steel beams and Kiosc stage lighting"
+        },
+        {
+          "src": "/photos/panorama-grande-salle.jpg",
+          "alt": "Standing cocktail setup inside the central Paris event venue with warm ambient lighting"
+        },
+        {
+          "src": "/photos/entree-verriere.jpg",
+          "alt": "Glass workshop canopy at the entrance of the distinctive Paris event space"
+        },
+        {
+          "src": "/photos/cuisine-equipee.jpg",
+          "alt": "Fully equipped professional catering kitchen inside the Paris 1st event space"
+        },
+        {
+          "src": "/photos/fauteuils-design.jpg",
+          "alt": "Designer furniture inside the central Paris reception hall"
+        },
+        {
+          "src": "/photos/canape-rose.jpg",
+          "alt": "Kiosc DMX stage lighting creating a colourful ambiance in the Paris central reception hall"
+        },
+        {
+          "src": "/images/venue-1.png",
+          "alt": "Seated dinner configuration for 80 guests in the private Paris 1st event venue"
+        },
+        {
+          "src": "/images/venue-2.png",
+          "alt": "Optoma ZU820T projector delivering large-format projection in the event venue"
+        },
+        {
+          "src": "/images/venue-3.png",
+          "alt": "Street-level vehicle access from rue des Bourdonnais — large-format entrance to the event venue"
+        },
+        {
+          "src": "/photos/cyclorama-projection.jpg",
+          "alt": "Integrated professional cyclorama in the Chez Les Plombiers photo shoot space Paris"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions — Event Venue Paris",
+      "items": [
+        {
+          "question": "What is the capacity of your event venue in Paris?",
+          "answer": "Our 200 sqm event space at 39 rue des Bourdonnais, Paris 1st, accommodates up to 150 guests for a standing cocktail and 80 for a seated dinner. The space is fully modular: you can configure the room for a dinner with a stage, a cocktail reception with circulation areas, or a theatre-style seminar. Dividing curtains allow you to create up to 3 separate zones. Street-level access also makes it easy to bring in large furniture, staging, or vehicles for automotive events."
+        },
+        {
+          "question": "Where exactly is your event venue located in Paris?",
+          "answer": "Chez Les Plombiers is at 39 rue des Bourdonnais, 75001 Paris, in the heart of the 1st arrondissement. Chatelet metro — served by lines 1, 4, 7, 11, and 14 — is a 3-minute walk. This is the most connected transport hub in Paris, with RER A, B, and D accessible via Les Halles nearby. The neighbourhood offers abundant dining and accommodation options, a significant advantage for guests travelling from outside Paris or internationally. The venue is wheelchair accessible."
+        },
+        {
+          "question": "What types of events can be held in your Paris venue?",
+          "answer": "Our event space hosts a wide variety of formats: fashion shows and brand presentations, fine dinners, cocktail receptions, corporate seminars and team building sessions, professional photo and video shoots (thanks to our integrated cyclorama), cultural events and exhibitions, as well as automotive events enabled by direct vehicle access. The Kiosc stage lighting with 5 presets and a custom mode allows you to adapt the atmosphere to any occasion — from intimate dinners to high-energy launch parties."
+        },
+        {
+          "question": "What is the hire rate for your event venue in Paris 1st?",
+          "answer": "Hire of our event space starts at 1,000 EUR + VAT per day. This includes all equipment: professional kitchen, Kiosc stage lighting, Sonos sound system with XLR connection, on-site technical manager, and pre/post-event cleaning. Half-day hire is available Monday to Wednesday. The final rate depends on duration, day of the week, and any additional services required. View our full pricing at pricing.chezlesplombiers.fr or book a complimentary visit for a tailored quote."
+        },
+        {
+          "question": "Is your event venue equipped for film and photo shoots?",
+          "answer": "Absolutely. Our space features an integrated 4.63 m x 3.40 m cyclorama and an Optoma ZU820T projector (WUXGA, 8,800 lumens) for creative background projections. The Kiosc stage lighting offers 5 presets plus a fully controllable custom DMX mode. Sonos speakers with XLR inputs handle audio for video productions. With 200 sqm, 36 kVA three-phase power, and direct street access for large equipment or vehicles, Chez Les Plombiers functions as a turnkey production studio in central Paris."
+        },
+        {
+          "question": "How do I book a visit to your event space in Paris?",
+          "answer": "Booking a visit is simple and free. Schedule directly via our Calendly page, contact us on WhatsApp at +33 6 88 67 99 81 for a quick response, or email contact@chezlesplombiers.fr. We offer visits Monday to Saturday, 10 am to 6 pm. During the visit, our team reviews your project and proposes a tailored configuration and quote. You can also explore the venue remotely with our Matterport 3D virtual tour before visiting in person."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Book Your Complimentary Visit",
+      "subtitle": "Discover 200 sqm of exceptional space in the heart of Paris 1st. Our team welcomes you by appointment.",
+      "calendly": "Book a visit",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    }
   }
 }

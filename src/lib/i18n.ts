@@ -16,6 +16,11 @@ const slugMap: Record<string, string> = {
   "seminaires-formations": "seminars-training",
   "evenements-auto-moto": "automotive-events",
   // fashion-shows is the same in both languages
+  // SEO landing pages
+  "lieu-evenementiel-paris": "event-venue-paris",
+  "espace-atypique-paris": "unique-venue-paris",
+  "seminaire-entreprise-paris": "corporate-seminar-paris",
+  "shooting-voiture-paris": "car-photoshoot-paris",
 };
 
 const reverseSlugMap: Record<string, string> = Object.fromEntries(

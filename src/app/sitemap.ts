@@ -200,5 +200,78 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    // SEO landing pages
+    {
+      url: `${baseUrl}/lieu-evenementiel-paris`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/lieu-evenementiel-paris`,
+          en: `${baseUrl}/en/event-venue-paris`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/event-venue-paris`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/espace-atypique-paris`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/espace-atypique-paris`,
+          en: `${baseUrl}/en/unique-venue-paris`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/unique-venue-paris`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/seminaire-entreprise-paris`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/seminaire-entreprise-paris`,
+          en: `${baseUrl}/en/corporate-seminar-paris`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/corporate-seminar-paris`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/shooting-voiture-paris`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/shooting-voiture-paris`,
+          en: `${baseUrl}/en/car-photoshoot-paris`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/car-photoshoot-paris`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }

@@ -16,6 +16,10 @@
 - [Évènements Culturels](https://www.chezlesplombiers.fr/services/evenements-culturels): Vernissages, expositions et performances artistiques
 - [Séminaires & Formations](https://www.chezlesplombiers.fr/services/seminaires-formations): Séminaires, formations et workshops
 - [Événements Auto & Moto](https://www.chezlesplombiers.fr/services/evenements-auto-moto): Showroom automobile avec accès direct sur rue, lancements et expositions de véhicules
+- [Lieu Événementiel Paris](https://www.chezlesplombiers.fr/lieu-evenementiel-paris): Page pilier — espace événementiel 200m² Paris 1er, tous types d'événements, cuisine pro, cyclorama, dès 1 000€ HT/jour
+- [Espace Atypique Paris](https://www.chezlesplombiers.fr/espace-atypique-paris): Lieu événementiel atypique au charme industriel, héritage authentique, éclairage scénographique modulable
+- [Séminaire Entreprise Paris](https://www.chezlesplombiers.fr/seminaire-entreprise-paris): Lieu de séminaire d'entreprise Paris 1er, 80 places assises, vidéoprojecteur, cuisine pro, dès 1 000€ HT/jour
+- [Shooting Voiture Paris](https://www.chezlesplombiers.fr/shooting-voiture-paris): Studio shooting automobile avec accès véhicule direct rue, cyclorama, éclairage DMX, 36 KvA triphasé
 
 ## Main pages (EN)
 - [Home](https://www.chezlesplombiers.fr/en): Event venue, services, technical equipment, FAQ
@@ -28,6 +32,10 @@
 - [Cultural Events](https://www.chezlesplombiers.fr/en/services/cultural-events): Openings, exhibitions and artistic performances
 - [Seminars & Training](https://www.chezlesplombiers.fr/en/services/seminars-training): Seminars, training and workshops
 - [Automotive Events](https://www.chezlesplombiers.fr/en/services/automotive-events): Automotive showroom with direct street access, vehicle launches and exhibitions
+- [Event Venue Paris](https://www.chezlesplombiers.fr/en/event-venue-paris): Pillar page — 200sqm event space Paris 1st, all event types, professional kitchen, cyclorama, from €1,000+VAT/day
+- [Unique Venue Paris](https://www.chezlesplombiers.fr/en/unique-venue-paris): Distinctive industrial event venue, authentic heritage, modular stage lighting
+- [Corporate Seminar Paris](https://www.chezlesplombiers.fr/en/corporate-seminar-paris): Corporate seminar venue Paris 1st, 80 seated, projector, professional kitchen, from €1,000+VAT/day
+- [Car Photoshoot Paris](https://www.chezlesplombiers.fr/en/car-photoshoot-paris): Automotive photo studio with direct street vehicle access, cyclorama, DMX lighting, 36 kVA three-phase
 
 ## Informations clés / Key information
 - Adresse / Address: 39 rue des Bourdonnais, 75001 Paris, France
