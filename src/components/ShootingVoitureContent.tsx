@@ -421,11 +421,8 @@ export function ShootingVoitureContent() {
             {t.gallery.sectionTitle}
           </motion.h2>
 
-          {/* Desktop bento (3 cols) */}
-          <div
-            className="hidden md:grid grid-cols-3 gap-2"
-            style={{ gridAutoRows: "240px" }}
-          >
+          {/* Desktop grid — portrait photos (3 cols, 3/4 aspect) */}
+          <div className="hidden md:grid grid-cols-3 gap-3">
             {galleryPhotos.map((src, i) => (
               <motion.div
                 key={src}
@@ -433,8 +430,7 @@ export function ShootingVoitureContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: (i % 6) * 0.04 }}
-                className="relative overflow-hidden bg-gray-100 group cursor-pointer"
-                style={getBentoStyle(i)}
+                className="relative overflow-hidden bg-gray-100 group cursor-pointer aspect-[3/4]"
                 onClick={() => setLightboxIndex(i)}
               >
                 <Image
@@ -442,7 +438,7 @@ export function ShootingVoitureContent() {
                   alt={`${t.hero.title} — photo ${i + 1}`}
                   fill
                   sizes="(max-width: 1024px) 50vw, 33vw"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="object-cover object-bottom transition-transform duration-500 group-hover:scale-[1.03]"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
@@ -450,7 +446,7 @@ export function ShootingVoitureContent() {
             ))}
           </div>
 
-          {/* Mobile grid (2 cols) */}
+          {/* Mobile grid (2 cols, portrait aspect) */}
           <div className="grid md:hidden grid-cols-2 gap-2">
             {galleryPhotos.map((src, i) => (
               <motion.div
@@ -460,7 +456,7 @@ export function ShootingVoitureContent() {
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.4, delay: (i % 4) * 0.05 }}
                 className={`relative overflow-hidden bg-gray-100 cursor-pointer ${
-                  i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"
+                  i === 0 ? "col-span-2 aspect-[4/3]" : "aspect-[3/4]"
                 }`}
                 onClick={() => setLightboxIndex(i)}
               >
@@ -469,7 +465,7 @@ export function ShootingVoitureContent() {
                   alt={`${t.hero.title} — photo ${i + 1}`}
                   fill
                   sizes="50vw"
-                  className="object-cover object-center"
+                  className="object-cover object-bottom"
                   loading="lazy"
                 />
               </motion.div>
