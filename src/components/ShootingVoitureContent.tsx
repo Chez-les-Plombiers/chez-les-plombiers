@@ -424,7 +424,7 @@ export function ShootingVoitureContent() {
           {/* Desktop bento (3 cols) */}
           <div
             className="hidden md:grid grid-cols-3 gap-2"
-            style={{ gridAutoRows: "200px" }}
+            style={{ gridAutoRows: "240px" }}
           >
             {galleryPhotos.map((src, i) => (
               <motion.div
@@ -442,7 +442,7 @@ export function ShootingVoitureContent() {
                   alt={`${t.hero.title} — photo ${i + 1}`}
                   fill
                   sizes="(max-width: 1024px) 50vw, 33vw"
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
@@ -469,7 +469,7 @@ export function ShootingVoitureContent() {
                   alt={`${t.hero.title} — photo ${i + 1}`}
                   fill
                   sizes="50vw"
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   loading="lazy"
                 />
               </motion.div>
