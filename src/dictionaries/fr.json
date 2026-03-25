@@ -426,14 +426,16 @@
     "heroDescription": "Un espace intime et lumineux, conçu pour des moments d'exception. Découvrez une atmosphère unique alliant élégance et créativité.",
     "cta": "Réserver L'Appartement Rose",
     "sectionTitle": "Une Atmosphère Unique",
-    "sectionDescription": "L'Appartement Rose est pensé comme un écrin hors du temps. Avec sa lumière naturelle, ses textures soignées et son ambiance feutrée, il est idéal pour des shootings photo, des interviews, ou des réunions confidentielles.",
+    "sectionDescription": "L'Appartement Rose est pensé comme un écrin hors du temps. Avec sa lumière naturelle, ses textures soignées et son ambiance feutrée, il est idéal pour des shootings photo, des interviews, des réunions confidentielles ou des dîners privés.",
     "surfaceLabel": "Surface",
     "capacityLabel": "Personnes",
     "equipmentsTitle": "Équipements inclus",
     "equipments": [
       "Cuisine équipée",
       "Mobilier design",
-      "Wi-Fi haut débit"
+      "Wi-Fi haut débit",
+      "Lumières réglables",
+      "TV connectée"
     ],
     "heroImageAlt": "L'Appartement Rose — espace intime de 100 m² pour shootings et réunions, Chez Les Plombiers Paris 1er",
     "detailImageAlt": "Intérieur de L'Appartement Rose — lumière naturelle, mobilier design et ambiance feutrée, Chez Les Plombiers Paris",
