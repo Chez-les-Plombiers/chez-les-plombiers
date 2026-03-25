@@ -206,9 +206,40 @@ export function ServicePageContent({ slug }: { slug: string }) {
             <h1 className="text-4xl lg:text-7xl font-light mb-6 tracking-tight max-w-4xl">
               {service.title}
             </h1>
-            <p className="text-xl lg:text-2xl text-white/90 font-light max-w-2xl">
+            <p className="text-xl lg:text-2xl text-white/90 font-light max-w-2xl mb-10">
               {service.tagline}
             </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href={EXTERNAL_LINKS.pricing}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("cta_click", {
+                    label: "service_hero_pricing",
+                    destination: EXTERNAL_LINKS.pricing,
+                  })
+                }
+                className="inline-flex items-center justify-center bg-white text-black hover:bg-white/90 px-10 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+              >
+                {servicePages.ctaPricing}
+              </a>
+              <a
+                href={EXTERNAL_LINKS.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("cta_click", {
+                    label: "service_hero_calendly",
+                    destination: EXTERNAL_LINKS.calendly,
+                  })
+                }
+                className="inline-flex items-center justify-center gap-3 border border-white/40 hover:border-white px-10 py-4 text-sm uppercase tracking-widest transition-all duration-300 hover:bg-white/10"
+              >
+                <Calendar className="w-4 h-4" />
+                {servicePages.ctaCalendly}
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
