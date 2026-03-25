@@ -17,7 +17,8 @@ import {
 import { useI18n } from "@/lib/i18n-context";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { trackEvent } from "@/lib/analytics";
-import { SERVICE_IMAGES, SERVICE_GALLERY, SERVICE_FR_SLUGS, getServiceEnSlug } from "@/lib/services-data";
+import { ArrowRight } from "lucide-react";
+import { SERVICE_IMAGES, SERVICE_GALLERY, FEATURED_SERVICE_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
 interface ServiceSpec {
@@ -293,38 +294,6 @@ export function ServicePageContent({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-20 lg:py-28 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl lg:text-5xl font-light mb-16 tracking-tight"
-          >
-            {servicePages.featuresTitle}
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {service.features.map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex items-start gap-4 p-6 bg-white border border-gray-100 hover:border-gray-300 transition-colors duration-300"
-              >
-                <div className="flex-shrink-0 w-8 h-8 bg-black flex items-center justify-center mt-0.5">
-                  <Check className="w-4 h-4 text-white stroke-[2.5]" />
-                </div>
-                <span className="text-gray-700 leading-relaxed">{feature}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Gallery Bento */}
       {gallery.length > 0 && (
         <section className="py-20 lg:py-28 bg-white">
@@ -454,6 +423,38 @@ export function ServicePageContent({ slug }: { slug: string }) {
         </section>
       )}
 
+      {/* Features */}
+      <section className="py-20 lg:py-28 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl lg:text-5xl font-light mb-16 tracking-tight"
+          >
+            {servicePages.featuresTitle}
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {service.features.map((feature, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="flex items-start gap-4 p-6 bg-white border border-gray-100 hover:border-gray-300 transition-colors duration-300"
+              >
+                <div className="flex-shrink-0 w-8 h-8 bg-black flex items-center justify-center mt-0.5">
+                  <Check className="w-4 h-4 text-white stroke-[2.5]" />
+                </div>
+                <span className="text-gray-700 leading-relaxed">{feature}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Reviews */}
       <ReviewsSection />
 
@@ -483,8 +484,8 @@ export function ServicePageContent({ slug }: { slug: string }) {
           <h2 className="text-2xl lg:text-3xl font-light mb-10 tracking-tight">
             {servicePages.alsoDiscoverTitle}
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {SERVICE_FR_SLUGS.filter((s) => s !== slug).map((otherSlug) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {FEATURED_SERVICE_SLUGS.filter((s) => s !== slug).map((otherSlug, i) => {
               const otherDictKey = locale === "en" ? getServiceEnSlug(otherSlug) : otherSlug;
               const otherService = servicePages.services[otherDictKey];
               if (!otherService) return null;
@@ -492,25 +493,57 @@ export function ServicePageContent({ slug }: { slug: string }) {
                 ? `/en/services/${getServiceEnSlug(otherSlug)}`
                 : `/services/${otherSlug}`;
               return (
-                <Link
+                <motion.div
                   key={otherSlug}
-                  href={otherHref}
-                  className="group border border-gray-200 bg-white p-5 hover:border-black transition-colors duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.5, delay: i * 0.06 }}
                 >
-                  <span className="text-sm font-medium uppercase tracking-wider group-hover:text-black transition-colors">
-                    {otherService.title}
-                  </span>
-                </Link>
+                  <Link
+                    href={otherHref}
+                    onClick={() =>
+                      trackEvent("nav_click", {
+                        label: `crosslink_${otherSlug}`,
+                        destination: otherHref,
+                      })
+                    }
+                    className="group block border border-gray-200 bg-white p-6 transition-all duration-300 hover:border-black hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02]"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-light uppercase tracking-[0.1em] group-hover:text-black transition-colors">
+                        {otherService.title}
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-black group-hover:translate-x-1 transition-all duration-300" />
+                    </div>
+                  </Link>
+                </motion.div>
               );
             })}
-            <Link
-              href={locale === "en" ? "/en/apartment" : "/appartement"}
-              className="group border border-gray-200 bg-white p-5 hover:border-black transition-colors duration-300"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: 0.36 }}
             >
-              <span className="text-sm font-medium uppercase tracking-wider group-hover:text-black transition-colors">
-                {locale === "en" ? "The Pink Apartment" : "L'Appartement Rose"}
-              </span>
-            </Link>
+              <Link
+                href={locale === "en" ? "/en/apartment" : "/appartement"}
+                onClick={() =>
+                  trackEvent("nav_click", {
+                    label: "crosslink_appartement",
+                    destination: locale === "en" ? "/en/apartment" : "/appartement",
+                  })
+                }
+                className="group block border border-gray-200 bg-white p-6 transition-all duration-300 hover:border-black hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02]"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-light uppercase tracking-[0.1em] group-hover:text-black transition-colors">
+                    {locale === "en" ? "The Pink Apartment" : "L'Appartement Rose"}
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-black group-hover:translate-x-1 transition-all duration-300" />
+                </div>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>

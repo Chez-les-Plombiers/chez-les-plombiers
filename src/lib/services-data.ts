@@ -22,6 +22,16 @@ export const SERVICE_FR_SLUGS: string[] = Object.keys(SERVICE_SLUGS);
 // All valid EN slugs
 export const SERVICE_EN_SLUGS: string[] = Object.values(SERVICE_SLUGS);
 
+// Featured services displayed on homepage & cross-links (ordered)
+export const FEATURED_SERVICE_SLUGS: string[] = [
+  "diners-exception",
+  "fashion-shows",
+  "evenements-auto-moto",
+  "evenements-professionnels",
+  "evenements-culturels",
+  "petit-dejeuners",
+];
+
 // Image mapping (slug → image path)
 export const SERVICE_IMAGES: Record<string, string> = {
   "fashion-shows": "/images/services/fashion-shows.jpg",
