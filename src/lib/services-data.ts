@@ -24,7 +24,7 @@ export const SERVICE_EN_SLUGS: string[] = Object.values(SERVICE_SLUGS);
 
 // Image mapping (slug → image path)
 export const SERVICE_IMAGES: Record<string, string> = {
-  "fashion-shows": "/images/services/fashion-shows.png",
+  "fashion-shows": "/images/services/fashion-shows.jpg",
   "petit-dejeuners": "/images/services/petit-dejeuners.png",
   "evenements-professionnels": "/images/services/evenements-professionnels.png",
   "diners-exception": "/images/services/diners-exception.png",
