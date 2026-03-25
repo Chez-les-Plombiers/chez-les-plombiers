@@ -43,9 +43,21 @@
     "items": [
       {
         "icon": "Sparkles",
+        "title": "Exceptional Dinners",
+        "slug": "exceptional-dinners",
+        "description": "Grand tables and chef's dinners for 40 to 80 guests in a spectacular industrial setting. An immersive gastronomic experience designed as an event in its own right."
+      },
+      {
+        "icon": "Sparkles",
         "title": "Fashion Shows & Brand Events",
         "slug": "fashion-shows",
         "description": "Showcase your collections in a striking architectural setting, designed as a visual statement. A raw, modular space ideal for fashion shows, showrooms and collection launches."
+      },
+      {
+        "icon": "Car",
+        "title": "Automotive Events",
+        "slug": "automotive-events",
+        "description": "Showcase your vehicles in a venue with direct street access in the heart of Paris 1st. Automotive launches, collection exhibitions and pop-up showrooms in a spectacular industrial setting."
       },
       {
         "icon": "Briefcase",
@@ -54,34 +66,16 @@
         "description": "Seminars, product launches, conferences in a modular and fully equipped space."
       },
       {
-        "icon": "Sparkles",
-        "title": "Exceptional Dinners",
-        "slug": "exceptional-dinners",
-        "description": "Grand tables and chef's dinners for 40 to 80 guests in a spectacular industrial setting. An immersive gastronomic experience designed as an event in its own right."
-      },
-      {
         "icon": "Music",
         "title": "Cultural Events",
         "slug": "cultural-events",
         "description": "Openings, exhibitions and artistic performances in an inspiring venue designed as a contemporary gallery."
       },
       {
-        "icon": "BookOpen",
-        "title": "Seminars & Training",
-        "slug": "seminars-training",
-        "description": "Corporate seminars, training days and workshops in an inspiring setting. A modular and fully equipped space designed to foster focus and creativity for your teams."
-      },
-      {
         "icon": "Coffee",
         "title": "Corporate Breakfasts",
         "slug": "corporate-breakfasts",
         "description": "Welcome your teams or clients first thing in the morning in an inspiring setting. Corporate breakfast, press breakfast or creative brunch: a convivial moment to start the day differently."
-      },
-      {
-        "icon": "Car",
-        "title": "Automotive Events",
-        "slug": "automotive-events",
-        "description": "Showcase your vehicles in a venue with direct street access in the heart of Paris 1st. Automotive launches, collection exhibitions and pop-up showrooms in a spectacular industrial setting."
       }
     ]
   },
