@@ -136,7 +136,13 @@
     "plans": {
       "title": "Floor Plans",
       "description": "Access precise floor plans for all your measurements.",
-      "cta": "Download floor plan"
+      "ctaAll": "Download all plans",
+      "items": [
+        { "label": "Floor plan", "file": "/documents/plan-chez-les-plombiers.pdf" },
+        { "label": "Architect dimensions", "file": "/documents/cotations-architecte-globales.pdf" },
+        { "label": "Views & measurements", "file": "/documents/vues-mesures.pdf" },
+        { "label": "Lighting layout", "file": "/documents/plan-implantation-lumieres.pdf" }
+      ]
     },
     "brochure": {
       "title": "Commercial Brochure",

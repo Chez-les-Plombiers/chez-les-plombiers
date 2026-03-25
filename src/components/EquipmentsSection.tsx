@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
-import { Download, FileText } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Download, FileText, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n-context";
 
@@ -18,11 +19,17 @@ function ListItem({ children }: { children: React.ReactNode }) {
 
 export function EquipmentsSection() {
   const { dict } = useI18n();
+  const [plansOpen, setPlansOpen] = useState(false);
   const equipments = dict.equipments as {
     title: string;
     subtitle: string;
     downloadsTitle: string;
-    plans: { title: string; description: string; cta: string };
+    plans: {
+      title: string;
+      description: string;
+      ctaAll: string;
+      items: { label: string; file: string }[];
+    };
     brochure: { title: string; description: string; cta: string };
     floorPlanAlt: string;
     sections: { title: string; items: string[] }[];
@@ -66,25 +73,61 @@ export function EquipmentsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6 }}
-              whileHover={{ y: -4 }}
               className="group relative bg-white p-10 border border-gray-200 transition-all duration-500 hover:border-gray-400 hover:shadow-lg"
             >
               <div className="absolute top-0 left-0 w-0 h-0.5 bg-black transition-all duration-500 group-hover:w-full" />
-              <Download className="w-8 h-8 mb-6 transition-transform duration-500 group-hover:scale-110" />
-              <h4 className="text-2xl mb-4 tracking-tight transition-transform duration-500 group-hover:translate-x-1">
+              <Download className="w-8 h-8 mb-6" />
+              <h4 className="text-2xl mb-4 tracking-tight">
                 {equipments.plans.title}
               </h4>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {equipments.plans.description}
               </p>
-              <a
-                href="/images/floor-plan.png"
-                download="plan-chez-les-plombiers.png"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-sm uppercase tracking-wider hover:border-black hover:bg-black hover:text-white transition-all duration-300"
+
+              {/* Dropdown toggle */}
+              <button
+                onClick={() => setPlansOpen(!plansOpen)}
+                className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-sm uppercase tracking-wider hover:border-black hover:bg-black hover:text-white transition-all duration-300 cursor-pointer w-full justify-between"
               >
-                <Download className="w-4 h-4" />
-                {equipments.plans.cta}
-              </a>
+                <span className="flex items-center gap-2">
+                  <Download className="w-4 h-4" />
+                  {equipments.plans.ctaAll}
+                </span>
+                <motion.div
+                  animate={{ rotate: plansOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-4 h-4" />
+                </motion.div>
+              </button>
+
+              {/* Dropdown items */}
+              <AnimatePresence initial={false}>
+                {plansOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-4 space-y-2">
+                      {equipments.plans.items.map((plan) => (
+                        <a
+                          key={plan.file}
+                          href={plan.file}
+                          download
+                          className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-200 border border-transparent hover:border-gray-200"
+                        >
+                          <FileText className="w-4 h-4 flex-shrink-0 text-gray-400" />
+                          {plan.label}
+                          <Download className="w-3.5 h-3.5 ml-auto flex-shrink-0 text-gray-300" />
+                        </a>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
 
             <motion.div

@@ -136,7 +136,13 @@
     "plans": {
       "title": "Plans",
       "description": "Accédez aux plans précis du lieu pour toutes vos mesures.",
-      "cta": "Télécharger le plan"
+      "ctaAll": "Télécharger tous les plans",
+      "items": [
+        { "label": "Plan du lieu", "file": "/documents/plan-chez-les-plombiers.pdf" },
+        { "label": "Cotations architecte", "file": "/documents/cotations-architecte-globales.pdf" },
+        { "label": "Vues & mesures", "file": "/documents/vues-mesures.pdf" },
+        { "label": "Implantation lumières", "file": "/documents/plan-implantation-lumieres.pdf" }
+      ]
     },
     "brochure": {
       "title": "Plaquette commerciale",
