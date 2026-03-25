@@ -571,9 +571,9 @@
     "ctaTitle": "Let's plan your event",
     "ctaDescription": "Contact us to discuss your project and receive a personalised quote.",
     "galleryTitle": "Gallery",
+    "ctaPricing": "View pricing",
     "ctaCalendly": "Book a visit",
     "ctaWhatsApp": "WhatsApp",
-    "ctaEmail": "Email us",
     "services": {
       "fashion-shows": {
         "title": "Fashion Shows & Brand Events in Paris",
@@ -1329,8 +1329,8 @@
       "title": "Corporate Seminar in Paris — Unique 200 sqm Venue in the City Centre",
       "subtitle": "The seminar your team will actually remember.",
       "description": "Forget beige hotel conference rooms and strip lighting. At Chez Les Plombiers, your corporate seminar takes place in 200 sqm of industrial architecture in the heart of Paris 1st. 8,800-lumen projector, professional kitchen, high-speed Wi-Fi — all included. Your teams break out of their routine the moment they walk through the door.",
-      "ctaQuote": "Request a quote",
-      "ctaVisit": "Book a visit",
+      "ctaPricing": "View pricing",
+      "ctaCalendly": "Book a visit",
       "imageAlt": "Chez Les Plombiers seminar venue Paris 1st — distinctive industrial space with stage lighting"
     },
     "about": {
@@ -1445,9 +1445,9 @@
     "cta": {
       "title": "Plan Your Next Seminar",
       "subtitle": "Quote within 24 hours. Send us your brief via WhatsApp or email.",
-      "whatsapp": "Request a quote",
+      "pricing": "View pricing",
       "calendly": "Book a visit",
-      "email": "Email us"
+      "whatsapp": "WhatsApp"
     }
   },
   "espaceAtypique": {
@@ -1455,7 +1455,7 @@
       "h1": "Unique Venue in Paris — Industrial Event Space with Character",
       "subtitle": "A venue with a story to tell.",
       "description": "A former industrial plumbing workshop transformed into a 200 sqm event space in Paris 1st. Exposed pipes, steel beams, polished concrete — and a pink Pierre Paulin sofa in the middle. At Chez Les Plombiers, the raw-meets-refined contrast creates a setting your guests will remember long after the event.",
-      "ctaMatterport": "Explore in 3D",
+      "ctaPricing": "View pricing",
       "ctaCalendly": "Book a visit"
     },
     "story": {
@@ -1591,7 +1591,7 @@
     "cta": {
       "title": "Discover Your Next Event Space",
       "subtitle": "Explore Chez Les Plombiers in 3D, then come and see it for yourself.",
-      "ctaMatterport": "Explore in 3D",
+      "ctaPricing": "View pricing",
       "ctaCalendly": "Book a visit",
       "ctaWhatsApp": "WhatsApp"
     },
@@ -1607,8 +1607,8 @@
       "title": "Car Photoshoot in Paris — Automotive Studio with Direct Vehicle Access",
       "subtitle": "The only photo studio in central Paris where the car drives in through the door.",
       "description": "At Chez Les Plombiers, vehicles enter the space directly from the street. 200 sqm of floor space, integrated cyclorama, professional DMX lighting, 36 kVA three-phase power. At 39 rue des Bourdonnais, Paris 1st, 3 minutes from Chatelet metro. A turnkey automotive studio in the heart of Paris.",
-      "ctaQuote": "Request a quote",
-      "ctaGallery": "View Auto gallery"
+      "ctaPricing": "View pricing",
+      "ctaCalendly": "Book a visit"
     },
     "access": {
       "sectionTitle": "The Only Auto Photo Space with Street Access in Paris 1st",
@@ -1728,9 +1728,9 @@
     "cta": {
       "title": "Book Your Automotive Studio",
       "subtitle": "Availability and quote within 2 hours. Send your brief via WhatsApp.",
-      "whatsapp": "Request a quote",
+      "pricing": "View pricing",
       "calendly": "Book a visit",
-      "gallery": "See our automotive references"
+      "whatsapp": "WhatsApp"
     }
   },
   "lieuEvenementiel": {
@@ -1899,9 +1899,9 @@
     "cta": {
       "title": "Book Your Complimentary Visit",
       "subtitle": "Discover 200 sqm of exceptional space in the heart of Paris 1st. Our team welcomes you by appointment.",
+      "pricing": "View pricing",
       "calendly": "Book a visit",
-      "whatsapp": "WhatsApp",
-      "email": "Email"
+      "whatsapp": "WhatsApp"
     }
   }
 }

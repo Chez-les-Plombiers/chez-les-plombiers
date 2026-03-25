@@ -3,7 +3,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   Car,
   Frame,
@@ -17,7 +16,6 @@ import {
   MessageCircle,
   Calendar,
   X,
-  ArrowRight,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
@@ -54,8 +52,8 @@ interface ShootingVoitureDict {
     title: string;
     subtitle: string;
     description: string;
-    ctaQuote: string;
-    ctaGallery: string;
+    ctaPricing: string;
+    ctaCalendly: string;
   };
   access: {
     sectionTitle: string;
@@ -85,9 +83,9 @@ interface ShootingVoitureDict {
   cta: {
     title: string;
     subtitle: string;
-    whatsapp: string;
+    pricing: string;
     calendly: string;
-    gallery: string;
+    whatsapp: string;
   };
 }
 
@@ -188,10 +186,6 @@ export function ShootingVoitureContent() {
   const { dict, locale } = useI18n();
   const t = dict.shootingVoiture as ShootingVoitureDict;
   const prefix = locale === "en" ? "/en" : "";
-  const autoMotoHref =
-    locale === "en"
-      ? "/en/services/automotive-events"
-      : "/services/evenements-auto-moto";
 
   /* Lightbox state */
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -261,27 +255,34 @@ export function ShootingVoitureContent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={EXTERNAL_LINKS.whatsapp}
+                href={EXTERNAL_LINKS.pricing}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "whatsapp",
-                    destination: EXTERNAL_LINKS.whatsapp,
+                  trackEvent("cta_click", {
+                    label: "shooting_hero_pricing",
+                    destination: EXTERNAL_LINKS.pricing,
                   })
                 }
                 className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
-                <MessageCircle className="w-4 h-4" />
-                {t.hero.ctaQuote}
+                {t.hero.ctaPricing}
               </a>
-              <Link
-                href={autoMotoHref}
+              <a
+                href={EXTERNAL_LINKS.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("cta_click", {
+                    label: "shooting_hero_calendly",
+                    destination: EXTERNAL_LINKS.calendly,
+                  })
+                }
                 className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
-                <ArrowRight className="w-4 h-4" />
-                {t.hero.ctaGallery}
-              </Link>
+                <Calendar className="w-4 h-4" />
+                {t.hero.ctaCalendly}
+              </a>
             </div>
           </motion.div>
         </div>
@@ -614,27 +615,26 @@ export function ShootingVoitureContent() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href={EXTERNAL_LINKS.whatsapp}
+                href={EXTERNAL_LINKS.pricing}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "whatsapp",
-                    destination: EXTERNAL_LINKS.whatsapp,
+                  trackEvent("cta_click", {
+                    label: "shooting_pricing",
+                    destination: EXTERNAL_LINKS.pricing,
                   })
                 }
                 className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
-                <MessageCircle className="w-4 h-4" />
-                {t.cta.whatsapp}
+                {t.cta.pricing}
               </a>
               <a
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "calendly",
+                  trackEvent("cta_click", {
+                    label: "shooting_calendly",
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
@@ -643,13 +643,21 @@ export function ShootingVoitureContent() {
                 <Calendar className="w-4 h-4" />
                 {t.cta.calendly}
               </a>
-              <Link
-                href={autoMotoHref}
+              <a
+                href={EXTERNAL_LINKS.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("cta_click", {
+                    label: "shooting_whatsapp",
+                    destination: EXTERNAL_LINKS.whatsapp,
+                  })
+                }
                 className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
-                <ArrowRight className="w-4 h-4" />
-                {t.cta.gallery}
-              </Link>
+                <MessageCircle className="w-4 h-4" />
+                {t.cta.whatsapp}
+              </a>
             </div>
           </motion.div>
         </div>

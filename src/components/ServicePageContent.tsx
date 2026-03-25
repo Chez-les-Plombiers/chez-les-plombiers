@@ -12,7 +12,6 @@ import {
   ChevronRight,
   Calendar,
   MessageCircle,
-  Mail,
   X,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
@@ -53,9 +52,9 @@ interface ServicePagesDict {
   alsoDiscoverTitle: string;
   ctaTitle: string;
   ctaDescription: string;
+  ctaPricing: string;
   ctaCalendly: string;
   ctaWhatsApp: string;
-  ctaEmail: string;
   services: Record<string, ServiceData>;
 }
 
@@ -502,16 +501,30 @@ export function ServicePageContent({ slug }: { slug: string }) {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
+                href={EXTERNAL_LINKS.pricing}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("cta_click", {
+                    label: "service_pricing",
+                    destination: EXTERNAL_LINKS.pricing,
+                  })
+                }
+                className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+              >
+                {servicePages.ctaPricing}
+              </a>
+              <a
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "calendly",
+                  trackEvent("cta_click", {
+                    label: "service_calendly",
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
-                className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+                className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
                 <Calendar className="w-4 h-4" />
                 {servicePages.ctaCalendly}
@@ -521,8 +534,8 @@ export function ServicePageContent({ slug }: { slug: string }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "whatsapp",
+                  trackEvent("cta_click", {
+                    label: "service_whatsapp",
                     destination: EXTERNAL_LINKS.whatsapp,
                   })
                 }
@@ -530,19 +543,6 @@ export function ServicePageContent({ slug }: { slug: string }) {
               >
                 <MessageCircle className="w-4 h-4" />
                 {servicePages.ctaWhatsApp}
-              </a>
-              <a
-                href={EXTERNAL_LINKS.email}
-                onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "email",
-                    destination: EXTERNAL_LINKS.email,
-                  })
-                }
-                className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
-              >
-                <Mail className="w-4 h-4" />
-                {servicePages.ctaEmail}
               </a>
             </div>
           </motion.div>

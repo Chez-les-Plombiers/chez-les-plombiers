@@ -51,8 +51,8 @@ interface SeminaireDict {
     title: string;
     subtitle: string;
     description: string;
-    ctaQuote: string;
-    ctaVisit: string;
+    ctaPricing: string;
+    ctaCalendly: string;
     imageAlt: string;
   };
   about: {
@@ -90,9 +90,9 @@ interface SeminaireDict {
   cta: {
     title: string;
     subtitle: string;
-    whatsapp: string;
+    pricing: string;
     calendly: string;
-    email: string;
+    whatsapp: string;
   };
 }
 
@@ -261,34 +261,33 @@ export function SeminaireEntrepriseContent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={EXTERNAL_LINKS.whatsapp}
+                href={EXTERNAL_LINKS.pricing}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "whatsapp",
-                    destination: EXTERNAL_LINKS.whatsapp,
+                  trackEvent("cta_click", {
+                    label: "seminaire_hero_pricing",
+                    destination: EXTERNAL_LINKS.pricing,
                   })
                 }
                 className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
-                <MessageCircle className="w-4 h-4" />
-                {t.hero.ctaQuote}
+                {t.hero.ctaPricing}
               </a>
               <a
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "calendly",
+                  trackEvent("cta_click", {
+                    label: "seminaire_hero_calendly",
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
                 className="inline-flex items-center gap-3 border border-white/30 hover:border-white text-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
                 <Calendar className="w-4 h-4" />
-                {t.hero.ctaVisit}
+                {t.hero.ctaCalendly}
               </a>
             </div>
           </motion.div>
@@ -681,27 +680,26 @@ export function SeminaireEntrepriseContent() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href={EXTERNAL_LINKS.whatsapp}
+                href={EXTERNAL_LINKS.pricing}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "whatsapp",
-                    destination: EXTERNAL_LINKS.whatsapp,
+                  trackEvent("cta_click", {
+                    label: "seminaire_pricing",
+                    destination: EXTERNAL_LINKS.pricing,
                   })
                 }
                 className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
-                <MessageCircle className="w-4 h-4" />
-                {t.cta.whatsapp}
+                {t.cta.pricing}
               </a>
               <a
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "calendly",
+                  trackEvent("cta_click", {
+                    label: "seminaire_calendly",
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
@@ -711,17 +709,19 @@ export function SeminaireEntrepriseContent() {
                 {t.cta.calendly}
               </a>
               <a
-                href={EXTERNAL_LINKS.email}
+                href={EXTERNAL_LINKS.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "email",
-                    destination: EXTERNAL_LINKS.email,
+                  trackEvent("cta_click", {
+                    label: "seminaire_whatsapp",
+                    destination: EXTERNAL_LINKS.whatsapp,
                   })
                 }
                 className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
-                <Mail className="w-4 h-4" />
-                {t.cta.email}
+                <MessageCircle className="w-4 h-4" />
+                {t.cta.whatsapp}
               </a>
             </div>
           </motion.div>

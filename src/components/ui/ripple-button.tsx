@@ -18,6 +18,7 @@ interface RippleButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement
   href?: string;
   target?: string;
   rel?: string;
+  onClick?: () => void;
 }
 
 export function RippleButton({
@@ -27,6 +28,7 @@ export function RippleButton({
   href,
   target,
   rel,
+  onClick,
   ...props
 }: RippleButtonProps) {
   const anchorRef = useRef<HTMLAnchorElement>(null);
@@ -141,6 +143,7 @@ export function RippleButton({
         target={target}
         rel={rel}
         className={cls}
+        onClick={onClick}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         onMouseMove={handleMouseMove}

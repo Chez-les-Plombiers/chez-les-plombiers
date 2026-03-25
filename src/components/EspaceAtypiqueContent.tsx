@@ -50,7 +50,7 @@ interface EspaceAtypiqueData {
     h1: string;
     subtitle: string;
     description: string;
-    ctaMatterport: string;
+    ctaPricing: string;
     ctaCalendly: string;
   };
   story: {
@@ -83,7 +83,7 @@ interface EspaceAtypiqueData {
   cta: {
     title: string;
     subtitle: string;
-    ctaMatterport: string;
+    ctaPricing: string;
     ctaCalendly: string;
     ctaWhatsApp: string;
   };
@@ -245,21 +245,20 @@ export function EspaceAtypiqueContent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.a
-                href={MATTERPORT_URL}
+                href={EXTERNAL_LINKS.pricing}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() =>
                   trackEvent("cta_click", {
-                    label: "matterport_hero",
-                    destination: MATTERPORT_URL,
+                    label: "atypique_hero_pricing",
+                    destination: EXTERNAL_LINKS.pricing,
                   })
                 }
                 className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
-                <ScanEye className="w-4 h-4" />
-                {data.hero.ctaMatterport}
+                {data.hero.ctaPricing}
               </motion.a>
               <motion.a
                 href={EXTERNAL_LINKS.calendly}
@@ -269,7 +268,7 @@ export function EspaceAtypiqueContent() {
                 whileTap={{ scale: 0.98 }}
                 onClick={() =>
                   trackEvent("cta_click", {
-                    label: "calendly_hero",
+                    label: "atypique_hero_calendly",
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
@@ -643,27 +642,26 @@ export function EspaceAtypiqueContent() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href={MATTERPORT_URL}
+                href={EXTERNAL_LINKS.pricing}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
                   trackEvent("cta_click", {
-                    label: "matterport_cta",
-                    destination: MATTERPORT_URL,
+                    label: "atypique_pricing",
+                    destination: EXTERNAL_LINKS.pricing,
                   })
                 }
                 className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
-                <ScanEye className="w-4 h-4" />
-                {data.cta.ctaMatterport}
+                {data.cta.ctaPricing}
               </a>
               <a
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "calendly",
+                  trackEvent("cta_click", {
+                    label: "atypique_calendly",
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
@@ -677,8 +675,8 @@ export function EspaceAtypiqueContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "whatsapp",
+                  trackEvent("cta_click", {
+                    label: "atypique_whatsapp",
                     destination: EXTERNAL_LINKS.whatsapp,
                   })
                 }

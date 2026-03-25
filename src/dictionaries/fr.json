@@ -571,9 +571,9 @@
     "ctaTitle": "Organisons votre évènement",
     "ctaDescription": "Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.",
     "galleryTitle": "En images",
+    "ctaPricing": "Voir les tarifs",
     "ctaCalendly": "Réserver une visite",
     "ctaWhatsApp": "WhatsApp",
-    "ctaEmail": "Nous écrire",
     "services": {
       "fashion-shows": {
         "title": "Défilés de Mode & Brand Events",
@@ -1329,8 +1329,8 @@
       "title": "Séminaire d'Entreprise à Paris — Lieu Unique de 200 m² en Plein Centre",
       "subtitle": "Le séminaire dont votre équipe se souviendra.",
       "description": "Oubliez les salles d'hôtel beiges et les néons. Chez Les Plombiers, votre séminaire se déroule dans 200 m² d'architecture industrielle au cœur de Paris 1er. Vidéoprojecteur 8 800 lumens, cuisine pro, Wi-Fi haut débit — tout est inclus. Vos équipes sortent de leur zone de confort dès la porte franchie.",
-      "ctaQuote": "Demander un devis",
-      "ctaVisit": "Réserver une visite",
+      "ctaPricing": "Voir les tarifs",
+      "ctaCalendly": "Réserver une visite",
       "imageAlt": "Salle de séminaire Chez Les Plombiers Paris 1er — espace industriel atypique avec éclairage scénographique"
     },
     "about": {
@@ -1445,9 +1445,9 @@
     "cta": {
       "title": "Organisez Votre Prochain Séminaire",
       "subtitle": "Un devis en 24h. Envoyez-nous votre brief par WhatsApp ou email.",
-      "whatsapp": "Demander un devis",
+      "pricing": "Voir les tarifs",
       "calendly": "Réserver une visite",
-      "email": "Nous écrire"
+      "whatsapp": "WhatsApp"
     }
   },
   "espaceAtypique": {
@@ -1455,7 +1455,7 @@
       "h1": "Espace Atypique à Paris — Lieu Événementiel au Charme Industriel",
       "subtitle": "Un lieu qui a une histoire à raconter.",
       "description": "Ancienne plomberie industrielle reconvertie en espace événementiel de 200 m² à Paris 1er. Tuyaux apparents, poutres métalliques, béton ciré — et un canapé Pierre Paulin rose au milieu. Chez Les Plombiers, le contraste brut/raffiné crée un cadre que vos invités n'oublieront pas.",
-      "ctaMatterport": "Explorer en 3D",
+      "ctaPricing": "Voir les tarifs",
       "ctaCalendly": "Réserver une visite"
     },
     "story": {
@@ -1591,7 +1591,7 @@
     "cta": {
       "title": "Découvrez Votre Futur Espace Événementiel",
       "subtitle": "Explorez Chez Les Plombiers en 3D, puis venez le voir en vrai.",
-      "ctaMatterport": "Explorer en 3D",
+      "ctaPricing": "Voir les tarifs",
       "ctaCalendly": "Réserver une visite",
       "ctaWhatsApp": "WhatsApp"
     },
@@ -1607,8 +1607,8 @@
       "title": "Shooting Voiture à Paris — Studio Automobile avec Accès Direct Véhicules",
       "subtitle": "Le seul studio photo de Paris centre où la voiture entre par la porte.",
       "description": "Chez Les Plombiers, les véhicules entrent directement dans l'espace depuis la rue. 200 m² au sol, cyclorama intégré, éclairage DMX professionnel, 36 KvA triphasé. Au 39 rue des Bourdonnais, Paris 1er, à 3 minutes du métro Châtelet. Un studio automobile clé en main en plein centre de Paris.",
-      "ctaQuote": "Demander un devis",
-      "ctaGallery": "Voir la galerie Auto"
+      "ctaPricing": "Voir les tarifs",
+      "ctaCalendly": "Réserver une visite"
     },
     "access": {
       "sectionTitle": "Le Seul Espace Photo Auto avec Accès Rue à Paris 1er",
@@ -1728,9 +1728,9 @@
     "cta": {
       "title": "Réservez Votre Studio Auto",
       "subtitle": "Disponibilités et devis en 2h. Envoyez votre brief par WhatsApp.",
-      "whatsapp": "Demander un devis",
+      "pricing": "Voir les tarifs",
       "calendly": "Réserver une visite",
-      "gallery": "Voir nos références auto"
+      "whatsapp": "WhatsApp"
     }
   },
   "lieuEvenementiel": {
@@ -1899,9 +1899,9 @@
     "cta": {
       "title": "Réservez Votre Visite Gratuite",
       "subtitle": "Découvrez 200 m² d'exception au cœur de Paris 1er. Notre équipe vous accueille sur rendez-vous.",
+      "pricing": "Voir les tarifs",
       "calendly": "Réserver une visite",
-      "whatsapp": "WhatsApp",
-      "email": "Email"
+      "whatsapp": "WhatsApp"
     }
   }
 }

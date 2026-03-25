@@ -173,6 +173,12 @@ export function ContactSection() {
                       href={EXTERNAL_LINKS.pricing}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent("cta_click", {
+                          label: "contact_pricing",
+                          destination: EXTERNAL_LINKS.pricing,
+                        })
+                      }
                       className="block w-full bg-white text-black hover:bg-white/90 py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em] transition-all duration-300 text-center"
                     >
                       {header.ctaQuote}
@@ -186,9 +192,34 @@ export function ContactSection() {
                       href={EXTERNAL_LINKS.calendly}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent("cta_click", {
+                          label: "contact_calendly",
+                          destination: EXTERNAL_LINKS.calendly,
+                        })
+                      }
                       className="block w-full border border-white text-white hover:bg-white hover:text-black py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em] transition-all duration-300 text-center"
                     >
                       {contact.visit.cta}
+                    </a>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <a
+                      href={EXTERNAL_LINKS.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent("cta_click", {
+                          label: "contact_whatsapp",
+                          destination: EXTERNAL_LINKS.whatsapp,
+                        })
+                      }
+                      className="block w-full border border-white text-white hover:bg-white hover:text-black py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em] transition-all duration-300 text-center"
+                    >
+                      WhatsApp
                     </a>
                   </motion.div>
                 </div>

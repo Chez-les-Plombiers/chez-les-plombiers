@@ -91,9 +91,9 @@ interface LieuDict {
   cta: {
     title: string;
     subtitle: string;
+    pricing: string;
     calendly: string;
     whatsapp: string;
-    email: string;
   };
 }
 
@@ -290,12 +290,26 @@ export function LieuEvenementielContent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
+                href={EXTERNAL_LINKS.pricing}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("cta_click", {
+                    label: "lieu_hero_pricing",
+                    destination: EXTERNAL_LINKS.pricing,
+                  })
+                }
+                className="inline-flex items-center justify-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+              >
+                {lieu.hero.ctaPricing}
+              </a>
+              <a
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
                   trackEvent("cta_click", {
-                    label: "hero_calendly",
+                    label: "lieu_hero_calendly",
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
@@ -303,20 +317,6 @@ export function LieuEvenementielContent() {
               >
                 <Calendar className="w-4 h-4" />
                 {lieu.hero.cta}
-              </a>
-              <a
-                href={EXTERNAL_LINKS.pricing}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() =>
-                  trackEvent("cta_click", {
-                    label: "hero_pricing",
-                    destination: EXTERNAL_LINKS.pricing,
-                  })
-                }
-                className="inline-flex items-center justify-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
-              >
-                {lieu.hero.ctaPricing}
               </a>
             </div>
           </motion.div>
@@ -677,16 +677,30 @@ export function LieuEvenementielContent() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
+                href={EXTERNAL_LINKS.pricing}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent("cta_click", {
+                    label: "lieu_pricing",
+                    destination: EXTERNAL_LINKS.pricing,
+                  })
+                }
+                className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+              >
+                {lieu.cta.pricing}
+              </a>
+              <a
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "calendly",
+                  trackEvent("cta_click", {
+                    label: "lieu_calendly",
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
-                className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+                className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
                 <Calendar className="w-4 h-4" />
                 {lieu.cta.calendly}
@@ -696,8 +710,8 @@ export function LieuEvenementielContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "whatsapp",
+                  trackEvent("cta_click", {
+                    label: "lieu_whatsapp",
                     destination: EXTERNAL_LINKS.whatsapp,
                   })
                 }
@@ -705,19 +719,6 @@ export function LieuEvenementielContent() {
               >
                 <MessageCircle className="w-4 h-4" />
                 {lieu.cta.whatsapp}
-              </a>
-              <a
-                href={EXTERNAL_LINKS.email}
-                onClick={() =>
-                  trackEvent("contact_click", {
-                    method: "email",
-                    destination: EXTERNAL_LINKS.email,
-                  })
-                }
-                className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
-              >
-                <Mail className="w-4 h-4" />
-                {lieu.cta.email}
               </a>
             </div>
           </motion.div>

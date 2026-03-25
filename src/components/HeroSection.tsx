@@ -5,6 +5,7 @@ import { useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { useI18n } from "@/lib/i18n-context";
+import { trackEvent } from "@/lib/analytics";
 import { RippleButton } from "@/components/ui/ripple-button";
 
 export function HeroSection() {
@@ -95,6 +96,12 @@ export function HeroSection() {
               rel="noopener noreferrer"
               rippleColor="bg-black"
               className="px-12 py-4 bg-white text-black tracking-wider uppercase text-sm hover:text-white"
+              onClick={() =>
+                trackEvent("cta_click", {
+                  label: "hero_pricing",
+                  destination: EXTERNAL_LINKS.pricing,
+                })
+              }
             >
               {header.ctaQuote}
             </RippleButton>
@@ -104,6 +111,12 @@ export function HeroSection() {
               rel="noopener noreferrer"
               rippleColor="bg-white"
               className="px-12 py-4 border border-white text-white tracking-wider uppercase text-sm hover:text-black"
+              onClick={() =>
+                trackEvent("cta_click", {
+                  label: "hero_calendly",
+                  destination: EXTERNAL_LINKS.calendly,
+                })
+              }
             >
               {hero.cta}
             </RippleButton>
