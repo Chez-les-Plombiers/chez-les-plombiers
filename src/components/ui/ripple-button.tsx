@@ -95,11 +95,11 @@ export function RippleButton({
     if (e.target === e.currentTarget) removeRipple(e);
   };
 
-  const cls = `relative flex items-center justify-center overflow-hidden px-8 py-3 text-lg font-medium transition-colors duration-[600ms] ${className}`;
+  const cls = `relative overflow-hidden transition-colors duration-[600ms] flex items-center justify-center ${className}`;
 
   const content = (
     <>
-      <span className="relative z-[2]">{children}</span>
+      <span className="relative z-[2] inline-flex items-center gap-3">{children}</span>
       <AnimatePresence>
         {ripple && (
           <motion.span

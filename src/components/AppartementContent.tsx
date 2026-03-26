@@ -10,6 +10,7 @@ import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { useI18n } from "@/lib/i18n-context";
 import { SERVICE_FR_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 import { ReviewsSection } from "@/components/ReviewsSection";
+import { RippleButton } from "@/components/ui/ripple-button";
 
 const appartPhotos = Array.from({ length: 10 }, (_, i) => {
   const num = String(i + 1).padStart(2, "0");
@@ -149,20 +150,15 @@ export function AppartementContent() {
               {appart.heroDescription}
             </p>
 
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-block"
+            <RippleButton
+              href={EXTERNAL_LINKS.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
+              rippleColor="bg-black"
+              className="bg-white text-black hover:text-white px-10 py-6 text-lg uppercase tracking-widest"
             >
-              <a
-                href={EXTERNAL_LINKS.calendly}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-white text-black hover:bg-white/90 px-10 py-6 text-lg uppercase tracking-widest transition-all duration-300"
-              >
-                {appart.cta}
-              </a>
-            </motion.div>
+              {appart.cta}
+            </RippleButton>
           </motion.div>
         </div>
       </section>

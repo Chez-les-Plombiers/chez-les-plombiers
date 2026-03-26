@@ -20,6 +20,7 @@ import { trackEvent } from "@/lib/analytics";
 import { ArrowRight } from "lucide-react";
 import { SERVICE_IMAGES, SERVICE_GALLERY, FEATURED_SERVICE_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 import { ReviewsSection } from "@/components/ReviewsSection";
+import { RippleButton } from "@/components/ui/ripple-button";
 
 interface ServiceSpec {
   value: string;
@@ -211,35 +212,37 @@ export function ServicePageContent({ slug }: { slug: string }) {
               {service.tagline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <RippleButton
                 href={EXTERNAL_LINKS.pricing}
                 target="_blank"
                 rel="noopener noreferrer"
+                rippleColor="bg-black"
+                className="bg-white text-black hover:text-white px-10 py-4 text-sm uppercase tracking-widest"
                 onClick={() =>
                   trackEvent("cta_click", {
                     label: "service_hero_pricing",
                     destination: EXTERNAL_LINKS.pricing,
                   })
                 }
-                className="inline-flex items-center justify-center bg-white text-black hover:bg-white/90 px-10 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
                 {servicePages.ctaPricing}
-              </a>
-              <a
+              </RippleButton>
+              <RippleButton
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
+                rippleColor="bg-white"
+                className="border border-white text-white hover:text-black px-10 py-4 text-sm uppercase tracking-widest"
                 onClick={() =>
                   trackEvent("cta_click", {
                     label: "service_hero_calendly",
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
-                className="inline-flex items-center justify-center gap-3 border border-white/40 hover:border-white px-10 py-4 text-sm uppercase tracking-widest transition-all duration-300 hover:bg-white/10"
               >
                 <Calendar className="w-4 h-4" />
                 {servicePages.ctaCalendly}
-              </a>
+              </RippleButton>
             </div>
           </motion.div>
         </div>
@@ -564,50 +567,53 @@ export function ServicePageContent({ slug }: { slug: string }) {
               {servicePages.ctaDescription}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
+              <RippleButton
                 href={EXTERNAL_LINKS.pricing}
                 target="_blank"
                 rel="noopener noreferrer"
+                rippleColor="bg-black"
+                className="bg-white text-black hover:text-white px-8 py-4 text-sm uppercase tracking-widest"
                 onClick={() =>
                   trackEvent("cta_click", {
                     label: "service_pricing",
                     destination: EXTERNAL_LINKS.pricing,
                   })
                 }
-                className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
                 {servicePages.ctaPricing}
-              </a>
-              <a
+              </RippleButton>
+              <RippleButton
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
+                rippleColor="bg-white"
+                className="border border-white text-white hover:text-black px-8 py-4 text-sm uppercase tracking-widest"
                 onClick={() =>
                   trackEvent("cta_click", {
                     label: "service_calendly",
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
-                className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
                 <Calendar className="w-4 h-4" />
                 {servicePages.ctaCalendly}
-              </a>
-              <a
+              </RippleButton>
+              <RippleButton
                 href={EXTERNAL_LINKS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
+                rippleColor="bg-white"
+                className="border border-white text-white hover:text-black px-8 py-4 text-sm uppercase tracking-widest"
                 onClick={() =>
                   trackEvent("cta_click", {
                     label: "service_whatsapp",
                     destination: EXTERNAL_LINKS.whatsapp,
                   })
                 }
-                className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
               >
                 <MessageCircle className="w-4 h-4" />
                 {servicePages.ctaWhatsApp}
-              </a>
+              </RippleButton>
             </div>
           </motion.div>
         </div>

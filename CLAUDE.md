@@ -81,15 +81,16 @@ src/components/      # Tous "use client" — utilisent useI18n()
   Header.tsx         # Scroll state + mobile menu + logo swap + language switcher FR/EN
   Footer.tsx         # Liens + infos légales (converti en client component pour i18n)
   HeroSection.tsx    # Parallax + entrance animations
-  ServicesSection.tsx # 7 cards + hover effects + liens "En savoir plus" → /services/{slug}
+  ServicesSection.tsx # 6 cards grille 3x2 + hover animation (scale, shadow, icon invert) — cartes entièrement cliquables
   AboutSection.tsx   # Texte + stats + image (dangerouslySetInnerHTML pour <strong>)
   PortfolioSection.tsx # 12 photos bento grid (3x8) + lightbox + download (JSZip)
   ReviewsSection.tsx # Google reviews carousel (textes FR, labels i18n) — réutilisé sur pages services + Appartement Rose
-  EquipmentsSection.tsx # Specs techniques + floor plan + downloads
+  EquipmentsSection.tsx # Specs techniques + floor plan + 4 PDF plans dropdown + plaquette download
   FaqSection.tsx     # 11 Q&A accordion (données depuis dictionnaires)
-  ContactSection.tsx # 4 contacts + CTA Calendly
+  ContactSection.tsx # 4 contacts + 3 CTA (Pricing + Calendly + WhatsApp) avec tracking cta_click
   AppartementContent.tsx # Page Appartement Rose (galerie 10 photos bento + lightbox + ZIP download + reviews Google)
-  ServicePageContent.tsx # Pages services (hero, specs, features, galerie bento + lightbox, FAQ accordion, CTA)
+  ServicePageContent.tsx # Pages services (hero + 2 CTA, specs, galerie bento, features, reviews, FAQ, cross-links animés, CTA footer)
+  ui/ripple-button.tsx # Bouton avec effet ripple hover (utilisé dans Hero)
   GuideContent.tsx   # Chat AI concierge multi-turn (streaming, bulles user/assistant, markdown)
   ScrollAnimation.tsx # Wrapper réutilisable whileInView
 
@@ -97,8 +98,8 @@ src/lib/
   i18n.ts            # Config locales, slug mapping (pages + services), getDictionary(), getAlternatePath()
   i18n-context.tsx   # I18nProvider + useI18n() hook (React Context)
   metadata.ts        # Constantes SEO partagées + liens externes
-  analytics.ts       # GA4 typed helper + GTM ID
-  services-data.ts   # Slugs services FR↔EN, images, SERVICE_GALLERY, resolveServiceSlug()
+  analytics.ts       # GA4 typed helper + GTM ID — events: cta_click, contact_click, nav_click, section_view
+  services-data.ts   # Slugs services FR↔EN, images, SERVICE_GALLERY, FEATURED_SERVICE_SLUGS (6), resolveServiceSlug()
   guide-knowledge.ts # Knowledge base AI concierge (system prompt FR/EN + infos lieu)
 
 src/dictionaries/
@@ -115,6 +116,10 @@ public/
     evenements-auto-moto/   # 23 photos
   documents/
     plaquette-chez-les-plombiers.pdf  # Plaquette commerciale (2.3 MB)
+    plan-chez-les-plombiers.pdf       # Plan du lieu
+    cotations-architecte-globales.pdf # Cotations architecte
+    vues-mesures.pdf                  # Vues & mesures
+    plan-implantation-lumieres.pdf    # Plan implantation lumières
 ```
 
 ## Analytics
@@ -143,7 +148,7 @@ public/
 - **Meta descriptions**: data points + CTA (ex: "Dès 1 000 € HT/jour. Visite gratuite sur rendez-vous.")
 - **FAQ visible**: 11 Q&A en accordion, synchronisée avec le JSON-LD FAQPage
 - **Alt texts enrichis**: descriptions contextuelles sur toutes les images
-- **Downloads fonctionnels**: plan (floor-plan.png) + plaquette PDF hébergés sur Vercel
+- **Downloads fonctionnels**: 4 plans PDF (dropdown) + plaquette PDF hébergés sur Vercel
 - **Maillage interne**: cross-links entre pages services, liens Appartement ↔ services, colonne services dans Footer, pages SEO ↔ services
 - **Redirections legacy**: /visiter, /histoire, /infos → 301 vers anchors homepage (ancien site Figma)
 - **Pages SEO (23/03/2026)**: 4 landing pages non-branded avec FAQ 6 Q&A + galerie photos + Reviews Google
@@ -155,32 +160,38 @@ public/
 - Séminaire Entreprise Paris (`seminaire-entreprise-paris` / `corporate-seminar-paris`) — intent corporate, 8 photos
 - Shooting Voiture Paris (`shooting-voiture-paris` / `car-photoshoot-paris`) — niche auto, 10 photos portrait, grille aspect-[3/4]
 
-Structure chaque page : Hero (image + overlay + CTA) → Section descriptive (2 cols) → 6 USPs grille 3x2 → Types d'événements (cards avec liens services) → [Matterport 3D si atypique] → Galerie photos + lightbox → ReviewsSection (réutilisé) → FAQ accordion (6 Q&A) → CTA (Calendly/WhatsApp/Email)
+Structure chaque page : Hero (image + overlay + 2 CTA Pricing/Calendly) → Section descriptive (2 cols) → 6 USPs grille 3x2 → Types d'événements (cards avec liens services) → [Matterport 3D si atypique] → Galerie photos + lightbox → ReviewsSection → FAQ accordion (6 Q&A) → CTA footer (Pricing + Calendly + WhatsApp)
 
 Composants : `LieuEvenementielContent.tsx`, `EspaceAtypiqueContent.tsx`, `SeminaireEntrepriseContent.tsx`, `ShootingVoitureContent.tsx`
 
 Dict keys : `lieuEvenementiel`, `espaceAtypique`, `seminaireEntreprise`, `shootingVoiture`
 
 ## Pages Services (/services/[slug])
-7 services, chacun avec page FR + EN (14 pages total) :
-- Fashion Shows (`fashion-shows` / `fashion-shows`) — galerie 24 photos
-- Petit-Déjeuners (`petit-dejeuners` / `corporate-breakfasts`)
-- Évènements Professionnels (`evenements-professionnels` / `professional-events`)
+7 services (routes), dont **6 featured** affichés sur homepage/cross-links/footer (Séminaires existe mais non mis en avant) :
 - Dîners d'Exception (`diners-exception` / `exceptional-dinners`) — galerie 15 photos
-- Évènements Culturels (`evenements-culturels` / `cultural-events`)
-- Séminaires & Formations (`seminaires-formations` / `seminars-training`)
+- Fashion Shows (`fashion-shows` / `fashion-shows`) — galerie 24 photos
 - Événements Auto & Moto (`evenements-auto-moto` / `automotive-events`) — galerie 23 photos
+- Évènements Professionnels (`evenements-professionnels` / `professional-events`)
+- Évènements Culturels (`evenements-culturels` / `cultural-events`)
+- Petit-Déjeuners (`petit-dejeuners` / `corporate-breakfasts`)
+- Séminaires & Formations (`seminaires-formations` / `seminars-training`) — route active mais retiré de homepage/footer/cross-links
 
-Structure chaque page : Hero (image + overlay) → Description + descriptionExtended + Specs (2 cols) → Features (3 cols) → [Galerie bento + lightbox si photos] → ReviewsSection (réutilisé) → FAQ accordion (3-5 Q&A spécifiques) → Cross-links (6 autres services + Appartement Rose) → CTA (Calendly + WhatsApp + email)
+Structure chaque page : Hero (image + overlay + 2 CTA Pricing/Calendly) → Description + descriptionExtended + Specs (2 cols) → [Galerie bento + lightbox si photos] → Features (3 cols) → ReviewsSection → FAQ accordion (3-6 Q&A) → Cross-links animés (5 services + Appartement Rose) → CTA footer (Pricing + Calendly + WhatsApp)
 
-Chaque service a un champ `descriptionExtended` (~100 mots) en plus de `description` (~70 mots) pour enrichir le contenu SEO (total ~180 mots par page).
+**CTA standardisés** sur toutes les pages (services, SEO, homepage) :
+- CTA 1 (solid) : "Voir les tarifs" → pricing.chezlesplombiers.fr
+- CTA 2 (outline) : "Réserver une visite" → Calendly
+- CTA 3 (outline) : "WhatsApp" → wa.me
+- Tous trackés en `cta_click` avec label contextuel (ex: `service_hero_pricing`, `lieu_calendly`)
+
+`FEATURED_SERVICE_SLUGS` dans `services-data.ts` = les 6 services affichés (ordre : dîners, fashion, auto, pro, culturels, petits déj)
 
 Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners` → `/en/services/corporate-breakfasts`)
 
 ## Architecture Homepage
 9 sections dans l'ordre :
 1. HeroSection (parallax + vidéo autoplay avec fallback touch mobile + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
-2. ServicesSection (7 cards dont Petit Déjeuner et Auto & Moto)
+2. ServicesSection (6 cards grille 3x2 + hover animation : Dîners, Fashion, Auto, Pro, Culturels, Petits Déj)
 3. VirtualTour (iframe Matterport 3D — https://my.matterport.com/show/?m=ucvB4GW2Go6)
 4. AboutSection (texte + stats + image)
 5. PortfolioSection ("Découvrez Notre Lieu" — 12 photos bento grid + lightbox + download individuel/ZIP)
@@ -189,15 +200,16 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 8. FaqSection (11 Q&A accordion)
 9. ContactSection (4 contacts + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
 
-### CTA buttons (Hero + Contact)
+### CTA buttons (Hero + Contact) — tous trackés `cta_click`
 - **"Voir les tarifs"** : bouton plein (bg-white) → `pricing.chezlesplombiers.fr` (external)
 - **"Réserver une visite"** : bouton outline (border-white) → `calendly.com/chezlesplombiers/visite` (external)
+- **"WhatsApp"** : bouton outline (Contact uniquement) → `wa.me/33688679981`
 - Labels i18n : `header.ctaQuote` / `hero.cta` dans les dictionnaires FR/EN
 
 ### Footer (4 colonnes)
 - Colonne 1 : Logo + description
 - Colonne 2 : Navigation (Accueil, Appartement, Mentions, Confidentialité)
-- Colonne 3 : Nos Espaces (7 services + 4 pages SEO + Studio + Appartement Rose)
+- Colonne 3 : Nos Espaces (6 services + 4 pages SEO + Studio + Appartement Rose)
 - Colonne 4 : Contact (WhatsApp `wa.me/33688679981`, email, adresse)
 
 ## Guide AI Concierge (/guide)

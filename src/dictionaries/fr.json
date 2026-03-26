@@ -30,7 +30,7 @@
     "ctaVisit": "Booker une visite"
   },
   "hero": {
-    "title": "Lieu Évènementiel Paris",
+    "title": "Lieu évènementiel Paris",
     "subtitle": "Recevoir Autrement.",
     "description": "Un lieu d'exception en plein cœur de Paris pour vos événements professionnels<br class=\"hidden md:block\" />dans un cadre industriel unique.",
     "cta": "Réserver une visite",
@@ -61,7 +61,7 @@
       },
       {
         "icon": "Briefcase",
-        "title": "Évènements Professionnels",
+        "title": "Évènements professionnels",
         "slug": "evenements-professionnels",
         "description": "Lancements de produits, conférences et team buildings dans un espace modulable et équipé."
       },
@@ -692,7 +692,7 @@
         "descriptionExtended": "Idéalement situé à Paris 1er, à proximité immédiate des stations Châtelet et Les Halles, Chez Les Plombiers est le lieu parfait pour organiser un petit-déjeuner professionnel qui sort de l'ordinaire. Que ce soit un breakfast presse pour le lancement d'un produit, un brunch d'équipe pour renforcer la cohésion, ou un petit-déjeuner de networking entre dirigeants, notre espace de 200 m² s'adapte à tous les formats. La cuisine professionnelle en U, équipée d'un four, réfrigérateur, congélateur et lave-vaisselle, permet à votre traiteur ou à votre équipe de préparer les mets sur place. L'éclairage naturel et le cadre architectural brutaliste créent une ambiance chaleureuse et inspirante dès les premières heures."
       },
       "evenements-professionnels": {
-        "title": "Évènements Professionnels",
+        "title": "Évènements professionnels",
         "tagline": "Conférence, lancement de produit et team building à Paris 1er.",
         "description": "Lancements de produits, conférences et team buildings dans un espace modulable et équipé au cœur de Paris 1er. Chez Les Plombiers allie architecture brutaliste spectaculaire et technologie de pointe : vidéoprojecteur 4K de 8800 lumens, système audio Sonos et XLR, fibre dédiée 1 Gb/s symétrique. L'espace de 200 m² avec 4,5 m de hauteur sous plafond se reconfigure en quelques minutes grâce aux rideaux modulables pour créer jusqu'à 3 espaces distincts.",
         "specs": [

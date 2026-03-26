@@ -27,6 +27,7 @@ import { useI18n } from "@/lib/i18n-context";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { trackEvent } from "@/lib/analytics";
 import { ReviewsSection } from "@/components/ReviewsSection";
+import { RippleButton } from "@/components/ui/ripple-button";
 
 /* ---------- Types ---------- */
 
@@ -260,7 +261,7 @@ export function SeminaireEntrepriseContent() {
               {t.hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <RippleButton
                 href={EXTERNAL_LINKS.pricing}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -270,11 +271,12 @@ export function SeminaireEntrepriseContent() {
                     destination: EXTERNAL_LINKS.pricing,
                   })
                 }
-                className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+                rippleColor="bg-black"
+                className="bg-white text-black hover:text-white px-8 py-4 text-sm uppercase tracking-widest"
               >
                 {t.hero.ctaPricing}
-              </a>
-              <a
+              </RippleButton>
+              <RippleButton
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -284,11 +286,12 @@ export function SeminaireEntrepriseContent() {
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
-                className="inline-flex items-center gap-3 border border-white/30 hover:border-white text-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+                rippleColor="bg-white"
+                className="border border-white text-white hover:text-black px-8 py-4 text-sm uppercase tracking-widest"
               >
                 <Calendar className="w-4 h-4" />
                 {t.hero.ctaCalendly}
-              </a>
+              </RippleButton>
             </div>
           </motion.div>
         </div>
@@ -679,7 +682,7 @@ export function SeminaireEntrepriseContent() {
               {t.cta.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
+              <RippleButton
                 href={EXTERNAL_LINKS.pricing}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -689,11 +692,12 @@ export function SeminaireEntrepriseContent() {
                     destination: EXTERNAL_LINKS.pricing,
                   })
                 }
-                className="inline-flex items-center gap-3 bg-white text-black hover:bg-white/90 px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+                rippleColor="bg-black"
+                className="bg-white text-black hover:text-white px-8 py-4 text-sm uppercase tracking-widest"
               >
                 {t.cta.pricing}
-              </a>
-              <a
+              </RippleButton>
+              <RippleButton
                 href={EXTERNAL_LINKS.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -703,12 +707,13 @@ export function SeminaireEntrepriseContent() {
                     destination: EXTERNAL_LINKS.calendly,
                   })
                 }
-                className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+                rippleColor="bg-white"
+                className="border border-white text-white hover:text-black px-8 py-4 text-sm uppercase tracking-widest"
               >
                 <Calendar className="w-4 h-4" />
                 {t.cta.calendly}
-              </a>
-              <a
+              </RippleButton>
+              <RippleButton
                 href={EXTERNAL_LINKS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -718,11 +723,12 @@ export function SeminaireEntrepriseContent() {
                     destination: EXTERNAL_LINKS.whatsapp,
                   })
                 }
-                className="inline-flex items-center gap-3 border border-white/30 hover:border-white px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300"
+                rippleColor="bg-white"
+                className="border border-white text-white hover:text-black px-8 py-4 text-sm uppercase tracking-widest"
               >
                 <MessageCircle className="w-4 h-4" />
                 {t.cta.whatsapp}
-              </a>
+              </RippleButton>
             </div>
           </motion.div>
         </div>

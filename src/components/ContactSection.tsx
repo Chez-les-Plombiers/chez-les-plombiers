@@ -6,6 +6,7 @@ import type { LucideIcon } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { trackEvent } from "@/lib/analytics";
+import { RippleButton } from "@/components/ui/ripple-button";
 
 const icons: LucideIcon[] = [MapPin, Mail, Phone, Instagram];
 
@@ -165,63 +166,51 @@ export function ContactSection() {
                 </p>
 
                 <div className="flex flex-col gap-3">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                  <RippleButton
+                    href={EXTERNAL_LINKS.pricing}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    rippleColor="bg-black"
+                    className="w-full bg-white text-black hover:text-white py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em]"
+                    onClick={() =>
+                      trackEvent("cta_click", {
+                        label: "contact_pricing",
+                        destination: EXTERNAL_LINKS.pricing,
+                      })
+                    }
                   >
-                    <a
-                      href={EXTERNAL_LINKS.pricing}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() =>
-                        trackEvent("cta_click", {
-                          label: "contact_pricing",
-                          destination: EXTERNAL_LINKS.pricing,
-                        })
-                      }
-                      className="block w-full bg-white text-black hover:bg-white/90 py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em] transition-all duration-300 text-center"
-                    >
-                      {header.ctaQuote}
-                    </a>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    {header.ctaQuote}
+                  </RippleButton>
+                  <RippleButton
+                    href={EXTERNAL_LINKS.calendly}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    rippleColor="bg-white"
+                    className="w-full border border-white text-white hover:text-black py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em]"
+                    onClick={() =>
+                      trackEvent("cta_click", {
+                        label: "contact_calendly",
+                        destination: EXTERNAL_LINKS.calendly,
+                      })
+                    }
                   >
-                    <a
-                      href={EXTERNAL_LINKS.calendly}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() =>
-                        trackEvent("cta_click", {
-                          label: "contact_calendly",
-                          destination: EXTERNAL_LINKS.calendly,
-                        })
-                      }
-                      className="block w-full border border-white text-white hover:bg-white hover:text-black py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em] transition-all duration-300 text-center"
-                    >
-                      {contact.visit.cta}
-                    </a>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    {contact.visit.cta}
+                  </RippleButton>
+                  <RippleButton
+                    href={EXTERNAL_LINKS.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    rippleColor="bg-white"
+                    className="w-full border border-white text-white hover:text-black py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em]"
+                    onClick={() =>
+                      trackEvent("cta_click", {
+                        label: "contact_whatsapp",
+                        destination: EXTERNAL_LINKS.whatsapp,
+                      })
+                    }
                   >
-                    <a
-                      href={EXTERNAL_LINKS.whatsapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() =>
-                        trackEvent("cta_click", {
-                          label: "contact_whatsapp",
-                          destination: EXTERNAL_LINKS.whatsapp,
-                        })
-                      }
-                      className="block w-full border border-white text-white hover:bg-white hover:text-black py-5 lg:py-7 text-sm lg:text-lg uppercase tracking-[0.1em] lg:tracking-[0.2em] transition-all duration-300 text-center"
-                    >
-                      WhatsApp
-                    </a>
-                  </motion.div>
+                    WhatsApp
+                  </RippleButton>
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-white/10">

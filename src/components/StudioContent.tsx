@@ -26,6 +26,7 @@ import {
 import JSZip from "jszip";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { useI18n } from "@/lib/i18n-context";
+import { RippleButton } from "@/components/ui/ripple-button";
 
 const STUDIO_PHOTOS = [
   { src: "/photos/studio/cyclorama-portrait.jpg", alt: "Mur cyclorama 4,63 m × 3,40 m — studio photo Paris 1er" },
@@ -678,26 +679,24 @@ export function StudioContent() {
               {studio.ctaDescription}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <a
-                  href={EXTERNAL_LINKS.email}
-                  className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 text-sm uppercase tracking-widest hover:bg-white/90 transition-colors"
-                >
-                  {studio.ctaButton}
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <a
-                  href={EXTERNAL_LINKS.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 border border-white/30 text-white px-10 py-5 text-sm uppercase tracking-widest hover:bg-white/10 transition-colors"
-                >
-                  WhatsApp
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </motion.div>
+              <RippleButton
+                href={EXTERNAL_LINKS.email}
+                rippleColor="bg-black"
+                className="bg-white text-black hover:text-white px-10 py-5 text-sm uppercase tracking-widest"
+              >
+                {studio.ctaButton}
+                <ArrowRight className="w-4 h-4" />
+              </RippleButton>
+              <RippleButton
+                href={EXTERNAL_LINKS.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                rippleColor="bg-white"
+                className="border border-white text-white hover:text-black px-10 py-5 text-sm uppercase tracking-widest"
+              >
+                WhatsApp
+                <ArrowRight className="w-4 h-4" />
+              </RippleButton>
             </div>
           </motion.div>
         </div>
