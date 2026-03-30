@@ -70,6 +70,9 @@ const nextConfig: NextConfig = {
       // Fix GSC 404 errors
       { source: "/lieu", destination: "/", permanent: true },
       { source: "/en/fr", destination: "/en", permanent: true },
+      // Old service slug redirect
+      { source: "/services/diners-prives", destination: "/services/diners-exception", permanent: true },
+      { source: "/en/services/diners-prives", destination: "/en/services/exceptional-dinners", permanent: true },
       // Legacy Squarespace pages
       { source: "/blank", destination: "/", permanent: true },
       { source: "/blank-1", destination: "/", permanent: true },

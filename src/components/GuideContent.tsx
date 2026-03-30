@@ -6,6 +6,7 @@ import { Send, Loader2, RotateCcw, Trash2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { useI18n } from "@/lib/i18n-context";
+import { trackEvent } from "@/lib/analytics";
 
 interface GuideDict {
   title: string;
@@ -127,6 +128,7 @@ export function GuideContent() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackEvent("form_submit", { form_name: "guide_chatbot", form_location: "guide_page" });
     askQuestion(query);
   };
 
