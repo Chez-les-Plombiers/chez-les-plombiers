@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { locales, getDictionary, type Locale } from "@/lib/i18n";
 import { I18nProvider } from "@/lib/i18n-context";
 import { GA_MEASUREMENT_ID, GTM_ID } from "@/lib/analytics";
@@ -128,6 +129,8 @@ export default async function LocaleLayout({
         <I18nProvider locale={locale as Locale} dict={dict}>
           {children}
         </I18nProvider>
+
+        <Analytics />
 
         <Script id="axeptio" strategy="lazyOnload">
           {`window.axeptioSettings = {
