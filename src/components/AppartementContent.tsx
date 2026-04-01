@@ -11,6 +11,7 @@ import { useI18n } from "@/lib/i18n-context";
 import { SERVICE_FR_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { RippleButton } from "@/components/ui/ripple-button";
+import ClientLogosSection from "@/components/ClientLogosSection";
 
 const appartPhotos = Array.from({ length: 10 }, (_, i) => {
   const num = String(i + 1).padStart(2, "0");
@@ -162,6 +163,8 @@ export function AppartementContent() {
           </motion.div>
         </div>
       </section>
+
+      <ClientLogosSection theme="light" title="" />
 
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">

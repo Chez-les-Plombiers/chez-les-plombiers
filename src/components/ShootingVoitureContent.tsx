@@ -296,6 +296,8 @@ export function ShootingVoitureContent() {
         </div>
       </section>
 
+      <ClientLogosSection theme="light" title="" />
+
       {/* ============================================================ */}
       {/* (b) LE SEUL STUDIO AUTO AVEC ACCES RUE                       */}
       {/* ============================================================ */}

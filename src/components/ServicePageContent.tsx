@@ -250,6 +250,8 @@ export function ServicePageContent({ slug }: { slug: string }) {
         </div>
       </section>
 
+      <ClientLogosSection theme="light" title="" />
+
       {/* Description + Specs */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">

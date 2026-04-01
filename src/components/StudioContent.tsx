@@ -27,6 +27,7 @@ import JSZip from "jszip";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { useI18n } from "@/lib/i18n-context";
 import { RippleButton } from "@/components/ui/ripple-button";
+import ClientLogosSection from "@/components/ClientLogosSection";
 
 const STUDIO_PHOTOS = [
   { src: "/photos/studio/cyclorama-portrait.jpg", alt: "Mur cyclorama 4,63 m × 3,40 m — studio photo Paris 1er" },
@@ -218,6 +219,8 @@ export function StudioContent() {
           </div>
         </div>
       </section>
+
+      <ClientLogosSection theme="light" title="" />
 
       {/* GALERIE avec lightbox + download */}
       <section className="bg-gray-50 py-16 lg:py-24">

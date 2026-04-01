@@ -328,6 +328,8 @@ export function LieuEvenementielContent() {
         </div>
       </section>
 
+      <ClientLogosSection theme="light" title="" />
+
       {/* ================================================================== */}
       {/*  (b) Notre Espace                                                   */}
       {/* ================================================================== */}

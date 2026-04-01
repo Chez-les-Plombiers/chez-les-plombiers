@@ -283,6 +283,8 @@ export function EspaceAtypiqueContent() {
         </div>
       </section>
 
+      <ClientLogosSection theme="light" title="" />
+
       {/* ═══════════════════════════════════
           (b) L'Histoire du Lieu
       ═══════════════════════════════════ */}

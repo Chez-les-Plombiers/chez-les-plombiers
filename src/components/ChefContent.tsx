@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { useI18n } from "@/lib/i18n-context";
 import { RippleButton } from "@/components/ui/ripple-button";
+import ClientLogosSection from "@/components/ClientLogosSection";
 
 interface GalleryItem {
   label: string;
@@ -89,6 +90,8 @@ export function ChefContent() {
           </motion.p>
         </div>
       </section>
+
+      <ClientLogosSection theme="light" title="" />
 
       {/* ACCROCHE */}
       <section className="py-20 lg:py-28 bg-white">

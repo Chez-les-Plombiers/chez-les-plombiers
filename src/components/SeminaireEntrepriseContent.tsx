@@ -301,6 +301,8 @@ export function SeminaireEntrepriseContent() {
         </div>
       </section>
 
+      <ClientLogosSection theme="light" title="" />
+
       {/* ====== ABOUT — Un lieu hors du commun ====== */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
