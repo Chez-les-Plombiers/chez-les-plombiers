@@ -25,6 +25,7 @@ import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { trackEvent } from "@/lib/analytics";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { SeoPagesCrossLinks } from "@/components/SeoPagesCrossLinks";
+import ClientLogosSection from "@/components/ClientLogosSection";
 import { RippleButton } from "@/components/ui/ripple-button";
 
 /* ---------- Types ---------- */
@@ -622,6 +623,8 @@ export function EspaceAtypiqueContent() {
           </div>
         </div>
       </section>
+
+      <ClientLogosSection compact />
 
       <SeoPagesCrossLinks currentSlugFr="espace-atypique-paris" />
 

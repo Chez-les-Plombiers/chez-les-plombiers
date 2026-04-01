@@ -29,6 +29,7 @@ import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { trackEvent } from "@/lib/analytics";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { SeoPagesCrossLinks } from "@/components/SeoPagesCrossLinks";
+import ClientLogosSection from "@/components/ClientLogosSection";
 import { RippleButton } from "@/components/ui/ripple-button";
 import { FEATURED_SERVICE_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 
@@ -714,6 +715,8 @@ export function SeminaireEntrepriseContent() {
           </div>
         </div>
       </section>
+
+      <ClientLogosSection compact />
 
       <SeoPagesCrossLinks currentSlugFr="seminaire-entreprise-paris" />
 
