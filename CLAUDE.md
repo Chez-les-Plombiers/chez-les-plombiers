@@ -11,7 +11,8 @@ Site vitrine bilingue (FR/EN) pour **Chez Les Plombiers**, lieu événementiel d
 - **Motion** (framer-motion v12+ via `motion/react`) pour les animations
 - **Lucide React** pour les icônes
 - **Vercel** hosting, auto-deploy sur push main
-- **DNS**: Gandi (anycast.me NS), A `76.76.21.21`, CNAME www → `cname.vercel-dns.com`
+- **Vercel Analytics** (`@vercel/analytics`) pour page views
+- **DNS**: Gandi (anycast.me NS), A `216.198.79.1`, CNAME www → `afaeb59f7734cb3a.vercel-dns-017.com`
 - **Domaines Vercel**: `www.chezlesplombiers.fr` (principal) + `chezlesplombiers.fr` (redirect → www)
 
 ## Commandes
@@ -74,7 +75,7 @@ src/app/
     error.tsx
     services/[slug]/page.tsx   # Pages services dynamiques (7 FR + 7 EN) — 3 JSON-LD (Service, BreadcrumbList, FAQPage)
   robots.ts          # robots.txt dynamique (AI bots autorisés)
-  sitemap.ts         # sitemap.xml (22 URLs: 11 FR + 11 EN avec hreflang)
+  sitemap.ts         # sitemap.xml (38 URLs: 19 FR + 19 EN avec hreflang)
   globals.css        # Design tokens Tailwind v4
 
 src/components/      # Tous "use client" — utilisent useI18n()
@@ -98,7 +99,7 @@ src/lib/
   i18n.ts            # Config locales, slug mapping (pages + services), getDictionary(), getAlternatePath()
   i18n-context.tsx   # I18nProvider + useI18n() hook (React Context)
   metadata.ts        # Constantes SEO partagées + liens externes
-  analytics.ts       # GA4 typed helper + GTM ID — events: cta_click, contact_click, nav_click, section_view
+  analytics.ts       # GA4 typed helper + GTM ID — events: cta_click, contact_click, nav_click, section_view, form_submit
   services-data.ts   # Slugs services FR↔EN, images, SERVICE_GALLERY, FEATURED_SERVICE_SLUGS (6), resolveServiceSlug()
   guide-knowledge.ts # Knowledge base AI concierge (system prompt FR/EN + infos lieu)
 
@@ -123,8 +124,9 @@ public/
 ```
 
 ## Analytics
-- **GA4**: G-P14K1RH61R
+- **GA4**: G-P14K1RH61R (property 524917305)
 - **GTM**: GTM-PXGXK94F
+- **Vercel Analytics**: `@vercel/analytics` (composant `<Analytics />` dans layout)
 - **Clarity**: vju7iukwc9 (raw `<script>` dans `<head>`, pas `<Script>` Next.js)
 - **Axeptio**: 699344885a2a098410f72b36
 
@@ -141,7 +143,7 @@ public/
 - **og:locale**: `fr_FR` / `en_US`
 - **JSON-LD**: EventVenue, Organization, LocalBusiness, FAQPage (homepage) + Service, BreadcrumbList, FAQPage (pages services) + EventVenue, LocalBusiness, FAQPage, BreadcrumbList (pages SEO) — tous avec `inLanguage`
 - **robots.txt**: AI bots (GPTBot, ClaudeBot, PerplexityBot) autorisés
-- **sitemap.xml**: 30 URLs (15 FR + 15 EN) avec alternates, toutes sous `www.`
+- **sitemap.xml**: 38 URLs (19 FR + 19 EN) avec alternates, toutes sous `www.`
 - Open Graph + Twitter Cards sur toutes les pages
 - **llms.txt**: fichier de guidage AI crawlers bilingue (URLs sous `www.`)
 - **Meta titles**: keyword-first (ex: "Lieu Évènementiel Paris 1er — 200m² | Chez Les Plombiers")
@@ -151,6 +153,7 @@ public/
 - **Downloads fonctionnels**: 4 plans PDF (dropdown) + plaquette PDF hébergés sur Vercel
 - **Maillage interne**: cross-links entre pages services, liens Appartement ↔ services, colonne services dans Footer, pages SEO ↔ services
 - **Redirections legacy**: /visiter, /histoire, /infos → 301 vers anchors homepage (ancien site Figma)
+- **Redirect slug**: /services/diners-prives → /services/diners-exception (301)
 - **Pages SEO (23/03/2026)**: 4 landing pages non-branded avec FAQ 6 Q&A + galerie photos + Reviews Google
 
 ## Pages SEO Landing Pages (racine)

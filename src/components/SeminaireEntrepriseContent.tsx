@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import {
   Building2,
   LayoutGrid,
@@ -27,7 +28,9 @@ import { useI18n } from "@/lib/i18n-context";
 import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { trackEvent } from "@/lib/analytics";
 import { ReviewsSection } from "@/components/ReviewsSection";
+import { SeoPagesCrossLinks } from "@/components/SeoPagesCrossLinks";
 import { RippleButton } from "@/components/ui/ripple-button";
+import { FEATURED_SERVICE_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 
 /* ---------- Types ---------- */
 
@@ -665,6 +668,54 @@ export function SeminaireEntrepriseContent() {
           </div>
         </div>
       </section>
+
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <h2 className="text-2xl lg:text-3xl font-light mb-10 tracking-tight">
+            {locale === "en" ? "Our Events" : "Nos Événements"}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {FEATURED_SERVICE_SLUGS.map((serviceSlug, i) => {
+              const serviceDict = (dict.servicePages as Record<string, unknown>)?.services as Record<string, { title: string }> | undefined;
+              const dictKey = locale === "en" ? getServiceEnSlug(serviceSlug) : serviceSlug;
+              const serviceData = serviceDict?.[dictKey];
+              if (!serviceData) return null;
+              const serviceHref = locale === "en"
+                ? `/en/services/${getServiceEnSlug(serviceSlug)}`
+                : `/services/${serviceSlug}`;
+              return (
+                <motion.div
+                  key={serviceSlug}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.5, delay: i * 0.06 }}
+                >
+                  <Link
+                    href={serviceHref}
+                    onClick={() =>
+                      trackEvent("nav_click", {
+                        label: `seminaire_crosslink_${serviceSlug}`,
+                        destination: serviceHref,
+                      })
+                    }
+                    className="group block border border-gray-200 bg-white p-6 transition-all duration-300 hover:border-black hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02]"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-light uppercase tracking-[0.1em] group-hover:text-black transition-colors">
+                        {serviceData.title}
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-black group-hover:translate-x-1 transition-all duration-300" />
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <SeoPagesCrossLinks currentSlugFr="seminaire-entreprise-paris" />
 
       {/* ====== CTA ====== */}
       <section className="py-20 lg:py-28 bg-black text-white">

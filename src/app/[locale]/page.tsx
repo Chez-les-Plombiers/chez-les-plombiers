@@ -9,6 +9,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { SeoLandingPagesSection } from "@/components/SeoLandingPagesSection";
 import { InstagramFeed } from "@/components/InstagramFeed";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SITE_URL } from "@/lib/metadata";
@@ -190,6 +191,7 @@ export default async function Home({
       <main id="main-content">
         <HeroSection />
         <ServicesSection />
+        <SeoLandingPagesSection />
         <VirtualTour />
         <AboutSection />
         <PortfolioSection />

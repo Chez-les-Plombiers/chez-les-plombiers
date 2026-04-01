@@ -19,6 +19,7 @@ import { EXTERNAL_LINKS } from "@/lib/metadata";
 import { trackEvent } from "@/lib/analytics";
 import { ArrowRight } from "lucide-react";
 import { SERVICE_IMAGES, SERVICE_GALLERY, FEATURED_SERVICE_SLUGS, getServiceEnSlug } from "@/lib/services-data";
+import { SEO_PAGES, SERVICE_TO_SEO_PAGE } from "@/lib/seo-pages-data";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { RippleButton } from "@/components/ui/ripple-button";
 
@@ -550,6 +551,39 @@ export function ServicePageContent({ slug }: { slug: string }) {
           </div>
         </div>
       </section>
+
+      {(() => {
+        const seoSlugFr = SERVICE_TO_SEO_PAGE[slug];
+        const seoPage = seoSlugFr
+          ? SEO_PAGES.find((p) => p.slugFr === seoSlugFr)
+          : null;
+        if (!seoPage) return null;
+        const seoSlug = locale === "en" ? seoPage.slugEn : seoPage.slugFr;
+        const seoHref = `${prefix}/${seoSlug}`;
+        return (
+          <section className="py-8 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12">
+              <Link
+                href={seoHref}
+                onClick={() =>
+                  trackEvent("nav_click", {
+                    label: `service_to_seo_${seoPage.slugFr}`,
+                    destination: seoHref,
+                  })
+                }
+                className="group flex items-center justify-between py-4 border-b border-gray-200 hover:border-black transition-colors duration-300"
+              >
+                <span className="text-sm text-gray-600 group-hover:text-black transition-colors">
+                  {locale === "en"
+                    ? `See also: ${seoPage.titleEn}`
+                    : `Voir aussi : ${seoPage.titleFr}`}
+                </span>
+                <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-black group-hover:translate-x-1 transition-all duration-300" />
+              </Link>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* CTA */}
       <section className="py-20 lg:py-28 bg-black text-white">
