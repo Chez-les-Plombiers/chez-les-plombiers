@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StudioContent } from "@/components/StudioContent";
+import ClientLogosSection from "@/components/ClientLogosSection";
 import { SITE_URL } from "@/lib/metadata";
 import { getDictionary, type Locale } from "@/lib/i18n";
 
@@ -156,6 +157,7 @@ export default async function StudioPage({
       <Header />
       <main id="main-content">
         <StudioContent />
+        <ClientLogosSection compact />
       </main>
       <Footer />
     </>

@@ -193,7 +193,7 @@ export default async function Home({
         <HeroSection />
         <ServicesSection />
         <SeoLandingPagesSection />
-        <ClientLogosSection />
+        <ClientLogosSection static />
         <VirtualTour />
         <AboutSection />
         <PortfolioSection />

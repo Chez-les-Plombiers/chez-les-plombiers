@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AppartementContent } from "@/components/AppartementContent";
+import ClientLogosSection from "@/components/ClientLogosSection";
 import { SITE_URL } from "@/lib/metadata";
 import { getDictionary, type Locale } from "@/lib/i18n";
 
@@ -129,6 +130,7 @@ export default async function AppartementPage({
       <Header />
       <main id="main-content">
         <AppartementContent />
+        <ClientLogosSection compact />
       </main>
       <Footer />
     </>

@@ -21,6 +21,7 @@ import { ArrowRight } from "lucide-react";
 import { SERVICE_IMAGES, SERVICE_GALLERY, FEATURED_SERVICE_SLUGS, getServiceEnSlug } from "@/lib/services-data";
 import { SEO_PAGES, SERVICE_TO_SEO_PAGE } from "@/lib/seo-pages-data";
 import { ReviewsSection } from "@/components/ReviewsSection";
+import ClientLogosSection from "@/components/ClientLogosSection";
 import { RippleButton } from "@/components/ui/ripple-button";
 
 interface ServiceSpec {
@@ -584,6 +585,8 @@ export function ServicePageContent({ slug }: { slug: string }) {
           </section>
         );
       })()}
+
+      <ClientLogosSection compact />
 
       {/* CTA */}
       <section className="py-20 lg:py-28 bg-black text-white">
