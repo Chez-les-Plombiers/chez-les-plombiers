@@ -18,6 +18,10 @@
         "href": "/en/studio"
       },
       {
+        "label": "Our Chef",
+        "href": "/en/our-chef"
+      },
+      {
         "label": "The Pink Apartment",
         "href": "/en/apartment"
       }
@@ -405,6 +409,10 @@
       {
         "label": "Photo & Video Studio",
         "href": "/en/studio"
+      },
+      {
+        "label": "Our Chef",
+        "href": "/en/our-chef"
       },
       {
         "label": "The Pink Apartment",

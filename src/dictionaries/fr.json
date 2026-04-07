@@ -18,6 +18,10 @@
         "href": "/studio"
       },
       {
+        "label": "Notre Chef",
+        "href": "/notre-chef"
+      },
+      {
         "label": "L'Appartement Rose",
         "href": "/appartement"
       }
@@ -405,6 +409,10 @@
       {
         "label": "Studio Photo & Vidéo",
         "href": "/studio"
+      },
+      {
+        "label": "Notre Chef",
+        "href": "/notre-chef"
       },
       {
         "label": "L'Appartement Rose",
