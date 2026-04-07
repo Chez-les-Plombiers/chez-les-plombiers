@@ -56,6 +56,8 @@ npm run lint     # ESLint
 /en/privacy-policy                       → EN
 /guide                                   → FR (chatbot AI concierge)
 /en/guide                                → EN (chatbot AI concierge)
+/infos                                   → FR (infos pratiques + accès)
+/en/info                                 → EN (practical info)
 ```
 
 ## Structure
@@ -67,9 +69,11 @@ src/app/
     page.tsx         # Home — 7 sections + 4 JSON-LD (EventVenue, Organization, LocalBusiness, FAQPage)
     appartement/page.tsx        # L'Appartement Rose (FR)
     apartment/page.tsx          # The Pink Apartment (EN, re-export)
-    mentions-legales/page.tsx   # Mentions légales (FR)
+    infos/page.tsx              # Infos pratiques + accès (FR) — 3 JSON-LD (EventVenue, FAQPage, BreadcrumbList)
+    info/page.tsx               # Practical info (EN, re-export)
+    mentions-legales/page.tsx   # Mentions légales (FR) — JSON-LD WebPage + Organization + BreadcrumbList
     legal-notice/page.tsx       # Legal Notice (EN, re-export)
-    politique-confidentialite/page.tsx  # RGPD (FR)
+    politique-confidentialite/page.tsx  # RGPD (FR) — JSON-LD PrivacyPolicy + Organization + BreadcrumbList
     privacy-policy/page.tsx     # Privacy Policy (EN, re-export)
     not-found.tsx
     error.tsx
@@ -91,6 +95,7 @@ src/components/      # Tous "use client" — utilisent useI18n()
   ContactSection.tsx # 4 contacts + 3 CTA (Pricing + Calendly + WhatsApp) avec tracking cta_click
   AppartementContent.tsx # Page Appartement Rose (galerie 10 photos bento + lightbox + ZIP download + reviews Google)
   ServicePageContent.tsx # Pages services (hero + 2 CTA, specs, galerie bento, features, reviews, FAQ, cross-links animés, CTA footer)
+  InfosContent.tsx   # Page /infos (hero adresse, 4 stats, 6 cards accès, Google Maps embed, 3 cards quartier avec liens cliquables, 4 cards contact, FAQ)
   ui/ripple-button.tsx # Bouton avec effet ripple hover (utilisé dans Hero)
   GuideContent.tsx   # Chat AI concierge multi-turn (streaming, bulles user/assistant, markdown)
   ScrollAnimation.tsx # Wrapper réutilisable whileInView
@@ -141,9 +146,9 @@ public/
 - **hreflang**: chaque page a `alternates.languages: { fr, en }` dans `generateMetadata`
 - **Canonical**: par langue (chaque version est sa propre canonical), toutes sous `www.`
 - **og:locale**: `fr_FR` / `en_US`
-- **JSON-LD**: EventVenue, Organization, LocalBusiness, FAQPage (homepage) + Service, BreadcrumbList, FAQPage (pages services) + EventVenue, LocalBusiness, FAQPage, BreadcrumbList (pages SEO) — tous avec `inLanguage`
+- **JSON-LD**: EventVenue, Organization, LocalBusiness, FAQPage (homepage) + Service, BreadcrumbList, FAQPage (pages services) + EventVenue, LocalBusiness, FAQPage, BreadcrumbList (pages SEO) + EventVenue, FAQPage, BreadcrumbList (/infos) + WebPage, Organization, BreadcrumbList (pages légales) + WebPage (/guide) — tous avec `inLanguage`
 - **robots.txt**: AI bots (GPTBot, ClaudeBot, PerplexityBot) autorisés
-- **sitemap.xml**: 38 URLs (19 FR + 19 EN) avec alternates, toutes sous `www.`
+- **sitemap.xml**: 40 URLs (20 FR + 20 EN) avec alternates, toutes sous `www.`
 - Open Graph + Twitter Cards sur toutes les pages
 - **llms.txt**: fichier de guidage AI crawlers bilingue (URLs sous `www.`)
 - **Meta titles**: keyword-first (ex: "Lieu Évènementiel Paris 1er — 200m² | Chez Les Plombiers")
@@ -152,9 +157,28 @@ public/
 - **Alt texts enrichis**: descriptions contextuelles sur toutes les images
 - **Downloads fonctionnels**: 4 plans PDF (dropdown) + plaquette PDF hébergés sur Vercel
 - **Maillage interne**: cross-links entre pages services, liens Appartement ↔ services, colonne services dans Footer, pages SEO ↔ services
-- **Redirections legacy**: /visiter, /histoire, /infos → 301 vers anchors homepage (ancien site Figma)
+- **Redirections legacy**: /visiter, /histoire → 308 vers anchors homepage (ancien site Figma). `/infos` est désormais une vraie page (créée 07/04/2026 pour capter les requêtes "39 rue des bourdonnais")
 - **Redirect slug**: /services/diners-prives → /services/diners-exception (301)
 - **Pages SEO (23/03/2026)**: 4 landing pages non-branded avec FAQ 6 Q&A + galerie photos + Reviews Google
+
+## Page /infos (07/04/2026)
+Page Infos pratiques + accès créée pour capter les 340 impressions/3 mois GSC sur "39 rue des bourdonnais" (auparavant en 404 sur l'ancienne URL `/infos`).
+
+Structure : Hero (eyebrow + titre + adresse + 2 CTAs Calendly/Maps) → ClientLogosSection light → 4 stats (200m², 150/80, Lun-Sam, 36 KvA) → 6 cards d'accès (Métro Châtelet, RER, Voiture, À pied du Marais, PMR, Aéroports) → Google Maps embed → 3 cards "Le quartier" avec **liens cliquables vers sites officiels** (Restaurants, Hôtels, Lieux emblématiques) → 4 cards Contact dark (Tel/WhatsApp, Email, Adresse, Instagram) → ReviewsSection → FAQ 6 Q&A → ClientLogosSection compact → SeoPagesCrossLinks → CTA final.
+
+Liens externes vérifiés (avril 2026) dans la section neighborhood :
+- Restaurants : Frenchie, Verjus, Le Soufflé, Loulou (Tuileries)
+- Hôtels : Hôtel du Louvre Hyatt, Hôtel Le Pradey, Hôtel Thérèse, Citadines Les Halles
+- Lieux : Louvre, Notre-Dame, Tuileries, Pont Neuf, Westfield Forum des Halles
+- ⚠️ Centre Pompidou retiré (fermé pour rénovation 2025-2030)
+- ⚠️ Pirouette / Champeaux / Hôtel des Métiers retirés (fermés ou inexistants)
+
+Composant : `InfosContent.tsx` — section neighborhood avec structure `categories[].items[]` (name + url) et tracking `nav_click` sur chaque clic externe (label `infos_neighborhood_<slug>`).
+
+Dict keys : `infos.hero`, `infos.access`, `infos.details`, `infos.contact`, `infos.map`, `infos.neighborhood`, `infos.faq`, `infos.cta`
+
+## Backlink outreach data
+`data/outreach/event-agencies-paris.csv` — 122 agences événementielles parisiennes dédupliquées et triées par nombre d'avis Google. Source : Google Maps. Colonnes : name, type, url, rating, review_count, address, phone, outreach_status, notes. Top contacts : L'Antichambre Escape Games (1355 avis), Crazy EVG (596), Privateaser (460), Jardins du Pont Neuf (445), La Belle Equipe (372).
 
 ## Pages SEO Landing Pages (racine)
 4 pages ciblant le trafic non-branded, chacune avec page FR + EN (8 pages total) :
