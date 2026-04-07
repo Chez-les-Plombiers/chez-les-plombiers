@@ -5,6 +5,7 @@ export const defaultLocale: Locale = "fr";
 // Slug mapping: FR slug <-> EN slug
 const slugMap: Record<string, string> = {
   appartement: "apartment",
+  infos: "info",
   "mentions-legales": "legal-notice",
   "politique-confidentialite": "privacy-policy",
   "notre-chef": "our-chef",

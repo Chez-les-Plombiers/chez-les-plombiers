@@ -1905,5 +1905,191 @@
       "calendly": "Réserver une visite",
       "whatsapp": "WhatsApp"
     }
+  },
+  "infos": {
+    "hero": {
+      "eyebrow": "Infos pratiques",
+      "title": "Venir Chez Les Plombiers",
+      "subtitle": "Lieu événementiel de 200 m² au cœur de Paris 1er, à 3 minutes à pied du métro Châtelet.",
+      "address": "39 rue des Bourdonnais, 75001 Paris",
+      "ctaCalendly": "Réserver une visite",
+      "ctaMaps": "Itinéraire Google Maps",
+      "imageAlt": "Façade de Chez Les Plombiers, 39 rue des Bourdonnais Paris 1er"
+    },
+    "access": {
+      "sectionTitle": "Comment venir",
+      "intro": "Au cœur du 1er arrondissement, Chez Les Plombiers est l'un des lieux événementiels les plus accessibles de Paris. Métro, RER, parking : toutes les options sont à 5 minutes maximum.",
+      "items": [
+        {
+          "icon": "Train",
+          "title": "Métro Châtelet",
+          "subtitle": "3 min à pied",
+          "description": "Lignes 1, 4, 7, 11 et 14 — la station la plus connectée de Paris. Sortie Rivoli ou Sainte-Opportune."
+        },
+        {
+          "icon": "Train",
+          "title": "RER Châtelet — Les Halles",
+          "subtitle": "5 min à pied",
+          "description": "RER A, B et D directement depuis Roissy CDG, Orly, La Défense et toutes les gares parisiennes."
+        },
+        {
+          "icon": "Car",
+          "title": "En voiture",
+          "subtitle": "Parking Saint-Eustache",
+          "description": "Parking public Indigo Saint-Eustache à 4 min à pied. Accès véhicule direct sur rue pour livraisons et installations volumineuses."
+        },
+        {
+          "icon": "Footprints",
+          "title": "À pied du Marais",
+          "subtitle": "10 min à pied",
+          "description": "Depuis le Centre Pompidou, Beaubourg ou la rue de Rivoli, une promenade idéale au cœur du Paris historique."
+        },
+        {
+          "icon": "Accessibility",
+          "title": "Accessibilité PMR",
+          "subtitle": "Plain-pied",
+          "description": "L'entrée principale est de plain-pied depuis la rue. L'espace intérieur est entièrement accessible aux personnes à mobilité réduite."
+        },
+        {
+          "icon": "Plane",
+          "title": "Depuis les aéroports",
+          "subtitle": "RER B + 5 min",
+          "description": "Roissy CDG : 35 min via RER B direct. Orly : 30 min via Orlyval + RER B. Aéroport Le Bourget : 40 min."
+        }
+      ]
+    },
+    "details": {
+      "sectionTitle": "Le lieu en chiffres",
+      "items": [
+        {
+          "icon": "Maximize2",
+          "label": "Surface modulable",
+          "value": "200 m²"
+        },
+        {
+          "icon": "Users",
+          "label": "Capacité maximale",
+          "value": "150 cocktail · 80 assis"
+        },
+        {
+          "icon": "Clock",
+          "label": "Visites du lieu",
+          "value": "Lun – Sam · 10h – 18h"
+        },
+        {
+          "icon": "Zap",
+          "label": "Puissance électrique",
+          "value": "36 KvA triphasé"
+        }
+      ]
+    },
+    "contact": {
+      "sectionTitle": "Nous contacter",
+      "intro": "Notre équipe répond sous 24h ouvrées. Pour une réponse immédiate, privilégiez WhatsApp.",
+      "items": [
+        {
+          "icon": "Phone",
+          "label": "Téléphone & WhatsApp",
+          "value": "+33 6 88 67 99 81",
+          "href": "tel:+33688679981"
+        },
+        {
+          "icon": "Mail",
+          "label": "Email",
+          "value": "contact@chezlesplombiers.fr",
+          "href": "mailto:contact@chezlesplombiers.fr"
+        },
+        {
+          "icon": "MapPin",
+          "label": "Adresse",
+          "value": "39 rue des Bourdonnais, 75001 Paris",
+          "href": "https://maps.google.com/?q=39+rue+des+Bourdonnais+75001+Paris"
+        },
+        {
+          "icon": "Instagram",
+          "label": "Instagram",
+          "value": "@chezlesplombiers",
+          "href": "https://instagram.com/chezlesplombiers"
+        }
+      ]
+    },
+    "map": {
+      "sectionTitle": "Sur la carte",
+      "intro": "Cœur du 1er arrondissement, à équidistance du Louvre, du Centre Pompidou et de l'Île de la Cité.",
+      "iframeTitle": "Carte de localisation Chez Les Plombiers, 39 rue des Bourdonnais Paris 1er"
+    },
+    "neighborhood": {
+      "sectionTitle": "Le quartier",
+      "intro": "Vos invités auront tout sur place : restaurants étoilés, hôtels de charme, monuments emblématiques. Idéal pour les événements pros et les invités venant de province ou de l'étranger.",
+      "categories": [
+        {
+          "title": "Restaurants",
+          "intro": "La scène gastronomique du 1er, à 5 minutes à pied.",
+          "items": [
+            { "name": "Frenchie", "url": "https://www.frenchie-restaurant.com" },
+            { "name": "Verjus", "url": "https://www.verjusparis.com" },
+            { "name": "Le Soufflé", "url": "https://www.lesouffle.fr" },
+            { "name": "Loulou (Tuileries)", "url": "https://www.loulou-paris.com" }
+          ]
+        },
+        {
+          "title": "Hôtels recommandés",
+          "intro": "Des options pour tous les budgets à proximité immédiate.",
+          "items": [
+            { "name": "Hôtel du Louvre (Hyatt)", "url": "https://www.hyatt.com/unbound-collection/en-US/paraz-hotel-du-louvre" },
+            { "name": "Hôtel Le Pradey", "url": "https://www.lepradey.com" },
+            { "name": "Hôtel Thérèse", "url": "https://www.hoteltherese.com" },
+            { "name": "Citadines Les Halles", "url": "https://www.discoverasr.com/fr/citadines/france/citadines-les-halles-paris" }
+          ]
+        },
+        {
+          "title": "Lieux emblématiques",
+          "intro": "Le Paris historique sur le pas de la porte.",
+          "items": [
+            { "name": "Musée du Louvre — 8 min", "url": "https://www.louvre.fr" },
+            { "name": "Notre-Dame de Paris — 12 min", "url": "https://www.notredamedeparis.fr" },
+            { "name": "Jardin des Tuileries — 10 min", "url": "https://www.louvre.fr/en/explore/the-tuileries-garden" },
+            { "name": "Pont Neuf — 3 min", "url": "https://www.parisinfo.com/musee-monument-paris/71449/Pont-Neuf" },
+            { "name": "Westfield Forum des Halles — 3 min", "url": "https://www.westfield.com/fr/france/forumdeshalles" }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": "Questions pratiques",
+      "items": [
+        {
+          "question": "Quelle est l'adresse exacte de Chez Les Plombiers ?",
+          "answer": "Chez Les Plombiers se situe au 39 rue des Bourdonnais, 75001 Paris, en plein cœur du 1er arrondissement entre Châtelet et Les Halles. L'entrée principale donne directement sur la rue, avec une porte cochère et un accès véhicules pour les livraisons et les installations volumineuses."
+        },
+        {
+          "question": "Quel métro pour venir Chez Les Plombiers ?",
+          "answer": "La station de métro la plus proche est Châtelet (3 minutes à pied), desservie par les lignes 1, 4, 7, 11 et 14. C'est l'un des nœuds de transport les plus connectés de Paris. Le RER Châtelet — Les Halles (RER A, B, D) est à 5 minutes à pied. Sortez côté Rivoli ou Sainte-Opportune et empruntez la rue des Bourdonnais en direction de la Seine."
+        },
+        {
+          "question": "Y a-t-il un parking à proximité ?",
+          "answer": "Oui, le parking public Indigo Saint-Eustache (rue Berger) se trouve à 4 minutes à pied. Le parking Indigo Pont-Neuf est aussi accessible. Le quartier est en zone payante en surface du lundi au samedi 9h-20h. Pour les installations et livraisons, un accès véhicule direct depuis la rue est possible — contactez-nous en amont pour organiser le déchargement."
+        },
+        {
+          "question": "Le lieu est-il accessible aux personnes à mobilité réduite ?",
+          "answer": "Oui. L'entrée principale est de plain-pied depuis la rue, sans marche ni rampe. L'espace intérieur de 200 m² est entièrement de plain-pied et accessible aux fauteuils roulants. Les toilettes sont également accessibles PMR. N'hésitez pas à nous contacter en amont pour toute demande spécifique."
+        },
+        {
+          "question": "Quels sont les horaires de visite du lieu ?",
+          "answer": "Nous proposons des visites gratuites du lundi au samedi, de 10h à 18h, sur rendez-vous. Une visite dure environ 30 à 45 minutes : tour du lieu, présentation des équipements techniques, échange autour de votre projet et devis sur mesure. Réservez votre créneau via notre page Calendly ou contactez-nous directement par WhatsApp pour une réponse immédiate."
+        },
+        {
+          "question": "Comment vous joindre rapidement ?",
+          "answer": "Le moyen le plus rapide est WhatsApp au +33 6 88 67 99 81 — réponse en quelques minutes pendant les horaires d'ouverture. Vous pouvez aussi nous appeler au même numéro ou nous écrire à contact@chezlesplombiers.fr. Pour planifier une visite, le plus simple est de réserver directement un créneau via notre page Calendly."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Venez découvrir le lieu",
+      "subtitle": "Visite gratuite sur rendez-vous, du lundi au samedi de 10h à 18h. 30 minutes pour découvrir le lieu et discuter de votre projet.",
+      "pricing": "Voir les tarifs",
+      "calendly": "Réserver une visite",
+      "whatsapp": "WhatsApp"
+    }
   }
 }

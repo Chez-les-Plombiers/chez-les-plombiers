@@ -44,6 +44,11 @@ export default async function MentionsLegales({
     { title: string; content: string } | string
   >;
   const title = ml.title as string;
+  const isEn = locale === "en";
+  const pageUrl = isEn
+    ? `${SITE_URL}/en/legal-notice`
+    : `${SITE_URL}/mentions-legales`;
+  const inLanguage = isEn ? "en" : "fr";
 
   const sections = [
     "editeur",
@@ -54,8 +59,75 @@ export default async function MentionsLegales({
     "credits",
   ] as const;
 
+  const jsonLdWebPage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    url: pageUrl,
+    inLanguage,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Chez Les Plombiers",
+      url: SITE_URL,
+    },
+    about: {
+      "@type": "Organization",
+      name: "Chez les Plombiers SAS",
+      legalName: "Chez les Plombiers SAS",
+      url: SITE_URL,
+      taxID: "FR04 928 788 157",
+      vatID: "FR04 928 788 157",
+      identifier: "928 788 157",
+      foundingDate: "2024-05-02",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "39 rue des Bourdonnais",
+        addressLocality: "Paris",
+        postalCode: "75001",
+        addressCountry: "FR",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+33688679981",
+        email: "contact@chezlesplombiers.fr",
+        contactType: "customer service",
+      },
+    },
+  };
+
+  const jsonLdBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: isEn ? "Home" : "Accueil",
+        item: isEn ? `${SITE_URL}/en` : SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: title,
+        item: pageUrl,
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdWebPage),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdBreadcrumb),
+        }}
+      />
       <Header />
       <main className="pt-32 pb-24">
         <div className="max-w-3xl mx-auto px-6 lg:px-12">

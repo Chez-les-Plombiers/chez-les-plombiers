@@ -41,8 +41,41 @@ export default async function GuidePage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  const isEn = locale === "en";
+  const pageUrl = isEn ? `${SITE_URL}/en/guide` : `${SITE_URL}/guide`;
+  const inLanguage = isEn ? "en" : "fr";
+
+  const jsonLdWebPage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: isEn
+      ? "Practical Guide — Chez Les Plombiers"
+      : "Guide Pratique — Chez Les Plombiers",
+    description: isEn
+      ? "AI concierge for clients who have booked the venue: WiFi, lighting, kitchen, sound, gate code and more."
+      : "Concierge IA pour les clients ayant réservé le lieu : WiFi, éclairage, cuisine, sono, code grille et plus.",
+    url: pageUrl,
+    inLanguage,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Chez Les Plombiers",
+      url: SITE_URL,
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: isEn ? "Confirmed clients" : "Clients confirmés",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdWebPage),
+        }}
+      />
       <Header />
       <main id="main-content">
         <GuideContent />

@@ -1905,5 +1905,191 @@
       "calendly": "Book a visit",
       "whatsapp": "WhatsApp"
     }
+  },
+  "infos": {
+    "hero": {
+      "eyebrow": "Practical info",
+      "title": "Visit Chez Les Plombiers",
+      "subtitle": "200 sqm event venue in the heart of Paris 1st, 3 minutes walk from Châtelet metro.",
+      "address": "39 rue des Bourdonnais, 75001 Paris",
+      "ctaCalendly": "Book a visit",
+      "ctaMaps": "Open in Google Maps",
+      "imageAlt": "Chez Les Plombiers facade, 39 rue des Bourdonnais Paris 1st"
+    },
+    "access": {
+      "sectionTitle": "How to get here",
+      "intro": "In the heart of the 1st arrondissement, Chez Les Plombiers is one of the most accessible event venues in Paris. Metro, RER, parking — every option is within 5 minutes.",
+      "items": [
+        {
+          "icon": "Train",
+          "title": "Châtelet metro",
+          "subtitle": "3 min walk",
+          "description": "Lines 1, 4, 7, 11 and 14 — the most connected hub in Paris. Exit Rivoli or Sainte-Opportune."
+        },
+        {
+          "icon": "Train",
+          "title": "Châtelet — Les Halles RER",
+          "subtitle": "5 min walk",
+          "description": "RER A, B and D directly from Roissy CDG, Orly, La Défense and all Parisian stations."
+        },
+        {
+          "icon": "Car",
+          "title": "By car",
+          "subtitle": "Saint-Eustache parking",
+          "description": "Indigo Saint-Eustache public parking, 4 min walk. Direct vehicle access on the street for deliveries and bulky installations."
+        },
+        {
+          "icon": "Footprints",
+          "title": "Walking from Le Marais",
+          "subtitle": "10 min walk",
+          "description": "From Centre Pompidou, Beaubourg or rue de Rivoli — a perfect walk through historic Paris."
+        },
+        {
+          "icon": "Accessibility",
+          "title": "Wheelchair access",
+          "subtitle": "Step-free",
+          "description": "Step-free entrance from the street. The full 200 sqm interior is wheelchair-accessible, including restrooms."
+        },
+        {
+          "icon": "Plane",
+          "title": "From the airports",
+          "subtitle": "RER B + 5 min",
+          "description": "Roissy CDG: 35 min via direct RER B. Orly: 30 min via Orlyval + RER B. Le Bourget: 40 min."
+        }
+      ]
+    },
+    "details": {
+      "sectionTitle": "The venue at a glance",
+      "items": [
+        {
+          "icon": "Maximize2",
+          "label": "Modular surface",
+          "value": "200 sqm"
+        },
+        {
+          "icon": "Users",
+          "label": "Maximum capacity",
+          "value": "150 cocktail · 80 seated"
+        },
+        {
+          "icon": "Clock",
+          "label": "Site visits",
+          "value": "Mon – Sat · 10am – 6pm"
+        },
+        {
+          "icon": "Zap",
+          "label": "Electric power",
+          "value": "36 KvA three-phase"
+        }
+      ]
+    },
+    "contact": {
+      "sectionTitle": "Get in touch",
+      "intro": "Our team replies within 24 business hours. For an immediate response, please use WhatsApp.",
+      "items": [
+        {
+          "icon": "Phone",
+          "label": "Phone & WhatsApp",
+          "value": "+33 6 88 67 99 81",
+          "href": "tel:+33688679981"
+        },
+        {
+          "icon": "Mail",
+          "label": "Email",
+          "value": "contact@chezlesplombiers.fr",
+          "href": "mailto:contact@chezlesplombiers.fr"
+        },
+        {
+          "icon": "MapPin",
+          "label": "Address",
+          "value": "39 rue des Bourdonnais, 75001 Paris",
+          "href": "https://maps.google.com/?q=39+rue+des+Bourdonnais+75001+Paris"
+        },
+        {
+          "icon": "Instagram",
+          "label": "Instagram",
+          "value": "@chezlesplombiers",
+          "href": "https://instagram.com/chezlesplombiers"
+        }
+      ]
+    },
+    "map": {
+      "sectionTitle": "On the map",
+      "intro": "Heart of the 1st arrondissement, equidistant from the Louvre, Centre Pompidou and Île de la Cité.",
+      "iframeTitle": "Chez Les Plombiers location map, 39 rue des Bourdonnais Paris 1st"
+    },
+    "neighborhood": {
+      "sectionTitle": "The neighborhood",
+      "intro": "Your guests have everything on their doorstep: Michelin-starred restaurants, boutique hotels, iconic landmarks. Ideal for corporate events and out-of-town guests.",
+      "categories": [
+        {
+          "title": "Restaurants",
+          "intro": "The gastronomic scene of Paris 1st, all within a 5-minute walk.",
+          "items": [
+            { "name": "Frenchie", "url": "https://www.frenchie-restaurant.com" },
+            { "name": "Verjus", "url": "https://www.verjusparis.com" },
+            { "name": "Le Soufflé", "url": "https://www.lesouffle.fr" },
+            { "name": "Loulou (Tuileries)", "url": "https://www.loulou-paris.com" }
+          ]
+        },
+        {
+          "title": "Recommended hotels",
+          "intro": "Options for every budget within walking distance.",
+          "items": [
+            { "name": "Hôtel du Louvre (Hyatt)", "url": "https://www.hyatt.com/unbound-collection/en-US/paraz-hotel-du-louvre" },
+            { "name": "Hôtel Le Pradey", "url": "https://www.lepradey.com/en" },
+            { "name": "Hôtel Thérèse", "url": "https://en.hoteltherese.com" },
+            { "name": "Citadines Les Halles", "url": "https://www.discoverasr.com/en/citadines/france/citadines-les-halles-paris" }
+          ]
+        },
+        {
+          "title": "Iconic landmarks",
+          "intro": "Historic Paris right on your doorstep.",
+          "items": [
+            { "name": "Louvre Museum — 8 min", "url": "https://www.louvre.fr/en" },
+            { "name": "Notre-Dame Cathedral — 12 min", "url": "https://www.notredamedeparis.fr/en" },
+            { "name": "Tuileries Garden — 10 min", "url": "https://www.louvre.fr/en/explore/the-tuileries-garden" },
+            { "name": "Pont Neuf — 3 min", "url": "https://www.parisinfo.com/musee-monument-paris/71449/Pont-Neuf" },
+            { "name": "Westfield Forum des Halles — 3 min", "url": "https://www.westfield.com/fr/france/forumdeshalles" }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "sectionTitle": "Practical questions",
+      "items": [
+        {
+          "question": "What is the exact address of Chez Les Plombiers?",
+          "answer": "Chez Les Plombiers is located at 39 rue des Bourdonnais, 75001 Paris, in the heart of the 1st arrondissement between Châtelet and Les Halles. The main entrance opens directly onto the street, with a carriage door allowing vehicle access for deliveries and bulky setups."
+        },
+        {
+          "question": "Which metro stop is closest?",
+          "answer": "The closest metro is Châtelet (3 minutes walk), served by lines 1, 4, 7, 11 and 14 — one of the most connected transit hubs in Paris. The Châtelet — Les Halles RER (lines A, B, D) is 5 minutes walk. Take exit Rivoli or Sainte-Opportune and walk down rue des Bourdonnais towards the Seine."
+        },
+        {
+          "question": "Is there parking nearby?",
+          "answer": "Yes, the public Indigo Saint-Eustache parking (rue Berger) is 4 minutes walk away. Indigo Pont-Neuf is also nearby. Surface parking in the area is metered Monday to Saturday, 9am–8pm. For setup and deliveries, direct vehicle access from the street is possible — please contact us in advance to arrange unloading."
+        },
+        {
+          "question": "Is the venue wheelchair accessible?",
+          "answer": "Yes. The main entrance is step-free from the street, with no stairs or ramps. The full 200 sqm interior is on a single level and wheelchair-accessible. Restrooms are also accessible. Please contact us in advance for any specific requirements."
+        },
+        {
+          "question": "When can I visit the venue?",
+          "answer": "We offer free visits Monday to Saturday, 10am to 6pm, by appointment. A visit lasts 30–45 minutes: a tour of the space, an overview of the technical equipment, a discussion of your project, and a tailored quote. Book your slot via Calendly or contact us directly on WhatsApp for an instant reply."
+        },
+        {
+          "question": "How can I reach you quickly?",
+          "answer": "The fastest way is WhatsApp at +33 6 88 67 99 81 — we typically reply within minutes during business hours. You can also call the same number or write to contact@chezlesplombiers.fr. To plan a visit, the easiest path is to book a slot directly via our Calendly page."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Come visit the venue",
+      "subtitle": "Free visit by appointment, Monday to Saturday from 10am to 6pm. 30 minutes to discover the space and discuss your project.",
+      "pricing": "View pricing",
+      "calendly": "Book a visit",
+      "whatsapp": "WhatsApp"
+    }
   }
 }
