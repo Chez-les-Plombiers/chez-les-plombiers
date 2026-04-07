@@ -197,9 +197,9 @@ export default async function Home({
         <VirtualTour />
         <AboutSection />
         <PortfolioSection />
-        <ReviewsSection />
         <EquipmentsSection />
         <FaqSection />
+        <ReviewsSection />
         <InstagramFeed />
         <ContactSection />
       </main>
