@@ -29,6 +29,7 @@ import { ReviewsSection } from "@/components/ReviewsSection";
 import { SeoPagesCrossLinks } from "@/components/SeoPagesCrossLinks";
 import ClientLogosSection from "@/components/ClientLogosSection";
 import { RippleButton } from "@/components/ui/ripple-button";
+import { VenueGuide } from "@/components/VenueGuide";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -195,7 +196,7 @@ function FaqAccordionItem({ item, index }: { item: FaqItem; index: number }) {
 /* ------------------------------------------------------------------ */
 
 export function InfosContent() {
-  const { dict } = useI18n();
+  const { locale, dict } = useI18n();
   const t = dict.infos as InfosDict;
 
   if (!t) return null;
@@ -315,6 +316,11 @@ export function InfosContent() {
           </div>
         </div>
       </section>
+
+      {/* ============================================================ */}
+      {/* VENUE GUIDE — Full info accordion (FR only)                   */}
+      {/* ============================================================ */}
+      {locale === "fr" && <VenueGuide />}
 
       {/* ============================================================ */}
       {/* ACCESS — 6 cards                                              */}
