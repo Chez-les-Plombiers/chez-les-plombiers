@@ -58,6 +58,8 @@ npm run lint     # ESLint
 /en/guide                                → EN (chatbot AI concierge)
 /infos                                   → FR (infos pratiques + accès)
 /en/info                                 → EN (practical info)
+/notre-chef                              → FR (chef partenaire Mathias Rouveure)
+/en/our-chef                             → EN (partner chef)
 ```
 
 ## Structure
@@ -66,7 +68,7 @@ src/app/
   layout.tsx         # Root layout minimal (globals.css only)
   [locale]/
     layout.tsx       # I18nProvider + GA4/GTM/Clarity/Axeptio + <html lang={locale}>
-    page.tsx         # Home — 7 sections + 4 JSON-LD (EventVenue, Organization, LocalBusiness, FAQPage)
+    page.tsx         # Home — 12 sections + 4 JSON-LD (EventVenue, Organization, LocalBusiness, FAQPage)
     appartement/page.tsx        # L'Appartement Rose (FR)
     apartment/page.tsx          # The Pink Apartment (EN, re-export)
     infos/page.tsx              # Infos pratiques + accès (FR) — 3 JSON-LD (EventVenue, FAQPage, BreadcrumbList)
@@ -75,6 +77,8 @@ src/app/
     legal-notice/page.tsx       # Legal Notice (EN, re-export)
     politique-confidentialite/page.tsx  # RGPD (FR) — JSON-LD PrivacyPolicy + Organization + BreadcrumbList
     privacy-policy/page.tsx     # Privacy Policy (EN, re-export)
+    notre-chef/page.tsx         # Chef partenaire Mathias Rouveure (FR)
+    our-chef/page.tsx           # Partner chef (EN, re-export)
     not-found.tsx
     error.tsx
     services/[slug]/page.tsx   # Pages services dynamiques (7 FR + 7 EN) — 3 JSON-LD (Service, BreadcrumbList, FAQPage)
@@ -216,16 +220,19 @@ Structure chaque page : Hero (image + overlay + 2 CTA Pricing/Calendly) → Desc
 Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners` → `/en/services/corporate-breakfasts`)
 
 ## Architecture Homepage
-9 sections dans l'ordre :
+12 sections dans l'ordre :
 1. HeroSection (parallax + vidéo autoplay avec fallback touch mobile + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
 2. ServicesSection (6 cards grille 3x2 + hover animation : Dîners, Fashion, Auto, Pro, Culturels, Petits Déj)
-3. VirtualTour (iframe Matterport 3D — https://my.matterport.com/show/?m=ucvB4GW2Go6)
-4. AboutSection (texte + stats + image)
-5. PortfolioSection ("Découvrez Notre Lieu" — 12 photos bento grid + lightbox + download individuel/ZIP)
-6. ReviewsSection (Google reviews grille 3x3 + lien "Voir plus d'avis sur Google")
-7. EquipmentsSection (specs + downloads + plan)
-8. FaqSection (11 Q&A accordion)
-9. ContactSection (4 contacts + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
+3. SeoLandingPagesSection (cards des 4 pages SEO non-branded)
+4. ClientLogosSection static (grille statique dark — 20 logos clients)
+5. VirtualTour (iframe Matterport 3D — https://my.matterport.com/show/?m=ucvB4GW2Go6)
+6. AboutSection (texte + stats + image)
+7. PortfolioSection ("Découvrez Notre Lieu" — 12 photos bento grid + lightbox + download individuel/ZIP)
+8. EquipmentsSection (specs + downloads + plan)
+9. FaqSection (11 Q&A accordion)
+10. ReviewsSection (Google reviews grille 3x3 + lien "Voir plus d'avis sur Google") — déplacée sous la FAQ le 07/04/2026
+11. InstagramFeed
+12. ContactSection (4 contacts + 2 CTA : "Voir les tarifs" → pricing + "Réserver une visite" → Calendly)
 
 ### CTA buttons (Hero + Contact) — tous trackés `cta_click`
 - **"Voir les tarifs"** : bouton plein (bg-white) → `pricing.chezlesplombiers.fr` (external)
@@ -236,8 +243,13 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 ### Footer (4 colonnes)
 - Colonne 1 : Logo + description
 - Colonne 2 : Navigation (Accueil, Appartement, Mentions, Confidentialité)
-- Colonne 3 : Nos Espaces (6 services + 4 pages SEO + Studio + Appartement Rose)
+- Colonne 3 : Nos Espaces (6 services + 4 pages SEO + Studio + Notre Chef + Appartement Rose)
 - Colonne 4 : Contact (WhatsApp `wa.me/33688679981`, email, adresse)
+
+### Header — menu nav
+Items dans l'ordre : Pricing (external) → Photos (#portfolio) → Infos Techniques (#equipments) → Studio → **Notre Chef** (`/notre-chef`) → L'Appartement Rose (`/appartement`) → langue switcher FR/EN.
+
+Tous les `menuItems` sont définis dans `dict.header.menuItems` (FR/EN). Le bouton Pricing est externe (URL réécrite via `EXTERNAL_LINKS.pricing`).
 
 ## Guide AI Concierge (/guide)
 Page chatbot pour les clients ayant réservé le lieu. Interface de chat multi-turn avec streaming.
