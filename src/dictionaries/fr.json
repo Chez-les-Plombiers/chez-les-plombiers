@@ -272,7 +272,7 @@
       },
       {
         "question": "Comment réserver Chez Les Plombiers ?",
-        "answer": "Commencez par réserver une visite sur Calendly pour découvrir le lieu. Envoyez ensuite un e-mail à contact@chezlesplombiers.fr ou un WhatsApp au +33 6 88 67 99 81 avec vos dates, le type d'événement, le nombre de personnes et l'amplitude horaire pour recevoir un devis personnalisé. Les visites sont possibles du lundi au vendredi de 10h à 18h et le samedi sur rendez-vous."
+        "answer": "Commencez par réserver une visite sur Calendly pour découvrir le lieu. Envoyez ensuite un e-mail à contact@chezlesplombiers.fr ou un WhatsApp au +33 7 61 47 10 73 avec vos dates, le type d'événement, le nombre de personnes et l'amplitude horaire pour recevoir un devis personnalisé. Les visites sont possibles du lundi au vendredi de 10h à 18h et le samedi sur rendez-vous."
       },
       {
         "question": "Quel est le montant de la caution ?",
@@ -303,7 +303,7 @@
       },
       {
         "label": "WhatsApp",
-        "value": "+336 88 67 99 81"
+        "value": "+33 7 61 47 10 73"
       },
       {
         "label": "Instagram",
@@ -479,7 +479,7 @@
     },
     "contact": {
       "title": "Contact",
-      "content": "Email : contact@chezlesplombiers.fr<br />Téléphone : 06 88 67 99 81"
+      "content": "Email : contact@chezlesplombiers.fr<br />Téléphone : 07 61 47 10 73"
     },
     "hebergement": {
       "title": "Hébergement",
@@ -1237,7 +1237,7 @@
     "errorMessage": "Une erreur est survenue. Veuillez réessayer.",
     "retryButton": "Réessayer",
     "poweredBy": "Chez Les Plombiers — Assistant IA",
-    "contactFallback": "Besoin d'aide ? WhatsApp : +33 6 88 67 99 81"
+    "contactFallback": "Besoin d'aide ? WhatsApp : +33 7 61 47 10 73"
   },
   "chef": {
     "heroOvertitle": "Chef Partenaire",
@@ -1902,7 +1902,7 @@
         },
         {
           "question": "Comment réserver une visite de votre espace événementiel à Paris ?",
-          "answer": "Réserver une visite est simple et gratuit. Prenez rendez-vous directement via notre page Calendly, contactez-nous par WhatsApp au 06 88 67 99 81 pour une réponse rapide, ou envoyez un email à contact@chezlesplombiers.fr. Nous proposons des visites du lundi au samedi, de 10h à 18h. Lors de la visite, notre équipe étudie votre projet pour vous proposer une configuration et un devis sur mesure. Vous pouvez aussi explorer le lieu à distance grâce à notre visite virtuelle 3D Matterport."
+          "answer": "Réserver une visite est simple et gratuit. Prenez rendez-vous directement via notre page Calendly, contactez-nous par WhatsApp au 07 61 47 10 73 pour une réponse rapide, ou envoyez un email à contact@chezlesplombiers.fr. Nous proposons des visites du lundi au samedi, de 10h à 18h. Lors de la visite, notre équipe étudie votre projet pour vous proposer une configuration et un devis sur mesure. Vous pouvez aussi explorer le lieu à distance grâce à notre visite virtuelle 3D Matterport."
         }
       ]
     },
@@ -1998,8 +1998,8 @@
         {
           "icon": "Phone",
           "label": "Téléphone & WhatsApp",
-          "value": "+33 6 88 67 99 81",
-          "href": "tel:+33688679981"
+          "value": "+33 7 61 47 10 73",
+          "href": "tel:+33761471073"
         },
         {
           "icon": "Mail",
@@ -2088,7 +2088,7 @@
         },
         {
           "question": "Comment vous joindre rapidement ?",
-          "answer": "Le moyen le plus rapide est WhatsApp au +33 6 88 67 99 81 — réponse en quelques minutes pendant les horaires d'ouverture. Vous pouvez aussi nous appeler au même numéro ou nous écrire à contact@chezlesplombiers.fr. Pour planifier une visite, le plus simple est de réserver directement un créneau via notre page Calendly."
+          "answer": "Le moyen le plus rapide est WhatsApp au +33 7 61 47 10 73 — réponse en quelques minutes pendant les horaires d'ouverture. Vous pouvez aussi nous appeler au même numéro ou nous écrire à contact@chezlesplombiers.fr. Pour planifier une visite, le plus simple est de réserver directement un créneau via notre page Calendly."
         }
       ]
     },

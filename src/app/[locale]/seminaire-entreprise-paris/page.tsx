@@ -98,7 +98,7 @@ export default async function SeminaireEntreprisePage({
     },
     maximumAttendeeCapacity: 80,
     image: `${SITE_URL}/photos/espace-travail.jpg`,
-    telephone: "+33688679981",
+    telephone: "+33761471073",
     email: "contact@chezlesplombiers.fr",
   };
 

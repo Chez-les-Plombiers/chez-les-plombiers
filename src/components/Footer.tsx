@@ -88,12 +88,12 @@ export function Footer() {
             <div className="space-y-3 text-sm text-gray-400">
               <p>
                 <a
-                  href="https://wa.me/33688679981"
+                  href="https://wa.me/33761471073"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  06 88 67 99 81
+                  07 61 47 10 73
                 </a>
               </p>
               <p>

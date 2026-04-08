@@ -272,7 +272,7 @@
       },
       {
         "question": "How do I book Chez Les Plombiers?",
-        "answer": "Start by booking a visit on Calendly to discover the venue. Then send an email to contact@chezlesplombiers.fr or a WhatsApp message to +33 6 88 67 99 81 with your dates, event type, number of guests and time frame to receive a personalised quote. Visits are available Monday to Friday from 10am to 6pm and Saturday by appointment."
+        "answer": "Start by booking a visit on Calendly to discover the venue. Then send an email to contact@chezlesplombiers.fr or a WhatsApp message to +33 7 61 47 10 73 with your dates, event type, number of guests and time frame to receive a personalised quote. Visits are available Monday to Friday from 10am to 6pm and Saturday by appointment."
       },
       {
         "question": "What is the security deposit?",
@@ -303,7 +303,7 @@
       },
       {
         "label": "WhatsApp",
-        "value": "+336 88 67 99 81"
+        "value": "+33 7 61 47 10 73"
       },
       {
         "label": "Instagram",
@@ -479,7 +479,7 @@
     },
     "contact": {
       "title": "Contact",
-      "content": "Email: contact@chezlesplombiers.fr<br />Phone: +33 6 88 67 99 81"
+      "content": "Email: contact@chezlesplombiers.fr<br />Phone: +33 7 61 47 10 73"
     },
     "hebergement": {
       "title": "Hosting",
@@ -1237,7 +1237,7 @@
     "errorMessage": "Something went wrong. Please try again.",
     "retryButton": "Try again",
     "poweredBy": "Chez Les Plombiers — AI Assistant",
-    "contactFallback": "Need help? WhatsApp: +33 6 88 67 99 81"
+    "contactFallback": "Need help? WhatsApp: +33 7 61 47 10 73"
   },
   "chef": {
     "heroOvertitle": "Partner Chef",
@@ -1902,7 +1902,7 @@
         },
         {
           "question": "How do I book a visit to your event space in Paris?",
-          "answer": "Booking a visit is simple and free. Schedule directly via our Calendly page, contact us on WhatsApp at +33 6 88 67 99 81 for a quick response, or email contact@chezlesplombiers.fr. We offer visits Monday to Saturday, 10 am to 6 pm. During the visit, our team reviews your project and proposes a tailored configuration and quote. You can also explore the venue remotely with our Matterport 3D virtual tour before visiting in person."
+          "answer": "Booking a visit is simple and free. Schedule directly via our Calendly page, contact us on WhatsApp at +33 7 61 47 10 73 for a quick response, or email contact@chezlesplombiers.fr. We offer visits Monday to Saturday, 10 am to 6 pm. During the visit, our team reviews your project and proposes a tailored configuration and quote. You can also explore the venue remotely with our Matterport 3D virtual tour before visiting in person."
         }
       ]
     },
@@ -1998,8 +1998,8 @@
         {
           "icon": "Phone",
           "label": "Phone & WhatsApp",
-          "value": "+33 6 88 67 99 81",
-          "href": "tel:+33688679981"
+          "value": "+33 7 61 47 10 73",
+          "href": "tel:+33761471073"
         },
         {
           "icon": "Mail",
@@ -2088,7 +2088,7 @@
         },
         {
           "question": "How can I reach you quickly?",
-          "answer": "The fastest way is WhatsApp at +33 6 88 67 99 81 — we typically reply within minutes during business hours. You can also call the same number or write to contact@chezlesplombiers.fr. To plan a visit, the easiest path is to book a slot directly via our Calendly page."
+          "answer": "The fastest way is WhatsApp at +33 7 61 47 10 73 — we typically reply within minutes during business hours. You can also call the same number or write to contact@chezlesplombiers.fr. To plan a visit, the easiest path is to book a slot directly via our Calendly page."
         }
       ]
     },

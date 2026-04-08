@@ -104,7 +104,7 @@ export default async function EspaceAtypiquePage({
     },
     maximumAttendeeCapacity: 150,
     image: `${SITE_URL}/photos/canape-portes-atelier.jpg`,
-    telephone: "+33688679981",
+    telephone: "+33761471073",
     email: "contact@chezlesplombiers.fr",
   };
 

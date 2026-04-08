@@ -88,7 +88,7 @@ export default async function MentionsLegales({
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+33688679981",
+        telephone: "+33761471073",
         email: "contact@chezlesplombiers.fr",
         contactType: "customer service",
       },

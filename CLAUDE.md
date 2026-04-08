@@ -142,7 +142,7 @@ public/
 ## URLs externes
 - Calendly: https://calendly.com/chezlesplombiers/visite
 - Pricing: https://pricing.chezlesplombiers.fr
-- WhatsApp: https://wa.me/33688679981
+- WhatsApp: https://wa.me/33761471073
 - Instagram: https://instagram.com/chezlesplombiers
 
 ## SEO/GEO
@@ -259,14 +259,14 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 ### CTA buttons (Hero + Contact) — tous trackés `cta_click`
 - **"Voir les tarifs"** : bouton plein (bg-white) → `pricing.chezlesplombiers.fr` (external)
 - **"Réserver une visite"** : bouton outline (border-white) → `calendly.com/chezlesplombiers/visite` (external)
-- **"WhatsApp"** : bouton outline (Contact uniquement) → `wa.me/33688679981`
+- **"WhatsApp"** : bouton outline (Contact uniquement) → `wa.me/33761471073`
 - Labels i18n : `header.ctaQuote` / `hero.cta` dans les dictionnaires FR/EN
 
 ### Footer (4 colonnes)
 - Colonne 1 : Logo + description
 - Colonne 2 : Navigation (Accueil, Appartement, Mentions, Confidentialité)
 - Colonne 3 : Nos Espaces (6 services + 4 pages SEO + Studio + Notre Chef + Appartement Rose)
-- Colonne 4 : Contact (WhatsApp `wa.me/33688679981`, email, adresse)
+- Colonne 4 : Contact (WhatsApp `wa.me/33761471073`, email, adresse)
 
 ### Header — menu nav
 Items dans l'ordre : Pricing (external) → Photos (#portfolio) → Infos Techniques (#equipments) → Studio → **Notre Chef** (`/notre-chef`) → L'Appartement Rose (`/appartement`) → langue switcher FR/EN.
@@ -281,7 +281,7 @@ Page chatbot pour les clients ayant réservé le lieu. Interface de chat multi-t
 - **Composant** : `GuideContent.tsx` — chat avec bulles user/assistant, suggestions initiales, markdown riche
 - **Règles du chatbot** :
   - Vouvoiement obligatoire (FR), ton formel poli (EN)
-  - WhatsApp toujours en lien cliquable → `wa.me/33688679981`
+  - WhatsApp toujours en lien cliquable → `wa.me/33761471073`
   - Réponses uniquement sur le lieu et son utilisation pratique
   - Max 20 turns de conversation
 - **Infos renseignées** : grille/portail cour (code 5409), Wi-Fi (2 réseaux), éclairage (Kiosc, 5 scénarios, mode custom), cuisine (café, lave-vaisselle, verres), sono (Sonos + XLR via UCP), chauffage (Daikin), vidéoprojecteur (Optoma ZU820T, fiche technique complète), poubelles tri, vestiaire, toilettes, fin d'événement

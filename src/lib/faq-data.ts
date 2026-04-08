@@ -42,7 +42,7 @@ export const faqData: FaqItem[] = [
   {
     question: "Comment réserver Chez Les Plombiers ?",
     answer:
-      "Commencez par réserver une visite sur Calendly pour découvrir le lieu. Envoyez ensuite un e-mail à contact@chezlesplombiers.fr ou un WhatsApp au +33 6 88 67 99 81 avec vos dates, le type d'événement, le nombre de personnes et l'amplitude horaire pour recevoir un devis personnalisé. Les visites sont possibles du lundi au vendredi de 10h à 18h et le samedi sur rendez-vous.",
+      "Commencez par réserver une visite sur Calendly pour découvrir le lieu. Envoyez ensuite un e-mail à contact@chezlesplombiers.fr ou un WhatsApp au +33 7 61 47 10 73 avec vos dates, le type d'événement, le nombre de personnes et l'amplitude horaire pour recevoir un devis personnalisé. Les visites sont possibles du lundi au vendredi de 10h à 18h et le samedi sur rendez-vous.",
   },
   {
     question: "Quel est le montant de la caution ?",

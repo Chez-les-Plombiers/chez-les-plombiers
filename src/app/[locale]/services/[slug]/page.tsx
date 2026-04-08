@@ -165,7 +165,7 @@ export default async function ServicePage({
         postalCode: "75001",
         addressCountry: "FR",
       },
-      telephone: "+33688679981",
+      telephone: "+33761471073",
       email: "contact@chezlesplombiers.fr",
     },
     areaServed: {

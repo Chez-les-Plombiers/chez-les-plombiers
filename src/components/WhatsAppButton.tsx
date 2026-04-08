@@ -1,6 +1,6 @@
 "use client";
 
-const PHONE_NUMBER = "33688679981";
+const PHONE_NUMBER = "33761471073";
 const MESSAGE = "Bonjour, j'aimerais avoir des informations sur la location de votre lieu.";
 
 export function WhatsAppButton() {

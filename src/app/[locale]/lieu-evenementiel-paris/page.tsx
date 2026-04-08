@@ -100,7 +100,7 @@ export default async function LieuEvenementielPage({
     },
     maximumAttendeeCapacity: 150,
     image: `${SITE_URL}/images/hero.png`,
-    telephone: "+33688679981",
+    telephone: "+33761471073",
     email: "contact@chezlesplombiers.fr",
   };
 
@@ -114,7 +114,7 @@ export default async function LieuEvenementielPage({
       : "Lieu évènementiel premium de 200m² à Paris 1er. Location d'espace pour fashion shows, séminaires, dîners, shootings.",
     url: pageUrl,
     inLanguage,
-    telephone: "+33688679981",
+    telephone: "+33761471073",
     email: "contact@chezlesplombiers.fr",
     address: {
       "@type": "PostalAddress",

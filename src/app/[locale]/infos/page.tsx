@@ -90,7 +90,7 @@ export default async function InfosPage({
       : "Lieu événementiel de 200 m² au cœur de Paris 1er. À 3 min du métro Châtelet, accessible PMR, visites gratuites sur rendez-vous.",
     url: pageUrl,
     inLanguage,
-    telephone: "+33688679981",
+    telephone: "+33761471073",
     email: "contact@chezlesplombiers.fr",
     address: {
       "@type": "PostalAddress",

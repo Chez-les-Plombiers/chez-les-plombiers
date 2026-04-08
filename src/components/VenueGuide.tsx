@@ -810,7 +810,7 @@ export function VenueGuide() {
                 📩 <MailLink email="contact@chezlesplombiers.fr" />
                 <br />
                 📱{" "}
-                <PhoneLink display="WhatsApp" raw="33688679981" />
+                <PhoneLink display="WhatsApp" raw="33761471073" />
               </Para>
             </Section>
 
@@ -850,7 +850,7 @@ export function VenueGuide() {
                 </p>
                 <p className="text-gray-700">
                   📞{" "}
-                  <PhoneLink display="+33 6 88 67 99 81" raw="33688679981" />
+                  <PhoneLink display="+33 7 61 47 10 73" raw="33761471073" />
                 </p>
               </div>
             </Section>

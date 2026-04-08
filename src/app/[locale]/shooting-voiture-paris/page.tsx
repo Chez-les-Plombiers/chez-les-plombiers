@@ -97,7 +97,7 @@ export default async function ShootingVoitureParisPage({
     },
     maximumAttendeeCapacity: 150,
     image: `${SITE_URL}/images/services/evenements-auto-moto.jpg`,
-    telephone: "+33688679981",
+    telephone: "+33761471073",
     email: "contact@chezlesplombiers.fr",
   };
 

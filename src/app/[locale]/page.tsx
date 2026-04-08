@@ -56,7 +56,7 @@ export default async function Home({
     },
     maximumAttendeeCapacity: 200,
     image: `${SITE_URL}/images/hero.png`,
-    telephone: "+33688679981",
+    telephone: "+33761471073",
     email: "contact@chezlesplombiers.fr",
   };
 
@@ -79,7 +79,7 @@ export default async function Home({
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+33688679981",
+      telephone: "+33761471073",
       contactType: "reservations",
       email: "contact@chezlesplombiers.fr",
       availableLanguage: ["French", "English"],
@@ -100,7 +100,7 @@ export default async function Home({
       : "Lieu évènementiel de 200m² au cœur de Paris 1er. Fashion shows, séminaires, dîners d'exception dans un cadre industriel unique.",
     url: pageUrl,
     inLanguage,
-    telephone: "+33688679981",
+    telephone: "+33761471073",
     email: "contact@chezlesplombiers.fr",
     address: {
       "@type": "PostalAddress",
