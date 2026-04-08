@@ -181,8 +181,30 @@ Composant : `InfosContent.tsx` — section neighborhood avec structure `categori
 
 Dict keys : `infos.hero`, `infos.access`, `infos.details`, `infos.contact`, `infos.map`, `infos.neighborhood`, `infos.faq`, `infos.cta`
 
-## Backlink outreach data
-`data/outreach/event-agencies-paris.csv` — 122 agences événementielles parisiennes dédupliquées et triées par nombre d'avis Google. Source : Google Maps. Colonnes : name, type, url, rating, review_count, address, phone, outreach_status, notes. Top contacts : L'Antichambre Escape Games (1355 avis), Crazy EVG (596), Privateaser (460), Jardins du Pont Neuf (445), La Belle Equipe (372).
+## Outreach agences événementielles
+Pour la campagne B2B "présentation du lieu aux agences" (pas backlinks SEO).
+
+Deux fichiers dans `data/outreach/` :
+- `event-agencies-paris.csv` — 122 agences brut (source Google Maps, intact comme backup)
+- `event-agencies-paris-clean.csv` — **113 agences** prêtes à l'outreach (08/04/2026)
+
+**Clean pass appliqué le 08/04/2026 :**
+- 6 non-cibles retirées (Transitions Pro non-profit, WESTOTEL hotel hors Paris, Home Striptease brand safety, Digitevent SaaS, Office de Tourisme institutionnel, Intercoiffure France syndicat coiffure)
+- 3 plateformes de booking retirées (Privateaser, SnapEvent, Kactus) — Chez Les Plombiers est déjà listé dessus
+- Nouvelles colonnes : `tier` (1/2/3), `email` (vide, à enrichir)
+- Trié par tier asc, review_count desc
+
+**Tier logic :**
+- Tier 1 (12) : 200+ avis — hyper-perso recommandée
+- Tier 2 (30) : 50-199 avis — semi-perso
+- Tier 3 (71) : <50 avis — template générique
+
+**Blocker actuel** : aucun email dans le CSV. Il faut enrichir la colonne `email` avant de pouvoir lancer la séquence. Options : workflow n8n de scraping (fetch /contact + /mentions-legales + Claude extract), Hunter.io, ou recherche manuelle.
+
+**Objectif campagne** : présenter Chez Les Plombiers aux agences pour qu'elles le proposent à leurs clients. Envoi depuis `frederic@chezlesplombiers.fr` via workflow n8n séquentiel sur l'instance `chezlesplombiers.app.n8n.cloud`, avec personnalisation IA par lead, attachement de la plaquette PDF, et follow-ups automatiques.
+
+**Top 12 Tier 1 (à prioriser) :**
+L'Antichambre Escape Games Bd Saint-Martin (1355), L'Antichambre Blondel (829), Crazy EVG (596), Jardins du Pont Neuf (445), La Belle Equipe (372), Comet Meetings Victoires (263), Boulotte traiteur (260), Le Scarlett Paris (259), Qui Veut Pister Paris (256), LoL Evènements (242), Potel et Chabot (207), Comet Meetings Bourse (206).
 
 ## Pages SEO Landing Pages (racine)
 4 pages ciblant le trafic non-branded, chacune avec page FR + EN (8 pages total) :
