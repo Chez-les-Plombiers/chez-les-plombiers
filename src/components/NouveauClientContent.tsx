@@ -340,73 +340,7 @@ export function NouveauClientContent() {
               heures.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Paiement */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: 0 }}
-                className="bg-gray-50 p-8 border border-gray-100"
-              >
-                <div className="w-12 h-12 bg-black flex items-center justify-center mb-6">
-                  <CreditCard className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-lg font-medium mb-3">Paiement</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  Votre r&eacute;servation est confirm&eacute;e d&egrave;s
-                  r&eacute;ception du r&egrave;glement int&eacute;gral.
-                </p>
-              </motion.div>
-
-              {/* Caution */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: 0.08 }}
-                className="bg-gray-50 p-8 border border-gray-100"
-              >
-                <div className="w-12 h-12 bg-black flex items-center justify-center mb-6">
-                  <Shield className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-lg font-medium mb-3">D&eacute;p&ocirc;t de garantie</h3>
-                <p className="text-gray-600 leading-relaxed text-sm mb-2">
-                  Un d&eacute;p&ocirc;t de garantie est demand&eacute; avant
-                  chaque &eacute;v&eacute;nement :
-                </p>
-                <ul className="text-gray-600 leading-relaxed text-sm space-y-2">
-                  <li>
-                    <span className="font-medium text-black">5 000 &euro;</span>{" "}
-                    pour Chez les Plombiers
-                  </li>
-                  <li>
-                    <span className="font-medium text-black">3 000 &euro;</span>{" "}
-                    pour l&apos;Appartement Rose
-                  </li>
-                </ul>
-              </motion.div>
-
-              {/* Restitution */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: 0.16 }}
-                className="bg-gray-50 p-8 border border-gray-100"
-              >
-                <div className="w-12 h-12 bg-black flex items-center justify-center mb-6">
-                  <Clock className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-lg font-medium mb-3">Restitution</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  Le d&eacute;p&ocirc;t de garantie vous est restitu&eacute;
-                  sous 8 jours ouvr&eacute;s apr&egrave;s votre
-                  &eacute;v&eacute;nement, suite &agrave; l&apos;&eacute;tat
-                  des lieux de sortie.
-                </p>
-              </motion.div>
-            </div>
+            <InfoCards />
 
             {/* Important notice */}
             <motion.div
@@ -785,6 +719,114 @@ interface SelectFieldProps {
   value: string;
   onChange: (value: string) => void;
   options: { value: string; label: string }[];
+}
+
+const INFO_CARDS = [
+  {
+    icon: CreditCard,
+    title: "Paiement",
+    content: (
+      <p className="text-sm leading-relaxed tracking-wide">
+        Votre r&eacute;servation est confirm&eacute;e d&egrave;s
+        r&eacute;ception du r&egrave;glement int&eacute;gral.
+      </p>
+    ),
+  },
+  {
+    icon: Shield,
+    title: "D\u00e9p\u00f4t de garantie",
+    content: (
+      <>
+        <p className="text-sm leading-relaxed tracking-wide mb-3">
+          Un d&eacute;p&ocirc;t de garantie est demand&eacute; avant
+          chaque &eacute;v&eacute;nement :
+        </p>
+        <ul className="text-sm leading-relaxed space-y-1.5">
+          <li>
+            <span className="font-medium text-black">5 000 &euro;</span>{" "}
+            pour Chez les Plombiers
+          </li>
+          <li>
+            <span className="font-medium text-black">3 000 &euro;</span>{" "}
+            pour l&apos;Appartement Rose
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    icon: Clock,
+    title: "Restitution",
+    content: (
+      <p className="text-sm leading-relaxed tracking-wide">
+        Le d&eacute;p&ocirc;t de garantie vous est restitu&eacute;
+        sous 8 jours ouvr&eacute;s apr&egrave;s votre
+        &eacute;v&eacute;nement, suite &agrave; l&apos;&eacute;tat
+        des lieux de sortie.
+      </p>
+    ),
+  },
+];
+
+function InfoCards() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {INFO_CARDS.map((card, index) => {
+        const Icon = card.icon;
+        const isHovered = hoveredIndex === index;
+
+        return (
+          <motion.div
+            key={card.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: index * 0.08 }}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            className={`
+              relative overflow-hidden border p-8 transition-all duration-300 ease-in-out flex flex-col
+              ${isHovered
+                ? "border-black shadow-[0_8px_30px_rgba(0,0,0,0.12)] bg-gray-50 scale-[1.02]"
+                : "border-gray-200 bg-white"
+              }
+            `}
+          >
+            <div className="mb-6">
+              <div
+                className={`
+                  w-14 h-14 border flex items-center justify-center transition-all duration-300
+                  ${isHovered ? "border-black rotate-6 bg-black text-white" : "border-gray-300 text-gray-700"}
+                `}
+              >
+                <Icon className="w-6 h-6 stroke-[1.5]" />
+              </div>
+            </div>
+
+            <h3
+              className={`
+                text-xl font-light tracking-[0.1em] uppercase mb-4 transition-all duration-300
+                ${isHovered ? "text-black" : "text-gray-900"}
+              `}
+            >
+              {card.title}
+            </h3>
+
+            <div
+              className={`
+                flex-1 transition-colors duration-300
+                ${isHovered ? "text-gray-800" : "text-gray-500"}
+              `}
+            >
+              {card.content}
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+  );
 }
 
 function SelectField({
