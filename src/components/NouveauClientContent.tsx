@@ -144,26 +144,81 @@ export function NouveauClientContent() {
     };
   }, [debouncedQuery]);
 
+  // Compute TVA intracommunautaire from SIREN
+  const computeTVA = useCallback((siret: string): string => {
+    const siren = siret.replace(/\s/g, "").slice(0, 9);
+    if (siren.length !== 9 || isNaN(Number(siren))) return "";
+    const sirenNum = parseInt(siren, 10);
+    const key = (12 + 3 * (sirenNum % 97)) % 97;
+    return `FR${key.toString().padStart(2, "0")}${siren}`;
+  }, []);
+
   const handleSireneSelect = useCallback(
     (result: SireneResult) => {
+      const tva = computeTVA(result.siege.siret);
       setForm((prev) => ({
         ...prev,
         companyName: result.nom_complet,
         siret: result.siege.siret,
+        tvaNumber: tva,
       }));
       setSireneQuery(result.nom_complet);
       setSiretReadonly(true);
       setShowSirene(false);
     },
-    []
+    [computeTVA]
   );
 
   const clearSirene = useCallback(() => {
-    setForm((prev) => ({ ...prev, companyName: "", siret: "" }));
+    setForm((prev) => ({ ...prev, companyName: "", siret: "", tvaNumber: "" }));
     setSireneQuery("");
     setSiretReadonly(false);
     setSireneResults([]);
   }, []);
+
+  // Address autocomplete
+  const [addressQuery, setAddressQuery] = useState("");
+  const [addressResults, setAddressResults] = useState<{ label: string; context: string }[]>([]);
+  const [showAddress, setShowAddress] = useState(false);
+  const addressRef = useRef<HTMLDivElement>(null);
+  const debouncedAddress = useDebouncedValue(addressQuery, 300);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (addressRef.current && !addressRef.current.contains(e.target as Node)) {
+        setShowAddress(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (!debouncedAddress || debouncedAddress.length < 5) {
+      setAddressResults([]);
+      return;
+    }
+    let cancelled = false;
+    fetch(
+      `https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(debouncedAddress)}&limit=5`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (!cancelled && data.features) {
+          setAddressResults(
+            data.features.map((f: { properties: { label: string; context: string } }) => ({
+              label: f.properties.label,
+              context: f.properties.context,
+            }))
+          );
+          setShowAddress(true);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setAddressResults([]);
+      });
+    return () => { cancelled = true; };
+  }, [debouncedAddress]);
 
   const updateField = useCallback(
     (field: keyof FormData, value: string) => {
@@ -308,10 +363,13 @@ export function NouveauClientContent() {
               Votre &eacute;v&eacute;nement
             </p>
             <h1 className="text-4xl lg:text-7xl font-light mb-6 tracking-tight max-w-5xl">
-              Bienvenue Chez&nbsp;Les&nbsp;Plombiers
+              Bienvenue Chez&nbsp;les&nbsp;Plombiers
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 font-light max-w-3xl">
-              Nous sommes ravis de vous accueillir. Quelques informations
+              Nous sommes ravis de vous accueillir.
+              <br />
+              Quelques informations ci-dessous
+              <br />
               pour pr&eacute;parer votre proposition personnalis&eacute;e.
             </p>
           </motion.div>
@@ -519,20 +577,51 @@ export function NouveauClientContent() {
                 placeholder="Nom du client final"
               />
 
-              <div className="space-y-2">
+              <div ref={addressRef} className="relative space-y-2">
                 <label className="block text-sm font-medium">
                   Adresse postale compl&egrave;te{" "}
                   <span className="text-red-500">*</span>
                 </label>
-                <textarea
+                <input
+                  type="text"
                   required
-                  value={form.address}
-                  onChange={(e) => updateField("address", e.target.value)}
-                  placeholder="Num&eacute;ro, rue, code postal, ville"
-                  rows={3}
-                  className="w-full bg-white border border-gray-200 px-4 py-4 text-sm focus:outline-none focus:border-black transition-colors resize-none"
-                  autoComplete="street-address"
+                  value={addressQuery || form.address}
+                  onChange={(e) => {
+                    setAddressQuery(e.target.value);
+                    updateField("address", e.target.value);
+                  }}
+                  placeholder="Rechercher une adresse..."
+                  className="w-full bg-white border border-gray-200 px-4 py-4 text-sm focus:outline-none focus:border-black transition-colors"
+                  autoComplete="off"
                 />
+                <AnimatePresence>
+                  {showAddress && addressResults.length > 0 && (
+                    <motion.ul
+                      initial={{ opacity: 0, y: -4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -4 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute z-20 w-full bg-white border border-gray-200 mt-1 shadow-lg max-h-64 overflow-y-auto"
+                    >
+                      {addressResults.map((result, i) => (
+                        <li key={i}>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              updateField("address", result.label);
+                              setAddressQuery(result.label);
+                              setShowAddress(false);
+                            }}
+                            className="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
+                          >
+                            <p className="text-sm font-medium">{result.label}</p>
+                            <p className="text-xs text-gray-500 mt-0.5">{result.context}</p>
+                          </button>
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -545,11 +634,12 @@ export function NouveauClientContent() {
                   readOnly={siretReadonly}
                 />
                 <FormField
-                  label="Num&eacute;ro de TVA"
+                  label="N&deg; TVA intracommunautaire"
                   required
                   value={form.tvaNumber}
                   onChange={(v) => updateField("tvaNumber", v)}
                   placeholder="FR 12 345678901"
+                  readOnly={siretReadonly && form.tvaNumber.length > 0}
                 />
               </div>
             </fieldset>
@@ -724,7 +814,7 @@ interface SelectFieldProps {
 const INFO_CARDS = [
   {
     icon: CreditCard,
-    title: "Paiement",
+    title: "Booking",
     content: (
       <p className="text-sm leading-relaxed tracking-wide">
         Votre r&eacute;servation est confirm&eacute;e d&egrave;s
