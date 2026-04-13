@@ -94,7 +94,7 @@ export async function POST(request: Request) {
     "CRÉNEAU": { multi_select: [{ name: creneauMap[body.timeSlot] || body.timeSlot }] },
     "NBRE INVITÉS": { number: body.guestCount },
     ESPACE: { select: { name: espaceMap[body.space] || body.space } },
-    STEP: { select: { name: "OPTION" } },
+    STEP: { select: { name: "VALIDÉ" } },
   };
 
   if (body.endClient && body.endClient.trim()) {
