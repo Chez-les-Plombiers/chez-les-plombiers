@@ -73,6 +73,8 @@ const nextConfig: NextConfig = {
       // Old service slug redirect
       { source: "/services/diners-prives", destination: "/services/diners-exception", permanent: true },
       { source: "/en/services/diners-prives", destination: "/en/services/exceptional-dinners", permanent: true },
+      // Case normalization
+      { source: "/GUIDE", destination: "/guide", permanent: true },
       // Legacy Squarespace pages
       { source: "/blank", destination: "/", permanent: true },
       { source: "/blank-1", destination: "/", permanent: true },
