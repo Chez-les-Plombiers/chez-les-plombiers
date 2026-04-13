@@ -236,7 +236,7 @@ export async function POST(request: Request) {
             "etienne@chezlesplombiers.fr",
             "celine@chezlesplombiers.fr",
           ],
-          subject: "Nouveau client en Option — à traiter sous 48h",
+          subject: `Nouveau client ${body.company} — à traiter sous 48h`,
           html,
         }),
       });
