@@ -70,19 +70,31 @@ export async function POST(request: Request) {
 
   const siretNumber = parseInt(body.siret.replace(/\s/g, ""), 10);
 
+  // Map form values to Notion select option names
+  const creneauMap: Record<string, string> = {
+    "Matinée (7h-13h)": "MATIN (7h-13h)",
+    "Après-midi (13h-19h)": "APRÈS-MIDI (13h-19h)",
+    "Journée complète (7h-23h)": "JOURNÉE COMPLÈTE (7h-23h)",
+  };
+  const espaceMap: Record<string, string> = {
+    "Chez les Plombiers": "PLOMBIERS",
+    "Appartement Rose": "APPART ROSE",
+    "Les deux": "LES DEUX",
+  };
+
   const properties: Record<string, unknown> = {
     Nom: { title: [{ text: { content: body.fullName } }] },
     MAIL: { email: body.email },
     TEL: { phone_number: body.phone },
-    ENTREPRISE: { rich_text: [{ text: { content: body.company } }] },
+    ENTREPRISE: { select: { name: body.company } },
     "ADRESSE POSTALE": { rich_text: [{ text: { content: body.address } }] },
     SIRET: { number: isNaN(siretNumber) ? 0 : siretNumber },
     TVA: { rich_text: [{ text: { content: body.tva } }] },
     DATE: { date: { start: body.dateStart, end: body.dateEnd || null } },
-    "CRÉNEAU": { multi_select: [{ name: body.timeSlot }] },
+    "CRÉNEAU": { multi_select: [{ name: creneauMap[body.timeSlot] || body.timeSlot }] },
     "NBRE INVITÉS": { number: body.guestCount },
-    ESPACE: { select: { name: body.space } },
-    STEP: { select: { name: "Option" } },
+    ESPACE: { select: { name: espaceMap[body.space] || body.space } },
+    STEP: { select: { name: "OPTION" } },
   };
 
   if (body.endClient && body.endClient.trim()) {
