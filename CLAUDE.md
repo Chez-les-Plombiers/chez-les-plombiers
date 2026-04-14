@@ -60,6 +60,7 @@ npm run lint     # ESLint
 /en/info                                 → EN (practical info)
 /notre-chef                              → FR (chef partenaire Mathias Rouveure)
 /en/our-chef                             → EN (partner chef)
+/nouveau-client                          → FR only (formulaire facturation, noindex, envoyé manuellement)
 ```
 
 ## Structure
@@ -77,11 +78,15 @@ src/app/
     legal-notice/page.tsx       # Legal Notice (EN, re-export)
     politique-confidentialite/page.tsx  # RGPD (FR) — JSON-LD PrivacyPolicy + Organization + BreadcrumbList
     privacy-policy/page.tsx     # Privacy Policy (EN, re-export)
+    nouveau-client/page.tsx     # Formulaire facturation client (FR only, noindex, privé)
     notre-chef/page.tsx         # Chef partenaire Mathias Rouveure (FR)
     our-chef/page.tsx           # Partner chef (EN, re-export)
     not-found.tsx
     error.tsx
     services/[slug]/page.tsx   # Pages services dynamiques (7 FR + 7 EN) — 3 JSON-LD (Service, BreadcrumbList, FAQPage)
+  api/
+    guide/route.ts           # POST: chatbot AI concierge (Claude Haiku 4.5, streaming)
+    nouveau-client/route.ts  # POST: formulaire facturation → Notion CRM + email Resend
   robots.ts          # robots.txt dynamique (AI bots autorisés)
   sitemap.ts         # sitemap.xml (38 URLs: 19 FR + 19 EN avec hreflang)
   globals.css        # Design tokens Tailwind v4
@@ -100,6 +105,7 @@ src/components/      # Tous "use client" — utilisent useI18n()
   AppartementContent.tsx # Page Appartement Rose (galerie 10 photos bento + lightbox + ZIP download + reviews Google)
   ServicePageContent.tsx # Pages services (hero + 2 CTA, specs, galerie bento, features, reviews, FAQ, cross-links animés, CTA footer)
   InfosContent.tsx   # Page /infos (hero adresse, 4 stats, 6 cards accès, Google Maps embed, 3 cards quartier avec liens cliquables, 4 cards contact, FAQ)
+  NouveauClientContent.tsx # Page /nouveau-client (formulaire facturation → Notion CRM + email Resend)
   ui/ripple-button.tsx # Bouton avec effet ripple hover (utilisé dans Hero)
   GuideContent.tsx   # Chat AI concierge multi-turn (streaming, bulles user/assistant, markdown)
   ScrollAnimation.tsx # Wrapper réutilisable whileInView
@@ -286,6 +292,19 @@ Page chatbot pour les clients ayant réservé le lieu. Interface de chat multi-t
   - Max 20 turns de conversation
 - **Infos renseignées** : grille/portail cour (code 5409), Wi-Fi (2 réseaux), éclairage (Kiosc, 5 scénarios, mode custom), cuisine (café, lave-vaisselle, verres), sono (Sonos + XLR via UCP), chauffage (Daikin), vidéoprojecteur (Optoma ZU820T, fiche technique complète), poubelles tri, vestiaire, toilettes, fin d'événement
 - **Infos encore manquantes** : couvre-feu bruit, responsable du lieu (nom + tel)
+
+## Page /nouveau-client (13/04/2026)
+Page privée (noindex) envoyée manuellement aux clients en cours de conversion. Collecte les infos de facturation et crée une fiche dans le CRM Notion.
+
+- **URL** : `chezlesplombiers.fr/nouveau-client` — FR only, pas dans la nav/footer/sitemap
+- **Composant** : `NouveauClientContent.tsx` — design calqué sur `/infos` (hero photo, fond clair, animations Motion)
+- **Formulaire** : 12 champs (nom, email, tel, société, client final, adresse, SIRET, TVA, dates, créneau, invités, espace)
+- **Autocomplete entreprise** : API SIRENE (`recherche-entreprises.api.gouv.fr`) — debounce 300ms, 5 suggestions, pré-remplissage SIRET + calcul automatique TVA intracommunautaire
+- **Autocomplete adresse** : API Adresse (`api-adresse.data.gouv.fr`) — debounce 300ms, 5 suggestions
+- **API route** : `POST /api/nouveau-client` → crée page dans Notion DB `12262c83-ae64-8051-98a8-f6e3b3200354` (CRM contacts) avec STEP=VALIDÉ
+- **Email** : Resend → etienne@ + celine@chezlesplombiers.fr, objet "Nouveau client {entreprise} — à traiter sous 48h"
+- **Notion mapping** : Nom (title), MAIL (email), TEL (phone), ENTREPRISE (select, auto-create), ADRESSE POSTALE (rich_text), SIRET (number), TVA (rich_text), DATE (date), CRÉNEAU (multi_select: MATIN/APRÈS-MIDI/JOURNÉE COMPLÈTE), NBRE INVITÉS (number), ESPACE (select: PLOMBIERS/APPART ROSE/LES DEUX), CLIENT FINAL (multi_select), STEP (select: VALIDÉ)
+- **Env vars Vercel** : `NOTION_API_TOKEN` (intégration "CLP" sur workspace archibald-abraham), `RESEND_API_KEY`
 
 ## Informations légales
 - Chez les Plombiers SAS — SIREN 928 788 157
