@@ -91,7 +91,7 @@ export async function POST(request: Request) {
     SIRET: { number: isNaN(siretNumber) ? 0 : siretNumber },
     TVA: { rich_text: [{ text: { content: body.tva } }] },
     DATE: { date: { start: body.dateStart, end: body.dateEnd || null } },
-    "CRÉNEAU": { multi_select: [{ name: creneauMap[body.timeSlot] || body.timeSlot }] },
+    "CRÉNEAU": { select: { name: creneauMap[body.timeSlot] || body.timeSlot } },
     "NBRE INVITÉS": { number: body.guestCount },
     ESPACE: { select: { name: espaceMap[body.space] || body.space } },
     STEP: { select: { name: "VALIDÉ" } },
