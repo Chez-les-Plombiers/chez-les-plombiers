@@ -32,6 +32,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Case normalization: redirect uppercase paths to lowercase
+  const lowered = pathname.toLowerCase();
+  if (lowered !== pathname) {
+    const url = request.nextUrl.clone();
+    url.pathname = lowered;
+    return NextResponse.redirect(url, 301);
+  }
+
   // Redirect /fr/ and /fr/xxx → / and /xxx (FR has no prefix)
   if (pathname === "/fr" || pathname.startsWith("/fr/")) {
     const newPath = pathname.replace(/^\/fr/, "") || "/";
