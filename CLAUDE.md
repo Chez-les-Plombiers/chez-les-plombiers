@@ -303,7 +303,8 @@ Page privée (noindex) envoyée manuellement aux clients en cours de conversion.
 - **Autocomplete adresse** : API Adresse (`api-adresse.data.gouv.fr`) — debounce 300ms, 5 suggestions
 - **API route** : `POST /api/nouveau-client` → crée page dans Notion DB `12262c83-ae64-8051-98a8-f6e3b3200354` (CRM contacts) avec STEP=VALIDÉ
 - **Email** : Resend → etienne@ + celine@chezlesplombiers.fr, objet "Nouveau client {entreprise} — à traiter sous 48h"
-- **Notion mapping** : Nom (title), MAIL (email), TEL (phone), ENTREPRISE (select, auto-create), ADRESSE POSTALE (rich_text), SIRET (number), TVA (rich_text), DATE (date), CRÉNEAU (multi_select: MATIN/APRÈS-MIDI/JOURNÉE COMPLÈTE), NBRE INVITÉS (number), ESPACE (select: PLOMBIERS/APPART ROSE/LES DEUX), CLIENT FINAL (multi_select), STEP (select: VALIDÉ)
+- **Notion mapping** : Nom (title), MAIL (email), TEL (phone), ENTREPRISE (select, auto-create), ADRESSE POSTALE (rich_text), SIRET (number), TVA (rich_text), DATE (date), CRÉNEAU (**select**: MATIN/APRÈS-MIDI/JOURNÉE COMPLÈTE — changé de multi_select → select côté Notion le 15/04), NBRE INVITÉS (number), ESPACE (select: PLOMBIERS/APPART ROSE/LES DEUX), CLIENT FINAL (multi_select), STEP (select: VALIDÉ)
+- **Fix 16/04/2026** : `CRÉNEAU` était passé de multi_select → select côté Notion, le code envoyait encore du multi_select → erreur 400. Corrigé (commit `f3d9be7`).
 - **Env vars Vercel** : `NOTION_API_TOKEN` (intégration "CLP" sur workspace archibald-abraham), `RESEND_API_KEY`
 
 ## Informations légales
