@@ -13,7 +13,7 @@ import { ReviewsSection } from "@/components/ReviewsSection";
 import { RippleButton } from "@/components/ui/ripple-button";
 import ClientLogosSection from "@/components/ClientLogosSection";
 
-const appartPhotos = Array.from({ length: 10 }, (_, i) => {
+const appartPhotos = Array.from({ length: 11 }, (_, i) => {
   const num = String(i + 1).padStart(2, "0");
   return { src: `/photos/appartement/appartement-${num}.jpg`, key: num };
 });
