@@ -40,11 +40,11 @@ function ChefLogoItem({ name, img }: { name: string; img?: string }) {
   const [failed, setFailed] = useState(false);
   if (img && !failed) {
     return (
-      <div className="flex items-center justify-center h-14 px-2">
+      <div className="flex items-center justify-center h-20 px-2">
         <img
           src={img}
           alt={name}
-          className="max-h-10 w-auto max-w-[130px] object-contain"
+          className="max-h-16 w-auto max-w-[160px] object-contain"
           style={{ filter: "invert(1)", mixBlendMode: "multiply" }}
           onError={() => setFailed(true)}
         />
@@ -52,8 +52,8 @@ function ChefLogoItem({ name, img }: { name: string; img?: string }) {
     );
   }
   return (
-    <div className="flex items-center justify-center h-14 px-2">
-      <span className="text-[9px] uppercase tracking-[2px] text-gray-700 font-semibold text-center leading-tight">
+    <div className="flex items-center justify-center h-20 px-2">
+      <span className="text-[10px] uppercase tracking-[2px] text-gray-700 font-semibold text-center leading-tight">
         {name}
       </span>
     </div>
