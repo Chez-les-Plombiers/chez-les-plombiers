@@ -182,20 +182,18 @@ export function ChefContent() {
       <section className="py-20 lg:py-28 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Image placeholder */}
+            {/* Portrait Mathias */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative aspect-[3/4] overflow-hidden bg-gray-200"
-              style={{
-                backgroundImage:
-                  "url('https://images.squarespace-cdn.com/content/v1/63468f09a3a3280f2aff6014/bffd5b91-06b9-4d0c-8e9d-3b897ca72b2c/Captura+de+pantalla+2025-03-27+a+las+14.04.55.png?format=2500w')",
-                backgroundSize: "cover",
-                backgroundPosition: "center top",
-              }}
+              className="relative aspect-[3/4] overflow-hidden"
             >
-              <span className="sr-only">{chef.portraitImageAlt}</span>
+              <img
+                src="/images/chef-mathias-portrait.jpg"
+                alt={chef.portraitImageAlt}
+                className="w-full h-full object-cover object-center"
+              />
             </motion.div>
             {/* Text */}
             <motion.div
