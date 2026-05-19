@@ -8,6 +8,22 @@ import { RippleButton } from "@/components/ui/ripple-button";
 import ClientLogosSection from "@/components/ClientLogosSection";
 import { useState } from "react";
 
+const CHEF_REALISATIONS = [
+  { client: "Sandro",                      lieu: "Paris",    format: "Catering",                    guests: "900" },
+  { client: "Audemars Piguet × Entourage", lieu: "Paris",    format: "Catering",                    guests: "300" },
+  { client: "Événement Privé",             lieu: "Florence", format: "Catering · Full Production",  guests: "250" },
+  { client: "Kerria Paris",                lieu: "Paris",    format: "Catering · Full Production",  guests: "200" },
+  { client: "Bpifrance",                   lieu: "Paris",    format: "Catering",                    guests: "200" },
+  { client: "Crédit Agricole",             lieu: "Paris",    format: "Catering · Full Production",  guests: "150" },
+  { client: "Maison Dauphine",             lieu: "Paris",    format: "Catering",                    guests: "70" },
+  { client: "BNP Paribas",                 lieu: "Paris",    format: "Catering · Full Production",  guests: "60" },
+  { client: "Collector Square",            lieu: "Paris",    format: "Catering · Full Production",  guests: "55" },
+  { client: "Dior",                        lieu: "Paris",    format: "Dîner Assis · DJ Set",        guests: "50" },
+  { client: "Kassandre",                   lieu: "Paris",    format: "Catering · Scénographie",     guests: "50" },
+  { client: "Clarins",                     lieu: "Cannes",   format: "Catering",                    guests: "50" },
+  { client: "Galerie Karsten Greve",       lieu: "Paris",    format: "Catering · Full Production",  guests: "30" },
+];
+
 const CHEF_GALLERY = [
   { src: "/images/chef-gallery/dinner-long-table.jpg",  alt: "Dîner privé — longue table aux chandelles",         label: "Dîner privé" },
   { src: "/images/chef-gallery/food-pasta-caviar.jpg",  alt: "Pâtes fraîches, truffe et caviar",                  label: "Gastronomie" },
@@ -122,11 +138,14 @@ export function ChefContent() {
     <div className="pt-0">
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Placeholder background — sera remplacé par la photo d'Etienne */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1a1208] via-[#2a1a0a] to-[#0d0906]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_60%,rgba(180,130,60,0.15)_0%,transparent_60%)]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/60" />
+          <img
+            src="/images/chef-gallery/dinner-projection.jpg"
+            alt="Dîner immersif par HOMEMADE — Chez Les Plombiers Paris"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/40" />
         </div>
         <div className="relative z-10 text-center text-white px-6">
           <motion.p
@@ -311,6 +330,47 @@ export function ChefContent() {
                     {item.label}
                   </span>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RÉALISATIONS */}
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#F4F1EC" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 lg:mb-16"
+          >
+            <p className="text-[10px] uppercase tracking-[4px] text-gray-400 mb-2">
+              Quelques réalisations
+            </p>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-gray-900 uppercase">
+              Événements
+            </h2>
+          </motion.div>
+          <div className="divide-y divide-gray-300">
+            {CHEF_REALISATIONS.map((item, i) => (
+              <motion.div
+                key={item.client + i}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.04 }}
+                className="flex items-baseline justify-between py-4 gap-4 group"
+              >
+                <span className="text-base lg:text-lg font-semibold text-gray-900 tracking-tight group-hover:text-gray-500 transition-colors duration-200">
+                  {item.client}
+                </span>
+                <span className="hidden sm:block text-xs text-gray-400 tracking-wide shrink-0">
+                  {item.format}
+                </span>
+                <span className="text-xs text-gray-400 tracking-wider shrink-0">
+                  {item.lieu} · <span className="font-medium text-gray-600">{item.guests} pers.</span>
+                </span>
               </motion.div>
             ))}
           </div>
