@@ -8,54 +8,54 @@ import { RippleButton } from "@/components/ui/ripple-button";
 import ClientLogosSection from "@/components/ClientLogosSection";
 import { useState } from "react";
 
-const CHEF_LOGOS = [
-  { name: "Dior", domain: "dior.com" },
-  { name: "Audemars Piguet", domain: "audemarspiguet.com" },
-  { name: "Land Rover", domain: "landrover.com" },
-  { name: "Gagosian", domain: "gagosian.com" },
-  { name: "Chanel", domain: "chanel.com" },
-  { name: "Piaget", domain: "piaget.com" },
-  { name: "Cartier", domain: "cartier.com" },
-  { name: "Clarins", domain: "clarins.com" },
-  { name: "Gant", domain: "gant.com" },
-  { name: "Collector Square", domain: "collectorsquare.com" },
-  { name: "Givenchy", domain: "givenchy.com" },
-  { name: "Selency", domain: "selency.com" },
-  { name: "Lalique", domain: "lalique.com" },
-  { name: "Pierre Frey", domain: "pierrefrey.com" },
-  { name: "Philharmonie de Paris", domain: "philharmoniedeparis.fr" },
-  { name: "Nike", domain: "nike.com" },
-  { name: "Philipp Plein", domain: "philipp-plein.com" },
-  { name: "TF1", domain: "tf1.fr" },
-  { name: "Slack", domain: "slack.com" },
-  { name: "Equans", domain: "equans.com" },
-  { name: "Salesforce", domain: "salesforce.com" },
-  { name: "Pernod Ricard", domain: "pernod-ricard.com" },
-  { name: "Revolut", domain: "revolut.com" },
-  { name: "bpifrance", domain: "bpifrance.fr" },
-  { name: "BNP Paribas", domain: "bnpparibas.com" },
-  { name: "Maison 123", domain: "maison123.com" },
-  { name: "Kosas", domain: "kosas.com" },
-  { name: "Publicis Live", domain: "publicislive.fr" },
+const CHEF_LOGOS: { name: string; img?: string }[] = [
+  { name: "Dior",                   img: "/images/chef-logos/dior.png" },
+  { name: "Audemars Piguet",        img: "/images/chef-logos/audemars-piguet.png" },
+  { name: "Land Rover",             img: "/images/chef-logos/land-rover.png" },
+  { name: "Gagosian",               img: "/images/chef-logos/gagosian.png" },
+  { name: "Chanel",                 img: "/images/chef-logos/chanel.png" },
+  { name: "Piaget",                 img: "/images/chef-logos/piaget.png" },
+  { name: "Cartier",                img: "/images/chef-logos/cartier.png" },
+  { name: "Hermès",                 img: "/images/chef-logos/hermes.png" },
+  { name: "Givenchy",               img: "/images/chef-logos/givenchy.png" },
+  { name: "Selency",                img: "/images/chef-logos/selency.png" },
+  { name: "Lalique",                img: "/images/chef-logos/lalique.png" },
+  { name: "Pierre Frey",            img: "/images/chef-logos/pierre-frey.png" },
+  { name: "Philharmonie de Paris",  img: "/images/chef-logos/philharmonie.png" },
+  { name: "Nike",                   img: "/images/chef-logos/nike.png" },
+  { name: "Philipp Plein",          img: "/images/chef-logos/philipp-plein.png" },
+  { name: "TF1",                    img: "/images/chef-logos/tf1.png" },
+  { name: "Slack",                  img: "/images/chef-logos/slack.png" },
+  { name: "Equans",                 img: "/images/chef-logos/equans.png" },
+  { name: "Salesforce",             img: "/images/chef-logos/salesforce.png" },
+  { name: "Pernod Ricard",          img: "/images/chef-logos/pernod-ricard.png" },
+  { name: "Revolut",                img: "/images/chef-logos/revolut.png" },
+  { name: "Maison 123",             img: "/images/chef-logos/maison-123.png" },
+  { name: "Birkenstock",            img: "/images/chef-logos/birkenstock.png" },
+  { name: "Galion",                 img: "/images/chef-logos/galion.png" },
+  { name: "Christie's",             img: "/images/chef-logos/christies.png" },
 ];
 
-function ChefLogoItem({ name, domain }: { name: string; domain: string }) {
+function ChefLogoItem({ name, img }: { name: string; img?: string }) {
   const [failed, setFailed] = useState(false);
-  return (
-    <div className="flex items-center justify-center h-12 px-2">
-      {failed ? (
-        <span className="text-[9px] uppercase tracking-[2px] text-gray-500 font-semibold text-center leading-snug">
-          {name}
-        </span>
-      ) : (
+  if (img && !failed) {
+    return (
+      <div className="flex items-center justify-center h-14 px-2">
         <img
-          src={`https://logo.clearbit.com/${domain}?size=160`}
+          src={img}
           alt={name}
-          className="max-h-9 w-auto max-w-[110px] object-contain"
-          style={{ filter: "brightness(0)" }}
+          className="max-h-10 w-auto max-w-[130px] object-contain"
+          style={{ filter: "invert(1)", mixBlendMode: "multiply" }}
           onError={() => setFailed(true)}
         />
-      )}
+      </div>
+    );
+  }
+  return (
+    <div className="flex items-center justify-center h-14 px-2">
+      <span className="text-[9px] uppercase tracking-[2px] text-gray-700 font-semibold text-center leading-tight">
+        {name}
+      </span>
     </div>
   );
 }
@@ -242,7 +242,7 @@ export function ChefContent() {
               Références
             </h2>
           </motion.div>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-6 gap-y-8 items-center">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-x-8 gap-y-10 items-center">
             {CHEF_LOGOS.map((logo, i) => (
               <motion.div
                 key={logo.name}
@@ -251,7 +251,7 @@ export function ChefContent() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.03 }}
               >
-                <ChefLogoItem name={logo.name} domain={logo.domain} />
+                <ChefLogoItem name={logo.name} img={logo.img} />
               </motion.div>
             ))}
           </div>
