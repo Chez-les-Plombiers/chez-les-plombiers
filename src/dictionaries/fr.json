@@ -1251,7 +1251,7 @@
     "portraitName": "Mathias Rouveure",
     "portraitBio1": "Plus qu'un chef, Mathias Rouveure est un créateur d'émotions. Diplômé de l'École Hôtelière de Lausanne, et après une carrière en E-Reputation, il choisit de revenir à une pratique plus directe, recentrée sur le geste, la précision et l'intention en tenant d'abord des restaurants, puis en fondant HOMEMADE.",
     "portraitBio2": "Son univers se développe aussi en dehors de la cuisine — sur Instagram où il partage un regard brut et spontané, et dans la musique en tant que DJ, qu'il explore comme une autre manière de composer.",
-    "portraitBio3": "Sa femme Anna co-construit la direction artistique et pilote la production des projets. Elle structure, équilibre et donne forme à chaque vision. Ensemble, ils développent un langage commun, où chaque projet se construit avec exigence, sens et cohérence.",
+    "portraitBio3": "Sa femme Anna Bontemps co-construit la direction artistique et pilote la production des projets. Après plus de 15 ans entre marketing, digital et influence, elle développe une approche personnelle et sensible de l'art de recevoir — fille d'ambassadeur, elle grandit dans une culture du lien où accueillir et rassembler font partie du quotidien. Son regard se traduit dans chaque détail : la justesse d'une table, l'équilibre d'une ambiance, la manière dont les invités se rencontrent.",
     "portraitSignature": "« Serious about quality, never about ourselves. »",
     "portraitImageAlt": "Chef Mathias Rouveure — fondateur de Homemade, chef partenaire Chez Les Plombiers",
     "logosLabel": "Ils lui font confiance",
@@ -1295,32 +1295,32 @@
         "desc": "Convives / service"
       }
     ],
-    "prestationsLabel": "Expériences",
-    "prestationsTitle": "Nos formats <strong>culinaires</strong>",
+    "prestationsLabel": "Services",
+    "prestationsTitle": "Haute gastronomie · Art · Musique · <strong>Expériences</strong>",
     "prestations": [
       {
         "number": "01",
-        "title": "Dîner d'exception",
-        "description": "Menu dégustation sur mesure, service à l'assiette, accord mets-vins optionnel. Une expérience gastronomique complète.",
-        "capacity": "40 à 80 convives"
+        "title": "Cocktails Dînatoires & Déjeunatoires",
+        "description": "Créations gastronomiques en format dégustation. Pièces cocktail signatures, compositions visuelles, service en mouvement. L'art de circuler entre convives sans jamais sacrifier l'exigence.",
+        "capacity": "80 à 900 convives"
       },
       {
         "number": "02",
-        "title": "Cocktail dînatoire",
-        "description": "Pièces cocktail créatives, compositions artistiques, service volant. L'élégance en mouvement.",
-        "capacity": "80 à 150 convives"
+        "title": "Buffets & Plats à Partager",
+        "description": "Tables scénographiées, plats généreux et visuels, atmosphère conviviale et raffinée. Une approche collective qui transforme le repas en moment de lien.",
+        "capacity": "40 à 200 convives"
       },
       {
         "number": "03",
-        "title": "Brunch créatif",
-        "description": "Buffet scénographié, stations live cooking, œuvres comestibles. Le petit-déjeuner réinventé.",
-        "capacity": "40 à 100 convives"
+        "title": "Dîners & Déjeuners Assis",
+        "description": "Menus bespoke conçus pour des expériences immersives. Service à l'assiette, 3 à 5 services, accord mets-vins optionnel. Chaque table est une narration culinaire sur mesure.",
+        "capacity": "20 à 80 convives"
       },
       {
         "number": "04",
-        "title": "Expérience immersive",
-        "description": "Concept sur mesure : food + art + musique + scénographie complète. Votre vision, sa signature.",
-        "capacity": "Sur devis"
+        "title": "Événements 360°",
+        "description": "Du concept à la production, au delà du culinaire. Scénographie sur mesure, son, lumière, performances artistiques, branding et invitations. HOMEMADE orchestre chaque détail.",
+        "capacity": "Sur devis — de 20 à 250 invités"
       }
     ],
     "ctaTitle": "Imaginez votre <strong>événement</strong>",

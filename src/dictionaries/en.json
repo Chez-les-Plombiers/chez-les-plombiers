@@ -1251,7 +1251,7 @@
     "portraitName": "Mathias Rouveure",
     "portraitBio1": "More than a chef, Mathias Rouveure is a creator of emotions. A graduate of the École Hôtelière de Lausanne, and after a career in E-Reputation, he chose to return to a more direct practice, refocused on gesture, precision and intention — first running restaurants, then founding HOMEMADE.",
     "portraitBio2": "His world extends beyond the kitchen — on Instagram where he shares a raw, spontaneous perspective, and in music as a DJ, which he explores as another way of composing.",
-    "portraitBio3": "His wife Anna co-builds the artistic direction and manages project production. She structures, balances and gives shape to every vision. Together they develop a shared language, where each project is built with precision, meaning and coherence.",
+    "portraitBio3": "His wife Anna Bontemps co-builds the artistic direction and manages project production. With over 15 years in marketing, digital and influence, she brings a personal and sensitive approach to the art of hosting — raised as an ambassador's daughter, she grew up in a culture of connection where welcoming and bringing people together were second nature. Her eye shows in every detail: the precision of a table setting, the balance of an atmosphere, the way guests discover each other.",
     "portraitSignature": "\"Serious about quality, never about ourselves.\"",
     "portraitImageAlt": "Chef Mathias Rouveure — founder of Homemade, partner chef at Chez Les Plombiers",
     "logosLabel": "They trust him",
@@ -1295,32 +1295,32 @@
         "desc": "Guests / service"
       }
     ],
-    "prestationsLabel": "Experiences",
-    "prestationsTitle": "Our culinary <strong>formats</strong>",
+    "prestationsLabel": "Services",
+    "prestationsTitle": "Fine dining · Art · Music · <strong>Experiences</strong>",
     "prestations": [
       {
         "number": "01",
-        "title": "Exceptional dinner",
-        "description": "Bespoke tasting menu, plated service, optional wine pairing. A complete gastronomic experience.",
-        "capacity": "40 to 80 guests"
+        "title": "Cocktail Receptions & Lunch Events",
+        "description": "Gastronomic creations in tasting format. Signature canapés, visual compositions, roaming service. The art of mingling without ever compromising on quality.",
+        "capacity": "80 to 900 guests"
       },
       {
         "number": "02",
-        "title": "Cocktail reception",
-        "description": "Creative canapés, artistic compositions, roaming service. Elegance in motion.",
-        "capacity": "80 to 150 guests"
+        "title": "Buffets & Sharing Plates",
+        "description": "Curated table displays, generous and visual dishes, a convivial yet refined atmosphere. A collective approach that turns a meal into a moment of genuine connection.",
+        "capacity": "40 to 200 guests"
       },
       {
         "number": "03",
-        "title": "Creative brunch",
-        "description": "Curated buffet, live cooking stations, edible artworks. Breakfast reinvented.",
-        "capacity": "40 to 100 guests"
+        "title": "Seated Dinners & Lunches",
+        "description": "Bespoke menus designed for immersive experiences. Plated service, 3 to 5 courses, optional wine pairing. Every table is a culinary narrative crafted to measure.",
+        "capacity": "20 to 80 guests"
       },
       {
         "number": "04",
-        "title": "Immersive experience",
-        "description": "Bespoke concept: food + art + music + full scenography. Your vision, his signature.",
-        "capacity": "On request"
+        "title": "360° Events",
+        "description": "From concept to production, beyond the culinary. Bespoke scenography, sound, lighting, artistic performances, branding and invitations. HOMEMADE orchestrates every detail.",
+        "capacity": "On request — 20 to 250 guests"
       }
     ],
     "ctaTitle": "Imagine your <strong>event</strong>",
