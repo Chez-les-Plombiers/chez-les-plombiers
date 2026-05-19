@@ -8,6 +8,18 @@ import { RippleButton } from "@/components/ui/ripple-button";
 import ClientLogosSection from "@/components/ClientLogosSection";
 import { useState } from "react";
 
+const CHEF_GALLERY = [
+  { src: "/images/chef-gallery/dinner-long-table.jpg",  alt: "Dîner privé — longue table aux chandelles",         label: "Dîner privé" },
+  { src: "/images/chef-gallery/food-pasta-caviar.jpg",  alt: "Pâtes fraîches, truffe et caviar",                  label: "Gastronomie" },
+  { src: "/images/chef-gallery/dinner-hermes.jpg",      alt: "Dîner Hermès — table ronde en showroom",            label: "Luxury brand" },
+  { src: "/images/chef-gallery/hermes-wide.jpg",        alt: "Setup Hermès avec Anna et Mathias",                 label: "Event design" },
+  { src: "/images/chef-gallery/buffet-garden.jpg",      alt: "Buffet cocktail — compositions botaniques",         label: "Cocktail dînatoire" },
+  { src: "/images/chef-gallery/reception-ornate.jpg",   alt: "Réception grand style — miroir doré",               label: "Réception" },
+  { src: "/images/chef-gallery/table-setting.jpg",      alt: "Dressage intime — bougies et menu personnalisé",    label: "Dîner intimiste" },
+  { src: "/images/chef-gallery/vegetables-prep.jpg",    alt: "Mise en place — légumes de saison colorés",         label: "Production" },
+  { src: "/images/chef-gallery/dinner-projection.jpg",  alt: "Dîner immersif — projection Versailles",            label: "Expérience immersive" },
+];
+
 const CHEF_LOGOS: { name: string; img?: string }[] = [
   { name: "Dior",                   img: "/images/chef-logos/dior.png" },
   { name: "Audemars Piguet",        img: "/images/chef-logos/audemars-piguet.png" },
@@ -277,26 +289,28 @@ export function ChefContent() {
               dangerouslySetInnerHTML={{ __html: chef.galleryTitle }}
             />
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
-            {chef.galleryItems.map((item, i) => (
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-1">
+            {CHEF_GALLERY.map((item, i) => (
               <motion.div
-                key={item.label}
+                key={item.src}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className={`relative bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center flex-col gap-1 cursor-pointer hover:opacity-80 transition-opacity ${
-                  i === 0
-                    ? "col-span-2 row-span-2 aspect-auto min-h-[300px] md:min-h-[400px]"
-                    : "aspect-square"
-                }`}
+                transition={{ duration: 0.5, delay: i * 0.07 }}
+                className="relative aspect-[4/5] overflow-hidden group"
               >
-                <span className="text-[10px] lg:text-xs uppercase tracking-wider text-gray-400 font-medium">
-                  {item.label}
-                </span>
-                <span className="text-[9px] lg:text-[10px] text-gray-400">
-                  {item.desc}
-                </span>
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-400" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-white text-[10px] uppercase tracking-[2px] font-medium">
+                    {item.label}
+                  </span>
+                </div>
               </motion.div>
             ))}
           </div>
