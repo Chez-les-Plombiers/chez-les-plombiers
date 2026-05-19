@@ -84,6 +84,7 @@ interface ChefDict {
   portraitName: string;
   portraitBio1: string;
   portraitBio2: string;
+  portraitBio3: string;
   portraitSignature: string;
   portraitImageAlt: string;
   logosLabel: string;
@@ -217,6 +218,9 @@ export function ChefContent() {
               </p>
               <p className="text-base lg:text-lg text-gray-600 leading-relaxed mb-6">
                 {chef.portraitBio2}
+              </p>
+              <p className="text-base lg:text-lg text-gray-600 leading-relaxed mb-6">
+                {chef.portraitBio3}
               </p>
               <p className="text-sm text-gray-500 italic pt-6 border-t border-gray-200">
                 {chef.portraitSignature}
