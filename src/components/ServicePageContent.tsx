@@ -24,6 +24,9 @@ import { ReviewsSection } from "@/components/ReviewsSection";
 import ClientLogosSection from "@/components/ClientLogosSection";
 import { RippleButton } from "@/components/ui/ripple-button";
 
+/** Slugs dont la galerie s'affiche en grille paysage uniforme 3:2 (au lieu du bento). */
+const LANDSCAPE_GALLERY_SLUGS = ["diners-exception", "evenements-culturels"];
+
 interface ServiceSpec {
   value: string;
   unit: string;
@@ -315,7 +318,7 @@ export function ServicePageContent({ slug }: { slug: string }) {
               {servicePages.galleryTitle}
             </motion.h2>
 
-            {slug === "diners-exception" ? (
+            {LANDSCAPE_GALLERY_SLUGS.includes(slug) ? (
               /* Galerie paysage — grille uniforme 3:2 */
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
                 {gallery.map((src, i) => (

@@ -57,6 +57,9 @@ export const SERVICE_GALLERY: Record<string, string[]> = {
   "evenements-professionnels": Array.from({ length: 24 }, (_, i) =>
     `/images/services/gallery/evenements-professionnels/${String(i + 1).padStart(2, "0")}.jpg`
   ),
+  "evenements-culturels": Array.from({ length: 14 }, (_, i) =>
+    `/images/services/gallery/evenements-culturels/${String(i + 1).padStart(2, "0")}.jpg`
+  ),
 };
 
 /**
