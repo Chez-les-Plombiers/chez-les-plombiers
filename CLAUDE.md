@@ -10,6 +10,7 @@ Site vitrine bilingue (FR/EN) pour **Chez Les Plombiers**, lieu événementiel d
 - **Tailwind CSS v4** (`@theme inline`)
 - **Motion** (framer-motion v12+ via `motion/react`) pour les animations
 - **Lucide React** pour les icônes
+- **Typographie** : Wix Madefor Display (titres) via `next/font/google` — voir [DESIGN.md](./DESIGN.md)
 - **Vercel** hosting, auto-deploy sur push main
 - **Vercel Analytics** (`@vercel/analytics`) pour page views
 - **DNS**: Gandi (anycast.me NS), A `216.198.79.1`, CNAME www → `afaeb59f7734cb3a.vercel-dns-017.com`
@@ -227,15 +228,17 @@ Dict keys : `lieuEvenementiel`, `espaceAtypique`, `seminaireEntreprise`, `shooti
 
 ## Pages Services (/services/[slug])
 7 services (routes), dont **6 featured** affichés sur homepage/cross-links/footer (Séminaires existe mais non mis en avant) :
-- Dîners d'Exception (`diners-exception` / `exceptional-dinners`) — galerie 15 photos
-- Fashion Shows (`fashion-shows` / `fashion-shows`) — galerie 24 photos
-- Événements Auto & Moto (`evenements-auto-moto` / `automotive-events`) — galerie 23 photos
-- Évènements Professionnels (`evenements-professionnels` / `professional-events`)
-- Évènements Culturels (`evenements-culturels` / `cultural-events`)
+- Dîners d'Exception (`diners-exception` / `exceptional-dinners`) — **galerie 27 photos en grille PAYSAGE 3:2** (hero + visuels Thibaud Georges / Kim Attaf, 15/06/2026)
+- Fashion Shows (`fashion-shows` / `fashion-shows`) — galerie 24 photos (bento)
+- Événements Auto & Moto (`evenements-auto-moto` / `automotive-events`) — galerie 23 photos (bento)
+- Évènements Professionnels (`evenements-professionnels` / `professional-events`) — **hero événement TikTok + galerie 24 photos** (15/06/2026)
+- Évènements Culturels (`evenements-culturels` / `cultural-events`) — **hero BFA** (15/06/2026)
 - Petit-Déjeuners (`petit-dejeuners` / `corporate-breakfasts`)
 - Séminaires & Formations (`seminaires-formations` / `seminars-training`) — route active mais retiré de homepage/footer/cross-links
 
-Structure chaque page : Hero (image + overlay + 2 CTA Pricing/Calendly) → Description + descriptionExtended + Specs (2 cols) → [Galerie bento + lightbox si photos] → Features (3 cols) → ReviewsSection → FAQ accordion (3-6 Q&A) → Cross-links animés (5 services + Appartement Rose) → CTA footer (Pricing + Calendly + WhatsApp)
+Structure chaque page : Hero (image + overlay + 2 CTA Pricing/Calendly) → Description + descriptionExtended + Specs (2 cols) → [Galerie + lightbox si photos] → Features (3 cols) → ReviewsSection → FAQ accordion (3-6 Q&A) → Cross-links animés (5 services + Appartement Rose) → CTA footer (Pricing + Calendly + WhatsApp)
+
+**Galerie** (`ServicePageContent.tsx`) : bento 3 colonnes par défaut ; **grille paysage uniforme 3:2** pour `diners-exception` (condition `slug === "diners-exception"`). Hero images dans `SERVICE_IMAGES`, galeries dans `SERVICE_GALLERY` (`services-data.ts`). Hero pro/culturels/diners en `.jpg` (l'ancien `evenements-professionnels.png` est conservé car réutilisé par la page Séminaire).
 
 **CTA standardisés** sur toutes les pages (services, SEO, homepage) :
 - CTA 1 (solid) : "Voir les tarifs" → pricing.chezlesplombiers.fr
@@ -274,10 +277,16 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 - Colonne 3 : Nos Espaces (6 services + 4 pages SEO + Studio + Notre Chef + Appartement Rose)
 - Colonne 4 : Contact (WhatsApp `wa.me/33761471073`, email, adresse)
 
-### Header — menu nav
-Items dans l'ordre : Pricing (external) → Photos (#portfolio) → Infos Techniques (#equipments) → Studio → **Notre Chef** (`/notre-chef`) → L'Appartement Rose (`/appartement`) → langue switcher FR/EN.
+### Header — menu nav (refonte 15/06/2026)
+Items dans l'ordre : Pricing (external) → Photos (#portfolio) → Infos Techniques (#equipments) → **▾ Nos Espaces** → **▾ Nos Services** → langue switcher FR/EN.
 
-Tous les `menuItems` sont définis dans `dict.header.menuItems` (FR/EN). Le bouton Pricing est externe (URL réécrite via `EXTERNAL_LINKS.pricing`).
+Deux **menus déroulants** :
+- **Nos Espaces** : Chez les Plombiers (`/`), L'Appartement Rose (`/appartement`), La Boutique (`comingSoon: true` → non cliquable, badge « À venir »)
+- **Nos Services** : les 6 services featured (Dîners, Fashion, Auto & Moto, Évènements Pro, Évènements Culturels, Petit-Déjeuners) + Notre Chef (`/notre-chef`)
+
+« Studio » retiré du header (reste dans le footer). `menuItems` définis dans `dict.header.menuItems` (FR/EN) — items à dropdown via `children`, label « À venir » via `comingSoonLabel`. Pricing externe (URL réécrite via `EXTERNAL_LINKS.pricing`).
+
+Comportement (`Header.tsx`) : desktop = ouverture hover + focus + clic, fermeture Escape / clic-extérieur, ARIA `haspopup`/`aria-expanded` ; mobile = accordion par groupe. Panneau dropdown sur fond blanc (lisible quel que soit l'état transparent/scrollé du header).
 
 ## Guide AI Concierge (/guide)
 Page chatbot pour les clients ayant réservé le lieu. Interface de chat multi-turn avec streaming.
