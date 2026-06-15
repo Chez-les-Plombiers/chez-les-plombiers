@@ -30,7 +30,7 @@
 
 ## Composants clés
 - **Header** (`Header.tsx`) : nav + 2 dropdowns (Nos Espaces / Nos Services). Transparent en haut (texte blanc), blanc au scroll (texte noir). Panneau dropdown toujours sur fond blanc. Voir CLAUDE.md § Header.
-- **Galeries services** : bento 3 colonnes par défaut ; **grille paysage 3:2** pour `diners-exception`.
+- **Galeries services** : bento 3 colonnes par défaut ; **grille paysage 3:2** pour les slugs de `LANDSCAPE_GALLERY_SLUGS` (`diners-exception`, `evenements-culturels`).
 - **CTA standardisés** : « Voir les tarifs » (plein) / « Réserver une visite » (outline) / « WhatsApp » (outline) — voir CLAUDE.md.
 
 ## Animations

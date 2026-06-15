@@ -232,13 +232,13 @@ Dict keys : `lieuEvenementiel`, `espaceAtypique`, `seminaireEntreprise`, `shooti
 - Fashion Shows (`fashion-shows` / `fashion-shows`) — galerie 24 photos (bento)
 - Événements Auto & Moto (`evenements-auto-moto` / `automotive-events`) — galerie 23 photos (bento)
 - Évènements Professionnels (`evenements-professionnels` / `professional-events`) — **hero événement TikTok + galerie 24 photos** (15/06/2026)
-- Évènements Culturels (`evenements-culturels` / `cultural-events`) — **hero BFA** (15/06/2026)
+- Évènements Culturels (`evenements-culturels` / `cultural-events`) — **hero BFA + galerie 14 photos paysage 3:2** (15/06/2026)
 - Petit-Déjeuners (`petit-dejeuners` / `corporate-breakfasts`)
 - Séminaires & Formations (`seminaires-formations` / `seminars-training`) — route active mais retiré de homepage/footer/cross-links
 
 Structure chaque page : Hero (image + overlay + 2 CTA Pricing/Calendly) → Description + descriptionExtended + Specs (2 cols) → [Galerie + lightbox si photos] → Features (3 cols) → ReviewsSection → FAQ accordion (3-6 Q&A) → Cross-links animés (5 services + Appartement Rose) → CTA footer (Pricing + Calendly + WhatsApp)
 
-**Galerie** (`ServicePageContent.tsx`) : bento 3 colonnes par défaut ; **grille paysage uniforme 3:2** pour `diners-exception` (condition `slug === "diners-exception"`). Hero images dans `SERVICE_IMAGES`, galeries dans `SERVICE_GALLERY` (`services-data.ts`). Hero pro/culturels/diners en `.jpg` (l'ancien `evenements-professionnels.png` est conservé car réutilisé par la page Séminaire).
+**Galerie** (`ServicePageContent.tsx`) : bento 3 colonnes par défaut ; **grille paysage uniforme 3:2** pour les slugs de `LANDSCAPE_GALLERY_SLUGS` (= `diners-exception`, `evenements-culturels`). Hero images dans `SERVICE_IMAGES`, galeries dans `SERVICE_GALLERY` (`services-data.ts`). Hero pro/culturels/diners en `.jpg` (l'ancien `evenements-professionnels.png` est conservé car réutilisé par la page Séminaire).
 
 **CTA standardisés** sur toutes les pages (services, SEO, homepage) :
 - CTA 1 (solid) : "Voir les tarifs" → pricing.chezlesplombiers.fr
