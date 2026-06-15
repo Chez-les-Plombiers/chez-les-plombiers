@@ -14,22 +14,61 @@
         "href": "/#equipments"
       },
       {
-        "label": "Studio",
-        "href": "/studio"
+        "label": "Nos Espaces",
+        "children": [
+          {
+            "label": "Chez les Plombiers",
+            "href": "/"
+          },
+          {
+            "label": "L'Appartement Rose",
+            "href": "/appartement"
+          },
+          {
+            "label": "La Boutique",
+            "comingSoon": true
+          }
+        ]
       },
       {
-        "label": "Notre Chef",
-        "href": "/notre-chef"
-      },
-      {
-        "label": "L'Appartement Rose",
-        "href": "/appartement"
+        "label": "Nos Services",
+        "children": [
+          {
+            "label": "Dîners d'Exception",
+            "href": "/services/diners-exception"
+          },
+          {
+            "label": "Fashion Shows",
+            "href": "/services/fashion-shows"
+          },
+          {
+            "label": "Auto & Moto",
+            "href": "/services/evenements-auto-moto"
+          },
+          {
+            "label": "Évènements Pro",
+            "href": "/services/evenements-professionnels"
+          },
+          {
+            "label": "Évènements Culturels",
+            "href": "/services/evenements-culturels"
+          },
+          {
+            "label": "Petit-Déjeuners",
+            "href": "/services/petit-dejeuners"
+          },
+          {
+            "label": "Notre Chef",
+            "href": "/notre-chef"
+          }
+        ]
       }
     ],
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "navLabel": "Navigation principale",
     "mobileNavLabel": "Menu mobile",
+    "comingSoonLabel": "À venir",
     "ctaQuote": "Voir les tarifs",
     "ctaVisit": "Booker une visite"
   },

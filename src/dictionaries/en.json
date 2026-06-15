@@ -14,22 +14,61 @@
         "href": "/en/#equipments"
       },
       {
-        "label": "Studio",
-        "href": "/en/studio"
+        "label": "Our Spaces",
+        "children": [
+          {
+            "label": "Chez les Plombiers",
+            "href": "/en"
+          },
+          {
+            "label": "The Pink Apartment",
+            "href": "/en/apartment"
+          },
+          {
+            "label": "The Boutique",
+            "comingSoon": true
+          }
+        ]
       },
       {
-        "label": "Our Chef",
-        "href": "/en/our-chef"
-      },
-      {
-        "label": "The Pink Apartment",
-        "href": "/en/apartment"
+        "label": "Our Services",
+        "children": [
+          {
+            "label": "Exceptional Dinners",
+            "href": "/en/services/exceptional-dinners"
+          },
+          {
+            "label": "Fashion Shows",
+            "href": "/en/services/fashion-shows"
+          },
+          {
+            "label": "Automotive Events",
+            "href": "/en/services/automotive-events"
+          },
+          {
+            "label": "Professional Events",
+            "href": "/en/services/professional-events"
+          },
+          {
+            "label": "Cultural Events",
+            "href": "/en/services/cultural-events"
+          },
+          {
+            "label": "Corporate Breakfasts",
+            "href": "/en/services/corporate-breakfasts"
+          },
+          {
+            "label": "Our Chef",
+            "href": "/en/our-chef"
+          }
+        ]
       }
     ],
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "navLabel": "Main navigation",
     "mobileNavLabel": "Mobile menu",
+    "comingSoonLabel": "Coming soon",
     "ctaQuote": "View pricing",
     "ctaVisit": "Book a visit"
   },
