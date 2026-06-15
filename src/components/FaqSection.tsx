@@ -91,7 +91,7 @@ export function FaqSection() {
           <h2 className="text-4xl lg:text-6xl mb-6">
             {faq.title}
           </h2>
-          <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto text-balance">
             {faq.subtitle}
           </p>
         </motion.div>

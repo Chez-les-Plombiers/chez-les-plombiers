@@ -227,7 +227,7 @@ export function InfosContent() {
             <p className="text-xs uppercase tracking-[0.25em] text-white/60 mb-6">
               {t.hero.eyebrow}
             </p>
-            <h1 className="text-4xl lg:text-7xl font-light mb-6 tracking-tight max-w-5xl">
+            <h1 className="text-4xl lg:text-7xl mb-6 tracking-tight max-w-5xl">
               {t.hero.title}
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 font-light max-w-3xl mb-6">
@@ -334,7 +334,7 @@ export function InfosContent() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mb-16"
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               {t.access.sectionTitle}
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -356,7 +356,7 @@ export function InfosContent() {
                   <div className="w-12 h-12 bg-black flex items-center justify-center mb-6">
                     <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-lg font-medium mb-1">{item.title}</h3>
+                  <h3 className="text-lg mb-1">{item.title}</h3>
                   <p className="text-xs uppercase tracking-[0.1em] text-gray-400 mb-4">
                     {item.subtitle}
                   </p>
@@ -382,7 +382,7 @@ export function InfosContent() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mb-12"
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               {t.map.sectionTitle}
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -420,7 +420,7 @@ export function InfosContent() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mb-16"
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               {t.neighborhood.sectionTitle}
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -437,7 +437,7 @@ export function InfosContent() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="border border-gray-200 bg-white p-8 hover:border-black transition-colors duration-300"
               >
-                <h3 className="text-lg font-medium mb-3">{category.title}</h3>
+                <h3 className="text-lg mb-3">{category.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   {category.intro}
                 </p>
@@ -485,7 +485,7 @@ export function InfosContent() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mb-16"
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               {t.contact.sectionTitle}
             </h2>
             <p className="text-lg text-white/70 leading-relaxed">
@@ -570,7 +570,7 @@ export function InfosContent() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               {t.cta.title}
             </h2>
             <p className="text-lg text-white/70 mb-12 max-w-2xl mx-auto">

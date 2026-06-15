@@ -66,7 +66,7 @@ export function SeoLandingPagesSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-                    <h3 className="text-white text-xl lg:text-2xl font-light mb-2 tracking-tight">
+                    <h3 className="text-white text-xl lg:text-2xl mb-2 tracking-tight">
                       {isEn ? page.titleEn : page.titleFr}
                     </h3>
                     <p className="text-white/70 text-sm leading-relaxed max-w-md">

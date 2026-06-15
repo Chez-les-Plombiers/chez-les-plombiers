@@ -303,7 +303,7 @@ export function NouveauClientContent() {
               <p className="text-xs uppercase tracking-[0.25em] text-white/60 mb-6">
                 Confirmation
               </p>
-              <h1 className="text-4xl lg:text-7xl font-light mb-6 tracking-tight max-w-5xl">
+              <h1 className="text-4xl lg:text-7xl mb-6 tracking-tight max-w-5xl">
                 Informations envoy&eacute;es
               </h1>
             </motion.div>
@@ -318,7 +318,7 @@ export function NouveauClientContent() {
               transition={{ duration: 0.6 }}
             >
               <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-8" />
-              <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+              <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
                 Merci pour votre confiance
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
@@ -362,7 +362,7 @@ export function NouveauClientContent() {
             <p className="text-xs uppercase tracking-[0.25em] text-white/60 mb-6">
               Votre &eacute;v&eacute;nement
             </p>
-            <h1 className="text-4xl lg:text-7xl font-light mb-6 tracking-tight max-w-5xl">
+            <h1 className="text-4xl lg:text-7xl mb-6 tracking-tight max-w-5xl">
               Bienvenue Chez&nbsp;les&nbsp;Plombiers
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 font-light max-w-3xl">
@@ -387,7 +387,7 @@ export function NouveauClientContent() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-12 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-12 tracking-tight">
               Les prochaines &eacute;tapes
             </h2>
 
@@ -445,7 +445,7 @@ export function NouveauClientContent() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mb-16"
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               Vos coordonn&eacute;es
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">

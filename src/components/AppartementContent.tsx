@@ -144,7 +144,7 @@ export function AppartementContent() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl mx-auto text-center flex flex-col items-center"
           >
-            <h1 className="text-5xl lg:text-8xl font-light mb-8 tracking-tight">
+            <h1 className="text-5xl lg:text-8xl mb-8 tracking-tight">
               {appart.title}
             </h1>
             <p className="text-xl lg:text-3xl text-white/90 mb-12 leading-relaxed max-w-2xl font-light">
@@ -197,7 +197,7 @@ export function AppartementContent() {
             </div>
 
             <div>
-              <h3 className="text-sm uppercase tracking-widest text-gray-900 mb-4 font-semibold">
+              <h3 className="text-sm uppercase tracking-widest text-gray-900 mb-4">
                 {appart.equipmentsTitle}
               </h3>
               <ul className="inline-grid grid-cols-1 gap-3 text-gray-600 text-left">
@@ -378,7 +378,7 @@ export function AppartementContent() {
       {/* Cross-links to services */}
       <section className="py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <h2 className="text-2xl lg:text-3xl font-light mb-10 tracking-tight">
+          <h2 className="text-2xl lg:text-3xl mb-10 tracking-tight">
             {locale === "en" ? "Explore our main space" : "Découvrez notre espace principal"}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

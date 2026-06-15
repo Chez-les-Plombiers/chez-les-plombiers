@@ -66,7 +66,7 @@ export function SeoPagesCrossLinks({ currentSlugFr }: SeoPagesCrossLinksProps) {
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                   </div>
-                  <h3 className="text-lg font-medium mb-1 tracking-tight group-hover:text-gray-600 transition-colors">
+                  <h3 className="text-lg mb-1 tracking-tight group-hover:text-gray-600 transition-colors">
                     {isEn ? page.titleEn : page.titleFr}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-3">

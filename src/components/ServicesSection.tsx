@@ -38,7 +38,7 @@ export function ServicesSection() {
           className="text-center mb-16 lg:mb-24"
         >
           <h2 className="text-4xl lg:text-6xl mb-6">{services.title}</h2>
-          <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto text-balance">
             {services.subtitle}
           </p>
         </motion.div>
@@ -86,7 +86,7 @@ export function ServicesSection() {
                     {/* Title */}
                     <h3
                       className={`
-                        text-xl lg:text-2xl font-light tracking-[0.1em] uppercase mb-4 transition-all duration-300
+                        text-xl lg:text-2xl tracking-[0.1em] uppercase mb-4 transition-all duration-300
                         ${isHovered ? "text-black" : "text-gray-900"}
                       `}
                     >

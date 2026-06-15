@@ -23,7 +23,7 @@ export function VirtualTour() {
           <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">
             {t.label}
           </p>
-          <h2 className="text-3xl lg:text-5xl font-light tracking-tight mb-4">
+          <h2 className="text-3xl lg:text-5xl tracking-tight mb-4">
             {t.title}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">

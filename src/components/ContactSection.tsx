@@ -66,7 +66,7 @@ export function ContactSection() {
             whileInView={{ opacity: 0.7 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl lg:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl lg:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed text-balance"
           >
             {contact.subtitle}
           </motion.p>

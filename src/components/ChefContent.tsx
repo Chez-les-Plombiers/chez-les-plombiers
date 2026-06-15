@@ -236,7 +236,7 @@ export function ChefContent() {
               <p className="text-xs uppercase tracking-[3px] text-gray-400 mb-4">
                 {chef.portraitMeta}
               </p>
-              <h3 className="text-3xl lg:text-4xl font-light tracking-tight mb-8">
+              <h3 className="text-3xl lg:text-4xl tracking-tight mb-8">
                 <strong className="font-semibold">
                   {chef.portraitName.split(" ")[0]}
                 </strong>{" "}
@@ -408,7 +408,7 @@ export function ChefContent() {
                 <p className="text-xs uppercase tracking-[3px] text-gray-400 mb-3">
                   {item.number}
                 </p>
-                <h3 className="text-xl lg:text-2xl font-semibold mb-4 tracking-tight">
+                <h3 className="text-xl lg:text-2xl mb-4 tracking-tight">
                   {item.title}
                 </h3>
                 <p className="text-sm lg:text-base text-gray-500 leading-relaxed mb-5">

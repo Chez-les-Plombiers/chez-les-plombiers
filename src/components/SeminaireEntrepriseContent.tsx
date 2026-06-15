@@ -255,7 +255,7 @@ export function SeminaireEntrepriseContent() {
                 {locale === "en" ? "Home" : "Accueil"}
               </Link>
             </div>
-            <h1 className="text-4xl lg:text-7xl font-light mb-6 tracking-tight max-w-5xl">
+            <h1 className="text-4xl lg:text-7xl mb-6 tracking-tight max-w-5xl">
               {t.hero.title}
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 font-light max-w-2xl mb-4">
@@ -313,7 +313,7 @@ export function SeminaireEntrepriseContent() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl lg:text-5xl font-light mb-8 tracking-tight">
+              <h2 className="text-3xl lg:text-5xl mb-8 tracking-tight">
                 {t.about.title}
               </h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
@@ -369,7 +369,7 @@ export function SeminaireEntrepriseContent() {
                   <div className="w-12 h-12 bg-black flex items-center justify-center mb-6">
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-medium mb-3">{usp.title}</h3>
+                  <h3 className="text-xl mb-3">{usp.title}</h3>
                   <p className="text-gray-600 leading-relaxed">
                     {usp.description}
                   </p>
@@ -406,7 +406,7 @@ export function SeminaireEntrepriseContent() {
                 <span className="text-sm text-gray-400 font-mono mb-4 block">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="text-xl font-medium mb-4 group-hover:text-black transition-colors">
+                <h3 className="text-xl mb-4 group-hover:text-black transition-colors">
                   {format.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-sm">
@@ -427,7 +427,7 @@ export function SeminaireEntrepriseContent() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-4 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-4 tracking-tight">
               {t.location.title}
             </h2>
             <p className="text-lg text-gray-500 mb-12">
@@ -674,7 +674,7 @@ export function SeminaireEntrepriseContent() {
 
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <h2 className="text-2xl lg:text-3xl font-light mb-10 tracking-tight">
+          <h2 className="text-2xl lg:text-3xl mb-10 tracking-tight">
             {locale === "en" ? "Our Events" : "Nos Événements"}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -731,7 +731,7 @@ export function SeminaireEntrepriseContent() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               {t.cta.title}
             </h2>
             <p className="text-lg text-white/70 mb-12 max-w-2xl mx-auto">

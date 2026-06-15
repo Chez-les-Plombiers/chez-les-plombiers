@@ -14,7 +14,7 @@ export default function Error({
   return (
     <main className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center">
-        <h1 className="text-6xl lg:text-8xl font-light mb-6 tracking-tight">
+        <h1 className="text-6xl lg:text-8xl mb-6 tracking-tight">
           {err.title}
         </h1>
         <p className="text-xl text-gray-600 mb-10">{err.description}</p>

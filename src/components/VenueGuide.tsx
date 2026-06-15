@@ -17,7 +17,7 @@ function Para({ children }: { children: React.ReactNode }) {
 
 function H4({ children }: { children: React.ReactNode }) {
   return (
-    <h4 className="text-sm uppercase tracking-[0.15em] text-black mt-6 mb-3 font-medium">
+    <h4 className="text-sm uppercase tracking-[0.15em] text-black mt-6 mb-3">
       {children}
     </h4>
   );
@@ -216,7 +216,7 @@ export function VenueGuide() {
           <p className="text-xs uppercase tracking-[0.25em] text-gray-400 mb-6">
             Guide complet
           </p>
-          <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+          <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
             Toutes les informations pratiques
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">

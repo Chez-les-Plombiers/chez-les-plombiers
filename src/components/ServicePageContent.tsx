@@ -207,7 +207,7 @@ export function ServicePageContent({ slug }: { slug: string }) {
                 {servicePages.backToServices}
               </Link>
             </div>
-            <h1 className="text-4xl lg:text-7xl font-light mb-6 tracking-tight max-w-4xl">
+            <h1 className="text-4xl lg:text-7xl mb-6 tracking-tight max-w-4xl">
               {service.title}
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 font-light max-w-2xl mb-10">
@@ -276,7 +276,7 @@ export function ServicePageContent({ slug }: { slug: string }) {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-sm uppercase tracking-widest text-gray-500 font-medium mb-8">
+              <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-8">
                 {servicePages.specsTitle}
               </h2>
               <div className="grid grid-cols-2 gap-8">
@@ -488,7 +488,7 @@ export function ServicePageContent({ slug }: { slug: string }) {
       {/* Cross-links to other services */}
       <section className="py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <h2 className="text-2xl lg:text-3xl font-light mb-10 tracking-tight">
+          <h2 className="text-2xl lg:text-3xl mb-10 tracking-tight">
             {servicePages.alsoDiscoverTitle}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -599,7 +599,7 @@ export function ServicePageContent({ slug }: { slug: string }) {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               {servicePages.ctaTitle}
             </h2>
             <p className="text-lg text-white/70 mb-12 max-w-2xl mx-auto">

@@ -129,7 +129,7 @@ export function PortfolioSection() {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="text-4xl lg:text-6xl mb-6">{portfolio.title}</h2>
-          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed text-balance">
             {portfolio.subtitle}
           </p>
           <button

@@ -174,7 +174,7 @@ export function StudioContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl lg:text-8xl font-light text-white mb-6 tracking-tight">
+            <h1 className="text-5xl lg:text-8xl text-white mb-6 tracking-tight">
               {studio.title}
             </h1>
             <p className="text-xl lg:text-2xl text-white/80 max-w-2xl font-light leading-relaxed">
@@ -231,7 +231,7 @@ export function StudioContent() {
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10"
           >
-            <h2 className="text-3xl lg:text-4xl font-light tracking-tight">
+            <h2 className="text-3xl lg:text-4xl tracking-tight">
               {studio.galleryTitle}
             </h2>
             <button
@@ -404,7 +404,7 @@ export function StudioContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl font-light mb-8 tracking-tight">
+              <h2 className="text-3xl lg:text-4xl mb-8 tracking-tight">
                 {locale === "en" ? "A unique studio in Paris 1st" : "Un studio unique à Paris 1er"}
               </h2>
               <div
@@ -451,7 +451,7 @@ export function StudioContent() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: gi * 0.1 }}
               >
-                <h3 className="text-sm uppercase tracking-widest text-gray-900 font-semibold mb-6 pb-3 border-b border-gray-300">
+                <h3 className="text-sm uppercase tracking-widest text-gray-900 mb-6 pb-3 border-b border-gray-300">
                   {group.title}
                 </h3>
                 <dl className="space-y-4">
@@ -481,7 +481,7 @@ export function StudioContent() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-3xl lg:text-4xl font-light mb-4 tracking-tight">
+            <h2 className="text-3xl lg:text-4xl mb-4 tracking-tight">
               {studio.prestationsTitle}
             </h2>
             <p className="text-gray-500 text-lg">
@@ -608,7 +608,7 @@ export function StudioContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl lg:text-4xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-4xl mb-6 tracking-tight">
               {studio.planTitle}
             </h2>
             <p className="text-gray-600 text-lg mb-8">
@@ -650,7 +650,7 @@ export function StudioContent() {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto text-center"
           >
-            <h2 className="text-3xl lg:text-4xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-4xl mb-6 tracking-tight">
               {studio.tarifsTitle}
             </h2>
             <p className="text-gray-600 text-lg mb-8">
@@ -675,7 +675,7 @@ export function StudioContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               {studio.ctaTitle}
             </h2>
             <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto">

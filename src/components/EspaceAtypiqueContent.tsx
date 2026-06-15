@@ -237,7 +237,7 @@ export function EspaceAtypiqueContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-light mb-6 tracking-tight max-w-5xl leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl mb-6 tracking-tight max-w-5xl leading-[1.1]">
               {data.hero.h1}
             </h1>
             <p className="text-lg lg:text-xl text-white/80 font-light mb-4 max-w-2xl italic">
@@ -297,7 +297,7 @@ export function EspaceAtypiqueContent() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl lg:text-5xl font-light mb-8 tracking-tight">
+              <h2 className="text-3xl lg:text-5xl mb-8 tracking-tight">
                 {data.story.title}
               </h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
@@ -356,7 +356,7 @@ export function EspaceAtypiqueContent() {
                   <div className="w-12 h-12 bg-black flex items-center justify-center mb-6">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-medium mb-3">{usp.title}</h3>
+                  <h3 className="text-lg mb-3">{usp.title}</h3>
                   <p className="text-gray-600 leading-relaxed text-sm">
                     {usp.description}
                   </p>
@@ -405,7 +405,7 @@ export function EspaceAtypiqueContent() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-                    <h3 className="text-white text-xl lg:text-2xl font-light mb-2 tracking-tight">
+                    <h3 className="text-white text-xl lg:text-2xl mb-2 tracking-tight">
                       {evt.title}
                     </h3>
                     <p className="text-white/70 text-sm leading-relaxed max-w-md">
@@ -437,7 +437,7 @@ export function EspaceAtypiqueContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-4 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-4 tracking-tight">
               {data.matterport.title}
             </h2>
             <p className="text-white/60 text-lg">{data.matterport.subtitle}</p>
@@ -641,7 +641,7 @@ export function EspaceAtypiqueContent() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               {data.cta.title}
             </h2>
             <p className="text-lg text-white/70 mb-12 max-w-2xl mx-auto">

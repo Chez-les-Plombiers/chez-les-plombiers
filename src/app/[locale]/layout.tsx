@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Wix_Madefor_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { locales, getDictionary, type Locale } from "@/lib/i18n";
 import { I18nProvider } from "@/lib/i18n-context";
 import { GA_MEASUREMENT_ID, GTM_ID } from "@/lib/analytics";
 import { SITE_URL } from "@/lib/metadata";
+
+const wixMadefor = Wix_Madefor_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-wix-madefor",
+  display: "swap",
+});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -78,7 +86,7 @@ export default async function LocaleLayout({
   const skipText = dict.skipToContent as string;
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={wixMadefor.variable}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://static.axept.io" />

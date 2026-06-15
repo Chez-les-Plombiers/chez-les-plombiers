@@ -285,7 +285,7 @@ export function LieuEvenementielContent() {
             <p className="text-sm uppercase tracking-[0.25em] text-white/60 mb-6">
               {lieu.hero.subtitle}
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-light mb-8 tracking-tight max-w-5xl leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl mb-8 tracking-tight max-w-5xl leading-[1.1]">
               {lieu.hero.title}
             </h1>
             <p className="text-lg lg:text-xl text-white/80 font-light max-w-2xl mb-12 leading-relaxed">
@@ -342,7 +342,7 @@ export function LieuEvenementielContent() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl lg:text-5xl font-light mb-10 tracking-tight">
+              <h2 className="text-3xl lg:text-5xl mb-10 tracking-tight">
                 {lieu.space.title}
               </h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
@@ -399,7 +399,7 @@ export function LieuEvenementielContent() {
                   <div className="w-12 h-12 bg-black flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
                     <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-lg font-medium mb-3 tracking-tight">
+                  <h3 className="text-lg mb-3 tracking-tight">
                     {usp.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed text-sm">
@@ -450,7 +450,7 @@ export function LieuEvenementielContent() {
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                   </div>
-                  <h3 className="text-lg font-medium mb-2 tracking-tight group-hover:text-gray-600 transition-colors">
+                  <h3 className="text-lg mb-2 tracking-tight group-hover:text-gray-600 transition-colors">
                     {event.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-3">
@@ -491,7 +491,7 @@ export function LieuEvenementielContent() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="w-10 h-px bg-white/30 mb-8" />
-                <h3 className="text-xl font-light mb-4 tracking-tight">
+                <h3 className="text-xl mb-4 tracking-tight">
                   {item.title}
                 </h3>
                 <p className="text-white/60 leading-relaxed text-sm">
@@ -680,7 +680,7 @@ export function LieuEvenementielContent() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl lg:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-3xl lg:text-5xl mb-6 tracking-tight">
               {lieu.cta.title}
             </h2>
             <p className="text-lg text-white/70 mb-12 max-w-2xl mx-auto">

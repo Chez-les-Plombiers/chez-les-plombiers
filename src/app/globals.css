@@ -22,6 +22,7 @@
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
+  --font-display: var(--font-wix-madefor), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -31,6 +32,13 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Typo-titre globale : Wix Madefor Display, capitales, graisse régulière */
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
   }
 }
 
