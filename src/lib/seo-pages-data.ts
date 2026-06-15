@@ -25,7 +25,7 @@ export const SEO_PAGES: SeoPageInfo[] = [
     titleEn: "Unique Venue Paris",
     descriptionFr: "Charme industriel et élégance contemporaine pour vos événements.",
     descriptionEn: "Industrial charm meets contemporary elegance for your events.",
-    image: "/photos/canape-portes-atelier.jpg",
+    image: "/photos/espace-atypique.jpg",
   },
   {
     slugFr: "seminaire-entreprise-paris",
