@@ -36,16 +36,16 @@ export const FEATURED_SERVICE_SLUGS: string[] = [
 export const SERVICE_IMAGES: Record<string, string> = {
   "fashion-shows": "/images/services/fashion-shows.jpg",
   "petit-dejeuners": "/images/services/petit-dejeuners.png",
-  "evenements-professionnels": "/images/services/evenements-professionnels.png",
-  "diners-exception": "/images/services/diners-exception.png",
-  "evenements-culturels": "/images/services/evenements-culturels.png",
+  "evenements-professionnels": "/images/services/evenements-professionnels.jpg",
+  "diners-exception": "/images/services/diners-exception.jpg",
+  "evenements-culturels": "/images/services/evenements-culturels.jpg",
   "seminaires-formations": "/images/services/seminaires-formations.png",
   "evenements-auto-moto": "/images/services/evenements-auto-moto.jpg",
 };
 
 // Gallery images per service (slug → array of image paths)
 export const SERVICE_GALLERY: Record<string, string[]> = {
-  "diners-exception": Array.from({ length: 15 }, (_, i) =>
+  "diners-exception": Array.from({ length: 27 }, (_, i) =>
     `/images/services/gallery/diners-exception/${String(i + 1).padStart(2, "0")}.jpg`
   ),
   "fashion-shows": Array.from({ length: 24 }, (_, i) =>
@@ -53,6 +53,9 @@ export const SERVICE_GALLERY: Record<string, string[]> = {
   ),
   "evenements-auto-moto": Array.from({ length: 23 }, (_, i) =>
     `/images/services/gallery/evenements-auto-moto/${String(i + 1).padStart(2, "0")}.jpg`
+  ),
+  "evenements-professionnels": Array.from({ length: 24 }, (_, i) =>
+    `/images/services/gallery/evenements-professionnels/${String(i + 1).padStart(2, "0")}.jpg`
   ),
 };
 

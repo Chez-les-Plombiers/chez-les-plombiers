@@ -315,60 +315,89 @@ export function ServicePageContent({ slug }: { slug: string }) {
               {servicePages.galleryTitle}
             </motion.h2>
 
-            {/* Desktop bento (3 cols) */}
-            <div
-              className="hidden md:grid grid-cols-3 gap-2"
-              style={{ gridAutoRows: "200px" }}
-            >
-              {gallery.map((src, i) => (
-                <motion.div
-                  key={src}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: (i % 6) * 0.04 }}
-                  className="relative overflow-hidden bg-gray-100 group cursor-pointer"
-                  style={getBentoStyle(i)}
-                  onClick={() => setLightboxIndex(i)}
+            {slug === "diners-exception" ? (
+              /* Galerie paysage — grille uniforme 3:2 */
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
+                {gallery.map((src, i) => (
+                  <motion.div
+                    key={src}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: (i % 6) * 0.04 }}
+                    className="relative aspect-[3/2] overflow-hidden bg-gray-100 group cursor-pointer"
+                    onClick={() => setLightboxIndex(i)}
+                  >
+                    <Image
+                      src={src}
+                      alt={`${service.title} — photo ${i + 1}`}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <>
+                {/* Desktop bento (3 cols) */}
+                <div
+                  className="hidden md:grid grid-cols-3 gap-2"
+                  style={{ gridAutoRows: "200px" }}
                 >
-                  <Image
-                    src={src}
-                    alt={`${service.title} — photo ${i + 1}`}
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                </motion.div>
-              ))}
-            </div>
+                  {gallery.map((src, i) => (
+                    <motion.div
+                      key={src}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 0.5, delay: (i % 6) * 0.04 }}
+                      className="relative overflow-hidden bg-gray-100 group cursor-pointer"
+                      style={getBentoStyle(i)}
+                      onClick={() => setLightboxIndex(i)}
+                    >
+                      <Image
+                        src={src}
+                        alt={`${service.title} — photo ${i + 1}`}
+                        fill
+                        sizes="(max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    </motion.div>
+                  ))}
+                </div>
 
-            {/* Mobile grid (2 cols) */}
-            <div className="grid md:hidden grid-cols-2 gap-2">
-              {gallery.map((src, i) => (
-                <motion.div
-                  key={src}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.4, delay: (i % 4) * 0.05 }}
-                  className={`relative overflow-hidden bg-gray-100 cursor-pointer ${
-                    i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"
-                  }`}
-                  onClick={() => setLightboxIndex(i)}
-                >
-                  <Image
-                    src={src}
-                    alt={`${service.title} — photo ${i + 1}`}
-                    fill
-                    sizes="50vw"
-                    className="object-cover object-top"
-                    loading="lazy"
-                  />
-                </motion.div>
-              ))}
-            </div>
+                {/* Mobile grid (2 cols) */}
+                <div className="grid md:hidden grid-cols-2 gap-2">
+                  {gallery.map((src, i) => (
+                    <motion.div
+                      key={src}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-30px" }}
+                      transition={{ duration: 0.4, delay: (i % 4) * 0.05 }}
+                      className={`relative overflow-hidden bg-gray-100 cursor-pointer ${
+                        i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"
+                      }`}
+                      onClick={() => setLightboxIndex(i)}
+                    >
+                      <Image
+                        src={src}
+                        alt={`${service.title} — photo ${i + 1}`}
+                        fill
+                        sizes="50vw"
+                        className="object-cover object-top"
+                        loading="lazy"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
 
           {/* Lightbox */}
