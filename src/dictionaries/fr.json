@@ -50,7 +50,7 @@
             "href": "/services/evenements-professionnels"
           },
           {
-            "label": "Évènements Culturels",
+            "label": "Événements Culturels",
             "href": "/services/evenements-culturels"
           },
           {
@@ -110,7 +110,7 @@
       },
       {
         "icon": "Music",
-        "title": "Évènements Culturels",
+        "title": "Événements Culturels",
         "slug": "evenements-culturels",
         "description": "Vernissages, expositions et performances artistiques dans un lieu inspirant pensé comme une galerie contemporaine."
       },
@@ -418,7 +418,7 @@
         "href": "/services/diners-exception"
       },
       {
-        "label": "Évènements Culturels",
+        "label": "Événements Culturels",
         "href": "/services/evenements-culturels"
       },
       {

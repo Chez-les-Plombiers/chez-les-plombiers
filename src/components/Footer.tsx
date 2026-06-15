@@ -93,7 +93,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  07 61 47 10 73
+                  +33 7 61 47 10 73
                 </a>
               </p>
               <p>
