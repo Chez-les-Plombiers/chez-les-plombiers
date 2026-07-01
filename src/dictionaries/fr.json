@@ -181,10 +181,22 @@
       "description": "Accédez aux plans précis du lieu pour toutes vos mesures.",
       "ctaAll": "Télécharger tous les plans",
       "items": [
-        { "label": "Plan du lieu", "file": "/documents/plan-chez-les-plombiers.pdf" },
-        { "label": "Cotations architecte", "file": "/documents/cotations-architecte-globales.pdf" },
-        { "label": "Vues & mesures", "file": "/documents/vues-mesures.pdf" },
-        { "label": "Implantation lumières", "file": "/documents/plan-implantation-lumieres.pdf" }
+        {
+          "label": "Plan du lieu",
+          "file": "/documents/plan-chez-les-plombiers.pdf"
+        },
+        {
+          "label": "Cotations architecte",
+          "file": "/documents/cotations-architecte-globales.pdf"
+        },
+        {
+          "label": "Vues & mesures",
+          "file": "/documents/vues-mesures.pdf"
+        },
+        {
+          "label": "Implantation lumières",
+          "file": "/documents/plan-implantation-lumieres.pdf"
+        }
       ]
     },
     "brochure": {
@@ -508,7 +520,8 @@
       "08": "Entrée de la salle rose depuis l'espace principal — porte rose et affiche Fellini Roma",
       "09": "Vue panoramique du salon — lampes roses, canapés, affiche Fellini et porte de l'appartement rose",
       "10": "Vue large du salon principal — mobilier design, poutres blanches et climatisation"
-    }
+    },
+    "ctaVisit": "Visiter le lieu"
   },
   "mentionsLegales": {
     "title": "Mentions Légales",
@@ -2074,31 +2087,70 @@
           "title": "Restaurants",
           "intro": "La scène gastronomique du 1er, à 5 minutes à pied.",
           "items": [
-            { "name": "Frenchie", "url": "https://www.frenchie-restaurant.com" },
-            { "name": "Verjus", "url": "https://www.verjusparis.com" },
-            { "name": "Le Soufflé", "url": "https://www.lesouffle.fr" },
-            { "name": "Loulou (Tuileries)", "url": "https://www.loulou-paris.com" }
+            {
+              "name": "Frenchie",
+              "url": "https://www.frenchie-restaurant.com"
+            },
+            {
+              "name": "Verjus",
+              "url": "https://www.verjusparis.com"
+            },
+            {
+              "name": "Le Soufflé",
+              "url": "https://www.lesouffle.fr"
+            },
+            {
+              "name": "Loulou (Tuileries)",
+              "url": "https://www.loulou-paris.com"
+            }
           ]
         },
         {
           "title": "Hôtels recommandés",
           "intro": "Des options pour tous les budgets à proximité immédiate.",
           "items": [
-            { "name": "Hôtel du Louvre (Hyatt)", "url": "https://www.hyatt.com/unbound-collection/en-US/paraz-hotel-du-louvre" },
-            { "name": "Hôtel Le Pradey", "url": "https://www.lepradey.com" },
-            { "name": "Hôtel Thérèse", "url": "https://www.hoteltherese.com" },
-            { "name": "Citadines Les Halles", "url": "https://www.discoverasr.com/fr/citadines/france/citadines-les-halles-paris" }
+            {
+              "name": "Hôtel du Louvre (Hyatt)",
+              "url": "https://www.hyatt.com/unbound-collection/en-US/paraz-hotel-du-louvre"
+            },
+            {
+              "name": "Hôtel Le Pradey",
+              "url": "https://www.lepradey.com"
+            },
+            {
+              "name": "Hôtel Thérèse",
+              "url": "https://www.hoteltherese.com"
+            },
+            {
+              "name": "Citadines Les Halles",
+              "url": "https://www.discoverasr.com/fr/citadines/france/citadines-les-halles-paris"
+            }
           ]
         },
         {
           "title": "Lieux emblématiques",
           "intro": "Le Paris historique sur le pas de la porte.",
           "items": [
-            { "name": "Musée du Louvre — 8 min", "url": "https://www.louvre.fr" },
-            { "name": "Notre-Dame de Paris — 12 min", "url": "https://www.notredamedeparis.fr" },
-            { "name": "Jardin des Tuileries — 10 min", "url": "https://www.louvre.fr/en/explore/the-tuileries-garden" },
-            { "name": "Pont Neuf — 3 min", "url": "https://www.parisinfo.com/musee-monument-paris/71449/Pont-Neuf" },
-            { "name": "Westfield Forum des Halles — 3 min", "url": "https://www.westfield.com/fr/france/forumdeshalles" }
+            {
+              "name": "Musée du Louvre — 8 min",
+              "url": "https://www.louvre.fr"
+            },
+            {
+              "name": "Notre-Dame de Paris — 12 min",
+              "url": "https://www.notredamedeparis.fr"
+            },
+            {
+              "name": "Jardin des Tuileries — 10 min",
+              "url": "https://www.louvre.fr/en/explore/the-tuileries-garden"
+            },
+            {
+              "name": "Pont Neuf — 3 min",
+              "url": "https://www.parisinfo.com/musee-monument-paris/71449/Pont-Neuf"
+            },
+            {
+              "name": "Westfield Forum des Halles — 3 min",
+              "url": "https://www.westfield.com/fr/france/forumdeshalles"
+            }
           ]
         }
       ]

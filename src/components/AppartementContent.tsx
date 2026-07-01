@@ -27,6 +27,7 @@ export function AppartementContent() {
     title: string;
     heroDescription: string;
     cta: string;
+    ctaVisit: string;
     sectionTitle: string;
     sectionDescription: string;
     surfaceLabel: string;
@@ -151,15 +152,26 @@ export function AppartementContent() {
               {appart.heroDescription}
             </p>
 
-            <RippleButton
-              href={EXTERNAL_LINKS.calendly}
-              target="_blank"
-              rel="noopener noreferrer"
-              rippleColor="bg-black"
-              className="bg-white text-black hover:text-white px-10 py-6 text-lg uppercase tracking-widest"
-            >
-              {appart.cta}
-            </RippleButton>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <RippleButton
+                href={EXTERNAL_LINKS.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
+                rippleColor="bg-white"
+                className="border border-white text-white hover:text-black px-10 py-6 text-lg uppercase tracking-widest"
+              >
+                {appart.ctaVisit}
+              </RippleButton>
+              <RippleButton
+                href={EXTERNAL_LINKS.pricingAppartement}
+                target="_blank"
+                rel="noopener noreferrer"
+                rippleColor="bg-black"
+                className="bg-white text-black hover:text-white px-10 py-6 text-lg uppercase tracking-widest"
+              >
+                {appart.cta}
+              </RippleButton>
+            </div>
           </motion.div>
         </div>
       </section>
