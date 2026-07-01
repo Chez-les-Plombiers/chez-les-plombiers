@@ -37,7 +37,7 @@ export const DEFAULT_METADATA = {
 export const EXTERNAL_LINKS = {
   calendly: "https://calendly.com/chezlesplombiers/visite",
   pricing: "https://pricing.chezlesplombiers.fr",
-  pricingAppartement: "https://appartement-rose-pricing.vercel.app",
+  pricingAppartement: "https://pricing-appartement.chezlesplombiers.fr",
   whatsapp: "https://wa.me/33761471073",
   email: "mailto:contact@chezlesplombiers.fr",
   instagram: "https://instagram.com/chezlesplombiers",
