@@ -285,14 +285,15 @@ Middleware redirige les slugs mal localisés (ex: `/en/services/petit-dejeuners`
 - Colonne 3 : Nos Espaces (6 services + 4 pages SEO + Studio + Notre Chef + Appartement Rose)
 - Colonne 4 : Contact (WhatsApp `wa.me/33761471073`, email, adresse)
 
-### Header — menu nav (refonte 15/06/2026)
-Items dans l'ordre : Pricing (external) → Photos (#portfolio) → Infos Techniques (#equipments) → **▾ Nos Espaces** → **▾ Nos Services** → langue switcher FR/EN.
+### Header — menu nav (refonte 15/06/2026, MàJ Pricing dropdown 01/07/2026)
+Items dans l'ordre : **▾ Pricing** → Photos (#portfolio) → Infos Techniques (#equipments) → **▾ Nos Espaces** → **▾ Nos Services** → langue switcher FR/EN.
 
-Deux **menus déroulants** :
+Trois **menus déroulants** :
+- **Pricing** (dropdown depuis 01/07) : Chez les Plombiers → `EXTERNAL_LINKS.pricing`, L'Appartement Rose → `EXTERNAL_LINKS.pricingAppartement`, La Boutique (`comingSoon: true`). Les enfants externes ont `external: true` + `href` = clé EXTERNAL_LINKS (résolue dans `Header.tsx` via `resolveExternal`, top-level ET enfants).
 - **Nos Espaces** : Chez les Plombiers (`/`), L'Appartement Rose (`/appartement`), La Boutique (`comingSoon: true` → non cliquable, badge « À venir »)
 - **Nos Services** : les 6 services featured (Dîners, Fashion, Auto & Moto, Évènements Pro, Évènements Culturels, Petit-Déjeuners) + Notre Chef (`/notre-chef`)
 
-« Studio » retiré du header (reste dans le footer). `menuItems` définis dans `dict.header.menuItems` (FR/EN) — items à dropdown via `children`, label « À venir » via `comingSoonLabel`. Pricing externe (URL réécrite via `EXTERNAL_LINKS.pricing`).
+« Studio » retiré du header (reste dans le footer). `menuItems` définis dans `dict.header.menuItems` (FR/EN) — items à dropdown via `children`, label « À venir » via `comingSoonLabel`. Liens externes (Pricing) résolus depuis `EXTERNAL_LINKS` par clé (`href` = nom de la clé).
 
 Comportement (`Header.tsx`) : desktop = ouverture hover + focus + clic, fermeture Escape / clic-extérieur, ARIA `haspopup`/`aria-expanded` ; mobile = accordion par groupe. Panneau dropdown sur fond blanc (lisible quel que soit l'état transparent/scrollé du header).
 
