@@ -13,7 +13,7 @@ Site vitrine bilingue (FR/EN) pour **Chez Les Plombiers**, lieu événementiel d
 - **Typographie** : Wix Madefor Display (titres) via `next/font/google` — voir [DESIGN.md](./DESIGN.md)
 - **Vercel** hosting, auto-deploy sur push main
 - **Vercel Analytics** (`@vercel/analytics`) pour page views
-- **DNS**: Gandi (anycast.me NS), A `216.198.79.1`, CNAME www → `afaeb59f7734cb3a.vercel-dns-017.com`
+- **DNS**: **géré chez OVH** (zone DNS OVH), A `216.198.79.1`, CNAME www → `afaeb59f7734cb3a.vercel-dns-017.com`. Sous-domaine `pricing-appartement` → A `76.76.21.21` (Appartement Rose pricing, voir plus bas). ⚠️ NE PAS ajouter de CNAME sur un sous-domaine qui a déjà un A (erreur OVH « CNAME and other data »).
 - **Domaines Vercel**: `www.chezlesplombiers.fr` (principal) + `chezlesplombiers.fr` (redirect → www)
 
 ## Commandes
@@ -103,7 +103,7 @@ src/components/      # Tous "use client" — utilisent useI18n()
   EquipmentsSection.tsx # Specs techniques + floor plan + 4 PDF plans dropdown + plaquette download
   FaqSection.tsx     # 11 Q&A accordion (données depuis dictionnaires)
   ContactSection.tsx # 4 contacts + 3 CTA (Pricing + Calendly + WhatsApp) avec tracking cta_click
-  AppartementContent.tsx # Page Appartement Rose (galerie 10 photos bento + lightbox + ZIP download + reviews Google)
+  AppartementContent.tsx # Page Appartement Rose (hero 2 CTA Visiter/Réserver + galerie 10 photos bento + lightbox + ZIP download + reviews Google)
   ServicePageContent.tsx # Pages services (hero + 2 CTA, specs, galerie bento, features, reviews, FAQ, cross-links animés, CTA footer)
   InfosContent.tsx   # Page /infos (hero adresse, 4 stats, 6 cards accès, Google Maps embed, 3 cards quartier avec liens cliquables, 4 cards contact, FAQ)
   NouveauClientContent.tsx # Page /nouveau-client (formulaire facturation → Notion CRM + email Resend)
@@ -148,9 +148,17 @@ public/
 
 ## URLs externes
 - Calendly: https://calendly.com/chezlesplombiers/visite
-- Pricing: https://pricing.chezlesplombiers.fr
+- Pricing (Chez Les Plombiers): https://pricing.chezlesplombiers.fr
+- Pricing (Appartement Rose): https://pricing-appartement.chezlesplombiers.fr (`EXTERNAL_LINKS.pricingAppartement`)
 - WhatsApp: https://wa.me/33761471073
 - Instagram: https://instagram.com/chezlesplombiers
+
+## Appartement Rose — pricing dédié (01/07/2026)
+Projet séparé (repo `GrowthAgence/appartement-rose-pricing`, `/Users/fred/appartement-rose-pricing`) : calendrier de pricing dédié à l'Appartement Rose, live sur **pricing-appartement.chezlesplombiers.fr**. Design system CLP repris à l'identique. Voir le CLAUDE.md de ce repo.
+
+Sur la page `/appartement` (`AppartementContent.tsx`), le hero a **2 CTA** :
+- **« Visiter le lieu »** (`appartement.ctaVisit`) → Calendly
+- **« Réserver l'Appartement Rose »** (`appartement.cta`) → `EXTERNAL_LINKS.pricingAppartement`
 
 ## SEO/GEO
 - **SITE_URL**: `https://www.chezlesplombiers.fr` (canonical www, non-www redirige 308)
