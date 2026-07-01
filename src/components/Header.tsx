@@ -36,10 +36,23 @@ export function Header() {
     comingSoonLabel: string;
   };
 
-  // Pricing is the only external item — resolve its href from EXTERNAL_LINKS.
-  const menuItems: MenuItem[] = header.menuItems.map((item) =>
-    item.external ? { ...item, href: EXTERNAL_LINKS.pricing } : item
-  );
+  // Resolve external hrefs (top-level items AND dropdown children) from
+  // EXTERNAL_LINKS by key (e.g. href "pricing" → EXTERNAL_LINKS.pricing).
+  const resolveExternal = (item: MenuItem): MenuItem =>
+    item.external
+      ? {
+          ...item,
+          href:
+            EXTERNAL_LINKS[item.href as keyof typeof EXTERNAL_LINKS] ??
+            EXTERNAL_LINKS.pricing,
+        }
+      : item;
+  const menuItems: MenuItem[] = header.menuItems.map((item) => {
+    const resolved = resolveExternal(item);
+    return resolved.children
+      ? { ...resolved, children: resolved.children.map(resolveExternal) }
+      : resolved;
+  });
 
   const otherLocale = locale === "fr" ? "en" : "fr";
   const switchPath = getAlternatePath(pathname, otherLocale);
@@ -167,6 +180,8 @@ export function Header() {
                             <li key={child.label}>
                               <Link
                                 href={child.href ?? "#"}
+                                target={child.external ? "_blank" : undefined}
+                                rel={child.external ? "noopener noreferrer" : undefined}
                                 onClick={() => setOpenDropdown(null)}
                                 className="block px-5 py-2.5 text-sm text-black hover:bg-gray-50 transition-colors"
                               >
@@ -281,6 +296,8 @@ export function Header() {
                               <Link
                                 key={child.label}
                                 href={child.href ?? "#"}
+                                target={child.external ? "_blank" : undefined}
+                                rel={child.external ? "noopener noreferrer" : undefined}
                                 onClick={closeMobile}
                                 className="block py-2 text-sm text-gray-700 hover:text-black transition-colors"
                               >

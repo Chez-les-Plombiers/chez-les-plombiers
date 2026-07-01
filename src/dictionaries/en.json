@@ -3,7 +3,22 @@
     "menuItems": [
       {
         "label": "Pricing",
-        "external": true
+        "children": [
+          {
+            "label": "Chez les Plombiers",
+            "external": true,
+            "href": "pricing"
+          },
+          {
+            "label": "The Pink Apartment",
+            "external": true,
+            "href": "pricingAppartement"
+          },
+          {
+            "label": "The Boutique",
+            "comingSoon": true
+          }
+        ]
       },
       {
         "label": "Photos",
