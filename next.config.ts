@@ -4,12 +4,13 @@ import type { NextConfig } from "next";
 // 'unsafe-inline' scripts : requis par les snippets GA/Clarity et Next sans infra nonce.
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://static.elfsight.com https://static.axept.io",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: https://www.googletagmanager.com https://*.clarity.ms",
-  "font-src 'self'",
-  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.clarity.ms https://c.bing.com",
-  "frame-src https://my.matterport.com https://www.google.com",
+  // img-src large : widgets tiers (Elfsight/Instagram, Axeptio, avatars Google) servent depuis des CDN variables
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data: https://*.elfsightcdn.com",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.clarity.ms https://c.bing.com https://*.elfsight.com https://*.elfsightcdn.com https://*.axept.io https://axeptio.imgix.net",
+  "frame-src https://my.matterport.com https://www.google.com https://www.instagram.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "object-src 'none'",
