@@ -7,7 +7,7 @@ import {
   getServiceFrSlug,
 } from "@/lib/services-data";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Skip static files, API routes, and special files
