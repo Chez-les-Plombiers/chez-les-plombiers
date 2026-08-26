@@ -2,7 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { getSystemPrompt } from "@/lib/guide-knowledge";
 import { rateLimit, clientIp } from "@/lib/rate-limit";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const MAX_TURNS = 20;
 
