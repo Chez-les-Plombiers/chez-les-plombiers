@@ -1,11 +1,21 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { getSystemPrompt } from "@/lib/guide-knowledge";
+import { rateLimit, clientIp } from "@/lib/rate-limit";
 
 export const runtime = "edge";
 
 const MAX_TURNS = 20;
 
+const MAX_MESSAGE_LENGTH = 2000;
+
 export async function POST(request: Request) {
+  if (!(await rateLimit("guide", clientIp(request), 10))) {
+    return new Response(
+      JSON.stringify({ error: "Trop de messages, patientez une minute" }),
+      { status: 429, headers: { "Content-Type": "application/json" } }
+    );
+  }
+
   const body = await request.json();
   const locale = body.locale || "fr";
 
@@ -18,10 +28,15 @@ export async function POST(request: Request) {
         (m: { role: string; content: string }) =>
           (m.role === "user" || m.role === "assistant") &&
           typeof m.content === "string" &&
-          m.content.trim()
+          m.content.trim() &&
+          m.content.length <= MAX_MESSAGE_LENGTH
       )
       .slice(-MAX_TURNS);
-  } else if (body.message && typeof body.message === "string") {
+  } else if (
+    body.message &&
+    typeof body.message === "string" &&
+    body.message.length <= MAX_MESSAGE_LENGTH
+  ) {
     conversationMessages = [{ role: "user", content: body.message.trim() }];
   } else {
     return new Response(JSON.stringify({ error: "Message required" }), {

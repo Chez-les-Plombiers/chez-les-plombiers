@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { rateLimit, clientIp } from "@/lib/rate-limit";
 
 interface NouveauClientPayload {
   fullName: string;
@@ -31,6 +32,13 @@ const REQUIRED_FIELDS: (keyof NouveauClientPayload)[] = [
 ];
 
 export async function POST(request: Request) {
+  if (!(await rateLimit("nouveau-client", clientIp(request), 5))) {
+    return NextResponse.json(
+      { error: "Trop de demandes, réessayez dans une minute" },
+      { status: 429 }
+    );
+  }
+
   let body: NouveauClientPayload;
 
   try {
@@ -55,6 +63,17 @@ export async function POST(request: Request) {
       { error: `Champs requis manquants : ${missing.join(", ")}` },
       { status: 400 }
     );
+  }
+
+  // Garde-fou : borne la taille des champs texte (anti-abus Notion/Resend)
+  const MAX_FIELD_LENGTH = 500;
+  for (const [key, value] of Object.entries(body)) {
+    if (typeof value === "string" && value.length > MAX_FIELD_LENGTH) {
+      return NextResponse.json(
+        { error: `Champ trop long : ${key}` },
+        { status: 400 }
+      );
+    }
   }
 
   // Step 2: Create Notion page
