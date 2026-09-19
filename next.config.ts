@@ -17,7 +17,39 @@ const csp = [
   "form-action 'self'",
 ].join("; ");
 
+/**
+ * Zone « tarifs » — application séparée servie sous le domaine principal.
+ *
+ * Le calendrier tarifaire est un autre projet Next (`chez-les-plombiers-pricing`).
+ * Plutôt que de fusionner les deux bases de code, on le sert sous `/tarifs` par
+ * réécriture : c'est le montage multi-zones de Next.js. L'application distante
+ * déclare `basePath: "/tarifs"`, elle génère donc elle-même toutes ses URL et
+ * ses assets sous ce préfixe — il n'y a rien à réécrire côté chemins.
+ *
+ * ⚠️ La cible est l'alias de déploiement `*.vercel.app`, PAS
+ * `pricing.chezlesplombiers.fr`. Ce dernier redirige désormais en 301 vers
+ * `/tarifs` : le viser ici créerait une boucle infinie.
+ *
+ * ⚠️ `src/proxy.ts` doit laisser passer `/tarifs` avant sa réécriture de langue,
+ * sinon la requête part vers `/fr/tarifs` et n'arrive jamais ici.
+ */
+const PRICING_ZONE = "https://chez-les-plombiers-pricing.vercel.app";
+
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return {
+      // `beforeFiles` : la réécriture doit primer sur toute route locale, pour
+      // qu'une page `/tarifs` créée par mégarde côté vitrine ne masque jamais
+      // l'application de tarification.
+      beforeFiles: [
+        { source: "/tarifs", destination: `${PRICING_ZONE}/tarifs` },
+        { source: "/tarifs/:path*", destination: `${PRICING_ZONE}/tarifs/:path*` },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
+  },
+
   async headers() {
     return [
       {

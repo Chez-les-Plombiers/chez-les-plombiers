@@ -19,6 +19,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    /**
+     * Zone tarifs (application `chez-les-plombiers-pricing`, servie sous
+     * `/tarifs`). Indexée depuis le 19/09/2026 : dans ce marché personne
+     * n'affiche ses prix, ces pages sont donc le contenu le plus
+     * différenciant du site. Priorité haute et fréquence hebdomadaire — la
+     * grille et les disponibilités bougent.
+     *
+     * ⚠️ Ces URL ne sont pas générées par ce projet : si un lieu est ajouté
+     * dans `venues.ts` côté pricing, il faut l'ajouter ici à la main.
+     */
+    {
+      url: `${baseUrl}/tarifs`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    ...["atelier", "boutique", "appartement"].map((venue) => ({
+      url: `${baseUrl}/tarifs/${venue}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
     {
       url: `${baseUrl}/appartement`,
       lastModified: new Date(),

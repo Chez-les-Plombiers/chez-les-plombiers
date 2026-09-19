@@ -304,8 +304,8 @@ export function VenueGuide() {
               </Para>
               <Para>
                 Consultez les disponibilités et tarifs actualisés ici :{" "}
-                <ExternalLink href="https://pricing.chezlesplombiers.fr">
-                  pricing.chezlesplombiers.fr
+                <ExternalLink href="https://www.chezlesplombiers.fr/tarifs">
+                  chezlesplombiers.fr/tarifs
                 </ExternalLink>
               </Para>
               <H4>✨ Fashion Week</H4>
@@ -800,8 +800,8 @@ export function VenueGuide() {
 
               <H4>Poser une option ou réserver</H4>
               <Para>
-                <ExternalLink href="https://pricing.chezlesplombiers.fr">
-                  pricing.chezlesplombiers.fr
+                <ExternalLink href="https://www.chezlesplombiers.fr/tarifs">
+                  chezlesplombiers.fr/tarifs
                 </ExternalLink>
               </Para>
 

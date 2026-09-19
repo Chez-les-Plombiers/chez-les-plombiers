@@ -10,6 +10,20 @@ import {
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  /**
+   * `/tarifs` appartient à une AUTRE application (le projet
+   * `chez-les-plombiers-pricing`, servi ici par une réécriture déclarée dans
+   * `next.config.ts`). Il faut sortir avant toute autre règle.
+   *
+   * ⚠️ Sans cette sortie, la règle de fin de fonction préfixerait le chemin
+   * par `/fr` — y compris `/tarifs/_next/*` et `/tarifs/api/*` — et le pricing
+   * s'afficherait en page blanche. Le test `_next` plus bas ne protège que la
+   * racine du domaine, pas les assets d'une zone.
+   */
+  if (pathname === "/tarifs" || pathname.startsWith("/tarifs/")) {
+    return NextResponse.next();
+  }
+
   // Skip static files, API routes, and special files
   if (
     pathname.startsWith("/_next") ||

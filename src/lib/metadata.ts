@@ -36,8 +36,12 @@ export const DEFAULT_METADATA = {
 
 export const EXTERNAL_LINKS = {
   calendly: "https://calendly.com/chezlesplombiers/visite",
-  pricing: "https://pricing.chezlesplombiers.fr",
-  pricingAppartement: "https://pricing-appartement.chezlesplombiers.fr",
+  // Les deux sous-domaines de tarification ont été rapatriés sous le domaine
+  // principal le 19/09/2026 (ils restent joignables, en 301). Ces liens sont
+  // devenus INTERNES : ils font enfin pointer le site vers ses propres pages
+  // de prix, qui étaient jusqu'ici orphelines et donc invisibles de Google.
+  pricing: "https://www.chezlesplombiers.fr/tarifs",
+  pricingAppartement: "https://www.chezlesplombiers.fr/tarifs/appartement",
   whatsapp: "https://wa.me/33761471073",
   email: "mailto:contact@chezlesplombiers.fr",
   instagram: "https://instagram.com/chezlesplombiers",
