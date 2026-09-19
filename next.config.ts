@@ -27,13 +27,21 @@ const csp = [
  * ses assets sous ce préfixe — il n'y a rien à réécrire côté chemins.
  *
  * ⚠️ La cible est l'alias de déploiement `*.vercel.app`, PAS
- * `pricing.chezlesplombiers.fr`. Ce dernier redirige désormais en 301 vers
+ * `pricing.chezlesplombiers.fr`. Ce dernier redirige désormais en 308 vers
  * `/tarifs` : le viser ici créerait une boucle infinie.
+ *
+ * ⚠️ Cet hôte précis n'est pas devinable, et le nom « évident »
+ * `chez-les-plombiers-pricing.vercel.app` N'EST PAS un alias du projet — il
+ * répond quand même, avec un déploiement périmé, ce qui donne un 404 très
+ * difficile à interpréter. L'alias de production permanent se lit avec
+ * `vercel inspect <déploiement> --scope chez-les-plombiers`, section Aliases.
+ * Le second alias stable (`…-pricing-chez-les-plombiers.vercel.app`) est
+ * inutilisable ici : il est derrière la protection de déploiement (302).
  *
  * ⚠️ `src/proxy.ts` doit laisser passer `/tarifs` avant sa réécriture de langue,
  * sinon la requête part vers `/fr/tarifs` et n'arrive jamais ici.
  */
-const PRICING_ZONE = "https://chez-les-plombiers-pricing.vercel.app";
+const PRICING_ZONE = "https://chez-les-plombiers-pricing-ivory.vercel.app";
 
 const nextConfig: NextConfig = {
   async rewrites() {
