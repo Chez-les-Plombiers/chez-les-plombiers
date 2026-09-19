@@ -144,17 +144,61 @@ public/
 - **GTM**: GTM-PXGXK94F
 - **Vercel Analytics**: `@vercel/analytics` (composant `<Analytics />` dans layout)
 - **Clarity**: vju7iukwc9 (raw `<script>` dans `<head>`, pas `<Script>` Next.js)
+  ⚠️ La CSP doit autoriser **`https://*.clarity.ms`**, pas seulement `www.clarity.ms` :
+  le snippet n'est qu'un chargeur, la bibliothèque vient de `scripts.clarity.ms`.
+  Restreindre à `www` **coupe Clarity en silence** — `window.clarity` existe (le stub),
+  sa file se remplit, et rien n'est jamais envoyé. C'est arrivé du **26/08 au 19/09/2026**
+  (introduit par le durcissement CSP `8c4b0e1`) : trois semaines sans aucune donnée, et
+  environ six mois de heatmaps exploitables avant ça. Contrôle : `window.clarity.v` doit
+  renvoyer un numéro de version, et `window.clarity.q` doit avoir disparu.
 - **Axeptio**: 699344885a2a098410f72b36
+
+## Zone /tarifs — le pricing servi sous le domaine principal (19/09/2026)
+Le calendrier tarifaire n'est plus sur un sous-domaine : il est servi sous
+**`www.chezlesplombiers.fr/tarifs`** par une **réécriture multi-zones** déclarée dans
+`next.config.ts`. L'autre application (`chez-les-plombiers-pricing`) déclare
+`basePath: "/tarifs"` et génère donc elle-même toutes ses URL et ses assets.
+
+| URL | Rôle |
+|---|---|
+| `/tarifs` | page d'accueil : les trois lieux et leurs fourchettes de prix |
+| `/tarifs/atelier` · `/tarifs/boutique` · `/tarifs/appartement` | calendriers, **indexés** |
+| `/tarifs/admin` | administration, `noindex` + `Disallow` |
+| `pricing.chezlesplombiers.fr/*` | **308** vers `/tarifs/*` |
+| `pricing-appartement.chezlesplombiers.fr/` | **308** vers `/tarifs/appartement` (doublon retiré) |
+
+⚠️ **Trois pièges, tous rencontrés en vrai :**
+1. `src/proxy.ts` doit sortir sur `/tarifs` **avant** sa réécriture de langue, sinon la
+   requête part vers `/fr/tarifs` — y compris `/tarifs/_next/*` et `/tarifs/api/*`.
+2. La cible de la réécriture est **`chez-les-plombiers-pricing-ivory.vercel.app`**.
+   `chez-les-plombiers-pricing.vercel.app` **n'est pas un alias du projet** : il répond
+   quand même, avec un déploiement périmé, et donne un 404 incompréhensible. L'alias se lit
+   avec `vercel inspect <déploiement> --scope chez-les-plombiers`, section *Aliases*.
+3. Ne jamais viser `pricing.chezlesplombiers.fr` comme destination : il redirige vers
+   `/tarifs`, ce serait une boucle.
+
+**Pourquoi** : un sous-domaine accumule sa confiance à part, et ces pages étaient en
+`noindex` alors que huit réponses de FAQ (et le JSON-LD `FAQPage`) y renvoyaient
+nommément. Les prix sont le seul contenu que les concurrents ne publient pas.
 
 ## URLs externes
 - Calendly: https://calendly.com/chezlesplombiers/visite
-- Pricing (Chez Les Plombiers): https://pricing.chezlesplombiers.fr
-- Pricing (Appartement Rose): https://pricing-appartement.chezlesplombiers.fr (`EXTERNAL_LINKS.pricingAppartement`)
+- Pricing (tous lieux): https://www.chezlesplombiers.fr/tarifs — `EXTERNAL_LINKS.pricing`, **lien interne désormais**
+- Pricing Appartement: https://www.chezlesplombiers.fr/tarifs/appartement (`EXTERNAL_LINKS.pricingAppartement`)
 - WhatsApp: https://wa.me/33761471073
 - Instagram: https://instagram.com/chezlesplombiers
 
-## Appartement Rose — pricing dédié (01/07/2026)
-Projet séparé (repo `GrowthAgence/appartement-rose-pricing`, `/Users/fred/appartement-rose-pricing`) : calendrier de pricing dédié à l'Appartement Rose, live sur **pricing-appartement.chezlesplombiers.fr**. Design system CLP repris à l'identique. Voir le CLAUDE.md de ce repo.
+## Appartement Rose — pricing dédié (01/07/2026) → RETIRÉ le 19/09/2026
+Projet séparé (repo `Chez-les-Plombiers/appartement-rose-pricing`) qui servait
+**pricing-appartement.chezlesplombiers.fr**. **Doublon vérifié** : grille par jour de
+semaine identique au centime près à celle du lieu `appartement` de
+`chez-les-plombiers-pricing`, tarif Fashion Week identique aussi. Une seule divergence, et
+dans le mauvais sens : il affichait encore le **forfait Fashion Week 7 jours à 15 000 €**,
+supprimé le 15/09/2026.
+
+Sa page publique redirige donc en 308 vers `/tarifs/appartement`. `/admin` et `/api`
+restent joignables : ses surcharges de prix vivent dans un **KV distinct**. Le projet
+Vercel et le code sont conservés — retirer la redirection suffit à le remettre en ligne.
 
 Sur la page `/appartement` (`AppartementContent.tsx`), le hero a **2 CTA** :
 - **« Visiter le lieu »** (`appartement.ctaVisit`) → Calendly
