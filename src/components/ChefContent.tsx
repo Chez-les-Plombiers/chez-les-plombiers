@@ -1,4 +1,5 @@
 "use client";
+import { trackEvent } from "@/lib/analytics";
 
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
@@ -443,6 +444,7 @@ export function ChefContent() {
                 href={EXTERNAL_LINKS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent("whatsapp_click", { location: "chef" })}
                 rippleColor="bg-black"
                 className="bg-white text-black hover:text-white px-10 py-5 text-xs uppercase tracking-[2px] font-semibold"
               >

@@ -1,4 +1,5 @@
 "use client";
+import { trackEvent } from "@/lib/analytics";
 
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -694,6 +695,7 @@ export function StudioContent() {
                 href={EXTERNAL_LINKS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent("whatsapp_click", { location: "studio" })}
                 rippleColor="bg-white"
                 className="border border-white text-white hover:text-black px-10 py-5 text-sm uppercase tracking-widest"
               >
