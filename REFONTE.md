@@ -102,13 +102,18 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
 
 ## À trancher par Étienne
 
-- ⚠️ **Deux chiffres de L'ATELIER se contredisent d'une page à l'autre du site
-  actuel** : capacité cocktail « 150 » ou « 200 », hauteur sous plafond
-  « 4,11 m » ou « 4,5 m ». La page `/refonte/atelier` retient **200** et
-  **4,11 m** — le premier parce que c'est ce que disent la home et le pricing,
-  le second parce qu'il vient de la base du concierge, celle qui sert à
-  répondre sur place. À confirmer au mètre : ce sont des chiffres que les
-  clients recopient dans leurs plans.
+- ✅ **Chiffres de L'ATELIER, tranchés par Étienne le 20/09/2026** : capacité
+  **150 debout**, hauteur sous plafond **4,50 m**. L'ERP autorise 199, mais
+  « 199 fait vachement rappel à l'ERP, c'est un chiffre qu'on donne que pour
+  ça ; au-delà de 150 c'est trop ». La hauteur varie selon les poutres.
+- ⚠️ **Le site EN PRODUCTION porte encore les anciens chiffres**, et se
+  contredit : `fr.json` dit 11 fois « 150 personnes » mais 2 fois « 200
+  personnes » et 6 fois « jusqu'à 200 » ; 3 fois « 4,5 mètres » et 4 fois
+  « 4,11 ». `en.json` dit 9 fois « 200 guests ». Le pricing annonce aussi
+  « jusqu'à 200 personnes ». **Question ouverte** : on aligne tout maintenant
+  (une passe FR + EN + pricing, avec les balises meta et le JSON-LD), ou à la
+  bascule ? Ce n'est pas anodin : plusieurs descriptions de référencement
+  citent le chiffre.
 - Équipement de L'APPARTEMENT (celui de LA BOUTIQUE a été dicté le 20/09).
 - Photos de L'APPARTEMENT : celles en ligne datent d'avant la pose des rideaux.
 
