@@ -111,7 +111,10 @@ export const MOMENTS: readonly MomentRegles[] = [
       },
       {
         titre: "On ne fume pas à l'intérieur",
-        texte: "Strictement. Le lieu est un ERP.",
+        /* ⚠️ Ne pas justifier par « c'est un ERP » : le classement n'est pas
+           obtenu au 20/09/2026. La raison tient sans lui. */
+        texte:
+          "Strictement, y compris la vape. Le lieu est un immeuble d'habitation du 17e siècle, et l'odeur reste dans les murs bruts.",
       },
       {
         titre: "Signalez tout dommage immédiatement",

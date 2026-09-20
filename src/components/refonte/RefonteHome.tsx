@@ -99,8 +99,12 @@ function Ouverture() {
             <span className="block text-[13px] font-bold leading-relaxed tracking-[0.1em] sm:text-sm">
               Lieux événementiels
             </span>
-            <span className="mt-1 block text-[11px] font-normal leading-relaxed tracking-[0.14em] text-[#A8A29A]">
-              {ADRESSE} — Pont Neuf
+            <span className="mt-1.5 block text-[10px] font-normal leading-relaxed tracking-[0.12em] text-[#A8A29A] sm:text-[11px]">
+              {ADRESSE}
+            </span>
+            {/* Plus petit encore : ce n'est pas l'adresse, c'est un repère. */}
+            <span className="mt-0.5 block text-[9px] font-normal tracking-[0.12em] text-[#6E6A64] sm:text-[10px]">
+              Pont Neuf
             </span>
           </h1>
           {/*
@@ -110,8 +114,9 @@ function Ouverture() {
             cassait en deux.
           */}
           <p className="mt-3 text-[14px] leading-relaxed text-[#A8A29A]">
-            Trois espaces à la même adresse. Showrooms, lancements presse,
-            dîners privés, défilés, expositions.
+            Trois espaces à la même adresse.
+            <br />
+            Showrooms, lancements presse, dîners privés, défilés, expositions.
           </p>
           {/* Les nommer tout de suite : sinon « trois espaces » reste abstrait
               jusqu'à ce qu'on fasse défiler. */}

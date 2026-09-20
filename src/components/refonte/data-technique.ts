@@ -26,6 +26,42 @@ export interface Poste {
 
 export const TECHNIQUE: readonly Poste[] = [
   {
+    /*
+     * L'image en tête : c'est ce qu'on demande le plus, et de loin. Ordre
+     * dicté par Étienne — « la tuile image, il faut la mettre au-dessus de
+     * réseau, elle est prioritaire ».
+     */
+    titre: "Image",
+    lignes: [
+      ["Vidéoprojecteur", "Optoma ZU820T, laser, 8 800 lumens"],
+      ["Projection", "4,63 m de large en une seule image, sur le mur cyclo"],
+      ["Source sans fil", "Apple TV intégrée — AirPlay"],
+      ["Source filaire", "Une prise HDMI murale, depuis le coin régie"],
+      ["Pilotage", "Trigger 12 V, télécommande filaire, RJ45, RS232"],
+    ],
+  },
+  {
+    titre: "Son",
+    lignes: [
+      ["Diffusion", "Douze enceintes Sonos réparties dans tout le lieu"],
+      ["Calibrage", "Réglées pour le lieu : certaines fréquences ont été réduites pour le voisinage"],
+      ["Sources", "AirPlay, Spotify Connect, ou l'application Sonos sur l'iPad du lieu"],
+      ["Votre régie", "Une entrée XLR murale, pour brancher une platine"],
+      ["Réseau requis", "Le Wi-Fi du lieu — la musique et la projection passent par lui"],
+    ],
+    reserve:
+      "⚠️ Les enceintes de retour et les caissons de basses sont interdits : le calibrage du lieu est ce qui permet de jouer jusqu'à 23h, et une enceinte non calibrée le défait.",
+  },
+  {
+    titre: "Lumière",
+    lignes: [
+      ["Pilotage", "DMX, couleurs et intensité"],
+      ["Scénarios", "Cinq préréglages, et un mode libre par groupe de luminaires"],
+      ["Accroche", "Un grill au plafond : projecteurs à la pince, avec les arrivées DMX"],
+      ["Console", "Kiosc, sur l'iPad du lieu"],
+    ],
+  },
+  {
     titre: "Électricité",
     lignes: [
       ["Puissance", "36 kVA en triphasé"],
@@ -38,48 +74,18 @@ export const TECHNIQUE: readonly Poste[] = [
       "Le détail des calibres par départ n'est pas publié. À demander si vous dimensionnez une installation.",
   },
   {
-    titre: "Image",
-    lignes: [
-      ["Vidéoprojecteur", "Optoma ZU820T, laser, 8 800 lumens"],
-      ["Image", "4,63 m de large en une seule projection, sur le mur courbe"],
-      ["Entrées", "HDMI, dont une prise murale depuis le coin régie"],
-      ["Sans fil", "Apple TV intégrée — AirPlay"],
-      ["Pilotage", "Trigger 12 V, télécommande filaire, RJ45, RS232"],
-    ],
-  },
-  {
-    titre: "Son",
-    lignes: [
-      ["Diffusion", "Système Sonos intégré, enceintes calibrées pour le lieu"],
-      ["Sources", "AirPlay, Spotify Connect, ou l'application Sonos sur l'iPad du lieu"],
-      ["Régie extérieure", "Entrées XLR directement dans le mur"],
-      ["Réseau requis", "Le Wi-Fi du lieu — la musique et la projection passent par lui"],
-    ],
-    reserve:
-      "⚠️ Ajouter des enceintes, en particulier des caissons de basses, est interdit : certaines fréquences ont été réduites pour le voisinage, et c'est ce qui permet de jouer jusqu'à 23h.",
-  },
-  {
-    titre: "Lumière",
-    lignes: [
-      ["Pilotage", "DMX, couleurs et intensité"],
-      ["Scénarios", "Cinq préréglages, et un mode libre par groupe de luminaires"],
-      ["Accroche", "Un grill au plafond : projecteurs à la pince, avec les arrivées DMX"],
-      ["Console", "Kiosc, sur l'iPad du lieu"],
-    ],
-  },
-  {
     titre: "Réseau",
     lignes: [
-      ["Fibre", "1 Gb symétrique, dédiée au lieu"],
-      ["Wi-Fi", "Entièrement configurable : on crée les réseaux dont vous avez besoin, y compris un réseau invités séparé"],
-      ["Filaire", "Prises RJ45 réparties dans le lieu"],
+      ["Fibre", "1 Gb/s symétrique, dédiée"],
+      ["Wi-Fi", "Entièrement configurable ; réseau invités sur demande"],
+      ["Filaire", "Prises RJ45 partout"],
     ],
   },
   {
     titre: "Structure et sol",
     lignes: [
       ["Charge au sol", "800 kg/m²"],
-      ["Revêtement", "Résine époxy claire"],
+      ["Revêtement", "Résine époxy blanche"],
       ["Hauteur sous plafond", "4,50 m — elle varie selon les poutres"],
       ["Accès", "De plain-pied depuis la rue, sans marche ni seuil"],
       ["Porte", "Une porte à trois battants sur la cour ; les trois s'ouvrent"],
@@ -88,12 +94,17 @@ export const TECHNIQUE: readonly Poste[] = [
       "⚠️ La charge de 800 kg/m² n'a pas été retrouvée dans les documents du bureau d'études structure (LCV Ingénierie) : le CCTP ne cite que le DTU 13.3 et des critères de flèche. À sourcer avant de la porter sur un document contractuel.",
   },
   {
-    titre: "Climatisation et sécurité",
+    titre: "Climatisation et accessibilité",
     lignes: [
       ["Climatisation", "Réversible, sur toute la surface"],
-      ["Classement", "Établissement recevant du public"],
-      ["Accessibilité", "De plain-pied, WC PMR"],
+      ["Accès", "De plain-pied, accessible aux personnes à mobilité réduite"],
+      ["Sanitaires", "WC PMR"],
     ],
+    /*
+     * ⚠️ NE PAS ÉCRIRE « ERP » NI « CLASSEMENT ». Le classement n'est pas
+     * obtenu au 20/09/2026 — Étienne : « je ne suis pas encore ERP, il ne faut
+     * pas en parler ». L'accessibilité, elle, est réelle.
+     */
   },
 ];
 

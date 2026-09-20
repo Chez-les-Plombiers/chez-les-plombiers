@@ -120,6 +120,37 @@ Restera à faire le même jour : le sitemap, les redirections depuis les ancienn
 URL, le retrait du `noindex`, et la suppression de `/refonte/tuiles` et
 `/refonte/photos` (planches contact temporaires).
 
+## ⚠️ Fiche du lieu ou fiche technique ? Le test
+
+Question posée par Étienne le 20/09/2026 : « on peut dire qu'il y a du son, il
+y a de l'image, mais tout ça il faut peut-être le mettre dans un truc
+technique ». Il avait raison. La règle qui tranche chaque ligne :
+
+> **Est-ce que ça change ma DÉCISION de louer → la page du lieu.
+> Est-ce que ça change mon PLAN d'installation → `/atelier/technique`.**
+
+« On peut projeter 4,63 m de large » décide. « Optoma ZU820T, HDMI, RS232,
+trigger 12 V » exécute. Les deux sont vrais et utiles, mais pas à la même
+personne : un client qui compare trois lieux, contre un régisseur qui prépare
+son camion.
+
+⚠️ Ne pas rapatrier les modèles sur la page du lieu « pour faire complet ».
+C'est ce qui en avait fait un mur, et c'est ce qui rend la fiche technique
+inutile.
+
+⏳ **Photos techniques** — à faire, sur `/atelier/technique` seulement : le coin
+régie, le grill au plafond, la prise XLR murale, le tableau électrique. Ce sont
+des photos de repérage, comme celles de `/infos`.
+
+## ⚠️ NE PAS ÉCRIRE « ERP »
+
+Le classement n'est **pas obtenu** au 20/09/2026 — Étienne : « je ne suis pas
+encore ERP, il ne faut pas en parler ». Toutes les mentions ont été retirées du
+site refondu (`data.ts`, `data-technique.ts`, `regles.ts`).
+**L'accessibilité PMR et les WC PMR, eux, sont réels** et peuvent être annoncés.
+⚠️ Le site EN PRODUCTION dit encore « lieu ERP » à plusieurs endroits —
+à nettoyer à la bascule, ou avant si le sujet est sensible.
+
 ## ⚠️ Où écrire quoi — la règle à ne pas perdre
 
 Trois registres, et ils ne se mélangent pas (distinction posée par Étienne le
@@ -165,6 +196,9 @@ d'en construire un second. À reconsidérer si la page dépasse ~50 entrées.
 - Photos de L'APPARTEMENT : celles en ligne datent d'avant la pose des rideaux.
 
 - Licence web Eurostile — contacter le fondeur.
+- **Le régisseur devient facturé à part** (20/09/2026) : il n'est plus annoncé
+  comme compris. Le site en production dit encore « ménage et régisseur
+  compris » — à corriger à la bascule.
 - **Hauteur sous plafond et capacité de LA BOUTIQUE et de L'APPARTEMENT** :
   inconnues. Leurs bandes « en bref » ne portent donc que le sûr.
 - **Équipement de L'APPARTEMENT** : inconnu. Sa page saute la section plutôt que

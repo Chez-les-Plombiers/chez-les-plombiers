@@ -93,8 +93,18 @@ function Ouverture({ lieu, tuile }: { lieu: Lieu; tuile: Tuile }) {
               <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
                 {lieu.nom} — {tuile.meta.split(" · ")[0]}
               </span>
-              <span className="mt-1 block text-[11px] font-normal tracking-[0.16em] text-[#A8A29A]">
+              {/*
+                ⚠️ Trois niveaux, et l'ordre compte. Le nom porte ; l'adresse
+                suit, assez petite pour tenir sur une ligne ; « Pont Neuf » est
+                plus petit encore, parce que ce n'est PAS l'adresse — Étienne :
+                « c'est une indication en plus, genre : au fait, c'est vers
+                Pont Neuf ».
+              */}
+              <span className="mt-1.5 block text-[10px] font-normal leading-relaxed tracking-[0.12em] text-[#A8A29A] sm:text-[11px]">
                 {ADRESSE}
+              </span>
+              <span className="mt-0.5 block text-[9px] font-normal tracking-[0.12em] text-[#6E6A64] sm:text-[10px]">
+                Pont Neuf
               </span>
             </h1>
             {lieu.intro.map((paragraphe) => (
@@ -114,8 +124,14 @@ function Ouverture({ lieu, tuile }: { lieu: Lieu; tuile: Tuile }) {
                 HT / jour
               </span>
             </p>
+            {/*
+              ⚠️ Plus de « régisseur compris » : il devient une prestation
+              facturée à part (décision d'Étienne, 20/09/2026). Et « ménage de
+              sortie », pas « ménage » : le ménage quotidien d'un événement de
+              plusieurs jours n'est pas inclus.
+            */}
             <p className="mt-1 text-[12px] leading-relaxed text-[#8A8A8A]">
-              Ménage et régisseur compris. Le prix dépend du jour de la semaine.
+              Le prix dépend du jour de la semaine. Ménage de sortie compris.
             </p>
             {/*
               « Calendrier tarifaire » et pas « voir le calendrier » : le mot
@@ -128,9 +144,6 @@ function Ouverture({ lieu, tuile }: { lieu: Lieu; tuile: Tuile }) {
             >
               Calendrier tarifaire →
             </a>
-            <p className="mt-1 text-[11px] text-[#5E5E5E]">
-              Les jours libres, et le prix de chaque date.
-            </p>
 
             <a
               href={FICHE_GOOGLE}

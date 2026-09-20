@@ -63,9 +63,8 @@ export const ESPACES = [
     nom: "L'Atelier",
     /** Ligne sous le nom. Courte : ce qui situe, rien d'autre. */
     /*
-     * ⚠️ 150, pas 200 ni 199. L'ERP autorise jusqu'à 199 — mais Étienne :
-     * « 199 fait vachement rappel à l'ERP, c'est un chiffre qu'on donne que
-     * pour ça ; au-delà de 150 c'est trop ». 150 est le chiffre commercial.
+     * ⚠️ 150, et ne jamais écrire 199 : c'est un chiffre de dossier, pas un
+     * chiffre commercial. Étienne : « au-delà de 150 c'est trop ».
      * Le reste du site dit encore 200 par endroits : à aligner à la bascule.
      */
     meta: "200 m² · 150 pax · dans la cour",
@@ -284,83 +283,80 @@ export const ATELIER = {
    * texte d'origine le citait. Ne pas le réintroduire en recopiant le Notion.
    */
   intro: [
-    "Un garage de plombiers des années 1970, dans un immeuble du 17e siècle, entièrement reconverti en lieu recevant du public. 200 m² au fond d'une cour : murs bruts, poutres métalliques Eiffel, sol clair en résine.",
+    /*
+     * ⚠️ NE PAS ÉCRIRE « ERP » NI « LIEU RECEVANT DU PUBLIC ». Le classement
+     * n'est pas obtenu au 20/09/2026 — Étienne : « je ne suis pas encore ERP,
+     * il ne faut pas en parler ». L'accessibilité PMR et les WC PMR, eux, sont
+     * réels et peuvent être annoncés.
+     *
+     * ⚠️ L'espace insécable avant les deux-points n'est pas une coquetterie :
+     * c'est la règle typographique française, et il empêche le « : » de tomber
+     * seul en début de ligne, ce qui arrivait sur téléphone.
+     */
+    "Un garage de plombiers des années 1970, dans un immeuble du 17e siècle, entièrement reconverti. 200 m² au fond d'une cour\u00A0: murs bruts, poutres Eiffel, sol blanc en résine époxy.",
     "En plein cœur de Paris, à 100 m de la Samaritaine et à deux minutes à pied de Châtelet-Les Halles — RER A, B, D et métros 1, 4, 7, 11, 14.",
   ] as const,
 
   /** Les quatre nombres qu'on cherche en premier. Une bande, pas une grille. */
   enBref: [
     ["Surface", "200 m²"],
-    ["Sous plafond", "4,50 m"],
+    ["Hauteur sous plafond", "4,50 m"],
     ["Capacité", "150 pax"],
     ["Sous-sol", "100 m²"],
   ] as const,
 
   /**
-   * L'équipement, par thème.
+   * La fiche du lieu — ce qui DÉCIDE.
    *
-   * ⚠️ L'ordre est celui d'Étienne, et il n'est pas alphabétique : le réseau
-   * avant l'électricité, l'électricité après l'image. Le sol passe en dernier —
-   * « le sol, c'est une tuile qu'on mettra après ».
+   * ── LA LIGNE DE PARTAGE AVEC `/atelier/technique` ────────────────────────
    *
-   * ⚠️ Ne pas écrire « le double de la norme » pour la charge au sol. Étienne :
-   * « il n'y a pas de norme à vrai dire, et ça fait un peu trop frimeur ».
-   * ⚠️ Le chiffre de 800 kg/m² N'A PAS été retrouvé dans les documents du BET
-   * structure (LCV Ingénierie) : le CCTP ne cite que le DTU 13.3 et des
-   * critères de flèche. Il vient d'Étienne. À sourcer avant de l'imprimer sur
-   * un document contractuel.
+   * Étienne, le 20/09/2026 : « je me demande si tout ça, ça peut pas aller
+   * dans la fiche technique… on peut dire qu'il y a du son, il y a de l'image,
+   * mais tout ça il faut peut-être le mettre dans un truc technique ».
+   *
+   * Il a raison, et voici le test qui tranche chaque ligne :
+   *
+   *   Est-ce que ça change ma DÉCISION de louer  → ici.
+   *   Est-ce que ça change mon PLAN d'installation → `/atelier/technique`.
+   *
+   * « On peut projeter 4,63 m de large » décide. « Optoma ZU820T, HDMI, RS232,
+   * trigger 12 V » exécute. Les deux sont vrais, les deux sont utiles, mais
+   * pas à la même personne ni au même moment : un client qui compare trois
+   * lieux, contre un régisseur qui prépare son camion.
+   *
+   * ⚠️ Ne pas rapatrier les modèles ici « pour faire complet ». C'est ce qui
+   * avait fait de cette page un mur, et c'est ce qui rend la fiche technique
+   * inutile.
    */
   equipement: [
     {
       titre: "L'espace",
       lignes: [
         ["Volume", "200 m² de plain-pied, 4,50 m sous plafond"],
-        /*
-         * ⚠️ « 150 debout » côte à côte se lisait mal (Étienne). « pax » est le
-         * mot du métier, et il évite de répéter « personnes » trois fois.
-         */
         ["Capacité", "150 pax debout · 80 assis · 60 à table"],
         ["Rideaux", "Ils segmentent l'espace : l'ouvrir en grand, le délimiter, le rendre plus intime"],
         ["Sous-sol", "100 m² de stockage, ou de backstage"],
       ],
     },
     {
-      titre: "Le réseau",
-      lignes: [
-        ["Fibre", "1 Gb symétrique, dédiée au lieu"],
-        ["Wi-Fi", "Entièrement configurable : on crée les réseaux que vous voulez, dont un réseau invités séparé"],
-        ["Filaire", "Prises RJ45 réparties dans tout le lieu"],
-      ],
-    },
-    {
       titre: "L'image",
       lignes: [
-        ["Vidéoprojecteur", "Optoma ZU820T, 8 800 lumens"],
-        ["Diffusion", "4,63 m de large en une seule image, sur le mur courbe"],
-        ["Sources", "Apple TV intégrée, et une prise HDMI murale depuis le coin régie"],
+        ["Projection", "4,63 m de large en une seule image, sur le mur cyclo"],
+        ["Sources", "Apple TV intégrée, ou une prise HDMI murale depuis le coin régie"],
       ],
     },
     {
       titre: "Le son",
       lignes: [
-        ["Diffusion", "Sonos et AirPlay, enceintes calibrées pour le lieu"],
-        ["Régie", "Entrées XLR directement dans le mur, pour brancher la vôtre"],
+        ["Diffusion", "Douze enceintes réparties dans le lieu, calibrées pour lui"],
+        ["Votre régie", "Une entrée XLR murale, pour brancher une platine"],
       ],
     },
     {
       titre: "La lumière",
       lignes: [
-        ["Pilotage", "DMX, couleurs comprises, plusieurs scénarios enregistrés"],
-        ["Réglage", "Tout est variable en intensité"],
-        ["Accroche", "Un grill au plafond : on y fixe des projecteurs à la pince, avec les arrivées DMX"],
-      ],
-    },
-    {
-      titre: "L'électricité",
-      lignes: [
-        ["Puissance", "36 kVA triphasé"],
-        ["Prises", "Trois prises triphasées, et des prises en hauteur"],
-        ["Véhicules", "De quoi recharger une voiture électrique à l'intérieur"],
+        ["Ambiances", "Plusieurs scénarios enregistrés, tout est variable en intensité"],
+        ["Scénographie", "Un grill au plafond, pour accrocher vos propres projecteurs"],
       ],
     },
     {
@@ -373,16 +369,15 @@ export const ATELIER = {
     {
       titre: "Le sol",
       lignes: [
-        ["Charge", "800 kg/m²"],
-        ["Revêtement", "Résine époxy claire"],
-        ["Accès", "De plain-pied"],
+        ["Charge", "800 kg/m² — une voiture peut rester"],
+        ["Revêtement", "Résine époxy blanche"],
       ],
     },
     {
       titre: "Le confort",
       lignes: [
         ["Climatisation", "Réversible, sur toute la surface"],
-        ["Accessibilité", "Lieu ERP, accessible PMR, WC PMR"],
+        ["Accessibilité", "De plain-pied, accessible PMR, WC PMR"],
       ],
     },
   ] as const,
