@@ -61,6 +61,12 @@ interface TuilePhotosProps {
   ratio?: string;
   /** Vues par défilement. Une seule presque partout ; deux sur les larges. */
   sizes?: string;
+  /**
+   * Charge la PREMIÈRE vue sans attendre. À réserver à la photo d'ouverture :
+   * six photos chargées d'un coup sur un téléphone en 4G, c'est une page qui
+   * reste grise plusieurs secondes.
+   */
+  priority?: boolean;
 }
 
 export function TuilePhotos({
@@ -70,6 +76,7 @@ export function TuilePhotos({
   lieu,
   ratio = "aspect-[4/3]",
   sizes = "(max-width: 640px) 100vw, 380px",
+  priority,
 }: TuilePhotosProps) {
   const piste = useRef<HTMLDivElement>(null);
   const [vue, setVue] = useState(0);
@@ -98,6 +105,7 @@ export function TuilePhotos({
               alt={i === 0 ? `${lieu} — Chez les Plombiers` : ""}
               fill
               sizes={sizes}
+              priority={priority && i === 0}
               className="object-cover"
             />
           );

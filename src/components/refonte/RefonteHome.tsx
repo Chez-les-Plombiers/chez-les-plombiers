@@ -80,6 +80,7 @@ function Ouverture() {
           photos={OUVERTURE_PHOTOS}
           href="/photos"
           lieu="Chez les Plombiers"
+          priority
           ratio="aspect-[16/10] sm:aspect-[21/9]"
           sizes="(max-width: 1180px) 100vw, 1180px"
         />

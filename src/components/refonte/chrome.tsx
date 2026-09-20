@@ -109,15 +109,33 @@ export function Corps({ children }: { children: React.ReactNode }) {
 export function Barre({ lieu }: { lieu?: string }) {
   return (
     <header className="mx-auto max-w-[1180px] px-4 pt-5 sm:px-6">
-      <div className={`${CADRE} flex flex-wrap items-center justify-between gap-4 px-5 py-4`}>
+      {/*
+        ⚠️ `flex-wrap` et des boutons qui rétrécissent : à 375 px, les trois
+        boutons plus le logo ne tiennent pas sur une ligne, et « WHATSAPP »
+        sortait de l'écran. Ils passent à la ligne, et leur pas horizontal se
+        resserre sous `sm`.
+      */}
+      <div className={`${CADRE} flex flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 py-4 sm:px-5`}>
+        {/*
+          ⚠️ Les classes `sm:hidden` / `hidden sm:inline-flex` étaient posées
+          SUR le composant Logo, qui porte déjà `inline-flex`. Deux utilitaires
+          d'affichage sur le même élément : c'est l'ordre du CSS généré qui
+          tranche, pas celui de l'attribut — et `inline-flex` gagnait. Résultat,
+          le logo s'affichait deux fois l'un sous l'autre sur téléphone.
+          Les enveloppes ci-dessous n'ont pas d'affichage concurrent.
+        */}
         <a href="/refonte" aria-label="Chez les Plombiers, accueil">
-          <Logo hauteur={26} pied={lieu} priority className="sm:hidden" />
-          <Logo hauteur={34} pied={lieu} priority className="hidden sm:inline-flex" />
+          <span className="sm:hidden">
+            <Logo hauteur={24} pied={lieu} priority />
+          </span>
+          <span className="hidden sm:block">
+            <Logo hauteur={34} pied={lieu} priority />
+          </span>
         </a>
         <nav className="flex items-center gap-2">
           <a
             href="/tarifs"
-            className="bg-[#C8A96E] px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] text-[#1A1A1A] transition-colors hover:bg-[#D4B97E]"
+            className="bg-[#C8A96E] px-3 py-2.5 font-clp text-[10px] uppercase tracking-[0.12em] text-[#1A1A1A] transition-colors hover:bg-[#D4B97E] sm:px-4 sm:tracking-[0.16em]"
           >
             Tarifs
           </a>
@@ -125,7 +143,7 @@ export function Barre({ lieu }: { lieu?: string }) {
             href="https://calendly.com/chezlesplombiers/visite"
             target="_blank"
             rel="noopener noreferrer"
-            className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E]`}
+            className={`${BORD} px-3 py-2.5 font-clp text-[10px] uppercase tracking-[0.12em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E] sm:px-4 sm:tracking-[0.16em]`}
           >
             Visiter
           </a>
@@ -141,7 +159,7 @@ export function Barre({ lieu }: { lieu?: string }) {
             href={WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E]`}
+            className={`${BORD} px-3 py-2.5 font-clp text-[10px] uppercase tracking-[0.12em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E] sm:px-4 sm:tracking-[0.16em]`}
           >
             WhatsApp
           </a>
