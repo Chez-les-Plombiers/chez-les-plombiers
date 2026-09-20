@@ -5,6 +5,7 @@
  */
 import Image from "next/image";
 import { Logo } from "./Logo";
+import { TuilePhotos } from "./TuilePhotos";
 import {
   ADRESSE,
   CATEGORIES_PHOTOS,
@@ -174,6 +175,10 @@ function Ouverture() {
 /**
  * Les trois lieux.
  *
+ * ⚠️ Pas d'intertitre au-dessus : « les trois espaces », « ce que le lieu
+ * permet » ont été retirés le 20/09/2026 — Étienne, « on s'en doute ». Les
+ * tuiles se présentent toutes seules.
+ *
  * ⚠️ UNE SEULE cible par tuile, et la tuile entière est le lien. C'est la
  * troisième forme en deux jours, et la bonne :
  *
@@ -193,59 +198,51 @@ function Ouverture() {
  */
 function Espaces() {
   return (
-    <>
-      <Titre>Les trois espaces</Titre>
+    <Bloc>
       <div className="grid gap-3 sm:grid-cols-3">
-        {ESPACES.map((e) => (
-          <a
-            key={e.slug}
-            href={e.pagePrete ? e.page : e.tarifs}
-            className={`${CADRE} group flex flex-col overflow-hidden transition-colors hover:border-[#C8A96E]`}
-          >
-            <div className="relative aspect-[4/3] w-full">
-              <Image
-                src={e.photo}
-                alt={`${e.nom} — Chez les Plombiers, ${ADRESSE}`}
-                fill
-                sizes="(max-width: 640px) 100vw, 380px"
-                className="object-cover"
-              />
-            </div>
+        {ESPACES.map((e) => {
+          const cible = e.pagePrete ? e.page : e.tarifs;
+          return (
+            <div
+              key={e.slug}
+              className={`${CADRE} group relative flex flex-col overflow-hidden transition-colors hover:border-[#C8A96E]`}
+            >
+              <TuilePhotos photos={e.photos} href={cible} lieu={e.nom} />
 
-            <div className="flex flex-1 flex-col gap-4 p-5">
-              <div className="flex-1">
-                <h2 className="font-clp text-sm font-bold uppercase tracking-[0.1em]">
-                  {e.nom}
-                </h2>
-                <p className="mt-1 text-[11px] leading-tight text-[#8A8A8A]">
-                  {e.surface} · {e.capacite} · {e.position.toLowerCase()}
-                </p>
-
-                <p className="mt-4 font-mono text-base font-bold">
-                  {e.prix}
-                  <span className="ml-1.5 text-[10px] font-normal text-[#8A8A8A]">
-                    HT / jour
-                  </span>
-                </p>
-
-                {e.equipements.length > 0 && (
-                  <p className="mt-3 text-[12px] leading-relaxed text-[#8A8A8A]">
-                    {e.equipements.join(" · ")}
+              {/*
+                Le lien du bloc de texte est étiré sur tout ce qui reste de la
+                tuile. Il porte le nom accessible : les liens des photos, eux,
+                sont muets pour ne pas l'annoncer quatre fois.
+              */}
+              <div className="flex flex-1 flex-col gap-4 p-5">
+                <div className="flex-1">
+                  <h2 className="font-clp text-sm font-bold uppercase tracking-[0.1em]">
+                    <a href={cible} className="after:absolute after:inset-0 after:content-['']">
+                      {e.nom}
+                    </a>
+                  </h2>
+                  <p className="mt-1 text-[11px] leading-tight text-[#8A8A8A]">
+                    {e.meta}
                   </p>
-                )}
+                  <p className="mt-4 font-mono text-base font-bold">
+                    {e.prix}
+                    <span className="ml-1.5 text-[10px] font-normal text-[#8A8A8A]">
+                      HT / jour
+                    </span>
+                  </p>
+                </div>
+                <span
+                  className="font-mono text-[11px] uppercase tracking-wider"
+                  style={{ color: LAITON }}
+                >
+                  Voir le lieu →
+                </span>
               </div>
-
-              <span
-                className="font-mono text-[11px] uppercase tracking-wider"
-                style={{ color: LAITON }}
-              >
-                Voir le lieu →
-              </span>
             </div>
-          </a>
-        ))}
+          );
+        })}
       </div>
-    </>
+    </Bloc>
   );
 }
 
@@ -261,7 +258,6 @@ function Espaces() {
 function Preuve() {
   return (
     <>
-      <Titre>Ce que le lieu permet</Titre>
       <div className="grid gap-3 lg:grid-cols-[2fr_1fr]">
         <figure className={`${CADRE} overflow-hidden`}>
           <div className="relative aspect-[16/10] w-full">

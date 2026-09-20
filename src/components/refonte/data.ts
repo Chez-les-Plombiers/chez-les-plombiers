@@ -44,21 +44,43 @@ export const TELEPHONE = "+33 7 61 47 10 73";
  * on ne connaît pas leur équipement avec certitude, et inventer ici se
  * retrouverait dans un devis.
  */
+/**
+ * Les trois lieux, tels qu'ils apparaissent en tuiles sur la page d'accueil.
+ *
+ * ⚠️ Chaque tuile porte TROIS photos qu'on fait défiler, et plus aucune phrase
+ * descriptive ni liste d'équipements : une photo dit « murs bruts, sol clair »
+ * mieux qu'un texte, et la liste rendait la tuile lourde. Étienne, deux fois :
+ * « s'il y a une photo au-dessus, il n'y a plus besoin d'un descriptif », puis
+ * « les descriptifs, on peut les enlever, ça réduit la taille ».
+ *
+ * `equipements` reste renseigné : il sert à la PAGE du lieu, pas à la tuile.
+ * Il est vide pour L'APPARTEMENT — on ne connaît pas son équipement, et
+ * inventer ici finirait dans un devis.
+ */
 export const ESPACES = [
   {
     slug: "atelier",
     nom: "L'Atelier",
-    position: "Dans la cour",
-    surface: "200 m²",
-    capacite: "jusqu'à 200 personnes",
+    /** Ligne sous le nom. Courte : ce qui situe, rien d'autre. */
+    meta: "200 m² · jusqu'à 200 personnes · dans la cour",
     prix: "1 000 à 4 000 €",
-    equipements: ["Rideaux", "Espace modulable", "Climatisation réversible", "Cuisine et bar équipés"],
     /*
-     * Le plan large au canapé rose et au coffre-fort du fond — celui du lien
-     * Calendly. Choix d'Étienne : « c'est ma préférée, on ne l'a pas beaucoup
-     * utilisée, et on voit bien les murs bruts et le côté technique ».
+     * La première est le plan large au canapé rose et au coffre-fort du fond —
+     * celle du lien Calendly, préférée d'Étienne. Les deux autres montrent les
+     * rideaux et le sous-sol. La troisième est provisoire : Étienne cherche une
+     * vue où les rideaux se lisent mieux.
      */
-    photo: "/photos/lieu/atelier-tuile.jpg",
+    photos: [
+      "/photos/lieu/atelier-tuile.jpg",
+      "/photos/lieu/atelier-tuile-2.jpg",
+      "/photos/lieu/atelier-tuile-3.jpg",
+    ],
+    equipements: [
+      "Rideaux",
+      "Espace modulable",
+      "Climatisation réversible",
+      "Cuisine et bar équipés",
+    ],
     page: "/atelier",
     pagePrete: false,
     tarifs: "/tarifs",
@@ -66,13 +88,25 @@ export const ESPACES = [
   {
     slug: "boutique",
     nom: "La Boutique",
-    position: "Sur la rue",
-    surface: "45 m²",
-    capacite: "journée entière",
+    meta: "45 m² · vitrine sur rue",
     prix: "1 000 €",
-    equipements: [],
-    // ⚠️ Provisoire — en attente du choix d'Étienne sur /refonte/tuiles.
-    photo: "/photos/boutique/candidats/b01.jpg",
+    /* Choix d'Étienne sur la planche contact : B06, puis B03, puis B01. */
+    photos: [
+      "/photos/boutique/tuile-1.jpg",
+      "/photos/boutique/tuile-2.jpg",
+      "/photos/boutique/tuile-3.jpg",
+    ],
+    /* Dicté par Étienne le 20/09/2026. Ne rien y ajouter sans le lui demander. */
+    equipements: [
+      "Climatisation réversible",
+      "Wi-Fi haut débit",
+      "Son Sonos",
+      "Lumières Philips Hue commandables",
+      "Frigo",
+      "Bar / desk",
+      "Toilettes et petite salle de bain",
+      "Crochets au mur",
+    ],
     page: "/boutique",
     pagePrete: false,
     tarifs: "/tarifs/boutique",
@@ -80,13 +114,16 @@ export const ESPACES = [
   {
     slug: "appartement",
     nom: "L'Appartement",
-    position: "Au premier étage",
-    surface: "100 m²",
-    capacite: "jusqu'à 50 personnes",
+    meta: "100 m² · au premier étage, au-dessus de L'Atelier",
     prix: "1 000 à 2 000 €",
+    /* Choix d'Étienne : A04, A02, A10. ⚠️ Ces vues datent d'avant la pose des
+       rideaux — à remplacer quand de nouvelles photos existeront. */
+    photos: [
+      "/photos/appartement/appartement-04.jpg",
+      "/photos/appartement/appartement-02.jpg",
+      "/photos/appartement/appartement-10.jpg",
+    ],
     equipements: [],
-    // ⚠️ Provisoire — en attente du choix d'Étienne sur /refonte/tuiles.
-    photo: "/photos/appartement/appartement-01.jpg",
     page: "/appartement",
     pagePrete: false,
     tarifs: "/tarifs/appartement",
@@ -130,6 +167,12 @@ export const FAITS = [
   { valeur: "Déchargement par l'impasse", detail: "Une seconde porte sur l'impasse des Bourdonnais, pour le mobilier et la technique.", fort: false },
   { valeur: "200 m² + 100 m²", detail: "La surface d'événement, et le sous-sol qui va avec : stockage ou backstage.", fort: false },
   { valeur: "Ménage et régisseur", detail: "Compris dans le tarif, jamais en supplément.", fort: false },
+  /*
+   * ⚠️ À dire, justement parce que ça ne se devine pas. Étienne : « j'ai peur
+   * que les gens se disent, est-ce qu'il y a un escalier entre les deux ? Il
+   * faut dire qu'on est obligé de passer par la cour à chaque fois. »
+   */
+  { valeur: "On passe par la cour", detail: "Les trois espaces ne communiquent pas entre eux : on ressort et on traverse la cour pour aller de l'un à l'autre.", fort: false },
 ] as const;
 
 /** Catégories de la photothèque. Pas de « tournages » : ce métier n'est pas recherché. */
