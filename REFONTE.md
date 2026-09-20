@@ -58,13 +58,16 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
 - [x] Adresse retirée du logo d'en-tête (« trop petite »), gardée dans le H1
 - [x] Contenu récupéré de la page Notion PRÉ-PROJET (poutres Eiffel, impasse,
       sous-sol backstage, recharge électrique sur le triphasé)
+- [x] Trois photos défilables par tuile, et six sur la photo d'ouverture
+- [x] Bouton « Appeler » dans la barre, à côté de Tarifs et Visiter
+- [x] `/refonte/atelier` — la première page de lieu
 
 ## À construire
 
 | Page | Ce qu'elle répond | État |
 |---|---|---|
-| `/atelier` | photos et infos du lieu — **la prochaine** | à faire |
-| `/boutique` · `/appartement` | idem pour les deux autres lieux | à faire |
+| `/atelier` | photos et infos du lieu | **faite** (sous `/refonte/atelier`) |
+| `/boutique` · `/appartement` | idem — à décliner depuis L'ATELIER | à faire |
 | `/atelier/plans` | plans cotés, dimensions, à télécharger | à faire |
 | `/atelier/technique` | électricité, son, lumière, réseau, projection | à faire |
 | `/photos` | par type d'événement (5 catégories) | à faire |
@@ -99,6 +102,16 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
 
 ## À trancher par Étienne
 
+- ⚠️ **Deux chiffres de L'ATELIER se contredisent d'une page à l'autre du site
+  actuel** : capacité cocktail « 150 » ou « 200 », hauteur sous plafond
+  « 4,11 m » ou « 4,5 m ». La page `/refonte/atelier` retient **200** et
+  **4,11 m** — le premier parce que c'est ce que disent la home et le pricing,
+  le second parce qu'il vient de la base du concierge, celle qui sert à
+  répondre sur place. À confirmer au mètre : ce sont des chiffres que les
+  clients recopient dans leurs plans.
+- Équipement de L'APPARTEMENT (celui de LA BOUTIQUE a été dicté le 20/09).
+- Photos de L'APPARTEMENT : celles en ligne datent d'avant la pose des rideaux.
+
 - Licence web Eurostile — contacter le fondeur.
 - Retirer le conteneur GTM pour arrêter le double comptage GA4.
 - Accès admin Clarity (`vju7iukwc9`) et GTM (`GTM-PXGXK94F`) à demander à Frédéric.
@@ -109,7 +122,11 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
 
 | Quoi | Où |
 |---|---|
-| Composant de la maquette | `src/components/refonte/RefonteHome.tsx` |
+| Page d'accueil | `src/components/refonte/RefonteHome.tsx` |
+| Page de lieu | `src/components/refonte/RefonteAtelier.tsx` |
+| Charpente commune (barre, pied, cadres, palette) | `src/components/refonte/chrome.tsx` |
+| Photos défilables | `src/components/refonte/TuilePhotos.tsx` |
+| Logo et ses déclinaisons | `src/components/refonte/Logo.tsx` |
 | Contenu (chiffres, pages, faits) | `src/components/refonte/data.ts` |
 | Planche contact photos | `/refonte/photos` — **temporaire, à supprimer** |
 | Planche contact des tuiles | `/refonte/tuiles` — **temporaire, à supprimer** |
