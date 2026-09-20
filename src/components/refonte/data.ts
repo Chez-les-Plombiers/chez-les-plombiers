@@ -90,10 +90,14 @@ export const ESPACES = [
     nom: "La Boutique",
     meta: "45 m² · vitrine sur rue",
     prix: "1 000 €",
-    /* Choix d'Étienne sur la planche contact : B06, puis B03, puis B01. */
+    /*
+     * Choix d'Étienne sur la planche contact : B06, B03, B01 — puis, en les
+     * voyant en place, permutation des deux premières. La vue d'intérieur ouvre
+     * la tuile, la façade vient ensuite.
+     */
     photos: [
-      "/photos/boutique/tuile-1.jpg",
       "/photos/boutique/tuile-2.jpg",
+      "/photos/boutique/tuile-1.jpg",
       "/photos/boutique/tuile-3.jpg",
     ],
     /* Dicté par Étienne le 20/09/2026. Ne rien y ajouter sans le lui demander. */
@@ -191,8 +195,8 @@ export const FAITS = [
 export const OUVERTURE_PHOTOS = [
   "/photos/lieu/atelier-kv.jpg",
   "/photos/lieu/atelier-tuile-2.jpg",
-  "/photos/boutique/tuile-1.jpg",
   "/photos/boutique/tuile-2.jpg",
+  "/photos/boutique/tuile-1.jpg",
   "/photos/appartement/appartement-04.jpg",
   "/photos/appartement/appartement-02.jpg",
 ] as const;

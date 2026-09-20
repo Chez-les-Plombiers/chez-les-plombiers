@@ -1,11 +1,7 @@
-/* eslint-disable @next/next/no-html-link-for-pages --
- * `/tarifs` n'est PAS une route de cette application : c'est une autre zone
- * Next (le projet pricing), servie ici par réécriture. `next/link` tenterait
- * une navigation côté client vers une route que ce routeur ne connaît pas.
- */
 import Image from "next/image";
 import { Logo } from "./Logo";
 import { TuilePhotos } from "./TuilePhotos";
+import { Barre, Bloc, CADRE, Corps, LAITON, Page, Pied, Titre } from "./chrome";
 import {
   ADRESSE,
   CATEGORIES_PHOTOS,
@@ -15,7 +11,6 @@ import {
   OUVERTURE_PHOTOS,
   PAGES,
   REGLES,
-  TELEPHONE,
 } from "./data";
 
 /**
@@ -50,24 +45,11 @@ import {
  * Composant serveur, sans état.
  */
 
-/* Palette — reprise telle quelle du pricing pour que les deux ne divergent pas. */
-const FOND = "#1A1A1A";
-const BLOC = "bg-[#242424]";
-const BORD = "border border-[#3A3A3A]";
-const LAITON = "#C8A96E";
-
-const CADRE = `${BLOC} ${BORD}`;
-const LABEL =
-  "font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]";
-
 export function RefonteHome() {
   return (
-    <div
-      className="min-h-screen text-[#E8E4DC] antialiased"
-      style={{ backgroundColor: FOND }}
-    >
+    <Page>
       <Barre />
-      <main className="mx-auto max-w-[1180px] px-4 pb-16 sm:px-6">
+      <Corps>
         <Ouverture />
         <Espaces />
         <Preuve />
@@ -77,55 +59,9 @@ export function RefonteHome() {
         <Clients />
         <Regles />
         <Declinaisons />
-      </main>
+      </Corps>
       <Pied />
-    </div>
-  );
-}
-
-/** Espace vertical entre deux groupes de blocs. Une seule valeur, partout. */
-function Bloc({ children }: { children: React.ReactNode }) {
-  return <section className="mt-3">{children}</section>;
-}
-
-function Titre({ children }: { children: React.ReactNode }) {
-  return <p className={`${LABEL} mb-3 mt-8 px-1`}>{children}</p>;
-}
-
-/* ───────────────────────────────────────────────────────────────── Barre */
-
-function Barre() {
-  return (
-    <header className="mx-auto max-w-[1180px] px-4 pt-5 sm:px-6">
-      <div className={`${CADRE} flex flex-wrap items-center justify-between gap-4 px-5 py-4`}>
-        {/*
-          Le mot-symbole seul. La version à l'adresse a été essayée le
-          20/09/2026 et retirée le jour même : Étienne, « c'est un peu petit,
-          c'est trop petit, c'est peut-être pas la peine ». La taille du
-          mot-symbole, elle, est la bonne — ne pas la réduire.
-          L'adresse reste en texte dans le H1 juste en dessous : c'est elle que
-          Google lit, le logo n'est qu'une image.
-        */}
-        <Logo hauteur={26} priority className="sm:hidden" />
-        <Logo hauteur={34} priority className="hidden sm:inline-flex" />
-        <nav className="flex items-center gap-2">
-          <a
-            href="/tarifs"
-            className="bg-[#C8A96E] px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] text-[#1A1A1A] transition-colors hover:bg-[#D4B97E]"
-          >
-            Tarifs
-          </a>
-          <a
-            href="https://calendly.com/chezlesplombiers/visite"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E]`}
-          >
-            Visiter
-          </a>
-        </nav>
-      </div>
-    </header>
+    </Page>
   );
 }
 
@@ -201,7 +137,7 @@ function Ouverture() {
  */
 function Espaces() {
   return (
-    <Bloc>
+    <Bloc grand>
       <div className="grid gap-3 sm:grid-cols-3">
         {ESPACES.map((e) => {
           /*
@@ -266,7 +202,7 @@ function Espaces() {
  */
 function Preuve() {
   return (
-    <>
+    <Bloc grand>
       <div className="grid gap-3 lg:grid-cols-[2fr_1fr]">
         <figure className={`${CADRE} overflow-hidden`}>
           <div className="relative aspect-[16/10] w-full">
@@ -300,7 +236,7 @@ function Preuve() {
           </div>
         </div>
       </div>
-    </>
+    </Bloc>
   );
 }
 
@@ -462,61 +398,5 @@ function Declinaisons() {
         ))}
       </div>
     </>
-  );
-}
-
-/* ────────────────────────────────────────────────────────────────── Pied */
-
-function Pied() {
-  const contacts: Array<[string, React.ReactNode]> = [
-    ["Adresse", ADRESSE],
-    [
-      "Téléphone",
-      <a key="t" href={`tel:${TELEPHONE.replace(/\s/g, "")}`} className="hover:text-white">
-        {TELEPHONE}
-      </a>,
-    ],
-    [
-      "WhatsApp",
-      <a
-        key="w"
-        href="https://wa.me/33761471073"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-white"
-      >
-        Écrire un message
-      </a>,
-    ],
-    [
-      "Instagram",
-      <a
-        key="i"
-        href="https://instagram.com/chezlesplombiers"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-white"
-      >
-        @chezlesplombiers
-      </a>,
-    ],
-  ];
-
-  return (
-    <footer className="mx-auto max-w-[1180px] px-4 pb-10 sm:px-6">
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        {contacts.map(([quoi, valeur]) => (
-          <div key={quoi} className={`${CADRE} p-5`}>
-            <p className="font-clp text-[10px] uppercase tracking-[0.16em] text-[#8A8A8A]">
-              {quoi}
-            </p>
-            <p className="mt-1.5 font-mono text-[13px]">{valeur}</p>
-          </div>
-        ))}
-      </div>
-      <p className="mt-6 px-1 font-clp text-[10px] uppercase tracking-[0.18em] text-[#5E5E5E]">
-        Maquette de travail, non publiée
-      </p>
-    </footer>
   );
 }

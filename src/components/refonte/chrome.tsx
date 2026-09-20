@@ -35,9 +35,27 @@ export const LAITON = "#C8A96E";
 export const CADRE = `${BLOC} ${BORD}`;
 export const LABEL = "font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]";
 
-/** Espace vertical entre deux groupes de blocs. Une seule valeur, partout. */
-export function Bloc({ children }: { children: React.ReactNode }) {
-  return <section className="mt-3">{children}</section>;
+/**
+ * Un groupe de blocs.
+ *
+ * ⚠️ DEUX respirations, et la distinction compte. `mt-3` est le même écart
+ * qu'entre deux blocs d'une grille : il dit « ceci continue ce qui précède »
+ * (la grille des faits sous la photo de la voiture, par exemple). `grand`
+ * donne le `mt-8` d'un intertitre : il dit « nouveau sujet ».
+ *
+ * Le besoin est apparu le 20/09/2026 en retirant les intertitres « les trois
+ * espaces » et « ce que le lieu permet » : sans eux, tous les groupes se sont
+ * retrouvés collés. Étienne : « il y a des espaces entre les blocs qui ont
+ * sauté ». C'était l'intertitre qui portait la respiration, pas le groupe.
+ */
+export function Bloc({
+  children,
+  grand,
+}: {
+  children: React.ReactNode;
+  grand?: boolean;
+}) {
+  return <section className={grand ? "mt-8" : "mt-3"}>{children}</section>;
 }
 
 export function Titre({ children }: { children: React.ReactNode }) {
