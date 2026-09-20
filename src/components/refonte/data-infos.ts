@@ -38,6 +38,14 @@ export interface Section {
   texte: readonly string[];
   /** Faits détachés du texte, quand ils se consultent plus qu'ils ne se lisent. */
   faits?: readonly (readonly [string, string])[];
+  /** Comme `faits`, mais chaque ligne est un lien. Réservé à « Nous joindre ». */
+  contacts?: readonly {
+    quoi: string;
+    valeur: string;
+    detail: string;
+    href: string;
+    externe?: boolean;
+  }[];
   /**
    * Liens sortants, GROUPÉS. Une liste à plat de douze noms ne se lit pas : on
    * ne sait pas si « Thérèse » est un restaurant ou un hôtel.
@@ -56,9 +64,10 @@ export interface Section {
    * mieux le travail qu'une photo d'agence ici — c'est le seul endroit du site
    * où c'est vrai.
    *
-   * ⚠️ Celles en place sont des photos d'Étienne, prises au téléphone, et il
-   * les dit « pas très à jour » : il les refera. Ne pas les remplacer par des
-   * photos de communication en attendant.
+   * ⚠️ Photos d'Étienne, prises au téléphone le 20/09/2026, et archivées dans
+   * `Dropbox/CHEZ LES PLOMBIERS/PHOTOS/PHOTOS PRATIQUES/`. Ne pas les
+   * remplacer par des photos de communication : elles seraient plus belles et
+   * moins utiles.
    */
   photos?: readonly { src: string; alt: string; legende: string }[];
 }
@@ -73,20 +82,19 @@ export const SECTIONS: readonly Section[] = [
     texte: [
       "L'adresse est le 39 rue des Bourdonnais, dans le 1er arrondissement, à trois minutes du Pont Neuf et à cent mètres de la Samaritaine.",
       "La rue donne sur une porte cochère. On la franchit, on traverse la cour, et L'Atelier est au fond, sur la droite. La Boutique, elle, est directement sur la rue, sous l'enseigne « Couverture Plomberie » d'origine — on ne passe pas par la cour pour y entrer.",
-      "Le code de la grille change chaque semaine. Il est envoyé par message avant chaque réservation.",
+      "Les codes d'accès — la grille, la boîte à clés, le sous-sol — changent chaque semaine. Ils vous sont envoyés par WhatsApp avant votre date, et ne sont jamais publiés ici.",
     ],
     photos: [
       {
         src: "/photos/acces/rue.jpg",
-        alt: "Le 39 rue des Bourdonnais : la grille de la cour, et la vitrine de La Boutique",
+        alt: "Le 39 rue des Bourdonnais : la grille ouverte sur la cour, et la vitrine de La Boutique",
         legende:
-          "Depuis la rue. À gauche, la grille du 39 : c'est par là qu'on entre dans la cour. À droite, la vitrine de La Boutique, sous son enseigne d'origine.",
+          "Depuis la rue. La grille du 39 est ouverte : on voit le passage, la cour, et tout au fond l'entrée de L'Atelier. À droite, la vitrine de La Boutique.",
       },
       {
-        src: "/photos/acces/porte-atelier.jpg",
-        alt: "La porte à trois battants de L'Atelier, ouverte sur la cour",
-        legende:
-          "Au fond de la cour : l'entrée de L'Atelier, sa porte à trois battants. Ici, un seul est ouvert.",
+        src: "/photos/acces/cour.jpg",
+        alt: "La cour pavée, avec l'entrée de L'Atelier ouverte au fond",
+        legende: "La cour, une fois la grille franchie. L'Atelier est droit devant.",
       },
     ],
   },
@@ -121,6 +129,12 @@ export const SECTIONS: readonly Section[] = [
     ],
     photos: [
       {
+        src: "/photos/acces/porte-trois-battants.jpg",
+        alt: "La porte de L'Atelier, ses trois battants grands ouverts sur la cour",
+        legende:
+          "Les trois battants ouverts : c'est le passage réel pour un décor ou un véhicule.",
+      },
+      {
         src: "/photos/acces/impasse.jpg",
         alt: "L'impasse des Bourdonnais et la porte de service de L'Atelier",
         legende:
@@ -140,7 +154,7 @@ export const SECTIONS: readonly Section[] = [
         src: "/photos/acces/porte-appartement.jpg",
         alt: "La porte de l'immeuble dans la cour, avec son digicode, qui mène à L'Appartement",
         legende:
-          "Dans la cour, la porte de l'immeuble et son digicode : c'est l'escalier de L'Appartement.",
+          "Dans la cour, la porte de l'immeuble et son digicode : c'est l'escalier de L'Appartement, et il ne mène pas à L'Atelier.",
       },
     ],
   },
@@ -211,11 +225,39 @@ export const SECTIONS: readonly Section[] = [
     texte: [
       "Le plus rapide est WhatsApp : la réponse arrive en quelques minutes pendant les heures d'ouverture. Le même numéro fonctionne en appel, et l'adresse mail va au même endroit.",
     ],
-    faits: [
-      ["WhatsApp", "+33 7 61 47 10 73 — le canal le plus rapide."],
-      ["Téléphone", "+33 7 61 47 10 73."],
-      ["Courriel", "contact@chezlesplombiers.fr"],
-      ["Visiter le lieu", "Gratuit, une demi-heure, du lundi au samedi de 10h à 18h, sur rendez-vous."],
+    /*
+     * ⚠️ Chaque ligne est cliquable, et pas de la même façon : WhatsApp ouvre
+     * la conversation, le numéro compose, les adresses ouvrent un courriel, la
+     * visite ouvre Calendly. Une page de contact dont il faut recopier le
+     * numéro à la main n'est pas une page de contact.
+     */
+    contacts: [
+      {
+        quoi: "WhatsApp",
+        valeur: "+33 7 61 47 10 73",
+        detail: "Le canal le plus rapide : réponse en quelques minutes.",
+        href: "https://wa.me/33761471073",
+        externe: true,
+      },
+      {
+        quoi: "Téléphone",
+        valeur: "+33 7 61 47 10 73",
+        detail: "Le même numéro, en appel.",
+        href: "tel:+33761471073",
+      },
+      {
+        quoi: "Courriel",
+        valeur: "contact@chezlesplombiers.fr",
+        detail: "Ou directement etienne@ et celine@chezlesplombiers.fr.",
+        href: "mailto:contact@chezlesplombiers.fr",
+      },
+      {
+        quoi: "Visiter le lieu",
+        valeur: "Réserver un créneau",
+        detail: "Gratuit, une demi-heure, du lundi au samedi de 10h à 18h.",
+        href: "https://calendly.com/chezlesplombiers/visite",
+        externe: true,
+      },
     ],
   },
 ] as const;

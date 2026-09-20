@@ -183,6 +183,35 @@ function Bloc({ section }: { section: Section }) {
         </div>
       )}
 
+      {section.contacts && (
+        <dl className="mt-6 max-w-[68ch] divide-y divide-[#3A3A3A] border-y border-[#3A3A3A]">
+          {section.contacts.map((c) => (
+            <div key={c.quoi} className="py-3.5 sm:flex sm:gap-6">
+              <dt
+                className="font-mono text-[12px] sm:w-56 sm:shrink-0"
+                style={{ color: LAITON }}
+              >
+                {c.quoi}
+              </dt>
+              <dd className="mt-1 sm:mt-0">
+                <a
+                  href={c.href}
+                  {...(c.externe
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="text-[14px] text-[#E8E4DC] underline decoration-[#5E5E5E] underline-offset-4 transition-colors hover:decoration-[#C8A96E]"
+                >
+                  {c.valeur}
+                </a>
+                <span className="mt-0.5 block text-[13px] leading-relaxed text-[#8A8A8A]">
+                  {c.detail}
+                </span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
+
       {section.groupes && (
         <div className="mt-6 grid max-w-[68ch] gap-6 sm:grid-cols-3">
           {section.groupes.map((g) => (

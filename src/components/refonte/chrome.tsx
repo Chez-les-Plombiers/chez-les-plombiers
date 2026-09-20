@@ -197,7 +197,21 @@ export function Pied() {
     <footer className="mt-16 border-t border-[#3A3A3A]">
       <div className="mx-auto max-w-[1180px] px-4 py-12 sm:px-6">
         <div className="gap-10 sm:flex sm:items-start sm:justify-between">
-          <Logo hauteur={34} pied={ADRESSE.toUpperCase()} />
+          {/*
+            ⚠️ L'adresse ne passe PLUS par la ligne de pied du logo : son
+            interlettrage la faisait déborder du mot-symbole. Étienne : « il
+            faut que l'adresse fasse la même largeur que le logo, là ça dépasse
+            trop ». Elle est donc posée dessous, dans un bloc de la largeur du
+            logo, et son corps s'ajuste pour la remplir sans la dépasser.
+            Et le logo est plus grand : « comme d'habitude, on aime bien quand
+            le logo est plus gros ».
+          */}
+          <div className="w-[240px] shrink-0 sm:w-[300px]">
+            <Logo hauteur={38} className="w-full [&_img]:!h-auto [&_img]:!w-full" />
+            <p className="mt-2 w-full text-center font-clp text-[9px] font-bold uppercase tracking-[0.12em] text-[#A8A29A] sm:text-[11px]">
+              {ADRESSE}
+            </p>
+          </div>
 
           <div className="mt-10 grid grid-cols-2 gap-8 sm:mt-0 sm:flex sm:gap-14">
             {colonnes.map((col) => (
