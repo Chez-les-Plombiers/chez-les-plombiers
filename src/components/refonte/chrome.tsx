@@ -114,70 +114,72 @@ export function Corps({ children }: { children: React.ReactNode }) {
 /**
  * L'en-tête.
  *
- * ⚠️ L'adresse ne va PAS sous le mot-symbole : essayée le 20/09/2026 et retirée
- * le jour même — Étienne, « c'est trop petit, c'est peut-être pas la peine ».
- * La taille du mot-symbole, elle, est la bonne : ne pas la réduire.
+ * ── DEUX BARRES, ET LA DIFFÉRENCE EST UNE DÉCISION ────────────────────────
  *
- * Sur une page de lieu, la ligne de pied nomme le lieu. C'est là tout l'intérêt
- * du logo décliné.
+ * Sur GRAND ÉCRAN : le logo et trois actions — Tarifs, Visiter, WhatsApp.
+ *
+ * Sur TÉLÉPHONE : le logo et LE NUMÉRO, rien d'autre.
+ *
+ * Étienne avait raison de trouver les trois boutons « un peu gros » : à 375 px
+ * ils occupent le tiers du premier écran pour proposer trois choses dont deux
+ * sont déjà dans la page. Il a aussi donné, sans la nommer, la raison de garder
+ * la troisième : « le livreur de chez Option a voulu nous appeler, il a trouvé
+ * mon téléphone sur le site ». C'est ça, l'usage mobile de ce site — quelqu'un
+ * debout dans la rue qui doit joindre un humain maintenant.
+ *
+ * ⚠️ On affiche LE NUMÉRO, pas le mot « Appeler » ni « WhatsApp ». Un mot ne
+ * sert que si on le touche ; un numéro se lit, se recopie, se dicte à un
+ * collègue, et s'appelle d'un doigt. Un livreur au volant ne tape pas sur un
+ * bouton, il lit et compose.
+ *
+ * ⚠️ `tel:` et pas `wa.me` : c'est le seul lien qui ne peut pas échouer. Un
+ * téléphone professionnel sans WhatsApp, et le bouton mène à « téléchargez
+ * WhatsApp ». WhatsApp reste partout ailleurs — le pied de page, `/infos`,
+ * `/visiter` — et sur grand écran.
+ *
+ * Tarifs et Visiter ne disparaissent pas : ils sont dans le sommaire de la
+ * page et dans le pied.
  */
 export function Barre({ lieu }: { lieu?: string }) {
   return (
     <header className="mx-auto max-w-[1180px] px-4 pt-5 sm:px-6">
-      {/*
-        ⚠️ `flex-wrap` et des boutons qui rétrécissent : à 375 px, les trois
-        boutons plus le logo ne tiennent pas sur une ligne, et « WHATSAPP »
-        sortait de l'écran. Ils passent à la ligne, et leur pas horizontal se
-        resserre sous `sm`.
-      */}
-      <div className={`${CADRE} flex flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 py-4 sm:px-5`}>
-        {/*
-          ⚠️ Les classes `sm:hidden` / `hidden sm:inline-flex` étaient posées
-          SUR le composant Logo, qui porte déjà `inline-flex`. Deux utilitaires
-          d'affichage sur le même élément : c'est l'ordre du CSS généré qui
-          tranche, pas celui de l'attribut — et `inline-flex` gagnait. Résultat,
-          le logo s'affichait deux fois l'un sous l'autre sur téléphone.
-          Les enveloppes ci-dessous n'ont pas d'affichage concurrent.
-        */}
-        <a href="/refonte" aria-label="Chez les Plombiers, accueil">
+      <div className={`${CADRE} flex items-center justify-between gap-4 px-4 py-4 sm:px-5`}>
+        <a href={lien("/")} aria-label="Chez les Plombiers, accueil">
           <span className="sm:hidden">
-            <Logo hauteur={24} pied={lieu} priority />
+            <Logo hauteur={22} pied={lieu} priority />
           </span>
           <span className="hidden sm:block">
             <Logo hauteur={34} pied={lieu} priority />
           </span>
         </a>
-        <nav className="flex items-center gap-2">
+
+        {/* Téléphone : le numéro seul. */}
+        <a
+          href={`tel:${TEL_BRUT}`}
+          className={`${BORD} whitespace-nowrap px-3 py-2.5 font-mono text-[12px] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E] sm:hidden`}
+        >
+          {TELEPHONE}
+        </a>
+
+        {/* Grand écran : les trois actions. */}
+        <nav className="hidden items-center gap-2 sm:flex">
           <a
             href="/tarifs"
-            className="bg-[#C8A96E] px-3 py-2.5 font-clp text-[10px] uppercase tracking-[0.12em] text-[#1A1A1A] transition-colors hover:bg-[#D4B97E] sm:px-4 sm:tracking-[0.16em]"
+            className="bg-[#C8A96E] px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] text-[#1A1A1A] transition-colors hover:bg-[#D4B97E]"
           >
             Tarifs
           </a>
-          {/*
-            ⚠️ « Visiter » mène désormais à NOTRE page, plus à Calendly en
-            direct : la page porte les repères (durée, horaires, où se
-            retrouver) et intègre le calendrier dans notre décor.
-          */}
           <a
             href={lien("/visiter")}
-            className={`${BORD} px-3 py-2.5 font-clp text-[10px] uppercase tracking-[0.12em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E] sm:px-4 sm:tracking-[0.16em]`}
+            className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E]`}
           >
             Visiter
           </a>
-          {/*
-            WhatsApp en troisième — le canal d'Étienne, assumé.
-            ⚠️ Et c'est POUR ÇA que le numéro reste écrit en clair, cliquable,
-            dans le pied de page. Quelqu'un sans WhatsApp — un téléphone pro, un
-            ordinateur sans l'application — qui cliquerait ici tombe sur une
-            page « téléchargez WhatsApp ». Ne pas retirer le numéro du pied de
-            page : c'est lui qui empêche le cul-de-sac.
-          */}
           <a
             href={WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${BORD} px-3 py-2.5 font-clp text-[10px] uppercase tracking-[0.12em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E] sm:px-4 sm:tracking-[0.16em]`}
+            className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E]`}
           >
             WhatsApp
           </a>
@@ -187,20 +189,6 @@ export function Barre({ lieu }: { lieu?: string }) {
   );
 }
 
-/**
- * Le pied de page.
- *
- * ⚠️ Il ne doit PAS être quatre tuiles alignées, comme il l'était jusqu'au
- * 20/09/2026 : sans hiérarchie, on ne sait pas où regarder. Étienne : « il faut
- * qu'on en crée un un peu joli ». Trois colonnes de liens sous le logotype à
- * l'adresse, et une ligne de mentions.
- *
- * C'est le seul endroit du site où le logotype porte l'adresse gravée : en
- * haut, elle était « trop petite pour servir ». Ici, elle clôt la page.
- *
- * ⚠️ Le numéro de téléphone reste écrit en clair et cliquable. Le bouton du
- * haut envoie sur WhatsApp ; ce numéro est le filet pour qui n'a pas WhatsApp.
- */
 export function Pied() {
   const colonnes: Array<{ titre: string; liens: Array<{ nom: string; href: string; externe?: boolean; suffixe?: string }> }> = [
     {

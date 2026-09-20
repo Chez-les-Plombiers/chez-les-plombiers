@@ -88,11 +88,20 @@ function Ouverture() {
           {/* ⚠️ Le H1 : modeste en taille, mais c'est le texte que Google lit. */}
           {/*
             « Lieux » au pluriel : il y en a trois depuis l'ouverture de LA
-            BOUTIQUE. « Pont Neuf » est là pour situer — le 1er arrondissement
-            est vaste, et c'est le repère que les gens ont en tête.
+            BOUTIQUE. « Pont Neuf » situe — le 1er arrondissement est vaste.
+
+            ⚠️ Deux lignes, deux graisses. En une seule, le titre tombait sur
+            quatre lignes de capitales grasses sur un iPhone — Étienne : « c'est
+            un peu gros, ce serait bien que ce soit plus fin, plus élégant ».
+            L'adresse, elle, reste en TEXTE : c'est elle que Google lit.
           */}
-          <h1 className="font-clp text-sm font-bold uppercase leading-relaxed tracking-[0.1em]">
-            Lieux événementiels — {ADRESSE} — Pont Neuf
+          <h1 className="font-clp uppercase">
+            <span className="block text-[13px] font-bold leading-relaxed tracking-[0.1em] sm:text-sm">
+              Lieux événementiels
+            </span>
+            <span className="mt-1 block text-[11px] font-normal leading-relaxed tracking-[0.14em] text-[#A8A29A]">
+              {ADRESSE} — Pont Neuf
+            </span>
           </h1>
           {/*
             ⚠️ Ce chapô doit tenir sur UNE ligne en grand écran : Étienne a
@@ -100,9 +109,14 @@ function Ouverture() {
             l'allonger, et ne pas lui remettre de `max-w-` : c'est ce qui le
             cassait en deux.
           */}
-          <p className="mt-2 text-[14px] leading-relaxed text-[#A8A29A]">
+          <p className="mt-3 text-[14px] leading-relaxed text-[#A8A29A]">
             Trois espaces à la même adresse. Showrooms, lancements presse,
             dîners privés, défilés, expositions.
+          </p>
+          {/* Les nommer tout de suite : sinon « trois espaces » reste abstrait
+              jusqu'à ce qu'on fasse défiler. */}
+          <p className="mt-2 font-mono text-[11px] text-[#8A8A8A]">
+            L&apos;Atelier · La Boutique · L&apos;Appartement
           </p>
         </div>
       </div>
@@ -147,7 +161,18 @@ function Espaces() {
               key={e.slug}
               className={`${CADRE} group relative flex flex-col overflow-hidden transition-colors hover:border-[#C8A96E]`}
             >
-              <TuilePhotos photos={e.photos} href={cible} lieu={e.nom} />
+              {/*
+                ⚠️ `z-10` N'EST PAS DÉCORATIF. Le lien étiré du titre plus bas
+                (`after:inset-0`) recouvre TOUTE la tuile, photos comprises :
+                sans cette élévation, le doigt touche le lien et non le
+                conteneur défilant, et le carrousel est mort sur téléphone.
+                C'est le piège déjà documenté dans TuilePhotos.tsx — et il est
+                revenu par la porte du lien étiré. Les flèches sont en `z-20`,
+                donc toujours au-dessus.
+              */}
+              <div className="relative z-10">
+                <TuilePhotos photos={e.photos} href={cible} lieu={e.nom} />
+              </div>
 
               {/*
                 Le lien du bloc de texte est étiré sur tout ce qui reste de la

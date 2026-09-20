@@ -77,6 +77,14 @@ export async function generateMetadata({
       description: meta.homeOgDescription,
       images: [`${SITE_URL}/images/hero.png`],
     },
+    /*
+     * ⚠️ Safari sur iPhone souligne tout seul ce qu'il prend pour une adresse
+     * ou un numéro, et le transforme en lien bleu-gris. Sur la maquette, le
+     * titre « 39 RUE DES BOURDONNAIS, PARIS 1ER » se retrouvait barré de deux
+     * soulignements en plein milieu. On désactive la détection : l'adresse est
+     * déjà cliquable là où c'est utile, vers la fiche Google.
+     */
+    formatDetection: { telephone: false, address: false, date: false },
     icons: {
       icon: [
         { url: "/favicon.ico", sizes: "48x48" },
