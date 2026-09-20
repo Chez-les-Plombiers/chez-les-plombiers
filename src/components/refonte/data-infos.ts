@@ -48,8 +48,19 @@ export interface Section {
   }[];
   /** Carte intégrée, quand la position vaut mieux qu'une description. */
   carte?: string;
-  /** Une photo, seulement si elle répond à la question de la section. */
-  photo?: { src: string; alt: string; legende: string };
+  /**
+   * Des photos, seulement si elles RÉPONDENT à la question de la section.
+   *
+   * ⚠️ C'est la règle de cette page : pas d'image d'ambiance. Un traiteur à 7h
+   * du matin cherche une porte, pas une atmosphère. Une photo de repérage fait
+   * mieux le travail qu'une photo d'agence ici — c'est le seul endroit du site
+   * où c'est vrai.
+   *
+   * ⚠️ Celles en place sont des photos d'Étienne, prises au téléphone, et il
+   * les dit « pas très à jour » : il les refera. Ne pas les remplacer par des
+   * photos de communication en attendant.
+   */
+  photos?: readonly { src: string; alt: string; legende: string }[];
 }
 
 export const INFOS_INTRO =
@@ -64,11 +75,20 @@ export const SECTIONS: readonly Section[] = [
       "La rue donne sur une porte cochère. On la franchit, on traverse la cour, et L'Atelier est au fond, sur la droite. La Boutique, elle, est directement sur la rue, sous l'enseigne « Couverture Plomberie » d'origine — on ne passe pas par la cour pour y entrer.",
       "Le code de la grille change chaque semaine. Il est envoyé par message avant chaque réservation.",
     ],
-    photo: {
-      src: "/photos/servaire/seuil-cour.jpg",
-      alt: "Le seuil entre la cour et L'Atelier",
-      legende: "La cour, depuis le seuil de L'Atelier.",
-    },
+    photos: [
+      {
+        src: "/photos/acces/rue.jpg",
+        alt: "Le 39 rue des Bourdonnais : la grille de la cour, et la vitrine de La Boutique",
+        legende:
+          "Depuis la rue. À gauche, la grille du 39 : c'est par là qu'on entre dans la cour. À droite, la vitrine de La Boutique, sous son enseigne d'origine.",
+      },
+      {
+        src: "/photos/acces/porte-atelier.jpg",
+        alt: "La porte à trois battants de L'Atelier, ouverte sur la cour",
+        legende:
+          "Au fond de la cour : l'entrée de L'Atelier, sa porte à trois battants. Ici, un seul est ouvert.",
+      },
+    ],
   },
   {
     id: "venir",
@@ -99,6 +119,14 @@ export const SECTIONS: readonly Section[] = [
       ["Elle peut rester", "Le sol tient 800 kg/m², et le triphasé 36 kVA permet de la recharger sur place."],
       ["Stockage", "100 m² en sous-sol, pour les flight cases et les backstages."],
     ],
+    photos: [
+      {
+        src: "/photos/acces/impasse.jpg",
+        alt: "L'impasse des Bourdonnais et la porte de service de L'Atelier",
+        legende:
+          "L'impasse des Bourdonnais. La porte de déchargement est celle du milieu, sous l'auvent noir.",
+      },
+    ],
   },
   {
     id: "circuler",
@@ -106,6 +134,14 @@ export const SECTIONS: readonly Section[] = [
     texte: [
       "L'Atelier, La Boutique et L'Appartement sont à la même adresse, mais ils ne communiquent pas entre eux : il n'y a pas d'escalier intérieur, pas de porte de liaison.",
       "L'Appartement est au premier étage, mais on y accède par son propre escalier, depuis la cour. Pour aller d'un lieu à l'autre, on ressort et on traverse la cour. C'est à prévoir si vous louez deux espaces le même jour : le service, les invités et la technique font le trajet dehors.",
+    ],
+    photos: [
+      {
+        src: "/photos/acces/porte-appartement.jpg",
+        alt: "La porte de l'immeuble dans la cour, avec son digicode, qui mène à L'Appartement",
+        legende:
+          "Dans la cour, la porte de l'immeuble et son digicode : c'est l'escalier de L'Appartement.",
+      },
     ],
   },
   {

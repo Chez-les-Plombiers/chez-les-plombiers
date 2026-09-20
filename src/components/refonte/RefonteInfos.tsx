@@ -116,21 +116,34 @@ function Bloc({ section }: { section: Section }) {
         </p>
       ))}
 
-      {section.photo && (
-        <figure className={`${CADRE} mt-6 max-w-[62ch] overflow-hidden`}>
-          <div className="relative aspect-[3/2] w-full">
-            <Image
-              src={section.photo.src}
-              alt={section.photo.alt}
-              fill
-              sizes="(max-width: 1024px) 100vw, 620px"
-              className="object-cover"
-            />
-          </div>
-          <figcaption className="border-t border-[#3A3A3A] px-4 py-3 text-[12px] text-[#8A8A8A]">
-            {section.photo.legende}
-          </figcaption>
-        </figure>
+      {section.photos && (
+        /*
+          Une photo occupe la largeur du texte ; deux se partagent la ligne.
+          Le format reste 3/2 dans les deux cas : ce sont des photos de
+          repérage, on les compare mieux au même cadre.
+        */
+        <div
+          className={`mt-6 grid max-w-[68ch] gap-3 ${
+            section.photos.length > 1 ? "sm:grid-cols-2" : "max-w-[62ch]"
+          }`}
+        >
+          {section.photos.map((ph) => (
+            <figure key={ph.src} className={`${CADRE} overflow-hidden`}>
+              <div className="relative aspect-[3/2] w-full">
+                <Image
+                  src={ph.src}
+                  alt={ph.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="border-t border-[#3A3A3A] px-4 py-3 text-[12px] leading-relaxed text-[#8A8A8A]">
+                {ph.legende}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       )}
 
       {section.faits && (
