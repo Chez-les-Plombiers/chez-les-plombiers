@@ -93,6 +93,14 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
   PDF » donne alors un document toujours à jour. Rien de décidé.
 - **Vidéo du lieu** : il en existe une qu'Étienne aime bien, dans `PHOTOS/`.
   À placer plus tard.
+- ⏳ **`/photos` : plusieurs SÉRIES, pas une photothèque** — à traiter quand on
+  construira la page. Le lieu a été photographié plusieurs fois, par des
+  personnes différentes (dont Justin, ami photographe, dont Étienne aime la
+  série) : même lieu, traitements très différents — une série bleutée, une plus
+  jaune. Ce n'est pas un détail d'archivage : **des clients téléchargent ces
+  photos pour leurs propres présentations**, et chacun préfère une série. La
+  page devra donc les laisser choisir par série, pas mélanger dans une grille
+  unique, et permettre le téléchargement.
 - Les 5 vignettes photos de la home sont des bouche-trous : « défilés » montre
   une salle vide, « expositions » montre la cour.
 - Chercher une photo d'une voiture **en train d'entrer** (celle en place est la

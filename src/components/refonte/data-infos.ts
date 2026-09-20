@@ -38,8 +38,16 @@ export interface Section {
   texte: readonly string[];
   /** Faits détachés du texte, quand ils se consultent plus qu'ils ne se lisent. */
   faits?: readonly (readonly [string, string])[];
-  /** Liens sortants nommés — restaurants, hôtels, monuments. */
-  liens?: readonly { nom: string; url: string }[];
+  /**
+   * Liens sortants, GROUPÉS. Une liste à plat de douze noms ne se lit pas : on
+   * ne sait pas si « Thérèse » est un restaurant ou un hôtel.
+   */
+  groupes?: readonly {
+    titre: string;
+    liens: readonly { nom: string; url: string }[];
+  }[];
+  /** Carte intégrée, quand la position vaut mieux qu'une description. */
+  carte?: string;
   /** Une photo, seulement si elle répond à la question de la section. */
   photo?: { src: string; alt: string; legende: string };
 }
@@ -74,7 +82,9 @@ export const SECTIONS: readonly Section[] = [
       ["Depuis les aéroports", "Roissy CDG : 35 min en RER B direct. Orly : 30 min via Orlyval puis RER B. Le Bourget : 40 min."],
       ["En voiture", "Parking public Indigo Saint-Eustache, à 4 min à pied."],
       ["Accessibilité", "L'entrée de L'Atelier est de plain-pied depuis la rue, et l'espace est entièrement accessible. WC PMR."],
+      ["Stationnement de surface", "Payant du lundi au samedi, de 9h à 20h."],
     ],
+    carte: "https://www.google.com/maps?q=39+rue+des+Bourdonnais+75001+Paris&output=embed",
   },
   {
     id: "livrer",
@@ -118,19 +128,58 @@ export const SECTIONS: readonly Section[] = [
     texte: [
       "Vos invités ont tout sur place : de quoi dîner avant ou après, de quoi dormir, et le Paris historique à pied.",
     ],
-    liens: [
-      { nom: "Frenchie", url: "https://www.frenchie-restaurant.com" },
-      { nom: "Verjus", url: "https://www.verjusparis.com" },
-      { nom: "Le Soufflé", url: "https://www.lesouffle.fr" },
-      { nom: "Loulou (Tuileries)", url: "https://www.loulou-paris.com" },
-      { nom: "Hôtel du Louvre (Hyatt)", url: "https://www.hyatt.com/unbound-collection/en-US/paraz-hotel-du-louvre" },
-      { nom: "Hôtel Le Pradey", url: "https://www.lepradey.com" },
-      { nom: "Hôtel Thérèse", url: "https://www.hoteltherese.com" },
-      { nom: "Citadines Les Halles", url: "https://www.discoverasr.com/fr/citadines/france/citadines-les-halles-paris" },
-      { nom: "Musée du Louvre — 8 min", url: "https://www.louvre.fr" },
-      { nom: "Pont Neuf — 3 min", url: "https://www.parisinfo.com/musee-monument-paris/71449/Pont-Neuf" },
-      { nom: "Notre-Dame — 12 min", url: "https://www.notredamedeparis.fr" },
-      { nom: "Westfield Forum des Halles — 3 min", url: "https://www.westfield.com/fr/france/forumdeshalles" },
+    /*
+     * ⚠️ Liens vérifiés en avril 2026. Le Centre Pompidou a été retiré (fermé
+     * pour rénovation jusqu'en 2030), ainsi que Pirouette, Champeaux et
+     * l'Hôtel des Métiers — fermés ou inexistants. Revérifier avant la bascule.
+     */
+    groupes: [
+      {
+        titre: "Dîner",
+        liens: [
+          { nom: "Frenchie", url: "https://www.frenchie-restaurant.com" },
+          { nom: "Verjus", url: "https://www.verjusparis.com" },
+          { nom: "Le Soufflé", url: "https://www.lesouffle.fr" },
+          { nom: "Loulou, aux Tuileries", url: "https://www.loulou-paris.com" },
+        ],
+      },
+      {
+        titre: "Dormir",
+        liens: [
+          { nom: "Hôtel du Louvre (Hyatt)", url: "https://www.hyatt.com/unbound-collection/en-US/paraz-hotel-du-louvre" },
+          { nom: "Hôtel Le Pradey", url: "https://www.lepradey.com" },
+          { nom: "Hôtel Thérèse", url: "https://www.hoteltherese.com" },
+          { nom: "Citadines Les Halles", url: "https://www.discoverasr.com/fr/citadines/france/citadines-les-halles-paris" },
+        ],
+      },
+      {
+        titre: "À pied",
+        liens: [
+          { nom: "Pont Neuf — 3 min", url: "https://www.parisinfo.com/musee-monument-paris/71449/Pont-Neuf" },
+          { nom: "Forum des Halles — 3 min", url: "https://www.westfield.com/fr/france/forumdeshalles" },
+          { nom: "Musée du Louvre — 8 min", url: "https://www.louvre.fr" },
+          { nom: "Notre-Dame — 12 min", url: "https://www.notredamedeparis.fr" },
+        ],
+      },
+    ],
+  },
+  {
+    /*
+     * La dernière section, et la seule qui appelle une action. Pas de FAQ à la
+     * suite : elle répéterait mot pour mot ce que la page vient de dire. Une
+     * question fréquente qui a déjà sa section n'est pas une question fréquente,
+     * c'est un doublon.
+     */
+    id: "joindre",
+    titre: "Nous joindre",
+    texte: [
+      "Le plus rapide est WhatsApp : la réponse arrive en quelques minutes pendant les heures d'ouverture. Le même numéro fonctionne en appel, et l'adresse mail va au même endroit.",
+    ],
+    faits: [
+      ["WhatsApp", "+33 7 61 47 10 73 — le canal le plus rapide."],
+      ["Téléphone", "+33 7 61 47 10 73."],
+      ["Courriel", "contact@chezlesplombiers.fr"],
+      ["Visiter le lieu", "Gratuit, une demi-heure, du lundi au samedi de 10h à 18h, sur rendez-vous."],
     ],
   },
 ] as const;

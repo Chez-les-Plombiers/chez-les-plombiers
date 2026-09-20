@@ -155,21 +155,45 @@ function Bloc({ section }: { section: Section }) {
         </dl>
       )}
 
-      {section.liens && (
-        <ul className="mt-6 flex max-w-[68ch] flex-wrap gap-x-5 gap-y-2">
-          {section.liens.map((l) => (
-            <li key={l.url}>
-              <a
-                href={l.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[14px] text-[#C9C4BC] underline decoration-[#5E5E5E] underline-offset-4 transition-colors hover:text-white hover:decoration-[#C8A96E]"
-              >
-                {l.nom}
-              </a>
-            </li>
+      {section.carte && (
+        <div className={`${CADRE} mt-6 max-w-[68ch] overflow-hidden`}>
+          <iframe
+            src={section.carte}
+            title="Chez les Plombiers, 39 rue des Bourdonnais, Paris 1er"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="h-[300px] w-full border-0"
+            /* La carte de Google arrive en blanc : on la calme pour qu'elle ne
+               troue pas la page. Au survol, elle reprend ses vraies couleurs. */
+            style={{ filter: "grayscale(1) invert(0.92) contrast(0.85)" }}
+          />
+        </div>
+      )}
+
+      {section.groupes && (
+        <div className="mt-6 grid max-w-[68ch] gap-6 sm:grid-cols-3">
+          {section.groupes.map((g) => (
+            <div key={g.titre}>
+              <p className="font-mono text-[12px]" style={{ color: LAITON }}>
+                {g.titre}
+              </p>
+              <ul className="mt-2 space-y-1.5">
+                {g.liens.map((l) => (
+                  <li key={l.url}>
+                    <a
+                      href={l.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[14px] text-[#C9C4BC] underline decoration-[#5E5E5E] underline-offset-4 transition-colors hover:text-white hover:decoration-[#C8A96E]"
+                    >
+                      {l.nom}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </section>
   );
