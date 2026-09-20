@@ -7,7 +7,6 @@ import Image from "next/image";
 import {
   ADRESSE,
   CATEGORIES_PHOTOS,
-  CLIENTS,
   CLIENTS_TEXTE,
   ESPACES,
   FAITS,
@@ -280,27 +279,24 @@ function Photos() {
 
 /* ──────────────────────────────────────────────────────────────  Clients */
 
+/**
+ * ⚠️ La grille de logos a été retirée le 20/09/2026. Deux raisons.
+ *
+ * Étienne, sur la maquette précédente : « en bas les logos puis le texte,
+ * c'est pas très chic ». Et sur le fond : un logo est une image. Un moteur, un
+ * modèle de langage, un client qui cherche « Prada rue des Bourdonnais » lisent
+ * du texte. Les fichiers eux-mêmes sont inégaux — certains portent encore leur
+ * cartouche blanche, les graisses ne s'accordent pas.
+ *
+ * Les noms en toutes lettres disent la même chose, mieux, et se lisent.
+ * `CLIENTS` reste dans `data.ts` : les logos serviront ailleurs.
+ */
 function Clients() {
   return (
     <section className={`border-b ${RULE}`}>
       <div className="mx-auto max-w-[1180px] px-5 py-10 sm:px-8 sm:py-12">
         <p className={LABEL}>Ils sont venus</p>
-        <div className="mt-6 grid grid-cols-3 items-center gap-x-8 gap-y-6 sm:grid-cols-6 lg:grid-cols-9">
-          {CLIENTS.map((c) => (
-            <div key={c} className="relative h-6 w-full opacity-45 grayscale">
-              <Image
-                src={`/images/clients/${c}.png`}
-                alt={c.replace(/-/g, " ")}
-                fill
-                sizes="120px"
-                className="object-contain object-left"
-              />
-            </div>
-          ))}
-        </div>
-        {/* Les noms en toutes lettres : un logo est une image, un modèle de
-            langage lit ce texte, pas les pixels. */}
-        <p className="mt-7 max-w-4xl text-[13px] leading-relaxed text-[#77716A]">
+        <p className="mt-5 max-w-4xl text-[15px] leading-relaxed">
           {CLIENTS_TEXTE}
         </p>
       </div>
