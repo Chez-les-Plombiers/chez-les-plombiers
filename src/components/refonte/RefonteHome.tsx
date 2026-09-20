@@ -201,9 +201,13 @@ function Espaces() {
                 <p className="mt-3 text-[14px] leading-relaxed text-[#6F6960]">
                   {e.texte}
                 </p>
+                {/*
+                  On affiche la FOURCHETTE, pas le plancher. « À partir de
+                  1 000 € » était exact pour les trois lieux et donnait donc
+                  l'impression que l'Atelier coûte le prix de la Boutique.
+                */}
                 <p className="mt-4 font-display text-[13px]">
-                  À partir de{" "}
-                  <span className="text-[#16130F]">{e.prix.split(" à ")[0]}</span>{" "}
+                  <span className="text-[#16130F]">{e.prix}</span>{" "}
                   <span className="text-[#6F6960]">HT la journée</span>
                 </p>
                 <a
