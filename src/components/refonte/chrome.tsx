@@ -62,11 +62,25 @@ export function Titre({ children }: { children: React.ReactNode }) {
   return <p className={`${LABEL} mb-3 mt-8 px-1`}>{children}</p>;
 }
 
-export function Page({ children }: { children: React.ReactNode }) {
+/**
+ * La coquille de page.
+ *
+ * `fond` permet à une page de lieu de porter sa teinte — le charbon marron de
+ * L'ATELIER, le bleu de LA BOUTIQUE, le rose de L'APPARTEMENT, déjà en place
+ * dans le calendrier tarifaire. Le fond reste SOMBRE dans tous les cas : un
+ * aplat clair casserait tout le système, conçu pour du charbon.
+ */
+export function Page({
+  children,
+  fond = FOND,
+}: {
+  children: React.ReactNode;
+  fond?: string;
+}) {
   return (
     <div
       className="min-h-screen text-[#E8E4DC] antialiased"
-      style={{ backgroundColor: FOND }}
+      style={{ backgroundColor: fond }}
     >
       {children}
     </div>

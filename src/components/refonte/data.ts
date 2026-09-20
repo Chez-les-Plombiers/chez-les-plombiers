@@ -255,6 +255,13 @@ export const REGLES = [
  * vient de la base de connaissances opérationnelle du concierge, qui sert à
  * répondre aux clients sur place. À confirmer au mètre.
  */
+/**
+ * La fiche Google du lieu. Le même lien que la punaise du calendrier tarifaire :
+ * avis, horaires, photos, itinéraire — tout ce qu'on n'a pas à refaire.
+ */
+export const FICHE_GOOGLE =
+  "https://www.google.com/maps/place/Chez+Les+Plombiers/@48.8602622,2.3454547,17z/data=!4m8!3m7!1s0x47e66e1e25b0e72f:0xb0e740c06d8e3c89!8m2!3d48.8602622!4d2.3480296!9m1!1b1!16s%2Fg%2F11y3glbp14";
+
 export const ATELIER = {
   slug: "atelier",
   nom: "L'Atelier",
@@ -262,64 +269,116 @@ export const ATELIER = {
   /*
    * Le premier paragraphe décrit ce qu'on voit ; le second situe. Les deux
    * reprennent le brief d'origine (page Notion « PRÉ-PROJET »), qui disait ces
-   * choses mieux que les réécritures successives du site — la Samaritaine et
-   * Châtelet en particulier, qui avaient disparu.
+   * choses mieux que les réécritures successives du site.
    *
    * ⚠️ Pas de « tournages » : Étienne ne veut pas de ce métier, alors que le
    * texte d'origine le citait. Ne pas le réintroduire en recopiant le Notion.
    */
   intro: [
-    "Un garage de plombiers des années 1970, dans un immeuble du 17e siècle, entièrement reconverti en lieu recevant du public. 200 m² au fond de la cour : murs bruts, poutres métalliques Eiffel, sol clair en résine.",
+    "Un garage de plombiers des années 1970, dans un immeuble du 17e siècle, entièrement reconverti en lieu recevant du public. 200 m² au fond d'une cour : murs bruts, poutres métalliques Eiffel, sol clair en résine.",
     "En plein cœur de Paris, à 100 m de la Samaritaine et à deux minutes à pied de Châtelet-Les Halles — RER A, B, D et métros 1, 4, 7, 11, 14.",
   ] as const,
 
-  /*
-   * ⚠️ Regroupés en trois familles, et pas une tuile par chiffre. Étienne :
-   * « ça fait trop de petites infos, une info une tuile ». Huit encadrés pour
-   * huit nombres, c'était un tableau déguisé en grille.
+  /** Les quatre nombres qu'on cherche en premier. Une bande, pas une grille. */
+  enBref: [
+    ["Surface", "200 m²"],
+    ["Sous plafond", "4,50 m"],
+    ["Capacité", "150 debout"],
+    ["Sous-sol", "100 m²"],
+  ] as const,
+
+  /**
+   * L'équipement, par thème.
    *
-   * CHIFFRES ARBITRÉS le 20/09/2026, le site actuel se contredisant :
-   * - capacité : 150. L'ERP autorise 199, mais « 199 fait rappel à l'ERP » ;
-   * - hauteur : 4,50 m. Elle varie selon les poutres — Étienne a tranché.
+   * ⚠️ L'ordre est celui d'Étienne, et il n'est pas alphabétique : le réseau
+   * avant l'électricité, l'électricité après l'image. Le sol passe en dernier —
+   * « le sol, c'est une tuile qu'on mettra après ».
+   *
+   * ⚠️ Ne pas écrire « le double de la norme » pour la charge au sol. Étienne :
+   * « il n'y a pas de norme à vrai dire, et ça fait un peu trop frimeur ».
+   * ⚠️ Le chiffre de 800 kg/m² N'A PAS été retrouvé dans les documents du BET
+   * structure (LCV Ingénierie) : le CCTP ne cite que le DTU 13.3 et des
+   * critères de flèche. Il vient d'Étienne. À sourcer avant de l'imprimer sur
+   * un document contractuel.
    */
-  dimensions: [
+  equipement: [
     {
       titre: "L'espace",
       lignes: [
-        ["Surface", "200 m² de plain-pied, au fond de la cour"],
-        ["Hauteur sous plafond", "4,50 m"],
-        ["Capacité", "150 debout, 80 assis"],
-        ["Sous-sol", "100 m², stockage ou backstage"],
+        ["Volume", "200 m² de plain-pied, 4,50 m sous plafond"],
+        ["Capacité", "150 debout · 80 assis · 60 à table"],
+        ["Rideaux", "Ils segmentent l'espace : l'ouvrir en grand, le délimiter, le rendre plus intime"],
+        ["Sous-sol", "100 m² de stockage, ou de backstage"],
+      ],
+    },
+    {
+      titre: "Le réseau",
+      lignes: [
+        ["Fibre", "1 Gb symétrique, dédiée au lieu"],
+        ["Wi-Fi", "Entièrement configurable : on crée les réseaux que vous voulez, dont un réseau invités séparé"],
+        ["Filaire", "Prises RJ45 réparties dans tout le lieu"],
+      ],
+    },
+    {
+      titre: "L'image",
+      lignes: [
+        ["Vidéoprojecteur", "Optoma ZU820T, 8 800 lumens"],
+        ["Diffusion", "4,63 m de large en une seule image, sur le mur courbe"],
+        ["Sources", "Apple TV intégrée, et une prise HDMI murale depuis le coin régie"],
+      ],
+    },
+    {
+      titre: "Le son",
+      lignes: [
+        ["Diffusion", "Sonos et AirPlay, enceintes calibrées pour le lieu"],
+        ["Régie", "Entrées XLR directement dans le mur, pour brancher la vôtre"],
+      ],
+    },
+    {
+      titre: "La lumière",
+      lignes: [
+        ["Pilotage", "DMX, couleurs comprises, plusieurs scénarios enregistrés"],
+        ["Réglage", "Tout est variable en intensité"],
+        ["Accroche", "Un grill au plafond : on y fixe des projecteurs à la pince, avec les arrivées DMX"],
+      ],
+    },
+    {
+      titre: "L'électricité",
+      lignes: [
+        ["Puissance", "36 kVA triphasé"],
+        ["Prises", "Trois prises triphasées, et des prises en hauteur"],
+        ["Véhicules", "De quoi recharger une voiture électrique à l'intérieur"],
+      ],
+    },
+    {
+      titre: "Les cuisines",
+      lignes: [
+        ["La grande", "En U : frigo-congélateur, machine à glaçons, four, lave-verres professionnel"],
+        ["La petite", "En face, tout en longueur : micro-ondes et machine à café Jura à grains"],
       ],
     },
     {
       titre: "Le sol",
       lignes: [
-        ["Charge", "800 kg/m², le double de la norme"],
-        ["Revêtement", "Résine claire"],
-        ["Accès", "De plain-pied, sans marche ni seuil"],
+        ["Charge", "800 kg/m²"],
+        ["Revêtement", "Résine époxy claire"],
+        ["Accès", "De plain-pied"],
       ],
     },
     {
-      titre: "La technique",
+      titre: "Le confort",
       lignes: [
-        ["Électricité", "36 kVA triphasé, recharge électrique comprise"],
-        ["Projection", "4,63 m de large en une image, 8 800 lumens"],
-        ["Réseau", "Fibre 1 Gb symétrique dédiée, plus le Wi-Fi"],
+        ["Climatisation", "Réversible, sur toute la surface"],
+        ["Accessibilité", "Lieu ERP, accessible PMR, WC PMR"],
       ],
     },
   ] as const,
 
-  equipement: [
-    ["Son", "Sonos et AirPlay, ou entrée XLR pour votre propre régie."],
-    ["Lumière", "Pilotable en DMX, couleurs comprises. Cinq scénarios préréglés."],
-    ["Projection", "Optoma ZU820T, 8 800 lumens, HDMI et AirPlay."],
-    ["Cuisine", "Cuisine et bar équipés, lave-vaisselle, verrerie."],
-    ["Rideaux", "Ils cloisonnent la salle, ou la ferment sur elle-même."],
-    ["Climatisation", "Réversible, sur toute la surface."],
-    ["Accessibilité", "Lieu ERP, accessible PMR, WC PMR."],
-  ] as const,
-
+  /**
+   * ⏳ Ces quatre blocs quittent la page de L'ATELIER dès que `/infos` sera
+   * refaite : ce sont des questions d'exploitation, qui se posent APRÈS la
+   * décision de louer. Ils restent ici en attendant pour ne rien perdre.
+   */
   acces: [
     [
       "Une voiture peut entrer",
@@ -339,10 +398,9 @@ export const ATELIER = {
     ],
   ] as const,
 
-  /** Les adresses vers lesquelles cette page renvoie. */
   suite: [
     { href: "/atelier/plans", titre: "Plans et dimensions", detail: "Plans cotés, à télécharger", pret: false },
-    { href: "/atelier/technique", titre: "Fiche technique", detail: "Électricité, son, lumière, réseau, projection", pret: false },
+    { href: "/atelier/technique", titre: "Fiche technique", detail: "Le détail : modèles, connectique, puissances", pret: false },
     { href: "/photos", titre: "Photos", detail: "Par type d'événement", pret: false },
     { href: "/tarifs", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
   ] as const,

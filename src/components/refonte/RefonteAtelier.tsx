@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- voir chrome.tsx */
 import { TuilePhotos } from "./TuilePhotos";
 import { Barre, Bloc, CADRE, Corps, LAITON, Page, Pied, Titre } from "./chrome";
-import { ADRESSE, ATELIER, ESPACES, REGLES } from "./data";
+import { ADRESSE, ATELIER, ESPACES, FICHE_GOOGLE, REGLES } from "./data";
 
 /**
  * `/atelier` — la page du lieu.
@@ -24,11 +24,18 @@ export function RefonteAtelier() {
   const lieu = ESPACES[0];
 
   return (
-    <Page>
+    /*
+     * ⚠️ ESSAI — le charbon marron de L'ATELIER, repris du calendrier tarifaire.
+     * Étienne, 20/09/2026 : « tout ce qu'on avait mis en place en termes de code
+     * couleur, on peut le récupérer sur les pages, ce serait joli. Peut-être que
+     * ça ferait trop lourd, faudra faire un test. » Voici le test. Si c'est
+     * trop, retirer `fond` et la page revient au charbon froid.
+     */
+    <Page fond="#1C1A17">
       <Barre lieu="L'ATELIER" />
       <Corps>
         <Ouverture photos={lieu.photos} prix={lieu.prix} />
-        <Chiffres />
+        <EnBref />
         <Equipement />
         <Acces />
         <Horaires />
@@ -67,10 +74,18 @@ function Ouverture({
                 y rester même si elle semble faire doublon — Étienne : « c'est
                 pertinent, parce que si on envoie la fiche, on arrive
                 directement par là ». */}
-            <h1 className="font-clp text-sm font-bold uppercase leading-relaxed tracking-[0.1em]">
-              L&apos;Atelier — 200 m²
-              <br />
-              {ADRESSE}
+            {/*
+              Deux graisses, deux tailles, dans un seul titre : le nom et la
+              surface portent, l'adresse suit en plus petit. C'est la manière du
+              calendrier tarifaire, qu'Étienne voulait retrouver ici.
+            */}
+            <h1 className="font-clp uppercase">
+              <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
+                L&apos;Atelier — 200 m²
+              </span>
+              <span className="mt-1 block text-[11px] font-normal tracking-[0.16em] text-[#A8A29A]">
+                {ADRESSE}
+              </span>
             </h1>
             {ATELIER.intro.map((paragraphe) => (
               <p
@@ -108,6 +123,16 @@ function Ouverture({
             <p className="mt-1 text-[11px] text-[#5E5E5E]">
               Les jours libres, et le prix de chaque date.
             </p>
+
+            {/* La fiche Google : avis, horaires, itinéraire. Rien à refaire. */}
+            <a
+              href={FICHE_GOOGLE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] text-[#8A8A8A] transition-colors hover:text-[#E8E4DC]"
+            >
+              <span aria-hidden>📍</span> Voir la fiche Google
+            </a>
           </div>
         </div>
       </div>
@@ -115,60 +140,64 @@ function Ouverture({
   );
 }
 
-/* ───────────────────────────────────────────────────────────── Dimensions */
+/* ─────────────────────────────────────────────────────────────── En bref */
 
-/**
- * ⚠️ Trois encadrés, pas huit.
- *
- * La première version donnait une tuile par nombre. Étienne : « ça fait trop
- * de petites infos, une info une tuile ». Il avait raison — c'était un tableau
- * déguisé en grille, et l'œil ne savait plus où se poser. Les chiffres sont
- * regroupés par famille : l'espace, le sol, la technique.
- */
-function Chiffres() {
+/** Les quatre nombres qu'on cherche en premier, sur une seule bande. */
+function EnBref() {
   return (
-    <>
-      <Titre>Les dimensions</Titre>
-      <div className="grid gap-3 lg:grid-cols-3">
-        {ATELIER.dimensions.map((famille) => (
-          <div key={famille.titre} className={`${CADRE} p-5`}>
-            <p className="font-clp text-[12px] font-bold uppercase tracking-[0.08em]">
-              {famille.titre}
-            </p>
-            <dl className="mt-4 space-y-3">
-              {famille.lignes.map(([quoi, valeur]) => (
-                <div key={quoi}>
-                  <dt className="font-clp text-[10px] uppercase tracking-[0.16em] text-[#8A8A8A]">
-                    {quoi}
-                  </dt>
-                  <dd className="mt-0.5 font-mono text-[13px] leading-snug">
-                    {valeur}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+    <Bloc>
+      <div className={`${CADRE} grid grid-cols-2 divide-y divide-[#3A3A3A] sm:grid-cols-4 sm:divide-y-0 sm:divide-x`}>
+        {ATELIER.enBref.map(([quoi, valeur]) => (
+          <div key={quoi} className="px-5 py-4">
+            <p className="font-mono text-[11px] text-[#8A8A8A]">{quoi}</p>
+            <p className="mt-1 font-mono text-lg font-bold">{valeur}</p>
           </div>
         ))}
       </div>
-    </>
+    </Bloc>
   );
 }
 
 /* ───────────────────────────────────────────────────────────── Équipement */
 
+/**
+ * ⚠️ UNE seule section pour tout l'équipement, et pas deux.
+ *
+ * Il y avait « Les dimensions » puis « Ce qui est déjà là », et la projection
+ * comme l'électricité figuraient dans les deux. Étienne : « j'ai peur que ce
+ * soit un peu redondant… c'est trop disparate, il y a trop de trucs ». Le
+ * découpage par thème règle les deux : chaque sujet est dit une fois, en
+ * entier, au même endroit.
+ *
+ * ⚠️ Les intitulés de ligne ne sont plus en capitales interlettrées. À 10 px,
+ * l'interlettrage rend le gris illisible — Étienne : « on le voit moins bien
+ * parce qu'il est plus clair ». Ils sont en laiton, bas de casse, non traqués.
+ */
 function Equipement() {
   return (
     <>
-      <Titre>Ce qui est déjà là</Titre>
+      <Titre>La fiche du lieu</Titre>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {ATELIER.equipement.map(([quoi, detail]) => (
-          <div key={quoi} className={`${CADRE} p-5`}>
+        {ATELIER.equipement.map((theme) => (
+          <div key={theme.titre} className={`${CADRE} p-5`}>
             <p className="font-clp text-[12px] font-bold uppercase tracking-[0.08em]">
-              {quoi}
+              {theme.titre}
             </p>
-            <p className="mt-2 text-[13px] leading-relaxed text-[#A8A29A]">
-              {detail}
-            </p>
+            <dl className="mt-4 space-y-3">
+              {theme.lignes.map(([quoi, valeur]) => (
+                <div key={quoi}>
+                  <dt
+                    className="font-mono text-[11px]"
+                    style={{ color: LAITON }}
+                  >
+                    {quoi}
+                  </dt>
+                  <dd className="mt-0.5 text-[13px] leading-relaxed text-[#C9C4BC]">
+                    {valeur}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         ))}
       </div>
