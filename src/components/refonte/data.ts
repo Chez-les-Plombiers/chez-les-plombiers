@@ -68,7 +68,7 @@ export const ESPACES = [
      * pour ça ; au-delà de 150 c'est trop ». 150 est le chiffre commercial.
      * Le reste du site dit encore 200 par endroits : à aligner à la bascule.
      */
-    meta: "200 m² · jusqu'à 150 personnes · dans la cour",
+    meta: "200 m² · 150 pax · dans la cour",
     prix: "1 000 à 4 000 €",
     /*
      * La première est le plan large au canapé rose et au coffre-fort du fond —
@@ -118,7 +118,7 @@ export const ESPACES = [
       "Crochets au mur",
     ],
     page: "/boutique",
-    pagePrete: false,
+    pagePrete: true,
     tarifs: "/tarifs/boutique",
   },
   {
@@ -141,7 +141,7 @@ export const ESPACES = [
     ],
     equipements: [],
     page: "/appartement",
-    pagePrete: false,
+    pagePrete: true,
     tarifs: "/tarifs/appartement",
   },
 ] as const;
@@ -263,6 +263,15 @@ export const REGLES = [
 export const FICHE_GOOGLE =
   "https://www.google.com/maps/place/Chez+Les+Plombiers/@48.8602622,2.3454547,17z/data=!4m8!3m7!1s0x47e66e1e25b0e72f:0xb0e740c06d8e3c89!8m2!3d48.8602622!4d2.3480296!9m1!1b1!16s%2Fg%2F11y3glbp14";
 
+/**
+ * Le détail d'un lieu. Une entrée par lieu, une seule page pour les rendre.
+ *
+ * ⚠️ `equipement` et `enBref` sont VIDES pour LA BOUTIQUE et L'APPARTEMENT là
+ * où on ne sait pas. La page s'adapte : une section sans données ne s'affiche
+ * pas. Ne pas remplir « pour faire pareil » — un chiffre inventé ici finit
+ * dans un devis. Il manque, au 20/09/2026 : la hauteur sous plafond et la
+ * capacité des deux lieux, et tout l'équipement de L'APPARTEMENT.
+ */
 export const ATELIER = {
   slug: "atelier",
   nom: "L'Atelier",
@@ -284,7 +293,7 @@ export const ATELIER = {
   enBref: [
     ["Surface", "200 m²"],
     ["Sous plafond", "4,50 m"],
-    ["Capacité", "150 debout"],
+    ["Capacité", "150 pax"],
     ["Sous-sol", "100 m²"],
   ] as const,
 
@@ -307,7 +316,11 @@ export const ATELIER = {
       titre: "L'espace",
       lignes: [
         ["Volume", "200 m² de plain-pied, 4,50 m sous plafond"],
-        ["Capacité", "150 debout · 80 assis · 60 à table"],
+        /*
+         * ⚠️ « 150 debout » côte à côte se lisait mal (Étienne). « pax » est le
+         * mot du métier, et il évite de répéter « personnes » trois fois.
+         */
+        ["Capacité", "150 pax debout · 80 assis · 60 à table"],
         ["Rideaux", "Ils segmentent l'espace : l'ouvrir en grand, le délimiter, le rendre plus intime"],
         ["Sous-sol", "100 m² de stockage, ou de backstage"],
       ],
@@ -405,4 +418,90 @@ export const ATELIER = {
     { href: "/atelier/technique", titre: "Fiche technique", detail: "Le détail : modèles, connectique, puissances", pret: false },
     { href: "/tarifs", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
   ] as const,
+} as const;
+
+/**
+ * LA BOUTIQUE.
+ *
+ * ⚠️ On ne connaît ni sa hauteur sous plafond ni sa capacité. `enBref` ne
+ * porte donc que ce qui est sûr. L'équipement, lui, a été dicté par Étienne le
+ * 20/09/2026 — ne rien y ajouter sans le lui demander.
+ */
+export const BOUTIQUE = {
+  slug: "boutique",
+  nom: "La Boutique",
+  intro: [
+    "Quarante-cinq mètres carrés sur la rue, sous l'enseigne « Couverture Plomberie » d'origine — celle qui a donné son nom au lieu. On y entre directement depuis le trottoir, sans passer par la cour.",
+    "C'est le format d'un pop-up, d'un showroom de presse ou d'une vitrine de lancement : petit, visible de la rue, et au même endroit que les deux autres espaces.",
+  ] as const,
+  enBref: [
+    ["Surface", "45 m²"],
+    ["Position", "Sur la rue"],
+    ["Location", "À la journée"],
+  ] as const,
+  equipement: [
+    {
+      titre: "L'espace",
+      lignes: [
+        ["Surface", "45 m² en vitrine sur la rue des Bourdonnais"],
+        ["Bar", "Un comptoir qui fait bar ou desk d'accueil"],
+        ["Accrochage", "Des crochets répartis sur tous les murs"],
+      ],
+    },
+    {
+      titre: "Le confort",
+      lignes: [
+        ["Climatisation", "Réversible"],
+        ["Sanitaires", "Toilettes et une petite salle de bain"],
+        ["Cuisine", "Un réfrigérateur"],
+      ],
+    },
+    {
+      titre: "Le réseau et l'ambiance",
+      lignes: [
+        ["Wi-Fi", "Haut débit"],
+        ["Son", "Sonos"],
+        ["Lumière", "Philips Hue, couleurs et intensité commandables"],
+      ],
+    },
+  ] as const,
+  suite: [
+    { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, les horaires, le quartier", pret: true },
+    { href: "/photos", titre: "Photos", detail: "Par type d'événement", pret: false },
+    { href: "/tarifs/boutique", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
+  ] as const,
+} as const;
+
+/**
+ * L'APPARTEMENT.
+ *
+ * ⚠️ Son équipement est INCONNU au 20/09/2026, et la page l'assume : la
+ * section n'apparaît pas plutôt que d'afficher des généralités. À demander à
+ * Étienne. Les photos en ligne datent aussi d'avant la pose des rideaux.
+ */
+export const APPARTEMENT = {
+  slug: "appartement",
+  nom: "L'Appartement",
+  intro: [
+    "Cent mètres carrés au premier étage, d'anciens bureaux devenus un appartement : parquet clair, mobilier chiné, plusieurs pièces dont une entièrement rose.",
+    "Il se loue seul — pour un dîner, une réunion, une prise de vue — ou en coulisses d'un événement qui se tient à L'Atelier. Attention : on y monte par l'escalier de l'immeuble, depuis la cour. Il n'y a pas de passage intérieur entre les deux.",
+  ] as const,
+  enBref: [
+    ["Surface", "100 m²"],
+    ["Étage", "Premier"],
+    ["Accès", "Par la cour"],
+  ] as const,
+  equipement: [] as const,
+  suite: [
+    { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, circuler entre les lieux", pret: true },
+    { href: "/photos", titre: "Photos", detail: "Par type d'événement", pret: false },
+    { href: "/tarifs/appartement", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
+  ] as const,
+} as const;
+
+/** Les teintes de fond par lieu, reprises du calendrier tarifaire. */
+export const FONDS = {
+  atelier: "#1C1A17",
+  boutique: "#0F1720",
+  appartement: "#1F1216",
 } as const;

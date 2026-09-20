@@ -1,66 +1,68 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- voir chrome.tsx */
+import { MapPin } from "lucide-react";
 import { TuilePhotos } from "./TuilePhotos";
-import { Barre, Bloc, CADRE, Corps, LAITON, Page, Pied, Titre } from "./chrome";
-import { ADRESSE, ATELIER, ESPACES, FICHE_GOOGLE } from "./data";
+import { Barre, CADRE, Corps, LAITON, Page, Pied, Titre } from "./chrome";
+import {
+  ADRESSE,
+  APPARTEMENT,
+  ATELIER,
+  BOUTIQUE,
+  ESPACES,
+  FICHE_GOOGLE,
+  FONDS,
+} from "./data";
 
 /**
- * `/atelier` — la page du lieu.
+ * La page d'un lieu — une seule, pour les trois.
  *
- * Elle répond à la question « c'est quoi, au juste ? », et elle y répond
- * complètement : dimensions, équipement, accès, horaires. C'est la page qu'on
- * envoie à un client qui a vu une photo et veut savoir si ça tient.
+ * Elle répond à « c'est quoi, au juste ? » et y répond complètement :
+ * dimensions, équipement, prix, et les adresses où aller ensuite. C'est celle
+ * qu'on envoie à un client qui a vu une photo et veut savoir si ça tient.
  *
  * ⚠️ Elle NE REDONNE PAS la grille de prix. Les prix vivent à un seul endroit,
  * `/tarifs`. On annonce la fourchette, on renvoie au calendrier. Recopier la
  * grille ici garantirait qu'un jour les deux se contredisent — c'est
- * exactement ce qui vient d'arriver à la capacité et à la hauteur sous plafond,
- * que le site actuel donne avec deux valeurs différentes selon la page.
+ * exactement ce qui est arrivé à la capacité et à la hauteur sous plafond, que
+ * le site actuel donne avec deux valeurs différentes selon la page.
  *
- * ⚠️ Elle ne porte PLUS l'accès, le déchargement ni les horaires. Ces réponses
- * se posent APRÈS la décision de louer : elles sont sur `/infos`, en texte.
- * Les garder ici avait fait de la page un mur — Étienne : « trop de tuiles ».
- * Ne pas les rapatrier « parce que ça a l'air incomplet » : c'est complet pour
- * la question que cette page pose.
+ * ⚠️ Elle ne porte PLUS l'accès, le déchargement ni les horaires : ces
+ * questions se posent après la décision de louer, et vivent sur `/infos`, en
+ * texte. Les garder ici avait fait de la page un mur — Étienne : « trop de
+ * tuiles ». Ne pas les rapatrier « parce que ça a l'air incomplet ».
  *
- * ⚠️ La même charpente servira à `/boutique` et `/appartement`. Quand ce sera
- * le cas, ce fichier devra devenir générique plutôt qu'être recopié deux fois —
- * seules les données changent.
+ * ⚠️ Une section sans données ne s'affiche pas. L'APPARTEMENT n'a pas encore
+ * d'équipement connu : sa page saute la section plutôt que d'afficher des
+ * généralités. C'est visible, et c'est voulu — ça rappelle ce qui manque.
  */
-export function RefonteAtelier() {
-  const lieu = ESPACES[0];
+
+const LIEUX = { atelier: ATELIER, boutique: BOUTIQUE, appartement: APPARTEMENT };
+export type SlugLieu = keyof typeof LIEUX;
+
+export function RefonteLieu({ slug }: { slug: SlugLieu }) {
+  const lieu = LIEUX[slug];
+  const tuile = ESPACES.find((e) => e.slug === slug)!;
 
   return (
-    /*
-     * ⚠️ ESSAI — le charbon marron de L'ATELIER, repris du calendrier tarifaire.
-     * Étienne, 20/09/2026 : « tout ce qu'on avait mis en place en termes de code
-     * couleur, on peut le récupérer sur les pages, ce serait joli. Peut-être que
-     * ça ferait trop lourd, faudra faire un test. » Voici le test. Si c'est
-     * trop, retirer `fond` et la page revient au charbon froid.
-     */
-    <Page fond="#1C1A17">
-      <Barre lieu="L'ATELIER" />
+    <Page fond={FONDS[slug]}>
+      <Barre lieu={lieu.nom.toUpperCase()} />
       <Corps>
-        <Ouverture photos={lieu.photos} prix={lieu.prix} />
-        <EnBref />
-        <Equipement />
-        <Suite />
+        <Ouverture lieu={lieu} tuile={tuile} />
+        {lieu.enBref.length > 0 && <EnBref lignes={lieu.enBref} />}
+        {lieu.equipement.length > 0 && <Equipement themes={lieu.equipement} />}
+        <Suite pages={lieu.suite} />
       </Corps>
       <Pied />
     </Page>
   );
 }
 
+type Lieu = (typeof LIEUX)[SlugLieu];
+type Tuile = (typeof ESPACES)[number];
+
 /* ────────────────────────────────────────────────────────────── Ouverture */
 
-function Ouverture({
-  photos,
-  prix,
-}: {
-  photos: readonly string[];
-  prix: string;
-}) {
+function Ouverture({ lieu, tuile }: { lieu: Lieu; tuile: Tuile }) {
   return (
-    <Bloc>
+    <section className="mt-3">
       <div className="grid gap-3 lg:grid-cols-[2fr_1fr]">
         <div className={`${CADRE} overflow-hidden`}>
           {/*
@@ -68,30 +70,34 @@ function Ouverture({
             clic agrandit au lieu de naviguer : on est déjà sur la page du lieu,
             il n'y a plus rien à ouvrir ailleurs.
           */}
-          <TuilePhotos photos={photos} agrandir lieu="L'Atelier" />
+          <TuilePhotos
+            photos={tuile.photos}
+            agrandir
+            lieu={lieu.nom}
+            ratio="aspect-[4/3] sm:aspect-[3/2]"
+            sizes="(max-width: 1024px) 100vw, 760px"
+          />
         </div>
 
         <div className={`${CADRE} flex flex-col justify-between gap-6 p-5`}>
           <div>
-            {/* ⚠️ Le H1 porte le nom du lieu ET l'adresse : le logo décliné
-                au-dessus est une image, Google n'y lit rien. Et l'adresse doit
-                y rester même si elle semble faire doublon — Étienne : « c'est
-                pertinent, parce que si on envoie la fiche, on arrive
-                directement par là ». */}
             {/*
-              Deux graisses, deux tailles, dans un seul titre : le nom et la
-              surface portent, l'adresse suit en plus petit. C'est la manière du
-              calendrier tarifaire, qu'Étienne voulait retrouver ici.
+              ⚠️ Le H1 porte le nom du lieu ET l'adresse : le logo décliné
+              au-dessus est une image, Google n'y lit rien. Et l'adresse doit y
+              rester même si elle semble faire doublon — Étienne : « c'est
+              pertinent, parce que si on envoie la fiche, on arrive directement
+              par là ».
             */}
             <h1 className="font-clp uppercase">
+              {/* La surface est le premier mot de `meta` : « 200 m² · … ». */}
               <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
-                L&apos;Atelier — 200 m²
+                {lieu.nom} — {tuile.meta.split(" · ")[0]}
               </span>
               <span className="mt-1 block text-[11px] font-normal tracking-[0.16em] text-[#A8A29A]">
                 {ADRESSE}
               </span>
             </h1>
-            {ATELIER.intro.map((paragraphe) => (
+            {lieu.intro.map((paragraphe) => (
               <p
                 key={paragraphe}
                 className="mt-3 text-[14px] leading-relaxed text-[#A8A29A]"
@@ -103,7 +109,7 @@ function Ouverture({
 
           <div className="border-t border-[#3A3A3A] pt-4">
             <p className="font-mono text-xl font-bold">
-              {prix}
+              {tuile.prix}
               <span className="ml-1.5 text-[10px] font-normal text-[#8A8A8A]">
                 HT / jour
               </span>
@@ -114,11 +120,9 @@ function Ouverture({
             {/*
               « Calendrier tarifaire » et pas « voir le calendrier » : le mot
               dit à lui seul qu'on y trouvera les jours libres ET les prix.
-              Étienne : « ça implique qu'il y a un calendrier, donc on arrive à
-              voir les jours dispo ou pas et qu'il y a les prix ».
             */}
             <a
-              href="/tarifs"
+              href={tuile.tarifs}
               className="mt-3 inline-block font-mono text-[11px] uppercase tracking-wider"
               style={{ color: LAITON }}
             >
@@ -128,37 +132,42 @@ function Ouverture({
               Les jours libres, et le prix de chaque date.
             </p>
 
-            {/* La fiche Google : avis, horaires, itinéraire. Rien à refaire. */}
             <a
               href={FICHE_GOOGLE}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] text-[#8A8A8A] transition-colors hover:text-[#E8E4DC]"
+              className="mt-4 inline-flex items-center gap-2 font-mono text-[11px] text-[#8A8A8A] transition-colors hover:text-[#E8E4DC]"
             >
-              <span aria-hidden>📍</span> Voir la fiche Google
+              {/* ⚠️ Pas d'emoji : la punaise du calendrier tarifaire, en laiton. */}
+              <MapPin className="h-3.5 w-3.5" style={{ color: LAITON }} />
+              Voir la fiche Google
             </a>
           </div>
         </div>
       </div>
-    </Bloc>
+    </section>
   );
 }
 
 /* ─────────────────────────────────────────────────────────────── En bref */
 
-/** Les quatre nombres qu'on cherche en premier, sur une seule bande. */
-function EnBref() {
+/** Les nombres qu'on cherche en premier, sur une seule bande. */
+function EnBref({ lignes }: { lignes: readonly (readonly [string, string])[] }) {
   return (
-    <Bloc>
-      <div className={`${CADRE} grid grid-cols-2 divide-y divide-[#3A3A3A] sm:grid-cols-4 sm:divide-y-0 sm:divide-x`}>
-        {ATELIER.enBref.map(([quoi, valeur]) => (
-          <div key={quoi} className="px-5 py-4">
+    <section className="mt-3">
+      <div
+        className={`${CADRE} grid grid-cols-2 divide-[#3A3A3A] sm:divide-x ${
+          lignes.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-4"
+        }`}
+      >
+        {lignes.map(([quoi, valeur]) => (
+          <div key={quoi} className="border-t border-[#3A3A3A] px-5 py-4 first:border-t-0 sm:border-t-0">
             <p className="font-mono text-[11px] text-[#8A8A8A]">{quoi}</p>
             <p className="mt-1 font-mono text-lg font-bold">{valeur}</p>
           </div>
         ))}
       </div>
-    </Bloc>
+    </section>
   );
 }
 
@@ -169,20 +178,26 @@ function EnBref() {
  *
  * Il y avait « Les dimensions » puis « Ce qui est déjà là », et la projection
  * comme l'électricité figuraient dans les deux. Étienne : « j'ai peur que ce
- * soit un peu redondant… c'est trop disparate, il y a trop de trucs ». Le
- * découpage par thème règle les deux : chaque sujet est dit une fois, en
- * entier, au même endroit.
+ * soit un peu redondant… c'est trop disparate ». Le découpage par thème règle
+ * les deux : chaque sujet est dit une fois, en entier, au même endroit.
  *
- * ⚠️ Les intitulés de ligne ne sont plus en capitales interlettrées. À 10 px,
+ * ⚠️ Les intitulés de ligne ne sont pas en capitales interlettrées. À 10 px,
  * l'interlettrage rend le gris illisible — Étienne : « on le voit moins bien
- * parce qu'il est plus clair ». Ils sont en laiton, bas de casse, non traqués.
+ * parce qu'il est plus clair ».
  */
-function Equipement() {
+function Equipement({
+  themes,
+}: {
+  themes: readonly {
+    titre: string;
+    lignes: readonly (readonly [string, string])[];
+  }[];
+}) {
   return (
     <>
       <Titre>La fiche du lieu</Titre>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {ATELIER.equipement.map((theme) => (
+        {themes.map((theme) => (
           <div key={theme.titre} className={`${CADRE} p-5`}>
             <p className="font-clp text-[12px] font-bold uppercase tracking-[0.08em]">
               {theme.titre}
@@ -190,10 +205,7 @@ function Equipement() {
             <dl className="mt-4 space-y-3">
               {theme.lignes.map(([quoi, valeur]) => (
                 <div key={quoi}>
-                  <dt
-                    className="font-mono text-[11px]"
-                    style={{ color: LAITON }}
-                  >
+                  <dt className="font-mono text-[11px]" style={{ color: LAITON }}>
                     {quoi}
                   </dt>
                   <dd className="mt-0.5 text-[13px] leading-relaxed text-[#C9C4BC]">
@@ -209,21 +221,29 @@ function Equipement() {
   );
 }
 
-
-
 /* ────────────────────────────────────────────────────────────────── Suite */
 
-function Suite() {
+function Suite({
+  pages,
+}: {
+  pages: readonly { href: string; titre: string; detail: string; pret: boolean }[];
+}) {
   return (
     <>
       <Titre>Pour aller plus loin</Titre>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {ATELIER.suite.map((p) => (
+        {pages.map((p) => (
           <a
             key={p.href}
             /* ⚠️ BASCULE : `/infos` est encore la maquette. Retirer le préfixe
                le jour de la mise en ligne — une seule ligne à changer. */
-            href={p.pret ? (["/infos", "/conditions"].includes(p.href) ? `/refonte${p.href}` : p.href) : undefined}
+            href={
+              p.pret
+                ? ["/infos", "/conditions"].includes(p.href)
+                  ? `/refonte${p.href}`
+                  : p.href
+                : undefined
+            }
             aria-disabled={!p.pret}
             className={`${CADRE} flex flex-col justify-between gap-6 p-5 transition-colors ${
               p.pret ? "hover:border-[#C8A96E]" : "cursor-default opacity-50"

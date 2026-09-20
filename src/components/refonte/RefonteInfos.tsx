@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MapPin } from "lucide-react";
 import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
 import { ADRESSE, FICHE_GOOGLE } from "./data";
 import { INFOS_INTRO, SECTIONS, type Section } from "./data-infos";
@@ -53,9 +54,10 @@ function Entete() {
         href={FICHE_GOOGLE}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-4 inline-block font-mono text-[11px] text-[#8A8A8A] transition-colors hover:text-[#E8E4DC]"
+        className="mt-4 inline-flex items-center gap-2 font-mono text-[11px] text-[#8A8A8A] transition-colors hover:text-[#E8E4DC]"
       >
-        Itinéraire et fiche Google →
+        <MapPin className="h-3.5 w-3.5" style={{ color: LAITON }} />
+        Itinéraire et fiche Google
       </a>
     </div>
   );
