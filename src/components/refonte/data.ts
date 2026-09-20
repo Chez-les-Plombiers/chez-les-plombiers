@@ -62,7 +62,13 @@ export const ESPACES = [
     slug: "atelier",
     nom: "L'Atelier",
     /** Ligne sous le nom. Courte : ce qui situe, rien d'autre. */
-    meta: "200 m² · jusqu'à 200 personnes · dans la cour",
+    /*
+     * ⚠️ 150, pas 200 ni 199. L'ERP autorise jusqu'à 199 — mais Étienne :
+     * « 199 fait vachement rappel à l'ERP, c'est un chiffre qu'on donne que
+     * pour ça ; au-delà de 150 c'est trop ». 150 est le chiffre commercial.
+     * Le reste du site dit encore 200 par endroits : à aligner à la bascule.
+     */
+    meta: "200 m² · jusqu'à 150 personnes · dans la cour",
     prix: "1 000 à 4 000 €",
     /*
      * La première est le plan large au canapé rose et au coffre-fort du fond —
@@ -118,7 +124,13 @@ export const ESPACES = [
   {
     slug: "appartement",
     nom: "L'Appartement",
-    meta: "100 m² · au premier étage, au-dessus de L'Atelier",
+    /*
+     * ⚠️ Ne PAS écrire « au-dessus de L'Atelier ». Essayé le 20/09/2026 et
+     * retiré dans l'heure — Étienne : « j'ai peur que les gens croient qu'on
+     * peut y monter par un escalier ». C'est vrai, mais ça se dit ailleurs, en
+     * même temps que « on passe par la cour ».
+     */
+    meta: "100 m² · au premier étage",
     prix: "1 000 à 2 000 €",
     /* Choix d'Étienne : A04, A02, A10. ⚠️ Ces vues datent d'avant la pose des
        rideaux — à remplacer quand de nouvelles photos existeront. */
@@ -246,18 +258,56 @@ export const REGLES = [
 export const ATELIER = {
   slug: "atelier",
   nom: "L'Atelier",
-  intro:
-    "Un garage de plombiers des années 1970, dans un immeuble du 17e siècle. 200 m² au fond de la cour, murs bruts, poutres métalliques Eiffel, sol clair en résine.",
 
-  chiffres: [
-    ["Surface", "200 m²", "de plain-pied, au fond de la cour"],
-    ["Hauteur sous plafond", "4,11 m", "à confirmer — le site dit aussi 4,5 m"],
-    ["Capacité", "200 debout · 80 assis", "cocktail, ou dîner et conférence"],
-    ["Charge au sol", "800 kg/m²", "le double de la norme"],
-    ["Électricité", "36 kVA", "triphasé, recharge de véhicule électrique comprise"],
-    ["Projection", "4,63 m de large", "en une seule image, 8 800 lumens"],
-    ["Sous-sol", "100 m²", "stockage ou backstage"],
-    ["Réseau", "Fibre 1 Gb symétrique", "dédiée, plus le Wi-Fi"],
+  /*
+   * Le premier paragraphe décrit ce qu'on voit ; le second situe. Les deux
+   * reprennent le brief d'origine (page Notion « PRÉ-PROJET »), qui disait ces
+   * choses mieux que les réécritures successives du site — la Samaritaine et
+   * Châtelet en particulier, qui avaient disparu.
+   *
+   * ⚠️ Pas de « tournages » : Étienne ne veut pas de ce métier, alors que le
+   * texte d'origine le citait. Ne pas le réintroduire en recopiant le Notion.
+   */
+  intro: [
+    "Un garage de plombiers des années 1970, dans un immeuble du 17e siècle, entièrement reconverti en lieu recevant du public. 200 m² au fond de la cour : murs bruts, poutres métalliques Eiffel, sol clair en résine.",
+    "En plein cœur de Paris, à 100 m de la Samaritaine et à deux minutes à pied de Châtelet-Les Halles — RER A, B, D et métros 1, 4, 7, 11, 14.",
+  ] as const,
+
+  /*
+   * ⚠️ Regroupés en trois familles, et pas une tuile par chiffre. Étienne :
+   * « ça fait trop de petites infos, une info une tuile ». Huit encadrés pour
+   * huit nombres, c'était un tableau déguisé en grille.
+   *
+   * CHIFFRES ARBITRÉS le 20/09/2026, le site actuel se contredisant :
+   * - capacité : 150. L'ERP autorise 199, mais « 199 fait rappel à l'ERP » ;
+   * - hauteur : 4,50 m. Elle varie selon les poutres — Étienne a tranché.
+   */
+  dimensions: [
+    {
+      titre: "L'espace",
+      lignes: [
+        ["Surface", "200 m² de plain-pied, au fond de la cour"],
+        ["Hauteur sous plafond", "4,50 m"],
+        ["Capacité", "150 debout, 80 assis"],
+        ["Sous-sol", "100 m², stockage ou backstage"],
+      ],
+    },
+    {
+      titre: "Le sol",
+      lignes: [
+        ["Charge", "800 kg/m², le double de la norme"],
+        ["Revêtement", "Résine claire"],
+        ["Accès", "De plain-pied, sans marche ni seuil"],
+      ],
+    },
+    {
+      titre: "La technique",
+      lignes: [
+        ["Électricité", "36 kVA triphasé, recharge électrique comprise"],
+        ["Projection", "4,63 m de large en une image, 8 800 lumens"],
+        ["Réseau", "Fibre 1 Gb symétrique dédiée, plus le Wi-Fi"],
+      ],
+    },
   ] as const,
 
   equipement: [
@@ -285,7 +335,7 @@ export const ATELIER = {
     ],
     [
       "On passe par la cour",
-      "L'Atelier, La Boutique et L'Appartement ne communiquent pas entre eux. Pour aller de l'un à l'autre, on ressort et on traverse la cour.",
+      "L'Atelier, La Boutique et L'Appartement ne communiquent pas entre eux : il n'y a pas d'escalier intérieur. Pour aller de l'un à l'autre, on ressort et on traverse la cour.",
     ],
   ] as const,
 
@@ -294,6 +344,6 @@ export const ATELIER = {
     { href: "/atelier/plans", titre: "Plans et dimensions", detail: "Plans cotés, à télécharger", pret: false },
     { href: "/atelier/technique", titre: "Fiche technique", detail: "Électricité, son, lumière, réseau, projection", pret: false },
     { href: "/photos", titre: "Photos", detail: "Par type d'événement", pret: false },
-    { href: "/tarifs", titre: "Prix et disponibilités", detail: "Le calendrier jour par jour", pret: true },
+    { href: "/tarifs", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
   ] as const,
 } as const;

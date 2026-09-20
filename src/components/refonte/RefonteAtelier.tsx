@@ -52,21 +52,34 @@ function Ouverture({
     <Bloc>
       <div className="grid gap-3 lg:grid-cols-[2fr_1fr]">
         <div className={`${CADRE} overflow-hidden`}>
-          {/* Le même défilement que sur les tuiles de l'accueil : on ne
-              réinvente pas un second carrousel pour trois photos de plus. */}
-          <TuilePhotos photos={photos} href="/photos" lieu="L'Atelier" />
+          {/*
+            Le même défilement que sur les tuiles de l'accueil — mais ici le
+            clic agrandit au lieu de naviguer : on est déjà sur la page du lieu,
+            il n'y a plus rien à ouvrir ailleurs.
+          */}
+          <TuilePhotos photos={photos} agrandir lieu="L'Atelier" />
         </div>
 
         <div className={`${CADRE} flex flex-col justify-between gap-6 p-5`}>
           <div>
             {/* ⚠️ Le H1 porte le nom du lieu ET l'adresse : le logo décliné
-                au-dessus est une image, Google n'y lit rien. */}
+                au-dessus est une image, Google n'y lit rien. Et l'adresse doit
+                y rester même si elle semble faire doublon — Étienne : « c'est
+                pertinent, parce que si on envoie la fiche, on arrive
+                directement par là ». */}
             <h1 className="font-clp text-sm font-bold uppercase leading-relaxed tracking-[0.1em]">
-              L&apos;Atelier — 200 m² au {ADRESSE}
+              L&apos;Atelier — 200 m²
+              <br />
+              {ADRESSE}
             </h1>
-            <p className="mt-3 text-[14px] leading-relaxed text-[#A8A29A]">
-              {ATELIER.intro}
-            </p>
+            {ATELIER.intro.map((paragraphe) => (
+              <p
+                key={paragraphe}
+                className="mt-3 text-[14px] leading-relaxed text-[#A8A29A]"
+              >
+                {paragraphe}
+              </p>
+            ))}
           </div>
 
           <div className="border-t border-[#3A3A3A] pt-4">
@@ -76,16 +89,25 @@ function Ouverture({
                 HT / jour
               </span>
             </p>
-            <p className="mt-1 text-[12px] text-[#8A8A8A]">
-              Ménage et régisseur compris. Le prix dépend du jour.
+            <p className="mt-1 text-[12px] leading-relaxed text-[#8A8A8A]">
+              Ménage et régisseur compris. Le prix dépend du jour de la semaine.
             </p>
+            {/*
+              « Calendrier tarifaire » et pas « voir le calendrier » : le mot
+              dit à lui seul qu'on y trouvera les jours libres ET les prix.
+              Étienne : « ça implique qu'il y a un calendrier, donc on arrive à
+              voir les jours dispo ou pas et qu'il y a les prix ».
+            */}
             <a
               href="/tarifs"
               className="mt-3 inline-block font-mono text-[11px] uppercase tracking-wider"
               style={{ color: LAITON }}
             >
-              Voir le calendrier →
+              Calendrier tarifaire →
             </a>
+            <p className="mt-1 text-[11px] text-[#5E5E5E]">
+              Les jours libres, et le prix de chaque date.
+            </p>
           </div>
         </div>
       </div>
@@ -93,24 +115,38 @@ function Ouverture({
   );
 }
 
-/* ─────────────────────────────────────────────────────────────── Chiffres */
+/* ───────────────────────────────────────────────────────────── Dimensions */
 
+/**
+ * ⚠️ Trois encadrés, pas huit.
+ *
+ * La première version donnait une tuile par nombre. Étienne : « ça fait trop
+ * de petites infos, une info une tuile ». Il avait raison — c'était un tableau
+ * déguisé en grille, et l'œil ne savait plus où se poser. Les chiffres sont
+ * regroupés par famille : l'espace, le sol, la technique.
+ */
 function Chiffres() {
   return (
     <>
       <Titre>Les dimensions</Titre>
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        {ATELIER.chiffres.map(([quoi, valeur, precision]) => (
-          <div key={quoi} className={`${CADRE} p-5`}>
-            <p className="font-clp text-[10px] uppercase tracking-[0.16em] text-[#8A8A8A]">
-              {quoi}
+      <div className="grid gap-3 lg:grid-cols-3">
+        {ATELIER.dimensions.map((famille) => (
+          <div key={famille.titre} className={`${CADRE} p-5`}>
+            <p className="font-clp text-[12px] font-bold uppercase tracking-[0.08em]">
+              {famille.titre}
             </p>
-            <p className="mt-2 font-mono text-[15px] font-bold leading-snug">
-              {valeur}
-            </p>
-            <p className="mt-1.5 text-[12px] leading-relaxed text-[#8A8A8A]">
-              {precision}
-            </p>
+            <dl className="mt-4 space-y-3">
+              {famille.lignes.map(([quoi, valeur]) => (
+                <div key={quoi}>
+                  <dt className="font-clp text-[10px] uppercase tracking-[0.16em] text-[#8A8A8A]">
+                    {quoi}
+                  </dt>
+                  <dd className="mt-0.5 font-mono text-[13px] leading-snug">
+                    {valeur}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         ))}
       </div>
