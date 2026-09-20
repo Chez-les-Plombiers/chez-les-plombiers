@@ -160,6 +160,7 @@ export const PAGES = [
   { href: "/photos", titre: "Photos", detail: "Par type d'événement : dîners, showrooms, défilés, lancements, expositions", pret: false },
   { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger par l'impasse, les horaires, le quartier", pret: true },
   { href: "/visiter", titre: "Réserver une visite", detail: "Gratuite, une demi-heure, sur rendez-vous", pret: false },
+  { href: "/conditions", titre: "Conditions de location", detail: "Ce qu'on vous demande, et pourquoi", pret: true },
   { href: "/histoire", titre: "L'histoire du lieu", detail: "Un garage de plombiers des années 1970 devenu lieu d'événements", pret: false },
 ] as const;
 

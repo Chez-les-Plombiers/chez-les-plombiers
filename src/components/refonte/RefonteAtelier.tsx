@@ -223,7 +223,7 @@ function Suite() {
             key={p.href}
             /* ⚠️ BASCULE : `/infos` est encore la maquette. Retirer le préfixe
                le jour de la mise en ligne — une seule ligne à changer. */
-            href={p.pret ? (p.href === "/infos" ? "/refonte/infos" : p.href) : undefined}
+            href={p.pret ? (["/infos", "/conditions"].includes(p.href) ? `/refonte${p.href}` : p.href) : undefined}
             aria-disabled={!p.pret}
             className={`${CADRE} flex flex-col justify-between gap-6 p-5 transition-colors ${
               p.pret ? "hover:border-[#C8A96E]" : "cursor-default opacity-50"

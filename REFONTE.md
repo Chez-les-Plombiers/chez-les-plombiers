@@ -72,6 +72,7 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
 | `/atelier/technique` | électricité, son, lumière, réseau, projection | à faire |
 | `/photos` | par type d'événement (5 catégories) | à faire |
 | `/visiter` | notre DA, Calendly **intégré** et non en redirection | à faire |
+| `/conditions` | ce qu'on vous demande, et pourquoi | **faite** (sous `/refonte/conditions`) |
 | `/histoire` | comment on est arrivé là, photos des travaux | à faire |
 | `/infos` | existe — à resserrer sur accès / livraison / quartier | à réviser |
 
@@ -107,6 +108,33 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
   Triumph garée à l'intérieur, dîner Maison 123).
 - Charbon froid (#1A1A1A) pour le site, charbon marron (#1C1A17) pour L'ATELIER.
   À confirmer, Étienne trouve le marron « plus chaud ».
+
+## ⚠️ Où écrire quoi — la règle à ne pas perdre
+
+Trois registres, et ils ne se mélangent pas (distinction posée par Étienne le
+20/09/2026) :
+
+| Registre | Ce que c'est | Où ça vit |
+|---|---|---|
+| **La fiche** | ce que le lieu **est** — 4,63 m, 36 kVA | `data.ts` → pages de lieu |
+| **Le mode d'emploi** | comment ça **marche** — venir, livrer, circuler | `data-infos.ts` → `/infos` |
+| **Les règles** | ce qu'on vous **demande** — ranger, prévenir | `regles.ts` → `/conditions` |
+
+*Si la phrase peut commencer par « merci de », c'est une règle.*
+
+**`regles.ts` est la source unique.** Une règle ajoutée ailleurs n'arrive ni au
+concierge `/guide` ni au contrat. Le fichier porte le principe qui gouverne les
+autres : *le ménage nettoie, il ne range pas.*
+
+⏳ **Reste à brancher** : `/guide` (le concierge IA) et le contrat doivent lire
+`regles.ts` au lieu d'en garder une copie. Tant que ce n'est pas fait, il y a
+deux copies — et on sait déjà ce que ça donne : la base du concierge portait
+encore « Couvre-feu bruit : [À REMPLIR PAR FRED] » (corrigé le 20/09/2026).
+
+**Pas de moteur de recherche sur `/infos`.** Sur sept sections, un sommaire bat
+une recherche : on voit tout, on n'a pas à deviner le mot. Et le moteur
+intelligent existe déjà — c'est `/guide`. Le brancher sur `regles.ts` plutôt que
+d'en construire un second. À reconsidérer si la page dépasse ~50 entrées.
 
 ## À trancher par Étienne
 

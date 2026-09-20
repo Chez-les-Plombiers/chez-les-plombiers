@@ -1,0 +1,144 @@
+import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
+import { ADRESSE } from "./data";
+import { DEPOT, MOMENTS, PRINCIPE } from "./regles";
+
+/**
+ * `/conditions` — ce qu'on vous demande.
+ *
+ * ⚠️ Ce n'est PAS la page des informations. La séparation vient d'Étienne, le
+ * 20/09/2026, et elle est juste : « il y a des infos, mais il y a aussi des
+ * demandes ». Une information dit ce que le lieu est — elle se lit avant de
+ * réserver, par celui qui décide. Une demande dit ce qu'on attend de vous —
+ * elle se lit après, par la production. Mélanger les deux alourdit la première
+ * et affaiblit la seconde.
+ *
+ * ⚠️ Le contenu ne vit pas ici : il vit dans `regles.ts`, source unique. Ne pas
+ * écrire une règle dans ce fichier — elle n'arriverait ni au concierge `/guide`
+ * ni au contrat.
+ *
+ * Même langage que `/infos` : un document, pas des tuiles. On le lit en entier
+ * une fois, et on y revient pour une ligne.
+ */
+export function RefonteConditions() {
+  return (
+    <Page>
+      <Barre />
+      <Corps>
+        <div className="mt-3 border-b border-[#3A3A3A] pb-8 pt-4">
+          <h1 className="font-clp uppercase">
+            <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
+              Conditions de location
+            </span>
+            <span className="mt-1 block text-[11px] font-normal tracking-[0.16em] text-[#A8A29A]">
+              {ADRESSE}
+            </span>
+          </h1>
+          <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[#C9C4BC]">
+            Ce que nous vous demandons, et pourquoi. Rien ici n&apos;est du
+            juridique : ce sont les quelques règles qui permettent au lieu de
+            fonctionner, et de continuer à exister dans un immeuble
+            d&apos;habitation.
+          </p>
+
+          {/* Le principe en tête : il évite d'avoir à lire le reste. */}
+          <p
+            className={`${CADRE} mt-6 max-w-[62ch] p-5 text-[15px] leading-relaxed`}
+            style={{ borderLeft: `2px solid ${LAITON}` }}
+          >
+            {PRINCIPE}
+          </p>
+        </div>
+
+        <div className="mt-8 gap-10 lg:flex lg:items-start">
+          <nav
+            aria-label="Sommaire"
+            className="mb-10 lg:sticky lg:top-8 lg:mb-0 lg:w-56 lg:shrink-0"
+          >
+            <p className="font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]">
+              Sur cette page
+            </p>
+            <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 lg:block lg:space-y-2">
+              {MOMENTS.map((m) => (
+                <li key={m.id}>
+                  <a
+                    href={`#${m.id}`}
+                    className="font-mono text-[12px] text-[#A8A29A] transition-colors hover:text-[#E8E4DC]"
+                  >
+                    {m.titre}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="#depot"
+                  className="font-mono text-[12px] text-[#A8A29A] transition-colors hover:text-[#E8E4DC]"
+                >
+                  Le dépôt de garantie
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div className="min-w-0 flex-1">
+            {MOMENTS.map((m) => (
+              <section
+                key={m.id}
+                id={m.id}
+                className="scroll-mt-8 border-b border-[#3A3A3A] py-10 first:pt-0"
+              >
+                <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
+                  {m.titre}
+                </h2>
+                <p className="mt-3 max-w-[62ch] text-[14px] italic leading-relaxed text-[#8A8A8A]">
+                  {m.chapo}
+                </p>
+
+                <div className="mt-6 max-w-[62ch] space-y-6">
+                  {m.regles.map((r) => (
+                    <div key={r.titre}>
+                      <p className="text-[15px] font-bold">{r.titre}</p>
+                      {/*
+                        Le pourquoi est dans le même paragraphe que la consigne,
+                        volontairement : séparé, on ne le lit pas, et une
+                        consigne sans raison se discute.
+                      */}
+                      <p className="mt-1 text-[15px] leading-[1.75] text-[#C9C4BC]">
+                        {r.texte}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            ))}
+
+            <section id="depot" className="scroll-mt-8 py-10">
+              <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
+                Le dépôt de garantie
+              </h2>
+              <dl className="mt-5 max-w-[62ch] divide-y divide-[#3A3A3A] border-y border-[#3A3A3A]">
+                {[
+                  ["Montant", DEPOT.montant],
+                  ["Paiement", DEPOT.paiement],
+                  ["Restitution", DEPOT.restitution],
+                ].map(([quoi, valeur]) => (
+                  <div key={quoi} className="py-3.5 sm:flex sm:gap-6">
+                    <dt
+                      className="font-mono text-[12px] sm:w-40 sm:shrink-0"
+                      style={{ color: LAITON }}
+                    >
+                      {quoi}
+                    </dt>
+                    <dd className="mt-1 text-[14px] text-[#C9C4BC] sm:mt-0">
+                      {valeur}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          </div>
+        </div>
+      </Corps>
+      <Pied />
+    </Page>
+  );
+}

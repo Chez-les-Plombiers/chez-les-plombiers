@@ -286,7 +286,7 @@ Deux réseaux disponibles :
 - (Si une équipe sécurité est présente, elle s'occupe de la fermeture)
 
 ## Règles & Réglementation
-- Couvre-feu bruit : [À REMPLIR PAR FRED]
+- Couvre-feu bruit : la musique s'arrête à 23h, sans exception. La cour n'est plus utilisable après 22h (les fumeurs sortent sur la voie publique), et le lieu doit être vidé de ses invités à minuit.
 - Capacité maximale : 200 personnes debout
 - Tabac : strictement interdit à l'intérieur — zone fumeur à l'extérieur sur la rue
 - Le lieu est dans un immeuble résidentiel — merci d'être attentif aux voisins, surtout en soirée
