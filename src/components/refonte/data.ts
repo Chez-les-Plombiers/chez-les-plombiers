@@ -20,7 +20,7 @@ export const ESPACES = [
     surface: "45 m²",
     capacite: "Journée entière",
     prix: "1 000 €",
-    photo: "/photos/servaire/cour-panneau.jpg",
+    photo: "/photos/boutique/facade.jpg",
     texte:
       "La vitrine. Ouverte sur le trottoir, sous l'enseigne « Couverture Plomberie » d'origine. Nue pour un pop-up, habillée pour un événement.",
   },
@@ -31,7 +31,7 @@ export const ESPACES = [
     surface: "200 m²",
     capacite: "jusqu'à 200 personnes",
     prix: "1 000 à 4 000 €",
-    photo: "/photos/canape-portes-atelier.jpg",
+    photo: "/photos/projection-rideaux.jpg",
     texte:
       "Le grand volume. Murs de béton brut, sol clair, trois portes qui s'ouvrent sur la cour. C'est ici que se tiennent les défilés, les lancements et les dîners.",
   },
