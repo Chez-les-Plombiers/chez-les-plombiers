@@ -54,11 +54,17 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
 - [x] Home refondue — blocs charbon, logotype à l'adresse, preuve voiture en photo
 - [x] Eurostile chargée sous `--font-clp` (le site en prod reste sur Wix Madefor)
 - [x] Grille de logos clients retirée, noms gardés en toutes lettres
+- [x] Logo décliné par lieu — composant `Logo.tsx`, pas de nouveaux PNG
+- [x] Adresse retirée du logo d'en-tête (« trop petite »), gardée dans le H1
+- [x] Contenu récupéré de la page Notion PRÉ-PROJET (poutres Eiffel, impasse,
+      sous-sol backstage, recharge électrique sur le triphasé)
 
 ## À construire
 
 | Page | Ce qu'elle répond | État |
 |---|---|---|
+| `/atelier` | photos et infos du lieu — **la prochaine** | à faire |
+| `/boutique` · `/appartement` | idem pour les deux autres lieux | à faire |
 | `/atelier/plans` | plans cotés, dimensions, à télécharger | à faire |
 | `/atelier/technique` | électricité, son, lumière, réseau, projection | à faire |
 | `/photos` | par type d'événement (5 catégories) | à faire |
@@ -68,11 +74,13 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
 
 ## Détails notés, pas encore traités
 
-- Logo décliné par lieu : `L'ATELIER` / `LA BOUTIQUE` / `L'APPARTEMENT` à la
-  place de l'adresse. Fabricable sans le `.AI` — la ligne n'est que du texte en
-  Eurostile. **Question ouverte** : l'adresse disparaît-elle du lockup sur les
-  pages de lieu ?
-- Petites pages à ajouter au pied de page (histoire, et d'autres à venir).
+- **Équipement de LA BOUTIQUE et de L'APPARTEMENT** : inconnu. Les deux cartes
+  n'ont donc pas de ligne d'équipements, là où L'ATELIER en a une. Ne pas
+  inventer : ça finirait dans un devis.
+- La porte de L'ATELIER : **une porte à trois battants**, pas trois portes. À
+  écrire correctement sur la page du lieu (ouvrir les trois élargit le passage).
+- Le sol : « résine » est le mot retenu — c'est la question qu'on pose le plus.
+- Petites pages à ajouter au pied de page (et d'autres à venir).
 - Les 5 vignettes photos de la home sont des bouche-trous : « défilés » montre
   une salle vide, « expositions » montre la cour.
 - Chercher une photo d'une voiture **en train d'entrer** (celle en place est la
