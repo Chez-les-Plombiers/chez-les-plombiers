@@ -1,0 +1,176 @@
+import Image from "next/image";
+import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
+import { ADRESSE, FICHE_GOOGLE } from "./data";
+import { INFOS_INTRO, SECTIONS, type Section } from "./data-infos";
+
+/**
+ * `/infos` — le document d'exploitation.
+ *
+ * ⚠️ C'est le SECOND langage du site, et il ne doit pas dériver vers le
+ * premier. Pas de tuiles ici : du texte, à une largeur où l'œil tient la ligne
+ * (≈ 68 caractères), avec un sommaire qui saute. Voir l'en-tête de
+ * `data-infos.ts` pour le raisonnement complet.
+ *
+ * ⚠️ Tout est déplié. Ne pas « ranger » en accordéons : ⌘F ne trouverait plus
+ * ce qui est replié, et l'impression sortirait une page de titres. Or c'est
+ * exactement cette page qu'une agence imprime pour son transporteur.
+ */
+export function RefonteInfos() {
+  return (
+    <Page>
+      <Barre />
+      <Corps>
+        <Entete />
+        <div className="mt-8 gap-10 lg:flex lg:items-start">
+          <Sommaire />
+          <div className="min-w-0 flex-1">
+            {SECTIONS.map((s) => (
+              <Bloc key={s.id} section={s} />
+            ))}
+          </div>
+        </div>
+      </Corps>
+      <Pied />
+    </Page>
+  );
+}
+
+function Entete() {
+  return (
+    <div className="mt-3 border-b border-[#3A3A3A] pb-8 pt-4">
+      <h1 className="font-clp uppercase">
+        <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
+          Venir, livrer, repartir
+        </span>
+        <span className="mt-1 block text-[11px] font-normal tracking-[0.16em] text-[#A8A29A]">
+          {ADRESSE}
+        </span>
+      </h1>
+      <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[#C9C4BC]">
+        {INFOS_INTRO}
+      </p>
+      <a
+        href={FICHE_GOOGLE}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 inline-block font-mono text-[11px] text-[#8A8A8A] transition-colors hover:text-[#E8E4DC]"
+      >
+        Itinéraire et fiche Google →
+      </a>
+    </div>
+  );
+}
+
+/**
+ * Le sommaire.
+ *
+ * Collant sur grand écran, simple bande de liens au-dessus du texte sur
+ * téléphone — une colonne collante n'a pas de sens quand il n'y a qu'une
+ * colonne.
+ */
+function Sommaire() {
+  return (
+    <nav
+      aria-label="Sommaire"
+      className="mb-10 lg:sticky lg:top-8 lg:mb-0 lg:w-56 lg:shrink-0"
+    >
+      <p className="font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]">
+        Sur cette page
+      </p>
+      <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 lg:block lg:space-y-2">
+        {SECTIONS.map((s) => (
+          <li key={s.id}>
+            <a
+              href={`#${s.id}`}
+              className="font-mono text-[12px] text-[#A8A29A] transition-colors hover:text-[#E8E4DC]"
+            >
+              {s.titre}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+function Bloc({ section }: { section: Section }) {
+  return (
+    <section
+      id={section.id}
+      // `scroll-mt` : sans ça, le titre se colle au bord haut de la fenêtre
+      // après un saut depuis le sommaire.
+      className="scroll-mt-8 border-b border-[#3A3A3A] py-10 first:pt-0 last:border-0"
+    >
+      <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
+        {section.titre}
+      </h2>
+
+      {section.texte.map((paragraphe) => (
+        <p
+          key={paragraphe}
+          // ⚠️ 62ch, pas plus : au-delà, l'œil perd la ligne suivante. C'est la
+          // différence la plus visible avec les pages en tuiles.
+          className="mt-4 max-w-[62ch] text-[15px] leading-[1.75] text-[#C9C4BC]"
+        >
+          {paragraphe}
+        </p>
+      ))}
+
+      {section.photo && (
+        <figure className={`${CADRE} mt-6 max-w-[62ch] overflow-hidden`}>
+          <div className="relative aspect-[3/2] w-full">
+            <Image
+              src={section.photo.src}
+              alt={section.photo.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 620px"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="border-t border-[#3A3A3A] px-4 py-3 text-[12px] text-[#8A8A8A]">
+            {section.photo.legende}
+          </figcaption>
+        </figure>
+      )}
+
+      {section.faits && (
+        /*
+         * Des faits, pas des tuiles : une liste de définitions. On les consulte
+         * plus qu'on ne les lit, mais ils restent dans le fil du document.
+         */
+        <dl className="mt-6 max-w-[68ch] divide-y divide-[#3A3A3A] border-y border-[#3A3A3A]">
+          {section.faits.map(([quoi, detail]) => (
+            <div key={quoi} className="py-3.5 sm:flex sm:gap-6">
+              <dt
+                className="font-mono text-[12px] sm:w-56 sm:shrink-0"
+                style={{ color: LAITON }}
+              >
+                {quoi}
+              </dt>
+              <dd className="mt-1 text-[14px] leading-relaxed text-[#C9C4BC] sm:mt-0">
+                {detail}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
+
+      {section.liens && (
+        <ul className="mt-6 flex max-w-[68ch] flex-wrap gap-x-5 gap-y-2">
+          {section.liens.map((l) => (
+            <li key={l.url}>
+              <a
+                href={l.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[14px] text-[#C9C4BC] underline decoration-[#5E5E5E] underline-offset-4 transition-colors hover:text-white hover:decoration-[#C8A96E]"
+              >
+                {l.nom}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+}

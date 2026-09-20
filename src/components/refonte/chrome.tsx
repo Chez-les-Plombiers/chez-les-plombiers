@@ -7,6 +7,9 @@ import { Logo } from "./Logo";
 import { ADRESSE, TELEPHONE } from "./data";
 
 const TEL_BRUT = TELEPHONE.replace(/\s/g, "");
+const WHATSAPP = "https://wa.me/33761471073";
+const INSTAGRAM = "https://instagram.com/chezlesplombiers";
+const CALENDLY = "https://calendly.com/chezlesplombiers/visite";
 
 /**
  * La charpente partagée par toutes les pages de la refonte.
@@ -127,16 +130,20 @@ export function Barre({ lieu }: { lieu?: string }) {
             Visiter
           </a>
           {/*
-            « Appeler » en troisième. Idée d'Étienne, 20/09/2026 : « n'importe
-            qui qui a besoin de nous appeler arrive sur le site, pan — tarifs,
-            visite, appeler ». Un `tel:` compose directement sur téléphone ;
-            sur ordinateur, le numéro reste écrit en clair dans le pied de page.
+            WhatsApp en troisième — le canal d'Étienne, assumé.
+            ⚠️ Et c'est POUR ÇA que le numéro reste écrit en clair, cliquable,
+            dans le pied de page. Quelqu'un sans WhatsApp — un téléphone pro, un
+            ordinateur sans l'application — qui cliquerait ici tombe sur une
+            page « téléchargez WhatsApp ». Ne pas retirer le numéro du pied de
+            page : c'est lui qui empêche le cul-de-sac.
           */}
           <a
-            href={`tel:${TEL_BRUT}`}
+            href={WHATSAPP}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E]`}
           >
-            Appeler
+            WhatsApp
           </a>
         </nav>
       </div>
@@ -144,44 +151,95 @@ export function Barre({ lieu }: { lieu?: string }) {
   );
 }
 
+/**
+ * Le pied de page.
+ *
+ * ⚠️ Il ne doit PAS être quatre tuiles alignées, comme il l'était jusqu'au
+ * 20/09/2026 : sans hiérarchie, on ne sait pas où regarder. Étienne : « il faut
+ * qu'on en crée un un peu joli ». Trois colonnes de liens sous le logotype à
+ * l'adresse, et une ligne de mentions.
+ *
+ * C'est le seul endroit du site où le logotype porte l'adresse gravée : en
+ * haut, elle était « trop petite pour servir ». Ici, elle clôt la page.
+ *
+ * ⚠️ Le numéro de téléphone reste écrit en clair et cliquable. Le bouton du
+ * haut envoie sur WhatsApp ; ce numéro est le filet pour qui n'a pas WhatsApp.
+ */
 export function Pied() {
-  const contacts: Array<[string, React.ReactNode]> = [
-    ["Adresse", ADRESSE],
-    [
-      "Téléphone",
-      <a key="t" href={`tel:${TELEPHONE.replace(/\s/g, "")}`} className="hover:text-white">
-        {TELEPHONE}
-      </a>,
-    ],
-    [
-      "WhatsApp",
-      <a key="w" href="https://wa.me/33761471073" target="_blank" rel="noopener noreferrer" className="hover:text-white">
-        Écrire un message
-      </a>,
-    ],
-    [
-      "Instagram",
-      <a key="i" href="https://instagram.com/chezlesplombiers" target="_blank" rel="noopener noreferrer" className="hover:text-white">
-        @chezlesplombiers
-      </a>,
-    ],
+  const colonnes: Array<{ titre: string; liens: Array<{ nom: string; href: string; externe?: boolean; suffixe?: string }> }> = [
+    {
+      titre: "Les lieux",
+      liens: [
+        { nom: "L'Atelier", href: "/refonte/atelier" },
+        { nom: "La Boutique", href: "/tarifs/boutique" },
+        { nom: "L'Appartement", href: "/tarifs/appartement" },
+      ],
+    },
+    {
+      titre: "Le site",
+      liens: [
+        { nom: "Tarifs et disponibilités", href: "/tarifs", suffixe: "/tarifs" },
+        { nom: "Venir et livrer", href: "/refonte/infos", suffixe: "/infos" },
+        { nom: "Réserver une visite", href: CALENDLY, externe: true },
+      ],
+    },
+    {
+      titre: "Nous joindre",
+      liens: [
+        { nom: "WhatsApp", href: WHATSAPP, externe: true },
+        { nom: TELEPHONE, href: `tel:${TEL_BRUT}` },
+        { nom: "@chezlesplombiers", href: INSTAGRAM, externe: true },
+      ],
+    },
   ];
 
   return (
-    <footer className="mx-auto max-w-[1180px] px-4 pb-10 sm:px-6">
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        {contacts.map(([quoi, valeur]) => (
-          <div key={quoi} className={`${CADRE} p-5`}>
-            <p className="font-clp text-[10px] uppercase tracking-[0.16em] text-[#8A8A8A]">
-              {quoi}
-            </p>
-            <p className="mt-1.5 font-mono text-[13px]">{valeur}</p>
+    <footer className="mt-16 border-t border-[#3A3A3A]">
+      <div className="mx-auto max-w-[1180px] px-4 py-12 sm:px-6">
+        <div className="gap-10 sm:flex sm:items-start sm:justify-between">
+          <Logo hauteur={34} pied={ADRESSE.toUpperCase()} />
+
+          <div className="mt-10 grid grid-cols-2 gap-8 sm:mt-0 sm:flex sm:gap-14">
+            {colonnes.map((col) => (
+              <div key={col.titre}>
+                <p className="font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]">
+                  {col.titre}
+                </p>
+                <ul className="mt-3 space-y-2">
+                  {col.liens.map((l) => (
+                    <li key={l.nom}>
+                      <a
+                        href={l.href}
+                        {...(l.externe
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                        className="text-[13px] text-[#C9C4BC] transition-colors hover:text-white"
+                      >
+                        {l.nom}
+                        {l.suffixe && (
+                          /* L'adresse écrite : elle dit qu'on peut l'envoyer. */
+                          <span className="ml-2 font-mono text-[11px] text-[#5E5E5E]">
+                            {l.suffixe}
+                          </span>
+                        )}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <div className="mt-12 flex flex-wrap items-baseline justify-between gap-4 border-t border-[#3A3A3A] pt-6">
+          <p className="font-mono text-[11px] text-[#5E5E5E]">
+            Chez les Plombiers SAS · SIREN 928 788 157 · {ADRESSE}
+          </p>
+          <p className="font-clp text-[10px] uppercase tracking-[0.18em] text-[#5E5E5E]">
+            Maquette de travail, non publiée
+          </p>
+        </div>
       </div>
-      <p className="mt-6 px-1 font-clp text-[10px] uppercase tracking-[0.18em] text-[#5E5E5E]">
-        Maquette de travail, non publiée
-      </p>
     </footer>
   );
 }

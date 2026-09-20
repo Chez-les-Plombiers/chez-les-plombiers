@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- voir chrome.tsx */
 import { TuilePhotos } from "./TuilePhotos";
 import { Barre, Bloc, CADRE, Corps, LAITON, Page, Pied, Titre } from "./chrome";
-import { ADRESSE, ATELIER, ESPACES, FICHE_GOOGLE, REGLES } from "./data";
+import { ADRESSE, ATELIER, ESPACES, FICHE_GOOGLE } from "./data";
 
 /**
  * `/atelier` — la page du lieu.
@@ -15,6 +15,12 @@ import { ADRESSE, ATELIER, ESPACES, FICHE_GOOGLE, REGLES } from "./data";
  * grille ici garantirait qu'un jour les deux se contredisent — c'est
  * exactement ce qui vient d'arriver à la capacité et à la hauteur sous plafond,
  * que le site actuel donne avec deux valeurs différentes selon la page.
+ *
+ * ⚠️ Elle ne porte PLUS l'accès, le déchargement ni les horaires. Ces réponses
+ * se posent APRÈS la décision de louer : elles sont sur `/infos`, en texte.
+ * Les garder ici avait fait de la page un mur — Étienne : « trop de tuiles ».
+ * Ne pas les rapatrier « parce que ça a l'air incomplet » : c'est complet pour
+ * la question que cette page pose.
  *
  * ⚠️ La même charpente servira à `/boutique` et `/appartement`. Quand ce sera
  * le cas, ce fichier devra devenir générique plutôt qu'être recopié deux fois —
@@ -37,8 +43,6 @@ export function RefonteAtelier() {
         <Ouverture photos={lieu.photos} prix={lieu.prix} />
         <EnBref />
         <Equipement />
-        <Acces />
-        <Horaires />
         <Suite />
       </Corps>
       <Pied />
@@ -205,47 +209,7 @@ function Equipement() {
   );
 }
 
-/* ────────────────────────────────────────────────────────────────── Accès */
 
-function Acces() {
-  return (
-    <>
-      <Titre>Entrer, livrer, circuler</Titre>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {ATELIER.acces.map(([quoi, detail]) => (
-          <div key={quoi} className={`${CADRE} p-5`}>
-            <p className="font-clp text-[12px] font-bold uppercase tracking-[0.08em]">
-              {quoi}
-            </p>
-            <p className="mt-2 text-[13px] leading-relaxed text-[#A8A29A]">
-              {detail}
-            </p>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-}
-
-/* ─────────────────────────────────────────────────────────────── Horaires */
-
-function Horaires() {
-  return (
-    <>
-      <Titre>Horaires</Titre>
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        {REGLES.map(([quoi, quand]) => (
-          <div key={quoi} className={`${CADRE} p-5`}>
-            <p className="font-mono text-[11px] uppercase tracking-wider text-[#8A8A8A]">
-              {quoi}
-            </p>
-            <p className="mt-1.5 text-[14px]">{quand}</p>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-}
 
 /* ────────────────────────────────────────────────────────────────── Suite */
 
@@ -257,7 +221,9 @@ function Suite() {
         {ATELIER.suite.map((p) => (
           <a
             key={p.href}
-            href={p.pret ? p.href : undefined}
+            /* ⚠️ BASCULE : `/infos` est encore la maquette. Retirer le préfixe
+               le jour de la mise en ligne — une seule ligne à changer. */
+            href={p.pret ? (p.href === "/infos" ? "/refonte/infos" : p.href) : undefined}
             aria-disabled={!p.pret}
             className={`${CADRE} flex flex-col justify-between gap-6 p-5 transition-colors ${
               p.pret ? "hover:border-[#C8A96E]" : "cursor-default opacity-50"
