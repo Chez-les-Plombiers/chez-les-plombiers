@@ -1,4 +1,3 @@
-import { MapPin } from "lucide-react";
 import { TuilePhotos } from "./TuilePhotos";
 import { Barre, CADRE, Corps, LAITON, Page, Pied, Titre, lien } from "./chrome";
 import {
@@ -7,7 +6,6 @@ import {
   ATELIER,
   BOUTIQUE,
   ESPACES,
-  FICHE_GOOGLE,
   FONDS,
 } from "./data";
 
@@ -149,16 +147,14 @@ function Ouverture({ lieu, tuile }: { lieu: Lieu; tuile: Tuile }) {
               Calendrier tarifaire →
             </a>
 
-            <a
-              href={FICHE_GOOGLE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 font-mono text-[11px] text-[#8A8A8A] transition-colors hover:text-[#E8E4DC]"
-            >
-              {/* ⚠️ Pas d'emoji : la punaise du calendrier tarifaire, en laiton. */}
-              <MapPin className="h-3.5 w-3.5" style={{ color: LAITON }} />
-              Voir la fiche Google
-            </a>
+            {/*
+              ⚠️ Ne PAS remettre la fiche Google ici. Elle y était jusqu'au
+              20/09/2026 et elle n'y avait pas sa place : à côté d'un prix, on
+              cherche une disponibilité, pas un itinéraire. Sur iPhone, les
+              deux liens finissaient même sur la même ligne, collés. Elle est
+              au pied de page, donc sur TOUTES les pages — c'est là qu'on
+              cherche une adresse.
+            */}
           </div>
         </div>
       </div>

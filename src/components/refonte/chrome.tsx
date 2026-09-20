@@ -3,8 +3,9 @@
  * Next (le projet pricing), servie ici par réécriture. `next/link` tenterait
  * une navigation côté client vers une route que ce routeur ne connaît pas.
  */
+import { MapPin } from "lucide-react";
 import { Logo } from "./Logo";
-import { ADRESSE, TELEPHONE } from "./data";
+import { ADRESSE, FICHE_GOOGLE, TELEPHONE } from "./data";
 
 const TEL_BRUT = TELEPHONE.replace(/\s/g, "");
 const WHATSAPP = "https://wa.me/33761471073";
@@ -190,7 +191,16 @@ export function Barre({ lieu }: { lieu?: string }) {
 }
 
 export function Pied() {
-  const colonnes: Array<{ titre: string; liens: Array<{ nom: string; href: string; externe?: boolean; suffixe?: string }> }> = [
+  const colonnes: Array<{
+    titre: string;
+    liens: Array<{
+      nom: string;
+      href: string;
+      externe?: boolean;
+      suffixe?: string;
+      punaise?: boolean;
+    }>;
+  }> = [
     {
       titre: "Les lieux",
       liens: [
@@ -214,6 +224,12 @@ export function Pied() {
         { nom: "WhatsApp", href: WHATSAPP, externe: true },
         { nom: TELEPHONE, href: `tel:${TEL_BRUT}` },
         { nom: "@chezlesplombiers", href: INSTAGRAM, externe: true },
+        /*
+          L'itinéraire descend ici depuis la page de lieu (20/09/2026). Une
+          adresse se cherche en bas de page, pas à côté d'un prix — et au pied,
+          elle est sur toutes les pages d'un coup.
+        */
+        { nom: "Itinéraire", href: FICHE_GOOGLE, externe: true, punaise: true },
       ],
     },
   ];
@@ -252,8 +268,14 @@ export function Pied() {
                         {...(l.externe
                           ? { target: "_blank", rel: "noopener noreferrer" }
                           : {})}
-                        className="text-[13px] text-[#C9C4BC] transition-colors hover:text-white"
+                        className="inline-flex items-center gap-1.5 text-[13px] text-[#C9C4BC] transition-colors hover:text-white"
                       >
+                        {l.punaise && (
+                          <MapPin
+                            className="h-3.5 w-3.5 shrink-0"
+                            style={{ color: LAITON }}
+                          />
+                        )}
                         {l.nom}
                         {l.suffixe && (
                           /* L'adresse écrite : elle dit qu'on peut l'envoyer. */
