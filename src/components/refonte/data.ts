@@ -62,12 +62,20 @@ export const INCLUS = [
   {
     titre: "Vidéoprojection 4,63 m",
     texte:
-      "Optoma 4K, 8 800 lumens, HDMI, AirPlay et Chromecast. Une image de quatre mètres soixante-trois de large.",
+      "Optoma 4K, 8 800 lumens, HDMI, AirPlay et Chromecast.",
   },
   {
-    titre: "Son Sonos et micros",
+    titre: "Sonos",
+    texte: "Le son du lieu, pilotable depuis un téléphone.",
+  },
+  {
+    titre: "Entrées XLR",
+    texte: "De quoi brancher un DJ ou une régie son.",
+  },
+  {
+    titre: "Micros",
     texte:
-      "Entrées XLR pour un DJ. Les micros baissent automatiquement la musique quand quelqu'un prend la parole.",
+      "La musique baisse d'elle-même quand quelqu'un prend la parole, et revient après.",
   },
   {
     titre: "Lumière pilotée",
@@ -81,12 +89,12 @@ export const INCLUS = [
   {
     titre: "Cuisine équipée",
     texte:
-      "Réfrigérateur, machine à glaçons, lave-vaisselle, vaisselle et four à micro-ondes, pour votre traiteur.",
+      "Un vrai four, un micro-ondes, un réfrigérateur, une machine à glaçons, un lave-vaisselle et la vaisselle.",
   },
   {
     titre: "Le droit de construire",
     texte:
-      "On peut percer, fixer des écrans, poser des étagères, monter du mobilier sur mesure. Presque partout ailleurs, c'est interdit.",
+      "On peut percer, fixer des écrans, poser des étagères, monter du mobilier sur mesure.",
   },
 ] as const;
 

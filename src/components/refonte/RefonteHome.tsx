@@ -1,4 +1,11 @@
+/* eslint-disable @next/next/no-html-link-for-pages --
+ * `/tarifs` n'est PAS une route de cette application : c'est une autre zone
+ * Next (le projet pricing), servie ici par réécriture. `next/link` tenterait
+ * une navigation côté client vers une route que ce routeur ne connaît pas, et
+ * le lien casserait. L'ancre classique est le bon outil.
+ */
 import Image from "next/image";
+import { BandeauCLP } from "./BandeauCLP";
 import {
   ADRESSE,
   CLIENTS,
@@ -11,148 +18,205 @@ import {
 } from "./data";
 
 /**
- * Maquette de la page d'accueil — refonte du 20/09/2026.
+ * Maquette de la page d'accueil — deuxième version, 20/09/2026.
  *
- * Trois partis pris, tous discutables et tous volontaires :
+ * Reprise après les retours d'Étienne sur la première :
  *
- * 1. **On arrête de crier.** La feuille de style globale met TOUS les titres en
- *    capitales ; c'est ce qui fait le plus « site de 2018 ». Ici les grands
- *    énoncés sont en casse normale (`normal-case`), et les capitales sont
- *    réservées aux minuscules étiquettes. C'est le changement qui se voit le
- *    plus, pour le moins d'effort.
- * 2. **Les photos portent la couleur, la page n'en a pas.** Papier chaud, encre
- *    presque noire, filets fins. Le lieu est déjà coloré, la page ne doit pas
- *    lutter contre lui.
- * 3. **Les chiffres sont des éléments graphiques.** 800 kg/m², 4,63 m, 36 kVA :
- *    c'est ce que la concurrence ne donne jamais, et c'est ce qu'un modèle de
- *    langage reprend mot pour mot.
+ * - **Le bandeau blanc devient le système.** C'est le key visual de son
+ *   Instagram : photo, bande blanche, monogramme, capitales espacées. On ne
+ *   redessine pas une identité par-dessus une identité qui marche.
+ * - **Plus de rangée de logos en haut** — « template des années 2010, un peu
+ *   bullshit ». À la place, trois tuiles d'événements qui montrent la marque ET
+ *   ce qu'elle a fait ici. Les logos redescendent, discrets.
+ * - **Plus de bandeau noir de chiffres** — « on dirait les chiffres des
+ *   agences, tant de cafés bus ». Les chiffres reviennent posés sur le papier,
+ *   dans la section des équipements.
+ * - **Plus de paragraphe à la première personne.** Il ne veut pas écrire
+ *   « c'est moi qui fais les visites ». Un avant / après le dit mieux : le soin
+ *   se voit, il ne se raconte pas.
+ * - **Palette gris / blanc cassé**, en écho au sol de l'ATELIER. ⚠️ La
+ *   référence RAL ne doit PAS être écrite sur le site.
  *
- * Composant serveur, sans état : tout est statique, rien à hydrater.
+ * Composant serveur, sans état.
  */
 
-const PAPER = "bg-[#F7F5F1] text-[#16130F]";
-const RULE = "border-[#16130F]/12";
+const PAPER = "bg-[#F1EEE8] text-[#1B1A17]";
+const RULE = "border-[#1B1A17]/14";
 const EYEBROW =
-  "font-display text-[11px] uppercase tracking-[0.18em] text-[#6F6960]";
+  "font-display text-[11px] uppercase tracking-[0.2em] text-[#77716A]";
+const H2 =
+  "font-display font-normal normal-case leading-[1.05] tracking-[-0.02em]";
 
 export function RefonteHome() {
   return (
     <div className={`${PAPER} min-h-screen antialiased`}>
       <Barre />
       <Ouverture />
-      <Clients />
+      <Tuiles />
       <Espaces />
-      <Chiffres />
       <Inclus />
       <Signature />
       <References />
+      <AvantApres />
+      <Confiance />
       <Regles />
-      <Hote />
       <Fin />
     </div>
   );
 }
 
-/* ───────────────────────────────────────────────────────────── Barre */
+/* ───────────────────────────────────────────────────────────────── Barre */
 
 function Barre() {
   return (
-    <header
-      className={`sticky top-0 z-40 border-b ${RULE} bg-[#F7F5F1]/90 backdrop-blur`}
-    >
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-4 sm:px-10">
-        <span className="font-display text-[13px] uppercase tracking-[0.2em]">
-          Chez les Plombiers
-        </span>
-        <nav className="hidden items-center gap-8 text-[13px] text-[#6F6960] md:flex">
-          <a href="#espaces" className="transition-colors hover:text-[#16130F]">Les espaces</a>
-          <a href="#inclus" className="transition-colors hover:text-[#16130F]">Ce qui est inclus</a>
-          <a href="#references" className="transition-colors hover:text-[#16130F]">Références</a>
-          <a href="/tarifs" className="transition-colors hover:text-[#16130F]">Tarifs</a>
+    <header className={`sticky top-0 z-40 border-b ${RULE} bg-[#F1EEE8]/92 backdrop-blur`}>
+      <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-6 px-5 py-3.5 sm:px-10">
+        <Image
+          src="/images/logo/monogramme-noir.png"
+          alt="Chez les Plombiers"
+          width={2709}
+          height={1419}
+          className="h-6 w-auto sm:h-7"
+        />
+        <nav className="hidden items-center gap-8 text-[13px] text-[#77716A] lg:flex">
+          <a href="#espaces" className="transition-colors hover:text-[#1B1A17]">Les espaces</a>
+          <a href="#inclus" className="transition-colors hover:text-[#1B1A17]">Ce qui est inclus</a>
+          <a href="#references" className="transition-colors hover:text-[#1B1A17]">Références</a>
         </nav>
-        <a
-          href="/tarifs"
-          className="border border-[#16130F] px-4 py-2 font-display text-[11px] uppercase tracking-[0.16em] transition-colors hover:bg-[#16130F] hover:text-[#F7F5F1]"
-        >
-          Voir les tarifs
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="/tarifs"
+            className="bg-[#1B1A17] px-4 py-2.5 font-display text-[10px] uppercase tracking-[0.18em] text-[#F1EEE8] transition-opacity hover:opacity-85 sm:text-[11px]"
+          >
+            Tarifs
+          </a>
+          <a
+            href="#visiter"
+            className={`hidden border ${RULE} px-4 py-2.5 font-display text-[11px] uppercase tracking-[0.18em] transition-colors hover:border-[#1B1A17] sm:block`}
+          >
+            Visiter
+          </a>
+        </div>
       </div>
     </header>
   );
 }
 
-/* ──────────────────────────────────────────────────────────── Ouverture */
+/* ─────────────────────────────────────────────────────────────── Ouverture */
 
 function Ouverture() {
   return (
-    <section className="relative">
-      <div className="relative h-[72vh] min-h-[480px] w-full sm:h-[82vh]">
+    <section>
+      {/*
+        La photo d'abord, en grand, sans texte par-dessus — puis le bandeau
+        blanc en dessous. C'est le key visual d'Instagram passé à l'échelle de
+        la page, et ça règle au passage le reproche d'Étienne sur la première
+        version : la barre de navigation disparaissait dans la photo.
+      */}
+      <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-[21/9]">
         <Image
-          src="/photos/canape-portes-atelier.jpg"
-          alt="L'Atelier de Chez les Plombiers : murs de béton brut, sol clair, rideaux et canapé rose"
+          src="/photos/lieu/photo-00.jpg"
+          alt="L'Atelier de Chez les Plombiers : canapé courbe rose, murs de béton brut et sol clair"
           fill
           priority
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#16130F]/70 via-[#16130F]/15 to-[#16130F]/10" />
+      </div>
 
-        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1400px] px-5 pb-10 sm:px-10 sm:pb-16">
-          <h1 className="max-w-4xl font-display text-[2.6rem] font-normal normal-case leading-[0.95] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl">
-            Trois espaces,
-            <br />
-            une seule adresse.
-          </h1>
-          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/85 sm:text-base">
-            Showrooms, lancements presse, dîners, tournages. {ADRESSE}, à deux pas
-            du Pont Neuf.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <a
-              href="/tarifs"
-              className="bg-white px-6 py-3.5 font-display text-[11px] uppercase tracking-[0.16em] text-[#16130F] transition-opacity hover:opacity-85"
-            >
-              Prix et disponibilités
-            </a>
-            <a
-              href="#visiter"
-              className="border border-white/70 px-6 py-3.5 font-display text-[11px] uppercase tracking-[0.16em] text-white transition-colors hover:bg-white hover:text-[#16130F]"
-            >
-              Réserver une visite
-            </a>
-          </div>
+      <BandeauCLP
+        lignes={[
+          "Chez les Plombiers",
+          "Trois espaces — 39 rue des Bourdonnais",
+          "Paris 1er, à deux pas du Pont Neuf",
+        ]}
+      />
+
+      <div className="mx-auto max-w-[1500px] px-5 py-14 sm:px-10 sm:py-20">
+        <h1 className={`max-w-4xl text-[2.4rem] sm:text-6xl lg:text-7xl ${H2}`}>
+          Trois espaces,
+          <br />
+          une seule adresse.
+        </h1>
+        <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-[#77716A] sm:text-base">
+          Showrooms, lancements presse, dîners, tournages. La rue, la cour et
+          l&apos;étage d&apos;un ancien atelier de plomberie, à deux pas du Pont
+          Neuf.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href="/tarifs"
+            className="bg-[#1B1A17] px-6 py-3.5 font-display text-[11px] uppercase tracking-[0.18em] text-[#F1EEE8] transition-opacity hover:opacity-85"
+          >
+            Prix et disponibilités
+          </a>
+          <a
+            href="#visiter"
+            className={`border ${RULE} px-6 py-3.5 font-display text-[11px] uppercase tracking-[0.18em] transition-colors hover:border-[#1B1A17]`}
+          >
+            Réserver une visite
+          </a>
         </div>
       </div>
     </section>
   );
 }
 
-/* ─────────────────────────────────────────────────────────────── Clients */
+/* ──────────────────────────────────────────────────────────────── Tuiles */
 
-function Clients() {
+/**
+ * Trois événements en tuiles, à la place de la rangée de logos.
+ *
+ * Idée d'Étienne : montrer la marque ET ce qu'elle a fait ici, plutôt qu'un
+ * alignement de logos qui « fait template d'agence ». Une tuile dit les deux.
+ */
+const TUILES = [
+  {
+    marque: "Servaire & Co",
+    quoi: "Paris Design Week",
+    photo: "/photos/servaire/projection-cyclo.jpg",
+    alt: "Projection grand format sur le mur courbe pendant la Paris Design Week",
+  },
+  {
+    marque: "Porsche",
+    quoi: "Lancement du Cayenne électrique",
+    photo: "/photos/lieu/photo-01.jpg",
+    alt: "L'Atelier, accès de plain-pied et sol renforcé pour les lancements automobiles",
+  },
+  {
+    marque: "Servaire & Co",
+    quoi: "Cent cinquante invités, portes ouvertes sur la cour",
+    photo: "/photos/servaire/invites-vitrine.jpg",
+    alt: "Invités autour d'une vitrine pendant la soirée Servaire & Co",
+  },
+] as const;
+
+function Tuiles() {
   return (
-    <section className={`border-b ${RULE}`}>
-      <div className="mx-auto max-w-[1400px] px-5 py-10 sm:px-10 sm:py-12">
-        <div className="grid grid-cols-3 items-center gap-x-8 gap-y-7 sm:grid-cols-6 lg:grid-cols-9">
-          {CLIENTS.map((c) => (
-            <div key={c} className="relative h-7 w-full opacity-45 grayscale">
-              <Image
-                src={`/images/clients/${c}.png`}
-                alt={c.replace(/-/g, " ")}
-                fill
-                sizes="140px"
-                className="object-contain object-left"
-              />
+    <section className={`border-y ${RULE}`}>
+      <div className="grid gap-px bg-[#1B1A17]/14 sm:grid-cols-3">
+        {TUILES.map((t, i) => (
+          <a
+            key={`${t.marque}-${i}`}
+            href="#references"
+            className="group relative block aspect-[4/3] overflow-hidden bg-[#E4E0D8]"
+          >
+            <Image
+              src={t.photo}
+              alt={t.alt}
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1B1A17]/75 via-transparent to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-5">
+              <p className="font-display text-[15px] uppercase tracking-[0.16em] text-white">
+                {t.marque}
+              </p>
+              <p className="mt-1 text-[13px] text-white/75">{t.quoi}</p>
             </div>
-          ))}
-        </div>
-        {/*
-          Les noms en toutes lettres sous les logos. Un logo est une image : un
-          moteur et un modèle de langage lisent ce texte, pas les pixels.
-        */}
-        <p className="mt-8 max-w-4xl text-[13px] leading-relaxed text-[#6F6960]">
-          {CLIENTS_TEXTE}
-        </p>
+          </a>
+        ))}
       </div>
     </section>
   );
@@ -162,57 +226,47 @@ function Clients() {
 
 function Espaces() {
   return (
-    <section id="espaces" className={`border-b ${RULE}`}>
-      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-10 sm:py-24">
+    <section id="espaces">
+      <div className="mx-auto max-w-[1500px] px-5 py-16 sm:px-10 sm:py-24">
         <p className={EYEBROW}>Les espaces</p>
-        <h2 className="mt-4 max-w-3xl font-display text-3xl font-normal normal-case leading-[1.05] tracking-[-0.02em] sm:text-5xl">
+        <h2 className={`mt-4 max-w-3xl text-3xl sm:text-5xl ${H2}`}>
           La rue, la cour, l&apos;étage.
         </h2>
-        <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-[#6F6960]">
+        <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-[#77716A]">
           Ils ne se ressemblent pas et ne servent pas aux mêmes événements. Ils
           partagent la même adresse, le même soin, et les mêmes rideaux. On les
-          loue séparément, ou ensemble — et passer de l&apos;un à l&apos;autre,
+          loue séparément ou ensemble — et passer de l&apos;un à l&apos;autre,
           c&apos;est traverser une cour.
         </p>
 
-        <div className="mt-14 grid gap-px sm:grid-cols-3">
+        <div className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-6">
           {ESPACES.map((e) => (
-            <article key={e.slug} className="group">
-              <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#EDEAE5]">
+            <article key={e.slug}>
+              <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#E4E0D8]">
                 <Image
                   src={e.photo}
-                  alt={`${e.nom} — ${e.texte.slice(0, 60)}`}
+                  alt={`${e.nom}, ${e.position.toLowerCase()}`}
                   fill
                   sizes="(max-width: 640px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="object-cover"
                 />
-                <span className="absolute left-4 top-4 bg-[#F7F5F1] px-2.5 py-1 font-display text-[10px] uppercase tracking-[0.16em]">
-                  {e.position}
-                </span>
               </div>
 
-              <div className="px-1 pt-5 sm:px-4">
-                <h3 className="font-display text-xl font-normal normal-case tracking-[-0.01em]">
-                  {e.nom}
-                </h3>
-                <p className="mt-1 font-display text-[11px] uppercase tracking-[0.14em] text-[#6F6960]">
-                  {e.surface} · {e.capacite}
-                </p>
-                <p className="mt-3 text-[14px] leading-relaxed text-[#6F6960]">
-                  {e.texte}
-                </p>
-                {/*
-                  On affiche la FOURCHETTE, pas le plancher. « À partir de
-                  1 000 € » était exact pour les trois lieux et donnait donc
-                  l'impression que l'Atelier coûte le prix de la Boutique.
-                */}
+              {/* Le bandeau blanc décliné par lieu — le système d'Instagram. */}
+              <BandeauCLP
+                lignes={[e.nom, `${e.surface} — ${e.capacite}`, e.position]}
+                className="!px-4 !py-3.5"
+              />
+
+              <div className="pt-5">
+                <p className="text-[14px] leading-relaxed text-[#77716A]">{e.texte}</p>
                 <p className="mt-4 font-display text-[13px]">
-                  <span className="text-[#16130F]">{e.prix}</span>{" "}
-                  <span className="text-[#6F6960]">HT la journée</span>
+                  <span className="text-[#1B1A17]">{e.prix}</span>{" "}
+                  <span className="text-[#77716A]">HT la journée</span>
                 </p>
                 <a
                   href={`/tarifs/${e.slug}`}
-                  className={`mt-4 inline-block border-b ${RULE} pb-0.5 font-display text-[11px] uppercase tracking-[0.14em] transition-colors hover:border-[#16130F]`}
+                  className={`mt-3 inline-block border-b ${RULE} pb-0.5 font-display text-[11px] uppercase tracking-[0.16em] transition-colors hover:border-[#1B1A17]`}
                 >
                   Calendrier et tarifs →
                 </a>
@@ -225,56 +279,39 @@ function Espaces() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────── Chiffres */
-
-function Chiffres() {
-  return (
-    <section className="bg-[#16130F] text-[#F7F5F1]">
-      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-10 sm:py-20">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {SPECIFICATIONS.map((s) => (
-            <div key={s.valeur}>
-              <p className="font-display text-4xl font-normal normal-case tracking-[-0.02em] sm:text-5xl">
-                {s.valeur}
-              </p>
-              <p className="mt-1.5 font-display text-[11px] uppercase tracking-[0.16em] text-[#F7F5F1]/55">
-                {s.unite}
-              </p>
-              <p className="mt-3 text-[13px] leading-relaxed text-[#F7F5F1]/70">
-                {s.detail}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ───────────────────────────────────────────────────────────────── Inclus */
+/* ──────────────────────────────────────────────────────────────── Inclus */
 
 function Inclus() {
   return (
-    <section id="inclus" className={`border-b ${RULE}`}>
-      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-10 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+    <section id="inclus" className={`border-t ${RULE} bg-[#E9E5DD]`}>
+      <div className="mx-auto max-w-[1500px] px-5 py-16 sm:px-10 sm:py-24">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.7fr]">
           <div>
             <p className={EYEBROW}>Ce qui est inclus</p>
-            <h2 className="mt-4 font-display text-3xl font-normal normal-case leading-[1.05] tracking-[-0.02em] sm:text-4xl">
-              Tout est déjà là.
-            </h2>
-            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-[#6F6960]">
-              Vous arrivez, vous branchez, ça marche. Rien de ce qui suit
-              n&apos;est en supplément — y compris le ménage, que la plupart des
-              lieux facturent à part.
-            </p>
+            <h2 className={`mt-4 text-3xl sm:text-4xl ${H2}`}>Tout est déjà là.</h2>
+
+            {/*
+              Les chiffres reviennent ici, posés sur le papier. Le bandeau noir
+              de la première version faisait « chiffres d'agence » — mêmes
+              données, sans l'effet plaquette.
+            */}
+            <dl className={`mt-10 grid grid-cols-2 gap-x-6 gap-y-7 border-t ${RULE} pt-8`}>
+              {SPECIFICATIONS.map((s) => (
+                <div key={s.valeur}>
+                  <dt className={`text-2xl sm:text-3xl ${H2}`}>{s.valeur}</dt>
+                  <dd className="mt-1 font-display text-[10px] uppercase tracking-[0.16em] text-[#77716A]">
+                    {s.unite}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
           <dl className={`grid gap-px border-t ${RULE} sm:grid-cols-2`}>
             {INCLUS.map((i) => (
               <div key={i.titre} className={`border-b ${RULE} py-5 pr-6`}>
                 <dt className="font-display text-[15px] normal-case">{i.titre}</dt>
-                <dd className="mt-1.5 text-[13.5px] leading-relaxed text-[#6F6960]">
+                <dd className="mt-1.5 text-[13.5px] leading-relaxed text-[#77716A]">
                   {i.texte}
                 </dd>
               </div>
@@ -286,13 +323,13 @@ function Inclus() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────── Signature */
+/* ────────────────────────────────────────────────────────────── Signature */
 
 function Signature() {
   return (
-    <section className={`border-b ${RULE}`}>
-      <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 py-16 sm:px-10 sm:py-24 lg:grid-cols-2">
-        <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#EDEAE5]">
+    <section className={`border-t ${RULE}`}>
+      <div className="mx-auto grid max-w-[1500px] items-center gap-12 px-5 py-16 sm:px-10 sm:py-24 lg:grid-cols-2">
+        <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#E4E0D8]">
           <Image
             src="/photos/servaire/seuil-cour.jpg"
             alt="Le seuil de l'Atelier vu depuis la cour pavée, portes ouvertes pendant un événement"
@@ -304,17 +341,17 @@ function Signature() {
 
         <div className="lg:pl-6">
           <p className={EYEBROW}>Le passage</p>
-          <h2 className="mt-4 font-display text-3xl font-normal normal-case leading-[1.05] tracking-[-0.02em] sm:text-5xl">
+          <h2 className={`mt-4 text-3xl sm:text-5xl ${H2}`}>
             Trois portes qui s&apos;ouvrent
             <br className="hidden sm:block" /> sur une cour pavée.
           </h2>
-          <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-[#6F6960]">
+          <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-[#77716A]">
             On ne rentre pas dans l&apos;Atelier depuis la rue : on traverse une
             cour. Et pendant un événement, les trois portes s&apos;ouvrent en
-            grand — la cour devient une pièce de plus, où l&apos;on sort fumer,
-            prendre l&apos;air, se parler.
+            grand — la cour devient une pièce de plus, où l&apos;on sort prendre
+            l&apos;air et se parler.
           </p>
-          <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[#6F6960]">
+          <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[#77716A]">
             C&apos;est aussi par là qu&apos;entrent les voitures, les
             scénographies et les livraisons. Une adresse sur rue, un lieu qui ne
             se donne qu&apos;une fois le porche franchi.
@@ -325,40 +362,33 @@ function Signature() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────── Références */
+/* ────────────────────────────────────────────────────────────── Références */
 
 function References() {
   const [phare, ...autres] = REFERENCES;
 
   return (
-    <section id="references" className={`border-b ${RULE}`}>
-      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-10 sm:py-24">
+    <section id="references" className={`border-t ${RULE} bg-[#E9E5DD]`}>
+      <div className="mx-auto max-w-[1500px] px-5 py-16 sm:px-10 sm:py-24">
         <p className={EYEBROW}>Références</p>
-        <h2 className="mt-4 max-w-3xl font-display text-3xl font-normal normal-case leading-[1.05] tracking-[-0.02em] sm:text-5xl">
+        <h2 className={`mt-4 max-w-3xl text-3xl sm:text-5xl ${H2}`}>
           Ce qui s&apos;est passé ici.
         </h2>
 
-        {/* Cas principal — Servaire, le seul récit qui montre tout à la fois. */}
         <article className="mt-14">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-end">
-            <div>
-              <h3 className="font-display text-2xl font-normal normal-case tracking-[-0.01em]">
-                {phare.marque}
-              </h3>
-              <p className="mt-1 font-display text-[11px] uppercase tracking-[0.14em] text-[#6F6960]">
-                {phare.quoi} · {phare.quand}
-              </p>
-              <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[#6F6960]">
-                {phare.texte}
-              </p>
-            </div>
-          </div>
+          <h3 className={`text-2xl ${H2}`}>{phare.marque}</h3>
+          <p className="mt-1 font-display text-[11px] uppercase tracking-[0.16em] text-[#77716A]">
+            {phare.quoi} · {phare.quand}
+          </p>
+          <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-[#77716A]">
+            {phare.texte}
+          </p>
 
           <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
             {phare.photos.map((p) => (
               <div
                 key={p.src}
-                className="relative aspect-[3/4] w-full overflow-hidden bg-[#EDEAE5]"
+                className="relative aspect-[3/4] w-full overflow-hidden bg-[#E4E0D8]"
               >
                 <Image
                   src={p.src}
@@ -372,17 +402,14 @@ function References() {
           </div>
         </article>
 
-        {/* Les autres cas, en liste sèche. */}
         <div className={`mt-16 grid gap-px border-t ${RULE} lg:grid-cols-3`}>
           {autres.map((r) => (
             <article key={r.marque} className={`border-b ${RULE} py-7 pr-8`}>
-              <h3 className="font-display text-lg font-normal normal-case">
-                {r.marque}
-              </h3>
-              <p className="mt-1 font-display text-[11px] uppercase tracking-[0.14em] text-[#6F6960]">
+              <h3 className={`text-lg ${H2}`}>{r.marque}</h3>
+              <p className="mt-1 font-display text-[11px] uppercase tracking-[0.16em] text-[#77716A]">
                 {r.quoi}
               </p>
-              <p className="mt-3 text-[13.5px] leading-relaxed text-[#6F6960]">
+              <p className="mt-3 text-[13.5px] leading-relaxed text-[#77716A]">
                 {r.texte}
               </p>
             </article>
@@ -393,26 +420,104 @@ function References() {
   );
 }
 
-/* ───────────────────────────────────────────────────────────────── Règles */
+/* ─────────────────────────────────────────────────────────── Avant / après */
+
+/**
+ * Remplace le paragraphe à la première personne qu'Étienne a refusé.
+ *
+ * Il ne veut pas écrire « c'est moi qui fais les visites ». Deux photos au même
+ * endroit, avril 2024 et aujourd'hui, disent la même chose sans qu'il ait à la
+ * dire — et c'est plus difficile à contredire qu'une déclaration.
+ */
+function AvantApres() {
+  return (
+    <section className={`border-t ${RULE}`}>
+      <div className="mx-auto max-w-[1500px] px-5 py-16 sm:px-10 sm:py-24">
+        <p className={EYEBROW}>Avril 2024 — aujourd&apos;hui</p>
+        <h2 className={`mt-4 max-w-2xl text-3xl sm:text-4xl ${H2}`}>
+          C&apos;était un atelier de plomberie.
+        </h2>
+
+        <div className="mt-10 grid gap-3 sm:grid-cols-2">
+          <figure>
+            <div className="relative aspect-[3/2] w-full overflow-hidden bg-[#E4E0D8]">
+              <Image
+                src="/photos/avant/atelier-avant-travaux.jpg"
+                alt="Le lieu avant les travaux, en avril 2024 : sol de béton nu, murs décrépis"
+                fill
+                sizes="(max-width: 640px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="pt-2 font-display text-[10px] uppercase tracking-[0.16em] text-[#77716A]">
+              Avril 2024
+            </figcaption>
+          </figure>
+          <figure>
+            <div className="relative aspect-[3/2] w-full overflow-hidden bg-[#E4E0D8]">
+              <Image
+                src="/photos/lieu/photo-02.jpg"
+                alt="Le même volume aujourd'hui, sol clair et murs de béton conservés"
+                fill
+                sizes="(max-width: 640px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="pt-2 font-display text-[10px] uppercase tracking-[0.16em] text-[#77716A]">
+              Aujourd&apos;hui
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────── Confiance */
+
+/** Les logos, redescendus et discrets — plus la liste en toutes lettres, lisible. */
+function Confiance() {
+  return (
+    <section className={`border-t ${RULE}`}>
+      <div className="mx-auto max-w-[1500px] px-5 py-12 sm:px-10 sm:py-14">
+        <div className="grid grid-cols-3 items-center gap-x-8 gap-y-6 sm:grid-cols-6 lg:grid-cols-9">
+          {CLIENTS.map((c) => (
+            <div key={c} className="relative h-6 w-full opacity-40 grayscale">
+              <Image
+                src={`/images/clients/${c}.png`}
+                alt={c.replace(/-/g, " ")}
+                fill
+                sizes="140px"
+                className="object-contain object-left"
+              />
+            </div>
+          ))}
+        </div>
+        <p className="mt-7 max-w-4xl text-[13px] leading-relaxed text-[#77716A]">
+          {CLIENTS_TEXTE}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────────────── Règles */
 
 function Regles() {
   return (
-    <section className={`border-b ${RULE}`}>
-      <div className="mx-auto max-w-[1400px] px-5 py-14 sm:px-10 sm:py-16">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.6fr] lg:items-center">
+    <section className={`border-t ${RULE} bg-[#E9E5DD]`}>
+      <div className="mx-auto max-w-[1500px] px-5 py-14 sm:px-10 sm:py-16">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.7fr] lg:items-center">
           <div>
             <p className={EYEBROW}>Les règles, écrites d&apos;avance</p>
-            <h2 className="mt-4 font-display text-2xl font-normal normal-case leading-tight tracking-[-0.01em] sm:text-3xl">
+            <h2 className={`mt-4 text-2xl sm:text-3xl ${H2}`}>
               Un immeuble habité,
               <br className="hidden sm:block" /> des voisins qui dorment.
             </h2>
           </div>
           <ul className="grid gap-px sm:grid-cols-2">
             {REGLES.map((r) => (
-              <li
-                key={r}
-                className={`border-t ${RULE} py-3.5 text-[15px] text-[#6F6960]`}
-              >
+              <li key={r} className={`border-t ${RULE} py-3.5 text-[15px] text-[#77716A]`}>
                 {r}
               </li>
             ))}
@@ -423,44 +528,14 @@ function Regles() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────────── Hôte */
-
-function Hote() {
-  return (
-    <section className={`border-b ${RULE}`}>
-      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-10 sm:py-20">
-        <div className="max-w-2xl">
-          <p className={EYEBROW}>Qui vous reçoit</p>
-          <h2 className="mt-4 font-display text-2xl font-normal normal-case leading-tight tracking-[-0.01em] sm:text-4xl">
-            C&apos;est moi qui fais les visites.
-          </h2>
-          <p className="mt-6 text-[15px] leading-relaxed text-[#6F6960]">
-            Je m&apos;appelle Étienne, le lieu est à moi, et je suis là. C&apos;est
-            moi qui vous ferai visiter, moi qui répondrai le soir de votre
-            événement, et moi qui repeindrai le mur si quelque chose s&apos;abîme.
-            Les rideaux, le mobilier, les lumières : tout a été choisi une pièce
-            après l&apos;autre.
-          </p>
-          <p className="mt-4 text-[15px] leading-relaxed text-[#6F6960]">
-            C&apos;est la raison pour laquelle il n&apos;y a que trois espaces, et
-            pourquoi ils sont tous à la même adresse.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ────────────────────────────────────────────────────────────────── Fin */
+/* ───────────────────────────────────────────────────────────────────  Fin */
 
 function Fin() {
   return (
-    <section id="visiter" className="bg-[#16130F] text-[#F7F5F1]">
-      <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-10 sm:py-28">
-        <h2 className="max-w-3xl font-display text-3xl font-normal normal-case leading-[1.05] tracking-[-0.02em] sm:text-5xl">
-          Venez voir.
-        </h2>
-        <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[#F7F5F1]/70">
+    <section id="visiter" className="bg-[#1B1A17] text-[#F1EEE8]">
+      <div className="mx-auto max-w-[1500px] px-5 py-20 sm:px-10 sm:py-28">
+        <h2 className={`max-w-3xl text-3xl sm:text-5xl ${H2}`}>Venez voir.</h2>
+        <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[#F1EEE8]/70">
           La visite est gratuite et dure une demi-heure. Vous pouvez aussi
           regarder les prix et les dates libres avant, sans nous écrire.
         </p>
@@ -470,13 +545,13 @@ function Fin() {
             href="https://calendly.com/chezlesplombiers/visite"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#F7F5F1] px-6 py-3.5 font-display text-[11px] uppercase tracking-[0.16em] text-[#16130F] transition-opacity hover:opacity-85"
+            className="bg-[#F1EEE8] px-6 py-3.5 font-display text-[11px] uppercase tracking-[0.18em] text-[#1B1A17] transition-opacity hover:opacity-85"
           >
             Réserver une visite
           </a>
           <a
             href="/tarifs"
-            className="border border-[#F7F5F1]/50 px-6 py-3.5 font-display text-[11px] uppercase tracking-[0.16em] transition-colors hover:bg-[#F7F5F1] hover:text-[#16130F]"
+            className="border border-[#F1EEE8]/45 px-6 py-3.5 font-display text-[11px] uppercase tracking-[0.18em] transition-colors hover:bg-[#F1EEE8] hover:text-[#1B1A17]"
           >
             Prix et disponibilités
           </a>
@@ -484,15 +559,24 @@ function Fin() {
             href="https://wa.me/33761471073"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-[#F7F5F1]/50 px-6 py-3.5 font-display text-[11px] uppercase tracking-[0.16em] transition-colors hover:bg-[#F7F5F1] hover:text-[#16130F]"
+            className="border border-[#F1EEE8]/45 px-6 py-3.5 font-display text-[11px] uppercase tracking-[0.18em] transition-colors hover:bg-[#F1EEE8] hover:text-[#1B1A17]"
           >
             WhatsApp
           </a>
         </div>
 
-        <p className="mt-16 font-display text-[11px] uppercase tracking-[0.16em] text-[#F7F5F1]/45">
-          {ADRESSE} · Maquette de travail, non publiée
-        </p>
+        <div className="mt-16">
+          <Image
+            src="/images/logo/logotype-adresse-blanc.png"
+            alt={`Chez les Plombiers, ${ADRESSE}`}
+            width={4501}
+            height={1013}
+            className="h-auto w-full max-w-[320px] opacity-80"
+          />
+          <p className="mt-6 font-display text-[10px] uppercase tracking-[0.18em] text-[#F1EEE8]/40">
+            Maquette de travail, non publiée
+          </p>
+        </div>
       </div>
     </section>
   );
