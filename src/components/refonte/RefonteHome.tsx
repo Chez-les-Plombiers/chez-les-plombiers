@@ -151,7 +151,7 @@ function Ouverture() {
             est vaste, et c'est le repère que les gens ont en tête.
           */}
           <h1 className="font-clp text-sm font-bold uppercase leading-relaxed tracking-[0.1em]">
-            Lieux événementiels — {ADRESSE}, Pont Neuf
+            Lieux événementiels — {ADRESSE} — Pont Neuf
           </h1>
           {/*
             ⚠️ Ce chapô doit tenir sur UNE ligne en grand écran : Étienne a
@@ -174,14 +174,22 @@ function Ouverture() {
 /**
  * Les trois lieux.
  *
- * ⚠️ DEUX actions par carte, et c'est délibéré. La version précédente n'offrait
- * que « Prix et disponibilités ». Étienne : « j'arrive là, je vois L'ATELIER,
- * ok c'est ce qu'il me faut, je veux voir des photos, je veux voir les infos —
- * là on n'a qu'un bouton prix et disponibilité ». Le prix n'est pas la première
- * question : on regarde le lieu d'abord.
+ * ⚠️ UNE SEULE cible par tuile, et la tuile entière est le lien. C'est la
+ * troisième forme en deux jours, et la bonne :
  *
- * Les pages de lieu restent à construire : leur lien est donc affiché en
- * attente plutôt que masqué, pour que la structure soit visible.
+ *   1. un seul lien « Prix et disponibilités » — Étienne : « j'arrive là, je
+ *      vois L'ATELIER, ok c'est ce qu'il me faut, je veux voir des photos, je
+ *      veux voir les infos ». Le prix n'est pas la première question.
+ *   2. deux liens côte à côte — trop de décisions pour une vignette.
+ *   3. la tuile entière, avec le contour qui s'allume au survol : « un peu
+ *      comme t'as fait plus bas dans les tuiles tarifs et infos ».
+ *
+ * ⚠️ Plus de phrase descriptive : la photo la remplace. Ne pas la remettre « au
+ * cas où » — c'est ce qui rendait le bloc trop lourd.
+ *
+ * ⚠️ PROVISOIRE : les pages de lieu n'existent pas encore, donc la tuile pointe
+ * sur le calendrier du lieu. Une fois `/atelier` et `/boutique` construites,
+ * passer `pagePrete` à true dans `data.ts` — rien d'autre à changer.
  */
 function Espaces() {
   return (
@@ -189,54 +197,52 @@ function Espaces() {
       <Titre>Les trois espaces</Titre>
       <div className="grid gap-3 sm:grid-cols-3">
         {ESPACES.map((e) => (
-          <div key={e.slug} className={`${CADRE} flex flex-col gap-5 p-5`}>
-            <div className="flex-1">
-              <h2 className="font-clp text-sm font-bold uppercase tracking-[0.1em]">
-                {e.nom}
-              </h2>
-              <p className="mt-1 text-[11px] leading-tight text-[#8A8A8A]">
-                {e.surface} · {e.capacite} · {e.position.toLowerCase()}
-              </p>
-
-              <p className="mt-4 font-mono text-base font-bold">
-                {e.prix}
-                <span className="ml-1.5 text-[10px] font-normal text-[#8A8A8A]">
-                  HT / jour
-                </span>
-              </p>
-
-              <p className="mt-3 text-[13px] leading-relaxed text-[#A8A29A]">
-                {e.texte}
-              </p>
-
-              {e.equipements.length > 0 && (
-                <p className="mt-2 text-[12px] leading-relaxed text-[#8A8A8A]">
-                  {e.equipements.join(" · ")}
-                </p>
-              )}
+          <a
+            key={e.slug}
+            href={e.pagePrete ? e.page : e.tarifs}
+            className={`${CADRE} group flex flex-col overflow-hidden transition-colors hover:border-[#C8A96E]`}
+          >
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                src={e.photo}
+                alt={`${e.nom} — Chez les Plombiers, ${ADRESSE}`}
+                fill
+                sizes="(max-width: 640px) 100vw, 380px"
+                className="object-cover"
+              />
             </div>
 
-            <div className="flex flex-col gap-2 border-t border-[#3A3A3A] pt-4">
-              <a
-                href={e.pagePrete ? e.page : undefined}
-                aria-disabled={!e.pagePrete}
-                className={`font-mono text-[11px] uppercase tracking-wider ${
-                  e.pagePrete
-                    ? "text-[#E8E4DC] hover:text-[#C8A96E]"
-                    : "cursor-default text-[#5E5E5E]"
-                }`}
-              >
-                {e.pagePrete ? "Photos et infos →" : "Photos et infos — à venir"}
-              </a>
-              <a
-                href={e.tarifs}
+            <div className="flex flex-1 flex-col gap-4 p-5">
+              <div className="flex-1">
+                <h2 className="font-clp text-sm font-bold uppercase tracking-[0.1em]">
+                  {e.nom}
+                </h2>
+                <p className="mt-1 text-[11px] leading-tight text-[#8A8A8A]">
+                  {e.surface} · {e.capacite} · {e.position.toLowerCase()}
+                </p>
+
+                <p className="mt-4 font-mono text-base font-bold">
+                  {e.prix}
+                  <span className="ml-1.5 text-[10px] font-normal text-[#8A8A8A]">
+                    HT / jour
+                  </span>
+                </p>
+
+                {e.equipements.length > 0 && (
+                  <p className="mt-3 text-[12px] leading-relaxed text-[#8A8A8A]">
+                    {e.equipements.join(" · ")}
+                  </p>
+                )}
+              </div>
+
+              <span
                 className="font-mono text-[11px] uppercase tracking-wider"
                 style={{ color: LAITON }}
               >
-                Prix et disponibilités →
-              </a>
+                Voir le lieu →
+              </span>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </>

@@ -26,9 +26,13 @@ export const TELEPHONE = "+33 7 61 47 10 73";
 /**
  * Les trois lieux.
  *
- * ⚠️ `texte` décrit la MATIÈRE (ce qu'on voit en entrant), `equipements` liste
- * ce qu'on demande le plus souvent au téléphone. Les deux sont courts : le
- * détail vit sur la page du lieu et sur `/atelier/technique`.
+ * ⚠️ Plus de champ `texte` : la tuile porte désormais une PHOTO du lieu, et une
+ * photo dit « murs bruts, sol clair » mieux qu'une phrase. Étienne : « s'il y a
+ * une photo au-dessus, il n'y a plus besoin d'avoir un descriptif ». La matière
+ * sera décrite en toutes lettres sur la page du lieu.
+ *
+ * `equipements` liste ce qu'on demande le plus souvent au téléphone — court :
+ * le détail vit sur la page du lieu et sur `/atelier/technique`.
  *
  * ⚠️ Corrections du 20/09/2026, dictées par Étienne :
  * - « murs de béton brut » → « murs bruts » : il ne dit pas béton ;
@@ -48,8 +52,13 @@ export const ESPACES = [
     surface: "200 m²",
     capacite: "jusqu'à 200 personnes",
     prix: "1 000 à 4 000 €",
-    texte: "Murs bruts, poutres métalliques Eiffel, sol clair en résine.",
     equipements: ["Rideaux", "Espace modulable", "Climatisation réversible", "Cuisine et bar équipés"],
+    /*
+     * Le plan large au canapé rose et au coffre-fort du fond — celui du lien
+     * Calendly. Choix d'Étienne : « c'est ma préférée, on ne l'a pas beaucoup
+     * utilisée, et on voit bien les murs bruts et le côté technique ».
+     */
+    photo: "/photos/lieu/atelier-tuile.jpg",
     page: "/atelier",
     pagePrete: false,
     tarifs: "/tarifs",
@@ -61,8 +70,9 @@ export const ESPACES = [
     surface: "45 m²",
     capacite: "journée entière",
     prix: "1 000 €",
-    texte: "La vitrine, sous l'enseigne « Couverture Plomberie » d'origine.",
     equipements: [],
+    // ⚠️ Provisoire — en attente du choix d'Étienne sur /refonte/tuiles.
+    photo: "/photos/boutique/candidats/b01.jpg",
     page: "/boutique",
     pagePrete: false,
     tarifs: "/tarifs/boutique",
@@ -74,8 +84,9 @@ export const ESPACES = [
     surface: "100 m²",
     capacite: "jusqu'à 50 personnes",
     prix: "1 000 à 2 000 €",
-    texte: "Parquet clair, mobilier chiné. Se loue seul ou en coulisses.",
     equipements: [],
+    // ⚠️ Provisoire — en attente du choix d'Étienne sur /refonte/tuiles.
+    photo: "/photos/appartement/appartement-01.jpg",
     page: "/appartement",
     pagePrete: false,
     tarifs: "/tarifs/appartement",

@@ -81,6 +81,15 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
   écrire correctement sur la page du lieu (ouvrir les trois élargit le passage).
 - Le sol : « résine » est le mot retenu — c'est la question qu'on pose le plus.
 - Petites pages à ajouter au pied de page (et d'autres à venir).
+- **Photo des tuiles** : L'ATELIER est choisi. LA BOUTIQUE et L'APPARTEMENT
+  attendent un numéro — planche contact sur `/refonte/tuiles` (temporaire).
+- **Plaquette PDF** — Étienne est contre (« c'est un peu comme les cartes de
+  visite »), mais des agences en réclament une pour leur direction. Piste à
+  garder : plutôt qu'un PDF figé qui périme au premier changement de prix,
+  une **feuille de style d'impression** sur la page du lieu — « imprimer en
+  PDF » donne alors un document toujours à jour. Rien de décidé.
+- **Vidéo du lieu** : il en existe une qu'Étienne aime bien, dans `PHOTOS/`.
+  À placer plus tard.
 - Les 5 vignettes photos de la home sont des bouche-trous : « défilés » montre
   une salle vide, « expositions » montre la cour.
 - Chercher une photo d'une voiture **en train d'entrer** (celle en place est la
@@ -103,6 +112,7 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
 | Composant de la maquette | `src/components/refonte/RefonteHome.tsx` |
 | Contenu (chiffres, pages, faits) | `src/components/refonte/data.ts` |
 | Planche contact photos | `/refonte/photos` — **temporaire, à supprimer** |
+| Planche contact des tuiles | `/refonte/tuiles` — **temporaire, à supprimer** |
 | Photothèque | `Dropbox/CHEZ LES PLOMBIERS/PHOTOS/EVENTS/` (1514) et `INES/` (767) |
 | Travaux | `Dropbox/CHEZ LES PLOMBIERS/TRAVAUX/` et `IMMEUBLE : TRAVAUX/` |
 | Fontes | `src/fonts/eurostile-extended{,-bold}.ttf` |
