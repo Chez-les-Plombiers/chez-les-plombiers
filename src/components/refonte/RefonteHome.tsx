@@ -4,6 +4,7 @@
  * une navigation côté client vers une route que ce routeur ne connaît pas.
  */
 import Image from "next/image";
+import { Logo } from "./Logo";
 import {
   ADRESSE,
   CATEGORIES_PHOTOS,
@@ -73,6 +74,7 @@ export function RefonteHome() {
         <Photos />
         <Clients />
         <Regles />
+        <Declinaisons />
       </main>
       <Pied />
     </div>
@@ -95,18 +97,15 @@ function Barre() {
     <header className="mx-auto max-w-[1180px] px-4 pt-5 sm:px-6">
       <div className={`${CADRE} flex flex-wrap items-center justify-between gap-4 px-5 py-4`}>
         {/*
-          Le logotype à l'adresse plutôt que le seul nom : il dit où on est dès
-          la première seconde, et il remplace le titre géant « 39 RUE DES
-          BOURDONNAIS, PARIS 1ER » qu'Étienne trouvait grotesque.
+          Le mot-symbole seul. La version à l'adresse a été essayée le
+          20/09/2026 et retirée le jour même : Étienne, « c'est un peu petit,
+          c'est trop petit, c'est peut-être pas la peine ». La taille du
+          mot-symbole, elle, est la bonne — ne pas la réduire.
+          L'adresse reste en texte dans le H1 juste en dessous : c'est elle que
+          Google lit, le logo n'est qu'une image.
         */}
-        <Image
-          src="/images/logo/logotype-adresse-blanc.png"
-          alt={`Chez les Plombiers — ${ADRESSE}`}
-          width={4501}
-          height={1013}
-          priority
-          className="h-10 w-auto sm:h-14"
-        />
+        <Logo hauteur={26} priority className="sm:hidden" />
+        <Logo hauteur={34} priority className="hidden sm:inline-flex" />
         <nav className="flex items-center gap-2">
           <a
             href="/tarifs"
@@ -146,12 +145,23 @@ function Ouverture() {
         </div>
         <div className="border-t border-[#3A3A3A] px-5 py-5">
           {/* ⚠️ Le H1 : modeste en taille, mais c'est le texte que Google lit. */}
+          {/*
+            « Lieux » au pluriel : il y en a trois depuis l'ouverture de LA
+            BOUTIQUE. « Pont Neuf » est là pour situer — le 1er arrondissement
+            est vaste, et c'est le repère que les gens ont en tête.
+          */}
           <h1 className="font-clp text-sm font-bold uppercase leading-relaxed tracking-[0.1em]">
-            Lieu événementiel — {ADRESSE}
+            Lieux événementiels — {ADRESSE}, Pont Neuf
           </h1>
-          <p className="mt-2 max-w-2xl text-[14px] leading-relaxed text-[#A8A29A]">
-            Trois espaces à la même adresse, à deux pas du Pont Neuf. Showrooms,
-            lancements presse, dîners privés, défilés, expositions.
+          {/*
+            ⚠️ Ce chapô doit tenir sur UNE ligne en grand écran : Étienne a
+            relevé un retour à la ligne au milieu de « dîners privés ». Ne pas
+            l'allonger, et ne pas lui remettre de `max-w-` : c'est ce qui le
+            cassait en deux.
+          */}
+          <p className="mt-2 text-[14px] leading-relaxed text-[#A8A29A]">
+            Trois espaces à la même adresse. Showrooms, lancements presse,
+            dîners privés, défilés, expositions.
           </p>
         </div>
       </div>
@@ -161,41 +171,72 @@ function Ouverture() {
 
 /* ─────────────────────────────────────────────────────────────── Espaces */
 
+/**
+ * Les trois lieux.
+ *
+ * ⚠️ DEUX actions par carte, et c'est délibéré. La version précédente n'offrait
+ * que « Prix et disponibilités ». Étienne : « j'arrive là, je vois L'ATELIER,
+ * ok c'est ce qu'il me faut, je veux voir des photos, je veux voir les infos —
+ * là on n'a qu'un bouton prix et disponibilité ». Le prix n'est pas la première
+ * question : on regarde le lieu d'abord.
+ *
+ * Les pages de lieu restent à construire : leur lien est donc affiché en
+ * attente plutôt que masqué, pour que la structure soit visible.
+ */
 function Espaces() {
   return (
     <>
       <Titre>Les trois espaces</Titre>
       <div className="grid gap-3 sm:grid-cols-3">
         {ESPACES.map((e) => (
-          <a
-            key={e.slug}
-            href={e.href}
-            className={`${CADRE} group flex flex-col justify-between gap-5 p-5 transition-colors hover:border-[#C8A96E]`}
-          >
-            <div>
+          <div key={e.slug} className={`${CADRE} flex flex-col gap-5 p-5`}>
+            <div className="flex-1">
               <h2 className="font-clp text-sm font-bold uppercase tracking-[0.1em]">
                 {e.nom}
               </h2>
               <p className="mt-1 text-[11px] leading-tight text-[#8A8A8A]">
                 {e.surface} · {e.capacite} · {e.position.toLowerCase()}
               </p>
+
               <p className="mt-4 font-mono text-base font-bold">
                 {e.prix}
                 <span className="ml-1.5 text-[10px] font-normal text-[#8A8A8A]">
                   HT / jour
                 </span>
               </p>
+
               <p className="mt-3 text-[13px] leading-relaxed text-[#A8A29A]">
                 {e.texte}
               </p>
+
+              {e.equipements.length > 0 && (
+                <p className="mt-2 text-[12px] leading-relaxed text-[#8A8A8A]">
+                  {e.equipements.join(" · ")}
+                </p>
+              )}
             </div>
-            <span
-              className="font-mono text-[10px] uppercase tracking-wider"
-              style={{ color: LAITON }}
-            >
-              Prix et disponibilités →
-            </span>
-          </a>
+
+            <div className="flex flex-col gap-2 border-t border-[#3A3A3A] pt-4">
+              <a
+                href={e.pagePrete ? e.page : undefined}
+                aria-disabled={!e.pagePrete}
+                className={`font-mono text-[11px] uppercase tracking-wider ${
+                  e.pagePrete
+                    ? "text-[#E8E4DC] hover:text-[#C8A96E]"
+                    : "cursor-default text-[#5E5E5E]"
+                }`}
+              >
+                {e.pagePrete ? "Photos et infos →" : "Photos et infos — à venir"}
+              </a>
+              <a
+                href={e.tarifs}
+                className="font-mono text-[11px] uppercase tracking-wider"
+                style={{ color: LAITON }}
+              >
+                Prix et disponibilités →
+              </a>
+            </div>
+          </div>
         ))}
       </div>
     </>
@@ -380,6 +421,32 @@ function Regles() {
               {quoi}
             </p>
             <p className="mt-1.5 text-[14px]">{quand}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+/**
+ * ⚠️ TEMPORAIRE — à supprimer une fois les déclinaisons validées.
+ *
+ * Les pages de lieu n'existent pas encore, mais Étienne doit pouvoir juger le
+ * logo décliné avant qu'on les construise. On ne montre pas les trois en tête
+ * de page : trois « CHEZ LES PLOMBIERS » sur un même écran, ce serait la
+ * répétition qu'il a reprochée au monogramme.
+ */
+function Declinaisons() {
+  return (
+    <>
+      <Titre>Le logo par lieu — à valider, ne restera pas ici</Titre>
+      <div className="grid gap-3 sm:grid-cols-3">
+        {ESPACES.map((e) => (
+          <div
+            key={e.slug}
+            className={`${CADRE} flex items-center justify-center py-10`}
+          >
+            <Logo hauteur={30} pied={e.nom.toUpperCase()} />
           </div>
         ))}
       </div>

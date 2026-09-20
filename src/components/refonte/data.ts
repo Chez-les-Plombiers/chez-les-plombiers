@@ -13,11 +13,33 @@
  *
  * ⚠️ Ne pas arrondir les chiffres « pour faire joli ». C'est leur précision qui
  * les rend crédibles et citables.
+ *
+ * Une partie de ce contenu vient du **brief d'origine**, retrouvé le 20/09/2026
+ * dans la page Notion « PRÉ-PROJET » : immeuble du 17e siècle, poutres
+ * métalliques Eiffel, déchargement par l'impasse, liste d'équipements. Ces
+ * éléments s'étaient perdus dans les réécritures successives du site.
  */
 
 export const ADRESSE = "39 rue des Bourdonnais, Paris 1er";
 export const TELEPHONE = "+33 7 61 47 10 73";
 
+/**
+ * Les trois lieux.
+ *
+ * ⚠️ `texte` décrit la MATIÈRE (ce qu'on voit en entrant), `equipements` liste
+ * ce qu'on demande le plus souvent au téléphone. Les deux sont courts : le
+ * détail vit sur la page du lieu et sur `/atelier/technique`.
+ *
+ * ⚠️ Corrections du 20/09/2026, dictées par Étienne :
+ * - « murs de béton brut » → « murs bruts » : il ne dit pas béton ;
+ * - « trois portes sur la cour » était FAUX. C'est **une seule porte à trois
+ *   battants**. On n'en ouvre qu'un pour entrer ; ouvrir les trois élargit le
+ *   passage. Trop détaillé pour cet encart — à écrire sur la page du lieu.
+ *
+ * `equipements` est volontairement vide pour LA BOUTIQUE et L'APPARTEMENT :
+ * on ne connaît pas leur équipement avec certitude, et inventer ici se
+ * retrouverait dans un devis.
+ */
 export const ESPACES = [
   {
     slug: "atelier",
@@ -26,8 +48,11 @@ export const ESPACES = [
     surface: "200 m²",
     capacite: "jusqu'à 200 personnes",
     prix: "1 000 à 4 000 €",
-    texte: "Murs de béton brut, sol clair, trois portes sur la cour.",
-    href: "/tarifs",
+    texte: "Murs bruts, poutres métalliques Eiffel, sol clair en résine.",
+    equipements: ["Rideaux", "Espace modulable", "Climatisation réversible", "Cuisine et bar équipés"],
+    page: "/atelier",
+    pagePrete: false,
+    tarifs: "/tarifs",
   },
   {
     slug: "boutique",
@@ -37,7 +62,10 @@ export const ESPACES = [
     capacite: "journée entière",
     prix: "1 000 €",
     texte: "La vitrine, sous l'enseigne « Couverture Plomberie » d'origine.",
-    href: "/tarifs/boutique",
+    equipements: [],
+    page: "/boutique",
+    pagePrete: false,
+    tarifs: "/tarifs/boutique",
   },
   {
     slug: "appartement",
@@ -47,12 +75,15 @@ export const ESPACES = [
     capacite: "jusqu'à 50 personnes",
     prix: "1 000 à 2 000 €",
     texte: "Parquet clair, mobilier chiné. Se loue seul ou en coulisses.",
-    href: "/tarifs/appartement",
+    equipements: [],
+    page: "/appartement",
+    pagePrete: false,
+    tarifs: "/tarifs/appartement",
   },
 ] as const;
 
 /**
- * Les six adresses du site. C'est le sommaire, et c'est tout le site.
+ * Les adresses du site. C'est le sommaire, et c'est tout le site.
  *
  * `/tarifs` et `/infos` existent. Les autres sont à construire — elles sont
  * listées ici pour que la structure soit visible et discutable avant d'être
@@ -65,13 +96,15 @@ export const PAGES = [
   { href: "/photos", titre: "Photos", detail: "Par type d'événement : dîners, showrooms, défilés, lancements, expositions", pret: false },
   { href: "/infos", titre: "Venir et livrer", detail: "Accès, stationnement, déchargement, le quartier", pret: true },
   { href: "/visiter", titre: "Réserver une visite", detail: "Gratuite, une demi-heure, sur rendez-vous", pret: false },
+  { href: "/histoire", titre: "L'histoire du lieu", detail: "Un garage de plombiers des années 1970 devenu lieu d'événements", pret: false },
 ] as const;
 
 /**
  * Les faits. Vérifiables, chiffrés, et pour la plupart introuvables ailleurs.
  *
- * L'accès véhicule ouvre la liste à la demande d'Étienne : c'est son argument
- * le plus rare, et le seul terrain non-marque où le site produit des contacts.
+ * ⚠️ L'accès véhicule porte `fort: true` : il a sa propre section, illustrée
+ * par une photo. Il ne doit PAS réapparaître dans la grille — et surtout pas en
+ * gros titre (« UNE VOITURE PEUT ENTRER » : « c'est too much », Étienne).
  */
 export const FAITS = [
   {
@@ -82,8 +115,9 @@ export const FAITS = [
   },
   { valeur: "800 kg/m²", detail: "Sol renforcé au double de la norme, pour que la voiture puisse rester.", fort: false },
   { valeur: "4,63 m", detail: "Largeur de projection en une seule image, sur le mur courbe.", fort: false },
-  { valeur: "36 kVA", detail: "Triphasé, de quoi alimenter une scénographie complète.", fort: false },
-  { valeur: "200 m² + 100 m²", detail: "La surface d'événement, et le stockage en sous-sol qui va avec.", fort: false },
+  { valeur: "36 kVA", detail: "Triphasé, de quoi alimenter une scénographie complète — ou recharger un véhicule électrique.", fort: false },
+  { valeur: "Déchargement par l'impasse", detail: "Une seconde porte sur l'impasse des Bourdonnais, pour le mobilier et la technique.", fort: false },
+  { valeur: "200 m² + 100 m²", detail: "La surface d'événement, et le sous-sol qui va avec : stockage ou backstage.", fort: false },
   { valeur: "Ménage et régisseur", detail: "Compris dans le tarif, jamais en supplément.", fort: false },
 ] as const;
 
@@ -96,7 +130,7 @@ export const CATEGORIES_PHOTOS = [
   { slug: "expositions", nom: "Expositions", photo: "/photos/servaire/cour-panneau.jpg" },
 ] as const;
 
-/** Logos présents dans /public/images/clients — affichés ET nommés en texte. */
+/** Logos présents dans /public/images/clients — gardés pour un usage futur. */
 export const CLIENTS = [
   "porsche", "prada", "miu-miu", "levis", "oakley", "new-balance",
   "cnn", "publicis", "philip-morris", "schwarzkopf", "auditoire", "zmirov",
