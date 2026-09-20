@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Logo } from "./Logo";
 import { TuilePhotos } from "./TuilePhotos";
-import { Barre, Bloc, CADRE, Corps, LAITON, Page, Pied, Titre } from "./chrome";
+import { Barre, Bloc, CADRE, Corps, LAITON, Page, Pied, Titre, lien } from "./chrome";
 import {
   ADRESSE,
   CATEGORIES_PHOTOS,
@@ -141,13 +141,7 @@ function Espaces() {
     <Bloc grand>
       <div className="grid gap-3 sm:grid-cols-3">
         {ESPACES.map((e) => {
-          /*
-           * ⚠️ BASCULE : tant que la refonte vit sous `/refonte`, les pages de
-           * lieu aussi. `page` porte l'URL DÉFINITIVE (`/atelier`) ; le préfixe
-           * est ajouté ici, à un seul endroit. Le jour de la mise en ligne, on
-           * retire le préfixe sur cette ligne et rien d'autre ne bouge.
-           */
-          const cible = e.pagePrete ? `/refonte${e.page}` : e.tarifs;
+          const cible = e.pagePrete ? lien(e.page) : e.tarifs;
           return (
             <div
               key={e.slug}

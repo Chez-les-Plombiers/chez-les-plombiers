@@ -9,7 +9,6 @@ import { ADRESSE, TELEPHONE } from "./data";
 const TEL_BRUT = TELEPHONE.replace(/\s/g, "");
 const WHATSAPP = "https://wa.me/33761471073";
 const INSTAGRAM = "https://instagram.com/chezlesplombiers";
-const CALENDLY = "https://calendly.com/chezlesplombiers/visite";
 
 /**
  * La charpente partagée par toutes les pages de la refonte.
@@ -37,6 +36,22 @@ export const BORD = "border border-[#3A3A3A]";
 export const LAITON = "#C8A96E";
 export const CADRE = `${BLOC} ${BORD}`;
 export const LABEL = "font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]";
+
+/**
+ * ⚠️ LE JOUR DE LA BASCULE, C'EST ICI, ET NULLE PART AILLEURS.
+ *
+ * Les données portent les URL DÉFINITIVES (`/atelier`, `/infos`, `/visiter`).
+ * Tant que la refonte vit sous `/refonte`, cette fonction ajoute le préfixe.
+ * Le jour de la mise en ligne, on renvoie `href` tel quel et tout le site
+ * bascule d'un coup.
+ *
+ * `/tarifs` en est exempté : ce n'est pas une page de cette application, c'est
+ * l'autre zone Next, déjà en production à son adresse définitive.
+ */
+export function lien(href: string): string {
+  if (href.startsWith("/tarifs")) return href;
+  return `/refonte${href}`;
+}
 
 /**
  * Un groupe de blocs.
@@ -139,10 +154,13 @@ export function Barre({ lieu }: { lieu?: string }) {
           >
             Tarifs
           </a>
+          {/*
+            ⚠️ « Visiter » mène désormais à NOTRE page, plus à Calendly en
+            direct : la page porte les repères (durée, horaires, où se
+            retrouver) et intègre le calendrier dans notre décor.
+          */}
           <a
-            href="https://calendly.com/chezlesplombiers/visite"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={lien("/visiter")}
             className={`${BORD} px-3 py-2.5 font-clp text-[10px] uppercase tracking-[0.12em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E] sm:px-4 sm:tracking-[0.16em]`}
           >
             Visiter
@@ -188,17 +206,18 @@ export function Pied() {
     {
       titre: "Les lieux",
       liens: [
-        { nom: "L'Atelier", href: "/refonte/atelier" },
-        { nom: "La Boutique", href: "/tarifs/boutique" },
-        { nom: "L'Appartement", href: "/tarifs/appartement" },
+        { nom: "L'Atelier", href: lien("/atelier") },
+        { nom: "La Boutique", href: lien("/boutique") },
+        { nom: "L'Appartement", href: lien("/appartement") },
       ],
     },
     {
       titre: "Le site",
       liens: [
         { nom: "Tarifs et disponibilités", href: "/tarifs", suffixe: "/tarifs" },
-        { nom: "Venir et livrer", href: "/refonte/infos", suffixe: "/infos" },
-        { nom: "Réserver une visite", href: CALENDLY, externe: true },
+        { nom: "Venir et livrer", href: lien("/infos"), suffixe: "/infos" },
+        { nom: "Conditions de location", href: lien("/conditions"), suffixe: "/conditions" },
+        { nom: "Réserver une visite", href: lien("/visiter"), suffixe: "/visiter" },
       ],
     },
     {

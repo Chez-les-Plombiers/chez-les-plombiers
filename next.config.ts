@@ -15,7 +15,10 @@ const csp = [
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https://*.elfsightcdn.com https://fonts.gstatic.com https://fonts.axept.io",
   "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.clarity.ms https://c.bing.com https://*.elfsight.com https://*.elfsightcdn.com https://*.axept.io https://axeptio.imgix.net",
-  "frame-src https://my.matterport.com https://www.google.com https://www.instagram.com",
+  // ⚠️ `calendly.com` ajouté le 20/09/2026 : la page /visiter intègre le
+  // calendrier au lieu de rediriger. Sans cette entrée, l'iframe est bloquée
+  // en silence — page blanche, aucune erreur visible.
+  "frame-src https://my.matterport.com https://www.google.com https://www.instagram.com https://calendly.com https://assets.calendly.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "object-src 'none'",
