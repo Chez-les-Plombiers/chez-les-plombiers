@@ -1,0 +1,101 @@
+# Refonte du site — liste de chantier
+
+Maquette : **https://www.chezlesplombiers.fr/refonte** (`noindex`, hors sitemap,
+liée depuis nulle part). Le site en production ne bouge pas tant qu'on n'a pas
+tout construit — la bascule sera un seul déploiement.
+
+**Comment on travaille.** Étienne dicte en vrac quand ça lui vient ; Claude range
+ici. Deux régimes : les *détails* (marge, mot, couleur, bloc déplacé) sont faits
+sans demander ; les *choix* (page en plus, règle métier, texte public, prix)
+donnent lieu à **une** question, et on attend la réponse. Les photos se
+choisissent **une page à la fois**, sur planche contact numérotée.
+
+---
+
+## La direction, arrêtée le 20/09/2026
+
+Le site ne cherche plus à être beau — Instagram s'en charge. Il répond à des
+questions, complètement, à des adresses qu'on peut envoyer à un client.
+
+Le dessin est **validé** : fond charbon, blocs encadrés, marges latérales,
+plusieurs blocs de même largeur par ligne, Eurostile pour les titres.
+
+⚠️ Règles nées d'un retour d'Étienne — les enfreindre, c'est refaire une erreur :
+
+| Règle | Pourquoi |
+|---|---|
+| Rien ne touche le bord de l'écran | une photo pleine largeur « fait site des années 2010 » |
+| Des contours, pas seulement des filets | un bloc encadré se lit comme une fiche |
+| Pas de titre qui crie | « UNE VOITURE PEUT ENTRER » en capitales : « c'est too much » |
+| Pas de monogramme répété | « ça se répète trop » |
+| Pas de « tournages » | ce métier n'est pas recherché |
+| Ne jamais dénigrer les concurrents | ni « la plupart des lieux facturent à part » |
+| Ne pas écrire la référence RAL | demandé explicitement |
+| Pas de « c'est moi qui fais les visites » | « ça me gêne » |
+| Les prix vivent à un seul endroit | `/tarifs` |
+
+**Le « lire plus » a été écarté** (proposé par Étienne, argumenté contre par
+Claude, à rouvrir s'il insiste) : un site fait pour répondre ne met pas un clic
+entre la question et la réponse. Les blocs sont courts ET complets ; le
+développé est une vraie page qu'on peut envoyer.
+
+⚠️ **Le H1 en texte n'est pas décoratif.** Le logotype à l'adresse est une
+image : Google n'y lit rien. Cette page porte 81 % du trafic du site, sur le nom
+et l'adresse. Ne pas supprimer le H1 en trouvant qu'il fait doublon avec le logo.
+
+⚠️ **Eurostile est chargée depuis les .ttf desktop.** La licence web n'est pas
+achetée. La maquette ne doit pas devenir publique avant. La fonte **n'a pas de
+signe €** — c'est pour ça que les prix sont en `font-mono`.
+
+---
+
+## Fait
+
+- [x] Home refondue — blocs charbon, logotype à l'adresse, preuve voiture en photo
+- [x] Eurostile chargée sous `--font-clp` (le site en prod reste sur Wix Madefor)
+- [x] Grille de logos clients retirée, noms gardés en toutes lettres
+
+## À construire
+
+| Page | Ce qu'elle répond | État |
+|---|---|---|
+| `/atelier/plans` | plans cotés, dimensions, à télécharger | à faire |
+| `/atelier/technique` | électricité, son, lumière, réseau, projection | à faire |
+| `/photos` | par type d'événement (5 catégories) | à faire |
+| `/visiter` | notre DA, Calendly **intégré** et non en redirection | à faire |
+| `/histoire` | comment on est arrivé là, photos des travaux | à faire |
+| `/infos` | existe — à resserrer sur accès / livraison / quartier | à réviser |
+
+## Détails notés, pas encore traités
+
+- Logo décliné par lieu : `L'ATELIER` / `LA BOUTIQUE` / `L'APPARTEMENT` à la
+  place de l'adresse. Fabricable sans le `.AI` — la ligne n'est que du texte en
+  Eurostile. **Question ouverte** : l'adresse disparaît-elle du lockup sur les
+  pages de lieu ?
+- Petites pages à ajouter au pied de page (histoire, et d'autres à venir).
+- Les 5 vignettes photos de la home sont des bouche-trous : « défilés » montre
+  une salle vide, « expositions » montre la cour.
+- Chercher une photo d'une voiture **en train d'entrer** (celle en place est la
+  Triumph garée à l'intérieur, dîner Maison 123).
+- Charbon froid (#1A1A1A) pour le site, charbon marron (#1C1A17) pour L'ATELIER.
+  À confirmer, Étienne trouve le marron « plus chaud ».
+
+## À trancher par Étienne
+
+- Licence web Eurostile — contacter le fondeur.
+- Retirer le conteneur GTM pour arrêter le double comptage GA4.
+- Accès admin Clarity (`vju7iukwc9`) et GTM (`GTM-PXGXK94F`) à demander à Frédéric.
+
+---
+
+## Où sont les choses
+
+| Quoi | Où |
+|---|---|
+| Composant de la maquette | `src/components/refonte/RefonteHome.tsx` |
+| Contenu (chiffres, pages, faits) | `src/components/refonte/data.ts` |
+| Planche contact photos | `/refonte/photos` — **temporaire, à supprimer** |
+| Photothèque | `Dropbox/CHEZ LES PLOMBIERS/PHOTOS/EVENTS/` (1514) et `INES/` (767) |
+| Travaux | `Dropbox/CHEZ LES PLOMBIERS/TRAVAUX/` et `IMMEUBLE : TRAVAUX/` |
+| Fontes | `src/fonts/eurostile-extended{,-bold}.ttf` |
+| Logos | `public/images/logo/` — ⚠️ `logotype-noir.png` fait 2000×2000 avec d'énormes marges ; la version détourée est `logo-black.png` |
