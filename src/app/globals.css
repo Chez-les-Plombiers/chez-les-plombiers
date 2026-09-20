@@ -23,6 +23,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --font-display: var(--font-wix-madefor), ui-sans-serif, system-ui, sans-serif;
+  /* Eurostile Extended — typo de marque. Réservée à la maquette /refonte
+     pour l'instant : `font-clp`. Voir le commentaire dans [locale]/layout.tsx. */
+  --font-clp: var(--font-eurostile), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {

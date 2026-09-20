@@ -1,29 +1,24 @@
 /**
  * Contenu de la maquette de refonte.
  *
- * Tout est ici, séparé de la mise en page : c'est ce qu'Étienne va vouloir
- * corriger en premier, et il doit pouvoir le faire sans toucher au JSX.
+ * ⚠️ Le site change de nature (décision Étienne, 20/09/2026) : ce n'est plus
+ * une vitrine, c'est un **jeu d'adresses qu'on envoie**. Un client demande les
+ * plans, on envoie un lien ; les dimensions, un lien ; des photos de dîners, un
+ * lien. Chaque page répond à UNE question, complètement.
  *
- * ⚠️ Les chiffres viennent des sources de vérité du projet (`venues.ts` côté
- * pricing, CGL, relevés du lieu). Ne pas les arrondir « pour faire joli » :
- * un chiffre précis est plus crédible qu'un chiffre rond, et c'est ce type de
- * donnée que les moteurs et les modèles de langage reprennent mot pour mot.
+ * Deux faits mesurés soutiennent ce choix : 96,6 % des clics Google viennent de
+ * gens qui tapent déjà le nom ou l'adresse — ils viennent vérifier, pas se
+ * faire séduire ; et ce sont les données chiffrées, pas les adjectifs, que les
+ * modèles de langage reprennent.
+ *
+ * ⚠️ Ne pas arrondir les chiffres « pour faire joli ». C'est leur précision qui
+ * les rend crédibles et citables.
  */
 
 export const ADRESSE = "39 rue des Bourdonnais, Paris 1er";
+export const TELEPHONE = "+33 7 61 47 10 73";
 
 export const ESPACES = [
-  {
-    slug: "boutique",
-    nom: "La Boutique",
-    position: "Sur la rue",
-    surface: "45 m²",
-    capacite: "Journée entière",
-    prix: "1 000 €",
-    photo: "/photos/boutique/facade.jpg",
-    texte:
-      "La vitrine. Ouverte sur le trottoir, sous l'enseigne « Couverture Plomberie » d'origine. Nue pour un pop-up, habillée pour un événement.",
-  },
   {
     slug: "atelier",
     nom: "L'Atelier",
@@ -31,9 +26,18 @@ export const ESPACES = [
     surface: "200 m²",
     capacite: "jusqu'à 200 personnes",
     prix: "1 000 à 4 000 €",
-    photo: "/photos/projection-rideaux.jpg",
-    texte:
-      "Le grand volume. Murs de béton brut, sol clair, trois portes qui s'ouvrent sur la cour. C'est ici que se tiennent les défilés, les lancements et les dîners.",
+    texte: "Murs de béton brut, sol clair, trois portes sur la cour.",
+    href: "/tarifs",
+  },
+  {
+    slug: "boutique",
+    nom: "La Boutique",
+    position: "Sur la rue",
+    surface: "45 m²",
+    capacite: "journée entière",
+    prix: "1 000 €",
+    texte: "La vitrine, sous l'enseigne « Couverture Plomberie » d'origine.",
+    href: "/tarifs/boutique",
   },
   {
     slug: "appartement",
@@ -42,112 +46,54 @@ export const ESPACES = [
     surface: "100 m²",
     capacite: "jusqu'à 50 personnes",
     prix: "1 000 à 2 000 €",
-    photo: "/photos/appartement/appartement-01.jpg",
-    texte:
-      "Le confort. Parquet clair, mobilier chiné, lumière douce. Se loue seul, ou en coulisses de l'Atelier quand un événement a besoin d'un endroit où souffler.",
+    texte: "Parquet clair, mobilier chiné. Se loue seul ou en coulisses.",
+    href: "/tarifs/appartement",
   },
-] as const;
-
-/** Ce qui est compris dans le prix, et que la plupart des lieux facturent en plus. */
-export const INCLUS = [
-  {
-    titre: "Le ménage",
-    texte: "Entrée et sortie. Compris dans le tarif, jamais en supplément.",
-  },
-  {
-    titre: "Un régisseur sur place",
-    texte:
-      "Quelqu'un qui connaît le lieu est là pendant votre événement. Le plus souvent, c'est moi.",
-  },
-  {
-    titre: "Vidéoprojection 4,63 m",
-    texte:
-      "Optoma 4K, 8 800 lumens, HDMI, AirPlay et Chromecast.",
-  },
-  {
-    titre: "Sonos",
-    texte: "Le son du lieu, pilotable depuis un téléphone.",
-  },
-  {
-    titre: "Entrées XLR",
-    texte: "De quoi brancher un DJ ou une régie son.",
-  },
-  {
-    titre: "Micros",
-    texte:
-      "La musique baisse d'elle-même quand quelqu'un prend la parole, et revient après.",
-  },
-  {
-    titre: "Lumière pilotée",
-    texte:
-      "Éclairage DMX variable, du blanc chaud à la couleur. Cinq ambiances préréglées, ou la vôtre.",
-  },
-  {
-    titre: "Fibre 1 Gb/s et RJ45",
-    texte: "Wi-Fi invité avec un mot de passe simple, et des prises réseau partout.",
-  },
-  {
-    titre: "Cuisine équipée",
-    texte:
-      "Un vrai four, un micro-ondes, un réfrigérateur, une machine à glaçons, un lave-vaisselle et la vaisselle.",
-  },
-  {
-    titre: "Le droit de construire",
-    texte:
-      "On peut percer, fixer des écrans, poser des étagères, monter du mobilier sur mesure.",
-  },
-] as const;
-
-/** Chiffres vérifiables — c'est ce qui nous distingue des adjectifs de la concurrence. */
-export const SPECIFICATIONS = [
-  { valeur: "800 kg", unite: "par m² au sol", detail: "Renforcé au double de la norme. Une voiture peut entrer et rester." },
-  { valeur: "4,63 m", unite: "de projection", detail: "Sur le mur courbe, en une seule image." },
-  { valeur: "36 kVA", unite: "en triphasé", detail: "De quoi alimenter une scénographie complète." },
-  { valeur: "200 m²", unite: "de plain-pied", detail: "Accès véhicule direct depuis la rue, sans marche." },
 ] as const;
 
 /**
- * Références. Les noms sont écrits en toutes lettres, volontairement : un logo
- * est une image, et un modèle de langage ne lit pas les pixels.
+ * Les six adresses du site. C'est le sommaire, et c'est tout le site.
+ *
+ * `/tarifs` et `/infos` existent. Les autres sont à construire — elles sont
+ * listées ici pour que la structure soit visible et discutable avant d'être
+ * écrite, et marquées `pret: false` en attendant.
  */
-export const REFERENCES = [
+export const PAGES = [
+  { href: "/tarifs", titre: "Tarifs et disponibilités", detail: "Les prix jour par jour et le calendrier des trois lieux", pret: true },
+  { href: "/atelier/plans", titre: "Plans et dimensions", detail: "Plans cotés, à télécharger", pret: false },
+  { href: "/atelier/technique", titre: "Fiche technique", detail: "Électricité, son, lumière, réseau, projection", pret: false },
+  { href: "/photos", titre: "Photos", detail: "Par type d'événement : dîners, showrooms, défilés, lancements, expositions", pret: false },
+  { href: "/infos", titre: "Venir et livrer", detail: "Accès, stationnement, déchargement, le quartier", pret: true },
+  { href: "/visiter", titre: "Réserver une visite", detail: "Gratuite, une demi-heure, sur rendez-vous", pret: false },
+] as const;
+
+/**
+ * Les faits. Vérifiables, chiffrés, et pour la plupart introuvables ailleurs.
+ *
+ * L'accès véhicule ouvre la liste à la demande d'Étienne : c'est son argument
+ * le plus rare, et le seul terrain non-marque où le site produit des contacts.
+ */
+export const FAITS = [
   {
-    marque: "Servaire & Co",
-    quoi: "Paris Design Week",
-    quand: "Septembre 2026",
-    texte:
-      "Une semaine entière. Deux jours de montage, écrans fixés aux murs, étagères posées, mobilier construit sur mesure. Cent cinquante invités le mercredi soir, les trois portes ouvertes sur la cour, et la Boutique transformée en bar.",
-    photos: [
-      { src: "/photos/servaire/seuil-cour.jpg", alt: "L'entrée de l'Atelier vue depuis la cour pavée, pendant l'événement Servaire & Co" },
-      { src: "/photos/servaire/table-rouge.jpg", alt: "Table de présentation rouge et vitrine dans l'Atelier, rideaux crème le long des murs" },
-      { src: "/photos/servaire/invites-vitrine.jpg", alt: "Invités autour d'une vitrine, murs de béton brut et affiches encadrées" },
-      { src: "/photos/servaire/projection-cyclo.jpg", alt: "Projection grand format sur le mur courbe pendant la Paris Design Week" },
-    ],
+    valeur: "Une voiture peut entrer",
+    detail:
+      "Accès direct depuis la rue, de plain-pied, sans marche ni seuil. Le Porsche Cayenne électrique a été présenté à l'intérieur.",
+    fort: true,
   },
-  {
-    marque: "Porsche",
-    quoi: "Lancement du Cayenne électrique",
-    quand: "2026",
-    texte:
-      "La voiture est entrée dans l'Atelier. Le sol avait été renforcé à 800 kg/m² des années plus tôt, sans savoir encore pourquoi.",
-    photos: [],
-  },
-  {
-    marque: "Le Bon Coin",
-    quoi: "Remise des prix immobilier, avec l'agence Zmirov",
-    quand: "2026",
-    texte:
-      "Les annonces affichées dans tout le lieu, une prise de parole au micro, des journalistes. La musique baisse toute seule quand quelqu'un parle — personne n'a eu à s'en occuper.",
-    photos: [],
-  },
-  {
-    marque: "Oakley — Ray-Ban",
-    quoi: "Showrooms de Fashion Week",
-    quand: "2026",
-    texte:
-      "Oakley a construit son propre système d'accrochage dans l'Atelier. Ray-Ban s'est installé à l'étage, dans l'Appartement redécoré pour l'occasion.",
-    photos: [],
-  },
+  { valeur: "800 kg/m²", detail: "Sol renforcé au double de la norme, pour que la voiture puisse rester.", fort: false },
+  { valeur: "4,63 m", detail: "Largeur de projection en une seule image, sur le mur courbe.", fort: false },
+  { valeur: "36 kVA", detail: "Triphasé, de quoi alimenter une scénographie complète.", fort: false },
+  { valeur: "200 m² + 100 m²", detail: "La surface d'événement, et le stockage en sous-sol qui va avec.", fort: false },
+  { valeur: "Ménage et régisseur", detail: "Compris dans le tarif, jamais en supplément.", fort: false },
+] as const;
+
+/** Catégories de la photothèque. Pas de « tournages » : ce métier n'est pas recherché. */
+export const CATEGORIES_PHOTOS = [
+  { slug: "diners", nom: "Dîners privés", photo: "/photos/servaire/table-rouge.jpg" },
+  { slug: "showrooms", nom: "Showrooms", photo: "/photos/servaire/invites-vitrine.jpg" },
+  { slug: "defiles", nom: "Défilés", photo: "/photos/lieu/photo-01.jpg" },
+  { slug: "lancements", nom: "Lancements", photo: "/photos/servaire/projection-cyclo.jpg" },
+  { slug: "expositions", nom: "Expositions", photo: "/photos/servaire/cour-panneau.jpg" },
 ] as const;
 
 /** Logos présents dans /public/images/clients — affichés ET nommés en texte. */
@@ -158,12 +104,12 @@ export const CLIENTS = [
 ] as const;
 
 export const CLIENTS_TEXTE =
-  "Porsche, Prada, Miu Miu, Levi's, Oakley, Ray-Ban, New Balance, TikTok, Le Bon Coin, Mugler, CNN, Publicis, Zmirov, Servaire & Co et une centaine d'autres sont passés par le 39 rue des Bourdonnais.";
+  "Porsche, Prada, Miu Miu, Levi's, Oakley, Ray-Ban, New Balance, TikTok, Le Bon Coin, Mugler, CNN, Publicis, Zmirov et Servaire & Co sont passés par le 39 rue des Bourdonnais.";
 
 /** Règles du lieu — écrites d'avance, parce que les taire crée les malentendus. */
 export const REGLES = [
-  "Accès à partir de 7h",
-  "Cour et cigarettes jusqu'à 22h",
-  "Musique jusqu'à 23h",
-  "Lieu vidé de ses invités à minuit",
+  ["Accès", "à partir de 7h"],
+  ["Cour et cigarettes", "jusqu'à 22h"],
+  ["Musique", "jusqu'à 23h"],
+  ["Invités", "le lieu est vidé à minuit"],
 ] as const;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Wix_Madefor_Display } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { locales, getDictionary, type Locale } from "@/lib/i18n";
 import { I18nProvider } from "@/lib/i18n-context";
@@ -11,6 +12,27 @@ const wixMadefor = Wix_Madefor_Display({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-wix-madefor",
+  display: "swap",
+});
+
+/**
+ * Eurostile Extended — la typographie de la marque, celle de l'enseigne et des
+ * cartons d'invitation. Chargée ici, mais exposée sous sa propre variable :
+ * elle n'est utilisée que par la maquette de refonte (`font-clp`), le site en
+ * production reste sur Wix Madefor tant que la bascule n'est pas faite.
+ *
+ * ⚠️ Ces fichiers sont les .ttf **desktop** des Plombiers : la licence web
+ * n'est pas confirmée (achat en cours auprès du fondeur). Ne pas mettre la
+ * refonte en ligne publiquement avant de l'avoir.
+ * ⚠️ La fonte n'a **pas de signe €** — écrire les prix « 1 000 € » les rend en
+ * fonte de secours sur le glyphe seul. Les prix restent donc en `font-mono`.
+ */
+const eurostile = localFont({
+  src: [
+    { path: "../../fonts/eurostile-extended.ttf", weight: "400", style: "normal" },
+    { path: "../../fonts/eurostile-extended-bold.ttf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-eurostile",
   display: "swap",
 });
 
@@ -86,7 +108,7 @@ export default async function LocaleLayout({
   const skipText = dict.skipToContent as string;
 
   return (
-    <html lang={locale} className={wixMadefor.variable}>
+    <html lang={locale} className={`${wixMadefor.variable} ${eurostile.variable}`}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://static.axept.io" />
