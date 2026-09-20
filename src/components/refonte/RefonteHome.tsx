@@ -12,6 +12,7 @@ import {
   CLIENTS_TEXTE,
   ESPACES,
   FAITS,
+  OUVERTURE_PHOTOS,
   PAGES,
   REGLES,
   TELEPHONE,
@@ -134,16 +135,18 @@ function Ouverture() {
   return (
     <Bloc>
       <div className={`${CADRE} overflow-hidden`}>
-        <div className="relative aspect-[16/10] w-full sm:aspect-[21/9]">
-          <Image
-            src="/photos/lieu/atelier-kv.jpg"
-            alt="L'Atelier : canapé courbe rose, murs de béton brut, sol clair"
-            fill
-            priority
-            sizes="(max-width: 1180px) 100vw, 1180px"
-            className="object-cover"
-          />
-        </div>
+        {/*
+          Six vues, deux par lieu. Même mécanique que les tuiles : défilement
+          natif avec accroche, flèches par-dessus, glissement au doigt.
+          ⏳ La cible est `/photos`, à construire — à terme, la section du lieu.
+        */}
+        <TuilePhotos
+          photos={OUVERTURE_PHOTOS}
+          href="/photos"
+          lieu="Chez les Plombiers"
+          ratio="aspect-[16/10] sm:aspect-[21/9]"
+          sizes="(max-width: 1180px) 100vw, 1180px"
+        />
         <div className="border-t border-[#3A3A3A] px-5 py-5">
           {/* ⚠️ Le H1 : modeste en taille, mais c'est le texte que Google lit. */}
           {/*
@@ -201,7 +204,13 @@ function Espaces() {
     <Bloc>
       <div className="grid gap-3 sm:grid-cols-3">
         {ESPACES.map((e) => {
-          const cible = e.pagePrete ? e.page : e.tarifs;
+          /*
+           * ⚠️ BASCULE : tant que la refonte vit sous `/refonte`, les pages de
+           * lieu aussi. `page` porte l'URL DÉFINITIVE (`/atelier`) ; le préfixe
+           * est ajouté ici, à un seul endroit. Le jour de la mise en ligne, on
+           * retire le préfixe sur cette ligne et rien d'autre ne bouge.
+           */
+          const cible = e.pagePrete ? `/refonte${e.page}` : e.tarifs;
           return (
             <div
               key={e.slug}

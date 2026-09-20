@@ -82,7 +82,7 @@ export const ESPACES = [
       "Cuisine et bar équipés",
     ],
     page: "/atelier",
-    pagePrete: false,
+    pagePrete: true,
     tarifs: "/tarifs",
   },
   {
@@ -175,6 +175,28 @@ export const FAITS = [
   { valeur: "On passe par la cour", detail: "Les trois espaces ne communiquent pas entre eux : on ressort et on traverse la cour pour aller de l'un à l'autre.", fort: false },
 ] as const;
 
+/**
+ * Les vues de la photo d'ouverture : deux par lieu, dans l'ordre.
+ *
+ * Demande d'Étienne, 20/09/2026 : « le même système de photos qui défilent sur
+ * la photo principale en haut, qu'on voie deux photos de l'atelier, deux de la
+ * boutique et deux de l'appartement ».
+ *
+ * ⚠️ La première reste le plan chaud au canapé courbe : c'est le visuel qu'il a
+ * choisi entre plusieurs, et c'est la première chose que voit un arrivant.
+ *
+ * ⏳ Au clic, on ira un jour dans la section photos du lieu concerné. Pour
+ * l'instant les six pointent vers `/photos`, qui reste à construire.
+ */
+export const OUVERTURE_PHOTOS = [
+  "/photos/lieu/atelier-kv.jpg",
+  "/photos/lieu/atelier-tuile-2.jpg",
+  "/photos/boutique/tuile-1.jpg",
+  "/photos/boutique/tuile-2.jpg",
+  "/photos/appartement/appartement-04.jpg",
+  "/photos/appartement/appartement-02.jpg",
+] as const;
+
 /** Catégories de la photothèque. Pas de « tournages » : ce métier n'est pas recherché. */
 export const CATEGORIES_PHOTOS = [
   { slug: "diners", nom: "Dîners privés", photo: "/photos/servaire/table-rouge.jpg" },
@@ -201,3 +223,73 @@ export const REGLES = [
   ["Musique", "jusqu'à 23h"],
   ["Invités", "le lieu est vidé à minuit"],
 ] as const;
+
+/**
+ * Le détail d'un lieu — ce que porte sa page.
+ *
+ * ⚠️ Une page de lieu ne redonne PAS la grille de prix : les prix vivent à un
+ * seul endroit, `/tarifs`. Elle annonce la fourchette et renvoie au calendrier.
+ * C'est la règle qu'Étienne a posée en sortant le pricing de son sous-domaine,
+ * et la dupliquer ici garantit qu'un jour les deux divergeront.
+ *
+ * ⚠️ CHIFFRES EN CONFLIT, à trancher par Étienne. Le site actuel se contredit
+ * d'une page à l'autre : capacité cocktail « 150 » ou « 200 », hauteur sous
+ * plafond « 4,11 m » ou « 4,5 m ». On retient ici 200 et 4,11 m — le premier
+ * parce que c'est ce que disent la home et le pricing, le second parce qu'il
+ * vient de la base de connaissances opérationnelle du concierge, qui sert à
+ * répondre aux clients sur place. À confirmer au mètre.
+ */
+export const ATELIER = {
+  slug: "atelier",
+  nom: "L'Atelier",
+  intro:
+    "Un garage de plombiers des années 1970, dans un immeuble du 17e siècle. 200 m² au fond de la cour, murs bruts, poutres métalliques Eiffel, sol clair en résine.",
+
+  chiffres: [
+    ["Surface", "200 m²", "de plain-pied, au fond de la cour"],
+    ["Hauteur sous plafond", "4,11 m", "à confirmer — le site dit aussi 4,5 m"],
+    ["Capacité", "200 debout · 80 assis", "cocktail, ou dîner et conférence"],
+    ["Charge au sol", "800 kg/m²", "le double de la norme"],
+    ["Électricité", "36 kVA", "triphasé, recharge de véhicule électrique comprise"],
+    ["Projection", "4,63 m de large", "en une seule image, 8 800 lumens"],
+    ["Sous-sol", "100 m²", "stockage ou backstage"],
+    ["Réseau", "Fibre 1 Gb symétrique", "dédiée, plus le Wi-Fi"],
+  ] as const,
+
+  equipement: [
+    ["Son", "Sonos et AirPlay, ou entrée XLR pour votre propre régie."],
+    ["Lumière", "Pilotable en DMX, couleurs comprises. Cinq scénarios préréglés."],
+    ["Projection", "Optoma ZU820T, 8 800 lumens, HDMI et AirPlay."],
+    ["Cuisine", "Cuisine et bar équipés, lave-vaisselle, verrerie."],
+    ["Rideaux", "Ils cloisonnent la salle, ou la ferment sur elle-même."],
+    ["Climatisation", "Réversible, sur toute la surface."],
+    ["Accessibilité", "Lieu ERP, accessible PMR, WC PMR."],
+  ] as const,
+
+  acces: [
+    [
+      "Une voiture peut entrer",
+      "Accès direct depuis la rue, de plain-pied, sans marche ni seuil. Le Porsche Cayenne électrique a été présenté à l'intérieur, et le sol tient 800 kg/m² : elle peut rester.",
+    ],
+    [
+      "Une porte, trois battants",
+      "L'entrée se fait par un seul battant. Ouvrir les trois élargit le passage — pour un décor, une scénographie, un véhicule.",
+    ],
+    [
+      "Déchargement par l'impasse",
+      "Une seconde porte donne sur l'impasse des Bourdonnais : le mobilier et la technique n'ont pas à traverser la cour.",
+    ],
+    [
+      "On passe par la cour",
+      "L'Atelier, La Boutique et L'Appartement ne communiquent pas entre eux. Pour aller de l'un à l'autre, on ressort et on traverse la cour.",
+    ],
+  ] as const,
+
+  /** Les adresses vers lesquelles cette page renvoie. */
+  suite: [
+    { href: "/atelier/plans", titre: "Plans et dimensions", detail: "Plans cotés, à télécharger", pret: false },
+    { href: "/atelier/technique", titre: "Fiche technique", detail: "Électricité, son, lumière, réseau, projection", pret: false },
+    { href: "/photos", titre: "Photos", detail: "Par type d'événement", pret: false },
+    { href: "/tarifs", titre: "Prix et disponibilités", detail: "Le calendrier jour par jour", pret: true },
+  ] as const,
+} as const;

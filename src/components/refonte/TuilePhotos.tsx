@@ -37,9 +37,23 @@ interface TuilePhotosProps {
   href: string;
   /** Pour les textes de remplacement. */
   lieu: string;
+  /**
+   * Format des vues. Les tuiles sont en 4/3 ; la photo d'ouverture est large.
+   * Une classe Tailwind complète, pas un fragment : la compilation ne lit que
+   * des noms de classe entiers.
+   */
+  ratio?: string;
+  /** Vues par défilement. Une seule presque partout ; deux sur les larges. */
+  sizes?: string;
 }
 
-export function TuilePhotos({ photos, href, lieu }: TuilePhotosProps) {
+export function TuilePhotos({
+  photos,
+  href,
+  lieu,
+  ratio = "aspect-[4/3]",
+  sizes = "(max-width: 640px) 100vw, 380px",
+}: TuilePhotosProps) {
   const piste = useRef<HTMLDivElement>(null);
   const [vue, setVue] = useState(0);
 
@@ -65,13 +79,13 @@ export function TuilePhotos({ photos, href, lieu }: TuilePhotosProps) {
             href={href}
             tabIndex={-1}
             aria-hidden
-            className="relative aspect-[4/3] w-full shrink-0 snap-center"
+            className={`relative w-full shrink-0 snap-center ${ratio}`}
           >
             <Image
               src={src}
               alt={i === 0 ? `${lieu} — Chez les Plombiers` : ""}
               fill
-              sizes="(max-width: 640px) 100vw, 380px"
+              sizes={sizes}
               className="object-cover"
             />
           </a>
