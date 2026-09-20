@@ -21,7 +21,10 @@ import { ADRESSE } from "./data";
  */
 const CALENDLY =
   "https://calendly.com/chezlesplombiers/visite" +
-  // Les couleurs du lieu, passées au widget. Sans le `?`, Calendly garde son bleu.
+  // Les couleurs du lieu, passées au widget. Sans elles, Calendly reste bleu.
+  // Les couleurs sont bien reprises. En revanche `hide_gdpr_banner` reste sans
+  // effet : Calendly affiche sa propre bannière de cookies au premier passage,
+  // et ce réglage dépend de son offre. Rien à corriger côté site.
   "?hide_gdpr_banner=1&background_color=1A1A1A&text_color=E8E4DC&primary_color=C8A96E";
 
 const REPERES: Array<[string, string]> = [
@@ -88,7 +91,13 @@ export function RefonteVisiter() {
               src={CALENDLY}
               title="Choisir un créneau de visite"
               loading="lazy"
-              className="h-[760px] w-full border-0 sm:h-[700px]"
+              /*
+                ⚠️ Haut sur téléphone, et c'est voulu. Le calendrier mensuel de
+                Calendly ne se réduit pas : sous 1 000 px, il coupe la fin du
+                mois et fabrique une barre de défilement dans la barre de
+                défilement. Mieux vaut une page longue qu'un calendrier tronqué.
+              */
+              className="h-[1020px] w-full border-0 sm:h-[720px]"
             />
           </div>
         </div>

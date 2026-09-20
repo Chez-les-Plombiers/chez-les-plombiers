@@ -68,10 +68,9 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
 |---|---|---|
 | `/atelier` | photos et infos du lieu | **faite** (sous `/refonte/atelier`) |
 | `/boutique` · `/appartement` | idem — à décliner depuis L'ATELIER | à faire |
-| `/atelier/plans` | plans cotés, dimensions, à télécharger | à faire |
-| `/atelier/technique` | électricité, son, lumière, réseau, projection | à faire |
-| `/photos` | par type d'événement (5 catégories) | à faire |
-| `/visiter` | notre DA, Calendly **intégré** et non en redirection | à faire |
+| `/atelier/technique` | fiche du régisseur **et** les 4 plans à télécharger | **faite** |
+| `/visiter` | notre DA, Calendly intégré | **faite** |
+| `/photos` | par **série** photographique, avec téléchargement | à faire |
 | `/conditions` | ce qu'on vous demande, et pourquoi | **faite** (sous `/refonte/conditions`) |
 | `/histoire` | comment on est arrivé là, photos des travaux | à faire |
 | `/infos` | existe — à resserrer sur accès / livraison / quartier | à réviser |
@@ -108,6 +107,18 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
   Triumph garée à l'intérieur, dîner Maison 123).
 - Charbon froid (#1A1A1A) pour le site, charbon marron (#1C1A17) pour L'ATELIER.
   À confirmer, Étienne trouve le marron « plus chaud ».
+
+## ⚠️ Le jour de la bascule
+
+Tout tient dans **une fonction**, `lien()` dans `chrome.tsx`. Les données
+portent les URL définitives (`/atelier`, `/infos`, `/visiter`) ; cette fonction
+ajoute le préfixe `/refonte`. Le jour venu, elle renvoie `href` tel quel et tout
+le site bascule d'un coup. `/tarifs` en est exempté : c'est l'autre zone Next,
+déjà à son adresse définitive.
+
+Restera à faire le même jour : le sitemap, les redirections depuis les anciennes
+URL, le retrait du `noindex`, et la suppression de `/refonte/tuiles` et
+`/refonte/photos` (planches contact temporaires).
 
 ## ⚠️ Où écrire quoi — la règle à ne pas perdre
 
@@ -154,6 +165,13 @@ d'en construire un second. À reconsidérer si la page dépasse ~50 entrées.
 - Photos de L'APPARTEMENT : celles en ligne datent d'avant la pose des rideaux.
 
 - Licence web Eurostile — contacter le fondeur.
+- **Hauteur sous plafond et capacité de LA BOUTIQUE et de L'APPARTEMENT** :
+  inconnues. Leurs bandes « en bref » ne portent donc que le sûr.
+- **Équipement de L'APPARTEMENT** : inconnu. Sa page saute la section plutôt que
+  d'inventer — c'est visible, et c'est voulu.
+- **Bannière de cookies Calendly** sur `/visiter` : les couleurs du lieu sont
+  bien reprises par le widget, mais `hide_gdpr_banner` reste sans effet (cela
+  dépend de l'offre Calendly). Rien à corriger côté site.
 - Retirer le conteneur GTM pour arrêter le double comptage GA4.
 - Accès admin Clarity (`vju7iukwc9`) et GTM (`GTM-PXGXK94F`) à demander à Frédéric.
 
