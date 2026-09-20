@@ -35,7 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    ...["atelier", "boutique", "appartement"].map((venue) => ({
+    /*
+     * ⚠️ « atelier » n'est PAS dans cette liste : L'ATELIER vit à /tarifs, et
+     * /tarifs/atelier redirige en 308 depuis le 20/09/2026. Un plan de site ne
+     * doit annoncer que des URL canoniques qui répondent 200.
+     */
+    ...["boutique", "appartement"].map((venue) => ({
       url: `${baseUrl}/tarifs/${venue}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
