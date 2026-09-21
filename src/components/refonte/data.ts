@@ -139,12 +139,17 @@ export const ESPACES = [
      */
     meta: "100 m² · au premier étage",
     prix: "1 000 à 2 000 €",
-    /* Choix d'Étienne : A04, A02, A10. ⚠️ Ces vues datent d'avant la pose des
-       rideaux — à remplacer quand de nouvelles photos existeront. */
+    /*
+     * La pièce rose reste en couverture — Étienne l'avait choisie
+     * explicitement. Les deux suivantes sont ses photos du 21/09/2026, prises
+     * APRÈS la pose des rideaux : les anciennes (A02, A10) montraient le lieu
+     * sans eux, et il l'avait relevé. Archivées dans
+     * `Dropbox/PHOTOS/PHOTOS APPART ROSE/2026-09 RIDEAUX/`.
+     */
     photos: [
       "/photos/appartement/appartement-04.jpg",
-      "/photos/appartement/appartement-02.jpg",
-      "/photos/appartement/appartement-10.jpg",
+      "/photos/appartement/rideaux-salon.jpg",
+      "/photos/appartement/rideaux-large.jpg",
     ],
     equipements: [],
     page: "/appartement",
@@ -217,7 +222,8 @@ export const OUVERTURE_PHOTOS = [
   "/photos/boutique/tuile-2.jpg",
   "/photos/boutique/tuile-1.jpg",
   "/photos/appartement/appartement-04.jpg",
-  "/photos/appartement/appartement-02.jpg",
+  /* ⚠️ Remplace `appartement-02.jpg`, qui datait d'avant les rideaux. */
+  "/photos/appartement/rideaux-salon.jpg",
 ] as const;
 
 /** Catégories de la photothèque. Pas de « tournages » : ce métier n'est pas recherché. */
@@ -502,7 +508,7 @@ export const APPARTEMENT = {
   slug: "appartement",
   nom: "L'Appartement",
   intro: [
-    "Cent mètres carrés au premier étage, d'anciens bureaux devenus un appartement : parquet clair, mobilier chiné, plusieurs pièces dont une entièrement rose.",
+    "Cent mètres carrés au premier étage, d'anciens bureaux devenus un appartement : parquet clair, mobilier chiné, rideaux blancs qui segmentent l'espace, et plusieurs pièces dont une entièrement rose.",
     "Il se loue seul — pour un dîner, une réunion, une prise de vue — ou en coulisses d'un événement qui se tient à L'Atelier. Attention : on y monte par l'escalier de l'immeuble, depuis la cour. Il n'y a pas de passage intérieur entre les deux.",
   ] as const,
   enBref: [
