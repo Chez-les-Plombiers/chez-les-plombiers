@@ -487,6 +487,7 @@ export const BOUTIQUE = {
     { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, les horaires, le quartier", pret: true },
     { href: "/photos", titre: "Photos", detail: "Par type d'événement", pret: false },
     { href: "/tarifs/boutique", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
+    { href: "/conditions", titre: "Conditions de location", detail: "Réserver, payer, le dépôt de garantie", pret: true },
   ] as const,
 } as const;
 
@@ -514,6 +515,7 @@ export const APPARTEMENT = {
     { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, circuler entre les lieux", pret: true },
     { href: "/photos", titre: "Photos", detail: "Par type d'événement", pret: false },
     { href: "/tarifs/appartement", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
+    { href: "/conditions", titre: "Conditions de location", detail: "Réserver, payer, le dépôt de garantie", pret: true },
   ] as const,
 } as const;
 

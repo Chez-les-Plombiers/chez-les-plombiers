@@ -71,6 +71,58 @@ export const PRINCIPE =
 
 export const MOMENTS: readonly MomentRegles[] = [
   {
+    /*
+     * ⚠️ CETTE SECTION EST LA PLUS IMPORTANTE DE LA PAGE, et elle vient en
+     * premier parce que c'est chronologiquement le premier moment — mais
+     * surtout parce que c'est la seule qui protège vraiment le lieu.
+     *
+     * Elle est née de deux mésaventures réelles, racontées par Étienne le
+     * 21/09/2026 :
+     *
+     * 1. Une cliente a envoyé un « avis de virement » le jour même en disant
+     *    que c'était réglé. En le lisant attentivement, le virement était
+     *    PROGRAMMÉ deux à trois semaines plus tard. Un avis de virement n'est
+     *    pas un paiement : c'est une intention datée.
+     * 2. Publicis, réservation validée depuis trois semaines pour
+     *    L'Appartement, 2 000 €, toujours pas encaissés. Étienne : « comme
+     *    c'est un plus petit montant on fait moins attention ». C'est
+     *    précisément là que ça glisse.
+     *
+     * ⚠️ Le mot qui compte est REÇU, pas « envoyé ». Ne pas l'adoucir en
+     * relisant la page : c'est toute la règle.
+     *
+     * ⚠️ Et ne pas la déplacer plus bas « parce que c'est commercial ». Une
+     * condition de paiement qu'on découvre à la fin d'une page n'a jamais
+     * empêché personne d'entrer sans avoir payé.
+     */
+    id: "reserver",
+    titre: "Réserver et payer",
+    chapo:
+      "Nous posons volontiers une option pendant que votre projet se précise. Voici comment elle devient une réservation.",
+    regles: [
+      {
+        titre: "Une option tient sept jours",
+        texte:
+          "Passé ce délai, la date redevient libre et peut être proposée à quelqu'un d'autre. Nous ne relançons pas : nous préférons vous laisser décider sans pression.",
+      },
+      {
+        titre: "La réservation est confirmée à réception du paiement",
+        texte:
+          "La totalité de la location est réglée par virement au moment de la réservation. Et c'est bien la réception qui compte, pas l'envoi : tant que les fonds ne sont pas sur le compte, la date reste ouverte.",
+      },
+      {
+        titre: "Un avis de virement ne vaut pas paiement",
+        texte:
+          "Nous le disons sans détour parce que la confusion est fréquente et de bonne foi : un avis de virement atteste d'un ordre donné, parfois programmé à plusieurs semaines. Seul le crédit effectif sur notre compte confirme la date.",
+      },
+      {
+        titre: "Le dépôt de garantie est reçu 48 heures avant",
+        texte:
+          "Là encore, reçu et non envoyé. Sans paiement et sans dépôt de garantie sur le compte, nous ne pouvons pas vous remettre les clés — y compris le matin même, et nous en serions sincèrement navrés.",
+      },
+    ],
+  },
+  {
     id: "avant",
     titre: "Avant votre événement",
     chapo:
@@ -182,4 +234,4 @@ export const DEPOTS = [
 ] as const;
 
 export const DEPOT_MODALITES =
-  "Par virement, avant votre événement, et restitué sous huit jours après l'état des lieux.";
+  "Par virement, reçu au plus tard 48 heures avant votre événement, et restitué sous huit jours après l'état des lieux.";
