@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Galerie } from "./Galerie";
-import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
+import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour } from "./chrome";
 import { ADRESSE } from "./data";
 import {
   CATEGORIES_GALERIE,
@@ -41,7 +41,8 @@ export function RefontePhotosIndex() {
     <Page>
       <Barre />
       <Corps>
-        <div className="mt-3 border-b border-[var(--clp-bord)] pb-8 pt-4">
+        <Retour href="/refonte" texte="Accueil" />
+        <div className="border-b border-[var(--clp-bord)] pb-8 pt-4">
           <h1 className="font-clp uppercase">
             <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
               Photos
@@ -153,18 +154,6 @@ export function RefontePhotosEvenement({
 
 /* ───────────────────────────────────────────────────────────── Communs */
 
-function Retour({ href, texte }: { href: string; texte: string }) {
-  return (
-    <div className="mt-3 pt-4">
-      <Link
-        href={href}
-        className="font-mono text-[11px] text-[#8A8A8A] transition-colors hover:text-[#E8E4DC]"
-      >
-        ← {texte}
-      </Link>
-    </div>
-  );
-}
 
 function Vignette({
   href,

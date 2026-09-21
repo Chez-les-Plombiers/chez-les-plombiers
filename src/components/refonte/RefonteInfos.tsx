@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MapPin } from "lucide-react";
-import { Barre, CADRE, Corps, LAITON, Page, Pied, lien } from "./chrome";
+import { Barre, CADRE, Corps, LAITON, Page, Pied, lien, Retour } from "./chrome";
 import { ADRESSE, FICHE_GOOGLE } from "./data";
 import { INFOS_INTRO, SECTIONS, type Section } from "./data-infos";
 
@@ -21,6 +21,7 @@ export function RefonteInfos() {
     <Page>
       <Barre />
       <Corps>
+        <Retour href={lien("/")} texte="Accueil" />
         <Entete />
         <div className="mt-8 gap-10 lg:flex lg:items-start">
           <Sommaire />

@@ -1,4 +1,4 @@
-import { Barre, Corps, LAITON, Page, Pied } from "./chrome";
+import { Barre, Corps, LAITON, Page, Pied, Retour, lien } from "./chrome";
 import { ADRESSE } from "./data";
 import { DEPOTS, DEPOT_MODALITES, MOMENTS } from "./regles";
 
@@ -24,6 +24,7 @@ export function RefonteConditions() {
     <Page>
       <Barre />
       <Corps>
+        <Retour href={lien("/")} texte="Accueil" />
         {/*
           ⚠️ PLEINE LARGEUR. La première version posait le chapô dans une
           colonne de 62 caractères pendant que le reste de la page en faisait

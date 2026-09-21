@@ -3856,5 +3856,166 @@
       "l": 900,
       "h": 1200
     }
+  ],
+  "homemade-mix": [
+    {
+      "n": 2,
+      "src": "/photos/galerie/homemade-mix/002.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 3,
+      "src": "/photos/galerie/homemade-mix/003.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 4,
+      "src": "/photos/galerie/homemade-mix/004.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 5,
+      "src": "/photos/galerie/homemade-mix/005.webp",
+      "l": 960,
+      "h": 1200
+    },
+    {
+      "n": 6,
+      "src": "/photos/galerie/homemade-mix/006.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 7,
+      "src": "/photos/galerie/homemade-mix/007.webp",
+      "l": 960,
+      "h": 1200
+    },
+    {
+      "n": 8,
+      "src": "/photos/galerie/homemade-mix/008.webp",
+      "l": 960,
+      "h": 1200
+    },
+    {
+      "n": 9,
+      "src": "/photos/galerie/homemade-mix/009.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 10,
+      "src": "/photos/galerie/homemade-mix/010.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 11,
+      "src": "/photos/galerie/homemade-mix/011.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 12,
+      "src": "/photos/galerie/homemade-mix/012.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 13,
+      "src": "/photos/galerie/homemade-mix/013.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 14,
+      "src": "/photos/galerie/homemade-mix/014.webp",
+      "l": 870,
+      "h": 1200
+    },
+    {
+      "n": 15,
+      "src": "/photos/galerie/homemade-mix/015.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 16,
+      "src": "/photos/galerie/homemade-mix/016.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 17,
+      "src": "/photos/galerie/homemade-mix/017.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 19,
+      "src": "/photos/galerie/homemade-mix/019.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 20,
+      "src": "/photos/galerie/homemade-mix/020.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 21,
+      "src": "/photos/galerie/homemade-mix/021.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 22,
+      "src": "/photos/galerie/homemade-mix/022.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 23,
+      "src": "/photos/galerie/homemade-mix/023.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 24,
+      "src": "/photos/galerie/homemade-mix/024.webp",
+      "l": 900,
+      "h": 1200
+    }
+  ],
+  "voitures-videos": [],
+  "voitures-telephone": [
+    {
+      "n": 4,
+      "src": "/photos/galerie/voitures-telephone/004.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 5,
+      "src": "/photos/galerie/voitures-telephone/005.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 9,
+      "src": "/photos/galerie/voitures-telephone/009.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 14,
+      "src": "/photos/galerie/voitures-telephone/014.webp",
+      "l": 675,
+      "h": 1200
+    }
   ]
 }

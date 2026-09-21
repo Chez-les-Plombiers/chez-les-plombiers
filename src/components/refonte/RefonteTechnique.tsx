@@ -1,4 +1,4 @@
-import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
+import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour, lien } from "./chrome";
 import { ADRESSE } from "./data";
 import { PLANS, TECHNIQUE } from "./data-technique";
 
@@ -22,7 +22,8 @@ export function RefonteTechnique() {
     <Page theme="atelier">
       <Barre lieu="L'ATELIER" />
       <Corps>
-        <div className="mt-3 border-b border-[var(--clp-bord)] pb-8 pt-4">
+        <Retour href={lien("/atelier")} texte="L'Atelier" />
+        <div className="border-b border-[var(--clp-bord)] pb-8 pt-4">
           <h1 className="font-clp uppercase">
             <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
               Fiche technique — L&apos;Atelier

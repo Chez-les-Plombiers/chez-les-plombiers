@@ -3,6 +3,7 @@
  * Next (le projet pricing), servie ici par réécriture. `next/link` tenterait
  * une navigation côté client vers une route que ce routeur ne connaît pas.
  */
+import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Logo } from "./Logo";
 import { ADRESSE, ADRESSE_LOGO, FICHE_GOOGLE, TELEPHONE } from "./data";
@@ -142,6 +143,31 @@ export function Page({
       }
     >
       {children}
+    </div>
+  );
+}
+
+/**
+ * Le lien de retour, en tête de chaque page qui n'est pas l'accueil.
+ *
+ * ⚠️ Le logo de la barre ramène déjà à l'accueil, mais rien ne le dit —
+ * Étienne, 21/09/2026 : « là il n'y a pas de bouton pour revenir, on considère
+ * qu'on clique sur le logo ? » Une convention que le visiteur doit deviner
+ * n'en est pas une.
+ *
+ * ⚠️ Il porte le nom de la page d'où l'on vient, pas le mot « retour ». Sur
+ * une page de photos, « ← Dîners » dit où l'on remonte ; « ← Retour » ne dit
+ * rien et dépend de l'historique du navigateur.
+ */
+export function Retour({ href, texte }: { href: string; texte: string }) {
+  return (
+    <div className="mt-3 pt-4">
+      <Link
+        href={href}
+        className="font-mono text-[11px] text-[#8A8A8A] transition-colors hover:text-[#E8E4DC]"
+      >
+        ← {texte}
+      </Link>
     </div>
   );
 }

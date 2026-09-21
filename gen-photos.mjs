@@ -19,6 +19,21 @@ const SORTIE = "public/photos/galerie";
 const manifeste = JSON.parse(fs.readFileSync("src/components/refonte/tri-manifeste.json", "utf8"));
 const selection = JSON.parse(fs.readFileSync("src/components/refonte/tri-selection.json", "utf8"));
 
+/**
+ * ⚠️ Chaque planche ne vient pas du même endroit. Les événements vivent dans
+ * `PHOTOS/EVENTS`, mais quatre séries ont été ajoutées au fil de l'eau depuis
+ * d'autres dossiers. Sans cette table, elles échouent en silence — le script
+ * cherche `EVENTS/<nom de fichier>` et ne trouve rien.
+ */
+const DOSSIERS = {
+  "diners-vrac": "DINERS CHEZ LES PLOMBIERS",
+  "homemade-mix": "HOMEMADE : MIX DINERS CHEZ LES PLOMBIERS",
+  "voitures": "SELECTION PHOTOS SITE/03. VOITURES",
+  "voitures-videos": "SELECTION PHOTOS SITE/03. VOITURES/IMAGES EXTRAITES",
+  "voitures-telephone": "EVENTS/23. VOITURES — TELEPHONE",
+};
+const dossierSource = (slug) => DOSSIERS[slug] ?? "EVENTS";
+
 let faites = 0, sautees = 0, ratees = 0;
 const sortie = {};
 
@@ -33,7 +48,7 @@ for (const [slug, sel] of Object.entries(selection)) {
   for (const n of gardees) {
     const item = bloc.items.find((i) => Number(i.n) === n);
     if (!item) { console.log(`  ✗ ${slug} n°${n} introuvable`); ratees++; continue; }
-    const src = path.join(SOURCE, slug === "diners-vrac" ? "DINERS CHEZ LES PLOMBIERS" : "EVENTS", item.origine);
+    const src = path.join(SOURCE, dossierSource(slug), item.origine);
     const nom = `${String(n).padStart(3, "0")}.webp`;
     const out = path.join(dest, nom);
     if (fs.existsSync(out)) { sautees++; }
@@ -42,7 +57,23 @@ for (const [slug, sel] of Object.entries(selection)) {
         await sharp(src).rotate().resize(1200, 1200, { fit: "inside", withoutEnlargement: true })
           .webp({ quality: 72 }).toFile(out);
         faites++;
-      } catch (e) { console.log(`  ✗ ${src}: ${e.message}`); ratees++; continue; }
+      } catch {
+        /*
+         * ⚠️ Repli par `sips` pour les HEIC : sharp ne les lit pas sans
+         * greffon, et le dossier HOMEMADE en contient. macOS les décode
+         * nativement. On passe par un JPEG intermédiaire, puis sharp reprend
+         * la main pour le WebP — inutile de perdre le gain de format.
+         */
+        const tmp = out.replace(/\.webp$/, ".tmp.jpg");
+        const { execFileSync } = await import("node:child_process");
+        try {
+          execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "90",
+                                "-Z", "1200", src, "--out", tmp], { stdio: "ignore" });
+          await sharp(tmp).webp({ quality: 72 }).toFile(out);
+          fs.unlinkSync(tmp);
+          faites++;
+        } catch (e2) { console.log(`  ✗ ${src}: ${e2.message}`); ratees++; continue; }
+      }
     }
     const meta = await sharp(out).metadata();
     items.push({ n, src: `/photos/galerie/${slug}/${nom}`, l: meta.width, h: meta.height });

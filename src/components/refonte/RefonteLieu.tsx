@@ -1,5 +1,5 @@
 import { TuilePhotos } from "./TuilePhotos";
-import { Barre, CADRE, Corps, LAITON, Page, Pied, Titre, lien } from "./chrome";
+import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour, Titre, lien } from "./chrome";
 import {
   ADRESSE,
   APPARTEMENT,
@@ -42,6 +42,7 @@ export function RefonteLieu({ slug }: { slug: SlugLieu }) {
     <Page theme={slug}>
       <Barre lieu={lieu.nom.toUpperCase()} />
       <Corps>
+        <Retour href={lien("/")} texte="Accueil" />
         <Ouverture lieu={lieu} tuile={tuile} />
         {lieu.enBref.length > 0 && <EnBref lignes={lieu.enBref} />}
         {lieu.equipement.length > 0 && <Equipement themes={lieu.equipement} />}

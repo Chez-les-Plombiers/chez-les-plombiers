@@ -1,4 +1,4 @@
-import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
+import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour, lien } from "./chrome";
 import { ADRESSE } from "./data";
 
 /**
@@ -49,7 +49,8 @@ export function RefonteVisiter() {
     <Page>
       <Barre />
       <Corps>
-        <div className="mt-3 border-b border-[var(--clp-bord)] pb-8 pt-4">
+        <Retour href={lien("/")} texte="Accueil" />
+        <div className="border-b border-[var(--clp-bord)] pb-8 pt-4">
           <h1 className="font-clp uppercase">
             <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
               Réserver une visite
