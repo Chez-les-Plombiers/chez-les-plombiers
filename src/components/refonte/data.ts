@@ -217,14 +217,27 @@ export const FAITS = [
  * ⏳ Au clic, on ira un jour dans la section photos du lieu concerné. Pour
  * l'instant les six pointent vers `/photos`, qui reste à construire.
  */
-export const OUVERTURE_PHOTOS = [
-  "/photos/lieu/atelier-kv.jpg",
-  "/photos/lieu/atelier-tuile-2.jpg",
-  "/photos/boutique/tuile-2.jpg",
-  "/photos/boutique/tuile-1.jpg",
-  "/photos/appartement/appartement-04.jpg",
-  /* ⚠️ Remplace `appartement-02.jpg`, qui datait d'avant les rideaux. */
-  "/photos/appartement/rideaux-salon.jpg",
+/**
+ * La grande vue d'ouverture : UNE photo par lieu, dans l'ordre d'ouverture.
+ *
+ * Étienne, 21/09/2026 : « on peut mettre une photo de chaque lieu. Juste la
+ * première on la laisse, la deuxième on met la boutique, la troisième
+ * l'appartement Rose. On met les trois lieux. »
+ *
+ * ⚠️ Il y en avait SIX, deux par lieu. Deux vues du même endroit se ressemblent
+ * assez pour qu'on croie regarder la même : on faisait défiler six photos sans
+ * jamais comprendre qu'il y a trois adresses. Une par lieu, nommée, et le titre
+ * en dessous dit « 3 lieux » — les trois se répondent.
+ *
+ * Chaque vue mène à SON lieu, pas à la photothèque : la vue de LA BOUTIQUE
+ * ouvre LA BOUTIQUE. C'est ce qu'un visiteur attend en cliquant une image qui
+ * porte un nom.
+ */
+export const OUVERTURE = [
+  { src: "/photos/lieu/atelier-kv.jpg", nom: "L'Atelier", href: "/atelier" },
+  { src: "/photos/boutique/tuile-2.jpg", nom: "La Boutique", href: "/boutique" },
+  /* ⚠️ Une vue AVEC les rideaux : les `appartement-0x` datent d'avant. */
+  { src: "/photos/appartement/rideaux-large.jpg", nom: "L'Appartement", href: "/appartement" },
 ] as const;
 
 /** Catégories de la photothèque. Pas de « tournages » : ce métier n'est pas recherché. */

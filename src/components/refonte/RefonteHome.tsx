@@ -7,7 +7,7 @@ import {
   ADRESSE,
   CLIENTS_TEXTE,
   ESPACES,
-  OUVERTURE_PHOTOS,
+  OUVERTURE,
   PAGES,
 } from "./data";
 
@@ -67,13 +67,14 @@ function Ouverture() {
     <Bloc>
       <div className={`${CADRE} overflow-hidden`}>
         {/*
-          Six vues, deux par lieu. Même mécanique que les tuiles : défilement
-          natif avec accroche, flèches par-dessus, glissement au doigt.
-          ⏳ La cible est `/photos`, à construire — à terme, la section du lieu.
+          Trois vues, une par lieu, chacune nommée et menant chez elle. Même
+          mécanique que les tuiles : défilement natif avec accroche, flèches
+          par-dessus, glissement au doigt.
         */}
         <TuilePhotos
-          photos={OUVERTURE_PHOTOS}
-          href="/photos"
+          photos={OUVERTURE.map((v) => v.src)}
+          href={OUVERTURE.map((v) => lien(v.href))}
+          etiquettes={OUVERTURE.map((v) => v.nom)}
           lieu="Chez les Plombiers"
           priority
           ratio="aspect-[16/10] sm:aspect-[21/9]"

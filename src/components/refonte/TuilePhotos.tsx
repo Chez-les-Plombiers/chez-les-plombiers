@@ -47,8 +47,18 @@ import Image from "next/image";
  */
 interface TuilePhotosProps {
   photos: readonly string[];
-  /** Cible du clic. Chaque vue porte ce lien pour que l'appui marche partout. */
-  href?: string;
+  /**
+   * Cible du clic. Chaque vue porte ce lien pour que l'appui marche partout.
+   * Un tableau donne une cible PAR vue — la vue d'ouverture de LA BOUTIQUE
+   * mène à LA BOUTIQUE, pas à une page commune.
+   */
+  href?: string | readonly string[];
+  /**
+   * Nom posé sur chaque vue. Réservé à l'ouverture : c'est ce qui transforme
+   * trois photos en trois lieux. Sur une tuile, le nom est déjà dans le texte
+   * juste dessous — l'y répéter ne ferait que salir la photo.
+   */
+  etiquettes?: readonly string[];
   /** Le clic ouvre la photo en grand au lieu de suivre un lien. */
   agrandir?: boolean;
   /** Pour les textes de remplacement. */
@@ -72,6 +82,7 @@ interface TuilePhotosProps {
 export function TuilePhotos({
   photos,
   href,
+  etiquettes,
   agrandir,
   lieu,
   ratio = "aspect-[4/3]",
@@ -110,6 +121,23 @@ export function TuilePhotos({
             />
           );
           const classe = `relative w-full shrink-0 snap-center ${ratio}`;
+          const cible = Array.isArray(href) ? href[i] : (href as string | undefined);
+          /*
+             Le nom du lieu, posé en bas à gauche. Le dégradé n'est pas une
+             coquetterie : sans lui, un texte clair disparaît sur une photo
+             claire — et deux de ces trois photos le sont.
+          */
+          const etiquette = etiquettes?.[i] ? (
+            <>
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent"
+              />
+              <span className="pointer-events-none absolute bottom-3 left-4 font-clp text-[11px] font-bold uppercase tracking-[0.14em] text-white sm:bottom-4 sm:left-5 sm:text-[13px]">
+                {etiquettes[i]}
+              </span>
+            </>
+          ) : null;
 
           return agrandir ? (
             <button
@@ -120,12 +148,14 @@ export function TuilePhotos({
               className={`${classe} cursor-zoom-in`}
             >
               {image}
+              {etiquette}
             </button>
           ) : (
             /* Muet pour l'arbre d'accessibilité : le nom du lieu est déjà
                porté une fois, par le lien du bloc de texte. */
-            <a key={src} href={href} tabIndex={-1} aria-hidden className={classe}>
+            <a key={src} href={cible} tabIndex={-1} aria-hidden className={classe}>
               {image}
+              {etiquette}
             </a>
           );
         })}
