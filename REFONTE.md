@@ -129,6 +129,38 @@ Restera à faire le même jour : le sitemap, les redirections depuis les ancienn
 URL, le retrait du `noindex`, et la suppression de `/refonte/tuiles` et
 `/refonte/photos` (planches contact temporaires).
 
+## ⚠️ Piège du proxy — corrigé le 21/09/2026, à ne pas réintroduire
+
+`src/proxy.ts` énumérait les extensions statiques une par une : `.ico .png
+.jpg .svg .pdf .xml .txt`. **Donc `.webp` renvoyait 404**, comme `.jpeg`,
+`.avif`, `.mp4`, `.woff2`, `.ics`. Le symptôme est trompeur : le fichier est
+bien déployé dans `/public`, mais la requête est réécrite vers `/fr/…` et
+l'application répond « page introuvable ». Une image parfaitement en place qui
+ne s'affiche pas.
+
+La règle est désormais : **tout chemin dont le dernier segment contient un
+point est un fichier.** Ne pas revenir à une liste — Next sert du WebP et de
+l'AVIF, la liste sera toujours en retard.
+
+## Le tri de la photothèque — six catégories
+
+`Dîners · Showrooms · Défilés · Lancements · Expositions · Automobile`
+
+Six et pas cinq : en 3×2 les vignettes sont deux fois plus grandes qu'en ligne
+de cinq, et « Automobile » est l'argument le plus rare du lieu.
+
+⚠️ **« Défilés » reste séparé de « Showrooms »** : un showroom expose, un
+défilé demande un podium, un front row, des coulisses. Une agence qui cherche
+un lieu de défilé ne cliquera jamais sur « showroom ».
+
+⚠️ **Pas de catégorie « causes »** malgré les deux Caisse Claire. Les autres
+catégories disent CE QUI SE PASSE ; une cause dit POURQUOI — deux axes qu'on ne
+mélange pas sur une même ligne. Classés en Lancements ; le fait qu'Étienne
+prête le lieu pour des causes se dira sur `/histoire`.
+
+**Écartés** : `01. 14 JANVIER 2025` (lieu en travaux), `04. DINER MARINE ABIAD`
+(privé), `15. DANSE AVEC LA CHUTE` (tournage).
+
 ## ⚠️ Fiche du lieu ou fiche technique ? Le test
 
 Question posée par Étienne le 20/09/2026 : « on peut dire qu'il y a du son, il
@@ -253,6 +285,7 @@ numéro public, le site **+33 7 61 47 10 73**. Lequel fait foi ?
 | Contenu (chiffres, pages, faits) | `src/components/refonte/data.ts` |
 | Planche contact photos | `/refonte/photos` — **temporaire, à supprimer** |
 | Planche contact des tuiles | `/refonte/tuiles` — **temporaire, à supprimer** |
+| Tri de la photothèque | `/refonte/tri` — **temporaire, à supprimer** (pages, `public/photos/tri/`, `tri-evenements.ts`, `tri-manifeste.json`) |
 | Photothèque | `Dropbox/CHEZ LES PLOMBIERS/PHOTOS/EVENTS/` (1514) et `INES/` (767) |
 | Travaux | `Dropbox/CHEZ LES PLOMBIERS/TRAVAUX/` et `IMMEUBLE : TRAVAUX/` |
 | Fontes | `src/fonts/eurostile-extended{,-bold}.ttf` |
