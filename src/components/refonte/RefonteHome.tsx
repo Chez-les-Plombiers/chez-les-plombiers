@@ -239,63 +239,32 @@ function Preuve() {
   return (
     <Bloc grand>
       {/*
-        ⚠️ DEUX PHOTOS, ET C'EST LEUR FORMAT QUI L'IMPOSE.
+        ── LA RESPIRATION ────────────────────────────────────────────────────
+        Une seule image, pleine largeur, après les trois tuiles de lieux.
 
-        Quatre versions ont été essayées les 20 et 21/09/2026 : un gros plan de
-        la Triumph (« trop gros plan »), le Porsche récupéré sur Instagram
-        (« trop pixellisée » — 952 px), une image tirée d'une vidéo (720 px),
-        et enfin les originaux iPhone en 2268 × 4032.
+        ⚠️ IL Y AVAIT DEUX PHOTOS CÔTE À CÔTE ICI — le dîner Maison 123 avec la
+        Triumph, et le lancement Porsche Cayenne Electric. Remarque de Céline,
+        reprise par Étienne le 21/09/2026 : une page faite de blocs de même
+        taille fatigue, il lui faut une coupure. « Ça pourrait faire un peu une
+        pause pour le regard. »
 
-        Les deux retenues ne disent pas la même chose, et c'est pour ça qu'on
-        garde les deux :
-        - l'horizontale montre LA SALLE — une voiture, des gens qui marchent,
-          tout l'espace autour. Elle prouve que ça rentre ;
-        - la verticale montre UNE MARQUE QUI PREND LE LIEU — les affiches
-          Porsche accrochées au mur brut, le canapé rose en bas. Elle prouve
-          qu'on peut y produire autre chose qu'un stationnement.
+        Ce n'est donc pas un reproche fait à ces deux photos — Étienne aime
+        celle du Porsche — mais au fait d'ajouter deux blocs de plus au même
+        format. Les deux restent dans la photothèque.
 
-        ⚠️ Ne pas recadrer la verticale en bandeau : elle perdrait soit les
-        affiches, soit le canapé, c'est-à-dire soit la marque, soit le lieu.
-        C'est aussi pourquoi elles sont côte à côte plutôt que l'une après
-        l'autre — un portrait seul en pleine largeur creuserait la page.
+        ⚠️ Pas de légende, et c'est le point : une pause qu'on commente n'est
+        plus une pause. La salle vide se suffit.
       */}
-      <div className="grid gap-3 sm:grid-cols-[3fr_2fr]">
-        <figure className={`${CADRE} flex flex-col overflow-hidden`}>
-          <div className="relative aspect-[4/3] w-full flex-1">
-            <Image
-              src="/photos/lieu/voiture-atelier.jpg"
-              alt="Une voiture garée à l'intérieur de L'Atelier, deux personnes marchant à côté"
-              fill
-              sizes="(max-width: 640px) 100vw, 700px"
-              className="object-cover"
-            />
-          </div>
-          <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[14px] leading-relaxed text-[#C9C4BC]">
-            {/*
-               ⚠️ NOMMER L'ÉVÉNEMENT PLUTÔT QUE DÉCRIRE LA PHOTO. Il y avait
-               ici « une voiture entre depuis la rue » — une évidence que
-               l'image dit déjà. Le nom de la marque, lui, est une preuve, et
-               c'est du texte qu'un moteur indexe.
-            */}
-            Dîner Maison 123 — by Matthias Breuer
-          </figcaption>
-        </figure>
-
-        <figure className={`${CADRE} flex flex-col overflow-hidden`}>
-          <div className="relative aspect-[4/5] w-full flex-1">
-            <Image
-              src="/photos/lieu/porsche-atelier.jpg"
-              alt="Les affiches du Porsche Cayenne électrique accrochées aux murs bruts de L'Atelier, au-dessus du canapé rose"
-              fill
-              sizes="(max-width: 640px) 100vw, 460px"
-              className="object-cover"
-            />
-          </div>
-          <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[14px] leading-relaxed text-[#C9C4BC]">
-            {/* « Electric » à l'anglaise : c'est le nom du modèle. */}
-            Lancement Porsche Cayenne Electric
-          </figcaption>
-        </figure>
+      <div className={`${CADRE} overflow-hidden`}>
+        <div className="relative aspect-[16/9] w-full">
+          <Image
+            src="/photos/lieu/home-2.jpg"
+            alt="La grande salle de L'Atelier, vide — sol clair, poteaux bruts, verrière au fond"
+            fill
+            sizes="(max-width: 1180px) 100vw, 1180px"
+            className="object-cover"
+          />
+        </div>
       </div>
     </Bloc>
   );
@@ -386,6 +355,21 @@ function Photos() {
           </Link>
         ))}
       </div>
+      {/*
+        ⚠️ Un seul lien vers la photothèque, et il est ici. Étienne cherchait
+        « un endroit qui regroupe toutes les photos » : c'est `/photos`, qui
+        porte les deux axes (les lieux ET les types d'événement). Lui donner un
+        second bloc sur l'accueil ferait deux portes pour une seule pièce.
+      */}
+      <Link
+        href={lien("/photos")}
+        className={`${CADRE} mt-3 flex items-center justify-between px-5 py-4 font-mono text-[12px] text-[#C9C4BC] transition-colors hover:border-[var(--clp-accent)] hover:text-[#E8E4DC]`}
+      >
+        Toutes les photos, et les trois lieux
+        <span aria-hidden style={{ color: LAITON }}>
+          &rarr;
+        </span>
+      </Link>
     </>
   );
 }

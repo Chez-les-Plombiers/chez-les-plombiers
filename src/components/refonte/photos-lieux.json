@@ -1,0 +1,183 @@
+{
+  "lieu-atelier": [
+    {
+      "src": "/photos/lieu/atelier-kv.jpg",
+      "l": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/lieu/atelier-tuile-2.jpg",
+      "l": 2000,
+      "h": 1334
+    },
+    {
+      "src": "/photos/lieu/atelier-tuile-3.jpg",
+      "l": 2000,
+      "h": 1334
+    },
+    {
+      "src": "/photos/lieu/atelier-tuile.jpg",
+      "l": 2000,
+      "h": 1334
+    },
+    {
+      "src": "/photos/lieu/photo-00.jpg",
+      "l": 2400,
+      "h": 1600
+    },
+    {
+      "src": "/photos/lieu/photo-01.jpg",
+      "l": 2400,
+      "h": 1350
+    },
+    {
+      "src": "/photos/lieu/photo-02.jpg",
+      "l": 2400,
+      "h": 1350
+    }
+  ],
+  "lieu-boutique": [
+    {
+      "src": "/photos/boutique/candidats/b01.jpg",
+      "l": 1600,
+      "h": 900
+    },
+    {
+      "src": "/photos/boutique/candidats/b02.jpg",
+      "l": 1600,
+      "h": 900
+    },
+    {
+      "src": "/photos/boutique/candidats/b03.jpg",
+      "l": 1600,
+      "h": 900
+    },
+    {
+      "src": "/photos/boutique/candidats/b04.jpg",
+      "l": 1600,
+      "h": 901
+    },
+    {
+      "src": "/photos/boutique/candidats/b05.jpg",
+      "l": 1600,
+      "h": 902
+    },
+    {
+      "src": "/photos/boutique/candidats/b06.jpg",
+      "l": 1600,
+      "h": 1213
+    },
+    {
+      "src": "/photos/boutique/candidats/b07.jpg",
+      "l": 900,
+      "h": 1600
+    },
+    {
+      "src": "/photos/boutique/candidats/b08.jpg",
+      "l": 900,
+      "h": 1600
+    },
+    {
+      "src": "/photos/boutique/candidats/b09.jpg",
+      "l": 900,
+      "h": 1600
+    },
+    {
+      "src": "/photos/boutique/candidats/b10.jpg",
+      "l": 1200,
+      "h": 1600
+    },
+    {
+      "src": "/photos/boutique/candidats/b11.jpg",
+      "l": 1200,
+      "h": 1600
+    },
+    {
+      "src": "/photos/boutique/facade.jpg",
+      "l": 1200,
+      "h": 1600
+    },
+    {
+      "src": "/photos/boutique/interieur.jpg",
+      "l": 1600,
+      "h": 900
+    },
+    {
+      "src": "/photos/boutique/vitrine-rue.jpg",
+      "l": 1600,
+      "h": 901
+    }
+  ],
+  "lieu-appartement": [
+    {
+      "src": "/photos/appartement/appartement-01.jpg",
+      "l": 1800,
+      "h": 1350
+    },
+    {
+      "src": "/photos/appartement/appartement-02.jpg",
+      "l": 1800,
+      "h": 1350
+    },
+    {
+      "src": "/photos/appartement/appartement-03.jpg",
+      "l": 1800,
+      "h": 1350
+    },
+    {
+      "src": "/photos/appartement/appartement-04.jpg",
+      "l": 1800,
+      "h": 1350
+    },
+    {
+      "src": "/photos/appartement/appartement-05.jpg",
+      "l": 1800,
+      "h": 1350
+    },
+    {
+      "src": "/photos/appartement/appartement-06.jpg",
+      "l": 1800,
+      "h": 1350
+    },
+    {
+      "src": "/photos/appartement/appartement-07.jpg",
+      "l": 1800,
+      "h": 1350
+    },
+    {
+      "src": "/photos/appartement/appartement-08.jpg",
+      "l": 1800,
+      "h": 1350
+    },
+    {
+      "src": "/photos/appartement/appartement-09.jpg",
+      "l": 1800,
+      "h": 1350
+    },
+    {
+      "src": "/photos/appartement/appartement-10.jpg",
+      "l": 1800,
+      "h": 1350
+    },
+    {
+      "src": "/photos/appartement/appartement-11.jpg",
+      "l": 1792,
+      "h": 2400
+    },
+    {
+      "src": "/photos/appartement/rideaux-large.jpg",
+      "l": 2000,
+      "h": 1500
+    },
+    {
+      "src": "/photos/appartement/rideaux-mezzanine.jpg",
+      "l": 2000,
+      "h": 1500
+    },
+    {
+      "src": "/photos/appartement/rideaux-salon.jpg",
+      "l": 2000,
+      "h": 1500
+    }
+  ]
+}

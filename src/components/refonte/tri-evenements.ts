@@ -40,6 +40,30 @@ export const CATEGORIES = [
 
 export type SlugCategorie = (typeof CATEGORIES)[number]["slug"];
 
+/**
+ * ── LE SECOND AXE : LES LIEUX ─────────────────────────────────────────────
+ *
+ * Décidé avec Étienne le 21/09/2026. Les six catégories ci-dessus répondent à
+ * « qu'est-ce qui s'y passe ? ». Elles ne répondent pas à « à quoi ça
+ * ressemble ? » — et ce sont deux personnes différentes qui posent ces deux
+ * questions : celle qui compare des lieux, et celle qui n'est jamais venue.
+ *
+ * Les fondre en une seule liste abîmerait les deux. Ils vivent donc côte à
+ * côte sur `/photos`, chacun sur sa rangée de filtres.
+ *
+ * ⚠️ LA BOUTIQUE n'a PAS de planche de tri, et c'est normal : le lieu a ouvert
+ * le 01/09/2026 et personne ne l'a encore photographié. Ses vues viennent du
+ * téléphone d'Étienne et sont déjà choisies — voir `PHOTOS_BOUTIQUE` dans
+ * `photos-data.ts`. Un événement est prévu sous quinze jours.
+ */
+export const LIEUX = [
+  { slug: "lieu-atelier", nom: "L'Atelier" },
+  { slug: "lieu-boutique", nom: "La Boutique" },
+  { slug: "lieu-appartement", nom: "L'Appartement" },
+] as const;
+
+export type SlugLieu = (typeof LIEUX)[number]["slug"];
+
 export interface Evenement {
   /** Correspond à une clé du manifeste des vignettes. */
   slug: string;
@@ -90,6 +114,12 @@ export const EVENEMENTS: readonly Evenement[] = [
    * `SELECTION PHOTOS SITE/03. VOITURES/IMAGES EXTRAITES/`.
    */
   { slug: "voitures-videos", nom: "Voitures — images de vidéos", categorie: "automobile" },
+  /*
+   * Retrouvé par Étienne dans son téléphone le 21/09/2026. Quatre photos et
+   * UNE VIDÉO — la première d'une galerie. L'agence est REVOLVR (sans « e »
+   * final, et non « Revolver » comme l'entend la dictée).
+   */
+  { slug: "24-new-balance", nom: "Déjeuner New Balance — REVOLVR", categorie: "diners" },
   /*
    * Retrouvé par Étienne sur son téléphone le 21/09/2026. Photos en pleine
    * résolution iPhone (2268 × 4032) ET vidéos — les premières vidéos destinées

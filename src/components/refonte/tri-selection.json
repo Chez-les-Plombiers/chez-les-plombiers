@@ -797,5 +797,15 @@
     "couverture": 14,
     "nomCorrige": "Porsche — lancement du Cayenne électrique",
     "note": "⚠️ LE DOSSIER MÉLANGE DEUX ÉVÉNEMENTS, et ce sont les dates EXIF qui les séparent — pas les noms de fichiers, qui sont des UUID :\n  26 novembre 2025 → PORSCHE (004, 005, 009, 014). La date colle à la facture du dossier client `COMMERCIAL/00. CLIENTS/251126 AUDITOIRE (PORSCHE)`.\n  9 et 28 octobre 2025 → la Triumph du dîner Maison 123, déjà couverte par la planche « voitures ».\nLes quatre photos Porsche sont en 2268 × 4032 : enfin la vraie résolution, après l'échec de la récupération Instagram (952 px) et des vidéos (720 × 1280).\n⏳ Les 4 vidéos du dossier n'ont pas de date EXIF et ne sont pas encore triées."
+  },
+  "24-new-balance": {
+    "garde": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "couverture": 1
   }
 }

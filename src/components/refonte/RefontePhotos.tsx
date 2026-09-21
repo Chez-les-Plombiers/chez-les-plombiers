@@ -2,10 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Galerie } from "./Galerie";
 import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour } from "./chrome";
+import { SelecteurPhotos, type Tuile } from "./SelecteurPhotos";
 import {
   CATEGORIES_GALERIE,
+  LIEUX_GALERIE,
   type CategorieGalerie,
   type EvenementGalerie,
+  type LieuGalerie,
 } from "./photos-data";
 
 /**
@@ -51,21 +54,61 @@ export function RefontePhotosIndex() {
           </h1>
         </div>
 
-        {/* Six en 3×2 : deux fois plus grandes qu'en ligne de cinq. */}
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {CATEGORIES_GALERIE.map((c) => (
-            <Vignette
-              key={c.slug}
-              href={`${LIEN}/${c.slug}`}
-              photo={c.couverture}
-              cadrage={c.cadrage}
-              titre={c.nom}
-              detail={`${c.total} photos · ${c.evenements.length} ${
-                c.evenements.length > 1 ? "événements" : "événement"
-              }`}
-            />
-          ))}
-        </div>
+        <SelecteurPhotos tuiles={TUILES} />
+      </Corps>
+      <Pied />
+    </Page>
+  );
+}
+
+/**
+ * Les tuiles des deux axes, dans l'ordre d'affichage : les lieux, puis les
+ * types d'événements. Calculé ici, côté serveur — le sélecteur ne fait que
+ * masquer, il n'a rien à recalculer.
+ */
+const TUILES: Tuile[] = [
+  ...LIEUX_GALERIE.map((l) => ({
+    slug: l.slug,
+    nom: l.nom,
+    /* Le préfixe `lieu-` sert au code, pas à l'URL. Voir la route. */
+    href: `${LIEN}/${l.slug.replace(/^lieu-/, "")}`,
+    detail: `${l.total} photos`,
+    photo: l.couverture,
+    axe: "lieux" as const,
+  })),
+  ...CATEGORIES_GALERIE.map((c) => ({
+    slug: c.slug,
+    nom: c.nom,
+    href: `${LIEN}/${c.slug}`,
+    detail: `${c.total} photos · ${c.evenements.length} ${
+      c.evenements.length > 1 ? "événements" : "événement"
+    }`,
+    photo: c.couverture,
+    cadrage: c.cadrage,
+    axe: "evenements" as const,
+  })),
+];
+
+/* ────────────────────────────────────────── Les photos d'un seul lieu */
+
+/**
+ * ⚠️ Un lieu n'a pas de sous-dossiers, contrairement à une catégorie : on
+ * tombe directement sur ses photos. C'est voulu — « L'Atelier » n'a pas
+ * d'« événements », c'est une pièce.
+ */
+export function RefontePhotosLieu({ l }: { l: LieuGalerie }) {
+  return (
+    <Page>
+      <Barre />
+      <Corps>
+        <Retour href={LIEN} texte="Toutes les photos" />
+        <h1 className="mt-3 font-clp text-sm font-bold uppercase tracking-[0.1em]">
+          {l.nom}
+        </h1>
+        <p className="mt-1.5 font-mono text-[11px]" style={{ color: LAITON }}>
+          {l.total} photos
+        </p>
+        <Galerie photos={l.photos} titre={l.nom} />
       </Corps>
       <Pied />
     </Page>

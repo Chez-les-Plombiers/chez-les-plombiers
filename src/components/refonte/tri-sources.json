@@ -1,0 +1,21 @@
+{
+  "lieu-atelier": {
+    "nom": "L'ATELIER — le lieu",
+    "dossiers": [
+      "PHOTOS PLAQUETTE COMMERCIALE",
+      "PHOTOS DE CHEZ LES PLOMBIERS",
+      "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025"
+    ]
+  },
+  "lieu-appartement": {
+    "nom": "L'APPARTEMENT — le lieu",
+    "dossiers": [
+      "PHOTOS APPART ROSE",
+      "PHOTOS APPART ROSE/2026-09 RIDEAUX"
+    ]
+  },
+  "24-new-balance": {
+    "nom": "Déjeuner New Balance — REVOLVR",
+    "dossiers": ["EVENTS/24. DEJEUNER NEW BALANCE"]
+  }
+}

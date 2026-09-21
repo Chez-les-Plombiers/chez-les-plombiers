@@ -14,6 +14,17 @@ import type { Photo } from "./photos-data";
  * client vient voir. Les photos gardent donc leur format.
  *
  * ⚠️ Le clic agrandit. Sur une page de photos, c'est la seule attente.
+ *
+ * ── LES VIDÉOS VIVENT DANS LA MÊME GRILLE ─────────────────────────────────
+ *
+ * Demande d'Étienne, 21/09/2026 : « il faut qu'on mélange les galeries
+ * photos-vidéos et qu'on distingue les vidéos avec un petit bouton play au
+ * milieu ». Une vidéo n'est donc pas un objet à part : c'est une vue dont
+ * l'affiche est une image, marquée d'un rond. Elle ne se charge qu'au clic.
+ *
+ * ⚠️ C'est aussi ce qui évite d'alourdir la page, ce dont Étienne s'inquiétait
+ * à juste titre : la grille ne télécharge que des affiches WebP. Le MP4 n'est
+ * demandé que lorsqu'on ouvre la visionneuse.
  */
 export function Galerie({ photos, titre }: { photos: Photo[]; titre: string }) {
   const [ouverte, setOuverte] = useState<number | null>(null);
@@ -26,17 +37,24 @@ export function Galerie({ photos, titre }: { photos: Photo[]; titre: string }) {
             key={p.src}
             type="button"
             onClick={() => setOuverte(i)}
-            aria-label={`Agrandir la photo ${i + 1} sur ${photos.length}`}
+            aria-label={
+              p.video
+                ? `Lire la vidéo ${i + 1} sur ${photos.length}`
+                : `Agrandir la photo ${i + 1} sur ${photos.length}`
+            }
             className="mb-3 block w-full cursor-zoom-in overflow-hidden border border-[var(--clp-bord)] bg-[var(--clp-carte)]"
           >
-            <Image
-              src={p.src}
-              alt={`${titre} — Chez les Plombiers`}
-              width={p.l}
-              height={p.h}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
-              className="h-auto w-full"
-            />
+            <span className="relative block">
+              <Image
+                src={p.src}
+                alt={`${titre} — Chez les Plombiers`}
+                width={p.l}
+                height={p.h}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+                className="h-auto w-full"
+              />
+              {p.video && <Play />}
+            </span>
           </button>
         ))}
       </div>
@@ -105,14 +123,32 @@ function Visionneuse({
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/93 p-4 sm:p-10"
     >
       <div className="relative h-full w-full" onClick={(e) => e.stopPropagation()}>
-        <Image
-          src={p.src}
-          alt={`${titre} — Chez les Plombiers`}
-          fill
-          sizes="100vw"
-          className="object-contain"
-          priority
-        />
+        {p.video ? (
+          /*
+             ⚠️ `key` sur la source : sans elle, React réutilise l'élément en
+             changeant son `src`, et le navigateur continue de jouer la vidéo
+             précédente. Le `poster` évite le rectangle noir pendant le
+             chargement — c'est la même image que dans la grille, déjà en cache.
+          */
+          <video
+            key={p.video}
+            src={p.video}
+            poster={p.src}
+            controls
+            autoPlay
+            playsInline
+            className="h-full w-full object-contain"
+          />
+        ) : (
+          <Image
+            src={p.src}
+            alt={`${titre} — Chez les Plombiers`}
+            fill
+            sizes="100vw"
+            className="object-contain"
+            priority
+          />
+        )}
       </div>
 
       <button
@@ -135,18 +171,38 @@ function Visionneuse({
             {/* Le téléchargement de LA photo qu'on regarde : c'est là qu'on le
                 cherche, pas dans un bouton global en haut de page. */}
             <a
-              href={p.src}
+              href={p.video ?? p.src}
               download
               onClick={(e) => e.stopPropagation()}
               className="border border-white/25 bg-black/50 px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-white transition-colors hover:border-white/60"
               style={{ color: LAITON }}
             >
-              Télécharger ↓
+              Télécharger {p.video ? "la vidéo" : ""} ↓
             </a>
           </div>
         </>
       )}
     </div>
+  );
+}
+
+/**
+ * Le rond de lecture posé au centre d'une affiche.
+ *
+ * ⚠️ Dessiné en CSS, pas en SVG ni en image : un triangle fait de bordures ne
+ * coûte aucune requête et reste net à toute taille. `pointer-events-none` est
+ * indispensable — sinon il intercepte le clic destiné au bouton qui l'entoure.
+ */
+function Play() {
+  return (
+    <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
+      <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/70 bg-black/45 backdrop-blur-[1px]">
+        <span
+          className="ml-[3px] block h-0 w-0 border-y-[8px] border-l-[13px] border-y-transparent border-l-white"
+          aria-hidden
+        />
+      </span>
+    </span>
   );
 }
 

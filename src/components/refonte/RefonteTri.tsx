@@ -3,7 +3,7 @@ import Image from "next/image";
 // contraire de `/tarifs` qui appartient à l'autre zone Next.
 import Link from "next/link";
 import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
-import { CATEGORIES, EVENEMENTS } from "./tri-evenements";
+import { CATEGORIES, EVENEMENTS, LIEUX } from "./tri-evenements";
 import manifeste from "./tri-manifeste.json";
 
 /**
@@ -33,12 +33,25 @@ type Manifeste = Record<
 
 const M = manifeste as Manifeste;
 
+/**
+ * Tout ce qui se trie, dans l'ordre où Étienne le parcourt : les lieux
+ * d'abord, les événements ensuite.
+ *
+ * ⚠️ `LIEUX` est filtré sur la présence d'une planche — LA BOUTIQUE n'en a pas
+ * (voir `tri-evenements.ts`) et ne doit pas apparaître comme un dossier vide.
+ */
+const PLANCHES = [
+  ...LIEUX.filter((l) => M[l.slug]).map((l) => ({ slug: l.slug, nom: l.nom })),
+  ...EVENEMENTS.map((e) => ({ slug: e.slug, nom: e.nom })),
+];
+
 export function RefonteTriIndex() {
+  const lieux = LIEUX.filter((l) => M[l.slug]);
   const parCategorie = CATEGORIES.map((c) => ({
     ...c,
     evenements: EVENEMENTS.filter((e) => e.categorie === c.slug),
   }));
-  const total = EVENEMENTS.reduce((s, e) => s + (M[e.slug]?.items.length ?? 0), 0);
+  const total = PLANCHES.reduce((s, e) => s + (M[e.slug]?.items.length ?? 0), 0);
 
   return (
     <Page>
@@ -49,7 +62,7 @@ export function RefonteTriIndex() {
             Tri de la photothèque
           </h1>
           <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[#C9C4BC]">
-            {total} photos, {EVENEMENTS.length} événements. Pour chacun, deux
+            {total} photos, {PLANCHES.length} dossiers. Pour chacun, deux
             réponses suffisent&nbsp;: <strong>ce qu&apos;on retire</strong> et{" "}
             <strong>la couverture</strong>. Par exemple «&nbsp;retirer 3, 7, 12
             — couverture 5&nbsp;».
@@ -60,7 +73,8 @@ export function RefonteTriIndex() {
           </p>
         </div>
 
-        {parCategorie.map((c) => (
+        {/* Les lieux d'abord : c'est le tri qu'Étienne attend. */}
+        {[{ slug: "lieux", nom: "Les lieux", evenements: lieux }, ...parCategorie].map((c) => (
           <section key={c.slug} className="mt-8">
             <p className="mb-3 px-1 font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]">
               {c.nom}
@@ -109,14 +123,17 @@ export function RefonteTriIndex() {
 }
 
 export function RefonteTriEvenement({ slug }: { slug: string }) {
-  const e = EVENEMENTS.find((x) => x.slug === slug);
+  const e = PLANCHES.find((x) => x.slug === slug);
   const bloc = M[slug];
   if (!e || !bloc) return null;
 
-  const categorie = CATEGORIES.find((c) => c.slug === e.categorie);
-  const i = EVENEMENTS.indexOf(e);
-  const precedent = EVENEMENTS[i - 1];
-  const suivant = EVENEMENTS[i + 1];
+  const evenement = EVENEMENTS.find((x) => x.slug === slug);
+  const rubrique = evenement
+    ? CATEGORIES.find((c) => c.slug === evenement.categorie)?.nom
+    : "Les lieux";
+  const i = PLANCHES.indexOf(e);
+  const precedent = PLANCHES[i - 1];
+  const suivant = PLANCHES[i + 1];
 
   return (
     <Page>
@@ -127,13 +144,13 @@ export function RefonteTriEvenement({ slug }: { slug: string }) {
             href="/refonte/tri"
             className="font-mono text-[11px] text-[#8A8A8A] hover:text-[#E8E4DC]"
           >
-            ← Tous les événements
+            ← Tous les dossiers
           </Link>
           <h1 className="mt-3 font-clp text-sm font-bold uppercase tracking-[0.1em]">
             {e.nom}
           </h1>
           <p className="mt-1.5 font-mono text-[11px]" style={{ color: LAITON }}>
-            {categorie?.nom} · {bloc.items.length} photos
+            {rubrique} · {bloc.items.length} photos
           </p>
           <p className="mt-4 max-w-[62ch] text-[14px] leading-relaxed text-[#C9C4BC]">
             Dis-moi ce qu&apos;on retire, et laquelle sert de couverture.

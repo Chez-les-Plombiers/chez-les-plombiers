@@ -11,6 +11,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 import sharp from "sharp";
 
 const SOURCE = "/Users/Etienne/Library/CloudStorage/Dropbox-ChezlesPlombiers/CHEZ LES PLOMBIERS/PHOTOS";
@@ -24,6 +25,11 @@ const selection = JSON.parse(fs.readFileSync("src/components/refonte/tri-selecti
  * `PHOTOS/EVENTS`, mais quatre séries ont été ajoutées au fil de l'eau depuis
  * d'autres dossiers. Sans cette table, elles échouent en silence — le script
  * cherche `EVENTS/<nom de fichier>` et ne trouve rien.
+ *
+ * ⚠️ Elle ne concerne QUE les 22 planches d'origine. Celles fabriquées par
+ * `gen-tri.mjs` portent `racineAbsolue: true` et déclarent leurs dossiers dans
+ * `tri-sources.json` : leur `origine` part de la racine PHOTOS. C'est ce
+ * doublon de vérité qui avait fait échouer quatre séries en silence.
  */
 const DOSSIERS = {
   "diners-vrac": "DINERS CHEZ LES PLOMBIERS",
@@ -48,9 +54,51 @@ for (const [slug, sel] of Object.entries(selection)) {
   for (const n of gardees) {
     const item = bloc.items.find((i) => Number(i.n) === n);
     if (!item) { console.log(`  ✗ ${slug} n°${n} introuvable`); ratees++; continue; }
-    const src = path.join(SOURCE, dossierSource(slug), item.origine);
+    const src = bloc.racineAbsolue
+      ? path.join(SOURCE, item.origine)
+      : path.join(SOURCE, dossierSource(slug), item.origine);
     const nom = `${String(n).padStart(3, "0")}.webp`;
     const out = path.join(dest, nom);
+
+    /*
+     * ── LES VIDÉOS ────────────────────────────────────────────────────────
+     * Deux fichiers pour une vidéo : une affiche (le même WebP que pour une
+     * photo, pour que la grille reste une grille) et un MP4 lisible partout.
+     *
+     * ⚠️ RÉENCODAGE OBLIGATOIRE, même quand la source est déjà un MP4 : les
+     * vidéos d'iPhone sont en HEVC, que Chrome et Firefox ne lisent pas. Le
+     * fichier se téléchargerait et resterait noir, sans erreur.
+     */
+    if (item.video) {
+      const mp4 = path.join(dest, `${String(n).padStart(3, "0")}.mp4`);
+      if (!fs.existsSync(mp4)) {
+        try {
+          execFileSync("ffmpeg", ["-y", "-i", src,
+            /* Largeur paire imposée : H.264 refuse une dimension impaire. */
+            "-vf", "scale='min(1280,iw)':-2",
+            "-c:v", "libx264", "-preset", "slow", "-crf", "26",
+            "-c:a", "aac", "-b:a", "128k",
+            /* L'index en tête : sans ça, la lecture attend le fichier entier. */
+            "-movflags", "+faststart", mp4], { stdio: "ignore" });
+        } catch (e) { console.log(`  ✗ vidéo ${src} : ${e.message}`); ratees++; continue; }
+      }
+      if (!fs.existsSync(out)) {
+        execFileSync("ffmpeg", ["-y", "-ss", "1", "-i", src, "-frames:v", "1",
+                                out.replace(/\.webp$/, ".tmp.png")], { stdio: "ignore" });
+        await sharp(out.replace(/\.webp$/, ".tmp.png"))
+          .resize(1200, 1200, { fit: "inside", withoutEnlargement: true })
+          .webp({ quality: 72 }).toFile(out);
+        fs.unlinkSync(out.replace(/\.webp$/, ".tmp.png"));
+        faites++;
+      } else sautees++;
+      const m = await sharp(out).metadata();
+      items.push({
+        n, src: `/photos/galerie/${slug}/${nom}`, l: m.width, h: m.height,
+        video: `/photos/galerie/${slug}/${String(n).padStart(3, "0")}.mp4`,
+      });
+      continue;
+    }
+
     if (fs.existsSync(out)) { sautees++; }
     else {
       try {
@@ -65,7 +113,6 @@ for (const [slug, sel] of Object.entries(selection)) {
          * la main pour le WebP — inutile de perdre le gain de format.
          */
         const tmp = out.replace(/\.webp$/, ".tmp.jpg");
-        const { execFileSync } = await import("node:child_process");
         try {
           execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "90",
                                 "-Z", "1200", src, "--out", tmp], { stdio: "ignore" });
@@ -83,7 +130,5 @@ for (const [slug, sel] of Object.entries(selection)) {
 }
 
 fs.writeFileSync("src/components/refonte/galerie.json", JSON.stringify(sortie, null, 2));
-const ko = Number(
-  (await import("node:child_process")).execSync(`du -sk ${SORTIE}`).toString().split("\t")[0]
-);
+const ko = Number(execFileSync("du", ["-sk", SORTIE]).toString().split("\t")[0]);
 console.log(`\n${faites} générées, ${sautees} déjà là, ${ratees} en échec — ${Math.round(ko / 1024)} Mo`);

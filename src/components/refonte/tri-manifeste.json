@@ -7557,5 +7557,396 @@
         "video": true
       }
     ]
+  },
+  "lieu-atelier": {
+    "dossier": "L'ATELIER — le lieu",
+    "racineAbsolue": true,
+    "items": [
+      {
+        "n": "001",
+        "src": "/photos/tri/lieu-atelier/001.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8719.jpg"
+      },
+      {
+        "n": "002",
+        "src": "/photos/tri/lieu-atelier/002.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8725.jpg"
+      },
+      {
+        "n": "003",
+        "src": "/photos/tri/lieu-atelier/003.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8785.jpg"
+      },
+      {
+        "n": "004",
+        "src": "/photos/tri/lieu-atelier/004.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8815.jpg"
+      },
+      {
+        "n": "005",
+        "src": "/photos/tri/lieu-atelier/005.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8842.jpg"
+      },
+      {
+        "n": "006",
+        "src": "/photos/tri/lieu-atelier/006.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8925.jpg"
+      },
+      {
+        "n": "007",
+        "src": "/photos/tri/lieu-atelier/007.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8925_V2.jpg"
+      },
+      {
+        "n": "008",
+        "src": "/photos/tri/lieu-atelier/008.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8925_V3.jpg"
+      },
+      {
+        "n": "009",
+        "src": "/photos/tri/lieu-atelier/009.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8925_V4.jpg"
+      },
+      {
+        "n": "010",
+        "src": "/photos/tri/lieu-atelier/010.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8957.jpg"
+      },
+      {
+        "n": "011",
+        "src": "/photos/tri/lieu-atelier/011.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A8962.jpg"
+      },
+      {
+        "n": "012",
+        "src": "/photos/tri/lieu-atelier/012.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/15012025-133A9007.jpg"
+      },
+      {
+        "n": "013",
+        "src": "/photos/tri/lieu-atelier/013.webp",
+        "origine": "PHOTOS PLAQUETTE COMMERCIALE/KV_SANS_ENCEINTE_15012025-133A8743.jpg"
+      },
+      {
+        "n": "014",
+        "src": "/photos/tri/lieu-atelier/014.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 00 compressée.png"
+      },
+      {
+        "n": "015",
+        "src": "/photos/tri/lieu-atelier/015.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 00.jpg"
+      },
+      {
+        "n": "016",
+        "src": "/photos/tri/lieu-atelier/016.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 01.JPG"
+      },
+      {
+        "n": "017",
+        "src": "/photos/tri/lieu-atelier/017.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 02.JPG"
+      },
+      {
+        "n": "018",
+        "src": "/photos/tri/lieu-atelier/018.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 03.JPG"
+      },
+      {
+        "n": "019",
+        "src": "/photos/tri/lieu-atelier/019.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 04.JPG"
+      },
+      {
+        "n": "020",
+        "src": "/photos/tri/lieu-atelier/020.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 05.JPG"
+      },
+      {
+        "n": "021",
+        "src": "/photos/tri/lieu-atelier/021.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 06.JPG"
+      },
+      {
+        "n": "022",
+        "src": "/photos/tri/lieu-atelier/022.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 07.JPG"
+      },
+      {
+        "n": "023",
+        "src": "/photos/tri/lieu-atelier/023.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 08.JPG"
+      },
+      {
+        "n": "024",
+        "src": "/photos/tri/lieu-atelier/024.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 09.JPG"
+      },
+      {
+        "n": "025",
+        "src": "/photos/tri/lieu-atelier/025.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 10.JPG"
+      },
+      {
+        "n": "026",
+        "src": "/photos/tri/lieu-atelier/026.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 12.JPG"
+      },
+      {
+        "n": "027",
+        "src": "/photos/tri/lieu-atelier/027.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 13.JPG"
+      },
+      {
+        "n": "028",
+        "src": "/photos/tri/lieu-atelier/028.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 14.JPG"
+      },
+      {
+        "n": "029",
+        "src": "/photos/tri/lieu-atelier/029.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 15.JPG"
+      },
+      {
+        "n": "030",
+        "src": "/photos/tri/lieu-atelier/030.webp",
+        "origine": "PHOTOS DE CHEZ LES PLOMBIERS/PHOTO 16.JPG"
+      },
+      {
+        "n": "031",
+        "src": "/photos/tri/lieu-atelier/031.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8700.jpg"
+      },
+      {
+        "n": "032",
+        "src": "/photos/tri/lieu-atelier/032.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8719.jpg"
+      },
+      {
+        "n": "033",
+        "src": "/photos/tri/lieu-atelier/033.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8725.jpg"
+      },
+      {
+        "n": "034",
+        "src": "/photos/tri/lieu-atelier/034.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8743.jpg"
+      },
+      {
+        "n": "035",
+        "src": "/photos/tri/lieu-atelier/035.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8815.jpg"
+      },
+      {
+        "n": "036",
+        "src": "/photos/tri/lieu-atelier/036.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8818.jpg"
+      },
+      {
+        "n": "037",
+        "src": "/photos/tri/lieu-atelier/037.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8821.jpg"
+      },
+      {
+        "n": "038",
+        "src": "/photos/tri/lieu-atelier/038.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8832.jpg"
+      },
+      {
+        "n": "039",
+        "src": "/photos/tri/lieu-atelier/039.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8839.jpg"
+      },
+      {
+        "n": "040",
+        "src": "/photos/tri/lieu-atelier/040.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8842.jpg"
+      },
+      {
+        "n": "041",
+        "src": "/photos/tri/lieu-atelier/041.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8865.jpg"
+      },
+      {
+        "n": "042",
+        "src": "/photos/tri/lieu-atelier/042.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8889.jpg"
+      },
+      {
+        "n": "043",
+        "src": "/photos/tri/lieu-atelier/043.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8895.jpg"
+      },
+      {
+        "n": "044",
+        "src": "/photos/tri/lieu-atelier/044.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8904.jpg"
+      },
+      {
+        "n": "045",
+        "src": "/photos/tri/lieu-atelier/045.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8913.jpg"
+      },
+      {
+        "n": "046",
+        "src": "/photos/tri/lieu-atelier/046.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8925.jpg"
+      },
+      {
+        "n": "047",
+        "src": "/photos/tri/lieu-atelier/047.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8953.jpg"
+      },
+      {
+        "n": "048",
+        "src": "/photos/tri/lieu-atelier/048.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/15012025-133A8957.jpg"
+      },
+      {
+        "n": "049",
+        "src": "/photos/tri/lieu-atelier/049.webp",
+        "origine": "PHOTOS JUSTIN/JUSTIN - SÉLECTION 1ER SEMESTRE 2025/KV_15012025-133A8743.jpg"
+      }
+    ]
+  },
+  "lieu-appartement": {
+    "dossier": "L'APPARTEMENT — le lieu",
+    "racineAbsolue": true,
+    "items": [
+      {
+        "n": "001",
+        "src": "/photos/tri/lieu-appartement/001.webp",
+        "origine": "PHOTOS APPART ROSE/ChatGPT Image 10 sept. 2026, 22_08_03.png"
+      },
+      {
+        "n": "002",
+        "src": "/photos/tri/lieu-appartement/002.webp",
+        "origine": "PHOTOS APPART ROSE/ChatGPT Image 10 sept. 2026, 22_25_24.png"
+      },
+      {
+        "n": "003",
+        "src": "/photos/tri/lieu-appartement/003.webp",
+        "origine": "PHOTOS APPART ROSE/ChatGPT Image 10 sept. 2026, 22_43_34.png"
+      },
+      {
+        "n": "004",
+        "src": "/photos/tri/lieu-appartement/004.webp",
+        "origine": "PHOTOS APPART ROSE/ChatGPT Image 10 sept. 2026, 22_46_19.png"
+      },
+      {
+        "n": "005",
+        "src": "/photos/tri/lieu-appartement/005.webp",
+        "origine": "PHOTOS APPART ROSE/IMG_5707.mov",
+        "video": true
+      },
+      {
+        "n": "006",
+        "src": "/photos/tri/lieu-appartement/006.webp",
+        "origine": "PHOTOS APPART ROSE/IMG_5708.MOV",
+        "video": true
+      },
+      {
+        "n": "007",
+        "src": "/photos/tri/lieu-appartement/007.webp",
+        "origine": "PHOTOS APPART ROSE/L'APPARTEMENT ROSE 3.JPG"
+      },
+      {
+        "n": "008",
+        "src": "/photos/tri/lieu-appartement/008.webp",
+        "origine": "PHOTOS APPART ROSE/PHOTO 01.JPG"
+      },
+      {
+        "n": "009",
+        "src": "/photos/tri/lieu-appartement/009.webp",
+        "origine": "PHOTOS APPART ROSE/PHOTO 02.JPG"
+      },
+      {
+        "n": "010",
+        "src": "/photos/tri/lieu-appartement/010.webp",
+        "origine": "PHOTOS APPART ROSE/PHOTO 03.JPG"
+      },
+      {
+        "n": "011",
+        "src": "/photos/tri/lieu-appartement/011.webp",
+        "origine": "PHOTOS APPART ROSE/PHOTO 04.JPG"
+      },
+      {
+        "n": "012",
+        "src": "/photos/tri/lieu-appartement/012.webp",
+        "origine": "PHOTOS APPART ROSE/PHOTO 05.JPG"
+      },
+      {
+        "n": "013",
+        "src": "/photos/tri/lieu-appartement/013.webp",
+        "origine": "PHOTOS APPART ROSE/PHOTO 06.JPG"
+      },
+      {
+        "n": "014",
+        "src": "/photos/tri/lieu-appartement/014.webp",
+        "origine": "PHOTOS APPART ROSE/PHOTO 07.JPG"
+      },
+      {
+        "n": "015",
+        "src": "/photos/tri/lieu-appartement/015.webp",
+        "origine": "PHOTOS APPART ROSE/PHOTO 08.JPG"
+      },
+      {
+        "n": "016",
+        "src": "/photos/tri/lieu-appartement/016.webp",
+        "origine": "PHOTOS APPART ROSE/PHOTO 09.JPG"
+      },
+      {
+        "n": "017",
+        "src": "/photos/tri/lieu-appartement/017.webp",
+        "origine": "PHOTOS APPART ROSE/PHOTO 10.JPG"
+      },
+      {
+        "n": "018",
+        "src": "/photos/tri/lieu-appartement/018.webp",
+        "origine": "PHOTOS APPART ROSE/2026-09 RIDEAUX/APPARTEMENT-RIDEAUX-01.jpg"
+      },
+      {
+        "n": "019",
+        "src": "/photos/tri/lieu-appartement/019.webp",
+        "origine": "PHOTOS APPART ROSE/2026-09 RIDEAUX/APPARTEMENT-RIDEAUX-02.jpg"
+      },
+      {
+        "n": "020",
+        "src": "/photos/tri/lieu-appartement/020.webp",
+        "origine": "PHOTOS APPART ROSE/2026-09 RIDEAUX/APPARTEMENT-RIDEAUX-03.jpg"
+      }
+    ]
+  },
+  "24-new-balance": {
+    "dossier": "Déjeuner New Balance — REVOLVR",
+    "racineAbsolue": true,
+    "items": [
+      {
+        "n": "001",
+        "src": "/photos/tri/24-new-balance/001.webp",
+        "origine": "EVENTS/24. DEJEUNER NEW BALANCE/3188BE50-5E09-47AF-B6D9-3823B3C99309.JPG"
+      },
+      {
+        "n": "002",
+        "src": "/photos/tri/24-new-balance/002.webp",
+        "origine": "EVENTS/24. DEJEUNER NEW BALANCE/3EC47D0F-C0C5-4C4F-9192-53FE549A7E16.JPG"
+      },
+      {
+        "n": "003",
+        "src": "/photos/tri/24-new-balance/003.webp",
+        "origine": "EVENTS/24. DEJEUNER NEW BALANCE/539F2BA3-BF8A-41B6-9227-E448731D1A73.JPG"
+      },
+      {
+        "n": "004",
+        "src": "/photos/tri/24-new-balance/004.webp",
+        "origine": "EVENTS/24. DEJEUNER NEW BALANCE/9F9C00BF-8186-4100-A8B9-974AB9BAF437.JPG"
+      },
+      {
+        "n": "005",
+        "src": "/photos/tri/24-new-balance/005.webp",
+        "origine": "EVENTS/24. DEJEUNER NEW BALANCE/DC663357-36C2-4532-9128-0F2E6AF3A9F8.MP4",
+        "video": true
+      }
+    ]
   }
 }

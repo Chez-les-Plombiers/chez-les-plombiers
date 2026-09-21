@@ -4017,5 +4017,38 @@
       "l": 675,
       "h": 1200
     }
+  ],
+  "24-new-balance": [
+    {
+      "n": 1,
+      "src": "/photos/galerie/24-new-balance/001.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 2,
+      "src": "/photos/galerie/24-new-balance/002.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 3,
+      "src": "/photos/galerie/24-new-balance/003.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 4,
+      "src": "/photos/galerie/24-new-balance/004.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 5,
+      "src": "/photos/galerie/24-new-balance/005.webp",
+      "l": 675,
+      "h": 1200,
+      "video": "/photos/galerie/24-new-balance/005.mp4"
+    }
   ]
 }

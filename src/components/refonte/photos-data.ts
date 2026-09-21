@@ -1,6 +1,13 @@
-import { CATEGORIES, EVENEMENTS, type SlugCategorie } from "./tri-evenements";
+import {
+  CATEGORIES,
+  EVENEMENTS,
+  LIEUX,
+  type SlugCategorie,
+  type SlugLieu,
+} from "./tri-evenements";
 import selection from "./tri-selection.json";
 import galerie from "./galerie.json";
+import photosLieux from "./photos-lieux.json";
 
 /**
  * La photothèque, assemblée pour l'affichage.
@@ -26,15 +33,24 @@ type Selection = Record<
     ordreImpose?: boolean;
   }
 >;
-type Galerie = Record<string, { n: number; src: string; l: number; h: number }[]>;
+type Galerie = Record<
+  string,
+  { n: number; src: string; l: number; h: number; video?: string }[]
+>;
 
 const SEL = selection as Selection;
 const GAL = galerie as Galerie;
 
 export interface Photo {
+  /** L'image — l'affiche, quand c'est une vidéo. */
   src: string;
   l: number;
   h: number;
+  /**
+   * Le MP4, si cette vue est une vidéo. `src` en est alors l'affiche, ce qui
+   * laisse la grille se comporter exactement comme une grille de photos.
+   */
+  video?: string;
 }
 
 export interface EvenementGalerie {
@@ -62,7 +78,7 @@ function photosDe(slug: string): Photo[] {
   return ordre
     .map((n) => parNumero.get(n))
     .filter((x): x is NonNullable<typeof x> => Boolean(x))
-    .map(({ src, l, h }) => ({ src, l, h }));
+    .map(({ src, l, h, video }) => ({ src, l, h, ...(video ? { video } : {}) }));
 }
 
 /**
@@ -174,6 +190,53 @@ export const CATEGORIES_GALERIE: CategorieGalerie[] = CATEGORIES.map((c) => {
     cadrage: voulue ? choix?.cadrage : undefined,
   };
 }).filter((c) => c.evenements.length > 0);
+
+/* ─────────────────────────────────────────── Le second axe : les lieux */
+
+export interface LieuGalerie {
+  slug: SlugLieu;
+  nom: string;
+  photos: Photo[];
+  couverture: Photo;
+  total: number;
+}
+
+/**
+ * Les photos d'un lieu — le lieu lui-même, vide.
+ *
+ * ⚠️ DEUX SOURCES, ET C'EST VOULU. Quand une planche de tri a été dépouillée,
+ * c'est elle qui fait foi. Tant qu'elle ne l'est pas, on retombe sur les vues
+ * DÉJÀ retenues pour le site (`photos-lieux.json`) : elles ont été choisies une
+ * à une, elles ne sont pas un pis-aller. Publier 49 vues non triées de
+ * L'ATELIER en attendant serait pire que d'en montrer 7 sûres.
+ *
+ * ⚠️ LA BOUTIQUE n'a que cette seconde source, et durablement : le lieu a
+ * ouvert le 01/09/2026 et n'a pas encore été photographié.
+ */
+const REPLI = photosLieux as Record<string, Photo[]>;
+
+export const LIEUX_GALERIE: LieuGalerie[] = LIEUX.map((l) => {
+  const triees = photosDe(l.slug);
+  const photos = triees.length > 0 ? triees : (REPLI[l.slug] ?? []);
+  const num = SEL[l.slug]?.couverture ?? null;
+  const choisie = (GAL[l.slug] ?? []).find((i) => i.n === num);
+  const couverture: Photo = choisie
+    ? { src: choisie.src, l: choisie.l, h: choisie.h }
+    : photos[0];
+  return {
+    slug: l.slug,
+    nom: l.nom,
+    photos: couverture
+      ? [couverture, ...photos.filter((p) => p.src !== couverture.src)]
+      : photos,
+    couverture,
+    total: photos.length,
+  };
+}).filter((l) => l.total > 0);
+
+export function lieu(slug: string) {
+  return LIEUX_GALERIE.find((l) => l.slug === slug);
+}
 
 export function categorie(slug: string) {
   return CATEGORIES_GALERIE.find((c) => c.slug === slug);
