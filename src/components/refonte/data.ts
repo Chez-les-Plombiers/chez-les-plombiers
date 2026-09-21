@@ -379,6 +379,9 @@ export const ATELIER = {
         ["Le canapé", "Un Pierre Paulin de 5,60 m, orientable en S, en U ou droit"],
         ["L'entrée", "Quatre fauteuils Pangea et une table basse"],
         ["En plus", "Une table roulante, et des tables et chaises sur demande"],
+        /* ⚠️ Le dire évite la question, et évite surtout la déception le jour
+           du montage. Étienne, 21/09/2026. */
+        ["À savoir", "Nous ne louons pas d'autre mobilier, mais nous pouvons vous orienter vers un loueur"],
       ],
     },
     {

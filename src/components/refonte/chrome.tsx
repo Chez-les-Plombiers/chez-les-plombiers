@@ -204,9 +204,20 @@ export function Barre({ lieu }: { lieu?: string }) {
 
         {/* Grand écran : les trois actions. */}
         <nav className="hidden items-center gap-2 sm:flex">
+          {/*
+            ⚠️ BLANC CASSÉ, PAS LAITON PLEIN. Remarque de Céline : rempli, le
+            laiton « apparaît comme une couleur à part entière », alors qu'en
+            trait ou en mot il passe pour un accent. Un aplat doré dans une
+            page qui n'a pas d'autre couleur pleine déséquilibre tout.
+            Le blanc cassé est déjà la couleur du texte de la page : il ne
+            introduit aucune couleur nouvelle, et rempli il garde son rôle de
+            bouton principal. Le laiton reste ce qu'il est — un trait, un mot.
+            ⚠️ Et il ne suit PAS le thème du lieu : rose ou bleu plein seraient
+            pires encore.
+          */}
           <a
             href="/tarifs"
-            className="bg-[var(--clp-accent)] px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] text-[#1A1A1A] transition-colors hover:opacity-85"
+            className="bg-[#E8E4DC] px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] text-[#1A1A1A] transition-opacity hover:opacity-85"
           >
             Tarifs
           </a>

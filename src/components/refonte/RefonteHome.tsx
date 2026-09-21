@@ -96,8 +96,19 @@ function Ouverture() {
             L'adresse, elle, reste en TEXTE : c'est elle que Google lit.
           */}
           <h1 className="font-clp uppercase">
+            {/*
+              ⚠️ LE CHIFFRE 3, ET PAS « LIEUX » AU PLURIEL. Remarque de Céline,
+              relayée par Étienne le 21/09/2026 : sur un petit écran, quelqu'un
+              qui ne voit que le haut de la page croit qu'il n'y a qu'un lieu.
+              « Lieux » au pluriel ne se remarque pas ; « 3 » se remarque.
+              Les trois noms suivent sur la même ligne : ils étaient répétés
+              plus bas, ce doublon a été retiré.
+            */}
             <span className="block text-[13px] font-bold leading-relaxed tracking-[0.1em] sm:text-sm">
-              Lieux événementiels
+              3 lieux événementiels
+            </span>
+            <span className="mt-1 block text-[11px] font-bold leading-relaxed tracking-[0.12em] sm:text-[12px]">
+              L&apos;Atelier · La Boutique · L&apos;Appartement
             </span>
             {/* Une seule ligne sur téléphone : voir le commentaire jumeau
                 dans RefonteLieu.tsx. */}
@@ -118,12 +129,7 @@ function Ouverture() {
           <p className="mt-3 text-[14px] leading-relaxed text-[#A8A29A]">
             Trois espaces à la même adresse.
             <br />
-            Showrooms, lancements presse, dîners privés, défilés, expositions.
-          </p>
-          {/* Les nommer tout de suite : sinon « trois espaces » reste abstrait
-              jusqu'à ce qu'on fasse défiler. */}
-          <p className="mt-2 font-mono text-[11px] text-[#8A8A8A]">
-            L&apos;Atelier · La Boutique · L&apos;Appartement
+            Showrooms, lancements presse, dîners privés, défilés, expositions, etc.
           </p>
         </div>
       </div>

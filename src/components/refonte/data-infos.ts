@@ -305,7 +305,13 @@ export const SECTIONS: readonly Section[] = [
       {
         quoi: "Courriel",
         valeur: "contact@chezlesplombiers.fr",
-        detail: "Ou directement etienne@ et celine@chezlesplombiers.fr.",
+        /*
+         * ⚠️ UNE SEULE ADRESSE PUBLIQUE, et ne pas en rajouter. Remarque de
+         * Céline, relayée le 21/09/2026 : publier les adresses nominatives,
+         * c'est se faire arroser par tout le monde. `contact@` est un groupe :
+         * le message arrive quand même aux bonnes personnes.
+         */
+        detail: "Le message arrive à toute l'équipe.",
         href: "mailto:contact@chezlesplombiers.fr",
       },
       {
