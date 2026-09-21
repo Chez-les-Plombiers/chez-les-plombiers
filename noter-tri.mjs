@@ -5,6 +5,11 @@
  *   node noter-tri.mjs <slug> --retire 5,6,12,19
  *   node noter-tri.mjs <slug> --garde 1,2,4,8-12
  *   node noter-tri.mjs <slug> --couverture 12
+ *   node noter-tri.mjs <slug> --ordre 2,4,6,8,1
+ *
+ * ⚠️ « --ordre » conserve l'ordre donné au lieu de trier. À utiliser dès qu'une
+ * photo doit sortir de la chronologie — une vue d'ouverture qu'on remonte, une
+ * photo de lieu vide qu'on repousse à la fin.
  *
  * ⚠️ « --retire » part de TOUTES les photos et enlève les numéros donnés ;
  * « --garde » ne retient que ceux-là. Ne pas confondre : sur un dossier de
@@ -37,13 +42,21 @@ if (opt("retire")) {
   const out = new Set(plage(opt("retire")));
   e.garde = Array.from({ length: total }, (_, i) => i + 1).filter((n) => !out.has(n));
 }
-if (opt("garde")) e.garde = plage(opt("garde"));
+if (opt("garde")) e.garde = plage(opt("garde")).sort((a, b) => a - b);
+if (opt("ordre")) { e.garde = plage(opt("ordre")); e.ordreImpose = true; }
 if (opt("couverture")) {
   const c = Number(opt("couverture"));
   e.couverture = c;
   // Une couverture est forcement gardee, meme si elle etait tombee dans un
   // retrait en bloc : le choix regarde la planche, le retrait allait vite.
-  if (!e.garde.includes(c)) { e.garde = [...e.garde, c].sort((a, b) => a - b); console.log(`  ↳ ${c} etait retiree : reintegree comme couverture.`); }
+  if (!e.garde.includes(c)) {
+    // Sans ordre impose, on replace la couverture a sa position chronologique ;
+    // avec un ordre impose, on ne touche pas au classement d'Etienne.
+    e.garde = e.ordreImpose
+      ? [...e.garde, c]
+      : [...e.garde, c].sort((a, b) => a - b);
+    console.log(`  ↳ ${c} n'etait pas dans la liste : reintegree comme couverture.`);
+  }
 }
 
 fs.writeFileSync(f, JSON.stringify(sel, null, 2));
