@@ -178,6 +178,23 @@ une recherche : on voit tout, on n'a pas à deviner le mot. Et le moteur
 intelligent existe déjà — c'est `/guide`. Le brancher sur `regles.ts` plutôt que
 d'en construire un second. À reconsidérer si la page dépasse ~50 entrées.
 
+## ⚠️ TROIS CONTRADICTIONS À TRANCHER — relevées le 21/09/2026
+
+Elles opposent la page Notion « FR — INFOS GÉNÉRALES » (le document envoyé aux
+clients) à ce qu'Étienne a dicté. **Aucune n'a été tranchée en silence.**
+
+| Sujet | Le Notion dit | Étienne dit | Retenu sur le site |
+|---|---|---|---|
+| **Agents de sécurité** | 1 agent SSIAP au-delà de **50** pers., 2 au-delà de **100** | 1 jusqu'à **30**, 2 au-delà de **30**, 3 au-delà de **80** | ni l'un ni l'autre — la page dit que le seuil est à confirmer |
+| **Hauteur sous plafond** | **~4,10 m** | **4,50 m** | 4,50 m, avec une réserve affichée |
+| **Ménage** | ménage **d'entrée ET de sortie** inclus | ménage **de sortie** seulement | « ménage de sortie compris » |
+
+⚠️ Le seuil d'agents est le plus sérieux : c'est une obligation de sécurité, et
+un chiffre faux engage la responsabilité. À trancher avant la mise en ligne.
+
+⚠️ Autre écart, hors refonte : le Notion donne **+33 6 88 67 99 81** comme
+numéro public, le site **+33 7 61 47 10 73**. Lequel fait foi ?
+
 ## À trancher par Étienne
 
 - ✅ **Chiffres de L'ATELIER, tranchés par Étienne le 20/09/2026** : capacité
@@ -195,7 +212,11 @@ d'en construire un second. À reconsidérer si la page dépasse ~50 entrées.
 - Équipement de L'APPARTEMENT (celui de LA BOUTIQUE a été dicté le 20/09).
 - Photos de L'APPARTEMENT : celles en ligne datent d'avant la pose des rideaux.
 
-- Licence web Eurostile — contacter le fondeur.
+- Licence web Eurostile — contacter le fondeur. ⚠️ Les fichiers en place sont
+  `Eurostile ExtendedTwo`, **Adobe 1989-1990**, 352 glyphes, **sans €**. Monotype
+  vend aujourd'hui deux familles différentes (`Eurostile®` et `Eurostile Next®`) :
+  demander celle qui correspond au dessin du logotype, sinon le logo et les
+  titres ne seront pas la même lettre.
 - **Le régisseur devient facturé à part** (20/09/2026) : il n'est plus annoncé
   comme compris. Le site en production dit encore « ménage et régisseur
   compris » — à corriger à la bascule.
