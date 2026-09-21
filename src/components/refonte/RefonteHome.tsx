@@ -236,11 +236,26 @@ function Espaces() {
 function Preuve() {
   return (
     <Bloc grand>
+      {/*
+        ⚠️ LE PORSCHE CAYENNE, ET PAS LA TRIUMPH. La photo précédente venait de
+        la galerie du site actuel (dîner Maison 123) : un coupé ancien, cadré
+        serré, garé au fond d'une salle. On y voyait une voiture, pas une
+        présentation automobile.
+        Celle-ci montre le Cayenne électrique avec la scénographie de la marque
+        — le mur « CAYENNE ELECTRIC », les marquages au sol, les projecteurs.
+        C'est la preuve, pas l'illustration. Récupérée le 21/09/2026 depuis la
+        publication Instagram du lieu ; l'original est archivé dans
+        `Dropbox/PHOTOS/EVENTS/22. PORSCHE CAYENNE/`.
+
+        ⚠️ Elle est VERTICALE (952 × 1269) et ne remplira pas un bandeau
+        panoramique : d'où le format 4/3 sur grand écran plutôt que 21/9. Si
+        une version horizontale apparaît un jour, on pourra élargir.
+      */}
       <figure className={`${CADRE} overflow-hidden`}>
-        <div className="relative aspect-[16/10] w-full sm:aspect-[21/9]">
+        <div className="relative aspect-[4/5] w-full sm:aspect-[4/3]">
           <Image
-            src="/images/services/gallery/evenements-auto-moto/01.jpg"
-            alt="Une voiture garée à l'intérieur de L'Atelier, entre les poteaux de béton"
+            src="/photos/lieu/porsche-cayenne.jpg"
+            alt="Le Porsche Cayenne électrique présenté à l'intérieur de L'Atelier, devant le mur de scénographie de la marque"
             fill
             sizes="(max-width: 1180px) 100vw, 1180px"
             className="object-cover"
@@ -248,6 +263,7 @@ function Preuve() {
         </div>
         <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[14px] leading-relaxed text-[#C9C4BC]">
           Une voiture entre depuis la rue, de plain-pied, et peut rester.
+          Porsche y a présenté le Cayenne électrique.
         </figcaption>
       </figure>
     </Bloc>
