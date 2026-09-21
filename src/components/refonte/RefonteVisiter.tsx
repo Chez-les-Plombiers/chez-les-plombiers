@@ -19,13 +19,23 @@ import { ADRESSE } from "./data";
  * échoue — bloqueur de traceurs, réseau d'entreprise —, la visite reste
  * réservable. Ne pas le retirer parce qu'il fait doublon : il est le filet.
  */
+/**
+ * ⚠️ `hide_event_type_details=1` n'est pas un détail : c'est ce qui fait tenir
+ * le calendrier dans la page. Le bandeau de Calendly (logo, titre, durée, lieu,
+ * description) prend près de 400 px et répète mot pour mot la colonne de gauche
+ * — durée, quand, prix, où. En le masquant, on supprime le doublon ET la barre
+ * de défilement interne qu'Étienne a relevée : « on est obligé de scroller pour
+ * voir les dates ».
+ *
+ * Les couleurs du lieu sont bien reprises par le widget. En revanche
+ * `hide_gdpr_banner` reste sans effet : Calendly affiche sa propre bannière de
+ * cookies au premier passage, et ce réglage dépend de son offre. Rien à
+ * corriger côté site.
+ */
 const CALENDLY =
   "https://calendly.com/chezlesplombiers/visite" +
-  // Les couleurs du lieu, passées au widget. Sans elles, Calendly reste bleu.
-  // Les couleurs sont bien reprises. En revanche `hide_gdpr_banner` reste sans
-  // effet : Calendly affiche sa propre bannière de cookies au premier passage,
-  // et ce réglage dépend de son offre. Rien à corriger côté site.
-  "?hide_gdpr_banner=1&background_color=1A1A1A&text_color=E8E4DC&primary_color=C8A96E";
+  "?hide_event_type_details=1&hide_gdpr_banner=1" +
+  "&background_color=1A1A1A&text_color=E8E4DC&primary_color=C8A96E";
 
 const REPERES: Array<[string, string]> = [
   ["Durée", "Une demi-heure, parfois trois quarts d'heure si vous avez un projet précis."],
@@ -52,6 +62,20 @@ export function RefonteVisiter() {
             Le plus simple est de venir voir. On fait le tour des trois espaces,
             on regarde ce que votre projet demande, et vous repartez avec un
             ordre de prix.
+          </p>
+          {/*
+            ⚠️ C'est ICI que la mention compte le plus. Les demandes de
+            particuliers arrivent par la visite — Étienne : « très souvent on a
+            des visites de particuliers ». Une ligne avant le calendrier coûte
+            moins cher qu'une demi-heure sur place.
+          */}
+          <p
+            className={`${CADRE} mt-5 max-w-[62ch] p-4 text-[14px] leading-relaxed`}
+            style={{ borderLeft: `2px solid ${LAITON}` }}
+          >
+            Les visites sont réservées aux professionnels — marques, agences,
+            entreprises. Nous n&apos;accueillons pas d&apos;événements pour des
+            particuliers : ni anniversaires, ni mariages, ni fêtes familiales.
           </p>
         </div>
 
@@ -92,14 +116,11 @@ export function RefonteVisiter() {
               title="Choisir un créneau de visite"
               loading="lazy"
               /*
-                ⚠️ Haut PARTOUT, et c'est voulu. Le calendrier de Calendly ne se
-                réduit pas : sous ~1 000 px, il fabrique une barre de défilement
-                DANS la page, et il faut faire défiler l'intérieur du cadre pour
-                voir les dates — Étienne : « on est obligé de scroller pour voir
-                les dates, je trouve ça un peu dommage ». Mieux vaut une page
-                longue qu'un calendrier qu'on doit fouiller.
+                Ces hauteurs vont avec `hide_event_type_details` : sans lui, il
+                faudrait 1 100 px et on ferait quand même défiler. Ne pas les
+                réduire sans revérifier que la fin du mois reste visible.
               */
-              className="h-[1020px] w-full border-0 sm:h-[1080px]"
+              className="h-[760px] w-full border-0 sm:h-[700px]"
             />
           </div>
         </div>

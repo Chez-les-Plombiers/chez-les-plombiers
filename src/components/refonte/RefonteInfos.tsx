@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MapPin } from "lucide-react";
-import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
+import { Barre, CADRE, Corps, LAITON, Page, Pied, lien } from "./chrome";
 import { ADRESSE, FICHE_GOOGLE } from "./data";
 import { INFOS_INTRO, SECTIONS, type Section } from "./data-infos";
 
@@ -197,7 +197,7 @@ function Bloc({ section }: { section: Section }) {
               </dt>
               <dd className="mt-1 sm:mt-0">
                 <a
-                  href={c.href}
+                  href={c.interne ? lien(c.href) : c.href}
                   {...(c.externe
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}

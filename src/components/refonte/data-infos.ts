@@ -45,6 +45,8 @@ export interface Section {
     detail: string;
     href: string;
     externe?: boolean;
+    /** Page du site : le préfixe de maquette lui est appliqué au rendu. */
+    interne?: boolean;
   }[];
   /**
    * Liens sortants, GROUPÉS. Une liste à plat de douze noms ne se lit pas : on
@@ -213,10 +215,18 @@ export const SECTIONS: readonly Section[] = [
      */
     id: "qui",
     titre: "Pour qui",
+    /*
+     * ⚠️ DEUX PHRASES, ET ON S'ARRÊTE. Une première version expliquait le
+     * pourquoi (l'immeuble d'habitation) et ajoutait « autant le savoir
+     * maintenant plutôt qu'après une visite ». Étienne a coupé les deux :
+     * « c'est tout, je peux pas dire plus ».
+     *
+     * Il a raison. Un refus qui se justifie invite à négocier le motif. Un
+     * refus qui s'énonce ne s'argumente pas.
+     */
     texte: [
-      "Chez les Plombiers est un lieu professionnel. Nous accueillons des marques, des agences et des entreprises : showrooms, lancements presse, dîners de marque, défilés, expositions, séminaires.",
-      "Nous ne prenons pas d'événements privés — ni anniversaires, ni mariages, ni fêtes familiales. Ce n'est pas une question de taille ou de budget : le lieu est installé dans un immeuble d'habitation, et c'est le cadre professionnel qui rend l'équilibre tenable avec le voisinage.",
-      "Si vous cherchez une salle pour une fête privée, autant le savoir maintenant plutôt qu'après une visite.",
+      "Chez les Plombiers est un lieu réservé aux professionnels. Nous accueillons les marques, les agences et les entreprises : showrooms, lancements presse, dîners de marque, défilés, expositions, séminaires.",
+      "Nous n'acceptons pas d'événements pour des particuliers : ni anniversaires, ni mariages, ni fêtes familiales.",
     ],
   },
   {
@@ -302,8 +312,11 @@ export const SECTIONS: readonly Section[] = [
         quoi: "Visiter le lieu",
         valeur: "Réserver un créneau",
         detail: "Gratuit, une demi-heure, du lundi au samedi de 10h à 18h.",
-        href: "https://calendly.com/chezlesplombiers/visite",
-        externe: true,
+        /* ⚠️ Vers NOTRE page, pas vers Calendly en direct : elle porte les
+           repères et la mention « réservé aux professionnels ». Le préfixe de
+           maquette est ajouté au rendu, par `lien()`. */
+        href: "/visiter",
+        interne: true,
       },
     ],
   },
