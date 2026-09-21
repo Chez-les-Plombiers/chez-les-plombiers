@@ -24,24 +24,27 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Skip static files, API routes, and special files
+  /**
+   * Laisser passer les fichiers : routes techniques, puis TOUT chemin dont le
+   * dernier segment contient un point.
+   *
+   * ⚠️ CETTE RÈGLE REMPLACE UNE LISTE D'EXTENSIONS, et c'est un correctif, pas
+   * un raccourci. La liste énumérait `.ico .png .jpg .svg .pdf .xml .txt` —
+   * donc **`.webp` renvoyait 404**, comme `.jpeg`, `.avif`, `.mp4`, `.woff2`
+   * ou `.ics`. Le fichier existait bien dans `/public` : la requête était
+   * simplement réécrite vers `/fr/...`, et l'application répondait « page
+   * introuvable ». Symptôme trompeur — une image parfaitement déployée qui ne
+   * s'affiche pas. Constaté le 21/09/2026 sur 1 388 vignettes WebP.
+   *
+   * ⚠️ Aucune route du site ne contient de point dans son dernier segment
+   * (vérifié sur la liste des URL du `CLAUDE.md`). Si un jour c'était le cas,
+   * il faudrait la sortir explicitement AVANT ce test.
+   */
+  const dernierSegment = pathname.slice(pathname.lastIndexOf("/") + 1);
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
-    pathname.startsWith("/images") ||
-    pathname.startsWith("/videos") ||
-    pathname.startsWith("/documents") ||
-    pathname.startsWith("/guide/images") ||
-    pathname.endsWith(".ico") ||
-    pathname.endsWith(".png") ||
-    pathname.endsWith(".jpg") ||
-    pathname.endsWith(".svg") ||
-    pathname.endsWith(".pdf") ||
-    pathname.endsWith(".xml") ||
-    pathname.endsWith(".txt") ||
-    pathname === "/robots.txt" ||
-    pathname === "/sitemap.xml" ||
-    pathname === "/llms.txt"
+    dernierSegment.includes(".")
   ) {
     return NextResponse.next();
   }
