@@ -34,19 +34,22 @@ export const TECHNIQUE: readonly Poste[] = [
     titre: "Image",
     lignes: [
       ["Vidéoprojecteur", "Optoma ZU820T, laser, 8 800 lumens"],
-      ["Projection", "4,63 m de large en une seule image, sur le mur cyclo"],
+      ["Image projetée", "4,53 m de large × 2,55 m de haut, en 16:9"],
+      ["Mur cyclorama", "4,63 m de large × 3,40 m de haut, incurvé, blanc"],
       ["Source sans fil", "Apple TV intégrée — AirPlay"],
       ["Source filaire", "Une prise HDMI murale, depuis le coin régie"],
       ["Pilotage", "Trigger 12 V, télécommande filaire, RJ45, RS232"],
+      ["Image fixe", "Possible via Screen Canvas sur l'Apple TV, pour un logo ou un visuel"],
     ],
   },
   {
     titre: "Son",
     lignes: [
-      ["Diffusion", "Douze enceintes Sonos réparties dans tout le lieu"],
+      ["Diffusion", "Sonos Port, enceintes encastrées au plafond sur tout l'espace"],
       ["Calibrage", "Réglées pour le lieu : certaines fréquences ont été réduites pour le voisinage"],
       ["Sources", "AirPlay, Spotify Connect, ou l'application Sonos sur l'iPad du lieu"],
-      ["Votre régie", "Une entrée XLR murale, pour brancher une platine"],
+      ["Votre régie", "Entrée XLR dans l'alcôve, près du mur cyclo"],
+      ["Micros", "Quatre micros HF"],
       ["Réseau requis", "Le Wi-Fi du lieu — la musique et la projection passent par lui"],
     ],
     reserve:
@@ -55,9 +58,10 @@ export const TECHNIQUE: readonly Poste[] = [
   {
     titre: "Lumière",
     lignes: [
-      ["Pilotage", "DMX, couleurs et intensité"],
+      ["Pilotage", "DMX, par un boîtier CueCore 3 — on peut s'y connecter pour programmer"],
       ["Scénarios", "Cinq préréglages, et un mode libre par groupe de luminaires"],
-      ["Accroche", "Un grill au plafond : projecteurs à la pince, avec les arrivées DMX"],
+      ["Rails", "Compatibles projecteurs 3 allumages, DALI ou DMX ; on peut y accrocher les vôtres"],
+      ["Accroche", "Un grill au plafond, avec les arrivées DMX"],
       ["Console", "Kiosc, sur l'iPad du lieu"],
     ],
   },
@@ -88,10 +92,11 @@ export const TECHNIQUE: readonly Poste[] = [
       ["Revêtement", "Résine époxy blanche"],
       ["Hauteur sous plafond", "4,50 m — elle varie selon les poutres"],
       ["Accès", "De plain-pied depuis la rue, sans marche ni seuil"],
-      ["Porte", "Une porte à trois battants sur la cour ; les trois s'ouvrent"],
+      ["Porte principale", "2,19 m de large × 3,66 m de haut, sur la cour, à trois battants"],
+      ["Porte de l'impasse", "1,60 m × 2,39 m, deux vantaux de 0,80 m"],
     ],
     reserve:
-      "⚠️ La charge de 800 kg/m² n'a pas été retrouvée dans les documents du bureau d'études structure (LCV Ingénierie) : le CCTP ne cite que le DTU 13.3 et des critères de flèche. À sourcer avant de la porter sur un document contractuel.",
+      "⚠️ Deux valeurs à confirmer au mètre. La hauteur sous plafond : la page d'information envoyée aux clients dit ~4,10 m, le site disait 4,11 puis 4,5, et 4,50 a été retenu. Et la charge de 800 kg/m² n'apparaît dans aucun document du bureau d'études structure (LCV Ingénierie) : le CCTP ne cite que le DTU 13.3 et des critères de flèche.",
   },
   {
     titre: "Climatisation et accessibilité",
@@ -99,6 +104,7 @@ export const TECHNIQUE: readonly Poste[] = [
       ["Climatisation", "Réversible, sur toute la surface"],
       ["Accès", "De plain-pied, accessible aux personnes à mobilité réduite"],
       ["Sanitaires", "WC PMR"],
+      ["Agent de sécurité", "Requis au-delà d'un certain nombre d'invités — seuil à confirmer, voir les conditions de location"],
     ],
     /*
      * ⚠️ NE PAS ÉCRIRE « ERP » NI « CLASSEMENT ». Le classement n'est pas

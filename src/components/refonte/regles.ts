@@ -72,6 +72,16 @@ export const MOMENTS: readonly MomentRegles[] = [
       "Ce qu'on a besoin de savoir en amont. Rien ici n'est bloquant — c'est du calendrier, pas de l'autorisation.",
     regles: [
       {
+        titre: "Un agent de sécurité selon le nombre d'invités",
+        texte:
+          "Il est à votre charge et se réserve en amont. ⚠️ Le seuil est à confirmer : la page d'information envoyée aux clients dit un agent SSIAP au-delà de 50 personnes et deux au-delà de 100 ; Étienne annonce un agent jusqu'à 30, deux au-delà de 30, trois au-delà de 80. Les deux ne peuvent pas être vrais.",
+      },
+      {
+        titre: "Deux espaces loués, un agent dans la cour",
+        texte:
+          "Dès que vous louez deux des trois espaces, un agent est requis dans la cour : il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble. Ce n'est pas négociable — la cour dessert des logements.",
+      },
+      {
         titre: "Annoncez vos livraisons",
         texte:
           "Dites-nous ce qui arrive, quand, et par où. La porte sur l'impasse des Bourdonnais est faite pour ça, mais la cour est partagée avec l'immeuble : un camion qui s'y installe sans prévenir bloque des riverains.",
@@ -139,9 +149,9 @@ export const MOMENTS: readonly MomentRegles[] = [
           "Trois poubelles dans la cuisine de jour, côté machine à café : verre, jaune (plastique, papier, métal), tout-venant. La collecte de l'immeuble refuse les sacs mal triés.",
       },
       {
-        titre: "Remettez le mobilier en place",
+        titre: "Remettez le mobilier exactement où il était",
         texte:
-          "Les tables, les chaises et les portants reviennent d'où ils venaient. Les rideaux se replient ouverts.",
+          "Le canapé, les fauteuils, les tables, les portants. Si ce n'est pas fait dans les 24 heures qui suivent la fin de la location, nous organisons l'intervention nous-mêmes et un forfait de 300 € HT est retenu sur le dépôt de garantie.",
       },
       {
         titre: "Rendez les clés à la boîte",

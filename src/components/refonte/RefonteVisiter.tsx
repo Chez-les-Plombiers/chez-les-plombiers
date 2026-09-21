@@ -55,8 +55,8 @@ export function RefonteVisiter() {
           </p>
         </div>
 
-        <div className="mt-6 grid gap-3 lg:grid-cols-[1fr_2fr]">
-          <div className={`${CADRE} p-5`}>
+        <div className="mt-6 grid items-start gap-3 lg:grid-cols-[1fr_2fr]">
+          <div className={`${CADRE} p-5 lg:sticky lg:top-8`}>
             <dl className="space-y-4">
               {REPERES.map(([quoi, valeur]) => (
                 <div key={quoi}>
@@ -92,12 +92,14 @@ export function RefonteVisiter() {
               title="Choisir un créneau de visite"
               loading="lazy"
               /*
-                ⚠️ Haut sur téléphone, et c'est voulu. Le calendrier mensuel de
-                Calendly ne se réduit pas : sous 1 000 px, il coupe la fin du
-                mois et fabrique une barre de défilement dans la barre de
-                défilement. Mieux vaut une page longue qu'un calendrier tronqué.
+                ⚠️ Haut PARTOUT, et c'est voulu. Le calendrier de Calendly ne se
+                réduit pas : sous ~1 000 px, il fabrique une barre de défilement
+                DANS la page, et il faut faire défiler l'intérieur du cadre pour
+                voir les dates — Étienne : « on est obligé de scroller pour voir
+                les dates, je trouve ça un peu dommage ». Mieux vaut une page
+                longue qu'un calendrier qu'on doit fouiller.
               */
-              className="h-[1020px] w-full border-0 sm:h-[720px]"
+              className="h-[1020px] w-full border-0 sm:h-[1080px]"
             />
           </div>
         </div>

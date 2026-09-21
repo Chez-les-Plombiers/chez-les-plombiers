@@ -102,7 +102,7 @@ function Ouverture({ lieu, tuile }: { lieu: Lieu; tuile: Tuile }) {
               {/* ⚠️ 9 px et interlettrage resserré sous `sm` : Eurostile
                   Extended est large, et à 10 px l'adresse passait sur deux
                   lignes sur un iPhone. Étienne la veut sur une seule. */}
-              <span className="mt-1.5 block whitespace-nowrap text-[9px] font-normal leading-relaxed tracking-[0.06em] text-[#A8A29A] sm:whitespace-normal sm:text-[11px] sm:tracking-[0.12em]">
+              <span className="mt-1.5 block whitespace-nowrap text-[9px] font-normal leading-relaxed tracking-[0.06em] text-[#A8A29A] sm:text-[10px] sm:tracking-[0.08em]">
                 {ADRESSE}
               </span>
               <span className="mt-0.5 block text-[9px] font-normal tracking-[0.12em] text-[#6E6A64] sm:text-[10px]">

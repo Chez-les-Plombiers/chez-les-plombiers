@@ -122,23 +122,43 @@ export const SECTIONS: readonly Section[] = [
       "La première donne sur la cour : c'est l'entrée. Elle compte trois battants — on n'en ouvre qu'un pour entrer, mais ouvrir les trois élargit le passage pour un décor, une scénographie ou un véhicule.",
       "La seconde donne sur l'impasse des Bourdonnais. C'est par là que passent le mobilier et la technique : ils n'ont pas à traverser la cour.",
     ],
+    /*
+     * ⚠️ Cotes relevées dans la page Notion « FR — INFOS GÉNÉRALES », qui est
+     * le document opérationnel envoyé aux clients. Ne pas les arrondir : une
+     * scénographie se dessine dessus.
+     */
     faits: [
-      ["Une voiture peut entrer", "Accès direct depuis la rue, de plain-pied, sans marche ni seuil. Le Porsche Cayenne électrique a été présenté à l'intérieur."],
-      ["Elle peut rester", "Le sol tient 800 kg/m², et le triphasé 36 kVA permet de la recharger sur place."],
-      ["Stockage", "100 m² en sous-sol, pour les flight cases et les backstages."],
+      ["Porte principale", "2,19 m de large × 3,66 m de haut, sur la cour."],
+      ["Porte de l'impasse", "1,60 m × 2,39 m, deux vantaux de 0,80 m."],
+      [
+        "Reculer dans la cour",
+        "Possible, pour un déchargement rapide — mais pas de stationnement, pas de montage ni de démontage. La cour dessert deux entrées d'immeuble au fond, à droite et à gauche : le passage des habitants doit rester libre en permanence.",
+      ],
+      [
+        "Reculer dans l'impasse",
+        "Possible, et c'est là que se font le montage et le démontage. ⚠️ Au-delà de 20 m³, un camion ne passe pas : prévoir plus petit, ou un transfert.",
+      ],
+      [
+        "Une voiture peut entrer",
+        "Accès direct depuis la rue, de plain-pied, sans marche ni seuil.",
+      ],
+      [
+        "Elle peut rester",
+        "Le sol tient 800 kg/m², et le triphasé 36 kVA permet de la recharger sur place.",
+      ],
+      ["Stockage", "100 m² en sous-sol, pour le stockage et les backstages."],
     ],
     photos: [
       {
         src: "/photos/acces/porte-trois-battants.jpg",
         alt: "La porte de L'Atelier, ses trois battants grands ouverts sur la cour",
         legende:
-          "Les trois battants ouverts : c'est le passage réel pour un décor ou un véhicule.",
+          "Les trois battants ouverts : 2,19 m de large, 3,66 m de haut.",
       },
       {
         src: "/photos/acces/impasse.jpg",
         alt: "L'impasse des Bourdonnais et la porte de service de L'Atelier",
-        legende:
-          "L'impasse des Bourdonnais. La porte de déchargement est celle du milieu, sous l'auvent noir.",
+        legende: "L'impasse des Bourdonnais. La porte de déchargement est celle du milieu.",
       },
     ],
   },
@@ -148,6 +168,7 @@ export const SECTIONS: readonly Section[] = [
     texte: [
       "L'Atelier, La Boutique et L'Appartement sont à la même adresse, mais ils ne communiquent pas entre eux : il n'y a pas d'escalier intérieur, pas de porte de liaison.",
       "L'Appartement est au premier étage, mais on y accède par son propre escalier, depuis la cour. Pour aller d'un lieu à l'autre, on ressort et on traverse la cour. C'est à prévoir si vous louez deux espaces le même jour : le service, les invités et la technique font le trajet dehors.",
+      "Et c'est une obligation, pas une recommandation : dès que deux espaces sont loués ensemble, un agent est requis dans la cour. Il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble.",
     ],
     photos: [
       {
@@ -166,10 +187,36 @@ export const SECTIONS: readonly Section[] = [
     ],
     faits: [
       ["Accès", "À partir de 7h, pour le montage comme pour les livraisons."],
-      ["Cour et cigarettes", "Jusqu'à 22h. Après 22h, les fumeurs sortent sur la voie publique."],
+      /*
+       * ⚠️ « Cour et cigarettes » était illisible (Étienne) : on croyait que la
+       * cour fermait. C'est l'espace fumeurs qui ferme.
+       */
+      [
+        "Fumeurs dans la cour",
+        "Jusqu'à 22h ; après, sur la voie publique. Et la cour dessert deux entrées d'immeuble : dès qu'elle sert de coin fumeurs, la moitié doit rester dégagée pour le passage des habitants.",
+      ],
       ["Musique", "Jusqu'à 23h, sans exception."],
       ["Fin d'événement", "Le lieu doit être entièrement vidé de ses invités à minuit."],
       ["Visites du lieu", "Du lundi au samedi, de 10h à 18h, sur rendez-vous. Gratuites, une demi-heure."],
+    ],
+  },
+  {
+    /*
+     * ⚠️ SECTION AJOUTÉE LE 21/09/2026, et elle est commerciale avant d'être
+     * informative. Étienne : « on n'accepte pas les particuliers, et très
+     * souvent on a des visites de particuliers ». Chaque visite d'anniversaire
+     * est une demi-heure perdue pour lui, et une déception pour la personne.
+     *
+     * Le dire tôt et clairement coûte quelques refus qu'on n'aurait pas eus,
+     * et fait gagner tout le reste. Le ton reste net sans être sec : on
+     * n'humilie pas quelqu'un qui cherchait une salle pour ses cinquante ans.
+     */
+    id: "qui",
+    titre: "Pour qui",
+    texte: [
+      "Chez les Plombiers est un lieu professionnel. Nous accueillons des marques, des agences et des entreprises : showrooms, lancements presse, dîners de marque, défilés, expositions, séminaires.",
+      "Nous ne prenons pas d'événements privés — ni anniversaires, ni mariages, ni fêtes familiales. Ce n'est pas une question de taille ou de budget : le lieu est installé dans un immeuble d'habitation, et c'est le cadre professionnel qui rend l'équilibre tenable avec le voisinage.",
+      "Si vous cherchez une salle pour une fête privée, autant le savoir maintenant plutôt qu'après une visite.",
     ],
   },
   {

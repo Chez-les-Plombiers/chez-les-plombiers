@@ -101,7 +101,7 @@ function Ouverture() {
             </span>
             {/* Une seule ligne sur téléphone : voir le commentaire jumeau
                 dans RefonteLieu.tsx. */}
-            <span className="mt-1.5 block whitespace-nowrap text-[9px] font-normal leading-relaxed tracking-[0.06em] text-[#A8A29A] sm:whitespace-normal sm:text-[11px] sm:tracking-[0.12em]">
+            <span className="mt-1.5 block whitespace-nowrap text-[9px] font-normal leading-relaxed tracking-[0.06em] text-[#A8A29A] sm:text-[10px] sm:tracking-[0.08em]">
               {ADRESSE}
             </span>
             {/* Plus petit encore : ce n'est pas l'adresse, c'est un repère. */}

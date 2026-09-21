@@ -156,7 +156,7 @@ export const PAGES = [
   { href: "/tarifs", titre: "Tarifs et disponibilités", detail: "Les prix jour par jour et le calendrier des trois lieux", pret: true },
     { href: "/atelier/technique", titre: "Fiche technique et plans", detail: "Puissances, connectique, emplacements, plans à télécharger", pret: true },
   { href: "/photos", titre: "Photos", detail: "Par type d'événement : dîners, showrooms, défilés, lancements, expositions", pret: false },
-  { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger par l'impasse, les horaires, le quartier", pret: true },
+  { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger, les horaires, pour qui", pret: true },
   { href: "/visiter", titre: "Réserver une visite", detail: "Gratuite, une demi-heure, du lundi au samedi", pret: true },
   { href: "/conditions", titre: "Conditions de location", detail: "Ce qu'on vous demande, et pourquoi", pret: true },
   { href: "/histoire", titre: "L'histoire du lieu", detail: "Un garage de plombiers des années 1970 devenu lieu d'événements", pret: false },
@@ -341,7 +341,12 @@ export const ATELIER = {
     {
       titre: "L'image",
       lignes: [
-        ["Projection", "4,63 m de large en une seule image, sur le mur cyclo"],
+        /*
+         * ⚠️ 4,53 m, pas 4,63. Le MUR cyclo fait 4,63 m de large ; l'IMAGE
+         * projetée fait 4,53 × 2,55 m en 16:9. On confondait les deux depuis
+         * le début — corrigé sur la page Notion « FR — INFOS GÉNÉRALES ».
+         */
+        ["Projection", "4,53 m de large × 2,55 m de haut, en 16:9, sur le mur cyclo"],
         ["Sources", "Apple TV intégrée, ou une prise HDMI murale depuis le coin régie"],
       ],
     },
@@ -350,6 +355,7 @@ export const ATELIER = {
       lignes: [
         ["Diffusion", "Douze enceintes réparties dans le lieu, calibrées pour lui"],
         ["Votre régie", "Une entrée XLR murale, pour brancher une platine"],
+        ["Micros", "Quatre micros HF, compris dans la location"],
       ],
     },
     {
@@ -357,6 +363,14 @@ export const ATELIER = {
       lignes: [
         ["Ambiances", "Plusieurs scénarios enregistrés, tout est variable en intensité"],
         ["Scénographie", "Un grill au plafond, pour accrocher vos propres projecteurs"],
+      ],
+    },
+    {
+      titre: "Le mobilier",
+      lignes: [
+        ["Le canapé", "Un Pierre Paulin de 5,60 m, orientable en S, en U ou droit"],
+        ["L'entrée", "Quatre fauteuils Pangea et une table basse"],
+        ["En plus", "Une table roulante, et des tables et chaises sur demande"],
       ],
     },
     {
@@ -369,7 +383,7 @@ export const ATELIER = {
     {
       titre: "Le sol",
       lignes: [
-        ["Charge", "800 kg/m² — une voiture peut rester"],
+        ["Charge utile", "800 kg/m² — une voiture peut rester"],
         ["Revêtement", "Résine époxy blanche"],
       ],
     },
