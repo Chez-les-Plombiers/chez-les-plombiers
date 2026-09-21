@@ -1,0 +1,52 @@
+{
+  "08-diner-kim-attaf-dng": {
+    "garde": [
+      1,
+      2,
+      4,
+      8,
+      10,
+      12,
+      21,
+      22,
+      26,
+      27,
+      33,
+      37,
+      53,
+      54,
+      56,
+      64,
+      65,
+      66,
+      67,
+      74,
+      78,
+      79,
+      80,
+      89,
+      90,
+      100,
+      101,
+      109,
+      175,
+      176,
+      185,
+      195,
+      197,
+      207,
+      220,
+      223,
+      225,
+      228,
+      229,
+      233
+    ],
+    "couverture": 12,
+    "aConfirmer": [
+      "54 n'a jamais ete nomme : garde par defaut",
+      "⚠️ La couverture 12 etait dans la plage 11-20 retiree. Reintegree : une couverture choisie en regardant la planche prime sur un retrait en bloc."
+    ],
+    "lectureConfirmee": "Au-dela de 110, la centaine avait saute a l'oral (174/175/176, 195/197). Confirme par Etienne le 21/09/2026."
+  }
+}
