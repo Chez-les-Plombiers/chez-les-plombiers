@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- *  LES RÈGLES DU LIEU — SOURCE UNIQUE
+ *  LES CONDITIONS DE LOCATION — SOURCE UNIQUE
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * ⚠️ C'EST ICI QU'ON AJOUTE UNE RÈGLE. Nulle part ailleurs.
@@ -14,122 +14,125 @@
  *
  * ── CE QUI EST UNE RÈGLE, ET CE QUI N'EN EST PAS ──────────────────────────
  *
- * Étienne, 20/09/2026, et c'est la bonne ligne de partage :
- *
- *   INFORMATION → ce que le lieu EST.        « le mur courbe fait 4,63 m »
+ *   INFORMATION → ce que le lieu EST.        « le mur cyclo fait 4,63 m »
  *                 Vit sur la page du lieu.    On la lit avant de réserver.
  *
- *   RÈGLE       → ce qu'on vous DEMANDE.     « rangez avant de partir »
+ *   RÈGLE       → ce qu'on vous DEMANDE.     « merci de tout remporter »
  *                 Vit ici.                    On la lit après avoir réservé.
  *
- * Si la phrase peut commencer par « merci de », c'est une règle.
+ * ── LE TON, ET C'EST LA CHOSE LA PLUS FACILE À CASSER ─────────────────────
  *
- * ── COMMENT ÉCRIRE UNE RÈGLE ──────────────────────────────────────────────
+ * ⚠️ Étienne, le 21/09/2026, sur la première version : « c'est comme si c'était
+ * toi qui me parlais à moi. Toi tu es mon assistant, c'est normal que tu me
+ * parles direct — mais pas aux clients. Il faut être plus cordial, on est dans
+ * un monde un peu luxe. »
  *
- * Toujours donner le POURQUOI. Une consigne sans raison se discute ; une
- * consigne expliquée s'applique. « Musique jusqu'à 23h » se négocie au
- * téléphone ; « le lieu est dans un immeuble d'habitation, et c'est cet
- * horaire qui lui permet d'exister » ne se négocie pas.
+ * Le registre est celui de l'hôtellerie : on VOUVOIE, on demande, on remercie,
+ * on explique. Jamais d'impératif sec (« Triez les déchets », « Emportez »),
+ * jamais de menace. « Nous vous remercions de… », « nous avons besoin de… »,
+ * « merci de nous prévenir ».
+ *
+ * ⚠️ Mais le POURQUOI reste, dans la même phrase que la demande. Une consigne
+ * sans raison se négocie au téléphone ; une consigne expliquée s'applique.
+ * Cordial ne veut pas dire vague.
  *
  * ── LE CAS QUI A FAIT NAÎTRE CE FICHIER ───────────────────────────────────
  *
  * Le 18/09/2026, une équipe a laissé douze packs de thé à la menthe au premier
  * étage, par gentillesse, sans prévenir. Le ménage est passé autour, et Étienne
- * a descendu les packs au sous-sol à la main.
- *
- * La règle n'est pas « ne laissez pas de packs ». Le principe, jamais écrit
- * jusqu'ici, est : LE MÉNAGE NETTOIE, IL NE RANGE PAS. Une dizaine de règles en
- * découlent, y compris celles qu'on n'a pas encore rencontrées.
+ * a descendu les packs au sous-sol à la main. La règle n'est pas « ne laissez
+ * pas de packs » : c'est que le ménage nettoie et ne range pas. Une dizaine de
+ * règles en découlent, y compris celles qu'on n'a pas encore rencontrées.
  */
 
 export interface Regle {
-  /** Court, à l'impératif ou au constat. C'est ce qu'on retient. */
   titre: string;
-  /** Ce qu'on demande, puis pourquoi. Le pourquoi n'est pas facultatif. */
+  /** Ce qu'on demande, et pourquoi. Le pourquoi n'est pas facultatif. */
   texte: string;
 }
 
 export interface MomentRegles {
   id: string;
   titre: string;
-  /** Une phrase qui donne l'esprit du moment. */
   chapo: string;
   regles: readonly Regle[];
 }
 
 /**
- * Le principe qui gouverne tout le reste. Il tient en une phrase, et il évite
- * d'avoir à écrire cent règles.
+ * Le principe qui gouverne le reste. Il tient en une phrase, et il évite
+ * d'avoir à en écrire cent.
+ *
+ * ⚠️ Il ne doit plus s'afficher en gros caractères en tête de page — Étienne :
+ * « c'est vrai, mais il ne faut pas le mettre aussi gros, aussi haut ». Il vit
+ * désormais comme chapô de la section « En partant », à sa place.
  */
 export const PRINCIPE =
-  "Le lieu vous est livré rangé et propre. Il doit repartir rangé : le ménage nettoie, il ne range pas.";
+  "Nous vous remettons le lieu rangé et propre, et nous vous remercions de nous le rendre dans le même état : notre équipe de ménage nettoie, mais elle ne range pas.";
 
 export const MOMENTS: readonly MomentRegles[] = [
   {
     id: "avant",
-    titre: "Avant l'événement",
+    titre: "Avant votre événement",
     chapo:
-      "Ce qu'on a besoin de savoir en amont. Rien ici n'est bloquant — c'est du calendrier, pas de l'autorisation.",
+      "Quelques informations dont nous avons besoin en amont pour bien vous recevoir. Rien ici n'est bloquant : c'est de l'organisation, pas de l'autorisation.",
     regles: [
       {
-        titre: "Un agent de sécurité selon le nombre d'invités",
+        titre: "Nous annoncer vos livraisons",
         texte:
-          "Il est à votre charge et se réserve en amont. ⚠️ Le seuil est à confirmer : la page d'information envoyée aux clients dit un agent SSIAP au-delà de 50 personnes et deux au-delà de 100 ; Étienne annonce un agent jusqu'à 30, deux au-delà de 30, trois au-delà de 80. Les deux ne peuvent pas être vrais.",
+          "Merci de nous indiquer ce qui arrive, quand, et par quelle porte. L'impasse des Bourdonnais est prévue pour cela, mais la cour est partagée avec l'immeuble : un camion qui s'y installe à l'improviste bloque des riverains.",
       },
       {
-        titre: "Deux espaces loués, un agent dans la cour",
+        titre: "Nous prévenir si vous stockez",
         texte:
-          "Dès que vous louez deux des trois espaces, un agent est requis dans la cour : il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble. Ce n'est pas négociable — la cour dessert des logements.",
+          "Vous pouvez laisser du matériel avant ou après votre événement, le sous-sol est là pour cela — merci simplement de nous le signaler. Sans quoi nous ne pouvons pas distinguer un stockage prévu d'un oubli, et il finit déplacé.",
       },
       {
-        titre: "Annoncez vos livraisons",
+        titre: "Nous présenter vos prestataires",
         texte:
-          "Dites-nous ce qui arrive, quand, et par où. La porte sur l'impasse des Bourdonnais est faite pour ça, mais la cour est partagée avec l'immeuble : un camion qui s'y installe sans prévenir bloque des riverains.",
+          "Traiteur, technique, sécurité, fleuriste : leurs noms et leurs horaires nous permettent de leur ouvrir sans avoir à vous appeler le jour même.",
       },
       {
-        titre: "Prévenez si vous stockez",
+        titre: "Prévoir les agents de sécurité",
         texte:
-          "Vous pouvez laisser du matériel avant ou après l'événement, le sous-sol est là pour ça — mais dites-le. Du matériel trouvé sur place sans avoir été annoncé ne peut pas être distingué d'un oubli, et finit déplacé.",
+          "Un agent est requis à partir de 30 invités, et deux à partir de 60. Ils sont à votre charge et se réservent en amont — nous pouvons vous orienter vers une équipe que nous connaissons bien.",
       },
       {
-        titre: "Signalez les prestataires",
+        titre: "Un agent dans la cour si vous louez deux espaces",
         texte:
-          "Traiteur, technique, sécurité, fleuriste : donnez-nous les noms et les horaires. C'est ce qui permet de leur ouvrir sans vous appeler.",
+          "Dès que deux de nos trois espaces sont réservés ensemble, la présence d'un agent dans la cour devient nécessaire : il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble. La cour dessert des logements, et c'est ce qui nous permet de continuer à y recevoir.",
       },
     ],
   },
   {
     id: "pendant",
-    titre: "Pendant l'événement",
+    titre: "Pendant votre événement",
     chapo:
-      "Ces horaires viennent de la copropriété et du voisinage. Ce sont eux qui permettent au lieu d'exister dans un immeuble d'habitation — ils ne se négocient pas.",
+      "Ces horaires nous viennent de la copropriété et du voisinage. Ce sont eux qui permettent au lieu d'exister dans un immeuble d'habitation, et nous ne pouvons malheureusement pas nous en écarter.",
     regles: [
       {
         titre: "La musique s'arrête à 23h",
         texte:
-          "Sans exception. Les enceintes Sonos sont calibrées pour le lieu, certaines fréquences ayant été réduites pour le voisinage : ajouter des enceintes, en particulier des caissons de basses, est interdit.",
+          "Sans exception, nous en sommes désolés. Nos enceintes ont été calibrées pour le lieu, certaines fréquences ayant été atténuées pour le voisinage : nous vous demandons de ne pas ajouter d'enceintes, en particulier de caissons de basses, car c'est ce réglage qui nous permet de jouer jusqu'à 23h.",
       },
       {
-        titre: "La cour ferme à 22h",
+        titre: "La cour reste fumeurs jusqu'à 22h",
         texte:
-          "Après 22h, les fumeurs se rendent sur la voie publique. La cour donne sur des fenêtres d'habitation, et une conversation à vingt personnes y porte plus qu'on ne le croit.",
+          "Au-delà, nous invitons vos fumeurs à rejoindre la voie publique. Et parce que la cour dessert deux entrées d'immeuble, merci de n'en occuper que la moitié : les habitants doivent pouvoir passer à tout moment.",
       },
       {
         titre: "Le lieu est vidé à minuit",
         texte:
-          "Les invités sont partis à minuit. Le démontage peut se poursuivre au-delà, en silence.",
+          "Vos invités auront quitté les lieux à minuit. Le démontage peut se poursuivre au-delà, dans le calme.",
       },
       {
-        titre: "On ne fume pas à l'intérieur",
-        /* ⚠️ Ne pas justifier par « c'est un ERP » : le classement n'est pas
-           obtenu au 20/09/2026. La raison tient sans lui. */
+        titre: "Il n'est pas possible de fumer à l'intérieur",
         texte:
-          "Strictement, y compris la vape. Le lieu est un immeuble d'habitation du 17e siècle, et l'odeur reste dans les murs bruts.",
+          "Vape comprise, nous vous remercions de votre compréhension. Le lieu occupe un immeuble du 17e siècle, et l'odeur reste dans les murs bruts.",
       },
       {
-        titre: "Signalez tout dommage immédiatement",
+        titre: "Nous signaler tout incident sur le moment",
         texte:
-          "Un dommage annoncé se règle ; un dommage découvert à l'état des lieux se discute mal. Cela vaut aussi pour ce qui ne se voit pas : une prise qui ne fonctionne plus, une fuite.",
+          "Un dommage annoncé se règle simplement ; découvert à l'état des lieux, il se discute mal. Cela vaut aussi pour ce qui ne se voit pas — une prise qui ne répond plus, une fuite.",
       },
     ],
   },
@@ -139,39 +142,44 @@ export const MOMENTS: readonly MomentRegles[] = [
     chapo: PRINCIPE,
     regles: [
       {
-        titre: "Emportez ce que vous avez apporté",
+        titre: "Remporter ce que vous avez apporté",
         texte:
-          "Décor, matériel, boissons, invendus. Si vous voulez laisser quelque chose — même en cadeau, même par gentillesse — dites-le nous avant de partir et convenons d'un endroit. Sinon, le ménage nettoie autour, et c'est nous qui descendons les cartons.",
+          "Décor, matériel, boissons, invendus. Si vous souhaitez nous laisser quelque chose — même avec la meilleure intention —, merci de nous en parler avant de partir et nous conviendrons ensemble d'un endroit. Sans cela, notre équipe nettoie autour, et les cartons restent.",
       },
       {
-        titre: "Triez les déchets",
+        titre: "Trier les déchets",
         texte:
-          "Trois poubelles dans la cuisine de jour, côté machine à café : verre, jaune (plastique, papier, métal), tout-venant. La collecte de l'immeuble refuse les sacs mal triés.",
+          "Trois poubelles vous attendent dans la cuisine de jour, côté machine à café : verre, jaune pour le plastique, le papier et le métal, et tout-venant. La collecte de l'immeuble refuse les sacs mal triés.",
       },
       {
-        titre: "Remettez le mobilier exactement où il était",
+        titre: "Replacer le mobilier",
         texte:
-          "Le canapé, les fauteuils, les tables, les portants. Si ce n'est pas fait dans les 24 heures qui suivent la fin de la location, nous organisons l'intervention nous-mêmes et un forfait de 300 € HT est retenu sur le dépôt de garantie.",
+          "Le canapé, les fauteuils, les tables et les portants reviennent à leur place, et les rideaux se replient ouverts. Si ce n'était pas fait dans les vingt-quatre heures, nous organiserions l'intervention nous-mêmes et un forfait de 300 € HT serait retenu sur le dépôt de garantie.",
       },
       {
-        titre: "Rendez les clés à la boîte",
+        titre: "Rendre les clés à la boîte",
         texte:
-          "Même code que la grille et le sous-sol. Il change chaque semaine et vous est envoyé avant votre date.",
+          "Avec le même code que la grille et le sous-sol, celui que nous vous aurons transmis par message avant votre date.",
       },
     ],
   },
-] as const;
+];
 
 /**
- * Le dépôt de garantie. Il vit à part : ce n'est pas une consigne, c'est une
- * condition financière, et on la cherche pour elle-même.
+ * Le dépôt de garantie — et il DIFFÈRE selon le lieu.
  *
- * ⚠️ Montant et délai repris du calendrier tarifaire, où ils sont déjà
- * affichés. Ne pas les recopier ailleurs : s'ils changent, ils doivent changer
- * ici et là-bas, et nulle part de plus.
+ * ⚠️ Une seule page pour les trois, mais trois montants. Étienne, 21/09/2026 :
+ * « les 5 000 €, c'est que pour l'atelier, pas pour l'appartement ». Valeurs
+ * reprises de `venues.ts` dans le projet pricing, qui fait foi.
+ *
+ * ⚠️ LA BOUTIQUE n'a PAS de caution (décision d'Étienne du 15/09/2026). Ne pas
+ * en inventer une par souci de symétrie.
  */
-export const DEPOT = {
-  montant: "5 000 €",
-  paiement: "par virement, avant l'événement",
-  restitution: "restitué sous 8 jours après l'état des lieux",
-} as const;
+export const DEPOTS = [
+  { lieu: "L'Atelier", montant: "5 000 €" },
+  { lieu: "La Boutique", montant: "Aucun dépôt demandé" },
+  { lieu: "L'Appartement", montant: "3 000 €" },
+] as const;
+
+export const DEPOT_MODALITES =
+  "Par virement, avant votre événement, et restitué sous huit jours après l'état des lieux.";

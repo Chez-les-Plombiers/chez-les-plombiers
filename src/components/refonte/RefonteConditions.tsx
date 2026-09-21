@@ -1,6 +1,6 @@
-import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
+import { Barre, Corps, LAITON, Page, Pied } from "./chrome";
 import { ADRESSE } from "./data";
-import { DEPOT, MOMENTS, PRINCIPE } from "./regles";
+import { DEPOTS, DEPOT_MODALITES, MOMENTS } from "./regles";
 
 /**
  * `/conditions` — ce qu'on vous demande.
@@ -24,28 +24,31 @@ export function RefonteConditions() {
     <Page>
       <Barre />
       <Corps>
+        {/*
+          ⚠️ PLEINE LARGEUR. La première version posait le chapô dans une
+          colonne de 62 caractères pendant que le reste de la page en faisait
+          le double : la page paraissait coupée en deux. Étienne : « il faut
+          tout mettre sur la même largeur ».
+        */}
         <div className="mt-3 border-b border-[var(--clp-bord)] pb-8 pt-4">
           <h1 className="font-clp uppercase">
             <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
               Conditions de location
             </span>
-            <span className="mt-1 block text-[11px] font-normal tracking-[0.16em] text-[#A8A29A]">
+            <span className="mt-1.5 block whitespace-nowrap text-[9px] font-normal leading-relaxed tracking-[0.06em] text-[#A8A29A] sm:text-[10px] sm:tracking-[0.08em]">
               {ADRESSE}
             </span>
           </h1>
-          <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[#C9C4BC]">
-            Ce que nous vous demandons, et pourquoi. Rien ici n&apos;est du
-            juridique : ce sont les quelques règles qui permettent au lieu de
-            fonctionner, et de continuer à exister dans un immeuble
-            d&apos;habitation.
-          </p>
-
-          {/* Le principe en tête : il évite d'avoir à lire le reste. */}
-          <p
-            className={`${CADRE} mt-6 max-w-[62ch] p-5 text-[15px] leading-relaxed`}
-            style={{ borderLeft: `2px solid ${LAITON}` }}
-          >
-            {PRINCIPE}
+          {/*
+            ⚠️ Ne pas remettre « rien ici n'est du juridique » : Étienne l'a
+            coupé. Et ne pas remonter le principe du ménage en tête de page —
+            il est le chapô de « En partant », à sa place.
+          */}
+          <p className="mt-4 max-w-[70ch] text-[15px] leading-relaxed text-[#C9C4BC]">
+            Voici les quelques règles qui nous permettent de bien fonctionner
+            avec vous, et de continuer à recevoir dans un immeuble
+            d&apos;habitation. Nous vous remercions par avance de votre
+            attention.
           </p>
         </div>
 
@@ -89,11 +92,11 @@ export function RefonteConditions() {
                 <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
                   {m.titre}
                 </h2>
-                <p className="mt-3 max-w-[62ch] text-[14px] italic leading-relaxed text-[#8A8A8A]">
+                <p className="mt-3 max-w-[70ch] text-[14px] italic leading-relaxed text-[#8A8A8A]">
                   {m.chapo}
                 </p>
 
-                <div className="mt-6 max-w-[62ch] space-y-6">
+                <div className="mt-6 max-w-[70ch] space-y-6">
                   {m.regles.map((r) => (
                     <div key={r.titre}>
                       <p className="text-[15px] font-bold">{r.titre}</p>
@@ -115,25 +118,33 @@ export function RefonteConditions() {
               <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
                 Le dépôt de garantie
               </h2>
-              <dl className="mt-5 max-w-[62ch] divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
-                {[
-                  ["Montant", DEPOT.montant],
-                  ["Paiement", DEPOT.paiement],
-                  ["Restitution", DEPOT.restitution],
-                ].map(([quoi, valeur]) => (
-                  <div key={quoi} className="py-3.5 sm:flex sm:gap-6">
+              {/*
+                ⚠️ TROIS MONTANTS, et LA BOUTIQUE n'en a pas. Étienne :
+                « les 5 000 €, c'est que pour l'atelier ». Valeurs reprises de
+                `venues.ts` dans le projet pricing, qui fait foi. Ne pas
+                inventer une caution pour LA BOUTIQUE par souci de symétrie.
+              */}
+              <p className="mt-3 max-w-[70ch] text-[15px] leading-relaxed text-[#C9C4BC]">
+                Son montant dépend de l&apos;espace que vous réservez.
+              </p>
+              <dl className="mt-5 max-w-[70ch] divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
+                {DEPOTS.map((d) => (
+                  <div key={d.lieu} className="py-3.5 sm:flex sm:gap-6">
                     <dt
-                      className="font-mono text-[12px] sm:w-40 sm:shrink-0"
+                      className="font-mono text-[12px] sm:w-44 sm:shrink-0"
                       style={{ color: LAITON }}
                     >
-                      {quoi}
+                      {d.lieu}
                     </dt>
-                    <dd className="mt-1 text-[14px] text-[#C9C4BC] sm:mt-0">
-                      {valeur}
+                    <dd className="mt-1 font-mono text-[14px] text-[#E8E4DC] sm:mt-0">
+                      {d.montant}
                     </dd>
                   </div>
                 ))}
               </dl>
+              <p className="mt-4 max-w-[70ch] text-[14px] leading-relaxed text-[#8A8A8A]">
+                {DEPOT_MODALITES}
+              </p>
             </section>
           </div>
         </div>

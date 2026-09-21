@@ -63,20 +63,7 @@ export function RefonteVisiter() {
             on regarde ce que votre projet demande, et vous repartez avec un
             ordre de prix.
           </p>
-          {/*
-            ⚠️ C'est ICI que la mention compte le plus. Les demandes de
-            particuliers arrivent par la visite — Étienne : « très souvent on a
-            des visites de particuliers ». Une ligne avant le calendrier coûte
-            moins cher qu'une demi-heure sur place.
-          */}
-          <p
-            className={`${CADRE} mt-5 max-w-[62ch] p-4 text-[14px] leading-relaxed`}
-            style={{ borderLeft: `2px solid ${LAITON}` }}
-          >
-            Les visites sont réservées aux professionnels — marques, agences,
-            entreprises. Nous n&apos;accueillons pas d&apos;événements pour des
-            particuliers : ni anniversaires, ni mariages, ni fêtes familiales.
-          </p>
+
         </div>
 
         <div className="mt-6 grid items-start gap-3 lg:grid-cols-[1fr_2fr]">
@@ -93,6 +80,24 @@ export function RefonteVisiter() {
                 </div>
               ))}
             </dl>
+
+            {/*
+              ⚠️ La mention est ICI, contre le calendrier — pas en tête de page.
+              Étienne : « on peut le mettre à gauche justement de Calendly ».
+              C'est le dernier écran avant de choisir un créneau, et c'est par
+              la visite que les demandes de particuliers arrivent.
+            */}
+            <div className="mt-6 border-t border-[var(--clp-bord)] pt-4">
+              <p
+                className="border-l-2 pl-3 text-[13px] leading-relaxed text-[#C9C4BC]"
+                style={{ borderColor: LAITON }}
+              >
+                Les visites sont réservées aux professionnels — marques, agences,
+                entreprises. Nous n&apos;accueillons pas d&apos;événements pour
+                des particuliers : ni anniversaires, ni mariages, ni fêtes
+                familiales.
+              </p>
+            </div>
 
             <div className="mt-6 border-t border-[var(--clp-bord)] pt-4">
               <p className="text-[13px] leading-relaxed text-[#8A8A8A]">
