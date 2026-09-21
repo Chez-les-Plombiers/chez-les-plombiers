@@ -38,7 +38,7 @@ export function RefonteInfos() {
 
 function Entete() {
   return (
-    <div className="mt-3 border-b border-[#3A3A3A] pb-8 pt-4">
+    <div className="mt-3 border-b border-[var(--clp-bord)] pb-8 pt-4">
       <h1 className="font-clp uppercase">
         <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
           Venir, livrer, repartir
@@ -101,7 +101,7 @@ function Bloc({ section }: { section: Section }) {
       id={section.id}
       // `scroll-mt` : sans ça, le titre se colle au bord haut de la fenêtre
       // après un saut depuis le sommaire.
-      className="scroll-mt-8 border-b border-[#3A3A3A] py-10 first:pt-0 last:border-0"
+      className="scroll-mt-8 border-b border-[var(--clp-bord)] py-10 first:pt-0 last:border-0"
     >
       <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
         {section.titre}
@@ -140,7 +140,7 @@ function Bloc({ section }: { section: Section }) {
                   className="object-cover"
                 />
               </div>
-              <figcaption className="border-t border-[#3A3A3A] px-4 py-3 text-[12px] leading-relaxed text-[#8A8A8A]">
+              <figcaption className="border-t border-[var(--clp-bord)] px-4 py-3 text-[12px] leading-relaxed text-[#8A8A8A]">
                 {ph.legende}
               </figcaption>
             </figure>
@@ -153,7 +153,7 @@ function Bloc({ section }: { section: Section }) {
          * Des faits, pas des tuiles : une liste de définitions. On les consulte
          * plus qu'on ne les lit, mais ils restent dans le fil du document.
          */
-        <dl className="mt-6 max-w-[68ch] divide-y divide-[#3A3A3A] border-y border-[#3A3A3A]">
+        <dl className="mt-6 max-w-[68ch] divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
           {section.faits.map(([quoi, detail]) => (
             <div key={quoi} className="py-3.5 sm:flex sm:gap-6">
               <dt
@@ -186,7 +186,7 @@ function Bloc({ section }: { section: Section }) {
       )}
 
       {section.contacts && (
-        <dl className="mt-6 max-w-[68ch] divide-y divide-[#3A3A3A] border-y border-[#3A3A3A]">
+        <dl className="mt-6 max-w-[68ch] divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
           {section.contacts.map((c) => (
             <div key={c.quoi} className="py-3.5 sm:flex sm:gap-6">
               <dt
@@ -201,7 +201,7 @@ function Bloc({ section }: { section: Section }) {
                   {...(c.externe
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="text-[14px] text-[#E8E4DC] underline decoration-[#5E5E5E] underline-offset-4 transition-colors hover:decoration-[#C8A96E]"
+                  className="text-[14px] text-[#E8E4DC] underline decoration-[#5E5E5E] underline-offset-4 transition-colors hover:decoration-[var(--clp-accent)]"
                 >
                   {c.valeur}
                 </a>
@@ -228,7 +228,7 @@ function Bloc({ section }: { section: Section }) {
                       href={l.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[14px] text-[#C9C4BC] underline decoration-[#5E5E5E] underline-offset-4 transition-colors hover:text-white hover:decoration-[#C8A96E]"
+                      className="text-[14px] text-[#C9C4BC] underline decoration-[#5E5E5E] underline-offset-4 transition-colors hover:text-white hover:decoration-[var(--clp-accent)]"
                     >
                       {l.nom}
                     </a>

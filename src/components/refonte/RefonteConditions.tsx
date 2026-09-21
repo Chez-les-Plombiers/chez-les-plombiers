@@ -24,7 +24,7 @@ export function RefonteConditions() {
     <Page>
       <Barre />
       <Corps>
-        <div className="mt-3 border-b border-[#3A3A3A] pb-8 pt-4">
+        <div className="mt-3 border-b border-[var(--clp-bord)] pb-8 pt-4">
           <h1 className="font-clp uppercase">
             <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
               Conditions de location
@@ -84,7 +84,7 @@ export function RefonteConditions() {
               <section
                 key={m.id}
                 id={m.id}
-                className="scroll-mt-8 border-b border-[#3A3A3A] py-10 first:pt-0"
+                className="scroll-mt-8 border-b border-[var(--clp-bord)] py-10 first:pt-0"
               >
                 <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
                   {m.titre}
@@ -115,7 +115,7 @@ export function RefonteConditions() {
               <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
                 Le dépôt de garantie
               </h2>
-              <dl className="mt-5 max-w-[62ch] divide-y divide-[#3A3A3A] border-y border-[#3A3A3A]">
+              <dl className="mt-5 max-w-[62ch] divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
                 {[
                   ["Montant", DEPOT.montant],
                   ["Paiement", DEPOT.paiement],

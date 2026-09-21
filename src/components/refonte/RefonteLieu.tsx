@@ -6,7 +6,6 @@ import {
   ATELIER,
   BOUTIQUE,
   ESPACES,
-  FONDS,
 } from "./data";
 
 /**
@@ -40,7 +39,7 @@ export function RefonteLieu({ slug }: { slug: SlugLieu }) {
   const tuile = ESPACES.find((e) => e.slug === slug)!;
 
   return (
-    <Page fond={FONDS[slug]}>
+    <Page theme={slug}>
       <Barre lieu={lieu.nom.toUpperCase()} />
       <Corps>
         <Ouverture lieu={lieu} tuile={tuile} />
@@ -119,7 +118,7 @@ function Ouverture({ lieu, tuile }: { lieu: Lieu; tuile: Tuile }) {
             ))}
           </div>
 
-          <div className="border-t border-[#3A3A3A] pt-4">
+          <div className="border-t border-[var(--clp-bord)] pt-4">
             <p className="font-mono text-xl font-bold">
               {tuile.prix}
               <span className="ml-1.5 text-[10px] font-normal text-[#8A8A8A]">
@@ -169,12 +168,12 @@ function EnBref({ lignes }: { lignes: readonly (readonly [string, string])[] }) 
   return (
     <section className="mt-3">
       <div
-        className={`${CADRE} grid grid-cols-2 divide-[#3A3A3A] sm:divide-x ${
+        className={`${CADRE} grid grid-cols-2 divide-[var(--clp-bord)] sm:divide-x ${
           lignes.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-4"
         }`}
       >
         {lignes.map(([quoi, valeur]) => (
-          <div key={quoi} className="border-t border-[#3A3A3A] px-5 py-4 first:border-t-0 sm:border-t-0">
+          <div key={quoi} className="border-t border-[var(--clp-bord)] px-5 py-4 first:border-t-0 sm:border-t-0">
             <p className="font-mono text-[11px] text-[#8A8A8A]">{quoi}</p>
             <p className="mt-1 font-mono text-lg font-bold">{valeur}</p>
           </div>
@@ -251,7 +250,7 @@ function Suite({
             href={p.pret ? lien(p.href) : undefined}
             aria-disabled={!p.pret}
             className={`${CADRE} flex flex-col justify-between gap-6 p-5 transition-colors ${
-              p.pret ? "hover:border-[#C8A96E]" : "cursor-default opacity-50"
+              p.pret ? "hover:border-[var(--clp-accent)]" : "cursor-default opacity-50"
             }`}
           >
             <div>

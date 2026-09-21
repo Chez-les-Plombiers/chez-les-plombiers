@@ -84,7 +84,7 @@ function Ouverture() {
           ratio="aspect-[16/10] sm:aspect-[21/9]"
           sizes="(max-width: 1180px) 100vw, 1180px"
         />
-        <div className="border-t border-[#3A3A3A] px-5 py-5">
+        <div className="border-t border-[var(--clp-bord)] px-5 py-5">
           {/* ⚠️ Le H1 : modeste en taille, mais c'est le texte que Google lit. */}
           {/*
             « Lieux » au pluriel : il y en a trois depuis l'ouverture de LA
@@ -166,7 +166,7 @@ function Espaces() {
           return (
             <div
               key={e.slug}
-              className={`${CADRE} group relative flex flex-col overflow-hidden transition-colors hover:border-[#C8A96E]`}
+              className={`${CADRE} group relative flex flex-col overflow-hidden transition-colors hover:border-[var(--clp-accent)]`}
             >
               {/*
                 ⚠️ `z-10` N'EST PAS DÉCORATIF. Le lien étiré du titre plus bas
@@ -241,7 +241,7 @@ function Preuve() {
               className="object-cover"
             />
           </div>
-          <figcaption className="border-t border-[#3A3A3A] px-5 py-4 text-[13px] leading-relaxed text-[#A8A29A]">
+          <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[13px] leading-relaxed text-[#A8A29A]">
             Une voiture entre depuis la rue, de plain-pied, sans marche ni
             seuil, et peut rester : le sol tient 800 kg/m².
           </figcaption>
@@ -254,7 +254,7 @@ function Preuve() {
               Le double de la norme.
             </p>
           </div>
-          <div className="h-px bg-[#3A3A3A]" />
+          <div className="h-px bg-[var(--clp-bord)]" />
           <div>
             <p className="font-mono text-2xl font-bold">Plain-pied</p>
             <p className="mt-1 text-[13px] text-[#A8A29A]">
@@ -309,7 +309,7 @@ function Sommaire() {
             aria-disabled={!p.pret}
             className={`${CADRE} flex flex-col justify-between gap-6 p-5 transition-colors ${
               p.pret
-                ? "hover:border-[#C8A96E]"
+                ? "hover:border-[var(--clp-accent)]"
                 : "cursor-default opacity-50"
             }`}
           >
@@ -352,7 +352,7 @@ function Photos() {
                 className="object-cover"
               />
             </div>
-            <figcaption className="border-t border-[#3A3A3A] px-3 py-2.5 font-clp text-[10px] uppercase tracking-[0.12em]">
+            <figcaption className="border-t border-[var(--clp-bord)] px-3 py-2.5 font-clp text-[10px] uppercase tracking-[0.12em]">
               {c.nom}
             </figcaption>
           </figure>

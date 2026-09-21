@@ -21,6 +21,14 @@
  */
 
 export const ADRESSE = "39 rue des Bourdonnais, Paris 1er";
+/**
+ * La même adresse, pour la ligne de pied du logotype.
+ *
+ * ⚠️ Sans virgule, et ce n'est pas une faute : c'est un lockup, pas une phrase.
+ * Le logotype officiel écrit lui aussi « 39, RUE DES BOURDONNAIS 75001 PARIS »
+ * sans virgule avant la ville. Demande d'Étienne, 21/09/2026.
+ */
+export const ADRESSE_LOGO = "39 rue des Bourdonnais Paris 1er";
 export const TELEPHONE = "+33 7 61 47 10 73";
 
 /**
@@ -506,9 +514,4 @@ export const APPARTEMENT = {
   ] as const,
 } as const;
 
-/** Les teintes de fond par lieu, reprises du calendrier tarifaire. */
-export const FONDS = {
-  atelier: "#1C1A17",
-  boutique: "#0F1720",
-  appartement: "#1F1216",
-} as const;
+

@@ -49,7 +49,7 @@ export function RefonteVisiter() {
     <Page>
       <Barre />
       <Corps>
-        <div className="mt-3 border-b border-[#3A3A3A] pb-8 pt-4">
+        <div className="mt-3 border-b border-[var(--clp-bord)] pb-8 pt-4">
           <h1 className="font-clp uppercase">
             <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
               Réserver une visite
@@ -94,7 +94,7 @@ export function RefonteVisiter() {
               ))}
             </dl>
 
-            <div className="mt-6 border-t border-[#3A3A3A] pt-4">
+            <div className="mt-6 border-t border-[var(--clp-bord)] pt-4">
               <p className="text-[13px] leading-relaxed text-[#8A8A8A]">
                 Vous préférez écrire ? WhatsApp répond en quelques minutes.
               </p>

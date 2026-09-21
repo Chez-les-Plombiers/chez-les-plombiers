@@ -1,5 +1,5 @@
 import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
-import { ADRESSE, FONDS } from "./data";
+import { ADRESSE } from "./data";
 import { PLANS, TECHNIQUE } from "./data-technique";
 
 /**
@@ -19,10 +19,10 @@ import { PLANS, TECHNIQUE } from "./data-technique";
  */
 export function RefonteTechnique() {
   return (
-    <Page fond={FONDS.atelier}>
+    <Page theme="atelier">
       <Barre lieu="L'ATELIER" />
       <Corps>
-        <div className="mt-3 border-b border-[#3A3A3A] pb-8 pt-4">
+        <div className="mt-3 border-b border-[var(--clp-bord)] pb-8 pt-4">
           <h1 className="font-clp uppercase">
             <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
               Fiche technique — L&apos;Atelier
@@ -73,12 +73,12 @@ export function RefonteTechnique() {
               <section
                 key={poste.titre}
                 id={slug(poste.titre)}
-                className="scroll-mt-8 border-b border-[#3A3A3A] py-8 first:pt-0"
+                className="scroll-mt-8 border-b border-[var(--clp-bord)] py-8 first:pt-0"
               >
                 <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
                   {poste.titre}
                 </h2>
-                <dl className="mt-4 max-w-[68ch] divide-y divide-[#3A3A3A] border-y border-[#3A3A3A]">
+                <dl className="mt-4 max-w-[68ch] divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
                   {poste.lignes.map(([quoi, valeur]) => (
                     <div key={quoi} className="py-3 sm:flex sm:gap-6">
                       <dt
@@ -117,7 +117,7 @@ export function RefonteTechnique() {
                     href={p.fichier}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${CADRE} flex flex-col justify-between gap-4 p-5 transition-colors hover:border-[#C8A96E]`}
+                    className={`${CADRE} flex flex-col justify-between gap-4 p-5 transition-colors hover:border-[var(--clp-accent)]`}
                   >
                     <div>
                       <p className="font-clp text-[12px] font-bold uppercase tracking-[0.08em]">

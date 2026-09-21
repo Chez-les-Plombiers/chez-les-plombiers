@@ -5,7 +5,7 @@
  */
 import { MapPin } from "lucide-react";
 import { Logo } from "./Logo";
-import { ADRESSE, FICHE_GOOGLE, TELEPHONE } from "./data";
+import { ADRESSE, ADRESSE_LOGO, FICHE_GOOGLE, TELEPHONE } from "./data";
 
 const TEL_BRUT = TELEPHONE.replace(/\s/g, "");
 const WHATSAPP = "https://wa.me/33761471073";
@@ -31,11 +31,43 @@ const INSTAGRAM = "https://instagram.com/chezlesplombiers";
  * qui crie ; pas de monogramme répété ; pas de « lire plus ».
  */
 
-export const FOND = "#1A1A1A";
-export const BLOC = "bg-[#242424]";
-export const BORD = "border border-[#3A3A3A]";
-export const LAITON = "#C8A96E";
+/**
+ * ── LA PALETTE PAR LIEU ───────────────────────────────────────────────────
+ *
+ * ⚠️ Ce ne sont PAS de simples fonds. Reprises telles quelles du calendrier
+ * tarifaire (`globals.css` du projet pricing), où chaque lieu décline QUATRE
+ * valeurs : le fond, la carte, la bordure et l'accent. Étienne, le 21/09/2026,
+ * en comparant les deux : « sur l'appartement t'as un peu teinté le fond mais
+ * pas le reste, alors que sur les tarifs le changement est plus joli ». Il
+ * avait raison — teinter le seul fond donne une page grise posée sur du rose.
+ *
+ * ⚠️ Le fond reste SOMBRE dans tous les cas. Un aplat clair (rose, bleu clair)
+ * casserait tout le système, conçu pour du charbon.
+ *
+ * ⚠️ Si ces valeurs changent ici, elles doivent changer dans le pricing aussi.
+ * Les deux sont côte à côte dans la même navigation : une divergence se verrait
+ * immédiatement.
+ */
+export const THEMES = {
+  site:        { fond: "#1A1A1A", carte: "#242424", bord: "#3A3A3A", accent: "#C8A96E" },
+  atelier:     { fond: "#1C1A17", carte: "#262320", bord: "#3D3830", accent: "#C8A96E" },
+  boutique:    { fond: "#0F1720", carte: "#16212C", bord: "#2C4054", accent: "#7EC2E6" },
+  appartement: { fond: "#1F1216", carte: "#2A1A20", bord: "#4D323C", accent: "#E4A2B5" },
+} as const;
+
+export type NomTheme = keyof typeof THEMES;
+
+/*
+ * Les classes passent par des variables CSS posées sur la coquille de page :
+ * un seul endroit décide, tout le reste suit — y compris la barre et le pied,
+ * qui sont partagés.
+ */
+export const BLOC = "bg-[var(--clp-carte)]";
+export const BORD = "border border-[var(--clp-bord)]";
+export const LAITON = "var(--clp-accent)";
 export const CADRE = `${BLOC} ${BORD}`;
+/** Le trait de séparation, quand il n'y a pas de cadre. */
+export const TRAIT = "border-[var(--clp-bord)]";
 export const LABEL = "font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]";
 
 /**
@@ -91,15 +123,23 @@ export function Titre({ children }: { children: React.ReactNode }) {
  */
 export function Page({
   children,
-  fond = FOND,
+  theme = "site",
 }: {
   children: React.ReactNode;
-  fond?: string;
+  theme?: NomTheme;
 }) {
+  const t = THEMES[theme];
   return (
     <div
       className="min-h-screen text-[#E8E4DC] antialiased"
-      style={{ backgroundColor: fond }}
+      style={
+        {
+          backgroundColor: t.fond,
+          "--clp-carte": t.carte,
+          "--clp-bord": t.bord,
+          "--clp-accent": t.accent,
+        } as React.CSSProperties
+      }
     >
       {children}
     </div>
@@ -157,7 +197,7 @@ export function Barre({ lieu }: { lieu?: string }) {
         {/* Téléphone : le numéro seul. */}
         <a
           href={`tel:${TEL_BRUT}`}
-          className={`${BORD} whitespace-nowrap px-3 py-2.5 font-mono text-[12px] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E] sm:hidden`}
+          className={`${BORD} whitespace-nowrap px-3 py-2.5 font-mono text-[12px] transition-colors hover:border-[var(--clp-accent)] hover:text-[var(--clp-accent)] sm:hidden`}
         >
           {TELEPHONE}
         </a>
@@ -166,13 +206,13 @@ export function Barre({ lieu }: { lieu?: string }) {
         <nav className="hidden items-center gap-2 sm:flex">
           <a
             href="/tarifs"
-            className="bg-[#C8A96E] px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] text-[#1A1A1A] transition-colors hover:bg-[#D4B97E]"
+            className="bg-[var(--clp-accent)] px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] text-[#1A1A1A] transition-colors hover:opacity-85"
           >
             Tarifs
           </a>
           <a
             href={lien("/visiter")}
-            className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E]`}
+            className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[var(--clp-accent)] hover:text-[var(--clp-accent)]`}
           >
             Visiter
           </a>
@@ -180,7 +220,7 @@ export function Barre({ lieu }: { lieu?: string }) {
             href={WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E]`}
+            className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[var(--clp-accent)] hover:text-[var(--clp-accent)]`}
           >
             WhatsApp
           </a>
@@ -235,7 +275,7 @@ export function Pied() {
   ];
 
   return (
-    <footer className="mt-16 border-t border-[#3A3A3A]">
+    <footer className="mt-16 border-t border-[var(--clp-bord)]">
       <div className="mx-auto max-w-[1180px] px-4 py-12 sm:px-6">
         <div className="gap-10 sm:flex sm:items-start sm:justify-between">
           {/*
@@ -250,7 +290,7 @@ export function Pied() {
           <div className="w-[240px] shrink-0 sm:w-[300px]">
             <Logo hauteur={38} className="w-full [&_img]:!h-auto [&_img]:!w-full" />
             <p className="mt-2 w-full text-center font-clp text-[9px] font-bold uppercase tracking-[0.12em] text-[#A8A29A] sm:text-[11px]">
-              {ADRESSE}
+              {ADRESSE_LOGO}
             </p>
           </div>
 
@@ -292,7 +332,7 @@ export function Pied() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-wrap items-baseline justify-between gap-4 border-t border-[#3A3A3A] pt-6">
+        <div className="mt-12 flex flex-wrap items-baseline justify-between gap-4 border-t border-[var(--clp-bord)] pt-6">
           <p className="font-mono text-[11px] text-[#5E5E5E]">
             Chez les Plombiers SAS · SIREN 928 788 157 · {ADRESSE}
           </p>
