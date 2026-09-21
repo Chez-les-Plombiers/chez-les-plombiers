@@ -288,5 +288,55 @@
       66
     ],
     "couverture": 36
+  },
+  "19-rayban-rose": {
+    "garde": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "couverture": 5,
+    "nomCorrige": "Ray-Ban",
+    "categorie": "showrooms",
+    "note": "⚠️ Le dossier melange trois evenements. Seules les six premieres photos sont Ray-Ban. La 07 est un dejeuner (Mathias Rouveure), la 17 un evenement Oakley, les 19 et 20 le defile Litkovska. Le nom du dossier ne fait donc pas foi pour tout son contenu.",
+    "aRattacher": {
+      "17": "evenement Oakley — Etienne veut la garder, elle marche en showroom",
+      "19,20": "defile Litkovska — deja 47 photos dans son propre dossier"
+    }
+  },
+  "20-caisse-claire-2": {
+    "garde": [
+      1,
+      4,
+      5,
+      6,
+      8,
+      9,
+      14,
+      15,
+      16,
+      20,
+      26,
+      27,
+      35,
+      37,
+      46,
+      53,
+      57,
+      66,
+      69,
+      70,
+      72,
+      75,
+      81,
+      82,
+      88,
+      90,
+      93
+    ],
+    "couverture": 1
   }
 }
