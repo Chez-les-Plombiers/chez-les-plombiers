@@ -168,7 +168,7 @@ export const ESPACES = [
 export const PAGES = [
   { href: "/tarifs", titre: "Tarifs et disponibilités", detail: "Les prix jour par jour et le calendrier des trois lieux", pret: true },
     { href: "/atelier/technique", titre: "Fiche technique et plans", detail: "Puissances, connectique, emplacements, plans à télécharger", pret: true },
-  { href: "/photos", titre: "Photos", detail: "Par type d'événement : dîners, showrooms, défilés, lancements, expositions", pret: false },
+  { href: "/photos", titre: "Photos", detail: "Par type d'événement, et par marque", pret: true },
   { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger, les horaires, pour qui", pret: true },
   { href: "/visiter", titre: "Réserver une visite", detail: "Gratuite, une demi-heure, du lundi au samedi", pret: true },
   { href: "/conditions", titre: "Conditions de location", detail: "Ce qu'on vous demande, et pourquoi", pret: true },
@@ -491,7 +491,7 @@ export const BOUTIQUE = {
   ] as const,
   suite: [
     { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, les horaires, le quartier", pret: true },
-    { href: "/photos", titre: "Photos", detail: "Par type d'événement", pret: false },
+    { href: "/photos", titre: "Photos", detail: "Par type d'événement, et par marque", pret: true },
     { href: "/tarifs/boutique", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
     { href: "/conditions", titre: "Conditions de location", detail: "Réserver, payer, le dépôt de garantie", pret: true },
   ] as const,
@@ -519,7 +519,7 @@ export const APPARTEMENT = {
   equipement: [] as const,
   suite: [
     { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, circuler entre les lieux", pret: true },
-    { href: "/photos", titre: "Photos", detail: "Par type d'événement", pret: false },
+    { href: "/photos", titre: "Photos", detail: "Par type d'événement, et par marque", pret: true },
     { href: "/tarifs/appartement", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
     { href: "/conditions", titre: "Conditions de location", detail: "Réserver, payer, le dépôt de garantie", pret: true },
   ] as const,

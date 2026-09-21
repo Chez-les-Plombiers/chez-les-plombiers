@@ -7028,5 +7028,125 @@
         "origine": "FF978DF0-DE74-41DB-BB22-AE826E8A8334.JPG"
       }
     ]
+  },
+  "voitures": {
+    "dossier": "Voitures — série du site actuel",
+    "items": [
+      {
+        "n": "001",
+        "src": "/photos/tri/voitures/001.webp",
+        "origine": "01.jpg"
+      },
+      {
+        "n": "002",
+        "src": "/photos/tri/voitures/002.webp",
+        "origine": "02.jpg"
+      },
+      {
+        "n": "003",
+        "src": "/photos/tri/voitures/003.webp",
+        "origine": "03.jpg"
+      },
+      {
+        "n": "004",
+        "src": "/photos/tri/voitures/004.webp",
+        "origine": "04.jpg"
+      },
+      {
+        "n": "005",
+        "src": "/photos/tri/voitures/005.webp",
+        "origine": "05.jpg"
+      },
+      {
+        "n": "006",
+        "src": "/photos/tri/voitures/006.webp",
+        "origine": "06.jpg"
+      },
+      {
+        "n": "007",
+        "src": "/photos/tri/voitures/007.webp",
+        "origine": "07.jpg"
+      },
+      {
+        "n": "008",
+        "src": "/photos/tri/voitures/008.webp",
+        "origine": "08.jpg"
+      },
+      {
+        "n": "009",
+        "src": "/photos/tri/voitures/009.webp",
+        "origine": "09.jpg"
+      },
+      {
+        "n": "010",
+        "src": "/photos/tri/voitures/010.webp",
+        "origine": "10.jpg"
+      },
+      {
+        "n": "011",
+        "src": "/photos/tri/voitures/011.webp",
+        "origine": "11.jpg"
+      },
+      {
+        "n": "012",
+        "src": "/photos/tri/voitures/012.webp",
+        "origine": "12.jpg"
+      },
+      {
+        "n": "013",
+        "src": "/photos/tri/voitures/013.webp",
+        "origine": "13.jpg"
+      },
+      {
+        "n": "014",
+        "src": "/photos/tri/voitures/014.webp",
+        "origine": "14.jpg"
+      },
+      {
+        "n": "015",
+        "src": "/photos/tri/voitures/015.webp",
+        "origine": "15.jpg"
+      },
+      {
+        "n": "016",
+        "src": "/photos/tri/voitures/016.webp",
+        "origine": "16.jpg"
+      },
+      {
+        "n": "017",
+        "src": "/photos/tri/voitures/017.webp",
+        "origine": "17.jpg"
+      },
+      {
+        "n": "018",
+        "src": "/photos/tri/voitures/018.webp",
+        "origine": "18.jpg"
+      },
+      {
+        "n": "019",
+        "src": "/photos/tri/voitures/019.webp",
+        "origine": "19.jpg"
+      },
+      {
+        "n": "020",
+        "src": "/photos/tri/voitures/020.webp",
+        "origine": "20.jpg"
+      },
+      {
+        "n": "021",
+        "src": "/photos/tri/voitures/021.webp",
+        "origine": "21.jpg"
+      },
+      {
+        "n": "022",
+        "src": "/photos/tri/voitures/022.webp",
+        "origine": "22.jpg"
+      },
+      {
+        "n": "023",
+        "src": "/photos/tri/voitures/023.webp",
+        "origine": "23.jpg"
+      }
+    ]
   }
 }

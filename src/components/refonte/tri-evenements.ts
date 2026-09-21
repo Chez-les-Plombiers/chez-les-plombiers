@@ -70,4 +70,7 @@ export const EVENEMENTS: readonly Evenement[] = [
   { slug: "20-caisse-claire-2", nom: "Caisse Claire 2", categorie: "lancements" },
   { slug: "21-servaire", nom: "Servaire & Co", categorie: "expositions" },
   { slug: "diners-vrac", nom: "Dîners — photos en vrac", categorie: "diners" },
+  /* Série déjà sur le site (page /services/evenements-auto-moto). Ouverte au
+     tri pour choisir la photo de la home — celle en place est trop serrée. */
+  { slug: "voitures", nom: "Voitures", categorie: "automobile" },
 ];
