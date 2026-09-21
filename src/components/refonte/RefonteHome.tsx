@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Logo } from "./Logo";
 import { TuilePhotos } from "./TuilePhotos";
 import { Barre, Bloc, CADRE, Corps, LAITON, Page, Pied, Titre, lien } from "./chrome";
 import {
@@ -7,10 +6,8 @@ import {
   CATEGORIES_PHOTOS,
   CLIENTS_TEXTE,
   ESPACES,
-  FAITS,
   OUVERTURE_PHOTOS,
   PAGES,
-  REGLES,
 } from "./data";
 
 /**
@@ -53,12 +50,9 @@ export function RefonteHome() {
         <Ouverture />
         <Espaces />
         <Preuve />
-        <Faits />
-        <Sommaire />
         <Photos />
         <Clients />
-        <Regles />
-        <Declinaisons />
+        <Sommaire />
       </Corps>
       <Pied />
     </Page>
@@ -229,68 +223,33 @@ function Espaces() {
 /**
  * L'accès véhicule, montré au lieu d'être clamé.
  *
- * ⚠️ Ne pas remettre de gros titre ici. La version précédente écrivait « UNE
- * VOITURE PEUT ENTRER » en capitales de 40 px ; Étienne : « c'est too much, ça
- * va pas, il faut plutôt mettre une photo ». La photo EST l'argument.
+ * ⚠️ Ne pas remettre de gros titre ici. Une version écrivait « UNE VOITURE PEUT
+ * ENTRER » en capitales de 40 px ; Étienne : « c'est too much, il faut plutôt
+ * mettre une photo ». La photo EST l'argument.
+ *
+ * ⚠️ Ne pas remettre non plus la colonne de chiffres qui l'accompagnait
+ * (800 kg/m², plain-pied). Étienne, 21/09/2026 : « ce bloc est trop gros à
+ * droite ». Et sur le fond, ces chiffres relèvent du plan d'installation, pas
+ * de la décision de louer : ils sont sur la page du lieu et sur la fiche
+ * technique. Ici, une photo et une ligne suffisent.
  */
 function Preuve() {
   return (
     <Bloc grand>
-      <div className="grid gap-3 lg:grid-cols-[2fr_1fr]">
-        <figure className={`${CADRE} overflow-hidden`}>
-          <div className="relative aspect-[16/10] w-full">
-            <Image
-              src="/images/services/gallery/evenements-auto-moto/01.jpg"
-              alt="Une voiture garée à l'intérieur de L'Atelier, entre les poteaux de béton"
-              fill
-              sizes="(max-width: 1024px) 100vw, 780px"
-              className="object-cover"
-            />
-          </div>
-          <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[13px] leading-relaxed text-[#A8A29A]">
-            Une voiture entre depuis la rue, de plain-pied, sans marche ni
-            seuil, et peut rester : le sol tient 800 kg/m².
-          </figcaption>
-        </figure>
-
-        <div className={`${CADRE} flex flex-col justify-center gap-5 p-5`}>
-          <div>
-            <p className="font-mono text-2xl font-bold">800 kg/m²</p>
-            <p className="mt-1 text-[13px] text-[#A8A29A]">
-              Le double de la norme.
-            </p>
-          </div>
-          <div className="h-px bg-[var(--clp-bord)]" />
-          <div>
-            <p className="font-mono text-2xl font-bold">Plain-pied</p>
-            <p className="mt-1 text-[13px] text-[#A8A29A]">
-              Accès direct depuis la rue, sans marche ni seuil.
-            </p>
-          </div>
+      <figure className={`${CADRE} overflow-hidden`}>
+        <div className="relative aspect-[16/10] w-full sm:aspect-[21/9]">
+          <Image
+            src="/images/services/gallery/evenements-auto-moto/01.jpg"
+            alt="Une voiture garée à l'intérieur de L'Atelier, entre les poteaux de béton"
+            fill
+            sizes="(max-width: 1180px) 100vw, 1180px"
+            className="object-cover"
+          />
         </div>
-      </div>
-    </Bloc>
-  );
-}
-
-/* ───────────────────────────────────────────────────────────────── Faits */
-
-function Faits() {
-  // Le premier fait est l'accès véhicule : il a sa propre section, juste au-dessus.
-  const reste = FAITS.filter((f) => !f.fort);
-
-  return (
-    <Bloc>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {reste.map((f) => (
-          <div key={f.valeur} className={`${CADRE} p-5`}>
-            <p className="font-mono text-base font-bold">{f.valeur}</p>
-            <p className="mt-1.5 text-[13px] leading-relaxed text-[#A8A29A]">
-              {f.detail}
-            </p>
-          </div>
-        ))}
-      </div>
+        <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[14px] leading-relaxed text-[#C9C4BC]">
+          Une voiture entre depuis la rue, de plain-pied, et peut rester.
+        </figcaption>
+      </figure>
     </Bloc>
   );
 }
@@ -383,52 +342,6 @@ function Clients() {
       <Titre>Ils sont venus</Titre>
       <div className={`${CADRE} p-5`}>
         <p className="max-w-4xl text-[15px] leading-relaxed">{CLIENTS_TEXTE}</p>
-      </div>
-    </>
-  );
-}
-
-/* ───────────────────────────────────────────────────────────────  Règles */
-
-function Regles() {
-  return (
-    <>
-      <Titre>Horaires</Titre>
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        {REGLES.map(([quoi, quand]) => (
-          <div key={quoi} className={`${CADRE} p-5`}>
-            <p className="font-mono text-[11px] uppercase tracking-wider text-[#8A8A8A]">
-              {quoi}
-            </p>
-            <p className="mt-1.5 text-[14px]">{quand}</p>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-}
-
-/**
- * ⚠️ TEMPORAIRE — à supprimer une fois les déclinaisons validées.
- *
- * Les pages de lieu n'existent pas encore, mais Étienne doit pouvoir juger le
- * logo décliné avant qu'on les construise. On ne montre pas les trois en tête
- * de page : trois « CHEZ LES PLOMBIERS » sur un même écran, ce serait la
- * répétition qu'il a reprochée au monogramme.
- */
-function Declinaisons() {
-  return (
-    <>
-      <Titre>Le logo par lieu — à valider, ne restera pas ici</Titre>
-      <div className="grid gap-3 sm:grid-cols-3">
-        {ESPACES.map((e) => (
-          <div
-            key={e.slug}
-            className={`${CADRE} flex items-center justify-center py-10`}
-          >
-            <Logo hauteur={30} pied={e.nom.toUpperCase()} />
-          </div>
-        ))}
       </div>
     </>
   );

@@ -77,6 +77,15 @@ signe €** — c'est pour ça que les prix sont en `font-mono`.
 
 ## Détails notés, pas encore traités
 
+- ⏳ **`/infos` — agrandir les photos au clic.** Remarque de Charles : sur un
+  petit écran on ne distingue pas la porte. Le composant existe déjà
+  (`TuilePhotos` avec `agrandir`), il suffit de l'employer pour les photos du
+  document.
+- ⏳ **`/infos` — « Circuler entre les trois lieux » manque LA photo.** Il n'y a
+  que la porte à digicode. Ajouter la vue prise de la rue où l'on voit les
+  trois lieux d'un coup (`/photos/acces/rue.jpg`, ou une nouvelle d'Étienne).
+  Charles prépare par ailleurs un schéma : attendre de voir avant d'investir.
+
 - **Équipement de LA BOUTIQUE et de L'APPARTEMENT** : inconnu. Les deux cartes
   n'ont donc pas de ligne d'équipements, là où L'ATELIER en a une. Ne pas
   inventer : ça finirait dans un devis.
