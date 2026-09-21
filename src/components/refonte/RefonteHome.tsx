@@ -271,7 +271,13 @@ function Preuve() {
             />
           </div>
           <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[14px] leading-relaxed text-[#C9C4BC]">
-            Une voiture entre depuis la rue, de plain-pied, et peut rester.
+            {/*
+               ⚠️ NOMMER L'ÉVÉNEMENT PLUTÔT QUE DÉCRIRE LA PHOTO. Il y avait
+               ici « une voiture entre depuis la rue » — une évidence que
+               l'image dit déjà. Le nom de la marque, lui, est une preuve, et
+               c'est du texte qu'un moteur indexe.
+            */}
+            Dîner Maison 123 — by Matthias Breuer
           </figcaption>
         </figure>
 
@@ -286,7 +292,8 @@ function Preuve() {
             />
           </div>
           <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[14px] leading-relaxed text-[#C9C4BC]">
-            Porsche y a lancé le Cayenne électrique.
+            {/* « Electric » à l'anglaise : c'est le nom du modèle. */}
+            Lancement Porsche Cayenne Electric
           </figcaption>
         </figure>
       </div>
@@ -361,11 +368,11 @@ function Photos() {
           >
             <div className="relative aspect-[4/3] w-full">
               <Image
-                src={c.evenements[0].couverture.src}
+                src={c.couverture.src}
                 alt={`${c.nom} Chez les Plombiers`}
                 fill
                 sizes="(max-width: 640px) 50vw, 380px"
-                className="object-cover"
+                className={`object-cover ${c.cadrage ?? ""}`}
               />
             </div>
             <div className="border-t border-[var(--clp-bord)] px-4 py-3">

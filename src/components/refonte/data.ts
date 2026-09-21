@@ -236,8 +236,13 @@ export const FAITS = [
 export const OUVERTURE = [
   { src: "/photos/lieu/atelier-kv.jpg", nom: "L'Atelier", href: "/atelier" },
   { src: "/photos/boutique/tuile-2.jpg", nom: "La Boutique", href: "/boutique" },
-  /* ⚠️ Une vue AVEC les rideaux : les `appartement-0x` datent d'avant. */
-  { src: "/photos/appartement/rideaux-large.jpg", nom: "L'Appartement", href: "/appartement" },
+  /*
+     ⚠️ Une vue AVEC les rideaux : les `appartement-0x` datent d'avant.
+     Et celle-ci plutôt que `rideaux-large.jpg` — Étienne, 21/09/2026 :
+     « celle que t'as mise sur le hero, je l'ai prise ce matin, elle est trop
+     sombre, il faut que je la refasse ». Les lampions éclairent la pièce.
+  */
+  { src: "/photos/appartement/rideaux-salon.jpg", nom: "L'Appartement", href: "/appartement" },
 ] as const;
 
 /** Catégories de la photothèque. Pas de « tournages » : ce métier n'est pas recherché. */

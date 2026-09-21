@@ -159,14 +159,29 @@ export function Page({
  * une page de photos, « ← Dîners » dit où l'on remonte ; « ← Retour » ne dit
  * rien et dépend de l'historique du navigateur.
  */
+/**
+ * Le retour en haut de page.
+ *
+ * ⚠️ C'ÉTAIT UN SIMPLE TEXTE GRIS, ET C'ÉTAIT TROP PEU. Étienne, 21/09/2026 :
+ * « c'est juste un texte cliquable, il est un peu petit. Est-ce qu'on pourrait
+ * pas faire un petit bouton avec une flèche plus gros ? »
+ *
+ * Deux choses le rendaient faible : rien ne disait qu'on pouvait cliquer, et
+ * la zone tactile faisait à peine 16 px de haut — sous les 44 px qu'Apple
+ * recommande, donc un bouton qu'on rate au pouce. Il porte maintenant un
+ * cadre, le même que les blocs, et se touche sans viser.
+ */
 export function Retour({ href, texte }: { href: string; texte: string }) {
   return (
-    <div className="mt-3 pt-4">
+    <div className="pt-4">
       <Link
         href={href}
-        className="font-mono text-[11px] text-[#8A8A8A] transition-colors hover:text-[#E8E4DC]"
+        className={`${CADRE} inline-flex items-center gap-2 px-4 py-2.5 font-mono text-[12px] text-[#C9C4BC] transition-colors hover:border-[var(--clp-accent)] hover:text-[#E8E4DC]`}
       >
-        ← {texte}
+        <span aria-hidden className="text-[14px] leading-none">
+          &larr;
+        </span>
+        {texte}
       </Link>
     </div>
   );

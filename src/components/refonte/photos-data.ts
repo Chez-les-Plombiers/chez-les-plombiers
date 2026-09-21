@@ -122,15 +122,56 @@ export interface CategorieGalerie {
   nom: string;
   evenements: EvenementGalerie[];
   total: number;
+  /** La vignette de la catégorie. Voir `COUVERTURES` juste au-dessus. */
+  couverture: Photo;
+  /**
+   * Cadrage de cette vignette, quand le centre ne convient pas. Classe
+   * Tailwind complète — la compilation ne lit que des noms entiers.
+   */
+  cadrage?: string;
 }
+
+/**
+ * La vignette d'une CATÉGORIE, choisie à part.
+ *
+ * ⚠️ Elle valait jusqu'ici la couverture du premier événement de la catégorie.
+ * C'est un mauvais choix par défaut : le premier événement l'est par son
+ * numéro de dossier, pas par sa qualité — « Lancements » ouvrait donc sur un
+ * fond blanc quelconque alors que ROC est bien plus parlant. Et remonter la
+ * couverture de ROC pour régler ça changerait aussi la vignette de ROC sur sa
+ * propre page. Deux besoins, deux réglages.
+ *
+ * `cadrage` répond au même problème dans l'autre sens : la photo est la bonne,
+ * c'est le recadrage en 4/3 qui coupe. Sur « Défilés », il coupait les têtes.
+ */
+const COUVERTURES: Partial<
+  Record<SlugCategorie, { evenement: string; n: number; cadrage?: string }>
+> = {
+  /* La projection bleu et jaune sur le mur — choix d'Étienne, 21/09/2026. */
+  lancements: { evenement: "11-roc", n: 13 },
+  /* Photo de rue : le cadrage centré décapitait le premier rang. */
+  defiles: { evenement: "05-defile-litovska-1-octobre-2025", n: 8, cadrage: "object-top" },
+};
 
 export const CATEGORIES_GALERIE: CategorieGalerie[] = CATEGORIES.map((c) => {
   const evenements = GALERIE.filter((e) => e.categorie === c.slug);
+  const choix = COUVERTURES[c.slug];
+  /* `Photo` ne porte pas son numéro ; le nom du fichier, si — `013.webp`. */
+  const fichier = choix && `/${String(choix.n).padStart(3, "0")}.webp`;
+  const voulue = choix
+    ? evenements
+        .find((e) => e.slug === choix.evenement)
+        ?.photos.find((p) => p.src.endsWith(fichier!))
+    : undefined;
   return {
     slug: c.slug,
     nom: c.nom,
     evenements,
     total: evenements.reduce((s, e) => s + e.photos.length, 0),
+    /* Repli sur le premier événement : une catégorie sans choix explicite
+       garde le comportement d'avant, et un numéro devenu faux ne casse rien. */
+    couverture: voulue ?? evenements[0]?.couverture,
+    cadrage: voulue ? choix?.cadrage : undefined,
   };
 }).filter((c) => c.evenements.length > 0);
 

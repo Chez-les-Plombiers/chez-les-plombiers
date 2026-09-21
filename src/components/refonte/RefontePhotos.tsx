@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Galerie } from "./Galerie";
 import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour } from "./chrome";
-import { ADRESSE } from "./data";
 import {
   CATEGORIES_GALERIE,
   type CategorieGalerie,
@@ -35,27 +34,21 @@ const LIEN = "/refonte/photos";
 /* ───────────────────────────────────────────────────── Les six catégories */
 
 export function RefontePhotosIndex() {
-  const total = CATEGORIES_GALERIE.reduce((s, c) => s + c.total, 0);
-
   return (
     <Page>
       <Barre />
       <Corps>
         <Retour href="/refonte" texte="Accueil" />
-        <div className="border-b border-[var(--clp-bord)] pb-8 pt-4">
-          <h1 className="font-clp uppercase">
-            <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
-              Photos
-            </span>
-            <span className="mt-1.5 block whitespace-nowrap text-[9px] font-normal leading-relaxed tracking-[0.06em] text-[#A8A29A] sm:text-[10px] sm:tracking-[0.08em]">
-              {ADRESSE}
-            </span>
+        {/*
+          ⚠️ Un titre, et rien dessous. Il y avait ici l'adresse et une phrase
+          d'explication ; Étienne, 21/09/2026 : « ça sert à rien […] on s'en
+          fiche. Les gens comprennent. » Une page qui s'appelle « Photos » et
+          qui montre des photos n'a pas besoin qu'on la présente.
+        */}
+        <div className="border-b border-[var(--clp-bord)] pb-6 pt-4">
+          <h1 className="font-clp text-sm font-bold uppercase leading-relaxed tracking-[0.1em]">
+            Photos
           </h1>
-          <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[#C9C4BC]">
-            {total} photos, prises pendant de vrais événements. Cliquez sur une
-            image pour l&apos;agrandir, et téléchargez celles dont vous avez
-            besoin.
-          </p>
         </div>
 
         {/* Six en 3×2 : deux fois plus grandes qu'en ligne de cinq. */}
@@ -64,7 +57,8 @@ export function RefontePhotosIndex() {
             <Vignette
               key={c.slug}
               href={`${LIEN}/${c.slug}`}
-              photo={c.evenements[0].couverture}
+              photo={c.couverture}
+              cadrage={c.cadrage}
               titre={c.nom}
               detail={`${c.total} photos · ${c.evenements.length} ${
                 c.evenements.length > 1 ? "événements" : "événement"
@@ -160,11 +154,13 @@ function Vignette({
   photo,
   titre,
   detail,
+  cadrage,
 }: {
   href: string;
   photo: { src: string; l: number; h: number };
   titre: string;
   detail: string;
+  cadrage?: string;
 }) {
   return (
     <Link
@@ -177,7 +173,7 @@ function Vignette({
           alt={titre}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
-          className="object-cover"
+          className={`object-cover ${cadrage ?? ""}`}
         />
       </div>
       <div className="border-t border-[var(--clp-bord)] p-4">
