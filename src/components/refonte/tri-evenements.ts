@@ -81,4 +81,13 @@ export const EVENEMENTS: readonly Evenement[] = [
   /* Retrouvé par Étienne le 21/09/2026 : un mélange de plusieurs dîners
      signés HOMEMADE. Contient des HEIC, d'où la conversion par sips. */
   { slug: "homemade-mix", nom: "HOMEMADE — plusieurs dîners", categorie: "diners" },
+  /*
+   * Images tirées des 12 vidéos du dossier voitures, trois par vidéo (au quart,
+   * à la moitié, aux trois quarts — on évite le début et la fin, souvent flous).
+   * ⚠️ Les vidéos sont en 1 920 × 1 080 : les images en héritent, ce qui est
+   * moins qu'une photo mais BIEN plus que les 952 px servis par Instagram, et
+   * surtout c'est horizontal. Les pleines résolutions sont dans
+   * `SELECTION PHOTOS SITE/03. VOITURES/IMAGES EXTRAITES/`.
+   */
+  { slug: "voitures-videos", nom: "Voitures — images de vidéos", categorie: "automobile" },
 ];
