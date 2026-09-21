@@ -1,4 +1,7 @@
 import Image from "next/image";
+// Ces pages SONT des routes de cette application : `Link` s'impose, au
+// contraire de `/tarifs` qui appartient à l'autre zone Next.
+import Link from "next/link";
 import { Barre, CADRE, Corps, LAITON, Page, Pied } from "./chrome";
 import { CATEGORIES, EVENEMENTS } from "./tri-evenements";
 import manifeste from "./tri-manifeste.json";
@@ -63,7 +66,7 @@ export function RefonteTriIndex() {
               {c.evenements.map((e) => {
                 const items = M[e.slug]?.items ?? [];
                 return (
-                  <a
+                  <Link
                     key={e.slug}
                     href={`/refonte/tri/${e.slug}`}
                     className={`${CADRE} overflow-hidden transition-colors hover:border-[var(--clp-accent)]`}
@@ -90,7 +93,7 @@ export function RefonteTriIndex() {
                         {items.length} photos →
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 );
               })}
             </div>
@@ -117,12 +120,12 @@ export function RefonteTriEvenement({ slug }: { slug: string }) {
       <Barre />
       <Corps>
         <div className="mt-3 border-b border-[var(--clp-bord)] pb-6 pt-4">
-          <a
+          <Link
             href="/refonte/tri"
             className="font-mono text-[11px] text-[#8A8A8A] hover:text-[#E8E4DC]"
           >
             ← Tous les événements
-          </a>
+          </Link>
           <h1 className="mt-3 font-clp text-sm font-bold uppercase tracking-[0.1em]">
             {e.nom}
           </h1>
@@ -160,22 +163,22 @@ export function RefonteTriEvenement({ slug }: { slug: string }) {
 
         <nav className="mt-10 flex flex-wrap justify-between gap-3 border-t border-[var(--clp-bord)] pt-6">
           {precedent ? (
-            <a
+            <Link
               href={`/refonte/tri/${precedent.slug}`}
               className="font-mono text-[12px] text-[#A8A29A] hover:text-[#E8E4DC]"
             >
               ← {precedent.nom}
-            </a>
+            </Link>
           ) : (
             <span />
           )}
           {suivant && (
-            <a
+            <Link
               href={`/refonte/tri/${suivant.slug}`}
               className="font-mono text-[12px] text-[#A8A29A] hover:text-[#E8E4DC]"
             >
               {suivant.nom} →
-            </a>
+            </Link>
           )}
         </nav>
       </Corps>
