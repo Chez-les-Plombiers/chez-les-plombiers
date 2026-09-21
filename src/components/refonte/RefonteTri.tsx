@@ -141,7 +141,13 @@ export function RefonteTriEvenement({ slug }: { slug: string }) {
           Trois colonnes sur téléphone : assez grand pour juger une photo,
           assez dense pour en scanner cent sans y passer la journée.
         */}
-        <div className="mt-6 grid grid-cols-3 gap-1.5 sm:grid-cols-5 lg:grid-cols-8">
+        {/*
+          ⚠️ Cinq colonnes au plus, et pas huit. Étienne, en plein tri :
+          « tu peux les mettre un peu plus grosses ? » À huit, on ne distingue
+          pas un visage flou d'un visage net — et c'est exactement la décision
+          qu'on lui demande de prendre.
+        */}
+        <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
           {bloc.items.map((it) => (
             <figure key={it.n} className="relative">
               <div className="relative aspect-square w-full overflow-hidden bg-[var(--clp-carte)]">
@@ -149,12 +155,12 @@ export function RefonteTriEvenement({ slug }: { slug: string }) {
                   src={it.src}
                   alt={it.n}
                   fill
-                  sizes="(max-width: 640px) 33vw, 160px"
+                  sizes="(max-width: 640px) 50vw, 280px"
                   className="object-cover"
                 />
               </div>
               {/* Le numéro SUR la vignette : à côté, il se décale d'une ligne. */}
-              <figcaption className="absolute bottom-0 left-0 bg-black/70 px-1.5 py-0.5 font-mono text-[10px] text-white">
+              <figcaption className="absolute bottom-0 left-0 bg-black/70 px-2 py-1 font-mono text-[12px] text-white">
                 {it.n}
               </figcaption>
             </figure>
