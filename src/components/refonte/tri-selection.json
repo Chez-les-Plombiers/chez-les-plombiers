@@ -786,5 +786,16 @@
     "garde": [],
     "couverture": null,
     "note": "⚠️ AUCUNE IMAGE DE PORSCHE ICI. Ces 36 images viennent des 12 vidéos du dossier voitures, qui filment le dîner Maison 123 « Fusion » — la Triumph, pas le Cayenne.\nLe Porsche a été cherché partout dans Dropbox le 21/09/2026 : les seules vidéos (`INES/12_POSTS JUILLET/PORSCHE *.mp4`) sont des exports Instagram en 720 × 1280 et 496 × 886 — MOINS bons que la photo de 952 px déjà récupérée. Et le dossier client `COMMERCIAL/00. CLIENTS/251126 AUDITOIRE (PORSCHE)` ne contient que des contrats et des factures.\n⏳ Pour avoir le Porsche en vraie résolution, il faut le demander à Auditoire, l'agence qui a produit l'événement."
+  },
+  "voitures-telephone": {
+    "garde": [
+      4,
+      5,
+      9,
+      14
+    ],
+    "couverture": 14,
+    "nomCorrige": "Porsche — lancement du Cayenne électrique",
+    "note": "⚠️ LE DOSSIER MÉLANGE DEUX ÉVÉNEMENTS, et ce sont les dates EXIF qui les séparent — pas les noms de fichiers, qui sont des UUID :\n  26 novembre 2025 → PORSCHE (004, 005, 009, 014). La date colle à la facture du dossier client `COMMERCIAL/00. CLIENTS/251126 AUDITOIRE (PORSCHE)`.\n  9 et 28 octobre 2025 → la Triumph du dîner Maison 123, déjà couverte par la planche « voitures ».\nLes quatre photos Porsche sont en 2268 × 4032 : enfin la vraie résolution, après l'échec de la récupération Instagram (952 px) et des vidéos (720 × 1280).\n⏳ Les 4 vidéos du dossier n'ont pas de date EXIF et ne sont pas encore triées."
   }
 }

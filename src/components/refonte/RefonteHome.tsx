@@ -238,40 +238,57 @@ function Preuve() {
   return (
     <Bloc grand>
       {/*
-        ⚠️ NI LE GROS PLAN, NI LE PORSCHE D'INSTAGRAM.
+        ⚠️ DEUX PHOTOS, ET C'EST LEUR FORMAT QUI L'IMPOSE.
 
-        Trois versions ont été essayées le 21/09/2026 :
-        1. un gros plan de la Triumph, tiré de la galerie du site — « un peu en
-           trop gros plan », et on y voyait une voiture, pas une salle ;
-        2. le Porsche Cayenne récupéré sur Instagram — la bonne scène, mais
-           Instagram ne sert que 952 px en public : « trop pixellisée » ;
-        3. celle-ci, l'original iPhone en 2268 × 4032, recadré à 2400 px.
+        Quatre versions ont été essayées les 20 et 21/09/2026 : un gros plan de
+        la Triumph (« trop gros plan »), le Porsche récupéré sur Instagram
+        (« trop pixellisée » — 952 px), une image tirée d'une vidéo (720 px),
+        et enfin les originaux iPhone en 2268 × 4032.
 
-        Elle marche parce qu'on y voit LES TROIS à la fois : la voiture, la
-        salle entière, et deux personnes qui marchent. Étienne : « on voit que
-        c'est pris sur le vif ». Une mise en scène n'aurait pas prouvé la même
-        chose.
+        Les deux retenues ne disent pas la même chose, et c'est pour ça qu'on
+        garde les deux :
+        - l'horizontale montre LA SALLE — une voiture, des gens qui marchent,
+          tout l'espace autour. Elle prouve que ça rentre ;
+        - la verticale montre UNE MARQUE QUI PREND LE LIEU — les affiches
+          Porsche accrochées au mur brut, le canapé rose en bas. Elle prouve
+          qu'on peut y produire autre chose qu'un stationnement.
 
-        ⏳ Le Porsche reste la meilleure scène du lieu. Il faudra l'original —
-        il est peut-être dans les 12 vidéos de `PHOTOS/SELECTION PHOTOS SITE/
-        03. VOITURES/`, mais extraire une image d'une vidéo demande ffmpeg,
-        qui n'est pas installé.
+        ⚠️ Ne pas recadrer la verticale en bandeau : elle perdrait soit les
+        affiches, soit le canapé, c'est-à-dire soit la marque, soit le lieu.
+        C'est aussi pourquoi elles sont côte à côte plutôt que l'une après
+        l'autre — un portrait seul en pleine largeur creuserait la page.
       */}
-      <figure className={`${CADRE} overflow-hidden`}>
-        <div className="relative aspect-[4/5] w-full sm:aspect-[16/10]">
-          <Image
-            src="/photos/lieu/voiture-atelier.jpg"
-            alt="Une voiture garée à l'intérieur de L'Atelier, deux personnes marchant à côté"
-            fill
-            sizes="(max-width: 1180px) 100vw, 1180px"
-            className="object-cover"
-          />
-        </div>
-        <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[14px] leading-relaxed text-[#C9C4BC]">
-          Une voiture entre depuis la rue, de plain-pied, et peut rester.
-          Porsche y a présenté le Cayenne électrique.
-        </figcaption>
-      </figure>
+      <div className="grid gap-3 sm:grid-cols-[3fr_2fr]">
+        <figure className={`${CADRE} flex flex-col overflow-hidden`}>
+          <div className="relative aspect-[4/3] w-full flex-1">
+            <Image
+              src="/photos/lieu/voiture-atelier.jpg"
+              alt="Une voiture garée à l'intérieur de L'Atelier, deux personnes marchant à côté"
+              fill
+              sizes="(max-width: 640px) 100vw, 700px"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[14px] leading-relaxed text-[#C9C4BC]">
+            Une voiture entre depuis la rue, de plain-pied, et peut rester.
+          </figcaption>
+        </figure>
+
+        <figure className={`${CADRE} flex flex-col overflow-hidden`}>
+          <div className="relative aspect-[4/5] w-full flex-1">
+            <Image
+              src="/photos/lieu/porsche-atelier.jpg"
+              alt="Les affiches du Porsche Cayenne électrique accrochées aux murs bruts de L'Atelier, au-dessus du canapé rose"
+              fill
+              sizes="(max-width: 640px) 100vw, 460px"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="border-t border-[var(--clp-bord)] px-5 py-4 text-[14px] leading-relaxed text-[#C9C4BC]">
+            Porsche y a lancé le Cayenne électrique.
+          </figcaption>
+        </figure>
+      </div>
     </Bloc>
   );
 }

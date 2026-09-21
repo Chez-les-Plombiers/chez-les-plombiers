@@ -95,5 +95,5 @@ export const EVENEMENTS: readonly Evenement[] = [
    * résolution iPhone (2268 × 4032) ET vidéos — les premières vidéos destinées
    * à la photothèque. Archivé dans `PHOTOS/EVENTS/23. VOITURES — TELEPHONE`.
    */
-  { slug: "voitures-telephone", nom: "Voitures — du téléphone", categorie: "automobile" },
+  { slug: "voitures-telephone", nom: "Porsche — Cayenne électrique", categorie: "automobile" },
 ];
