@@ -5,7 +5,6 @@ import { CATEGORIES_GALERIE } from "./photos-data";
 import { Barre, Bloc, CADRE, Corps, LAITON, Page, Pied, Titre, lien } from "./chrome";
 import {
   ADRESSE,
-  CLIENTS_TEXTE,
   ESPACES,
   OUVERTURE,
   PAGES,
@@ -52,7 +51,18 @@ export function RefonteHome() {
         <Espaces />
         <Preuve />
         <Photos />
-        <Clients />
+        {/*
+          ⚠️ « ILS SONT VENUS » A ÉTÉ RETIRÉ le 21/09/2026. Un paragraphe
+          listait Porsche, Prada, Mugler, TikTok… Étienne : « ça n'apporte
+          rien, on voit déjà qu'on a eu plein de clients. »
+
+          Il a raison, et c'est un progrès de la refonte : la photothèque
+          NOMME déjà chaque événement par sa marque. Une liste de noms sans
+          images répétait en moins bien ce que les vignettes prouvent.
+
+          ⚠️ Les noms restent indexables — ils sont dans les titres des
+          événements, qui sont du texte. On ne perd rien pour Google.
+        */}
         <Sommaire />
       </Corps>
       <Pied />
@@ -383,13 +393,3 @@ function Photos() {
  * qui cherche « Prada rue des Bourdonnais » lisent du texte.
  * `CLIENTS` reste dans `data.ts` : les logos serviront ailleurs.
  */
-function Clients() {
-  return (
-    <>
-      <Titre>Ils sont venus</Titre>
-      <div className={`${CADRE} p-5`}>
-        <p className="max-w-4xl text-[15px] leading-relaxed">{CLIENTS_TEXTE}</p>
-      </div>
-    </>
-  );
-}

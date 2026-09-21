@@ -255,12 +255,18 @@ export const OUVERTURE = [
   { src: "/photos/lieu/atelier-kv.jpg", nom: "L'Atelier", href: "/atelier" },
   { src: "/photos/boutique/tuile-2.jpg", nom: "La Boutique", href: "/boutique" },
   /*
-     ⚠️ Une vue AVEC les rideaux : les `appartement-0x` datent d'avant.
-     Et celle-ci plutôt que `rideaux-large.jpg` — Étienne, 21/09/2026 :
-     « celle que t'as mise sur le hero, je l'ai prise ce matin, elle est trop
-     sombre, il faut que je la refasse ». Les lampions éclairent la pièce.
+     ⚠️ TROISIÈME CHOIX POUR CE LIEU, LE 21/09/2026, ET CELUI-CI TIENT.
+     `rideaux-large` était « trop sombre, je l'ai prise ce matin », puis
+     `rideaux-salon` (les lampions) « pas assez impressionnant, on voit le
+     canapé ». Celle-ci ouvre sur la porte rose au fond et l'affiche Fellini
+     Roma : elle montre une enfilade de pièces, pas un coin de salon — c'est ce
+     qui donne l'échelle.
+
+     ⚠️ Elle vient de la GALERIE, pas d'un fichier à part : c'est la couverture
+     que la photothèque affiche déjà pour L'APPARTEMENT. Une seule image, un
+     seul choix à changer.
   */
-  { src: "/photos/appartement/rideaux-salon.jpg", nom: "L'Appartement", href: "/appartement" },
+  { src: "/photos/galerie/lieu-appartement/014.webp", nom: "L'Appartement", href: "/appartement" },
 ] as const;
 
 /** Catégories de la photothèque. Pas de « tournages » : ce métier n'est pas recherché. */
