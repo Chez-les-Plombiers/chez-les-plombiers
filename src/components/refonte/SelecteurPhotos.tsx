@@ -124,7 +124,10 @@ function Rangee({
   if (tuiles.length === 0) return null;
   return (
     <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-4">
-      <p className="shrink-0 font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A] sm:w-32 sm:text-right">
+      {/* ⚠️ `whitespace-nowrap` : « Les événements » avec cet interlettrage
+          dépassait la colonne et se cassait en deux lignes, désalignant la
+          rangée de boutons d'en face. */}
+      <p className="shrink-0 font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A] sm:w-36 sm:whitespace-nowrap sm:text-right">
         {titre}
       </p>
       {/* Le défilement horizontal évite d'empiler six boutons sur un iPhone. */}
