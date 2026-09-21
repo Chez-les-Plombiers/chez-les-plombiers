@@ -7148,5 +7148,135 @@
         "origine": "23.jpg"
       }
     ]
+  },
+  "homemade-mix": {
+    "dossier": "HOMEMADE — mix dîners",
+    "items": [
+      {
+        "n": "001",
+        "src": "/photos/tri/homemade-mix/001.webp",
+        "origine": "IMG_0326 2.HEIC"
+      },
+      {
+        "n": "002",
+        "src": "/photos/tri/homemade-mix/002.webp",
+        "origine": "IMG_4076.JPG"
+      },
+      {
+        "n": "003",
+        "src": "/photos/tri/homemade-mix/003.webp",
+        "origine": "IMG_4088.jpg"
+      },
+      {
+        "n": "004",
+        "src": "/photos/tri/homemade-mix/004.webp",
+        "origine": "IMG_4129.JPG"
+      },
+      {
+        "n": "005",
+        "src": "/photos/tri/homemade-mix/005.webp",
+        "origine": "IMG_4131.jpg"
+      },
+      {
+        "n": "006",
+        "src": "/photos/tri/homemade-mix/006.webp",
+        "origine": "IMG_4134.jpg"
+      },
+      {
+        "n": "007",
+        "src": "/photos/tri/homemade-mix/007.webp",
+        "origine": "IMG_5399.jpg"
+      },
+      {
+        "n": "008",
+        "src": "/photos/tri/homemade-mix/008.webp",
+        "origine": "IMG_5428.jpg"
+      },
+      {
+        "n": "009",
+        "src": "/photos/tri/homemade-mix/009.webp",
+        "origine": "IMG_5514.jpg"
+      },
+      {
+        "n": "010",
+        "src": "/photos/tri/homemade-mix/010.webp",
+        "origine": "IMG_6691.jpg"
+      },
+      {
+        "n": "011",
+        "src": "/photos/tri/homemade-mix/011.webp",
+        "origine": "IMG_7695 2.HEIC"
+      },
+      {
+        "n": "012",
+        "src": "/photos/tri/homemade-mix/012.webp",
+        "origine": "IMG_7711 3.HEIC"
+      },
+      {
+        "n": "013",
+        "src": "/photos/tri/homemade-mix/013.webp",
+        "origine": "IMG_9218.JPG"
+      },
+      {
+        "n": "014",
+        "src": "/photos/tri/homemade-mix/014.webp",
+        "origine": "IMG_9287 2.jpg"
+      },
+      {
+        "n": "015",
+        "src": "/photos/tri/homemade-mix/015.webp",
+        "origine": "IMG_9290 2.jpg"
+      },
+      {
+        "n": "016",
+        "src": "/photos/tri/homemade-mix/016.webp",
+        "origine": "IMG_9302 2.jpg"
+      },
+      {
+        "n": "017",
+        "src": "/photos/tri/homemade-mix/017.webp",
+        "origine": "IMG_9306.jpg"
+      },
+      {
+        "n": "018",
+        "src": "/photos/tri/homemade-mix/018.webp",
+        "origine": "IMG_9311 2.jpg"
+      },
+      {
+        "n": "019",
+        "src": "/photos/tri/homemade-mix/019.webp",
+        "origine": "IMG_9441.jpg"
+      },
+      {
+        "n": "020",
+        "src": "/photos/tri/homemade-mix/020.webp",
+        "origine": "IMG_9473 2.jpg"
+      },
+      {
+        "n": "021",
+        "src": "/photos/tri/homemade-mix/021.webp",
+        "origine": "IMG_9479.jpg"
+      },
+      {
+        "n": "022",
+        "src": "/photos/tri/homemade-mix/022.webp",
+        "origine": "IMG_9483 2.jpg"
+      },
+      {
+        "n": "023",
+        "src": "/photos/tri/homemade-mix/023.webp",
+        "origine": "IMG_9490.JPG"
+      },
+      {
+        "n": "024",
+        "src": "/photos/tri/homemade-mix/024.webp",
+        "origine": "IMG_9527.JPG"
+      },
+      {
+        "n": "025",
+        "src": "/photos/tri/homemade-mix/025.webp",
+        "origine": "IMG_9544.JPG"
+      }
+    ]
   }
 }

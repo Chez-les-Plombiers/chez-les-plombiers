@@ -70,7 +70,15 @@ export const EVENEMENTS: readonly Evenement[] = [
   { slug: "20-caisse-claire-2", nom: "Caisse Claire 2", categorie: "lancements" },
   { slug: "21-servaire", nom: "Servaire & Co", categorie: "expositions" },
   { slug: "diners-vrac", nom: "Dîners — photos en vrac", categorie: "diners" },
-  /* Série déjà sur le site (page /services/evenements-auto-moto). Ouverte au
-     tri pour choisir la photo de la home — celle en place est trop serrée. */
-  { slug: "voitures", nom: "Voitures", categorie: "automobile" },
+  /*
+   * ⚠️ « Voitures » EST le dîner Maison 123 « FUSION » — la Triumph garée près
+   * de la table. Les deux catégories s'en nourrissent : Automobile pour les
+   * cadrages sur la voiture, Dîners pour ceux sur la table. Ce sont les 23
+   * originaux iPhone (2268 × 4032) de PHOTOS/SELECTION PHOTOS SITE/03. VOITURES,
+   * pas les copies réduites du site.
+   */
+  { slug: "voitures", nom: "Dîner Maison 123 — Fusion", categorie: "automobile" },
+  /* Retrouvé par Étienne le 21/09/2026 : un mélange de plusieurs dîners
+     signés HOMEMADE. Contient des HEIC, d'où la conversion par sips. */
+  { slug: "homemade-mix", nom: "HOMEMADE — plusieurs dîners", categorie: "diners" },
 ];
