@@ -48,5 +48,25 @@
       "⚠️ La couverture 12 etait dans la plage 11-20 retiree. Reintegree : une couverture choisie en regardant la planche prime sur un retrait en bloc."
     ],
     "lectureConfirmee": "Au-dela de 110, la centaine avait saute a l'oral (174/175/176, 195/197). Confirme par Etienne le 21/09/2026."
+  },
+  "12-dejeuner-homemade-19-mars-26": {
+    "garde": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "couverture": 15
   }
 }
