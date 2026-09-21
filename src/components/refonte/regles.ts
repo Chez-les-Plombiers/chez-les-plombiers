@@ -122,13 +122,18 @@ export const MOMENTS: readonly MomentRegles[] = [
          * son propre lieu, un client ne la comprendra pas davantage.
          *
          * Le raccourci reprenait le slogan de la ligne du dessus au lieu de
-         * dire la chose utile : un virement met un à trois jours ouvrés à
-         * arriver. C'est le délai bancaire qui rend le « 48 heures avant »
-         * contraignant, et c'est lui qu'il fallait écrire.
+         * dire la chose utile : un virement met un à trois jours à arriver.
+         * C'est le délai bancaire qui rend le « 48 heures avant » contraignant.
+         *
+         * ⚠️ La demi-phrase sur le délai reste, même après qu'Étienne ait
+         * demandé de raccourcir. C'est elle, et elle seule, qui fait qu'un
+         * client qui réserve un vendredi pour le mardi lance son virement le
+         * jour même au lieu du lundi. « Reçu » seul décrit une exigence ; le
+         * délai dit quoi faire.
          */
-        titre: "Le dépôt de garantie doit être sur le compte 48 heures avant",
+        titre: "Le dépôt de garantie doit être reçu 48 heures avant",
         texte:
-          "Comptez un à trois jours ouvrés pour qu'un virement nous parvienne : l'envoyer la veille ne suffit pas. Tant que la location et le dépôt ne sont pas encaissés, nous ne pouvons pas vous remettre les clés — y compris le matin même, et nous en serions sincèrement navrés.",
+          "Un virement met un à trois jours à arriver : ne l'envoyez pas la veille. Sans la location et le dépôt encaissés, nous ne pouvons pas vous remettre les clés.",
       },
     ],
   },
