@@ -256,7 +256,14 @@ function Preuve() {
         plus une pause. La salle vide se suffit.
       */}
       <div className={`${CADRE} overflow-hidden`}>
-        <div className="relative aspect-[16/9] w-full">
+        {/*
+           ⚠️ EXACTEMENT LE FORMAT DE LA VUE D'OUVERTURE. Étienne : « il faut
+           qu'elle fasse un peu la même hauteur que la photo précédente ». Deux
+           grandes images de hauteurs différentes ne se lisent pas comme un
+           rythme, mais comme une erreur de gabarit. Le recadrage mange du ciel
+           et du sol — la salle, elle, est au milieu.
+        */}
+        <div className="relative aspect-[16/10] w-full sm:aspect-[21/9]">
           <Image
             src="/photos/lieu/home-2.jpg"
             alt="La grande salle de L'Atelier, vide — sol clair, poteaux bruts, verrière au fond"
@@ -286,7 +293,15 @@ function Sommaire() {
         {PAGES.map((p) => (
           <a
             key={p.href}
-            href={p.pret ? p.href : "#"}
+            /*
+               ⚠️ `lien()`, ET PAS `p.href` BRUT. Étienne : « cette tuile photo,
+               faut que tu la recorriges, ça arrive pas au bon endroit. » Elle
+               menait à `/photos`, qui redirige en 308 vers `/#portfolio` sur le
+               site de production — donc au milieu de l'ANCIEN accueil. Les huit
+               autres tuiles avaient le même défaut, moins visible parce que
+               leurs adresses n'existent pas encore en production.
+            */
+            href={p.pret ? lien(p.href) : "#"}
             aria-disabled={!p.pret}
             className={`${CADRE} flex flex-col justify-between gap-6 p-5 transition-colors ${
               p.pret
@@ -355,21 +370,6 @@ function Photos() {
           </Link>
         ))}
       </div>
-      {/*
-        ⚠️ Un seul lien vers la photothèque, et il est ici. Étienne cherchait
-        « un endroit qui regroupe toutes les photos » : c'est `/photos`, qui
-        porte les deux axes (les lieux ET les types d'événement). Lui donner un
-        second bloc sur l'accueil ferait deux portes pour une seule pièce.
-      */}
-      <Link
-        href={lien("/photos")}
-        className={`${CADRE} mt-3 flex items-center justify-between px-5 py-4 font-mono text-[12px] text-[#C9C4BC] transition-colors hover:border-[var(--clp-accent)] hover:text-[#E8E4DC]`}
-      >
-        Toutes les photos, et les trois lieux
-        <span aria-hidden style={{ color: LAITON }}>
-          &rarr;
-        </span>
-      </Link>
     </>
   );
 }

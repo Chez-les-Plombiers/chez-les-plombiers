@@ -40,7 +40,7 @@ const DOSSIERS = {
 };
 const dossierSource = (slug) => DOSSIERS[slug] ?? "EVENTS";
 
-let faites = 0, sautees = 0, ratees = 0;
+let faites = 0, sautees = 0, ratees = 0, orphelins = 0;
 const sortie = {};
 
 for (const [slug, sel] of Object.entries(selection)) {
@@ -83,12 +83,17 @@ for (const [slug, sel] of Object.entries(selection)) {
         } catch (e) { console.log(`  ✗ vidéo ${src} : ${e.message}`); ratees++; continue; }
       }
       if (!fs.existsSync(out)) {
-        execFileSync("ffmpeg", ["-y", "-ss", "1", "-i", src, "-frames:v", "1",
-                                out.replace(/\.webp$/, ".tmp.png")], { stdio: "ignore" });
-        await sharp(out.replace(/\.webp$/, ".tmp.png"))
+        const aff = out.replace(/\.webp$/, ".tmp.png");
+        execFileSync("ffmpeg", ["-y", "-ss", "1", "-i", src, "-frames:v", "1", aff], { stdio: "ignore" });
+        /* ⚠️ Une vidéo de moins d'une seconde ne rend RIEN à `-ss 1`, et
+           ffmpeg sort en succès : l'échec n'apparaît qu'au fichier manquant. */
+        if (!fs.existsSync(aff)) {
+          execFileSync("ffmpeg", ["-y", "-i", src, "-frames:v", "1", aff], { stdio: "ignore" });
+        }
+        await sharp(aff)
           .resize(1200, 1200, { fit: "inside", withoutEnlargement: true })
           .webp({ quality: 72 }).toFile(out);
-        fs.unlinkSync(out.replace(/\.webp$/, ".tmp.png"));
+        fs.unlinkSync(aff);
         faites++;
       } else sautees++;
       const m = await sharp(out).metadata();
@@ -125,10 +130,27 @@ for (const [slug, sel] of Object.entries(selection)) {
     const meta = await sharp(out).metadata();
     items.push({ n, src: `/photos/galerie/${slug}/${nom}`, l: meta.width, h: meta.height });
   }
+  /*
+   * ⚠️ LE MÉNAGE, SINON LE DOSSIER NE FAIT QUE GROSSIR. Retirer une photo de
+   * la sélection ne supprimait pas son fichier : il restait déployé, invisible
+   * et payant. Le stockage de déploiement Vercel est plafonné à 10 Go sur le
+   * plan Hobby, et une vidéo pèse mille fois une vignette.
+   */
+  const gardes = new Set(items.flatMap((i) => [
+    path.basename(i.src),
+    ...(i.video ? [path.basename(i.video)] : []),
+  ]));
+  for (const f of fs.readdirSync(dest)) {
+    if (!gardes.has(f)) { fs.unlinkSync(path.join(dest, f)); orphelins++; }
+  }
+
   sortie[slug] = items;
   process.stdout.write(`${bloc.dossier.padEnd(54)} ${String(items.length).padStart(4)}\n`);
 }
 
 fs.writeFileSync("src/components/refonte/galerie.json", JSON.stringify(sortie, null, 2));
 const ko = Number(execFileSync("du", ["-sk", SORTIE]).toString().split("\t")[0]);
-console.log(`\n${faites} générées, ${sautees} déjà là, ${ratees} en échec — ${Math.round(ko / 1024)} Mo`);
+console.log(
+  `\n${faites} générées, ${sautees} déjà là, ${ratees} en échec, ` +
+  `${orphelins} supprimées — ${Math.round(ko / 1024)} Mo`
+);

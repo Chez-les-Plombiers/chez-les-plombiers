@@ -789,6 +789,7 @@
   },
   "voitures-telephone": {
     "garde": [
+      2,
       4,
       5,
       9,
@@ -796,7 +797,7 @@
     ],
     "couverture": 14,
     "nomCorrige": "Porsche — lancement du Cayenne électrique",
-    "note": "⚠️ LE DOSSIER MÉLANGE DEUX ÉVÉNEMENTS, et ce sont les dates EXIF qui les séparent — pas les noms de fichiers, qui sont des UUID :\n  26 novembre 2025 → PORSCHE (004, 005, 009, 014). La date colle à la facture du dossier client `COMMERCIAL/00. CLIENTS/251126 AUDITOIRE (PORSCHE)`.\n  9 et 28 octobre 2025 → la Triumph du dîner Maison 123, déjà couverte par la planche « voitures ».\nLes quatre photos Porsche sont en 2268 × 4032 : enfin la vraie résolution, après l'échec de la récupération Instagram (952 px) et des vidéos (720 × 1280).\n⏳ Les 4 vidéos du dossier n'ont pas de date EXIF et ne sont pas encore triées."
+    "note": "⚠️ LE DOSSIER MÉLANGE DEUX ÉVÉNEMENTS, et ce sont les dates EXIF qui les séparent — pas les noms de fichiers, qui sont des UUID :\n  26 novembre 2025 → PORSCHE (004, 005, 009, 014). La date colle à la facture du dossier client `COMMERCIAL/00. CLIENTS/251126 AUDITOIRE (PORSCHE)`.\n  9 et 28 octobre 2025 → la Triumph du dîner Maison 123, déjà couverte par la planche « voitures ».\nLes quatre photos Porsche sont en 2268 × 4032 : enfin la vraie résolution, après l'échec de la récupération Instagram (952 px) et des vidéos (720 × 1280).\n⏳ Les 4 vidéos du dossier n'ont pas de date EXIF et ne sont pas encore triées.\n✅ Triées le 21/09/2026 en regardant les images de tête : 002 est bien la Porsche (roue du Cayenne). 006 et 017 montrent la TRIUMPH qui entre par la porte — c'est le dîner Maison 123, pas Porsche ; elles reviendront par la planche « voitures ». 015 est un panoramique flou du pavé, inutilisable."
   },
   "24-new-balance": {
     "garde": [
@@ -851,5 +852,25 @@
       45
     ],
     "couverture": null
+  },
+  "lieu-appartement": {
+    "garde": [
+      1,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "couverture": 14
   }
 }

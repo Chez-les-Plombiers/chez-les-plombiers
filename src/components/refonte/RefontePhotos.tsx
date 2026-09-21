@@ -43,16 +43,21 @@ export function RefontePhotosIndex() {
       <Corps>
         <Retour href="/refonte" texte="Accueil" />
         {/*
-          ⚠️ Un titre, et rien dessous. Il y avait ici l'adresse et une phrase
-          d'explication ; Étienne, 21/09/2026 : « ça sert à rien […] on s'en
-          fiche. Les gens comprennent. » Une page qui s'appelle « Photos » et
-          qui montre des photos n'a pas besoin qu'on la présente.
+          ⚠️ NI TITRE, NI TRAIT DE SÉPARATION. Deux retraits successifs
+          d'Étienne le 21/09/2026 : d'abord l'adresse et la phrase
+          d'explication, puis le titre lui-même — « comme on vient de cliquer
+          sur Photos et qu'on en voit plein, j'enlèverais le titre Photos,
+          j'enlèverais le trait de séparation, je remonterais un peu tout ça ».
+
+          Il a raison : on arrive ici en cliquant « Photos », l'onglet du
+          navigateur dit « Photos », et la page est couverte de photos. Le titre
+          ne faisait que repousser le contenu d'un écran.
+
+          ⚠️ Le `h1` reste, pour les lecteurs d'écran et pour Google — mais
+          `sr-only`. Une page sans titre de niveau 1 est une page sans nom pour
+          qui ne la voit pas.
         */}
-        <div className="border-b border-[var(--clp-bord)] pb-6 pt-4">
-          <h1 className="font-clp text-sm font-bold uppercase leading-relaxed tracking-[0.1em]">
-            Photos
-          </h1>
-        </div>
+        <h1 className="sr-only">Photos — Chez les Plombiers</h1>
 
         <SelecteurPhotos tuiles={TUILES} />
       </Corps>

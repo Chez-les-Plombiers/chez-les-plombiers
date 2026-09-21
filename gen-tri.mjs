@@ -64,9 +64,15 @@ for (const [slug, bloc] of aFaire) {
       try {
         if (estVideo) {
           /* Une image à 1 s : la première image d'une vidéo de téléphone est
-             presque toujours floue ou noire. */
+             presque toujours floue ou noire.
+             ⚠️ Repli sur 0 s : une vidéo de moins d'une seconde ne rend RIEN
+             à `-ss 1`, et ffmpeg sort en succès — l'échec n'apparaît qu'après,
+             sur le fichier manquant. */
           const tmp = out.replace(/\.webp$/, ".tmp.png");
           execFileSync("ffmpeg", ["-y", "-ss", "1", "-i", src, "-frames:v", "1", tmp], { stdio: "ignore" });
+          if (!fs.existsSync(tmp)) {
+            execFileSync("ffmpeg", ["-y", "-i", src, "-frames:v", "1", tmp], { stdio: "ignore" });
+          }
           await sharp(tmp).resize(700, 700, { fit: "inside" }).webp({ quality: 70 }).toFile(out);
           fs.unlinkSync(tmp);
         } else {

@@ -31,7 +31,18 @@ export function Galerie({ photos, titre }: { photos: Photo[]; titre: string }) {
 
   return (
     <>
-      <div className="mt-6 gap-3 [column-fill:_balance] sm:columns-2 lg:columns-3">
+      {/*
+        ⚠️ TROIS COLONNES SEULEMENT QUAND IL Y A DE QUOI LES REMPLIR. Étienne,
+        sur la page Porsche : « il y a que quatre vidéos et puis elles sont
+        collées à gauche ». C'est le propre de la maçonnerie : quatre images
+        hautes réparties sur trois colonnes donnent 2 + 1 + 1, et la page
+        penche. À deux colonnes, elles s'équilibrent.
+      */}
+      <div
+        className={`mt-6 gap-3 [column-fill:_balance] sm:columns-2 ${
+          photos.length >= 7 ? "lg:columns-3" : ""
+        }`}
+      >
         {photos.map((p, i) => (
           <button
             key={p.src}

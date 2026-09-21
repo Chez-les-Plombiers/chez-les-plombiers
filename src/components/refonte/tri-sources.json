@@ -16,6 +16,14 @@
   },
   "24-new-balance": {
     "nom": "Déjeuner New Balance — REVOLVR",
-    "dossiers": ["EVENTS/24. DEJEUNER NEW BALANCE"]
+    "dossiers": [
+      "EVENTS/24. DEJEUNER NEW BALANCE"
+    ]
+  },
+  "voitures": {
+    "nom": "Dîner Maison 123 — Fusion",
+    "dossiers": [
+      "SELECTION PHOTOS SITE/03. VOITURES"
+    ]
   }
 }

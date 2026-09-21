@@ -3994,6 +3994,13 @@
   "voitures-videos": [],
   "voitures-telephone": [
     {
+      "n": 2,
+      "src": "/photos/galerie/voitures-telephone/002.webp",
+      "l": 675,
+      "h": 1200,
+      "video": "/photos/galerie/voitures-telephone/002.mp4"
+    },
+    {
       "n": 4,
       "src": "/photos/galerie/voitures-telephone/004.webp",
       "l": 675,
@@ -4285,6 +4292,98 @@
       "src": "/photos/galerie/lieu-atelier/045.webp",
       "l": 1200,
       "h": 800
+    }
+  ],
+  "lieu-appartement": [
+    {
+      "n": 1,
+      "src": "/photos/galerie/lieu-appartement/001.webp",
+      "l": 800,
+      "h": 1200
+    },
+    {
+      "n": 7,
+      "src": "/photos/galerie/lieu-appartement/007.webp",
+      "l": 1200,
+      "h": 1025
+    },
+    {
+      "n": 8,
+      "src": "/photos/galerie/lieu-appartement/008.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 9,
+      "src": "/photos/galerie/lieu-appartement/009.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 10,
+      "src": "/photos/galerie/lieu-appartement/010.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 11,
+      "src": "/photos/galerie/lieu-appartement/011.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 12,
+      "src": "/photos/galerie/lieu-appartement/012.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 13,
+      "src": "/photos/galerie/lieu-appartement/013.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 14,
+      "src": "/photos/galerie/lieu-appartement/014.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 15,
+      "src": "/photos/galerie/lieu-appartement/015.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 16,
+      "src": "/photos/galerie/lieu-appartement/016.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 17,
+      "src": "/photos/galerie/lieu-appartement/017.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 18,
+      "src": "/photos/galerie/lieu-appartement/018.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 19,
+      "src": "/photos/galerie/lieu-appartement/019.webp",
+      "l": 1200,
+      "h": 900
+    },
+    {
+      "n": 20,
+      "src": "/photos/galerie/lieu-appartement/020.webp",
+      "l": 1200,
+      "h": 900
     }
   ]
 }

@@ -165,13 +165,31 @@ export const ESPACES = [
  * listées ici pour que la structure soit visible et discutable avant d'être
  * écrite, et marquées `pret: false` en attendant.
  */
+/**
+ * Le sommaire du bas — l'ordre est celui d'Étienne, 21/09/2026.
+ *
+ * ⚠️ LES TARIFS PASSENT TROISIÈME. « Je dis que les tarifs, c'est peut-être
+ * déjà trois fois qu'on nous les propose depuis le début du site. » Ils sont
+ * dans la barre du haut et dans chaque page de lieu : les remettre en tête ici
+ * insiste au lieu de renseigner.
+ *
+ * Les photos ouvrent donc la liste, et s'appellent « Toutes les photos » —
+ * c'est ce qu'on cherche à ce niveau-là de la page.
+ */
 export const PAGES = [
+  { href: "/photos", titre: "Toutes les photos", detail: "Les trois lieux, et les événements par type", pret: true },
+  { href: "/atelier/technique", titre: "Fiche technique et plans", detail: "Puissances, connectique, emplacements, plans à télécharger", pret: true },
   { href: "/tarifs", titre: "Tarifs et disponibilités", detail: "Les prix jour par jour et le calendrier des trois lieux", pret: true },
-    { href: "/atelier/technique", titre: "Fiche technique et plans", detail: "Puissances, connectique, emplacements, plans à télécharger", pret: true },
-  { href: "/photos", titre: "Photos", detail: "Par type d'événement, et par marque", pret: true },
   { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger, les horaires, pour qui", pret: true },
   { href: "/visiter", titre: "Réserver une visite", detail: "Gratuite, une demi-heure, du lundi au samedi", pret: true },
   { href: "/conditions", titre: "Conditions de location", detail: "Ce qu'on vous demande, et pourquoi", pret: true },
+  /*
+   * ⚠️ Les visites virtuelles étaient enterrées au milieu de l'accueil de
+   * production, dans une section qu'on ne trouve qu'en faisant défiler. Étienne
+   * le 21/09/2026 : « on pourrait retrouver toutes les visites virtuelles
+   * ici ». Une par lieu à terme — LA BOUTIQUE n'en a pas encore.
+   */
+  { href: "/visites-virtuelles", titre: "Visites virtuelles", detail: "Se promener dans les lieux sans venir, à 360°", pret: true },
   { href: "/partenaires", titre: "Partenaires", detail: "Le chef, et ce que nous organisons pour vous", pret: true },
   { href: "/histoire", titre: "L'histoire du lieu", detail: "Un garage de plombiers des années 1970 devenu lieu d'événements", pret: false },
 ] as const;

@@ -7030,122 +7030,195 @@
     ]
   },
   "voitures": {
-    "dossier": "Voitures — série du site actuel",
+    "dossier": "Dîner Maison 123 — Fusion",
+    "racineAbsolue": true,
     "items": [
       {
         "n": "001",
         "src": "/photos/tri/voitures/001.webp",
-        "origine": "01.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/058D7A37-570D-4795-AF48-F8D60CC8BD2E.MP4",
+        "video": true
       },
       {
         "n": "002",
         "src": "/photos/tri/voitures/002.webp",
-        "origine": "02.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/112A2D1B-7901-4451-B1F5-1CEE1D68C295.MP4",
+        "video": true
       },
       {
         "n": "003",
         "src": "/photos/tri/voitures/003.webp",
-        "origine": "03.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/11DBBBBE-C629-4437-BEA1-2129446B477D.MP4",
+        "video": true
       },
       {
         "n": "004",
         "src": "/photos/tri/voitures/004.webp",
-        "origine": "04.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/2B88C9E5-1D97-43BC-AAFB-A67A4049CA32.JPG"
       },
       {
         "n": "005",
         "src": "/photos/tri/voitures/005.webp",
-        "origine": "05.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/314BCDEE-F3DA-4D90-A1E2-9CDEDF135CD9.MP4",
+        "video": true
       },
       {
         "n": "006",
         "src": "/photos/tri/voitures/006.webp",
-        "origine": "06.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/39D8E097-6486-47B0-A74F-4879284F58CC.JPG"
       },
       {
         "n": "007",
         "src": "/photos/tri/voitures/007.webp",
-        "origine": "07.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/3CB61A8B-223E-483B-8A77-A68A76717C16.JPG"
       },
       {
         "n": "008",
         "src": "/photos/tri/voitures/008.webp",
-        "origine": "08.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/3EC13447-51CB-4E37-974F-4CAAD11CE74B.JPG"
       },
       {
         "n": "009",
         "src": "/photos/tri/voitures/009.webp",
-        "origine": "09.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/4849B54D-0690-4470-BE2E-47D86161F790.JPG"
       },
       {
         "n": "010",
         "src": "/photos/tri/voitures/010.webp",
-        "origine": "10.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/48EB9842-204D-4E58-A421-032040B485D4.JPG"
       },
       {
         "n": "011",
         "src": "/photos/tri/voitures/011.webp",
-        "origine": "11.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/4D7442B1-D177-4F9A-B690-88E2B849498A.MP4",
+        "video": true
       },
       {
         "n": "012",
         "src": "/photos/tri/voitures/012.webp",
-        "origine": "12.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/50F51BA3-CD41-4A3D-B948-CCDDDB443894.MP4",
+        "video": true
       },
       {
         "n": "013",
         "src": "/photos/tri/voitures/013.webp",
-        "origine": "13.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/578E96B6-A8DD-43FB-9290-1CC6E89E3484.MP4",
+        "video": true
       },
       {
         "n": "014",
         "src": "/photos/tri/voitures/014.webp",
-        "origine": "14.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/5F69C879-2580-4E7D-9B2E-C2C54D3D43EC.JPG"
       },
       {
         "n": "015",
         "src": "/photos/tri/voitures/015.webp",
-        "origine": "15.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/68AAD6AE-56D8-49F1-9717-0214E1D25887.MP4",
+        "video": true
       },
       {
         "n": "016",
         "src": "/photos/tri/voitures/016.webp",
-        "origine": "16.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/6934CC04-4411-4A79-9636-3826858C32B0.JPG"
       },
       {
         "n": "017",
         "src": "/photos/tri/voitures/017.webp",
-        "origine": "17.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/721317EA-ED21-4588-95F0-F9E5031D1A59.JPG"
       },
       {
         "n": "018",
         "src": "/photos/tri/voitures/018.webp",
-        "origine": "18.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/7236F4D4-697B-4B06-9B1C-2C5DAFED5E53.MP4",
+        "video": true
       },
       {
         "n": "019",
         "src": "/photos/tri/voitures/019.webp",
-        "origine": "19.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/785BF141-6C45-4CCA-B122-B639AEDA9B44.JPG"
       },
       {
         "n": "020",
         "src": "/photos/tri/voitures/020.webp",
-        "origine": "20.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/7DBD11CC-E5DB-4894-A3E5-EDB0A4D8FD97.MP4",
+        "video": true
       },
       {
         "n": "021",
         "src": "/photos/tri/voitures/021.webp",
-        "origine": "21.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/8084BFC9-1601-4C55-9287-A93BCE721E54.JPG"
       },
       {
         "n": "022",
         "src": "/photos/tri/voitures/022.webp",
-        "origine": "22.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/83F48785-B314-447C-A573-B7BFCE934026.JPG"
       },
       {
         "n": "023",
         "src": "/photos/tri/voitures/023.webp",
-        "origine": "23.jpg"
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/845D0AF9-0BAC-4638-A641-8B7EB07055DC.JPG"
+      },
+      {
+        "n": "024",
+        "src": "/photos/tri/voitures/024.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/A21EC5BD-9B3B-422E-B91D-169452820A56.JPG"
+      },
+      {
+        "n": "025",
+        "src": "/photos/tri/voitures/025.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/AF82DF76-1F23-4C85-8C4E-6641C75BF010.JPG"
+      },
+      {
+        "n": "026",
+        "src": "/photos/tri/voitures/026.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/B6B82A98-0D42-4ACE-B9EF-E629C8780AE0.MP4",
+        "video": true
+      },
+      {
+        "n": "027",
+        "src": "/photos/tri/voitures/027.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/CACBB170-E363-42ED-AA1D-C4A48D6BDCE0.MP4",
+        "video": true
+      },
+      {
+        "n": "028",
+        "src": "/photos/tri/voitures/028.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/D60F42E2-DF10-4014-97D0-931DD9FDE152.JPG"
+      },
+      {
+        "n": "029",
+        "src": "/photos/tri/voitures/029.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/DA4EE771-9722-4F86-A6D9-DE0CA714BD5D.JPG"
+      },
+      {
+        "n": "030",
+        "src": "/photos/tri/voitures/030.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/DDD8CDCA-8A42-4D40-B969-8AC3CF1C2FFC.JPG"
+      },
+      {
+        "n": "031",
+        "src": "/photos/tri/voitures/031.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/DE949FF2-D9F0-44D5-8881-0071E87A832F.JPG"
+      },
+      {
+        "n": "032",
+        "src": "/photos/tri/voitures/032.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/E0436AFF-5EFA-4981-8E0A-0BC2137C222C.JPG"
+      },
+      {
+        "n": "033",
+        "src": "/photos/tri/voitures/033.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/EC424AEC-F18C-458A-9F21-9C6405396828.JPG"
+      },
+      {
+        "n": "034",
+        "src": "/photos/tri/voitures/034.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/EEDB59FB-1481-4E2A-A407-A6BBD009CA60.JPG"
+      },
+      {
+        "n": "035",
+        "src": "/photos/tri/voitures/035.webp",
+        "origine": "SELECTION PHOTOS SITE/03. VOITURES/F697D945-3A61-4D24-9C19-AC9CA79E8021.JPG"
       }
     ]
   },

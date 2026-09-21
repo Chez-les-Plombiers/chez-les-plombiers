@@ -165,8 +165,16 @@ const COUVERTURES: Partial<
 > = {
   /* La projection bleu et jaune sur le mur — choix d'Étienne, 21/09/2026. */
   lancements: { evenement: "11-roc", n: 13 },
-  /* Photo de rue : le cadrage centré décapitait le premier rang. */
-  defiles: { evenement: "05-defile-litovska-1-octobre-2025", n: 8, cadrage: "object-top" },
+  /*
+   * Photo de rue, et deux corrections successives : le cadrage centré
+   * décapitait le premier rang, `object-top` laissait « trop d'air au-dessus
+   * des têtes des filles ». Un quart de la hauteur, donc — entre les deux.
+   */
+  defiles: {
+    evenement: "05-defile-litovska-1-octobre-2025",
+    n: 8,
+    cadrage: "object-[center_25%]",
+  },
 };
 
 export const CATEGORIES_GALERIE: CategorieGalerie[] = CATEGORIES.map((c) => {
