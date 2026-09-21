@@ -116,9 +116,19 @@ export const MOMENTS: readonly MomentRegles[] = [
           "Nous le disons sans détour parce que la confusion est fréquente et de bonne foi : un avis de virement atteste d'un ordre donné, parfois programmé à plusieurs semaines. Seul le crédit effectif sur notre compte confirme la date.",
       },
       {
-        titre: "Le dépôt de garantie est reçu 48 heures avant",
+        /*
+         * ⚠️ Cette règle disait « là encore, reçu et non envoyé » — et Étienne
+         * a demandé ce que ça voulait dire. S'il ne comprend pas la règle de
+         * son propre lieu, un client ne la comprendra pas davantage.
+         *
+         * Le raccourci reprenait le slogan de la ligne du dessus au lieu de
+         * dire la chose utile : un virement met un à trois jours ouvrés à
+         * arriver. C'est le délai bancaire qui rend le « 48 heures avant »
+         * contraignant, et c'est lui qu'il fallait écrire.
+         */
+        titre: "Le dépôt de garantie doit être sur le compte 48 heures avant",
         texte:
-          "Là encore, reçu et non envoyé. Sans paiement et sans dépôt de garantie sur le compte, nous ne pouvons pas vous remettre les clés — y compris le matin même, et nous en serions sincèrement navrés.",
+          "Comptez un à trois jours ouvrés pour qu'un virement nous parvienne : l'envoyer la veille ne suffit pas. Tant que la location et le dépôt ne sont pas encaissés, nous ne pouvons pas vous remettre les clés — y compris le matin même, et nous en serions sincèrement navrés.",
       },
     ],
   },
