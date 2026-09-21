@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import { TuilePhotos } from "./TuilePhotos";
+import { CATEGORIES_GALERIE } from "./photos-data";
 import { Barre, Bloc, CADRE, Corps, LAITON, Page, Pied, Titre, lien } from "./chrome";
 import {
   ADRESSE,
-  CATEGORIES_PHOTOS,
   CLIENTS_TEXTE,
   ESPACES,
   OUVERTURE_PHOTOS,
@@ -237,25 +238,30 @@ function Preuve() {
   return (
     <Bloc grand>
       {/*
-        ⚠️ LE PORSCHE CAYENNE, ET PAS LA TRIUMPH. La photo précédente venait de
-        la galerie du site actuel (dîner Maison 123) : un coupé ancien, cadré
-        serré, garé au fond d'une salle. On y voyait une voiture, pas une
-        présentation automobile.
-        Celle-ci montre le Cayenne électrique avec la scénographie de la marque
-        — le mur « CAYENNE ELECTRIC », les marquages au sol, les projecteurs.
-        C'est la preuve, pas l'illustration. Récupérée le 21/09/2026 depuis la
-        publication Instagram du lieu ; l'original est archivé dans
-        `Dropbox/PHOTOS/EVENTS/22. PORSCHE CAYENNE/`.
+        ⚠️ NI LE GROS PLAN, NI LE PORSCHE D'INSTAGRAM.
 
-        ⚠️ Elle est VERTICALE (952 × 1269) et ne remplira pas un bandeau
-        panoramique : d'où le format 4/3 sur grand écran plutôt que 21/9. Si
-        une version horizontale apparaît un jour, on pourra élargir.
+        Trois versions ont été essayées le 21/09/2026 :
+        1. un gros plan de la Triumph, tiré de la galerie du site — « un peu en
+           trop gros plan », et on y voyait une voiture, pas une salle ;
+        2. le Porsche Cayenne récupéré sur Instagram — la bonne scène, mais
+           Instagram ne sert que 952 px en public : « trop pixellisée » ;
+        3. celle-ci, l'original iPhone en 2268 × 4032, recadré à 2400 px.
+
+        Elle marche parce qu'on y voit LES TROIS à la fois : la voiture, la
+        salle entière, et deux personnes qui marchent. Étienne : « on voit que
+        c'est pris sur le vif ». Une mise en scène n'aurait pas prouvé la même
+        chose.
+
+        ⏳ Le Porsche reste la meilleure scène du lieu. Il faudra l'original —
+        il est peut-être dans les 12 vidéos de `PHOTOS/SELECTION PHOTOS SITE/
+        03. VOITURES/`, mais extraire une image d'une vidéo demande ffmpeg,
+        qui n'est pas installé.
       */}
       <figure className={`${CADRE} overflow-hidden`}>
-        <div className="relative aspect-[4/5] w-full sm:aspect-[4/3]">
+        <div className="relative aspect-[4/5] w-full sm:aspect-[16/10]">
           <Image
-            src="/photos/lieu/porsche-cayenne.jpg"
-            alt="Le Porsche Cayenne électrique présenté à l'intérieur de L'Atelier, devant le mur de scénographie de la marque"
+            src="/photos/lieu/voiture-atelier.jpg"
+            alt="Une voiture garée à l'intérieur de L'Atelier, deux personnes marchant à côté"
             fill
             sizes="(max-width: 1180px) 100vw, 1180px"
             className="object-cover"
@@ -321,22 +327,38 @@ function Photos() {
   return (
     <>
       <Titre>Photos par type d&apos;événement</Titre>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-        {CATEGORIES_PHOTOS.map((c) => (
-          <figure key={c.slug} className={`${CADRE} overflow-hidden`}>
-            <div className="relative aspect-[4/5] w-full">
+      {/*
+        ⚠️ Les couvertures viennent de `/photos`, pas d'une liste écrite à la
+        main. Les cinq vignettes précédentes étaient des bouche-trous — « défilés »
+        montrait une salle vide, « expositions » montrait la cour. Maintenant
+        qu'Étienne a choisi une couverture par événement, la home les reprend :
+        une seule vérité, et elle se met à jour toute seule.
+      */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        {CATEGORIES_GALERIE.map((c) => (
+          <Link
+            key={c.slug}
+            href={`/refonte/photos/${c.slug}`}
+            className={`${CADRE} group overflow-hidden transition-colors hover:border-[var(--clp-accent)]`}
+          >
+            <div className="relative aspect-[4/3] w-full">
               <Image
-                src={c.photo}
+                src={c.evenements[0].couverture.src}
                 alt={`${c.nom} Chez les Plombiers`}
                 fill
-                sizes="(max-width: 640px) 50vw, 20vw"
+                sizes="(max-width: 640px) 50vw, 380px"
                 className="object-cover"
               />
             </div>
-            <figcaption className="border-t border-[var(--clp-bord)] px-3 py-2.5 font-clp text-[10px] uppercase tracking-[0.12em]">
-              {c.nom}
-            </figcaption>
-          </figure>
+            <div className="border-t border-[var(--clp-bord)] px-4 py-3">
+              <p className="font-clp text-[11px] font-bold uppercase tracking-[0.1em]">
+                {c.nom}
+              </p>
+              <p className="mt-0.5 font-mono text-[11px]" style={{ color: LAITON }}>
+                {c.total} photos →
+              </p>
+            </div>
+          </Link>
         ))}
       </div>
     </>
