@@ -25,7 +25,10 @@ import manifeste from "./tri-manifeste.json";
 
 type Manifeste = Record<
   string,
-  { dossier: string; items: { n: string; src: string; origine: string }[] }
+  {
+    dossier: string;
+    items: { n: string; src: string; origine: string; video?: boolean }[];
+  }
 >;
 
 const M = manifeste as Manifeste;
@@ -163,6 +166,13 @@ export function RefonteTriEvenement({ slug }: { slug: string }) {
               <figcaption className="absolute bottom-0 left-0 bg-black/70 px-2 py-1 font-mono text-[12px] text-white">
                 {it.n}
               </figcaption>
+              {/* ⚠️ Une vidéo doit se voir AVANT le clic : sans ce repère, on
+                  trie une image de tête en croyant trier une photo. */}
+              {it.video && (
+                <span className="absolute right-0 top-0 bg-black/70 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-white">
+                  vidéo
+                </span>
+              )}
             </figure>
           ))}
         </div>

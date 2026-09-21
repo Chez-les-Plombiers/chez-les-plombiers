@@ -90,4 +90,10 @@ export const EVENEMENTS: readonly Evenement[] = [
    * `SELECTION PHOTOS SITE/03. VOITURES/IMAGES EXTRAITES/`.
    */
   { slug: "voitures-videos", nom: "Voitures — images de vidéos", categorie: "automobile" },
+  /*
+   * Retrouvé par Étienne sur son téléphone le 21/09/2026. Photos en pleine
+   * résolution iPhone (2268 × 4032) ET vidéos — les premières vidéos destinées
+   * à la photothèque. Archivé dans `PHOTOS/EVENTS/23. VOITURES — TELEPHONE`.
+   */
+  { slug: "voitures-telephone", nom: "Voitures — du téléphone", categorie: "automobile" },
 ];

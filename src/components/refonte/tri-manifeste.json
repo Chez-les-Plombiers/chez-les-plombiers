@@ -7463,5 +7463,99 @@
         "origine": "036-CACBB170.jpg"
       }
     ]
+  },
+  "voitures-telephone": {
+    "dossier": "Voitures — photos et vidéos du téléphone",
+    "items": [
+      {
+        "n": "001",
+        "src": "/photos/tri/voitures-telephone/001.webp",
+        "origine": "005802FB-03F9-4DBE-B141-179919B050EB.JPG"
+      },
+      {
+        "n": "002",
+        "src": "/photos/tri/voitures-telephone/002.webp",
+        "origine": "16369BD4-9B77-43C9-9A30-A3FB21218D76.MP4",
+        "video": true
+      },
+      {
+        "n": "003",
+        "src": "/photos/tri/voitures-telephone/003.webp",
+        "origine": "2E7720C2-FFF7-4173-8559-AAD6098C8A9A.JPG"
+      },
+      {
+        "n": "004",
+        "src": "/photos/tri/voitures-telephone/004.webp",
+        "origine": "31059E17-579D-435F-B29A-01B73AE71207.JPG"
+      },
+      {
+        "n": "005",
+        "src": "/photos/tri/voitures-telephone/005.webp",
+        "origine": "4E79FE71-744B-4941-B2ED-04814AC60710.JPG"
+      },
+      {
+        "n": "006",
+        "src": "/photos/tri/voitures-telephone/006.webp",
+        "origine": "6D019A7D-0D50-46E5-9262-B0AD62FAD64D.MP4",
+        "video": true
+      },
+      {
+        "n": "007",
+        "src": "/photos/tri/voitures-telephone/007.webp",
+        "origine": "80CE1DAF-ED3B-423B-BCFC-13158E038358.JPG"
+      },
+      {
+        "n": "008",
+        "src": "/photos/tri/voitures-telephone/008.webp",
+        "origine": "8264AC01-FC1F-4CEE-916A-F1361284B267.JPG"
+      },
+      {
+        "n": "009",
+        "src": "/photos/tri/voitures-telephone/009.webp",
+        "origine": "A74D12F2-98D5-4F3E-9BB6-89BA6F4AC0AE.JPG"
+      },
+      {
+        "n": "010",
+        "src": "/photos/tri/voitures-telephone/010.webp",
+        "origine": "A906B87F-16A8-441C-BB01-32F431C21174.JPG"
+      },
+      {
+        "n": "011",
+        "src": "/photos/tri/voitures-telephone/011.webp",
+        "origine": "BAB24F94-4489-427E-BF8E-1E6B1AA58A5D.JPG"
+      },
+      {
+        "n": "012",
+        "src": "/photos/tri/voitures-telephone/012.webp",
+        "origine": "D2A592F9-FF69-43AA-9A74-826F733793B3.JPG"
+      },
+      {
+        "n": "013",
+        "src": "/photos/tri/voitures-telephone/013.webp",
+        "origine": "D305DBEA-C6FB-4DCF-A4E9-BBF947FB31B9.JPG"
+      },
+      {
+        "n": "014",
+        "src": "/photos/tri/voitures-telephone/014.webp",
+        "origine": "E3F91BCA-9B7C-483B-83A4-9990BABCE3E1.JPG"
+      },
+      {
+        "n": "015",
+        "src": "/photos/tri/voitures-telephone/015.webp",
+        "origine": "E485AC19-01F3-472D-9A30-9F06F93503DB.MP4",
+        "video": true
+      },
+      {
+        "n": "016",
+        "src": "/photos/tri/voitures-telephone/016.webp",
+        "origine": "F3DEDCF5-D5A8-4028-8BDA-2CBB39B51253.JPG"
+      },
+      {
+        "n": "017",
+        "src": "/photos/tri/voitures-telephone/017.webp",
+        "origine": "FB96E559-CB91-4D0F-9858-9E22B0A8411B.MP4",
+        "video": true
+      }
+    ]
   }
 }
