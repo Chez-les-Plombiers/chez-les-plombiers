@@ -121,6 +121,12 @@ export const SECTIONS: readonly Section[] = [
        * SAEMES. Une erreur de nom envoie quelqu'un chercher la mauvaise
        * enseigne. Vérifié le 22/09/2026 sur saemes.fr.
        *
+       * ⚠️ HALLES GARAGE N'EST PAS LE PARKING EN ÉLÉVATION qu'on croyait.
+       * Étienne le pensait hors-sol, donc ouvert aux véhicules hauts : deux
+       * sources indépendantes annoncent 1,90 m, comme les autres. Il a bien
+       * un voiturier, ce qui peut changer les choses en pratique — à
+       * confirmer par téléphone avant de l'écrire autrement.
+       *
        * Distances à vol d'oiseau majorées d'un tiers, pas des temps de
        * routage : les calculateurs publics raisonnent en voiture et suivent
        * les sens interdits — l'un d'eux annonçait 1 920 m pour un parking
@@ -128,19 +134,23 @@ export const SECTIONS: readonly Section[] = [
        */
       [
         "Se garer — Les Halles-Saint-Eustache",
-        "22 rue des Halles, à 2 min à pied. Ouvert 24h/24. Hauteur maximale 1,85 m (SAEMES).",
+        "22 rue des Halles, à 2 min à pied. Ouvert 24h/24, hauteur maximale 1,85 m (SAEMES).",
       ],
       [
-        "Se garer — Rivoli-Sébastopol",
-        "5 rue Pernelle, à 7 min à pied. Ouvert 24h/24. Hauteur maximale 1,90 m (SAEMES).",
+        "Se garer — Rivoli Pont-Neuf / Samaritaine",
+        "2 rue Boucher, à 3 min à pied. Ouvert 24h/24, hauteur maximale 1,90 m, 387 places (Q-Park). Y stationner ouvre automatiquement l'accès à la zone à trafic limité des quatre premiers arrondissements.",
+      ],
+      [
+        "Se garer — Halles Garage",
+        "10 rue Bailleul, à 6 min à pied. Ouvert 24h/24, hauteur maximale 1,90 m. Le moins cher du quartier — 35 € les 24 heures contre 45 € ailleurs — et il y a un voiturier : 01 42 60 36 24.",
       ],
       [
         "Se garer — Forum des Halles",
-        "12 rue de Turbigo, à 7 min à pied. Ouvert 24h/24. Hauteur maximale 1,90 m (Indigo).",
+        "12 rue de Turbigo, à 7 min à pied. Ouvert 24h/24, hauteur maximale 1,90 m (Indigo).",
       ],
       [
         "Un utilitaire haut ne descend pas",
-        "Aucun parking souterrain du centre de Paris n'accepte plus de 1,90 m. Au-delà, il faut une place de livraison en surface — il y en a juste en face du 39 — ou un stationnement en périphérie.",
+        "Aucun de ces parkings n'accepte plus de 1,90 m — nous les avons vérifiés un par un. Au-delà, il faut une place de livraison en surface, et il y en a juste en face du 39.",
       ],
       ["Accessibilité", "L'entrée de L'Atelier est de plain-pied depuis la rue, et l'espace est entièrement accessible. WC PMR."],
       ["Stationnement de surface", "Payant du lundi au samedi, de 9h à 20h."],

@@ -143,3 +143,41 @@ de chaque projet, et on en a supprimé 68 le 21/09 pour rester sous le plafond d
 2. **Le KV Upstash du pricing** : les surcharges de prix saisies à la main, les
    demandes de devis reçues, et toutes les données du tableau de bord finances.
    Aucune sauvegarde, aucun export automatique. C'est le vrai trou.
+
+## ⏳ CHANTIER — sauvegarder ce qui n'existe qu'à un seul endroit
+
+Demandé par Étienne le 22/09/2026 : « gérer les sauvegardes, en double backup ».
+
+### Ce qui est déjà sûr, et n'a besoin de rien
+Le code, les textes, le tri et les photos publiées sont dans **GitHub** avec
+tout l'historique. Les originaux sont dans **Dropbox**. Deux endroits, déjà.
+
+### Ce qui n'existe qu'à UN seul endroit
+
+| Quoi | Où | Contenu |
+|---|---|---|
+| Variables d'environnement | Vercel, 3 projets | clés Resend, Google Calendar, Pennylane, Notion, Upstash, mots de passe admin |
+| KV Upstash (pricing) | Upstash | surcharges de prix saisies à la main, **devis reçus**, données du tableau de bord finances |
+
+⚠️ **Les deux contiennent des données sensibles** : des secrets d'un côté, des
+coordonnées de clients — donc des données personnelles — de l'autre. Ça
+gouverne tout le reste du dessin.
+
+### Le dessin retenu
+
+Un script dans `~/.config/clp-backups/` (hors Dropbox, `chmod 700`, même
+convention que `gws-admin`, `ovh` et `clp-certs`) qui :
+
+1. tire les variables des trois projets (`vercel env pull`) et vide le KV en JSON ;
+2. **chiffre l'archive** (`age`, clé publique conservée à part) ;
+3. écrit la copie chiffrée à **deux endroits** : `~/.config/clp-backups/archives/`
+   et un dossier Dropbox. Chiffrée, elle peut vivre dans Dropbox sans risque ;
+4. garde les N dernières et supprime les plus vieilles ;
+5. tourne par un agent `launchd` hebdomadaire — reprendre le plist de
+   `clp-certs`, y compris la déclaration du `PATH`, qui est le piège classique.
+
+⛔ **Jamais en clair, jamais dans Git, jamais dans une conversation.** C'est la
+règle déjà écrite pour les identifiants OVH et les passphrases Wi-Fi.
+
+⚠️ Une sauvegarde qu'on n'a jamais restaurée n'est pas une sauvegarde :
+prévoir une restitution d'essai dans un dossier jetable, et la dater ici.
