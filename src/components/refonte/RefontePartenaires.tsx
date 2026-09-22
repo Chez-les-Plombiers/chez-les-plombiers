@@ -85,7 +85,19 @@ export function RefontePartenaires() {
           <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
             Ce que nous organisons
           </h2>
-          <dl className="mt-5 max-w-[70ch] divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
+          {/*
+            ⚠️ DEUX COLONNES, POUR REMPLIR UN TROU. Étienne, capture à l'appui :
+            la liste des services tenait sur 70 caractères et laissait la
+            moitié droite de la page vide sur un grand écran.
+
+            La photo est verticale, ce qui tombe bien : c'est le seul format
+            qui accompagne une liste sans l'écraser. Et elle est cadrée VERS LE
+            BAS — « qu'on voie le sol plutôt que le plafond ». Le sol clair est
+            ce qui rend ce lieu louable ; les gaines du plafond, on les a déjà
+            vues dix fois sur le site.
+          */}
+          <div className="mt-5 gap-8 lg:flex lg:items-start">
+          <dl className="flex-1 divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
             {SERVICES.map((s) => (
               <div key={s.titre} className="py-3.5 sm:flex sm:gap-6">
                 <dt
@@ -100,6 +112,18 @@ export function RefontePartenaires() {
               </div>
             ))}
           </dl>
+            <figure className={`${CADRE} m-0 mt-6 hidden overflow-hidden lg:mt-0 lg:block lg:w-[38%] lg:shrink-0`}>
+              <div className="relative aspect-[4/5] w-full">
+                <Image
+                  src="/photos/galerie/lieu-atelier/011.webp"
+                  alt="L'Atelier, ses poteaux bruts et ses canapés roses, vu depuis le fond de la salle"
+                  fill
+                  sizes="(max-width: 1024px) 0px, 420px"
+                  className="object-cover object-bottom"
+                />
+              </div>
+            </figure>
+          </div>
           <Link
             href="/refonte/conditions"
             className="mt-5 inline-block font-mono text-[12px]"
