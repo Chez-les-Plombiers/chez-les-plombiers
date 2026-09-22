@@ -51,13 +51,19 @@ export const PARTENAIRES: readonly Partenaire[] = [
      * s'appelle « Partenaires », on vient voir des gens. Étienne, 22/09/2026 :
      * « il faudra mettre une photo de lui quand même. »
      *
-     * Celle-ci les montre tous les deux : Mathias qui dresse, et L'Atelier
-     * derrière lui. Elle vient du site actuel (`/notre-chef`).
-     * ⏳ Étienne en cherche une autre, prise chez nous, sur le site d'HOMEMADE.
+     * ⚠️ TROISIÈME ÉTAT DE CETTE IMAGE. Il y a d'abord eu une photo de plat,
+     * puis un portrait du site actuel où Mathias est de profil et dans
+     * l'ombre. Celle-ci est d'Étienne, prise CHEZ NOUS : il est de face, il
+     * sourit, et le mur brut derrière lui dit où on est. « Elle me plaît
+     * mieux puisqu'elle est prise chez les plombiers. »
+     *
+     * ⚠️ Recadrée en 4/3 depuis une verticale 1000 × 1338, en gardant le haut
+     * (22 % de marge coupée en haut) : le cadre de la page est horizontal, et
+     * c'est le visage qu'on vient chercher sur une page « Partenaires ».
      */
     photo: {
-      src: "/images/chef-mathias-portrait.jpg",
-      alt: "Mathias Rouveure dressant un service à L'Atelier, devant les fenêtres de la cour",
+      src: "/photos/lieu/mathias-atelier.webp",
+      alt: "Mathias Rouveure assis devant un mur brut de L'Atelier, ses casseroles et ses légumes autour de lui",
     },
   },
 ];
