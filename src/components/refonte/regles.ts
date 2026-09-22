@@ -98,22 +98,26 @@ export const MOMENTS: readonly MomentRegles[] = [
     id: "reserver",
     titre: "Réserver et payer",
     chapo:
-      "Nous posons volontiers une option pendant que votre projet se précise. Voici comment elle devient une réservation.",
+      "Nous pouvons poser une option pendant que votre projet se précise, et voici comment elle devient une réservation.",
     regles: [
       {
         titre: "Une option tient sept jours",
         texte:
-          "Passé ce délai, la date redevient libre et peut être proposée à quelqu'un d'autre. Nous ne relançons pas : nous préférons vous laisser décider sans pression.",
+          "Passé ce délai, la date redevient libre et peut être proposée à quelqu'un d'autre.\n\n" +
+          /* ⚠️ Espace insécable avant les deux-points : « pas » et « : » ne
+             doivent jamais se retrouver sur deux lignes. Étienne l'a relevé. */
+          "Nous ne relançons pas : nous préférons vous laisser décider sans pression.\n\n" +
+          "Si vous souhaitez prolonger l'option, n'hésitez pas à nous en faire part par écrit.",
       },
       {
         titre: "La réservation est confirmée à réception du paiement",
         texte:
-          "La totalité de la location est réglée par virement au moment de la réservation. Et c'est bien la réception qui compte, pas l'envoi : tant que les fonds ne sont pas sur le compte, la date reste ouverte.",
+          "La totalité de la location est réglée par virement au moment de la réservation (nous n'acceptons ni les chèques, ni les espèces). Et c'est bien la réception qui compte, pas l'envoi : tant que les fonds ne sont pas sur le compte, la date reste ouverte.",
       },
       {
         titre: "Un avis de virement ne vaut pas paiement",
         texte:
-          "La confusion est fréquente, et bien compréhensible : un avis de virement atteste d'un ordre donné, parfois programmé à plusieurs semaines. Seul le crédit effectif sur notre compte confirme la date.",
+          "La confusion est fréquente, et bien compréhensible : un avis de virement atteste d'un ordre donné, parfois programmé à plusieurs semaines. Seul le crédit effectif sur notre compte confirme la réservation.",
       },
       {
         /*
@@ -131,9 +135,11 @@ export const MOMENTS: readonly MomentRegles[] = [
          * jour même au lieu du lundi. « Reçu » seul décrit une exigence ; le
          * délai dit quoi faire.
          */
-        titre: "Le dépôt de garantie doit être reçu 48 heures avant",
+        titre: "Le dépôt de garantie doit être reçu 48 heures avant l'arrivée dans les lieux",
         texte:
-          "Un virement met un à trois jours à arriver : ne l'envoyez pas la veille. Sans la location et le dépôt encaissés, nous ne pouvons pas vous remettre les clés.",
+          "Un virement peut mettre plusieurs jours à arriver, et nous avons besoin de ce dépôt avant votre entrée dans les lieux.\n\n" +
+          "Il se règle uniquement par virement bancaire : ni carte, ni empreinte bancaire — les frais en sont trop élevés —, ni chèque.\n\n" +
+          "Il vous est restitué sous huit jours au plus tard, sous réserve qu'aucune dégradation n'ait été constatée.",
       },
     ],
   },
@@ -146,7 +152,9 @@ export const MOMENTS: readonly MomentRegles[] = [
       {
         titre: "Nous annoncer vos livraisons",
         texte:
-          "Merci de nous indiquer ce qui arrive, quand, et par quelle porte. L'impasse des Bourdonnais est prévue pour cela, mais la cour est partagée avec l'immeuble : un camion qui s'y installe à l'improviste bloque des riverains.",
+          "Merci de nous indiquer les livraisons que vous avez prévues, et leur date.\n\n" +
+          "L'impasse des Bourdonnais peut être utilisée pour cela. La cour convient également, le temps du déchargement : elle est partagée avec les autres copropriétaires, et ne peut donc pas accueillir un véhicule à l'arrêt toute la journée.\n\n" +
+          "Des places de livraison se trouvent juste en face du 39, et plusieurs parkings sont à quelques minutes.",
       },
       {
         titre: "Nous prévenir si vous stockez",
@@ -161,12 +169,14 @@ export const MOMENTS: readonly MomentRegles[] = [
       {
         titre: "Prévoir les agents de sécurité",
         texte:
-          "Un agent est requis à partir de 30 invités, et deux à partir de 60. Ils sont à votre charge et se réservent en amont — nous pouvons vous orienter vers une équipe que nous connaissons bien.",
+          "Un agent est requis à partir de 30 invités, et deux à partir de 60. Ils sont à votre charge et se réservent en amont.\n\n" +
+          "Nous vous recommandons vivement de passer par l'équipe avec laquelle nous travaillons : elle connaît la cour, les portes et le voisinage, et c'est ce qui fait la différence un soir d'affluence. Nous vous mettons en relation avec plaisir.",
       },
       {
-        titre: "Un agent dans la cour si vous louez deux espaces",
+        titre: "Un agent dans la cour si vous louez plusieurs espaces",
         texte:
-          "Dès que deux de nos trois espaces sont réservés ensemble, la présence d'un agent dans la cour devient nécessaire : il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble. La cour dessert des logements, et c'est ce qui nous permet de continuer à y recevoir.",
+          "Dès que deux ou trois de nos espaces sont réservés ensemble, un agent supplémentaire devient nécessaire dans la cour : il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble.\n\n" +
+          "Il s'ajoute à ceux que votre nombre d'invités impose déjà. La cour dessert des logements, et c'est ce qui nous permet de continuer à y recevoir.",
       },
     ],
   },
@@ -192,9 +202,19 @@ export const MOMENTS: readonly MomentRegles[] = [
           "Vos invités auront quitté les lieux à minuit. Le démontage peut se poursuivre au-delà, dans le calme.",
       },
       {
+        /*
+         * ⚠️ RÉÉCRITE LE 22/09/2026, et pour deux raisons.
+         * 1. Le motif invoqué était faux : « l'odeur reste dans les murs
+         *    bruts ». Étienne : « ça, c'est pas vrai en l'occurrence. » Une
+         *    raison inventée finit par se voir, et elle décrédibilise les
+         *    autres règles de la page, qui sont vraies.
+         * 2. Le vrai motif est la loi, et il n'a pas besoin d'être plaidé.
+         * La vape a été retirée : « moi j'aime pas trop faire chier les
+         * fumeurs », et personne n'a jamais eu de problème avec une vape.
+         */
         titre: "Il n'est pas possible de fumer à l'intérieur",
         texte:
-          "Vape comprise, nous vous remercions de votre compréhension. Le lieu occupe un immeuble du 17e siècle, et l'odeur reste dans les murs bruts.",
+          "En application de la loi, comme partout ailleurs. La cour est à vous jusqu'à 22h, et elle est agréable.",
       },
       {
         titre: "Nous signaler tout incident sur le moment",
@@ -216,17 +236,27 @@ export const MOMENTS: readonly MomentRegles[] = [
       {
         titre: "Trier les déchets",
         texte:
-          "Trois poubelles vous attendent dans la cuisine de jour, côté machine à café : verre, jaune pour le plastique, le papier et le métal, et tout-venant. La collecte de l'immeuble refuse les sacs mal triés.",
+          "Trois poubelles vous attendent dans la cuisine de jour, côté machine à café : verre, jaune pour le plastique, le papier et le métal, et tout-venant.\n\n" +
+          "Les grandes, celles qui reçoivent les sacs pleins, sont derrière les rideaux. La collecte de l'immeuble refuse les sacs mal triés.",
       },
       {
         titre: "Replacer le mobilier",
         texte:
-          "Le canapé, les fauteuils, les tables et les portants reviennent à leur place, et les rideaux se replient ouverts. Si ce n'était pas fait dans les vingt-quatre heures, nous organiserions l'intervention nous-mêmes et un forfait de 300 € HT serait retenu sur le dépôt de garantie.",
+          "Le canapé, les fauteuils, les tables et les portants reviennent exactement à leur place, dans leur disposition d'origine — le canapé retrouve sa courbe —, et les rideaux se replient ouverts.\n\n" +
+          "Si vous préférez ne pas vous en charger, nous nous en occupons pour un forfait de 250 € HT : merci de nous le dire en amont, nous l'organisons volontiers.\n\n" +
+          "À défaut, et si le mobilier n'était pas remis en place, nous ferions intervenir notre équipe et ce même forfait serait retenu sur le dépôt de garantie.",
       },
       {
+        /*
+         * ⚠️ IL N'Y A QU'UNE SEULE CLÉ POUR LES PRESTATAIRES. C'est ce qui rend
+         * cette règle sérieuse : sur un événement de plusieurs jours, une clé
+         * partie dans une poche le premier soir bloque le traiteur, le
+         * technicien et nous-mêmes le lendemain matin.
+         */
         titre: "Rendre les clés à la boîte",
         texte:
-          "Avec le même code que la grille et le sous-sol, celui que nous vous aurons transmis par message avant votre date.",
+          "Avec le même code que la grille et le sous-sol, celui que nous vous aurons transmis par message avant votre date.\n\n" +
+          "Et à chaque sortie, y compris sur un événement de plusieurs jours : la clé reste dans la boîte, elle ne quitte jamais le 39. Il n'y en a qu'une pour tous les prestataires, et le lendemain matin quelqu'un en aura besoin.",
       },
     ],
   },
@@ -249,4 +279,4 @@ export const DEPOTS = [
 ] as const;
 
 export const DEPOT_MODALITES =
-  "Par virement, reçu au plus tard 48 heures avant votre événement, et restitué sous huit jours après l'état des lieux.";
+  "Uniquement par virement bancaire, reçu au plus tard 48 heures avant votre arrivée, et restitué sous huit jours au plus tard, sous réserve qu'aucune dégradation n'ait été constatée.";

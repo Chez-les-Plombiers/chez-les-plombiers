@@ -109,9 +109,21 @@ export function RefonteConditions() {
                         volontairement : séparé, on ne le lit pas, et une
                         consigne sans raison se discute.
                       */}
-                      <p className="mt-1 text-[15px] leading-[1.75] text-[#C9C4BC]">
-                        {r.texte}
-                      </p>
+                      {/*
+                         ⚠️ UNE RÈGLE PEUT TENIR EN PLUSIEURS PARAGRAPHES.
+                         Étienne dicte « à la ligne » — et il a raison : quatre
+                         phrases d'affilée sur le dépôt de garantie forment un
+                         pavé qu'on saute. Le séparateur est la ligne vide,
+                         comme partout.
+                      */}
+                      {r.texte.split("\n\n").map((para) => (
+                        <p
+                          key={para}
+                          className="mt-1 text-[15px] leading-[1.75] text-[#C9C4BC]"
+                        >
+                          {para}
+                        </p>
+                      ))}
                     </div>
                   ))}
                 </div>

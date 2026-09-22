@@ -54,3 +54,17 @@ resterait noir, sans erreur.
 | `lieu-atelier` | 49 | à trier |
 | `lieu-appartement` | 20 | à trier |
 | `24-new-balance` | 5 (dont 1 vidéo) | en ligne, couverture 1 provisoire |
+
+## À faire sur `/infos` — les parkings (noté le 22/09/2026)
+
+Étienne : « il y a plusieurs parkings à côté, il y en a plus qu'on pense. Il
+faut les trouver et les marquer. »
+
+La page ne cite aujourd'hui qu'**Indigo Saint-Eustache**. Il en existe
+plusieurs autres à moins de dix minutes à pied, et c'est une information que
+cherche tout prestataire qui vient en camionnette. À vérifier sur place ou par
+les sites des exploitants — ne pas se contenter d'une liste trouvée en ligne,
+les parkings ferment.
+
+⚠️ Mentionner aussi les **places de livraison en face du 39**, déjà citées dans
+les conditions de location depuis le 22/09/2026.
