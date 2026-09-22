@@ -42,6 +42,11 @@ export interface Tuile {
   photo: { src: string; l: number; h: number };
   cadrage?: string;
   axe: "lieux" | "evenements";
+  /**
+   * Les événements d'une catégorie. Cocher « Lancements » affiche CEUX-CI,
+   * pas la vignette « Lancements » toute seule. Voir la note ci-dessous.
+   */
+  enfants?: Tuile[];
 }
 
 export function SelecteurPhotos({ tuiles }: { tuiles: Tuile[] }) {
@@ -49,8 +54,22 @@ export function SelecteurPhotos({ tuiles }: { tuiles: Tuile[] }) {
 
   const lieux = tuiles.filter((t) => t.axe === "lieux");
   const evenements = tuiles.filter((t) => t.axe === "evenements");
+  /*
+   * ⚠️ COCHER UNE CATÉGORIE DESCEND DEDANS, ÇA NE LA FILTRE PAS.
+   *
+   * Étienne, 22/09/2026, en cliquant « Lancements » : « j'ai le dossier
+   * lancement, il y a seulement une photo — alors que je devrais avoir TOUS
+   * les lancements, plutôt que le dossier qui contient lancement. »
+   *
+   * Il a raison, et c'était une faute de conception : réduire une grille de
+   * six vignettes à UNE vignette ne montre rien de plus qu'avant. On croyait
+   * filtrer, on ne faisait que cacher. Une catégorie cochée affiche donc ses
+   * événements ; un lieu, qui n'a pas de sous-niveau, reste sa vignette.
+   */
   const montrees = choisis.length
-    ? tuiles.filter((t) => choisis.includes(t.slug))
+    ? tuiles
+        .filter((t) => choisis.includes(t.slug))
+        .flatMap((t) => t.enfants ?? [t])
     : tuiles;
 
   function basculer(slug: string) {

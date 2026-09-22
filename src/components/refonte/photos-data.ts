@@ -100,11 +100,21 @@ export const GALERIE: EvenementGalerie[] = (() => {
    * hasard. `voitures-porsche` s'est ainsi affiché DEUX fois : une comme
    * événement à lui, une dans Porsche qui venait de l'absorber.
    */
-  const absorbes = new Set(
-    Object.values(SEL)
-      .map((s) => s.fusionneAvec)
-      .filter((x): x is string => Boolean(x))
-  );
+  const absorbes = new Set<string>();
+  for (const [slug, sel] of Object.entries(SEL)) {
+    const cible = sel.fusionneAvec;
+    if (!cible) continue;
+    /*
+     * ⚠️ UNE PAIRE QUI SE DÉSIGNE MUTUELLEMENT FAIT DISPARAÎTRE LES DEUX.
+     * Les deux dossiers Oakley se citaient l'un l'autre : chacun absorbait
+     * l'autre, donc aucun n'était affiché, et la catégorie Showrooms a perdu
+     * 76 photos sans le moindre message. Le cas est corrigé dans les données
+     * — un seul sens — mais le garde-fou reste : dans une paire mutuelle,
+     * c'est le premier venu qui absorbe, jamais personne.
+     */
+    if (SEL[cible]?.fusionneAvec === slug && absorbes.has(slug)) continue;
+    absorbes.add(cible);
+  }
 
   for (const e of [...EVENEMENTS].sort((a, b) => rang(a.slug) - rang(b.slug))) {
     const sel = SEL[e.slug];

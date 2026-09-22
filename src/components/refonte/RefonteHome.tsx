@@ -214,6 +214,16 @@ function Espaces() {
                       HT / jour
                     </span>
                   </p>
+                  {/*
+                    ⚠️ LA FOURCHETTE N'EST PAS LE PRIX DE TOUS LES JOURS.
+                    Demande d'Étienne, 22/09/2026. La Fashion Week est à
+                    6 000 € pour L'Atelier, soit 50 % au-dessus du haut de la
+                    fourchette affichée — un client qui n'a lu que la tuile se
+                    croit devant une erreur, ou devant un rattrapage.
+                  */}
+                  <p className="mt-1 text-[10px] leading-snug text-[#6E6A64]">
+                    Hors Fashion Week et événements spéciaux
+                  </p>
                 </div>
                 <span
                   className="font-mono text-[11px] uppercase tracking-wider"

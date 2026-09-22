@@ -289,7 +289,7 @@
     ],
     "couverture": 36,
     "nomCorrige": "Showroom Oakley",
-    "note": "⚠️ Oakley est venu DEUX FOIS, et les deux dossiers n'en font qu'un a l'affichage — decision d'Etienne, 21/09/2026 : « on va faire qu'une seule categorie showroom Oakley, on va pas les differencier ». Soit 76 photos : les 10 du premier passage et les 66 du second. La couverture est la 036 d'Oakley 26, celle au petit chien.\nLes deux entrees restent separees dans ce fichier parce que la numerotation des vignettes est propre a chaque dossier — les fusionner ici ferait collision sur les numeros.",
+    "note": "⚠️ Oakley est venu DEUX FOIS, et les deux dossiers n'en font qu'un a l'affichage — decision d'Etienne, 21/09/2026 : « on va faire qu'une seule categorie showroom Oakley, on va pas les differencier ». Soit 76 photos : les 10 du premier passage et les 66 du second. La couverture est la 036 d'Oakley 26, celle au petit chien.\nLes deux entrees restent separees dans ce fichier parce que la numerotation des vignettes est propre a chaque dossier — les fusionner ici ferait collision sur les numeros. ⚠️ C'est CE dossier qui absorbe `06-showroom-oakley`, et pas l'inverse : il porte 66 vues et la couverture choisie par Étienne. Les deux se désignaient mutuellement, ce qui a fait disparaître Oakley des Showrooms le 22/09/2026.",
     "fusionneAvec": "06-showroom-oakley"
   },
   "19-rayban-rose": {
@@ -477,7 +477,6 @@
       10
     ],
     "couverture": null,
-    "fusionneAvec": "18-oakley-26",
     "nomCorrige": "Showroom Oakley",
     "note": "⚠️ Oakley est venu DEUX FOIS, et les deux dossiers n'en font qu'un a l'affichage — decision d'Etienne, 21/09/2026 : « on va faire qu'une seule categorie showroom Oakley, on va pas les differencier ». Soit 76 photos : les 10 du premier passage et les 66 du second. La couverture est la 036 d'Oakley 26, celle au petit chien.\nLes deux entrees restent separees dans ce fichier parce que la numerotation des vignettes est propre a chaque dossier — les fusionner ici ferait collision sur les numeros."
   },

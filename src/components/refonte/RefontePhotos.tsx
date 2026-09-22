@@ -91,6 +91,15 @@ const TUILES: Tuile[] = [
     photo: c.couverture,
     cadrage: c.cadrage,
     axe: "evenements" as const,
+    /* Ce que le sélecteur affiche quand on coche la catégorie. */
+    enfants: c.evenements.map((e) => ({
+      slug: e.slug,
+      nom: e.nom,
+      href: `${LIEN}/${c.slug}/${e.slug}`,
+      detail: `${e.photos.length} photos`,
+      photo: e.couverture,
+      axe: "evenements" as const,
+    })),
   })),
 ];
 
