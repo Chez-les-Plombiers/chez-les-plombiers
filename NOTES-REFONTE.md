@@ -181,3 +181,41 @@ règle déjà écrite pour les identifiants OVH et les passphrases Wi-Fi.
 
 ⚠️ Une sauvegarde qu'on n'a jamais restaurée n'est pas une sauvegarde :
 prévoir une restitution d'essai dans un dossier jetable, et la dater ici.
+
+## Expositions — ce qui reste à ajouter (22/09/2026)
+
+### Caroline Faindt — l'expo de la peintre
+Étienne dit « Caroline Fin » ; l'orthographe est **Caroline Faindt**, peintre
+française née en 1981, installée à Paris. Une clé en métal est dissimulée dans
+chacune de ses toiles — c'est sa signature. Présente sur Facebook
+(`carolinefaindtartiste`), LinkedIn, Singulart, et une page Wikipédia.
+
+⚠️ **Ne pas récupérer ses photos sur Instagram ou son site pour les publier.**
+Ce sont ses œuvres et souvent ses visuels : les republier sur un site
+commercial sans accord est un problème de droits, pas une question de
+technique. Deux voies propres : retrouver les photos que **nous** avons prises
+pendant le vernissage, ou lui demander ses fichiers — elle sera sans doute
+ravie qu'on montre son expo.
+
+### Les dossiers encore en attente dans `SELECTION PHOTOS SITE`
+| Dossier | Contenu | État |
+|---|---|---|
+| `04. EVENTS PRO` | 21 photos | planche non faite |
+| `05. EVENTS CULTURELS` | 20 photos, 3 vidéos | planche non faite |
+| `05. EVENT CULTUREL — YANN` | HEIC + .mov | ⏳ Étienne doit le déposer |
+| `06. PETITS DEJ` | vide | — |
+
+## ⚠️ À vérifier — des photos qui ne sont peut-être pas chez nous
+
+En montant la planche PFW, j'ai remarqué que **l'album Défilé Litkovska, déjà
+en ligne**, contient une douzaine de vues de rue : du street style devant des
+devantures, et des premiers rangs dans une salle claire à bancs blancs qui ne
+ressemble pas à L'Atelier. L'une d'elles montre des enseignes italiennes
+(« PIZZA », « Confetteria Pasticceria ») — donc pas Paris.
+
+Ce sont probablement des enregistrements Instagram faits pendant la Fashion
+Week. Belles images, mais montrer la salle d'un autre comme si c'était la
+nôtre, dans un milieu où les agences connaissent les lieux, se verrait.
+
+⚠️ Je juge sur un plafond et une enseigne — Étienne était sur place. À trancher
+par lui, pas par moi.
