@@ -101,7 +101,7 @@ export const ESPACES = [
   {
     slug: "boutique",
     nom: "La Boutique",
-    meta: "45 m² · vitrine sur rue",
+    meta: "40 m² · vitrine sur rue",
     prix: "1 000 €",
     /*
      * Choix d'Étienne sur la planche contact : B06, B03, B01 — puis, en les
@@ -510,7 +510,7 @@ export const BOUTIQUE = {
     {
       titre: "L'espace",
       lignes: [
-        ["Surface", "45 m² en vitrine sur la rue des Bourdonnais"],
+        ["Surface", "40 m² en vitrine sur la rue des Bourdonnais"],
         ["Bar", "Un comptoir qui fait bar ou desk d'accueil"],
         ["Accrochage", "Des crochets répartis sur tous les murs"],
       ],
