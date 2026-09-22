@@ -200,7 +200,9 @@ const COUVERTURES: Partial<
    * Il a raison sur le fond : une vignette « Défilés » doit montrer un
    * PODIUM. Aucun recadrage ne rendait un trottoir convaincant.
    */
-  defiles: { evenement: "05-defile-litovska-1-octobre-2025", n: 25 },
+  /* ⚠️ `object-top` : en 4/3, le cadrage centré coupait la tête du mannequin.
+     Étienne : « faut qu'on voie le visage ». */
+  defiles: { evenement: "05-defile-litovska-1-octobre-2025", n: 25, cadrage: "object-top" },
 };
 
 export const CATEGORIES_GALERIE: CategorieGalerie[] = CATEGORIES.map((c) => {

@@ -60,17 +60,25 @@ const ZONES = [
     slug: "lieu-appartement",
     nom: "L'Appartement",
     ou: "1er étage",
-    zone: { left: "24.6%", top: "26.6%", width: "12.4%", height: "15.2%" },
+    /*
+     * ⚠️ RECALÉ SUR L'ANNOTATION D'ÉTIENNE, 22/09/2026. Charles l'avait posé à
+     * 26,6 % de hauteur, donc À CHEVAL SUR LA POUTRE DU PORCHE : le cadre
+     * attrapait moitié fenêtre, moitié poutre noire, et flottait. Étienne a
+     * dessiné le bon emplacement — le renfoncement au-dessus de la cour, avec
+     * son balcon, juste au-dessus de la porte de L'Atelier. C'est cohérent
+     * avec l'accès : « son propre escalier, depuis la cour ».
+     */
+    zone: { left: "24%", top: "33%", width: "13%", height: "13%" },
     /* Le panneau se déplie vers le haut, au-dessus de la fenêtre. */
     panneau: { left: "8%", top: "1%", width: "40%" },
     /* Au-dessus de la fenêtre : rien ne la gêne là-haut. */
-    etiquette: { left: "22%", top: "26.6%", ancrage: "dessus" },
+    etiquette: { left: "21%", top: "33%", ancrage: "dessus" },
   },
   {
     slug: "lieu-atelier",
     nom: "L'Atelier",
     ou: "au fond de la cour",
-    zone: { left: "27.5%", top: "46.7%", width: "8.85%", height: "17.2%" },
+    zone: { left: "27.5%", top: "46%", width: "9%", height: "17%" },
     panneau: { left: "6%", top: "44%", width: "44%" },
     /* Sous le porche, pas à droite : à droite elle percutait La Boutique. */
     etiquette: { left: "16%", top: "64.5%", ancrage: "dessous" },
@@ -79,7 +87,7 @@ const ZONES = [
     slug: "lieu-boutique",
     nom: "La Boutique",
     ou: "sur la rue",
-    zone: { left: "58.8%", top: "46.9%", width: "28.6%", height: "29.1%" },
+    zone: { left: "59.5%", top: "46%", width: "28%", height: "30%" },
     /* Elle se déplie dans sa propre vitrine : c'est là qu'elle est. */
     panneau: null,
     /* Dans sa propre vitrine, qui est large : elle y tient sans déborder. */

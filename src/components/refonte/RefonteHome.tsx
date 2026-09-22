@@ -3,6 +3,7 @@ import Link from "next/link";
 import { TuilePhotos } from "./TuilePhotos";
 import { CATEGORIES_GALERIE } from "./photos-data";
 import { Barre, Bloc, CADRE, Corps, LAITON, Page, Pied, Titre, lien } from "./chrome";
+import { BoutonFacade } from "./BoutonFacade";
 import {
   ADRESSE,
   ESPACES,
@@ -137,6 +138,14 @@ function Ouverture() {
             <br />
             Showrooms, lancements presse, dîners privés, défilés, expositions, etc.
           </p>
+          {/*
+            ⚠️ CE BOUTON RÉPOND À UNE PHRASE QUI NE SUFFIT PAS. « Trois espaces
+            à la même adresse » peut vouloir dire trois boutiques voisines,
+            trois étages, ou trois bâtiments — une amie d'Étienne a proposé les
+            trois hypothèses devant le site. La façade annotée tranche en une
+            seconde ; elle n'a pas besoin de place pour autant.
+          */}
+          <BoutonFacade />
         </div>
       </div>
     </Bloc>
