@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { redirectionsBascule } from "./src/lib/bascule";
 
 // CSP : self + GA4/Clarity (analytics), Matterport + Google Maps (iframes visite).
 // 'unsafe-inline' scripts : requis par les snippets GA/Clarity et Next sans infra nonce.
@@ -143,6 +144,14 @@ const nextConfig: NextConfig = {
       { source: "/blank", destination: "/", permanent: true },
       { source: "/blank-1", destination: "/", permanent: true },
       { source: "/blank-2", destination: "/", permanent: true },
+      /*
+       * ⚠️ VIDE TANT QUE LA REFONTE N'EST PAS EN LIGNE. Tout est écrit et
+       * relu dans `src/lib/bascule.ts`, derrière un seul interrupteur : la
+       * fin du site anglais et le sort des pages sans équivalent. Y lire
+       * aussi `A_RETIRER_DE_NEXT_CONFIG` — les redirections ci-dessus qui
+       * rendraient les pages neuves injoignables si on les laissait.
+       */
+      ...redirectionsBascule(),
     ];
   },
 };

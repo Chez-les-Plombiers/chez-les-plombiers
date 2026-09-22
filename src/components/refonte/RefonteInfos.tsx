@@ -48,6 +48,28 @@ function Entete() {
       <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[#C9C4BC]">
         {INFOS_INTRO}
       </p>
+      {/*
+        ── LA SEULE LIGNE EN ANGLAIS DU SITE, ET ELLE EST ICI ────────────────
+        Le site est en français, décision d'Étienne du 22/09/2026 : pour des
+        dimensions, des horaires et un plan d'accès, la traduction automatique
+        des navigateurs fait très bien l'affaire — c'est la prose commerciale
+        qu'elle abîme, pas une hauteur sous plafond.
+
+        Mais cette page-ci est celle qu'ouvre en premier une équipe de
+        production étrangère, et on ne laisse pas quelqu'un se débrouiller
+        seul devant une porte cochère. Une ligne, un numéro, c'est tout.
+
+        ⚠️ `lang="en"` : sans lui, un lecteur d'écran francophone prononcerait
+        cette phrase à la française, et Google la lirait comme du français mal
+        écrit.
+      */}
+      <p
+        lang="en"
+        className="mt-3 max-w-[62ch] border-l-2 pl-3 text-[14px] leading-relaxed text-[#A8A29A]"
+        style={{ borderColor: LAITON }}
+      >
+        Our team answers in English — WhatsApp is the fastest way to reach us.
+      </p>
       <a
         href={FICHE_GOOGLE}
         target="_blank"
