@@ -79,7 +79,7 @@ const VISUELS = [
   {
     fichier: "boutique",
     photo: "public/photos/boutique/tuile-2.jpg",
-    lignes: ["La Boutique", "45 m² — 39 rue des Bourdonnais", "Vitrine sur rue — Paris 1er"],
+    lignes: ["La Boutique", "40 m² — 39 rue des Bourdonnais", "Vitrine sur rue — Paris 1er"],
   },
   {
     fichier: "appartement",

@@ -502,7 +502,7 @@ export const BOUTIQUE = {
     "C'est le format d'un pop-up, d'un showroom de presse ou d'une vitrine de lancement : petit, visible de la rue, et au même endroit que les deux autres espaces.",
   ] as const,
   enBref: [
-    ["Surface", "45 m²"],
+    ["Surface", "40 m²"],
     ["Position", "Sur la rue"],
     ["Location", "À la journée"],
   ] as const,
