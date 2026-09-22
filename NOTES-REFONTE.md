@@ -324,3 +324,31 @@ traduire.**
 ⚠️ **Le formulaire n'a pas été soumis pour de vrai** : un envoi de test écrit
 dans la base Notion et envoie un mail à Étienne et Céline. La route d'API est
 inchangée et les noms de champs sont identiques à l'octet près.
+
+## 22/09/2026 — L'espace insécable qui rend un grep aveugle
+
+En corrigeant la surface de LA BOUTIQUE (45 → 40 m²), deux occurrences sur sept
+ont survécu à la correction **et** au contrôle qui devait la valider. Je les ai
+annoncées propres à Étienne avant de les retrouver.
+
+**La cause** : ces deux-là s'écrivent `45 m²`, avec une **espace insécable**
+— posée pendant la passe typographique d'avant la mise en ligne, et c'est la
+bonne graphie. Mon remplacement comme ma vérification utilisaient une espace
+ordinaire. Le même angle mort des deux côtés : le contrôle ne pouvait que
+confirmer le défaut qu'il partageait.
+
+⚠️ **C'est un piège propre à un texte bien composé.** Plus la typographie est
+soignée, moins la chaîne affichée ressemble à celle qu'on tape dans un grep :
+espace insécable avant `: ; ! ?` et `€ %`, espace fine, apostrophe courbe,
+tirets cadratins. Chercher `45 m²` ou `l'atelier` trouve de moins en moins.
+
+**Réflexe à prendre** : pour toute recherche ou tout remplacement portant sur du
+texte destiné à l'écran, écrire le motif insensible à ces variantes.
+
+```
+45[\s  ]?m²      plutôt que   45 m²
+[Ll]['’]Atelier            plutôt que   L'Atelier
+```
+
+Et vérifier **sur le rendu**, pas sur les sources — ce qui ne suffit pas non
+plus si le motif de vérification reproduit l'erreur du motif de remplacement.
