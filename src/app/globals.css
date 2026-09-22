@@ -104,3 +104,13 @@ body {
   .appart-bento-8 { grid-column: 3 / 4; grid-row: 6 / 7; }
   .appart-bento-9 { grid-column: 1 / 4; grid-row: 7 / 9; }
 }
+
+/*
+ * La ligne de balayage de la façade annotée — reprise de la maquette de
+ * Charles. Elle descend une fois, à l'ouverture, et disparaît : c'est un
+ * accusé de réception, pas une décoration qui tourne en boucle.
+ */
+@keyframes balayage {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(var(--h, 260px)); opacity: 0; }
+}
