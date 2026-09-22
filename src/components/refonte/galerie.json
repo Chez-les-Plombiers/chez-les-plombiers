@@ -4694,5 +4694,292 @@
       "l": 1200,
       "h": 800
     }
+  ],
+  "25-diners-selection": [
+    {
+      "n": 1,
+      "src": "/photos/galerie/25-diners-selection/001.webp",
+      "l": 960,
+      "h": 1200
+    },
+    {
+      "n": 2,
+      "src": "/photos/galerie/25-diners-selection/002.webp",
+      "l": 960,
+      "h": 1200
+    },
+    {
+      "n": 3,
+      "src": "/photos/galerie/25-diners-selection/003.webp",
+      "l": 960,
+      "h": 1200
+    },
+    {
+      "n": 4,
+      "src": "/photos/galerie/25-diners-selection/004.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 5,
+      "src": "/photos/galerie/25-diners-selection/005.webp",
+      "l": 675,
+      "h": 1200,
+      "video": "/photos/galerie/25-diners-selection/005.mp4"
+    },
+    {
+      "n": 6,
+      "src": "/photos/galerie/25-diners-selection/006.webp",
+      "l": 720,
+      "h": 900,
+      "video": "/photos/galerie/25-diners-selection/006.mp4"
+    },
+    {
+      "n": 7,
+      "src": "/photos/galerie/25-diners-selection/007.webp",
+      "l": 720,
+      "h": 900,
+      "video": "/photos/galerie/25-diners-selection/007.mp4"
+    },
+    {
+      "n": 9,
+      "src": "/photos/galerie/25-diners-selection/009.webp",
+      "l": 720,
+      "h": 900,
+      "video": "/photos/galerie/25-diners-selection/009.mp4"
+    },
+    {
+      "n": 11,
+      "src": "/photos/galerie/25-diners-selection/011.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 12,
+      "src": "/photos/galerie/25-diners-selection/012.webp",
+      "l": 960,
+      "h": 1200
+    },
+    {
+      "n": 13,
+      "src": "/photos/galerie/25-diners-selection/013.webp",
+      "l": 675,
+      "h": 1200,
+      "video": "/photos/galerie/25-diners-selection/013.mp4"
+    },
+    {
+      "n": 14,
+      "src": "/photos/galerie/25-diners-selection/014.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 15,
+      "src": "/photos/galerie/25-diners-selection/015.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 16,
+      "src": "/photos/galerie/25-diners-selection/016.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 18,
+      "src": "/photos/galerie/25-diners-selection/018.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 19,
+      "src": "/photos/galerie/25-diners-selection/019.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 20,
+      "src": "/photos/galerie/25-diners-selection/020.webp",
+      "l": 675,
+      "h": 1200
+    },
+    {
+      "n": 21,
+      "src": "/photos/galerie/25-diners-selection/021.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 22,
+      "src": "/photos/galerie/25-diners-selection/022.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 23,
+      "src": "/photos/galerie/25-diners-selection/023.webp",
+      "l": 675,
+      "h": 1200
+    }
+  ],
+  "26-pfw-defiles": [
+    {
+      "n": 1,
+      "src": "/photos/galerie/26-pfw-defiles/001.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 2,
+      "src": "/photos/galerie/26-pfw-defiles/002.webp",
+      "l": 901,
+      "h": 1200
+    },
+    {
+      "n": 3,
+      "src": "/photos/galerie/26-pfw-defiles/003.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 4,
+      "src": "/photos/galerie/26-pfw-defiles/004.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 5,
+      "src": "/photos/galerie/26-pfw-defiles/005.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 6,
+      "src": "/photos/galerie/26-pfw-defiles/006.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 7,
+      "src": "/photos/galerie/26-pfw-defiles/007.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 8,
+      "src": "/photos/galerie/26-pfw-defiles/008.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 9,
+      "src": "/photos/galerie/26-pfw-defiles/009.webp",
+      "l": 675,
+      "h": 1200,
+      "video": "/photos/galerie/26-pfw-defiles/009.mp4"
+    },
+    {
+      "n": 10,
+      "src": "/photos/galerie/26-pfw-defiles/010.webp",
+      "l": 675,
+      "h": 1200,
+      "video": "/photos/galerie/26-pfw-defiles/010.mp4"
+    },
+    {
+      "n": 11,
+      "src": "/photos/galerie/26-pfw-defiles/011.webp",
+      "l": 675,
+      "h": 1200,
+      "video": "/photos/galerie/26-pfw-defiles/011.mp4"
+    },
+    {
+      "n": 12,
+      "src": "/photos/galerie/26-pfw-defiles/012.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 13,
+      "src": "/photos/galerie/26-pfw-defiles/013.webp",
+      "l": 720,
+      "h": 958,
+      "video": "/photos/galerie/26-pfw-defiles/013.mp4"
+    },
+    {
+      "n": 14,
+      "src": "/photos/galerie/26-pfw-defiles/014.webp",
+      "l": 675,
+      "h": 1200,
+      "video": "/photos/galerie/26-pfw-defiles/014.mp4"
+    },
+    {
+      "n": 15,
+      "src": "/photos/galerie/26-pfw-defiles/015.webp",
+      "l": 675,
+      "h": 1200,
+      "video": "/photos/galerie/26-pfw-defiles/015.mp4"
+    },
+    {
+      "n": 16,
+      "src": "/photos/galerie/26-pfw-defiles/016.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 17,
+      "src": "/photos/galerie/26-pfw-defiles/017.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 18,
+      "src": "/photos/galerie/26-pfw-defiles/018.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 19,
+      "src": "/photos/galerie/26-pfw-defiles/019.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 20,
+      "src": "/photos/galerie/26-pfw-defiles/020.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 21,
+      "src": "/photos/galerie/26-pfw-defiles/021.webp",
+      "l": 720,
+      "h": 960,
+      "video": "/photos/galerie/26-pfw-defiles/021.mp4"
+    },
+    {
+      "n": 22,
+      "src": "/photos/galerie/26-pfw-defiles/022.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 23,
+      "src": "/photos/galerie/26-pfw-defiles/023.webp",
+      "l": 900,
+      "h": 1200
+    },
+    {
+      "n": 24,
+      "src": "/photos/galerie/26-pfw-defiles/024.webp",
+      "l": 720,
+      "h": 960,
+      "video": "/photos/galerie/26-pfw-defiles/024.mp4"
+    },
+    {
+      "n": 25,
+      "src": "/photos/galerie/26-pfw-defiles/025.webp",
+      "l": 904,
+      "h": 1200
+    }
   ]
 }

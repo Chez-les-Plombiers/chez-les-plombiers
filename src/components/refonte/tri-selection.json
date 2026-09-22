@@ -942,5 +942,65 @@
       25
     ],
     "couverture": 18
+  },
+  "25-diners-selection": {
+    "garde": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "couverture": null,
+    "pivote": {
+      "14": 90,
+      "15": 90
+    },
+    "note": "Trié par Étienne le 22/09/2026. Retirés : 8 (vidéo), 10, 17. Pas de couverture dictée — la première vue sert."
+  },
+  "26-pfw-defiles": {
+    "garde": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "couverture": 12
   }
 }

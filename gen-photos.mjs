@@ -113,8 +113,23 @@ for (const [slug, sel] of Object.entries(selection)) {
 
     if (fs.existsSync(out)) { sautees++; }
     else {
+      /*
+       * ⚠️ LE QUART DE TOUR N'EST PAS UNE COQUETTERIE, C'EST UNE RÉPARATION.
+       * Les fichiers HEIC passent par le repli `sips` ci-dessous, qui ne
+       * conserve PAS l'orientation EXIF : deux vues du dîner sont sorties
+       * couchées. `pivote` corrige à la main ce que la conversion a perdu.
+       *
+       * ⚠️ Et il passe par un tampon intermédiaire. Enchaîner `.rotate()`
+       * (auto-orientation) puis `.rotate(90)` sur la même pipeline donne un
+       * résultat qui dépend de la version de sharp ; deux passes ne laissent
+       * aucun doute.
+       */
+      const pivot = sel.pivote?.[String(n)];
       try {
-        await sharp(src).rotate().resize(1200, 1200, { fit: "inside", withoutEnlargement: true })
+        const source = pivot
+          ? await sharp(await sharp(src).rotate().toBuffer()).rotate(pivot)
+          : sharp(src).rotate();
+        await source.resize(1200, 1200, { fit: "inside", withoutEnlargement: true })
           .webp({ quality: 72 }).toFile(out);
         faites++;
       } catch {
@@ -128,7 +143,10 @@ for (const [slug, sel] of Object.entries(selection)) {
         try {
           execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "90",
                                 "-Z", "1200", src, "--out", tmp], { stdio: "ignore" });
-          await sharp(tmp).webp({ quality: 72 }).toFile(out);
+          const apresSips = pivot
+            ? sharp(await sharp(tmp).toBuffer()).rotate(pivot)
+            : sharp(tmp);
+          await apresSips.webp({ quality: 72 }).toFile(out);
           fs.unlinkSync(tmp);
           faites++;
         } catch (e2) { console.log(`  ✗ ${src}: ${e2.message}`); ratees++; continue; }
