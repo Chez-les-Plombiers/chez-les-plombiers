@@ -217,3 +217,37 @@ garder : « ça montre qu'il y a beaucoup de monde ».
 ⚠️ La leçon vaut pour la suite : je juge un lieu sur un plafond et une
 enseigne, depuis un bureau. Signaler un doute est utile ; le présenter comme
 un constat ne l'est pas. Étienne était sur place.
+
+## 22/09/2026 — Les images ont disparu partout (résolu)
+
+**Symptôme** : Étienne, sur iPhone, sur la fenêtre « Visualiser les 3 lieux » :
+« ça a carrément planté, on ne voit même plus les photos derrière ». Les cadres
+et les libellés flottaient sur du vide, avec une icône d'image cassée.
+
+**Ce n'était pas le composant.** `curl` sur `/_next/image?url=…&w=828` renvoyait
+**`402 OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED`** : le quota de transformations
+d'images du plan Hobby, épuisé. La mise en ligne a publié 845 médias, et
+`next/image` demande à Vercel de régénérer chacun en plusieurs largeurs — le
+compteur est parti en quelques heures. Toutes les images du site tombaient, pas
+seulement la façade ; c'est juste là qu'Étienne l'a vu en premier.
+
+⚠️ **Le piège de diagnostic** : la page ne renvoie aucune erreur, le HTML est
+correct, le composant est correct. Seules les requêtes d'images échouent, et
+uniquement en production. Le réflexe est de relire le composant — c'est perdu.
+**Interroger `/_next/image` directement** dit la vérité en une seconde.
+
+**Correction, en deux temps :**
+1. `images: { unoptimized: true }` dans les **deux** `next.config.ts`. Les deux
+   applications partagent le domaine, donc le **même quota** : n'en corriger
+   qu'une laisse l'autre le vider pour les deux.
+2. `alleger-photos.mjs` — puisque Vercel ne redimensionne plus, c'est à nous de
+   livrer des fichiers d'un poids raisonnable. Réencodage **sur place**, même nom
+   et même extension (les chemins sont écrits en dur dans une dizaine de fichiers
+   de données), 1600 px max, JPEG q78 mozjpeg, saute ce qui fait moins de 220 Ko,
+   n'agrandit jamais. **55 images, 42 Mo → 10 Mo.**
+
+**Vérifié après coup** : 50 pages parcourues, 845 médias, **0 passant encore par
+l'optimiseur, 0 cassé**. La fenêtre façade est revenue, cadres bien placés.
+
+⚠️ **Pour la suite** : chaque nouvel album passe par `alleger-photos.mjs` avant
+d'être poussé. Sans l'optimiseur, une photo de 4 Mo est servie telle quelle.
