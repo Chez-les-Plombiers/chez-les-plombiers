@@ -110,7 +110,38 @@ export const SECTIONS: readonly Section[] = [
       ["Métro Châtelet — 3 min", "Lignes 1, 4, 7, 11 et 14. Sortie Rivoli ou Sainte-Opportune."],
       ["RER Châtelet-Les Halles — 5 min", "RER A, B et D, depuis Roissy, Orly, La Défense et toutes les gares parisiennes."],
       ["Depuis les aéroports", "Roissy CDG : 35 min en RER B direct. Orly : 30 min via Orlyval puis RER B. Le Bourget : 40 min."],
-      ["En voiture", "Parking public Indigo Saint-Eustache, à 4 min à pied."],
+      /*
+       * ⚠️ TROIS PARKINGS, ET SURTOUT LEURS HAUTEURS. Étienne, 22/09/2026 :
+       * « il y en a plusieurs à côté, il y en a plus qu'on pense ». La hauteur
+       * est l'information décisive et personne ne la donne : un prestataire en
+       * camionnette se présente à la barrière et découvre le gabarit sur
+       * place. Aucun parking souterrain du centre de Paris n'excède 1,90 m.
+       *
+       * ⚠️ Et le parking cité ici n'était pas exploité par Indigo mais par la
+       * SAEMES. Une erreur de nom envoie quelqu'un chercher la mauvaise
+       * enseigne. Vérifié le 22/09/2026 sur saemes.fr.
+       *
+       * Distances à vol d'oiseau majorées d'un tiers, pas des temps de
+       * routage : les calculateurs publics raisonnent en voiture et suivent
+       * les sens interdits — l'un d'eux annonçait 1 920 m pour un parking
+       * situé à 96 m.
+       */
+      [
+        "Se garer — Les Halles-Saint-Eustache",
+        "22 rue des Halles, à 2 min à pied. Ouvert 24h/24. Hauteur maximale 1,85 m (SAEMES).",
+      ],
+      [
+        "Se garer — Rivoli-Sébastopol",
+        "5 rue Pernelle, à 7 min à pied. Ouvert 24h/24. Hauteur maximale 1,90 m (SAEMES).",
+      ],
+      [
+        "Se garer — Forum des Halles",
+        "12 rue de Turbigo, à 7 min à pied. Ouvert 24h/24. Hauteur maximale 1,90 m (Indigo).",
+      ],
+      [
+        "Un utilitaire haut ne descend pas",
+        "Aucun parking souterrain du centre de Paris n'accepte plus de 1,90 m. Au-delà, il faut une place de livraison en surface — il y en a juste en face du 39 — ou un stationnement en périphérie.",
+      ],
       ["Accessibilité", "L'entrée de L'Atelier est de plain-pied depuis la rue, et l'espace est entièrement accessible. WC PMR."],
       ["Stationnement de surface", "Payant du lundi au samedi, de 9h à 20h."],
     ],
@@ -132,17 +163,31 @@ export const SECTIONS: readonly Section[] = [
     faits: [
       ["Porte principale", "2,19 m de large × 3,66 m de haut, sur la cour."],
       ["Porte de l'impasse", "1,60 m × 2,39 m, deux vantaux de 0,80 m."],
+      /*
+       * ⚠️ CORRIGÉ LE 22/09/2026, ET ÇA INVERSE CE QUI ÉTAIT ÉCRIT. La page
+       * affirmait qu'un 20 m³ ne passait pas dans l'impasse et que la cour ne
+       * valait que pour un déchargement rapide. Étienne, d'expérience :
+       *
+       *   « On peut reculer avec un gros 20 m³ dans la cour, mais étonnamment
+       *     pas dans l'impasse. Le 20 m³ ne rentre pas dans l'atelier, mais un
+       *     camion de 219 de large et 350 de haut peut rentrer dans l'atelier.
+       *     Les plombiers s'en servaient comme parking. »
+       *
+       * C'est contre-intuitif — l'impasse paraît le bon accès, la cour paraît
+       * étroite — et c'est précisément pour ça que ça doit être écrit. Un
+       * transporteur qui devine se trompe.
+       */
       [
         "Reculer dans la cour",
-        "Possible, pour un déchargement rapide — mais pas de stationnement, pas de montage ni de démontage. La cour dessert deux entrées d'immeuble au fond, à droite et à gauche : le passage des habitants doit rester libre en permanence.",
+        "Oui, y compris avec un 20 m³. C'est le meilleur accès pour décharger. Le stationnement, en revanche, n'y est pas possible : la cour dessert deux entrées d'immeuble et le passage des habitants doit rester libre.",
       ],
       [
         "Reculer dans l'impasse",
-        "Possible, et c'est là que se font le montage et le démontage. Au-delà de 20 m³, l'accès n'est plus possible : nous vous conseillons un véhicule plus petit, ou un transfert sur place.",
+        "Oui, mais pas avec un 20 m³ — contrairement à ce qu'on imagine, l'impasse est plus contraignante que la cour. Prévoir plus petit, ou décharger côté cour.",
       ],
       [
-        "Une voiture peut entrer",
-        "Accès direct depuis la rue, de plain-pied, sans marche ni seuil.",
+        "Entrer à l'intérieur de L'Atelier",
+        "Un véhicule entre dans la salle, de plain-pied, sans marche ni seuil : les plombiers s'en servaient comme garage. Jusqu'à 2,19 m de large et 3,50 m de haut — soit une camionnette, mais pas un 20 m³.",
       ],
       [
         "Elle peut rester",

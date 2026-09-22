@@ -153,7 +153,10 @@ export const MOMENTS: readonly MomentRegles[] = [
         titre: "Nous annoncer vos livraisons",
         texte:
           "Merci de nous indiquer les livraisons que vous avez prévues, et leur date.\n\n" +
-          "L'impasse des Bourdonnais peut être utilisée pour cela. La cour convient également, le temps du déchargement : elle est partagée avec les autres copropriétaires, et ne peut donc pas accueillir un véhicule à l'arrêt toute la journée.\n\n" +
+          /* ⚠️ La COUR d'abord : c'est le meilleur accès, un 20 m³ y recule.
+             L'impasse paraît plus évidente et l'est moins — voir la note
+             dans `data-infos.ts`. */
+          "La cour est le meilleur accès : on y recule, y compris avec un 20 m³, le temps du déchargement. Elle est partagée avec les autres copropriétaires et ne peut donc pas accueillir un véhicule à l'arrêt toute la journée. L'impasse des Bourdonnais convient également, pour un véhicule plus petit.\n\n" +
           "Des places de livraison se trouvent juste en face du 39, et plusieurs parkings sont à quelques minutes.",
       },
       {
