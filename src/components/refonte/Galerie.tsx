@@ -32,14 +32,23 @@ export function Galerie({ photos, titre }: { photos: Photo[]; titre: string }) {
   return (
     <>
       {/*
+        ── DEUX COLONNES DÈS LE TÉLÉPHONE ────────────────────────────────────
+        Étienne, 22/09/2026 : « affiche deux photos par colonne plutôt qu'une.
+        Pour le défilement ce serait bien qu'on en voie même quatre d'un coup.
+        Quand on clique on en voit une, comme une story Instagram. »
+
+        C'est le bon partage du travail : la grille sert à BALAYER, la
+        visionneuse à REGARDER. Une colonne unique faisait défiler une planche
+        de soixante vues à la vitesse d'une seule — on renonçait avant la fin.
+        À deux colonnes on en embrasse quatre, et le clic donne le plein écran.
+
         ⚠️ TROIS COLONNES SEULEMENT QUAND IL Y A DE QUOI LES REMPLIR. Étienne,
         sur la page Porsche : « il y a que quatre vidéos et puis elles sont
         collées à gauche ». C'est le propre de la maçonnerie : quatre images
-        hautes réparties sur trois colonnes donnent 2 + 1 + 1, et la page
-        penche. À deux colonnes, elles s'équilibrent.
+        hautes sur trois colonnes donnent 2 + 1 + 1, et la page penche.
       */}
       <div
-        className={`mt-6 gap-3 [column-fill:_balance] sm:columns-2 ${
+        className={`mt-6 columns-2 gap-3 [column-fill:_balance] ${
           photos.length >= 7 ? "lg:columns-3" : ""
         }`}
       >
