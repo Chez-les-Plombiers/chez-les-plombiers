@@ -176,8 +176,39 @@ export function TuilePhotos({
           <Fleche sens={1} actif={vue < photos.length - 1} onPousser={pousser} />
 
           {/* Les points, eux, restent : sur mobile ils sont le seul indice
-              qu'il y a autre chose à voir. */}
-          <div className="pointer-events-none absolute bottom-3 left-0 right-0 z-20 flex justify-center gap-1.5">
+              qu'il y a autre chose à voir.
+
+              ⚠️ À GAUCHE, PAS AU CENTRE — ET CE N'EST PAS UN GOÛT. Ils étaient
+              centrés, et le nom du lieu est calé à droite sur la même ligne :
+              « L'APPARTEMENT » mesure 157 px sur un écran de 375, et mordait
+              de 17 px sur les points. Signalé par Étienne le 22/09/2026, qui
+              proposait de décaler ou de réduire le nom.
+
+              ⚠️ RÉDUIRE LE NOM NE SUFFISAIT PAS. Pour dégager les 17 px plus
+              une respiration correcte, il aurait fallu passer de 11 à 9 px —
+              illisible sur un téléphone, et la collision serait revenue au
+              premier lieu portant un nom plus long.
+
+              Le défaut ne se voit qu'en dessous d'environ 500 px de large : le
+              héros est le seul carrousel étiqueté, et les trois tuiles de
+              l'accueil appellent ce composant SANS `etiquettes`, donc sans
+              rien à heurter. Le correctif s'applique quand même à toutes les
+              tailles : une règle sous `sm:` n'aurait décrit qu'un symptôme,
+              alors que le vrai défaut est d'avoir posé deux éléments de
+              largeur variable sur le même centre.
+
+              Le nom à droite, les points à gauche, au même retrait : ils se
+              répondent au lieu de se disputer le centre, et aucun nom de lieu,
+              si long soit-il, ne peut plus les rejoindre. */}
+          {/*
+              ⚠️ `items-center` ET UNE HAUTEUR, sinon les points tombent 5 px
+              trop bas. Un point fait 6 px, la ligne de texte du nom en fait
+              16 : caler les deux sur le même `bottom` aligne leurs BAS, pas
+              leurs milieux. Tant que les points étaient centrés, à l'écart du
+              nom, personne ne pouvait le voir ; côte à côte, ça se remarque.
+              La hauteur suit celle de la ligne de texte (16 px, puis 20 px).
+          */}
+          <div className="pointer-events-none absolute bottom-3 left-4 right-4 z-20 flex h-4 items-center justify-start gap-1.5 sm:bottom-4 sm:left-5 sm:right-5 sm:h-5">
             {photos.map((src, i) => (
               <span
                 key={src}
