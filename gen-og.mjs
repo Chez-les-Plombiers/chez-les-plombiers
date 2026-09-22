@@ -66,11 +66,18 @@ const GRIS = "#6E6A64";
  * ne se lit plus comme les leurs.
  */
 const VISUELS = [
-  {
-    fichier: "defaut",
-    photo: "public/photos/lieu/atelier-kv.jpg",
-    lignes: ["Chez les Plombiers", "Trois lieux — 39 rue des Bourdonnais", "Paris 1er"],
-  },
+  /*
+   * ⚠️ `defaut.jpg` N'EST PLUS FABRIQUÉ ICI — NE PAS LE REMETTRE DANS CETTE
+   * LISTE. Il l'était, au bandeau blanc comme les autres ; depuis le
+   * 22/09/2026 c'est le triptyque d'Inès, et il a son propre script,
+   * `gen-vignette.mjs`. Les deux écrivent dans `public/og/` : rajouter une
+   * entrée « defaut » ici écraserait silencieusement le triptyque au prochain
+   * passage, sans message d'erreur, et personne ne ferait le lien.
+   *
+   * Les visuels ci-dessous restent au bandeau : ils montrent UN lieu, et le
+   * bandeau porte sa surface et sa situation. Le triptyque, lui, en montre
+   * trois — il n'a pas de surface unique à annoncer.
+   */
   {
     fichier: "atelier",
     photo: "public/photos/lieu/atelier-kv.jpg",

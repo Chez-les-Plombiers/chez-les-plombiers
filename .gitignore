@@ -47,3 +47,6 @@ next-env.d.ts
 # commits antérieurs. Le dossier n'existe que le temps qu'Étienne confirme
 # qu'on n'y revient pas — après quoi il se supprime sans rien perdre.
 .archive-ancien-site/
+
+# Les essais de vignette de partage — voir gen-vignette.mjs
+.vignettes/
