@@ -198,7 +198,11 @@ export function Corps({ children }: { children: React.ReactNode }) {
  *
  * ── DEUX BARRES, ET LA DIFFÉRENCE EST UNE DÉCISION ────────────────────────
  *
- * Sur GRAND ÉCRAN : le logo et trois actions — Tarifs, Visiter, WhatsApp.
+ * Sur GRAND ÉCRAN : le logo et trois entrées — Tarifs, Visites, WhatsApp.
+ *
+ * ⚠️ TROIS NOMS, AUCUN VERBE. C'était « Visiter » entre deux substantifs.
+ * Étienne, 22/09/2026 : « comme ça il n'y a pas de verbe ». Un verbe au
+ * milieu de noms se lit comme un ordre, et déséquilibre la série.
  *
  * Sur TÉLÉPHONE : le logo et LE NUMÉRO, rien d'autre.
  *
@@ -219,7 +223,7 @@ export function Corps({ children }: { children: React.ReactNode }) {
  * WhatsApp ». WhatsApp reste partout ailleurs — le pied de page, `/infos`,
  * `/visiter` — et sur grand écran.
  *
- * Tarifs et Visiter ne disparaissent pas : ils sont dans le sommaire de la
+ * Tarifs et Visites ne disparaissent pas : ils sont dans le sommaire de la
  * page et dans le pied.
  */
 export function Barre({ lieu }: { lieu?: string }) {
@@ -266,7 +270,7 @@ export function Barre({ lieu }: { lieu?: string }) {
             href={lien("/visiter")}
             className={`${BORD} px-4 py-2.5 font-clp text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-[var(--clp-accent)] hover:text-[var(--clp-accent)]`}
           >
-            Visiter
+            Visites
           </a>
           <a
             href={WHATSAPP}

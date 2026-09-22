@@ -5,7 +5,7 @@ import { CADRE } from "./chrome";
 import { ScanFacade } from "./ScanFacade";
 
 /**
- * « Regardez les trois lieux » — un bouton, et la façade en plein écran.
+ * « Visualiser les 3 lieux » — un bouton, et la façade en plein écran.
  *
  * ── POURQUOI UN BOUTON ET PAS UN BLOC ─────────────────────────────────────
  *
@@ -26,10 +26,12 @@ import { ScanFacade } from "./ScanFacade";
  *    est grande, les étiquettes lisibles, et c'est identique sur les deux
  *    formats — la difficulté disparaît au lieu d'être arbitrée.
  *
- * ⚠️ « Regardez les trois lieux », et pas « Où sont les trois lieux ? » que
- * j'avais proposé. Étienne : « où sont, c'est pas assez précis. Regardez, ça
- * intrigue. » Il a raison : une question appelle une réponse, un impératif
- * appelle un geste — et c'est un geste qu'on attend ici.
+ * ⚠️ TROISIÈME FORMULATION, ET LE CHIFFRE EN CHIFFRES. J'avais proposé « Où
+ * sont les trois lieux ? » — Étienne : « pas assez précis ». Puis « Regardez »
+ * — trop mou. « Visualiser » dit ce qui va se passer : une image va s'ouvrir.
+ *
+ * Et « 3 » et non « trois », comme dans le titre juste à côté. Le chiffre se
+ * remarque, le mot se lit — or c'est le nombre qui est l'argument.
  */
 export function BoutonFacade() {
   const [ouvert, setOuvert] = useState(false);
@@ -62,7 +64,7 @@ export function BoutonFacade() {
         */
         className={`${CADRE} px-4 py-2.5 font-mono text-[12px] text-[#C9C4BC] transition-colors hover:border-[var(--clp-accent)] hover:text-[#E8E4DC]`}
       >
-        Regardez les trois lieux
+        Visualiser les 3 lieux
       </button>
 
       {ouvert && (

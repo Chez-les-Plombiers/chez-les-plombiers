@@ -143,7 +143,7 @@ function Ouverture() {
             cassait en deux.
           */}
           <p className="mt-3 text-[14px] leading-relaxed text-[#A8A29A]">
-            Trois espaces à la même adresse.
+            3 espaces à la même adresse.
             <br />
             Showrooms, lancements presse, dîners privés, défilés, expositions, etc.
           </p>
