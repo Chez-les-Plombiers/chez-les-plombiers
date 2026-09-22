@@ -205,17 +205,15 @@ ravie qu'on montre son expo.
 | `05. EVENT CULTUREL — YANN` | HEIC + .mov | ⏳ Étienne doit le déposer |
 | `06. PETITS DEJ` | vide | — |
 
-## ⚠️ À vérifier — des photos qui ne sont peut-être pas chez nous
+## Les vues de rue de l'album Litkovska — fausse alerte (22/09/2026)
 
-En montant la planche PFW, j'ai remarqué que **l'album Défilé Litkovska, déjà
-en ligne**, contient une douzaine de vues de rue : du street style devant des
-devantures, et des premiers rangs dans une salle claire à bancs blancs qui ne
-ressemble pas à L'Atelier. L'une d'elles montre des enseignes italiennes
-(« PIZZA », « Confetteria Pasticceria ») — donc pas Paris.
+J'avais signalé une douzaine de photos de rue comme « probablement pas chez
+nous », dont une avec une enseigne « PIZZA » que je prenais pour Milan.
 
-Ce sont probablement des enregistrements Instagram faits pendant la Fashion
-Week. Belles images, mais montrer la salle d'un autre comme si c'était la
-nôtre, dans un milieu où les agences connaissent les lieux, se verrait.
+**C'est faux, et Étienne a tranché : la pizzeria est en face du 39.** Ces vues
+montrent les invités qui arrivent au défilé — et c'est justement ce qu'il faut
+garder : « ça montre qu'il y a beaucoup de monde ».
 
-⚠️ Je juge sur un plafond et une enseigne — Étienne était sur place. À trancher
-par lui, pas par moi.
+⚠️ La leçon vaut pour la suite : je juge un lieu sur un plafond et une
+enseigne, depuis un bureau. Signaler un doute est utile ; le présenter comme
+un constat ne l'est pas. Étienne était sur place.

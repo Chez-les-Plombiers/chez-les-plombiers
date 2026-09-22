@@ -184,6 +184,15 @@ export const EVENEMENTS: readonly Evenement[] = [
   { slug: "25-diners-selection", nom: "Dîners — sélection retrouvée", categorie: "diners" },
   { slug: "26-pfw-defiles", nom: "Paris Fashion Week — défilés", categorie: "defiles" },
   /*
+   * L'exposition de Caroline FAINDT — peintre, une clé en métal dissimulée
+   * dans chaque toile. Étienne lui a prêté le lieu gracieusement et elle est
+   * ravie qu'on montre son travail : la question des droits, qui se poserait
+   * pour n'importe quelle œuvre exposée, est réglée par elle.
+   *
+   * ⚠️ Ne pas écrire « Caroline Fin », que la dictée entend.
+   */
+  { slug: "27-caroline-faindt", nom: "Exposition Caroline Faindt", categorie: "expositions" },
+  /*
    * Retrouvé par Étienne sur son téléphone le 21/09/2026. Photos en pleine
    * résolution iPhone (2268 × 4032) ET vidéos — les premières vidéos destinées
    * à la photothèque. Archivé dans `PHOTOS/EVENTS/23. VOITURES — TELEPHONE`.
