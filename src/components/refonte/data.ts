@@ -75,7 +75,7 @@ export const ESPACES = [
      * chiffre commercial. Étienne : « au-delà de 150 c'est trop ».
      * Le reste du site dit encore 200 par endroits : à aligner à la bascule.
      */
-    meta: "200 m² · 150 pax · dans la cour",
+    meta: "200 m² · 150 pax · dans la cour",
     prix: "1 000 à 4 000 €",
     /*
      * La première est le plan large au canapé rose et au coffre-fort du fond —
@@ -101,7 +101,7 @@ export const ESPACES = [
   {
     slug: "boutique",
     nom: "La Boutique",
-    meta: "45 m² · vitrine sur rue",
+    meta: "45 m² · vitrine sur rue",
     prix: "1 000 €",
     /*
      * Choix d'Étienne sur la planche contact : B06, B03, B01 — puis, en les
@@ -137,7 +137,7 @@ export const ESPACES = [
      * peut y monter par un escalier ». C'est vrai, mais ça se dit ailleurs, en
      * même temps que « on passe par la cour ».
      */
-    meta: "100 m² · au premier étage",
+    meta: "100 m² · au premier étage",
     prix: "1 000 à 2 000 €",
     /*
      * La pièce rose reste en couverture — Étienne l'avait choisie
@@ -210,16 +210,16 @@ export const FAITS = [
   },
   { valeur: "800 kg/m²", detail: "Sol renforcé au double de la norme, pour que la voiture puisse rester.", fort: false },
   { valeur: "4,63 m", detail: "Largeur de projection en une seule image, sur le mur courbe.", fort: false },
-  { valeur: "36 kVA", detail: "Triphasé, de quoi alimenter une scénographie complète — ou recharger un véhicule électrique.", fort: false },
+  { valeur: "36 kVA", detail: "Triphasé, de quoi alimenter une scénographie complète — ou recharger un véhicule électrique.", fort: false },
   { valeur: "Déchargement par l'impasse", detail: "Une seconde porte sur l'impasse des Bourdonnais, pour le mobilier et la technique.", fort: false },
-  { valeur: "200 m² + 100 m²", detail: "La surface d'événement, et le sous-sol qui va avec : stockage ou backstage.", fort: false },
+  { valeur: "200 m² + 100 m²", detail: "La surface d'événement, et le sous-sol qui va avec : stockage ou backstage.", fort: false },
   { valeur: "Ménage et régisseur", detail: "Compris dans le tarif, jamais en supplément.", fort: false },
   /*
    * ⚠️ À dire, justement parce que ça ne se devine pas. Étienne : « j'ai peur
    * que les gens se disent, est-ce qu'il y a un escalier entre les deux ? Il
    * faut dire qu'on est obligé de passer par la cour à chaque fois. »
    */
-  { valeur: "On passe par la cour", detail: "Les trois espaces ne communiquent pas entre eux : on ressort et on traverse la cour pour aller de l'un à l'autre.", fort: false },
+  { valeur: "On passe par la cour", detail: "Les trois espaces ne communiquent pas entre eux : on ressort et on traverse la cour pour aller de l'un à l'autre.", fort: false },
 ] as const;
 
 /**
@@ -350,8 +350,8 @@ export const ATELIER = {
      * c'est la règle typographique française, et il empêche le « : » de tomber
      * seul en début de ligne, ce qui arrivait sur téléphone.
      */
-    "Un garage de plombiers des années 1970, dans un immeuble du 17e siècle, entièrement reconverti. 200 m² au fond d'une cour\u00A0: murs bruts, poutres Eiffel, sol blanc en résine époxy.",
-    "En plein cœur de Paris, à 100 m de la Samaritaine et à deux minutes à pied de Châtelet-Les Halles — RER A, B, D et métros 1, 4, 7, 11, 14.",
+    "Un garage de plombiers des années 1970, dans un immeuble du 17e siècle, entièrement reconverti. 200 m² au fond d'une cour\u00A0: murs bruts, poutres Eiffel, sol blanc en résine époxy.",
+    "En plein cœur de Paris, à 100 m de la Samaritaine et à deux minutes à pied de Châtelet-Les Halles — RER A, B, D et métros 1, 4, 7, 11, 14.",
   ] as const,
 
   /** Les quatre nombres qu'on cherche en premier. Une bande, pas une grille. */
@@ -389,10 +389,10 @@ export const ATELIER = {
     {
       titre: "L'espace",
       lignes: [
-        ["Volume", "200 m² de plain-pied, 4,50 m sous plafond"],
+        ["Volume", "200 m² de plain-pied, 4,50 m sous plafond"],
         ["Capacité", "150 pax debout · 80 assis · 60 à table"],
-        ["Rideaux", "Ils segmentent l'espace : l'ouvrir en grand, le délimiter, le rendre plus intime"],
-        ["Sous-sol", "100 m² de stockage, ou de backstage"],
+        ["Rideaux", "Ils segmentent l'espace : l'ouvrir en grand, le délimiter, le rendre plus intime"],
+        ["Sous-sol", "100 m² de stockage, ou de backstage"],
       ],
     },
     {
@@ -403,7 +403,7 @@ export const ATELIER = {
          * projetée fait 4,53 × 2,55 m en 16:9. On confondait les deux depuis
          * le début — corrigé sur la page Notion « FR — INFOS GÉNÉRALES ».
          */
-        ["Projection", "4,53 m de large × 2,55 m de haut, en 16:9, sur le mur cyclo"],
+        ["Projection", "4,53 m de large × 2,55 m de haut, en 16:9, sur le mur cyclo"],
         ["Sources", "Apple TV intégrée, ou une prise HDMI murale depuis le coin régie"],
       ],
     },
@@ -425,7 +425,7 @@ export const ATELIER = {
     {
       titre: "Le mobilier",
       lignes: [
-        ["Le canapé", "Un Pierre Paulin de 5,60 m, orientable en S, en U ou droit"],
+        ["Le canapé", "Un Pierre Paulin de 5,60 m, orientable en S, en U ou droit"],
         ["L'entrée", "Quatre fauteuils Pangea et une table basse"],
         ["En plus", "Une table roulante, et des tables et chaises sur demande"],
         /* ⚠️ Le dire évite la question, et évite surtout la déception le jour
@@ -436,14 +436,14 @@ export const ATELIER = {
     {
       titre: "Les cuisines",
       lignes: [
-        ["La grande", "En U : frigo-congélateur, machine à glaçons, four, lave-verres professionnel"],
-        ["La petite", "En face, tout en longueur : micro-ondes et machine à café Jura à grains"],
+        ["La grande", "En U : frigo-congélateur, machine à glaçons, four, lave-verres professionnel"],
+        ["La petite", "En face, tout en longueur : micro-ondes et machine à café Jura à grains"],
       ],
     },
     {
       titre: "Le sol",
       lignes: [
-        ["Charge utile", "800 kg/m² — une voiture peut rester"],
+        ["Charge utile", "800 kg/m² — une voiture peut rester"],
         ["Revêtement", "Résine époxy blanche"],
       ],
     },
@@ -464,7 +464,7 @@ export const ATELIER = {
   acces: [
     [
       "Une voiture peut entrer",
-      "Accès direct depuis la rue, de plain-pied, sans marche ni seuil. Le Porsche Cayenne électrique a été présenté à l'intérieur, et le sol tient 800 kg/m² : elle peut rester.",
+      "Accès direct depuis la rue, de plain-pied, sans marche ni seuil. Le Porsche Cayenne électrique a été présenté à l'intérieur, et le sol tient 800 kg/m² : elle peut rester.",
     ],
     [
       "Une porte, trois battants",
@@ -472,17 +472,17 @@ export const ATELIER = {
     ],
     [
       "Déchargement par l'impasse",
-      "Une seconde porte donne sur l'impasse des Bourdonnais : le mobilier et la technique n'ont pas à traverser la cour.",
+      "Une seconde porte donne sur l'impasse des Bourdonnais : le mobilier et la technique n'ont pas à traverser la cour.",
     ],
     [
       "On passe par la cour",
-      "L'Atelier, La Boutique et L'Appartement ne communiquent pas entre eux : il n'y a pas d'escalier intérieur. Pour aller de l'un à l'autre, on ressort et on traverse la cour.",
+      "L'Atelier, La Boutique et L'Appartement ne communiquent pas entre eux : il n'y a pas d'escalier intérieur. Pour aller de l'un à l'autre, on ressort et on traverse la cour.",
     ],
   ] as const,
 
   suite: [
     { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger par l'impasse, les horaires", pret: true },
-        { href: "/atelier/technique", titre: "Fiche technique", detail: "Le détail : modèles, connectique, puissances", pret: false },
+        { href: "/atelier/technique", titre: "Fiche technique", detail: "Le détail : modèles, connectique, puissances", pret: false },
     { href: "/tarifs", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
   ] as const,
 } as const;
@@ -498,8 +498,8 @@ export const BOUTIQUE = {
   slug: "boutique",
   nom: "La Boutique",
   intro: [
-    "Quarante-cinq mètres carrés sur la rue, sous l'enseigne « Couverture Plomberie » d'origine — celle qui a donné son nom au lieu. On y entre directement depuis le trottoir, sans passer par la cour.",
-    "C'est le format d'un pop-up, d'un showroom de presse ou d'une vitrine de lancement : petit, visible de la rue, et au même endroit que les deux autres espaces.",
+    "Quarante-cinq mètres carrés sur la rue, sous l'enseigne « Couverture Plomberie » d'origine — celle qui a donné son nom au lieu. On y entre directement depuis le trottoir, sans passer par la cour.",
+    "C'est le format d'un pop-up, d'un showroom de presse ou d'une vitrine de lancement : petit, visible de la rue, et au même endroit que les deux autres espaces.",
   ] as const,
   enBref: [
     ["Surface", "45 m²"],
@@ -510,7 +510,7 @@ export const BOUTIQUE = {
     {
       titre: "L'espace",
       lignes: [
-        ["Surface", "45 m² en vitrine sur la rue des Bourdonnais"],
+        ["Surface", "45 m² en vitrine sur la rue des Bourdonnais"],
         ["Bar", "Un comptoir qui fait bar ou desk d'accueil"],
         ["Accrochage", "Des crochets répartis sur tous les murs"],
       ],
@@ -551,8 +551,8 @@ export const APPARTEMENT = {
   slug: "appartement",
   nom: "L'Appartement",
   intro: [
-    "Cent mètres carrés au premier étage, d'anciens bureaux devenus un appartement : parquet clair, mobilier chiné, rideaux blancs qui segmentent l'espace, et plusieurs pièces dont une entièrement rose.",
-    "Il se loue seul — pour un dîner, une réunion, une prise de vue — ou en coulisses d'un événement qui se tient à L'Atelier. Attention : on y monte par l'escalier de l'immeuble, depuis la cour. Il n'y a pas de passage intérieur entre les deux.",
+    "Cent mètres carrés au premier étage, d'anciens bureaux devenus un appartement : parquet clair, mobilier chiné, rideaux blancs qui segmentent l'espace, et plusieurs pièces dont une entièrement rose.",
+    "Il se loue seul — pour un dîner, une réunion, une prise de vue — ou en coulisses d'un événement qui se tient à L'Atelier. Attention : on y monte par l'escalier de l'immeuble, depuis la cour. Il n'y a pas de passage intérieur entre les deux.",
   ] as const,
   enBref: [
     ["Surface", "100 m²"],

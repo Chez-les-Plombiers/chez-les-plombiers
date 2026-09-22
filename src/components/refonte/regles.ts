@@ -67,7 +67,7 @@ export interface MomentRegles {
  * désormais comme chapô de la section « En partant », à sa place.
  */
 export const PRINCIPE =
-  "Nous vous remettons le lieu rangé et propre, et nous vous remercions de nous le rendre dans le même état : notre équipe de ménage nettoie, mais elle ne range pas.";
+  "Nous vous remettons le lieu rangé et propre, et nous vous remercions de nous le rendre dans le même état : notre équipe de ménage nettoie, mais elle ne range pas.";
 
 export const MOMENTS: readonly MomentRegles[] = [
   {
@@ -117,7 +117,7 @@ export const MOMENTS: readonly MomentRegles[] = [
       {
         titre: "Un avis de virement ne vaut pas paiement",
         texte:
-          "La confusion est fréquente, et bien compréhensible : un avis de virement atteste d'un ordre donné, parfois programmé à plusieurs semaines. Seul le crédit effectif sur notre compte confirme la réservation.",
+          "La confusion est fréquente, et bien compréhensible : un avis de virement atteste d'un ordre donné, parfois programmé à plusieurs semaines. Seul le crédit effectif sur notre compte confirme la réservation.",
       },
       {
         /*
@@ -138,7 +138,7 @@ export const MOMENTS: readonly MomentRegles[] = [
         titre: "Le dépôt de garantie doit être reçu 48 heures avant l'arrivée dans les lieux",
         texte:
           "Un virement peut mettre plusieurs jours à arriver, et nous avons besoin de ce dépôt avant votre entrée dans les lieux.\n\n" +
-          "Il se règle uniquement par virement bancaire : ni carte, ni empreinte bancaire — les frais en sont trop élevés —, ni chèque.\n\n" +
+          "Il se règle uniquement par virement bancaire : ni carte, ni empreinte bancaire — les frais en sont trop élevés —, ni chèque.\n\n" +
           "Il vous est restitué sous huit jours au plus tard, sous réserve qu'aucune dégradation n'ait été constatée.",
       },
     ],
@@ -156,7 +156,7 @@ export const MOMENTS: readonly MomentRegles[] = [
           /* ⚠️ La COUR d'abord : c'est le meilleur accès, un 20 m³ y recule.
              L'impasse paraît plus évidente et l'est moins — voir la note
              dans `data-infos.ts`. */
-          "La cour est le meilleur accès : on y recule, y compris avec un 20 m³, le temps du déchargement. Elle est partagée avec les autres copropriétaires et ne peut donc pas accueillir un véhicule à l'arrêt toute la journée. L'impasse des Bourdonnais convient également, pour un véhicule plus petit.\n\n" +
+          "La cour est le meilleur accès : on y recule, y compris avec un 20 m³, le temps du déchargement. Elle est partagée avec les autres copropriétaires et ne peut donc pas accueillir un véhicule à l'arrêt toute la journée. L'impasse des Bourdonnais convient également, pour un véhicule plus petit.\n\n" +
           "Des places de livraison se trouvent juste en face du 39, et plusieurs parkings sont à quelques minutes.",
       },
       {
@@ -167,18 +167,18 @@ export const MOMENTS: readonly MomentRegles[] = [
       {
         titre: "Nous présenter vos prestataires",
         texte:
-          "Traiteur, technique, sécurité, fleuriste : leurs noms et leurs horaires nous permettent de leur ouvrir sans avoir à vous appeler le jour même.",
+          "Traiteur, technique, sécurité, fleuriste : leurs noms et leurs horaires nous permettent de leur ouvrir sans avoir à vous appeler le jour même.",
       },
       {
         titre: "Prévoir les agents de sécurité",
         texte:
           "Un agent est requis à partir de 30 invités, et deux à partir de 60. Ils sont à votre charge et se réservent en amont.\n\n" +
-          "Nous vous recommandons vivement de passer par l'équipe avec laquelle nous travaillons : elle connaît la cour, les portes et le voisinage, et c'est ce qui fait la différence un soir d'affluence. Nous vous mettons en relation avec plaisir.",
+          "Nous vous recommandons vivement de passer par l'équipe avec laquelle nous travaillons : elle connaît la cour, les portes et le voisinage, et c'est ce qui fait la différence un soir d'affluence. Nous vous mettons en relation avec plaisir.",
       },
       {
         titre: "Un agent dans la cour si vous louez plusieurs espaces",
         texte:
-          "Dès que deux ou trois de nos espaces sont réservés ensemble, un agent supplémentaire devient nécessaire dans la cour : il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble.\n\n" +
+          "Dès que deux ou trois de nos espaces sont réservés ensemble, un agent supplémentaire devient nécessaire dans la cour : il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble.\n\n" +
           "Il s'ajoute à ceux que votre nombre d'invités impose déjà. La cour dessert des logements, et c'est ce qui nous permet de continuer à y recevoir.",
       },
     ],
@@ -192,12 +192,12 @@ export const MOMENTS: readonly MomentRegles[] = [
       {
         titre: "La musique s'arrête à 23h",
         texte:
-          "Sans exception, nous en sommes désolés. Nos enceintes ont été calibrées pour le lieu, certaines fréquences ayant été atténuées pour le voisinage : nous vous demandons de ne pas ajouter d'enceintes, en particulier de caissons de basses, car c'est ce réglage qui nous permet de jouer jusqu'à 23h.",
+          "Sans exception, nous en sommes désolés. Nos enceintes ont été calibrées pour le lieu, certaines fréquences ayant été atténuées pour le voisinage : nous vous demandons de ne pas ajouter d'enceintes, en particulier de caissons de basses, car c'est ce réglage qui nous permet de jouer jusqu'à 23h.",
       },
       {
         titre: "La cour reste fumeurs jusqu'à 22h",
         texte:
-          "Au-delà, nous invitons vos fumeurs à rejoindre la voie publique. Et parce que la cour dessert deux entrées d'immeuble, merci de n'en occuper que la moitié : les habitants doivent pouvoir passer à tout moment.",
+          "Au-delà, nous invitons vos fumeurs à rejoindre la voie publique. Et parce que la cour dessert deux entrées d'immeuble, merci de n'en occuper que la moitié : les habitants doivent pouvoir passer à tout moment.",
       },
       {
         titre: "Le lieu est vidé à minuit",
@@ -222,7 +222,7 @@ export const MOMENTS: readonly MomentRegles[] = [
       {
         titre: "Nous signaler tout incident sur le moment",
         texte:
-          "Un dommage annoncé se règle simplement ; découvert à l'état des lieux, il se discute mal. Cela vaut aussi pour ce qui ne se voit pas — une prise qui ne répond plus, une fuite.",
+          "Un dommage annoncé se règle simplement ; découvert à l'état des lieux, il se discute mal. Cela vaut aussi pour ce qui ne se voit pas — une prise qui ne répond plus, une fuite.",
       },
     ],
   },
@@ -239,14 +239,14 @@ export const MOMENTS: readonly MomentRegles[] = [
       {
         titre: "Trier les déchets",
         texte:
-          "Trois poubelles vous attendent dans la cuisine de jour, côté machine à café : verre, jaune pour le plastique, le papier et le métal, et tout-venant.\n\n" +
+          "Trois poubelles vous attendent dans la cuisine de jour, côté machine à café : verre, jaune pour le plastique, le papier et le métal, et tout-venant.\n\n" +
           "Les grandes, celles qui reçoivent les sacs pleins, sont derrière les rideaux. La collecte de l'immeuble refuse les sacs mal triés.",
       },
       {
         titre: "Replacer le mobilier",
         texte:
           "Le canapé, les fauteuils, les tables et les portants reviennent exactement à leur place, dans leur disposition d'origine — le canapé retrouve sa courbe —, et les rideaux se replient ouverts.\n\n" +
-          "Si vous préférez ne pas vous en charger, nous nous en occupons pour un forfait de 250 € HT : merci de nous le dire en amont, nous l'organisons volontiers.\n\n" +
+          "Si vous préférez ne pas vous en charger, nous nous en occupons pour un forfait de 250 € HT : merci de nous le dire en amont, nous l'organisons volontiers.\n\n" +
           "À défaut, et si le mobilier n'était pas remis en place, nous ferions intervenir notre équipe et ce même forfait serait retenu sur le dépôt de garantie.",
       },
       {
@@ -259,7 +259,7 @@ export const MOMENTS: readonly MomentRegles[] = [
         titre: "Rendre les clés à la boîte",
         texte:
           "Avec le même code que la grille et le sous-sol, celui que nous vous aurons transmis par message avant votre date.\n\n" +
-          "Et à chaque sortie, y compris sur un événement de plusieurs jours : la clé reste dans la boîte, elle ne quitte jamais le 39. Il n'y en a qu'une pour tous les prestataires, et le lendemain matin quelqu'un en aura besoin.",
+          "Et à chaque sortie, y compris sur un événement de plusieurs jours : la clé reste dans la boîte, elle ne quitte jamais le 39. Il n'y en a qu'une pour tous les prestataires, et le lendemain matin quelqu'un en aura besoin.",
       },
     ],
   },

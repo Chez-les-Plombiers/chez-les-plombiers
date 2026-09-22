@@ -94,14 +94,14 @@ export function RefonteVisiter() {
                     plutôt que « nous n'acceptons pas ». Le fait est le même,
                     la porte n'est pas claquée au nez de qui la pousse. */}
                 Les visites sont réservées aux professionnels — marques, agences,
-                entreprises. Nous ne recevons pas d&apos;événements privés : ni
+                entreprises. Nous ne recevons pas d&apos;événements privés : ni
                 anniversaires, ni mariages, ni fêtes familiales.
               </p>
             </div>
 
             <div className="mt-6 border-t border-[var(--clp-bord)] pt-4">
               <p className="text-[13px] leading-relaxed text-[#8A8A8A]">
-                Vous préférez écrire ? WhatsApp répond en quelques minutes.
+                Vous préférez écrire ? WhatsApp répond en quelques minutes.
               </p>
               <a
                 href="https://wa.me/33761471073"
@@ -132,7 +132,7 @@ export function RefonteVisiter() {
 
         {/* Le filet : si l'intégration est bloquée, la visite reste réservable. */}
         <p className="mt-4 px-1 text-[12px] text-[#5E5E5E]">
-          Le calendrier ne s&apos;affiche pas ?{" "}
+          Le calendrier ne s&apos;affiche pas ?{" "}
           <a
             href="https://calendly.com/chezlesplombiers/visite"
             target="_blank"

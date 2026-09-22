@@ -83,15 +83,15 @@ export const SECTIONS: readonly Section[] = [
     titre: "Trouver l'entrée",
     texte: [
       "L'adresse est le 39 rue des Bourdonnais, dans le 1er arrondissement, à trois minutes du Pont Neuf et à cent mètres de la Samaritaine.",
-      "La rue donne sur une porte cochère. On la franchit, on traverse la cour, et L'Atelier est au fond, sur la droite. La Boutique, elle, est directement sur la rue, sous l'enseigne « Couverture Plomberie » d'origine — on ne passe pas par la cour pour y entrer.",
+      "La rue donne sur une porte cochère. On la franchit, on traverse la cour, et L'Atelier est au fond, sur la droite. La Boutique, elle, est directement sur la rue, sous l'enseigne « Couverture Plomberie » d'origine — on ne passe pas par la cour pour y entrer.",
       "Les codes d'accès — la grille, la boîte à clés, le sous-sol — changent chaque semaine. Ils vous sont envoyés par WhatsApp avant votre date, et ne sont jamais publiés ici.",
     ],
     photos: [
       {
         src: "/photos/acces/rue.jpg",
-        alt: "Le 39 rue des Bourdonnais : la grille ouverte sur la cour, et la vitrine de La Boutique",
+        alt: "Le 39 rue des Bourdonnais : la grille ouverte sur la cour, et la vitrine de La Boutique",
         legende:
-          "Depuis la rue. La grille du 39 est ouverte : on voit le passage, la cour, et tout au fond l'entrée de L'Atelier. À droite, la vitrine de La Boutique.",
+          "Depuis la rue. La grille du 39 est ouverte : on voit le passage, la cour, et tout au fond l'entrée de L'Atelier. À droite, la vitrine de La Boutique.",
       },
       {
         src: "/photos/acces/cour.jpg",
@@ -104,12 +104,12 @@ export const SECTIONS: readonly Section[] = [
     id: "venir",
     titre: "Venir",
     texte: [
-      "C'est l'un des points les mieux desservis de Paris : cinq lignes de métro et trois RER à moins de cinq minutes à pied.",
+      "C'est l'un des points les mieux desservis de Paris : cinq lignes de métro et trois RER à moins de cinq minutes à pied.",
     ],
     faits: [
       ["Métro Châtelet — 3 min", "Lignes 1, 4, 7, 11 et 14. Sortie Rivoli ou Sainte-Opportune."],
       ["RER Châtelet-Les Halles — 5 min", "RER A, B et D, depuis Roissy, Orly, La Défense et toutes les gares parisiennes."],
-      ["Depuis les aéroports", "Roissy CDG : 35 min en RER B direct. Orly : 30 min via Orlyval puis RER B. Le Bourget : 40 min."],
+      ["Depuis les aéroports", "Roissy CDG : 35 min en RER B direct. Orly : 30 min via Orlyval puis RER B. Le Bourget : 40 min."],
       /*
        * ⚠️ TROIS PARKINGS, ET SURTOUT LEURS HAUTEURS. Étienne, 22/09/2026 :
        * « il y en a plusieurs à côté, il y en a plus qu'on pense ». La hauteur
@@ -134,23 +134,23 @@ export const SECTIONS: readonly Section[] = [
        */
       [
         "Se garer — Les Halles-Saint-Eustache",
-        "22 rue des Halles, à 2 min à pied. Ouvert 24h/24, hauteur maximale 1,85 m (SAEMES).",
+        "22 rue des Halles, à 2 min à pied. Ouvert 24h/24, hauteur maximale 1,85 m (SAEMES).",
       ],
       [
         "Se garer — Rivoli Pont-Neuf / Samaritaine",
-        "2 rue Boucher, à 3 min à pied. Ouvert 24h/24, hauteur maximale 1,90 m, 387 places (Q-Park). Y stationner ouvre automatiquement l'accès à la zone à trafic limité des quatre premiers arrondissements.",
+        "2 rue Boucher, à 3 min à pied. Ouvert 24h/24, hauteur maximale 1,90 m, 387 places (Q-Park). Y stationner ouvre automatiquement l'accès à la zone à trafic limité des quatre premiers arrondissements.",
       ],
       [
         "Se garer — Halles Garage",
-        "10 rue Bailleul, à 6 min à pied. Ouvert 24h/24, hauteur maximale 1,90 m. Le moins cher du quartier — 35 € les 24 heures contre 45 € ailleurs — et il y a un voiturier : 01 42 60 36 24.",
+        "10 rue Bailleul, à 6 min à pied. Ouvert 24h/24, hauteur maximale 1,90 m. Le moins cher du quartier — 35 € les 24 heures contre 45 € ailleurs — et il y a un voiturier : 01 42 60 36 24.",
       ],
       [
         "Se garer — Forum des Halles",
-        "12 rue de Turbigo, à 7 min à pied. Ouvert 24h/24, hauteur maximale 1,90 m (Indigo).",
+        "12 rue de Turbigo, à 7 min à pied. Ouvert 24h/24, hauteur maximale 1,90 m (Indigo).",
       ],
       [
         "Un utilitaire haut ne descend pas",
-        "Aucun de ces parkings n'accepte plus de 1,90 m — nous les avons vérifiés un par un. Au-delà, il faut une place de livraison en surface, et il y en a juste en face du 39.",
+        "Aucun de ces parkings n'accepte plus de 1,90 m — nous les avons vérifiés un par un. Au-delà, il faut une place de livraison en surface, et il y en a juste en face du 39.",
       ],
       ["Accessibilité", "L'entrée de L'Atelier est de plain-pied depuis la rue, et l'espace est entièrement accessible. WC PMR."],
       ["Stationnement de surface", "Payant du lundi au samedi, de 9h à 20h."],
@@ -162,8 +162,8 @@ export const SECTIONS: readonly Section[] = [
     titre: "Livrer et décharger",
     texte: [
       "L'Atelier a deux portes, et c'est ce qui rend les installations simples.",
-      "La première donne sur la cour : c'est l'entrée. Elle compte trois battants — on n'en ouvre qu'un pour entrer, mais ouvrir les trois élargit le passage pour un décor, une scénographie ou un véhicule.",
-      "La seconde donne sur l'impasse des Bourdonnais. C'est par là que passent le mobilier et la technique : ils n'ont pas à traverser la cour.",
+      "La première donne sur la cour : c'est l'entrée. Elle compte trois battants — on n'en ouvre qu'un pour entrer, mais ouvrir les trois élargit le passage pour un décor, une scénographie ou un véhicule.",
+      "La seconde donne sur l'impasse des Bourdonnais. C'est par là que passent le mobilier et la technique : ils n'ont pas à traverser la cour.",
     ],
     /*
      * ⚠️ Cotes relevées dans la page Notion « FR — INFOS GÉNÉRALES », qui est
@@ -171,8 +171,8 @@ export const SECTIONS: readonly Section[] = [
      * scénographie se dessine dessus.
      */
     faits: [
-      ["Porte principale", "2,19 m de large × 3,66 m de haut, sur la cour."],
-      ["Porte de l'impasse", "1,60 m × 2,39 m, deux vantaux de 0,80 m."],
+      ["Porte principale", "2,19 m de large × 3,66 m de haut, sur la cour."],
+      ["Porte de l'impasse", "1,60 m × 2,39 m, deux vantaux de 0,80 m."],
       /*
        * ⚠️ CORRIGÉ LE 22/09/2026, ET ÇA INVERSE CE QUI ÉTAIT ÉCRIT. La page
        * affirmait qu'un 20 m³ ne passait pas dans l'impasse et que la cour ne
@@ -189,7 +189,7 @@ export const SECTIONS: readonly Section[] = [
        */
       [
         "Reculer dans la cour",
-        "Oui, y compris avec un 20 m³. C'est le meilleur accès pour décharger. Le stationnement, en revanche, n'y est pas possible : la cour dessert deux entrées d'immeuble et le passage des habitants doit rester libre.",
+        "Oui, y compris avec un 20 m³. C'est le meilleur accès pour décharger. Le stationnement, en revanche, n'y est pas possible : la cour dessert deux entrées d'immeuble et le passage des habitants doit rester libre.",
       ],
       [
         "Reculer dans l'impasse",
@@ -197,20 +197,20 @@ export const SECTIONS: readonly Section[] = [
       ],
       [
         "Entrer à l'intérieur de L'Atelier",
-        "Un véhicule entre dans la salle, de plain-pied, sans marche ni seuil : les plombiers s'en servaient comme garage. Jusqu'à 2,19 m de large et 3,50 m de haut — soit une camionnette, mais pas un 20 m³.",
+        "Un véhicule entre dans la salle, de plain-pied, sans marche ni seuil : les plombiers s'en servaient comme garage. Jusqu'à 2,19 m de large et 3,50 m de haut — soit une camionnette, mais pas un 20 m³.",
       ],
       [
         "Elle peut rester",
-        "Le sol tient 800 kg/m², et le triphasé 36 kVA permet de la recharger sur place.",
+        "Le sol tient 800 kg/m², et le triphasé 36 kVA permet de la recharger sur place.",
       ],
-      ["Stockage", "100 m² en sous-sol, pour le stockage et les backstages."],
+      ["Stockage", "100 m² en sous-sol, pour le stockage et les backstages."],
     ],
     photos: [
       {
         src: "/photos/acces/porte-trois-battants.jpg",
         alt: "La porte de L'Atelier, ses trois battants grands ouverts sur la cour",
         legende:
-          "Les trois battants ouverts : 2,19 m de large, 3,66 m de haut.",
+          "Les trois battants ouverts : 2,19 m de large, 3,66 m de haut.",
       },
       {
         src: "/photos/acces/impasse.jpg",
@@ -223,8 +223,8 @@ export const SECTIONS: readonly Section[] = [
     id: "circuler",
     titre: "Circuler entre les trois lieux",
     texte: [
-      "L'Atelier, La Boutique et L'Appartement sont à la même adresse, mais ils ne communiquent pas entre eux : il n'y a pas d'escalier intérieur, pas de porte de liaison.",
-      "L'Appartement est au premier étage, mais on y accède par son propre escalier, depuis la cour. Pour aller d'un lieu à l'autre, on ressort et on traverse la cour. C'est à prévoir si vous louez deux espaces le même jour : le service, les invités et la technique font le trajet dehors.",
+      "L'Atelier, La Boutique et L'Appartement sont à la même adresse, mais ils ne communiquent pas entre eux : il n'y a pas d'escalier intérieur, pas de porte de liaison.",
+      "L'Appartement est au premier étage, mais on y accède par son propre escalier, depuis la cour. Pour aller d'un lieu à l'autre, on ressort et on traverse la cour. C'est à prévoir si vous louez deux espaces le même jour : le service, les invités et la technique font le trajet dehors.",
       "Dès que deux de nos espaces sont réservés ensemble, la présence d'un agent dans la cour devient nécessaire. Il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble.",
     ],
     photos: [
@@ -232,7 +232,7 @@ export const SECTIONS: readonly Section[] = [
         src: "/photos/acces/porte-appartement.jpg",
         alt: "La porte de l'immeuble dans la cour, avec son digicode, qui mène à L'Appartement",
         legende:
-          "Dans la cour, la porte de l'immeuble et son digicode : c'est l'escalier de L'Appartement, et il ne mène pas à L'Atelier.",
+          "Dans la cour, la porte de l'immeuble et son digicode : c'est l'escalier de L'Appartement, et il ne mène pas à L'Atelier.",
       },
     ],
   },
@@ -250,7 +250,7 @@ export const SECTIONS: readonly Section[] = [
        */
       [
         "Fumeurs dans la cour",
-        "Jusqu'à 22h ; après, sur la voie publique. Et la cour dessert deux entrées d'immeuble : dès qu'elle sert de coin fumeurs, la moitié doit rester dégagée pour le passage des habitants.",
+        "Jusqu'à 22h ; après, sur la voie publique. Et la cour dessert deux entrées d'immeuble : dès qu'elle sert de coin fumeurs, la moitié doit rester dégagée pour le passage des habitants.",
       ],
       ["Musique", "Jusqu'à 23h, sans exception."],
       ["Fin d'événement", "Vos invités auront quitté les lieux à minuit."],
@@ -280,15 +280,15 @@ export const SECTIONS: readonly Section[] = [
      * refus qui s'énonce ne s'argumente pas.
      */
     texte: [
-      "Chez les Plombiers est un lieu réservé aux professionnels. Nous accueillons les marques, les agences et les entreprises : showrooms, lancements presse, dîners de marque, défilés, expositions, séminaires.",
-      "Nous ne recevons pas d'événements privés : ni anniversaires, ni mariages, ni fêtes familiales.",
+      "Chez les Plombiers est un lieu réservé aux professionnels. Nous accueillons les marques, les agences et les entreprises : showrooms, lancements presse, dîners de marque, défilés, expositions, séminaires.",
+      "Nous ne recevons pas d'événements privés : ni anniversaires, ni mariages, ni fêtes familiales.",
     ],
   },
   {
     id: "quartier",
     titre: "Le quartier",
     texte: [
-      "Vos invités ont tout sur place : de quoi dîner avant ou après, de quoi dormir, et le Paris historique à pied.",
+      "Vos invités ont tout sur place : de quoi dîner avant ou après, de quoi dormir, et le Paris historique à pied.",
     ],
     /*
      * ⚠️ Liens vérifiés en avril 2026. Le Centre Pompidou a été retiré (fermé
@@ -335,7 +335,7 @@ export const SECTIONS: readonly Section[] = [
     id: "joindre",
     titre: "Nous joindre",
     texte: [
-      "Le plus rapide est WhatsApp : la réponse arrive en quelques minutes pendant les heures d'ouverture. Le même numéro fonctionne en appel, et l'adresse mail va au même endroit.",
+      "Le plus rapide est WhatsApp : la réponse arrive en quelques minutes pendant les heures d'ouverture. Le même numéro fonctionne en appel, et l'adresse mail va au même endroit.",
     ],
     /*
      * ⚠️ Chaque ligne est cliquable, et pas de la même façon : WhatsApp ouvre
@@ -347,7 +347,7 @@ export const SECTIONS: readonly Section[] = [
       {
         quoi: "WhatsApp",
         valeur: "+33 7 61 47 10 73",
-        detail: "Le canal le plus rapide : réponse en quelques minutes.",
+        detail: "Le canal le plus rapide : réponse en quelques minutes.",
         href: "https://wa.me/33761471073",
         externe: true,
       },

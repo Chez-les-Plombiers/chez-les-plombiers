@@ -39,7 +39,7 @@ export const PARTENAIRES: readonly Partenaire[] = [
     texte: [
       "Mathias est notre chef partenaire. Diplômé de l'École hôtelière de Lausanne, il a tenu ses propres restaurants avant de fonder HOMEMADE, avec lequel il signe les dîners, les déjeuners et les cocktails du lieu.",
       "Ce sont lui et ses équipes qui prennent en charge nos événements, et c'est également à eux que nous confions la location du mobilier. Pour ce point, écrivez à Anna — anna@homemadelab.fr — en précisant que vous venez de notre part.",
-      "Sa cuisine se pense avec l'événement plutôt qu'à côté : le menu se construit avec vous, en fonction de ce que vous organisez et du nombre de convives.",
+      "Sa cuisine se pense avec l'événement plutôt qu'à côté : le menu se construit avec vous, en fonction de ce que vous organisez et du nombre de convives.",
     ],
     liens: [
       { nom: "homemadelab.fr", url: "https://www.homemadelab.fr/" },
@@ -84,7 +84,7 @@ export const SERVICES = [
   {
     titre: "Ménage",
     texte:
-      "Le ménage de sortie est compris dans la location : nous vous remettons le lieu propre, et nous le reprenons de même.",
+      "Le ménage de sortie est compris dans la location : nous vous remettons le lieu propre, et nous le reprenons de même.",
   },
   {
     /*
@@ -95,7 +95,7 @@ export const SERVICES = [
      */
     titre: "Permanence de ménage",
     texte:
-      "Un événement se prépare souvent toute la journée : le mobilier arrive après notre passage du matin, et le montage laisse des traces. Nous pouvons prévoir une présence sur la journée, pour que le lieu soit net à l'ouverture des portes. En supplément.",
+      "Un événement se prépare souvent toute la journée : le mobilier arrive après notre passage du matin, et le montage laisse des traces. Nous pouvons prévoir une présence sur la journée, pour que le lieu soit net à l'ouverture des portes. En supplément.",
   },
   {
     /*
@@ -110,6 +110,6 @@ export const SERVICES = [
   {
     titre: "Mobilier",
     texte:
-      "Le mobilier du lieu est compris. Pour tout ce qui viendrait s'y ajouter, HOMEMADE s'en charge : écrivez à Anna, anna@homemadelab.fr, de notre part.",
+      "Le mobilier du lieu est compris. Pour tout ce qui viendrait s'y ajouter, HOMEMADE s'en charge : écrivez à Anna, anna@homemadelab.fr, de notre part.",
   },
 ] as const;

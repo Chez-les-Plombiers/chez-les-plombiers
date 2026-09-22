@@ -33,9 +33,9 @@ export const TECHNIQUE: readonly Poste[] = [
      */
     titre: "Image",
     lignes: [
-      ["Vidéoprojecteur", "Optoma ZU820T, laser, 8 800 lumens"],
-      ["Image projetée", "4,53 m de large × 2,55 m de haut, en 16:9"],
-      ["Mur cyclorama", "4,63 m de large × 3,40 m de haut, incurvé, blanc"],
+      ["Vidéoprojecteur", "Optoma ZU820T, laser, 8 800 lumens"],
+      ["Image projetée", "4,53 m de large × 2,55 m de haut, en 16:9"],
+      ["Mur cyclorama", "4,63 m de large × 3,40 m de haut, incurvé, blanc"],
       ["Source sans fil", "Apple TV intégrée — AirPlay"],
       ["Source filaire", "Une prise HDMI murale, depuis le coin régie"],
       ["Pilotage", "Trigger 12 V, télécommande filaire, RJ45, RS232"],
@@ -46,21 +46,21 @@ export const TECHNIQUE: readonly Poste[] = [
     titre: "Son",
     lignes: [
       ["Diffusion", "Sonos Port, enceintes encastrées au plafond sur tout l'espace"],
-      ["Calibrage", "Réglées pour le lieu : certaines fréquences ont été réduites pour le voisinage"],
+      ["Calibrage", "Réglées pour le lieu : certaines fréquences ont été réduites pour le voisinage"],
       ["Sources", "AirPlay, Spotify Connect, ou l'application Sonos sur l'iPad du lieu"],
       ["Votre régie", "Entrée XLR dans l'alcôve, près du mur cyclo"],
       ["Micros", "Quatre micros HF"],
       ["Réseau requis", "Le Wi-Fi du lieu — la musique et la projection passent par lui"],
     ],
     reserve:
-      "⚠️ Les enceintes de retour et les caissons de basses sont interdits : le calibrage du lieu est ce qui permet de jouer jusqu'à 23h, et une enceinte non calibrée le défait.",
+      "Nous vous demandons de ne pas ajouter d'enceintes de retour ni de caissons de basses : c'est le calibrage du lieu qui nous permet de jouer jusqu'à 23h, et une enceinte non calibrée le défait.",
   },
   {
     titre: "Lumière",
     lignes: [
       ["Pilotage", "DMX, par un boîtier CueCore 3 — on peut s'y connecter pour programmer"],
       ["Scénarios", "Cinq préréglages, et un mode libre par groupe de luminaires"],
-      ["Rails", "Compatibles projecteurs 3 allumages, DALI ou DMX ; on peut y accrocher les vôtres"],
+      ["Rails", "Compatibles projecteurs 3 allumages, DALI ou DMX ; on peut y accrocher les vôtres"],
       ["Accroche", "Un grill au plafond, avec les arrivées DMX"],
       ["Console", "Kiosc, sur l'iPad du lieu"],
     ],
@@ -68,7 +68,7 @@ export const TECHNIQUE: readonly Poste[] = [
   {
     titre: "Électricité",
     lignes: [
-      ["Puissance", "36 kVA en triphasé"],
+      ["Puissance", "36 kVA en triphasé"],
       ["Prises triphasées", "Trois, réparties dans la salle"],
       ["Prises de courant", "En périphérie et sur les poteaux, dont des prises en hauteur"],
       ["Tableau", "Dans le local technique, au fond de la salle à gauche, derrière une porte à code"],
@@ -81,7 +81,7 @@ export const TECHNIQUE: readonly Poste[] = [
     titre: "Réseau",
     lignes: [
       ["Fibre", "1 Gb/s symétrique, dédiée"],
-      ["Wi-Fi", "Entièrement configurable ; réseau invités sur demande"],
+      ["Wi-Fi", "Entièrement configurable ; réseau invités sur demande"],
       ["Filaire", "Prises RJ45 partout"],
     ],
   },
@@ -90,13 +90,29 @@ export const TECHNIQUE: readonly Poste[] = [
     lignes: [
       ["Charge au sol", "800 kg/m²"],
       ["Revêtement", "Résine époxy blanche"],
-      ["Hauteur sous plafond", "4,50 m — elle varie selon les poutres"],
+      ["Hauteur sous plafond", "4,50 m — elle varie selon les poutres"],
       ["Accès", "De plain-pied depuis la rue, sans marche ni seuil"],
-      ["Porte principale", "2,19 m de large × 3,66 m de haut, sur la cour, à trois battants"],
-      ["Porte de l'impasse", "1,60 m × 2,39 m, deux vantaux de 0,80 m"],
+      ["Porte principale", "2,19 m de large × 3,66 m de haut, sur la cour, à trois battants"],
+      ["Porte de l'impasse", "1,60 m × 2,39 m, deux vantaux de 0,80 m"],
     ],
-    reserve:
-      "⚠️ Deux valeurs à confirmer au mètre. La hauteur sous plafond : la page d'information envoyée aux clients dit ~4,10 m, le site disait 4,11 puis 4,5, et 4,50 a été retenu. Et la charge de 800 kg/m² n'apparaît dans aucun document du bureau d'études structure (LCV Ingénierie) : le CCTP ne cite que le DTU 13.3 et des critères de flèche.",
+    /*
+     * ⚠️⚠️ UNE NOTE INTERNE ÉTAIT PUBLIÉE ICI, EN CLAIR, SUR LA PAGE.
+     *
+     * Elle disait : « Deux valeurs à confirmer au mètre. La hauteur sous
+     * plafond : la page d'information dit ~4,10 m, le site disait 4,11 puis
+     * 4,5… Et la charge de 800 kg/m² n'apparaît dans aucun document du bureau
+     * d'études. » C'était un mémo que je m'étais écrit à moi-même — un client
+     * y lisait que nos propres cotes ne sont pas sûres.
+     *
+     * Le champ `reserve` était fait pour nuancer une donnée publique, pas
+     * pour porter nos doutes. Découvert au contrôle avant mise en ligne du
+     * 22/09/2026.
+     *
+     * ⏳ Les deux incertitudes RESTENT VRAIES et sont consignées dans
+     * `NOTES-REFONTE.md` : la hauteur sous plafond (4,10 ou 4,50 selon les
+     * sources) et les 800 kg/m², absents de tous les documents LCV
+     * Ingénierie. Étienne a décidé le 22/09 de publier 800 kg/m² en l'état.
+     */
   },
   {
     titre: "Climatisation et accessibilité",
