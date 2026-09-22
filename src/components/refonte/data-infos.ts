@@ -138,7 +138,7 @@ export const SECTIONS: readonly Section[] = [
       ],
       [
         "Reculer dans l'impasse",
-        "Possible, et c'est là que se font le montage et le démontage. ⚠️ Au-delà de 20 m³, un camion ne passe pas : prévoir plus petit, ou un transfert.",
+        "Possible, et c'est là que se font le montage et le démontage. Au-delà de 20 m³, l'accès n'est plus possible : nous vous conseillons un véhicule plus petit, ou un transfert sur place.",
       ],
       [
         "Une voiture peut entrer",
@@ -170,7 +170,7 @@ export const SECTIONS: readonly Section[] = [
     texte: [
       "L'Atelier, La Boutique et L'Appartement sont à la même adresse, mais ils ne communiquent pas entre eux : il n'y a pas d'escalier intérieur, pas de porte de liaison.",
       "L'Appartement est au premier étage, mais on y accède par son propre escalier, depuis la cour. Pour aller d'un lieu à l'autre, on ressort et on traverse la cour. C'est à prévoir si vous louez deux espaces le même jour : le service, les invités et la technique font le trajet dehors.",
-      "Et c'est une obligation, pas une recommandation : dès que deux espaces sont loués ensemble, un agent est requis dans la cour. Il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble.",
+      "Dès que deux de nos espaces sont réservés ensemble, la présence d'un agent dans la cour devient nécessaire. Il veille à ce que les portes restent fermées et à ce que personne n'entre dans l'immeuble.",
     ],
     photos: [
       {
@@ -185,7 +185,7 @@ export const SECTIONS: readonly Section[] = [
     id: "horaires",
     titre: "Les horaires",
     texte: [
-      "Ces horaires ne se négocient pas : ils viennent de la copropriété et du voisinage, et c'est ce qui permet au lieu d'exister dans un immeuble d'habitation.",
+      "Ces horaires nous viennent de la copropriété et du voisinage. C'est à cette condition que le lieu peut exister dans un immeuble d'habitation, et nous ne pouvons malheureusement pas nous en écarter.",
     ],
     faits: [
       ["Accès", "À partir de 7h, pour le montage comme pour les livraisons."],
@@ -198,7 +198,7 @@ export const SECTIONS: readonly Section[] = [
         "Jusqu'à 22h ; après, sur la voie publique. Et la cour dessert deux entrées d'immeuble : dès qu'elle sert de coin fumeurs, la moitié doit rester dégagée pour le passage des habitants.",
       ],
       ["Musique", "Jusqu'à 23h, sans exception."],
-      ["Fin d'événement", "Le lieu doit être entièrement vidé de ses invités à minuit."],
+      ["Fin d'événement", "Vos invités auront quitté les lieux à minuit."],
       ["Visites du lieu", "Du lundi au samedi, de 10h à 18h, sur rendez-vous. Gratuites, une demi-heure."],
     ],
   },
@@ -226,7 +226,7 @@ export const SECTIONS: readonly Section[] = [
      */
     texte: [
       "Chez les Plombiers est un lieu réservé aux professionnels. Nous accueillons les marques, les agences et les entreprises : showrooms, lancements presse, dîners de marque, défilés, expositions, séminaires.",
-      "Nous n'acceptons pas d'événements pour des particuliers : ni anniversaires, ni mariages, ni fêtes familiales.",
+      "Nous ne recevons pas d'événements privés : ni anniversaires, ni mariages, ni fêtes familiales.",
     ],
   },
   {

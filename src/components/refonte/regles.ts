@@ -113,7 +113,7 @@ export const MOMENTS: readonly MomentRegles[] = [
       {
         titre: "Un avis de virement ne vaut pas paiement",
         texte:
-          "Nous le disons sans détour parce que la confusion est fréquente et de bonne foi : un avis de virement atteste d'un ordre donné, parfois programmé à plusieurs semaines. Seul le crédit effectif sur notre compte confirme la date.",
+          "La confusion est fréquente, et bien compréhensible : un avis de virement atteste d'un ordre donné, parfois programmé à plusieurs semaines. Seul le crédit effectif sur notre compte confirme la date.",
       },
       {
         /*
@@ -141,7 +141,7 @@ export const MOMENTS: readonly MomentRegles[] = [
     id: "avant",
     titre: "Avant votre événement",
     chapo:
-      "Quelques informations dont nous avons besoin en amont pour bien vous recevoir. Rien ici n'est bloquant : c'est de l'organisation, pas de l'autorisation.",
+      "Quelques informations dont nous avons besoin en amont pour bien vous recevoir. Il s'agit d'organisation, pour que tout soit prêt à votre arrivée.",
     regles: [
       {
         titre: "Nous annoncer vos livraisons",

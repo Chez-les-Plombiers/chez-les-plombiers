@@ -102,6 +102,15 @@ export const EVENEMENTS: readonly Evenement[] = [
    * pas les copies réduites du site.
    */
   { slug: "voitures", nom: "Dîner Maison 123 — Fusion", categorie: "automobile" },
+  /*
+   * ⚠️ MÊME PLANCHE QUE CI-DESSUS, AUTRE ÉVÉNEMENT. Le dossier
+   * `SELECTION PHOTOS SITE/03. VOITURES` mélange la Triumph du dîner Maison
+   * 123 et le Cayenne Electric — exactement comme le dossier téléphone. Ces
+   * neuf vues rejoignent l'événement Porsche par `fusionneAvec` : il n'en
+   * avait que cinq, et Automobile était la catégorie la plus maigre du site.
+   * Voir `source` dans `tri-selection.json`.
+   */
+  { slug: "voitures-porsche", nom: "Porsche — vues du dossier voitures", categorie: "automobile" },
   /* Retrouvé par Étienne le 21/09/2026 : un mélange de plusieurs dîners
      signés HOMEMADE. Contient des HEIC, d'où la conversion par sips. */
   { slug: "homemade-mix", nom: "HOMEMADE — plusieurs dîners", categorie: "diners" },

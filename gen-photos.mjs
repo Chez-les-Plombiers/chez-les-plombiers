@@ -44,7 +44,14 @@ let faites = 0, sautees = 0, ratees = 0, orphelins = 0;
 const sortie = {};
 
 for (const [slug, sel] of Object.entries(selection)) {
-  const bloc = manifeste[slug];
+  /*
+   * ⚠️ UN DOSSIER PEUT CONTENIR DEUX ÉVÉNEMENTS. `SELECTION PHOTOS SITE/03.
+   * VOITURES` mélange la Triumph du dîner Maison 123 et le Cayenne Electric —
+   * le dossier téléphone faisait déjà la même chose. `source` permet donc à
+   * deux sélections de puiser dans une seule planche : chacune garde ses
+   * numéros, et chacune devient son propre événement.
+   */
+  const bloc = manifeste[sel.source ?? slug];
   if (!bloc) { console.log(`⚠️ pas de manifeste : ${slug}`); continue; }
   const dest = path.join(SORTIE, slug);
   fs.mkdirSync(dest, { recursive: true });

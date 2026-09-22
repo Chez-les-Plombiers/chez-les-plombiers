@@ -93,10 +93,12 @@ export function RefonteVisiter() {
                 className="border-l-2 pl-3 text-[13px] leading-relaxed text-[#C9C4BC]"
                 style={{ borderColor: LAITON }}
               >
+                {/* Même formulation que `/infos` : « nous ne recevons pas »
+                    plutôt que « nous n'acceptons pas ». Le fait est le même,
+                    la porte n'est pas claquée au nez de qui la pousse. */}
                 Les visites sont réservées aux professionnels — marques, agences,
-                entreprises. Nous n&apos;accueillons pas d&apos;événements pour
-                des particuliers : ni anniversaires, ni mariages, ni fêtes
-                familiales.
+                entreprises. Nous ne recevons pas d&apos;événements privés : ni
+                anniversaires, ni mariages, ni fêtes familiales.
               </p>
             </div>
 

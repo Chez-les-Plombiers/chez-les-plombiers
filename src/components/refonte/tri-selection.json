@@ -797,7 +797,8 @@
     ],
     "couverture": 14,
     "nomCorrige": "Porsche — lancement du Cayenne électrique",
-    "note": "⚠️ LE DOSSIER MÉLANGE DEUX ÉVÉNEMENTS, et ce sont les dates EXIF qui les séparent — pas les noms de fichiers, qui sont des UUID :\n  26 novembre 2025 → PORSCHE (004, 005, 009, 014). La date colle à la facture du dossier client `COMMERCIAL/00. CLIENTS/251126 AUDITOIRE (PORSCHE)`.\n  9 et 28 octobre 2025 → la Triumph du dîner Maison 123, déjà couverte par la planche « voitures ».\nLes quatre photos Porsche sont en 2268 × 4032 : enfin la vraie résolution, après l'échec de la récupération Instagram (952 px) et des vidéos (720 × 1280).\n⏳ Les 4 vidéos du dossier n'ont pas de date EXIF et ne sont pas encore triées.\n✅ Triées le 21/09/2026 en regardant les images de tête : 002 est bien la Porsche (roue du Cayenne). 006 et 017 montrent la TRIUMPH qui entre par la porte — c'est le dîner Maison 123, pas Porsche ; elles reviendront par la planche « voitures ». 015 est un panoramique flou du pavé, inutilisable."
+    "note": "⚠️ LE DOSSIER MÉLANGE DEUX ÉVÉNEMENTS, et ce sont les dates EXIF qui les séparent — pas les noms de fichiers, qui sont des UUID :\n  26 novembre 2025 → PORSCHE (004, 005, 009, 014). La date colle à la facture du dossier client `COMMERCIAL/00. CLIENTS/251126 AUDITOIRE (PORSCHE)`.\n  9 et 28 octobre 2025 → la Triumph du dîner Maison 123, déjà couverte par la planche « voitures ».\nLes quatre photos Porsche sont en 2268 × 4032 : enfin la vraie résolution, après l'échec de la récupération Instagram (952 px) et des vidéos (720 × 1280).\n⏳ Les 4 vidéos du dossier n'ont pas de date EXIF et ne sont pas encore triées.\n✅ Triées le 21/09/2026 en regardant les images de tête : 002 est bien la Porsche (roue du Cayenne). 006 et 017 montrent la TRIUMPH qui entre par la porte — c'est le dîner Maison 123, pas Porsche ; elles reviendront par la planche « voitures ». 015 est un panoramique flou du pavé, inutilisable.",
+    "fusionneAvec": "voitures-porsche"
   },
   "24-new-balance": {
     "garde": [
@@ -872,5 +873,43 @@
       20
     ],
     "couverture": 14
+  },
+  "voitures": {
+    "garde": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      14,
+      15,
+      16,
+      19,
+      24,
+      28,
+      29,
+      34,
+      35
+    ],
+    "couverture": 7,
+    "note": "Trié par Claude le 22/09/2026 sur les images de tête, à valider par Étienne. Gardé la Triumph et la salle en FUSION ; 3, 5 et 15 sont des vidéos (15 = la voiture qui franchit la porte). Écarté : les flous (2, 12, 13, 18, 26), les silhouettes de dos (27, 30), les plans de rue (1, 11, 20) et tout le Cayenne, parti dans « voitures-porsche »."
+  },
+  "voitures-porsche": {
+    "source": "voitures",
+    "garde": [
+      10,
+      17,
+      21,
+      22,
+      23,
+      25,
+      31,
+      32,
+      33
+    ],
+    "couverture": null,
+    "note": "Les vues du Cayenne Electric extraites de la planche « voitures ». Fusionnées dans l'événement Porsche, qui n'avait que 5 vues."
   }
 }
