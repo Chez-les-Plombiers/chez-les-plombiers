@@ -76,7 +76,7 @@ export const ESPACES = [
      * Le reste du site dit encore 200 par endroits : à aligner à la bascule.
      */
     meta: "200 m² · 150 pax · dans la cour",
-    prix: "1 000 à 4 000 €",
+    prix: "1 000 à 4 000 €",
     /*
      * La première est le plan large au canapé rose et au coffre-fort du fond —
      * celle du lien Calendly, préférée d'Étienne. Les deux autres montrent les
@@ -102,7 +102,7 @@ export const ESPACES = [
     slug: "boutique",
     nom: "La Boutique",
     meta: "45 m² · vitrine sur rue",
-    prix: "1 000 €",
+    prix: "1 000 €",
     /*
      * Choix d'Étienne sur la planche contact : B06, B03, B01 — puis, en les
      * voyant en place, permutation des deux premières. La vue d'intérieur ouvre
@@ -138,7 +138,7 @@ export const ESPACES = [
      * même temps que « on passe par la cour ».
      */
     meta: "100 m² · au premier étage",
-    prix: "1 000 à 2 000 €",
+    prix: "1 000 à 2 000 €",
     /*
      * La pièce rose reste en couverture — Étienne l'avait choisie
      * explicitement. Les deux suivantes sont ses photos du 21/09/2026, prises

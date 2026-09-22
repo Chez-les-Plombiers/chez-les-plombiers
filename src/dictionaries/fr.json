@@ -542,11 +542,11 @@
     "title": "Mentions Légales",
     "editeur": {
       "title": "Éditeur du site",
-      "content": "<strong>Chez les Plombiers SAS</strong><br />39 rue des Bourdonnais, 75001 Paris<br />Capital social : 5 000 €<br />SIREN : 928 788 157<br />SIRET : 928 788 157 00016<br />TVA intracommunautaire : FR04 928 788 157<br />Code NAF / APE : 82 30Z – Organisation de foires, salons professionnels et congrès<br />Date de création : 02/05/2024"
+      "content": "<strong>Chez les Plombiers SAS</strong><br />39 rue des Bourdonnais, 75001 Paris<br />Capital social : 5 000 €<br />SIREN : 928 788 157<br />SIRET : 928 788 157 00016<br />TVA intracommunautaire : FR04 928 788 157<br />Code NAF / APE : 82 30Z – Organisation de foires, salons professionnels et congrès<br />Date de création : 02/05/2024"
     },
     "contact": {
       "title": "Contact",
-      "content": "Email : contact@chezlesplombiers.fr<br />Téléphone : 07 61 47 10 73"
+      "content": "Email : contact@chezlesplombiers.fr<br />Téléphone : 07 61 47 10 73"
     },
     "hebergement": {
       "title": "Hébergement",
@@ -562,27 +562,27 @@
     },
     "credits": {
       "title": "Crédits",
-      "content": "Conception et développement : <a href=\"https://www.growth-acceleration.fr\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-black\">Growth Acceleration</a>"
+      "content": "Conception et développement : <a href=\"https://www.growth-acceleration.fr\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-black\">Growth Acceleration</a>"
     }
   },
   "politiqueConfidentialite": {
     "title": "Politique de Confidentialité",
     "responsable": {
       "title": "Responsable du traitement",
-      "content": "<strong>Chez les Plombiers SAS</strong><br />39 rue des Bourdonnais, 75001 Paris<br />Email : contact@chezlesplombiers.fr"
+      "content": "<strong>Chez les Plombiers SAS</strong><br />39 rue des Bourdonnais, 75001 Paris<br />Email : contact@chezlesplombiers.fr"
     },
     "donnees": {
       "title": "Données collectées",
-      "intro": "Nous collectons les données suivantes dans le cadre de notre activité :",
+      "intro": "Nous collectons les données suivantes dans le cadre de notre activité :",
       "items": [
-        "<strong>Données de navigation</strong> : adresse IP, type de navigateur, pages consultées, durée de visite (via Google Analytics)",
-        "<strong>Données de contact</strong> : nom, prénom, email, téléphone (lorsque vous nous contactez ou réservez une visite via Calendly)",
-        "<strong>Cookies</strong> : cookies analytiques et fonctionnels, gérés via Axeptio"
+        "<strong>Données de navigation</strong> : adresse IP, type de navigateur, pages consultées, durée de visite (via Google Analytics)",
+        "<strong>Données de contact</strong> : nom, prénom, email, téléphone (lorsque vous nous contactez ou réservez une visite via Calendly)",
+        "<strong>Cookies</strong> : cookies analytiques et fonctionnels, gérés via Axeptio"
       ]
     },
     "finalites": {
       "title": "Finalités du traitement",
-      "intro": "Vos données sont utilisées pour :",
+      "intro": "Vos données sont utilisées pour :",
       "items": [
         "Répondre à vos demandes de contact et de réservation de visite",
         "Améliorer notre site web et analyser la fréquentation (Google Analytics)",
@@ -591,7 +591,7 @@
     },
     "baseLegale": {
       "title": "Base légale",
-      "intro": "Le traitement de vos données repose sur :",
+      "intro": "Le traitement de vos données repose sur :",
       "items": [
         "Votre consentement (cookies, communications commerciales)",
         "L'exécution de mesures précontractuelles (demande de visite, devis)",
@@ -604,7 +604,7 @@
     },
     "droits": {
       "title": "Vos droits",
-      "intro": "Conformément au RGPD, vous disposez des droits suivants :",
+      "intro": "Conformément au RGPD, vous disposez des droits suivants :",
       "items": [
         "Droit d'accès à vos données personnelles",
         "Droit de rectification",
@@ -621,7 +621,7 @@
     },
     "sousTraitants": {
       "title": "Sous-traitants et destinataires",
-      "intro": "Vos données peuvent être transmises aux sous-traitants suivants :",
+      "intro": "Vos données peuvent être transmises aux sous-traitants suivants :",
       "items": [
         "<strong>Google Analytics</strong> (analyse de trafic) – Google LLC, États-Unis",
         "<strong>Calendly</strong> (réservation de visites) – Calendly LLC, États-Unis",
@@ -631,7 +631,7 @@
     },
     "miseAJour": {
       "title": "Mise à jour",
-      "content": "Cette politique de confidentialité peut être mise à jour à tout moment. Dernière mise à jour : février 2026."
+      "content": "Cette politique de confidentialité peut être mise à jour à tout moment. Dernière mise à jour : février 2026."
     }
   },
   "servicePages": {
