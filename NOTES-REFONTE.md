@@ -68,3 +68,37 @@ les parkings ferment.
 
 ⚠️ Mentionner aussi les **places de livraison en face du 39**, déjà citées dans
 les conditions de location depuis le 22/09/2026.
+
+## À faire — la page « mode d'emploi » du client (noté le 22/09/2026)
+
+Décidé avec Étienne : le chatbot `/guide` **n'est pas repris**. Un moteur de
+recherche sur un site de neuf pages est l'aveu que les pages ne répondent pas,
+et personne ne s'en est servi.
+
+⚠️ **Mais son contenu, lui, n'existe nulle part ailleurs.** `guide-knowledge.ts`
+porte le code de la grille, les deux réseaux Wi-Fi, les cinq scénarios
+d'éclairage Kiosc et le mode personnalisé, la sono (Sonos + XLR par l'UCP), le
+chauffage Daikin, le vidéoprojecteur, le tri des poubelles, le vestiaire et la
+fin d'événement.
+
+Ce n'est pas un argument de vente : c'est le **mode d'emploi qu'on envoie au
+client une fois qu'il a réservé**. Il mérite sa page — non indexée, transmise
+par lien, comme `/nouveau-client`.
+
+⚠️ Ne pas supprimer `src/lib/guide-knowledge.ts` avant d'avoir transféré son
+contenu. C'est la seule copie.
+
+## La bascule — `src/lib/bascule.ts`
+
+Un interrupteur, `BASCULE = false`, et tout ce qu'il commande au même endroit.
+Ce que le fichier **ne couvre pas** et qui reste à faire à la main :
+
+1. `lien()` dans `chrome.tsx` — retirer le préfixe `/refonte`
+2. Les routes : faire pointer `/`, `/infos`, `/conditions`… sur la refonte
+3. Retirer les `noindex` des pages `/refonte/*`
+4. Réécrire `sitemap.ts` sur les nouvelles adresses
+5. Supprimer les pages de tri et `public/photos/tri/` (19 Mo)
+
+⚠️ Et vérifier `A_RETIRER_DE_NEXT_CONFIG` ligne à ligne : `/photos`,
+`/visiter` et `/histoire` redirigent aujourd'hui vers des ancres de l'ancien
+accueil. Les laisser rendrait les pages neuves injoignables, en 308 silencieux.
