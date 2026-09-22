@@ -161,44 +161,42 @@ const echapper = (s) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "’");
 
 /*
- * ⚠️ LE LOGOTYPE EST NOIR, ET LES PHOTOS NE SONT PAS TOUTES CLAIRES. Chez
- * Inès, « CHEZ LES » déborde sur le panneau de L'ATELIER, en béton gris : le
- * texte y passe, mais de justesse, et une vignette WhatsApp se regarde à
- * 300 px de large. Un voile blanc très léger, dégradé sur les bords, rend la
- * lecture sûre sans se voir comme un bandeau — on garde la photo derrière.
+ * ── LE VOILE ──────────────────────────────────────────────────────────────
+ *
+ * Le logotype est noir et les trois photos ne sont pas également claires : le
+ * béton de L'ATELIER passe sous « CHEZ », le rose de L'APPARTEMENT sous le
+ * « S » de LES. Sans rien, le texte tient de justesse en grand et se perd à
+ * 320 px, la taille réelle d'une vignette dans un fil.
+ *
+ * ⚠️ UN HALO, PAS UNE BANDE — c'est toute la différence, et je l'avais ratée.
+ * Ma première version posait un dégradé sur TOUTE LA LARGEUR : il éclaircit
+ * alors aussi les bords, là où il n'y a aucun texte à protéger, et ça se lit
+ * comme une barre pâle en travers du panneau rose. Étienne a ressorti le
+ * visuel d'Inès pour me montrer le sien : la lumière y meurt bien avant les
+ * bords, et les trois photos gardent leur densité.
+ *
+ * Un dégradé radial le fait correctement : il s'éteint dans les deux sens à
+ * la fois, donc il ne couvre que ce qu'il doit couvrir. Les rayons sont
+ * calés sur la boîte du logotype, pas sur la largeur de l'image.
  */
-function voile() {
-  const h = Math.round(H * 0.38);
+function voile(largeurLogo, hauteurLogo, centreY) {
+  const rx = Math.round(largeurLogo * 0.72);
+  const ry = Math.round(hauteurLogo * 1.95);
   return {
-    input: Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${L}" height="${h}">
-      <defs><linearGradient id="v" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0"    stop-color="#F2F0EC" stop-opacity="0"/>
-        <stop offset="0.35" stop-color="#F2F0EC" stop-opacity="0.72"/>
-        <stop offset="0.65" stop-color="#F2F0EC" stop-opacity="0.72"/>
-        <stop offset="1"    stop-color="#F2F0EC" stop-opacity="0"/>
-      </linearGradient></defs>
-      <rect width="${L}" height="${h}" fill="url(#v)"/>
+    input: Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${L}" height="${H}">
+      <defs><radialGradient id="h" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0"    stop-color="#F7F5F1" stop-opacity="0.72"/>
+        <stop offset="0.45" stop-color="#F7F5F1" stop-opacity="0.56"/>
+        <stop offset="0.75" stop-color="#F7F5F1" stop-opacity="0.22"/>
+        <stop offset="1"    stop-color="#F7F5F1" stop-opacity="0"/>
+      </radialGradient></defs>
+      <ellipse cx="${L / 2}" cy="${centreY}" rx="${rx}" ry="${ry}" fill="url(#h)"/>
     </svg>`),
     left: 0,
-    top: Math.round(H * 0.31),
+    top: 0,
   };
 }
 
-/*
- * ⚠️ 15 px, ET PAS DAVANTAGE. J'étais passé à 19 px en jugeant la ligne trop
- * fine dans un aperçu à 320 px. Étienne, 22/09/2026 : « je préfère la version
- * avec les 3 lieux plus petits que le logo ».
- *
- * Il a raison, et c'est une question de hiérarchie, pas de lisibilité. Cette
- * ligne est une légende : elle nomme ce que l'image montre déjà. Grossie, elle
- * se met à peser autant que le logotype et l'ensemble devient une pancarte.
- * On ne lit pas une vignette de partage mot à mot — on reconnaît une marque,
- * et on devine qu'il y a trois choses en dessous.
- *
- * ⚠️ Le voile blanc répond au même besoin autrement, et mieux : il rend le
- * texte lisible sans lui donner d'importance. Ne pas le retirer en pensant
- * « rendre la photo » — c'est lui qui permet de garder cette ligne petite.
- */
 function sousTitre(texte) {
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${L}" height="60">
     <text x="${L / 2}" y="30" text-anchor="middle" font-family="Eurostile ExtendedTwo"
@@ -207,7 +205,16 @@ function sousTitre(texte) {
   </svg>`);
 }
 
-const hautLogo = Math.round(H / 2 - lm.height / 2 - 14);
+/*
+ * ⚠️ LE BLOC EST AU-DESSUS DU MILIEU, PAS AU MILIEU. Centré mathématiquement,
+ * il tombe 5 % plus bas que chez Inès — et ça se voit : une image posée sur
+ * trois photos dont les sols occupent le bas a besoin que le texte remonte,
+ * sinon il flotte sur le plancher. Le décalage est mesuré sur son PSD.
+ */
+const hautLogo = Math.round(H * 0.47 - lm.height / 2 - 14);
+/* Le halo se centre sur l'ENSEMBLE logotype + légende, pas sur le seul
+   logotype : sinon la légende sort par le bas de la lumière. */
+const centreTexte = hautLogo + Math.round((lm.height + 28) / 2);
 
 for (const [cle, texte] of Object.entries(LIGNES)) {
   const nom = POSER ? "defaut.jpg" : `vignette-${cle}.jpg`;
@@ -215,7 +222,7 @@ for (const [cle, texte] of Object.entries(LIGNES)) {
   await sharp({ create: { width: L, height: H, channels: 3, background: "#ffffff" } })
     .composite([
       ...panneaux,
-      voile(),
+      voile(lm.width, lm.height, centreTexte),
       { input: logo, left: Math.round((L - lm.width) / 2), top: hautLogo },
       { input: sousTitre(texte), left: 0, top: hautLogo + lm.height + 10 },
     ])
