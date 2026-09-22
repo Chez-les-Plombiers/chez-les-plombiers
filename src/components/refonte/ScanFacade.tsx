@@ -63,7 +63,8 @@ const ZONES = [
     zone: { left: "24.6%", top: "26.6%", width: "12.4%", height: "15.2%" },
     /* Le panneau se déplie vers le haut, au-dessus de la fenêtre. */
     panneau: { left: "8%", top: "1%", width: "40%" },
-    etiquette: "droite",
+    /* Au-dessus de la fenêtre : rien ne la gêne là-haut. */
+    etiquette: { left: "22%", top: "26.6%", ancrage: "dessus" },
   },
   {
     slug: "lieu-atelier",
@@ -71,7 +72,8 @@ const ZONES = [
     ou: "au fond de la cour",
     zone: { left: "27.5%", top: "46.7%", width: "8.85%", height: "17.2%" },
     panneau: { left: "6%", top: "44%", width: "44%" },
-    etiquette: "droite",
+    /* Sous le porche, pas à droite : à droite elle percutait La Boutique. */
+    etiquette: { left: "16%", top: "64.5%", ancrage: "dessous" },
   },
   {
     slug: "lieu-boutique",
@@ -80,7 +82,8 @@ const ZONES = [
     zone: { left: "58.8%", top: "46.9%", width: "28.6%", height: "29.1%" },
     /* Elle se déplie dans sa propre vitrine : c'est là qu'elle est. */
     panneau: null,
-    etiquette: "gauche",
+    /* Dans sa propre vitrine, qui est large : elle y tient sans déborder. */
+    etiquette: { left: "60%", top: "48.5%", ancrage: "dessous" },
   },
 ] as const;
 
@@ -142,23 +145,30 @@ export function ScanFacade({ compact = false }: { compact?: boolean }) {
             </button>
 
             {/*
-              ⚠️ L'ÉTIQUETTE EST HORS DU BOUTON, et posée à côté de la zone.
-              Dans le bouton, elle déborderait d'un cadre de 9 % de large ;
-              à côté, elle se lit. C'est elle qui répond à la question, donc
-              elle ne dépend d'aucun geste.
+              ⚠️ L'ÉTIQUETTE EST HORS DU BOUTON, et sa place est réglée à la
+              main pour chaque lieu. Posée mécaniquement « à droite de la
+              zone », elle débordait de l'image pour L'Appartement et venait
+              percuter celle de La Boutique pour L'Atelier — les deux zones
+              étant à la même hauteur. Trois positions choisies valent mieux
+              qu'une règle qui échoue deux fois sur trois.
+
+              ⚠️ Et elle ne coupe plus : `max-w` en pourcentage de l'image,
+              pas de `nowrap`. Sur un téléphone de 375 px la façade fait
+              330 px — « L'Appartement · 1er étage » n'y tient pas d'un bloc.
             */}
             <span
               aria-hidden
               style={{
-                top: z.zone.top,
-                ...(z.etiquette === "droite"
-                  ? { left: `calc(${z.zone.left} + ${z.zone.width} + 6px)` }
-                  : { left: `calc(${z.zone.left} + 6px)` }),
+                left: z.etiquette.left,
+                top: z.etiquette.top,
+                maxWidth: "44%",
               }}
-              className="pointer-events-none absolute -translate-y-full whitespace-nowrap border border-[var(--clp-bord)] bg-black/75 px-2 py-1 font-clp text-[9px] font-bold uppercase leading-tight tracking-[0.1em] text-white backdrop-blur-[2px] sm:text-[10px]"
+              className={`pointer-events-none absolute border border-[var(--clp-bord)] bg-black/80 px-1.5 py-1 font-clp text-[8px] font-bold uppercase leading-[1.35] tracking-[0.08em] text-white backdrop-blur-[2px] sm:text-[10px] sm:tracking-[0.1em] ${
+                z.etiquette.ancrage === "dessus" ? "-translate-y-full" : ""
+              }`}
             >
               {z.nom}
-              <small className="ml-1.5 font-normal tracking-[0.06em] text-[#A8A29A]">
+              <small className="block font-normal tracking-[0.04em] text-[#A8A29A]">
                 {z.ou}
               </small>
             </span>
