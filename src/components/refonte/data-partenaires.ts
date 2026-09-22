@@ -45,12 +45,18 @@ export const PARTENAIRES: readonly Partenaire[] = [
       { nom: "@mathiasrouveure", url: "https://www.instagram.com/mathiasrouveure/" },
     ],
     /*
-     * Une photo de son travail chez nous, pas un portrait de presse : c'est ce
-     * qu'un client veut voir avant de choisir un traiteur.
+     * ⚠️ LUI, ET PAS SEULEMENT SON TRAVAIL. Il y avait ici la photo d'un
+     * déjeuner dressé — bonne image, mauvais endroit : sur une page qui
+     * s'appelle « Partenaires », on vient voir des gens. Étienne, 22/09/2026 :
+     * « il faudra mettre une photo de lui quand même. »
+     *
+     * Celle-ci les montre tous les deux : Mathias qui dresse, et L'Atelier
+     * derrière lui. Elle vient du site actuel (`/notre-chef`).
+     * ⏳ Étienne en cherche une autre, prise chez nous, sur le site d'HOMEMADE.
      */
     photo: {
-      src: "/photos/galerie/12-dejeuner-homemade-19-mars-26/015.webp",
-      alt: "Un déjeuner signé HOMEMADE, dressé à L'Atelier",
+      src: "/images/chef-mathias-portrait.jpg",
+      alt: "Mathias Rouveure dressant un service à L'Atelier, devant les fenêtres de la cour",
     },
   },
 ];

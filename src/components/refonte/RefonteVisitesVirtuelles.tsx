@@ -15,9 +15,7 @@ import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour, lien } from "./chrome"
  * ferait ramer un iPad et brûlerait le forfait d'un visiteur en 4G. On affiche
  * donc l'affiche du lieu, et le moteur ne démarre qu'au clic.
  *
- * ⏳ Il manque LA BOUTIQUE (ouverte le 01/09/2026, pas encore scannée) et le
- * lien de L'APPARTEMENT — sa visite existe, mais son URL n'est nulle part dans
- * le code. À demander à Étienne.
+ * ⏳ Il manque LA BOUTIQUE, ouverte le 01/09/2026 et pas encore scannée.
  */
 const VISITES = [
   {
@@ -27,8 +25,11 @@ const VISITES = [
   },
   {
     lieu: "L'Appartement",
-    detail: "100 m² au premier étage",
-    url: null,
+    /* ⚠️ Elle date d'AVANT la pose des rideaux — Étienne la refera. On la
+       publie quand même : une visite un peu datée renseigne mieux qu'une
+       case vide, et le volume des pièces, lui, n'a pas changé. */
+    detail: "100 m² au premier étage · scan antérieur à la pose des rideaux",
+    url: "https://my.matterport.com/show/?m=Km2zRqQTaKz",
   },
   {
     lieu: "La Boutique",

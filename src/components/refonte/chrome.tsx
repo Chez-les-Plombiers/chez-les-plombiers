@@ -346,9 +346,15 @@ export function Pied() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 gap-8 sm:mt-0 sm:flex sm:gap-14">
+          {/*
+            ⚠️ DEUX COLONNES SUR TÉLÉPHONE, ET « NOUS JOINDRE » EN PLEINE
+            LARGEUR. À trois colonnes serrées les libellés se coupaient en
+            deux ; à une seule, le pied devenait interminable. Le compromis
+            tient : les deux listes courtes côte à côte, les contacts dessous.
+          */}
+          <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:mt-0 sm:flex sm:gap-14">
             {colonnes.map((col) => (
-              <div key={col.titre}>
+              <div key={col.titre} className={col.titre === "Nous joindre" ? "col-span-2 sm:col-span-1" : ""}>
                 <p className="font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]">
                   {col.titre}
                 </p>
@@ -370,8 +376,16 @@ export function Pied() {
                         )}
                         {l.nom}
                         {l.suffixe && (
-                          /* L'adresse écrite : elle dit qu'on peut l'envoyer. */
-                          <span className="ml-2 font-mono text-[11px] text-[#5E5E5E]">
+                          /*
+                             L'adresse écrite : elle dit qu'on peut l'envoyer.
+                             ⚠️ MASQUÉE SUR TÉLÉPHONE. Dans une colonne de
+                             180 px, « Tarifs et disponibilités » passe à la
+                             ligne et le `/tarifs` part flotter tout seul à
+                             droite — le pied ressemblait à un tableau cassé.
+                             Et sur un téléphone on ne recopie pas une adresse
+                             à la main : on partage la page.
+                          */
+                          <span className="ml-2 hidden font-mono text-[11px] text-[#5E5E5E] sm:inline">
                             {l.suffixe}
                           </span>
                         )}
@@ -385,9 +399,22 @@ export function Pied() {
         </div>
 
         <div className="mt-12 flex flex-wrap items-baseline justify-between gap-4 border-t border-[var(--clp-bord)] pt-6">
-          <p className="font-mono text-[11px] text-[#5E5E5E]">
-            Chez les Plombiers SAS · SIREN 928 788 157 · {ADRESSE}
-          </p>
+          {/*
+            ⚠️ MENTIONS LÉGALES ET CONFIDENTIALITÉ SONT OBLIGATOIRES, et elles
+            se cherchent ici — dernière ligne, à côté du SIREN. Les mettre dans
+            une colonne du pied leur donnerait le même poids qu'aux tarifs.
+          */}
+          <div className="font-mono text-[11px] leading-relaxed text-[#5E5E5E]">
+            <p>Chez les Plombiers SAS · SIREN 928 788 157 · {ADRESSE}</p>
+            <p className="mt-1.5 flex gap-4">
+              <a href={lien("/mentions-legales")} className="transition-colors hover:text-[#A8A29A]">
+                Mentions légales
+              </a>
+              <a href={lien("/confidentialite")} className="transition-colors hover:text-[#A8A29A]">
+                Confidentialité
+              </a>
+            </p>
+          </div>
           <p className="font-clp text-[10px] uppercase tracking-[0.18em] text-[#5E5E5E]">
             Maquette de travail, non publiée
           </p>
