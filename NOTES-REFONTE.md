@@ -102,3 +102,44 @@ Ce que le fichier **ne couvre pas** et qui reste à faire à la main :
 ⚠️ Et vérifier `A_RETIRER_DE_NEXT_CONFIG` ligne à ligne : `/photos`,
 `/visiter` et `/histoire` redirigent aujourd'hui vers des ancres de l'ancien
 accueil. Les laisser rendrait les pages neuves injoignables, en 308 silencieux.
+
+## Le reste à faire — relevé du 22/09/2026
+
+| | Quoi | État |
+|---|---|---|
+| 1 | **Press kit** — logos, visuels, plaquette, en téléchargement | à faire |
+| 2 | **Plan du site** — une page qui liste toutes les adresses, à envoyer telle quelle | à faire |
+| 3 | **Album des photos extérieures** — la façade, la cour, l'impasse, le quartier | à faire |
+| 4 | Les parkings sur `/infos` | ✅ 22/09 |
+| 5 | « Hors Fashion Week et événements spéciaux » sous les prix | ✅ 22/09 |
+
+**Le press kit et le plan du site vont ensemble** : ce sont deux pages qu'on
+*envoie*, pas qu'on parcourt. Même famille que `/infos` — « fait pour être
+envoyé tel quel à un prestataire ». Elles ont leur place dans le sommaire du
+bas, pas dans la barre du haut.
+
+⚠️ **L'album extérieur n'est pas une septième catégorie d'événement.** C'est le
+LIEU vu du dehors — il relève du premier axe. Soit une quatrième entrée dans la
+rangée « Les lieux » (« Le bâtiment »), soit le début de l'album de L'ATELIER.
+
+## Où sont les sauvegardes (question d'Étienne, 22/09/2026)
+
+| Quoi | Où | Sauvegardé ? |
+|---|---|---|
+| Le code et tous les textes | GitHub `Chez-les-Plombiers/chez-les-plombiers` | ✅ historique complet |
+| Les photos publiées | dans le dépôt, donc GitHub | ✅ |
+| Les originaux | Dropbox `CHEZ LES PLOMBIERS/PHOTOS` | ✅ |
+| Le tri (`tri-selection.json`) | dans le dépôt | ✅ |
+
+⚠️ **Vercel n'est PAS une sauvegarde.** Il ne garde que les dix derniers builds
+de chaque projet, et on en a supprimé 68 le 21/09 pour rester sous le plafond de
+10 Go. Ce qui y est déployé est une *copie compilée*, pas une source.
+
+⚠️ **Deux choses n'existent nulle part ailleurs que sur Vercel / Upstash :**
+
+1. **Les variables d'environnement** (clés Resend, Google Calendar, Pennylane,
+   Notion…). Elles ne sont dans aucun dépôt — c'est voulu — mais il n'en existe
+   pas non plus d'export. `vercel env pull` en fait une copie locale.
+2. **Le KV Upstash du pricing** : les surcharges de prix saisies à la main, les
+   demandes de devis reçues, et toutes les données du tableau de bord finances.
+   Aucune sauvegarde, aucun export automatique. C'est le vrai trou.
