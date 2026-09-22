@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CADRE, LAITON } from "./chrome";
+import { CADRE } from "./chrome";
 import { ScanFacade } from "./ScanFacade";
 
 /**
@@ -54,12 +54,15 @@ export function BoutonFacade() {
       <button
         type="button"
         onClick={() => setOuvert(true)}
-        className={`${CADRE} mt-4 inline-flex items-center gap-2 px-4 py-2.5 font-mono text-[12px] text-[#C9C4BC] transition-colors hover:border-[var(--clp-accent)] hover:text-[#E8E4DC]`}
+        /*
+           ⚠️ PAS DE FLÈCHE. Étienne : « la flèche indique qu'on va à droite,
+           alors qu'en fait c'est un pop-up ». Il a raison — une flèche est une
+           promesse de navigation, et ici rien ne se déplace : une couche
+           s'ouvre par-dessus. Le cadre seul suffit à dire qu'on peut appuyer.
+        */
+        className={`${CADRE} px-4 py-2.5 font-mono text-[12px] text-[#C9C4BC] transition-colors hover:border-[var(--clp-accent)] hover:text-[#E8E4DC]`}
       >
         Regardez les trois lieux
-        <span aria-hidden style={{ color: LAITON }}>
-          &rarr;
-        </span>
       </button>
 
       {ouvert && (

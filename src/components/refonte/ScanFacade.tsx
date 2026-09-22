@@ -54,8 +54,8 @@ import { LIEUX_GALERIE } from "./photos-data";
 
 const FACADE = "/photos/lieu/facade-scan.jpg";
 
-/** Géométrie relevée sur la maquette de Charles, en % de l'image. */
-const ZONES = [
+/** Géométrie des trois cadres, en % de l'image. Calée avec `/refonte/essai-facade`. */
+export const ZONES = [
   {
     slug: "lieu-appartement",
     nom: "L'Appartement",
@@ -98,7 +98,16 @@ const ZONES = [
 const photosDe = (slug: string) =>
   LIEUX_GALERIE.find((l) => l.slug === slug)?.photos.slice(0, 6) ?? [];
 
-export function ScanFacade({ compact = false }: { compact?: boolean }) {
+export const FACADE_SRC = FACADE;
+
+export function ScanFacade({
+  compact = false,
+  zones = ZONES,
+}: {
+  compact?: boolean;
+  /** L'outil de calage passe les siennes, en cours de réglage. */
+  zones?: typeof ZONES;
+}) {
   const [ouverte, setOuverte] = useState<string | null>(null);
   const [vue, setVue] = useState(0);
 
@@ -116,7 +125,17 @@ export function ScanFacade({ compact = false }: { compact?: boolean }) {
   }, []);
 
   return (
-    <figure className="relative m-0 select-none overflow-hidden border border-[var(--clp-bord)]">
+    /*
+       ⚠️ CLIQUER AILLEURS SUR LA FAÇADE REFERME. Étienne : « quand on a
+       cliqué une fois sur l'intérieur de la boutique, il faudrait pouvoir
+       quitter en cliquant à côté ». Sans ça, la seule sortie était de
+       re-toucher exactement le même cadre — qui est en partie recouvert par
+       la photo qui vient de s'ouvrir.
+    */
+    <figure
+      onClick={() => setOuverte(null)}
+      className="relative m-0 select-none overflow-hidden border border-[var(--clp-bord)]"
+    >
       <Image
         src={FACADE}
         alt="Le 39 rue des Bourdonnais : le porche ouvert sur la cour, et la vitrine de La Boutique"
@@ -131,7 +150,7 @@ export function ScanFacade({ compact = false }: { compact?: boolean }) {
           façade en pierre de taille, qui est presque blanche au soleil. */}
       <span aria-hidden className="pointer-events-none absolute inset-0 bg-black/20" />
 
-      {ZONES.map((z) => {
+      {zones.map((z) => {
         const active = ouverte === z.slug;
         const photos = photosDe(z.slug);
         return (
@@ -139,7 +158,10 @@ export function ScanFacade({ compact = false }: { compact?: boolean }) {
             {/* ── LA ZONE : toujours visible, et cliquable ── */}
             <button
               type="button"
-              onClick={() => ouvrir(z.slug)}
+              onClick={(e) => {
+                e.stopPropagation();
+                ouvrir(z.slug);
+              }}
               aria-expanded={active}
               aria-label={`${z.nom}, ${z.ou} — voir les photos`}
               style={z.zone}

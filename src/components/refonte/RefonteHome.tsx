@@ -91,7 +91,15 @@ function Ouverture() {
           ratio="aspect-[16/10] sm:aspect-[21/9]"
           sizes="(max-width: 1180px) 100vw, 1180px"
         />
-        <div className="border-t border-[var(--clp-bord)] px-5 py-5">
+        {/*
+          ⚠️ LE BOUTON EN HAUT À DROITE, PAS SOUS LE TEXTE. Étienne : « il
+          agrandit encore l'espace noir qui est à droite ». Posé sous le
+          chapô, il ajoutait une ligne à un bloc qui avait déjà de la place
+          inutilisée sur son flanc droit — deux défauts au lieu d'un. En
+          face du titre, il comble ce vide au lieu de le creuser, et le
+          regard le trouve après avoir lu « 3 lieux événementiels ».
+        */}
+        <div className="border-t border-[var(--clp-bord)] px-5 py-5 sm:flex sm:items-start sm:justify-between sm:gap-6">
           {/* ⚠️ Le H1 : modeste en taille, mais c'est le texte que Google lit. */}
           {/*
             « Lieux » au pluriel : il y en a trois depuis l'ouverture de LA
@@ -102,6 +110,7 @@ function Ouverture() {
             un peu gros, ce serait bien que ce soit plus fin, plus élégant ».
             L'adresse, elle, reste en TEXTE : c'est elle que Google lit.
           */}
+          <div>
           <h1 className="font-clp uppercase">
             {/*
               ⚠️ LE CHIFFRE 3, ET PAS « LIEUX » AU PLURIEL. Remarque de Céline,
@@ -138,6 +147,10 @@ function Ouverture() {
             <br />
             Showrooms, lancements presse, dîners privés, défilés, expositions, etc.
           </p>
+          </div>
+          <div className="mt-4 shrink-0 sm:mt-0">
+            <BoutonFacade />
+          </div>
           {/*
             ⚠️ CE BOUTON RÉPOND À UNE PHRASE QUI NE SUFFIT PAS. « Trois espaces
             à la même adresse » peut vouloir dire trois boutiques voisines,
@@ -145,7 +158,7 @@ function Ouverture() {
             trois hypothèses devant le site. La façade annotée tranche en une
             seconde ; elle n'a pas besoin de place pour autant.
           */}
-          <BoutonFacade />
+
         </div>
       </div>
     </Bloc>
