@@ -67,7 +67,8 @@
       17,
       18
     ],
-    "couverture": 15
+    "couverture": 15,
+    "nomCorrige": "Déjeuner Manuel Mathieu — HOMEMADE"
   },
   "13-mugler-rose": {
     "garde": [
@@ -388,7 +389,7 @@
       42,
       43
     ],
-    "couverture": 42,
+    "couverture": 29,
     "nomCorrige": "Servaire & Co — Design Week 2026"
   },
   "diners-vrac": {
@@ -546,7 +547,7 @@
       76
     ],
     "couverture": 3,
-    "nomCorrige": "Soirée des Plombiers du 18 septembre"
+    "nomCorrige": "Soirée des Plombiers"
   },
   "10-michele-x-secours-populaire-vernissage-2-decembre-2025": {
     "garde": [
@@ -779,7 +780,8 @@
     ],
     "couverture": 4,
     "nomCorrige": "Dîners signés HOMEMADE",
-    "note": "⚠️ La CATÉGORIE est Dîners, le NOM crédite HOMEMADE. Étienne hésitait entre les deux et m'a laissé trancher : la catégorie dit le format — c'est ce qu'on cherche quand on visite la photothèque —, le nom dit qui cuisine. Mettre HOMEMADE en catégorie créerait une case qu'aucun visiteur ne chercherait ; le mettre dans le nom le fait lire à chaque fois, et ça renvoie à la page Partenaires."
+    "note": "⚠️ La CATÉGORIE est Dîners, le NOM crédite HOMEMADE. Étienne hésitait entre les deux et m'a laissé trancher : la catégorie dit le format — c'est ce qu'on cherche quand on visite la photothèque —, le nom dit qui cuisine. Mettre HOMEMADE en catégorie créerait une case qu'aucun visiteur ne chercherait ; le mettre dans le nom le fait lire à chaque fois, et ça renvoie à la page Partenaires.",
+    "fusionneAvec": "diners-vrac"
   },
   "voitures-videos": {
     "garde": [],

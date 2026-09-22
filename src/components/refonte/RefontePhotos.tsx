@@ -151,6 +151,7 @@ export function RefontePhotosCategorie({ c }: { c: CategorieGalerie }) {
               href={`${LIEN}/${c.slug}/${e.slug}`}
               photo={e.couverture}
               titre={e.nom}
+              legende={e.legende}
               detail={`${e.photos.length} photos`}
             />
           ))}
@@ -212,12 +213,14 @@ function Vignette({
   titre,
   detail,
   cadrage,
+  legende,
 }: {
   href: string;
   photo: { src: string; l: number; h: number };
   titre: string;
   detail: string;
   cadrage?: string;
+  legende?: string;
 }) {
   return (
     <Link
@@ -237,6 +240,11 @@ function Vignette({
         <p className="font-clp text-[12px] font-bold uppercase tracking-[0.08em]">
           {titre}
         </p>
+        {/* La date, sous le nom : « Soirée des Plombiers » ne dit pas
+            laquelle, et il y en aura d'autres. */}
+        {legende && (
+          <p className="mt-0.5 font-mono text-[11px] text-[#8A8A8A]">{legende}</p>
+        )}
         <p className="mt-1 font-mono text-[11px]" style={{ color: LAITON }}>
           {detail} →
         </p>

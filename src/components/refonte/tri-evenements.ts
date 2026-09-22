@@ -69,7 +69,43 @@ export interface Evenement {
   slug: string;
   nom: string;
   categorie: SlugCategorie;
+  /**
+   * Une ligne sous le nom, sur la vignette. Pour une date, pas pour une
+   * explication : « Soirée des Plombiers » ne dit pas laquelle, et il y en
+   * aura d'autres.
+   */
+  legende?: string;
 }
+
+/**
+ * ── L'ORDRE D'AFFICHAGE DANS UNE CATÉGORIE ────────────────────────────────
+ *
+ * ⚠️ PAR DÉFAUT C'EST LE NUMÉRO DE DOSSIER QUI DÉCIDE, donc la chronologie,
+ * donc le hasard. Étienne, 22/09/2026 : « les plus connus en premier ». Dans
+ * « Lancements », ça mettait Interlope avant TikTok et Le Bon Coin — un
+ * visiteur qui ne descend pas voyait les deux marques les moins parlantes.
+ *
+ * Un slug absent de cette liste passe après ceux qui y sont, dans l'ordre du
+ * dossier. Pas besoin de tout énumérer pour ordonner deux entrées.
+ */
+export const ORDRE: Partial<Record<SlugCategorie, readonly string[]>> = {
+  lancements: [
+    "14-tiktok",
+    "16-leboncoin",
+    "11-roc",
+    "13-mugler-rose",
+    "07-soiree-18-septembre-2025",
+    "03-shooting-interlope-7-mars-25",
+    "17-caisse-claire",
+    "20-caisse-claire-2",
+  ],
+  diners: [
+    "homemade-mix",
+    "12-dejeuner-homemade-19-mars-26",
+    "24-new-balance",
+    "08-diner-kim-attaf-dng",
+  ],
+};
 
 /**
  * L'ordre est celui des dossiers, pour qu'Étienne s'y retrouve. Les trois
@@ -80,7 +116,7 @@ export const EVENEMENTS: readonly Evenement[] = [
   { slug: "03-shooting-interlope-7-mars-25", nom: "Interlope", categorie: "lancements" },
   { slug: "05-defile-litovska-1-octobre-2025", nom: "Défilé Litkovska", categorie: "defiles" },
   { slug: "06-showroom-oakley", nom: "Showroom Oakley", categorie: "showrooms" },
-  { slug: "07-soiree-18-septembre-2025", nom: "Soirée du 18 septembre", categorie: "lancements" },
+  { slug: "07-soiree-18-septembre-2025", nom: "Soirée des Plombiers", categorie: "lancements", legende: "18 septembre 2025" },
   { slug: "08-diner-kim-attaf-dng", nom: "Dîner Kim Attaf — DNG", categorie: "diners" },
   { slug: "10-michele-x-secours-populaire-vernissage-2-decembre-2025", nom: "Michele × Secours populaire", categorie: "expositions" },
   { slug: "11-roc", nom: "ROC", categorie: "lancements" },

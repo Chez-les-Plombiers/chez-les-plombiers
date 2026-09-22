@@ -2,6 +2,7 @@ import {
   CATEGORIES,
   EVENEMENTS,
   LIEUX,
+  ORDRE,
   type SlugCategorie,
   type SlugLieu,
 } from "./tri-evenements";
@@ -56,6 +57,8 @@ export interface Photo {
 export interface EvenementGalerie {
   slug: string;
   nom: string;
+  /** Une date, sous le nom, sur la vignette. */
+  legende?: string;
   categorie: SlugCategorie;
   couverture: Photo;
   photos: Photo[];
@@ -144,6 +147,7 @@ export const GALERIE: EvenementGalerie[] = (() => {
     out.push({
       slug: e.slug,
       nom: sel.nomCorrige ?? e.nom,
+      legende: e.legende,
       categorie: e.categorie,
       couverture,
       // La couverture ouvre la série : c'est elle qu'on a choisie pour ça.
@@ -186,19 +190,33 @@ const COUVERTURES: Partial<
   /* La projection bleu et jaune sur le mur — choix d'Étienne, 21/09/2026. */
   lancements: { evenement: "11-roc", n: 13 },
   /*
-   * Photo de rue, et deux corrections successives : le cadrage centré
-   * décapitait le premier rang, `object-top` laissait « trop d'air au-dessus
-   * des têtes des filles ». Un quart de la hauteur, donc — entre les deux.
+   * ⚠️ TROISIÈME CHOIX, ET LE BON. C'était une photo de RUE — du street style
+   * devant une devanture. Elle a d'abord été recadrée deux fois (le centrage
+   * décapitait le premier rang, `object-top` laissait trop d'air au-dessus
+   * des têtes) avant qu'Étienne ne tranche autrement, le 22/09/2026 : « la
+   * photo où on voit le rouge derrière, une nana défiler, une sorte de
+   * catwalk ».
+   *
+   * Il a raison sur le fond : une vignette « Défilés » doit montrer un
+   * PODIUM. Aucun recadrage ne rendait un trottoir convaincant.
    */
-  defiles: {
-    evenement: "05-defile-litovska-1-octobre-2025",
-    n: 8,
-    cadrage: "object-[center_25%]",
-  },
+  defiles: { evenement: "05-defile-litovska-1-octobre-2025", n: 25 },
 };
 
 export const CATEGORIES_GALERIE: CategorieGalerie[] = CATEGORIES.map((c) => {
-  const evenements = GALERIE.filter((e) => e.categorie === c.slug);
+  /*
+   * ⚠️ L'ordre voulu d'abord, le numéro de dossier ensuite. Un slug absent de
+   * `ORDRE` passe après ceux qui y figurent — on peut donc n'en ordonner que
+   * deux sans énumérer toute la catégorie.
+   */
+  const voulu = ORDRE[c.slug] ?? [];
+  const place = (slug: string) => {
+    const i = voulu.indexOf(slug);
+    return i === -1 ? voulu.length + rang(slug) : i;
+  };
+  const evenements = GALERIE.filter((e) => e.categorie === c.slug).sort(
+    (a, b) => place(a.slug) - place(b.slug)
+  );
   const choix = COUVERTURES[c.slug];
   /* `Photo` ne porte pas son numéro ; le nom du fichier, si — `013.webp`. */
   const fichier = choix && `/${String(choix.n).padStart(3, "0")}.webp`;
