@@ -251,3 +251,76 @@ l'optimiseur, 0 cassé**. La fenêtre façade est revenue, cadres bien placés.
 
 ⚠️ **Pour la suite** : chaque nouvel album passe par `alleger-photos.mjs` avant
 d'être poussé. Sans l'optimiseur, une photo de 4 Mo est servie telle quelle.
+
+## 22/09/2026 — Les aperçus de lien, et ce que la bascule avait laissé derrière
+
+### Les images de partage (WhatsApp, iMessage, Slack)
+
+Les quatorze pages partageaient **un seul** aperçu : l'ancien titre « Lieu
+Évènementiel Paris 1er — 200m² » et un PNG de 4032 × 2268 pesant 1,8 Mo,
+déclaré dans le HTML comme faisant 1200 × 630. Envoyer le lien de
+L'APPARTEMENT montrait L'ATELIER — quand l'image passait, car 1,8 Mo est
+au-delà de ce que WhatsApp télécharge.
+
+⚠️ **La cause n'était pas un oubli page par page.** Les métadonnées de Next se
+fusionnent **en surface** : une page qui écrit `title` sans écrire `openGraph`
+hérite du bloc `openGraph` du layout, en entier. Chaque page avait bien son
+titre ; aucune n'avait son aperçu. C'est documenté dans `generate-metadata.md`,
+et c'est le genre de règle qu'on ne devine pas. D'où `src/lib/partage.ts`, qui
+fabrique les trois blocs à partir du titre que la page écrit déjà.
+
+⚠️ **Piège de diagnostic** : WhatsApp garde l'aperçu en cache par URL, et
+l'expéditeur voit souvent autre chose que le destinataire. Ne pas se fier à un
+essai depuis son propre téléphone — lire le HTML.
+
+Cinq visuels 1200 × 630 de ~100 Ko dans `public/og/`, au bandeau blanc des key
+visuals Instagram, composés par `gen-og.mjs` avec la **vraie police du site**
+(les TTF sont donnés à sharp par un fichier fontconfig temporaire — rien n'est
+installé sur le Mac).
+
+⚠️ **Des fichiers statiques, pas `ImageResponse`.** Une image de partage est
+réclamée par des robots qu'on ne contrôle pas, en rafale, au moment précis où
+un lien circule. Après le 402 du matin, elle ne doit dépendre d'aucun quota.
+
+### Deux restes de chantier, en production depuis la bascule
+
+- **Les pages photos étaient en `noindex`**, titrées « Maquette refonte ». Le
+  sitemap déclarait ces adresses pendant que les pages disaient à Google de
+  repartir — et c'est la partie la plus volumineuse du site.
+- **Le pied de page affichait « Maquette de travail, non publiée »**, sur
+  toutes les pages.
+
+⚠️ Ni l'un ni l'autre n'était détectable par la passe de pré-lancement : elle
+vérifiait les liens morts, le débordement et la typographie. **Un reste de
+chantier ne se trouve qu'en lisant ce que la page affirme.** À ajouter à la
+prochaine passe : chercher « maquette », « brouillon », « à venir », `noindex`
+dans le **rendu**, pas dans les sources.
+
+### `/nouveau-client`
+
+Restée sur l'ancien site. Quatre défauts, du plus grave au moindre :
+
+1. **LA BOUTIQUE n'existait pas dans le choix d'espace.** Le lieu a ouvert le
+   01/09 ; un client qui l'avait visité cochait « Chez les Plombiers » faute de
+   mieux. C'est une erreur de facturation qui commence, pas une coquille.
+2. **Le formulaire contredisait `/conditions` sur l'argent** : deux dépôts
+   (5 000 / 3 000) contre trois, dont **aucun** pour LA BOUTIQUE. Les montants
+   sont désormais **importés** de `regles.ts`, la même source que
+   `/conditions` — plus recopiés.
+3. **Les créneaux étaient les mêmes pour les trois lieux.** On proposait une
+   matinée à L'APPARTEMENT, qui ne se loue qu'à la journée. Le choix suit
+   maintenant `venues.ts` du projet pricing. ⚠️ **Quand la bascule
+   « matinée + soirée » sera faite côté tarifs, changer aussi `CRENEAUX` dans
+   `RefonteNouveauClient.tsx`** — sinon le formulaire vendra un après-midi que
+   le calendrier ne montre plus.
+4. « Appartement Rose » était un alias historique, et « Chez les Plombiers »
+   est le nom de la **marque**, pas de L'ATELIER.
+
+La logique qui marchait est conservée : annuaire des entreprises,
+autocomplétion d'adresse, calcul de la TVA depuis le SIREN, et la route d'API
+avec ses noms de champs anglais — **la base Notion en dépend, ne pas les
+traduire.**
+
+⚠️ **Le formulaire n'a pas été soumis pour de vrai** : un envoi de test écrit
+dans la base Notion et envoie un mail à Étienne et Céline. La route d'API est
+inchangée et les noms de champs sont identiques à l'octet près.
