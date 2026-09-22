@@ -146,10 +146,23 @@ export function ScanFacade({
        re-toucher exactement le même cadre — qui est en partie recouvert par
        la photo qui vient de s'ouvrir.
     */
+    /*
+       ⚠️⚠️ LE CONTENEUR DE RÉFÉRENCE NE CONTIENT QUE L'IMAGE.
+       La légende était DANS le `relative` : les cadres, positionnés en
+       pourcentage, se calculaient donc sur (image + légende) et glissaient
+       tous vers le bas d'une trentaine de pixels. Étienne l'a vu trois fois
+       de suite — « toujours un décalage » — et j'ai cherché dans les valeurs,
+       qui étaient justes. C'est l'outil de calage qui avait raison : LUI
+       n'avait pas de légende dans son conteneur.
+
+       Toute couche posée en % sur une image doit avoir pour parent un
+       élément qui épouse l'image, et rien d'autre.
+    */
     <figure
       onClick={() => setOuverte(null)}
-      className="relative m-0 select-none overflow-hidden border border-[var(--clp-bord)]"
+      className="m-0 select-none overflow-hidden border border-[var(--clp-bord)]"
     >
+      <div className="relative">
       <Image
         src={FACADE}
         alt="Le 39 rue des Bourdonnais : le porche ouvert sur la cour, et la vitrine de La Boutique"
@@ -253,6 +266,7 @@ export function ScanFacade({
         );
       })}
 
+      </div>
       <figcaption className="border-t border-[var(--clp-bord)] bg-[var(--clp-carte)] px-3 py-2 font-mono text-[10px] leading-snug text-[#8A8A8A]">
         {ouverte ? "Touchez ailleurs pour refermer." : "Touchez un cadre pour voir l'intérieur."}
       </figcaption>
