@@ -54,7 +54,14 @@ import { LIEUX_GALERIE } from "./photos-data";
 
 const FACADE = "/photos/lieu/facade-scan.jpg";
 
-/** Géométrie des trois cadres, en % de l'image. Calée avec `/refonte/essai-facade`. */
+/**
+ * Géométrie des trois cadres, en % de l'image.
+ *
+ * ⚠️ CES VALEURS VIENNENT D'ÉTIENNE, calées à la souris sur
+ * `/refonte/essai-facade` le 22/09/2026. Elles ne se retouchent pas à la main :
+ * si un cadre doit bouger, on rouvre l'outil et on recopie sa sortie. Trois
+ * passes de réglage « au jugé » avaient précédé, toutes fausses.
+ */
 export const ZONES = [
   {
     slug: "lieu-appartement",
@@ -68,30 +75,30 @@ export const ZONES = [
      * son balcon, juste au-dessus de la porte de L'Atelier. C'est cohérent
      * avec l'accès : « son propre escalier, depuis la cour ».
      */
-    zone: { left: "24%", top: "33%", width: "13%", height: "13%" },
+    zone: { left: "28.7%", top: "24.7%", width: "7.0%", height: "17.1%" },
     /* Le panneau se déplie vers le haut, au-dessus de la fenêtre. */
     panneau: { left: "8%", top: "1%", width: "40%" },
     /* Au-dessus de la fenêtre : rien ne la gêne là-haut. */
-    etiquette: { left: "21%", top: "33%", ancrage: "dessus" },
+    etiquette: { left: "24%", top: "24.7%", ancrage: "dessus" },
   },
   {
     slug: "lieu-atelier",
     nom: "L'Atelier",
     ou: "au fond de la cour",
-    zone: { left: "27.5%", top: "46%", width: "9%", height: "17%" },
+    zone: { left: "28.1%", top: "47.1%", width: "8.0%", height: "16.0%" },
     panneau: { left: "6%", top: "44%", width: "44%" },
     /* Sous le porche, pas à droite : à droite elle percutait La Boutique. */
-    etiquette: { left: "16%", top: "64.5%", ancrage: "dessous" },
+    etiquette: { left: "16%", top: "64%", ancrage: "dessous" },
   },
   {
     slug: "lieu-boutique",
     nom: "La Boutique",
     ou: "sur la rue",
-    zone: { left: "59.5%", top: "46%", width: "28%", height: "30%" },
+    zone: { left: "59.4%", top: "47.5%", width: "27.9%", height: "28.0%" },
     /* Elle se déplie dans sa propre vitrine : c'est là qu'elle est. */
     panneau: null,
     /* Dans sa propre vitrine, qui est large : elle y tient sans déborder. */
-    etiquette: { left: "60%", top: "48.5%", ancrage: "dessous" },
+    etiquette: { left: "60.5%", top: "49%", ancrage: "dessous" },
   },
 ] as const;
 
