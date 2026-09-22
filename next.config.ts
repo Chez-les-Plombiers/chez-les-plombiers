@@ -53,6 +53,29 @@ const csp = [
 const PRICING_ZONE = "https://chez-les-plombiers-pricing-ivory.vercel.app";
 
 const nextConfig: NextConfig = {
+  /*
+   * ⚠️⚠️ L'OPTIMISEUR D'IMAGES DE VERCEL EST COUPÉ, ET C'EST DÉLIBÉRÉ.
+   *
+   * Le 22/09/2026, quelques heures après la mise en ligne, toutes les images
+   * du site ont commencé à renvoyer `402 Payment Required` —
+   * `OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED`. Le plan Hobby plafonne le
+   * nombre de transformations, et la photothèque en consomme énormément : 845
+   * images, multipliées par chaque largeur d'écran demandée.
+   *
+   * ⚠️ Le symptôme est trompeur : la page se construit normalement, les
+   * cadres et les légendes s'affichent, et seules les images manquent. On
+   * cherche un bug de code là où il n'y en a pas.
+   *
+   * ⚠️ ET ON NE PERD RIEN. Nos images sont DÉJÀ optimisées à la fabrication :
+   * `gen-photos.mjs` sort du WebP 1 200 px en qualité 72. L'optimiseur ne
+   * faisait que les redimensionner une seconde fois, contre un quota.
+   *
+   * Ce qu'on perd vraiment : le redimensionnement par écran. Un téléphone
+   * reçoit le 1 200 px au lieu d'un 640 px. C'est pourquoi les JPEG bruts de
+   * `public/photos` ont été ramenés à une taille servable — voir
+   * `NOTES-REFONTE.md`.
+   */
+  images: { unoptimized: true },
   async rewrites() {
     return {
       // `beforeFiles` : la réécriture doit primer sur toute route locale, pour
