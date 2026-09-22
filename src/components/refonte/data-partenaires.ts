@@ -84,7 +84,28 @@ export const SERVICES = [
   {
     titre: "Ménage",
     texte:
-      "Le ménage de sortie est compris dans la location. Un passage supplémentaire pendant un événement de plusieurs jours peut s'organiser, en supplément.",
+      "Le ménage de sortie est compris dans la location : nous vous remettons le lieu propre, et nous le reprenons de même.",
+  },
+  {
+    /*
+     * Ajouté le 22/09/2026 sur une remarque de Céline, et elle a raison :
+     * le ménage passe LE MATIN, le mobilier arrive APRÈS, et le montage
+     * salit. Entre les deux, personne. C'était une prestation réelle qui
+     * n'était nulle part écrite, donc jamais vendue.
+     */
+    titre: "Permanence de ménage",
+    texte:
+      "Un événement se prépare souvent toute la journée : le mobilier arrive après notre passage du matin, et le montage laisse des traces. Nous pouvons prévoir une présence sur la journée, pour que le lieu soit net à l'ouverture des portes. En supplément.",
+  },
+  {
+    /*
+     * ⚠️ NE PAS CONFONDRE AVEC L'ANCIENNE MENTION « régisseur compris »,
+     * retirée du site le 20/09/2026 parce qu'elle était fausse. Le régisseur
+     * existe, il est excellent, et il se facture.
+     */
+    titre: "Régisseur",
+    texte:
+      "Une personne peut vous être dédiée du matin au soir, avant et après votre événement. Elle réceptionne vos livraisons en votre absence, installe le mobilier, branche vos ordinateurs aux écrans, et va chercher ce qui manque. En supplément.",
   },
   {
     titre: "Mobilier",

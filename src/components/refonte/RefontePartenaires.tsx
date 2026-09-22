@@ -96,7 +96,7 @@ export function RefontePartenaires() {
             ce qui rend ce lieu louable ; les gaines du plafond, on les a déjà
             vues dix fois sur le site.
           */}
-          <div className="mt-5 gap-8 lg:flex lg:items-start">
+          <div className="mt-5 gap-8 lg:flex lg:items-stretch">
           <dl className="flex-1 divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
             {SERVICES.map((s) => (
               <div key={s.titre} className="py-3.5 sm:flex sm:gap-6">
@@ -112,8 +112,16 @@ export function RefontePartenaires() {
               </div>
             ))}
           </dl>
-            <figure className={`${CADRE} m-0 mt-6 hidden overflow-hidden lg:mt-0 lg:block lg:w-[38%] lg:shrink-0`}>
-              <div className="relative aspect-[4/5] w-full">
+            {/*
+              ⚠️ `self-stretch` ET PAS UN FORMAT FIXE. Étienne : « il faut que
+              la photo fasse la même hauteur que le texte qui est à gauche ».
+              Avec un `aspect-[4/5]`, elle dépassait — et elle aurait dépassé
+              d'autant plus à chaque prestation ajoutée. Là, elle suit la
+              colonne de gauche quelle qu'en soit la longueur, et le recadrage
+              se fait tout seul.
+            */}
+            <figure className={`${CADRE} m-0 mt-6 hidden overflow-hidden lg:mt-0 lg:block lg:w-[38%] lg:shrink-0 lg:self-stretch`}>
+              <div className="relative h-full min-h-[320px] w-full">
                 <Image
                   src="/photos/galerie/lieu-atelier/011.webp"
                   alt="L'Atelier, ses poteaux bruts et ses canapés roses, vu depuis le fond de la salle"

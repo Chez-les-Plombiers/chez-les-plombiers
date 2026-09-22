@@ -133,7 +133,15 @@ export function TuilePhotos({
                 aria-hidden
                 className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent"
               />
-              <span className="pointer-events-none absolute bottom-3 left-4 font-clp text-[11px] font-bold uppercase tracking-[0.14em] text-white sm:bottom-4 sm:left-5 sm:text-[13px]">
+              {/*
+                 ⚠️ À DROITE, PAS À GAUCHE. Étienne, 22/09/2026 : le titre
+                 « 3 lieux événementiels » est calé à gauche juste en dessous,
+                 et le nom du lieu s'alignait dessus — deux textes sur la même
+                 verticale, qui se disputaient le même coin. À droite, ils se
+                 répondent au lieu de se superposer, et le regard balaie la
+                 largeur de l'image.
+              */}
+              <span className="pointer-events-none absolute bottom-3 right-4 font-clp text-[11px] font-bold uppercase tracking-[0.14em] text-white sm:bottom-4 sm:right-5 sm:text-[13px]">
                 {etiquettes[i]}
               </span>
             </>
