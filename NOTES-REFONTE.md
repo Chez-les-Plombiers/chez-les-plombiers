@@ -352,3 +352,46 @@ texte destiné à l'écran, écrire le motif insensible à ces variantes.
 
 Et vérifier **sur le rendu**, pas sur les sources — ce qui ne suffit pas non
 plus si le motif de vérification reproduit l'erreur du motif de remplacement.
+
+## 22/09/2026 — La vignette des trois lieux, et deux leçons de voile
+
+`gen-vignette.mjs` fabrique `public/og/defaut.jpg` — le triptyque d'Inès,
+refait en 1200 × 630. **Il est distinct de `gen-og.mjs`**, qui produit les
+quatre autres visuels au bandeau blanc.
+
+⚠️ **Ne pas remettre une entrée « defaut » dans `gen-og.mjs`.** Les deux
+scripts écrivent dans `public/og/` : le triptyque serait écrasé en silence au
+prochain passage, sans erreur et sans que personne fasse le lien. Un contrôle
+existe — relancer `gen-og.mjs` et vérifier que `defaut.jpg` n'a pas bougé.
+
+**Pourquoi refaire plutôt qu'exporter le PSD** : `MINIATURE WEB.psd` ne fait
+que 831 × 438. Ce n'est pas l'export qui est petit, c'est le document — il
+n'existe aucune version plus grande. Agrandir de 1,44× ramollit le logotype,
+la seule chose nette de l'image.
+
+### Deux erreurs à ne pas refaire
+
+⚠️ **Un halo, pas une bande.** Ma première version posait le voile sur toute
+la largeur : il éclaircit alors les bords, là où il n'y a aucun texte à
+protéger, et ça se lit comme une barre pâle en travers du panneau rose. Un
+dégradé **radial** s'éteint dans les deux sens et ne couvre que le nécessaire.
+C'est Étienne qui l'a vu, en ressortant le visuel d'Inès.
+
+⚠️ **La légende reste petite, et c'est le voile qui le permet.** Je l'avais
+grossie de 15 à 19 px en la jugeant illisible dans un aperçu à 320 px. Étienne
+a corrigé : c'est une question de hiérarchie, pas de lisibilité — cette ligne
+nomme ce que l'image montre déjà, grossie elle pèse autant que le logotype et
+l'ensemble devient une pancarte. Le voile rend le texte lisible **sans lui
+donner d'importance**. Retirer l'un oblige à grossir l'autre.
+
+### Le réflexe à garder
+
+**Une vignette se juge à 320 px**, la taille réelle d'un aperçu dans un fil, pas
+en grand sur un écran. Le script sait produire cet aperçu ; s'en servir avant
+de trancher quoi que ce soit sur un texte.
+
+⚠️ **Le cadrage se règle horizontalement, pas verticalement.** Une photo en 3:2
+dans un panneau de 0,63 n'a aucune marge en hauteur : elle est mise à la
+hauteur, et c'est la largeur qui déborde du double. J'ai réglé le mauvais axe
+et étiré une bande de 267 px sur 630 — c'est le **poids du fichier** qui l'a
+trahi, 105 Ko devenus 65. Une image étirée n'a plus de détail à coder.
