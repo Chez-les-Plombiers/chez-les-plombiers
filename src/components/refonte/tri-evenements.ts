@@ -130,6 +130,24 @@ export const EVENEMENTS: readonly Evenement[] = [
    */
   { slug: "24-new-balance", nom: "Déjeuner New Balance — REVOLVR", categorie: "diners" },
   /*
+   * Deux dossiers retrouvés par Étienne le 22/09/2026 dans
+   * `PHOTOS/SELECTION PHOTOS SITE`, un rangement qu'il avait oublié avoir
+   * fait. 54 vues au total, dont 14 vidéos.
+   *
+   * ⚠️ DEUX PRÉCAUTIONS AVANT DE PUBLIER, et aucune n'est théorique :
+   *
+   * 1. Le dossier DINERS contient le dîner de MARINE ABIAD, que la liste des
+   *    écartés en tête de ce fichier interdit de publier. Étienne l'a
+   *    reconfirmé le 22/09. Rien ne sort de cette planche sans son tri.
+   * 2. Le dossier PFW mélange des défilés CHEZ NOUS et des photos prises
+   *    ailleurs — du street style devant des enseignes italiennes, des
+   *    premiers rangs dans une salle qui n'est pas la nôtre. Publier le lieu
+   *    d'un autre comme si c'était le sien serait une faute, et elle se
+   *    verrait.
+   */
+  { slug: "25-diners-selection", nom: "Dîners — sélection retrouvée", categorie: "diners" },
+  { slug: "26-pfw-defiles", nom: "Paris Fashion Week — défilés", categorie: "defiles" },
+  /*
    * Retrouvé par Étienne sur son téléphone le 21/09/2026. Photos en pleine
    * résolution iPhone (2268 × 4032) ET vidéos — les premières vidéos destinées
    * à la photothèque. Archivé dans `PHOTOS/EVENTS/23. VOITURES — TELEPHONE`.

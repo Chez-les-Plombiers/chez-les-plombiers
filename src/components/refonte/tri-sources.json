@@ -25,5 +25,18 @@
     "dossiers": [
       "SELECTION PHOTOS SITE/03. VOITURES"
     ]
+  },
+  "25-diners-selection": {
+    "nom": "Dîners — sélection retrouvée",
+    "dossiers": [
+      "SELECTION PHOTOS SITE/01. DINERS"
+    ]
+  },
+  "26-pfw-defiles": {
+    "nom": "Paris Fashion Week — défilés",
+    "dossiers": [
+      "SELECTION PHOTOS SITE/02. PFW DEFILÉ",
+      "SELECTION PHOTOS SITE/02. PFW"
+    ]
   }
 }

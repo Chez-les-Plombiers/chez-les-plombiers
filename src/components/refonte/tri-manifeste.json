@@ -8021,5 +8021,301 @@
         "video": true
       }
     ]
+  },
+  "25-diners-selection": {
+    "dossier": "Dîners — sélection retrouvée",
+    "racineAbsolue": true,
+    "items": [
+      {
+        "n": "001",
+        "src": "/photos/tri/25-diners-selection/001.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/491436241_18491740738013054_5960593135180552834_n.jpg"
+      },
+      {
+        "n": "002",
+        "src": "/photos/tri/25-diners-selection/002.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/491446148_18491740567013054_3295687744427367108_n.jpg"
+      },
+      {
+        "n": "003",
+        "src": "/photos/tri/25-diners-selection/003.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/491451895_18491740681013054_5796589947610685265_n.jpg"
+      },
+      {
+        "n": "004",
+        "src": "/photos/tri/25-diners-selection/004.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/52A4B00F-7203-47D8-BA3A-40C66492257A.JPG"
+      },
+      {
+        "n": "005",
+        "src": "/photos/tri/25-diners-selection/005.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/52AB2311-97E3-431A-B7E0-9DB3CFDB059B.MP4",
+        "video": true
+      },
+      {
+        "n": "006",
+        "src": "/photos/tri/25-diners-selection/006.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/AQMTCzYM-7ps_NyrkhHntXedibyJP3-XzKMWmz8fkRjR-qmfXMkMgUij5-Jp3NXjBDHZwa2-QwgvUaqkHIeD2FXjY13qeKxReC55lXE.mp4",
+        "video": true
+      },
+      {
+        "n": "007",
+        "src": "/photos/tri/25-diners-selection/007.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/AQNaZZKrwMx5v4XgW6U0HHoKRi1Fp6v1QMzrX47mUYq5YIA8uXXU_XDQCElywppLK-KVjhKMAZ30Drytmj7W4Zmfyj1K2Uio0aQhlmo.mp4",
+        "video": true
+      },
+      {
+        "n": "008",
+        "src": "/photos/tri/25-diners-selection/008.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/AQNpddxGAWa4Uii0iaPJ88hvkpJTkDsv87dEqKloN4P29Mmtfwth6E-ztwW2XrlKTmYXXGqR2-1q9BaD0DLQNuA-J_iL04LjCKx6l_Y.mp4",
+        "video": true
+      },
+      {
+        "n": "009",
+        "src": "/photos/tri/25-diners-selection/009.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/AQOlRb3Q0axTx44UzZ4CrhApeQ-bA4eP1AYRw_t2dykQLMieOO-cpUW0EU91zunRVFsSo7KKoNPSLgbs-ZJBNvYTfQQ3DmZfxCJKFZw.mp4",
+        "video": true
+      },
+      {
+        "n": "010",
+        "src": "/photos/tri/25-diners-selection/010.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_0326 2.HEIC"
+      },
+      {
+        "n": "011",
+        "src": "/photos/tri/25-diners-selection/011.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_4129.JPG"
+      },
+      {
+        "n": "012",
+        "src": "/photos/tri/25-diners-selection/012.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_5399.jpg"
+      },
+      {
+        "n": "013",
+        "src": "/photos/tri/25-diners-selection/013.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_7693 2.MOV",
+        "video": true
+      },
+      {
+        "n": "014",
+        "src": "/photos/tri/25-diners-selection/014.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_7695 2.HEIC"
+      },
+      {
+        "n": "015",
+        "src": "/photos/tri/25-diners-selection/015.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_7711 3.HEIC"
+      },
+      {
+        "n": "016",
+        "src": "/photos/tri/25-diners-selection/016.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_9218.JPG"
+      },
+      {
+        "n": "017",
+        "src": "/photos/tri/25-diners-selection/017.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_9287 2.jpg"
+      },
+      {
+        "n": "018",
+        "src": "/photos/tri/25-diners-selection/018.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_9441.jpg"
+      },
+      {
+        "n": "019",
+        "src": "/photos/tri/25-diners-selection/019.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_9473 2.jpg"
+      },
+      {
+        "n": "020",
+        "src": "/photos/tri/25-diners-selection/020.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_9479.jpg"
+      },
+      {
+        "n": "021",
+        "src": "/photos/tri/25-diners-selection/021.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_9490.JPG"
+      },
+      {
+        "n": "022",
+        "src": "/photos/tri/25-diners-selection/022.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/IMG_9527.JPG"
+      },
+      {
+        "n": "023",
+        "src": "/photos/tri/25-diners-selection/023.webp",
+        "origine": "SELECTION PHOTOS SITE/01. DINERS/PHOTO-2025-06-26-18-11-47.jpg"
+      }
+    ]
+  },
+  "26-pfw-defiles": {
+    "dossier": "Paris Fashion Week — défilés",
+    "racineAbsolue": true,
+    "items": [
+      {
+        "n": "001",
+        "src": "/photos/tri/26-pfw-defiles/001.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Hunting at the @litkovska_official presentation💛💙 (1).jpg"
+      },
+      {
+        "n": "002",
+        "src": "/photos/tri/26-pfw-defiles/002.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Hunting at the @litkovska_official presentation💛💙 (11).jpg"
+      },
+      {
+        "n": "003",
+        "src": "/photos/tri/26-pfw-defiles/003.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Hunting at the @litkovska_official presentation💛💙 (13).jpg"
+      },
+      {
+        "n": "004",
+        "src": "/photos/tri/26-pfw-defiles/004.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Hunting at the @litkovska_official presentation💛💙 (14).jpg"
+      },
+      {
+        "n": "005",
+        "src": "/photos/tri/26-pfw-defiles/005.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Hunting at the @litkovska_official presentation💛💙 (3).jpg"
+      },
+      {
+        "n": "006",
+        "src": "/photos/tri/26-pfw-defiles/006.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Hunting at the @litkovska_official presentation💛💙 (6).jpg"
+      },
+      {
+        "n": "007",
+        "src": "/photos/tri/26-pfw-defiles/007.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Hunting at the @litkovska_official presentation💛💙 (9).jpg"
+      },
+      {
+        "n": "008",
+        "src": "/photos/tri/26-pfw-defiles/008.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Hunting at the @litkovska_official presentation💛💙.jpg"
+      },
+      {
+        "n": "009",
+        "src": "/photos/tri/26-pfw-defiles/009.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/MR.ROMANTIMO.mp4",
+        "video": true
+      },
+      {
+        "n": "010",
+        "src": "/photos/tri/26-pfw-defiles/010.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/MR.ROMANTIMO02.mp4",
+        "video": true
+      },
+      {
+        "n": "011",
+        "src": "/photos/tri/26-pfw-defiles/011.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/STREET.STYLE.HUNTER01.mp4",
+        "video": true
+      },
+      {
+        "n": "012",
+        "src": "/photos/tri/26-pfw-defiles/012.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/get.jpeg"
+      },
+      {
+        "n": "013",
+        "src": "/photos/tri/26-pfw-defiles/013.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/get.mp4",
+        "video": true
+      },
+      {
+        "n": "014",
+        "src": "/photos/tri/26-pfw-defiles/014.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/m4rkkhoury02.mp4",
+        "video": true
+      },
+      {
+        "n": "015",
+        "src": "/photos/tri/26-pfw-defiles/015.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/theluxurysection0.mp4",
+        "video": true
+      },
+      {
+        "n": "016",
+        "src": "/photos/tri/26-pfw-defiles/016.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/today at the invitation of @litkovska_official to see his new collection presented at @parisfash (14).jpg"
+      },
+      {
+        "n": "017",
+        "src": "/photos/tri/26-pfw-defiles/017.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/today at the invitation of @litkovska_official to see his new collection presented at @parisfash (2).jpg"
+      },
+      {
+        "n": "018",
+        "src": "/photos/tri/26-pfw-defiles/018.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/today at the invitation of @litkovska_official to see his new collection presented at @parisfash (3).jpg"
+      },
+      {
+        "n": "019",
+        "src": "/photos/tri/26-pfw-defiles/019.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Ліля Літковська вкотре представила свій бренд на Paris Fashion Week. Учора, 1 жовтня, у Парижі .webp"
+      },
+      {
+        "n": "020",
+        "src": "/photos/tri/26-pfw-defiles/020.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Потужний та дуже сенсовий показ від @litkovska_official 🙌🏻 (1).jpg"
+      },
+      {
+        "n": "021",
+        "src": "/photos/tri/26-pfw-defiles/021.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Потужний та дуже сенсовий показ від @litkovska_official 🙌🏻 (1).mp4",
+        "video": true
+      },
+      {
+        "n": "022",
+        "src": "/photos/tri/26-pfw-defiles/022.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Потужний та дуже сенсовий показ від @litkovska_official 🙌🏻 (3).jpg"
+      },
+      {
+        "n": "023",
+        "src": "/photos/tri/26-pfw-defiles/023.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Потужний та дуже сенсовий показ від @litkovska_official 🙌🏻 (5).jpg"
+      },
+      {
+        "n": "024",
+        "src": "/photos/tri/26-pfw-defiles/024.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW DEFILÉ/Потужний та дуже сенсовий показ від @litkovska_official 🙌🏻.mp4",
+        "video": true
+      },
+      {
+        "n": "025",
+        "src": "/photos/tri/26-pfw-defiles/025.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW/Hunting at the @litkovska_official presentation💛💙 (16).jpg"
+      },
+      {
+        "n": "026",
+        "src": "/photos/tri/26-pfw-defiles/026.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW/IMG_6481.PNG"
+      },
+      {
+        "n": "027",
+        "src": "/photos/tri/26-pfw-defiles/027.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW/IMG_6482.PNG"
+      },
+      {
+        "n": "028",
+        "src": "/photos/tri/26-pfw-defiles/028.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW/IMG_6483.PNG"
+      },
+      {
+        "n": "029",
+        "src": "/photos/tri/26-pfw-defiles/029.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW/IMG_6485.PNG"
+      },
+      {
+        "n": "030",
+        "src": "/photos/tri/26-pfw-defiles/030.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW/IMG_6486.PNG"
+      },
+      {
+        "n": "031",
+        "src": "/photos/tri/26-pfw-defiles/031.webp",
+        "origine": "SELECTION PHOTOS SITE/02. PFW/IMG_6488.jpg"
+      }
+    ]
   }
 }
