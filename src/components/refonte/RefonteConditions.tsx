@@ -57,7 +57,14 @@ export function RefonteConditions() {
             <p className="font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]">
               Sur cette page
             </p>
-            <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 lg:block lg:space-y-2">
+            {/*
+              ⚠️ UNE ENTRÉE PAR LIGNE SUR TÉLÉPHONE. Étienne, capture à
+              l'appui : « le sommaire est mal calé ». En `flex-wrap`, cinq
+              entrées de longueurs inégales se répartissaient sur trois lignes
+              ragées — ça ne se lisait plus comme une liste mais comme un
+              paragraphe cassé. Elles s'alignent dès `sm`, où la place revient.
+            */}
+            <ul className="mt-3 space-y-2 sm:flex sm:flex-wrap sm:gap-x-5 sm:gap-y-2 sm:space-y-0 lg:block lg:space-y-2">
               {MOMENTS.map((m) => (
                 <li key={m.id}>
                   <a
