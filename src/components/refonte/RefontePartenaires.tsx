@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour, lien } from "./chrome";
-import { ADRESSE } from "./data";
 import { PARTENAIRES, SERVICES } from "./data-partenaires";
 
 /**
@@ -22,9 +21,6 @@ export function RefontePartenaires() {
           <h1 className="font-clp uppercase">
             <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
               Partenaires
-            </span>
-            <span className="mt-1.5 block whitespace-nowrap text-[9px] font-normal leading-relaxed tracking-[0.06em] text-[#A8A29A] sm:text-[10px] sm:tracking-[0.08em]">
-              {ADRESSE}
             </span>
           </h1>
           <p className="mt-4 max-w-[70ch] text-[15px] leading-relaxed text-[#C9C4BC]">

@@ -55,9 +55,6 @@ export function RefonteVisiter() {
             <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
               Réserver une visite
             </span>
-            <span className="mt-1 block text-[11px] font-normal tracking-[0.16em] text-[#A8A29A]">
-              {ADRESSE}
-            </span>
           </h1>
           <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[#C9C4BC]">
             Le plus simple est de venir voir. On fait le tour des trois espaces,

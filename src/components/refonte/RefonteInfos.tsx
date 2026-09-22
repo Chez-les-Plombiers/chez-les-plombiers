@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { Barre, CADRE, Corps, LAITON, Page, Pied, lien, Retour } from "./chrome";
-import { ADRESSE, FICHE_GOOGLE } from "./data";
+import { FICHE_GOOGLE } from "./data";
 import { INFOS_INTRO, SECTIONS, type Section } from "./data-infos";
 
 /**
@@ -43,9 +43,6 @@ function Entete() {
       <h1 className="font-clp uppercase">
         <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
           Venir, livrer, repartir
-        </span>
-        <span className="mt-1 block text-[11px] font-normal tracking-[0.16em] text-[#A8A29A]">
-          {ADRESSE}
         </span>
       </h1>
       <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[#C9C4BC]">
