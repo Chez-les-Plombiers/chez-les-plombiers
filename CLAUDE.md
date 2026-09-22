@@ -1,4 +1,45 @@
-# Chez Les Plombiers — Site Vitrine Bilingue
+# Chez Les Plombiers — le site
+
+> ## ⚠️ BASCULE DU 22/09/2026 — CE FICHIER EST EN PARTIE PÉRIMÉ
+>
+> La refonte est **en ligne** : `/`, `/atelier`, `/boutique`, `/appartement`,
+> `/atelier/technique`, `/photos`, `/infos`, `/conditions`, `/visiter`,
+> `/partenaires`, `/visites-virtuelles`, `/mentions-legales`,
+> `/confidentialite`. Composants dans `src/components/refonte/`.
+>
+> **Ce qui suit décrit l'ANCIEN site** et ne vaut plus que comme archive :
+> les 12 sections de l'accueil, les 7 pages `/services/*`, les 4 pages SEO,
+> `/notre-chef`, `/studio`, `/guide`, et toute la section i18n. Ces pages
+> existent encore en fichier mais **partent toutes en 301** — voir
+> `src/lib/bascule.ts`, qui porte la liste et l'explique.
+>
+> ### Ce qui a changé, et qu'il faut savoir avant de toucher au site
+>
+> - **Le site est en FRANÇAIS SEUL.** Les ~20 adresses `/en/*` redirigent.
+>   Décision d'Étienne : pour des dimensions et des horaires, la traduction
+>   automatique des navigateurs suffit. Une seule ligne d'anglais subsiste,
+>   en haut de `/infos`.
+> - **`lien()` dans `chrome.tsx` rend l'adresse telle quelle.** Elle est
+>   conservée : un second chantier se préparerait sous un préfixe sans
+>   toucher à un seul lien.
+> - **⚠️ NE JAMAIS AJOUTER une redirection dans `next.config.ts` sans
+>   vérifier qu'aucune page ne porte ce nom.** `/photos`, `/visiter` et
+>   `/histoire` y pointaient vers des ancres de l'ancien accueil ; laissées
+>   en place, elles auraient rendu la photothèque injoignable par un 308
+>   silencieux.
+> - **Le plan du site LIT la photothèque.** Un événement ajouté au tri
+>   apparaît seul dans `sitemap.xml`. Ne pas y remettre de liste à la main.
+> - **La photothèque se pilote par les données**, jamais à la main :
+>   `tri-sources.json` (les dossiers), `tri-manifeste.json` (les vignettes),
+>   `tri-selection.json` (ce qu'Étienne garde). Puis `node gen-tri.mjs` et
+>   `node gen-photos.mjs`.
+> - **`.archive-ancien-site/`** contient les pages remplacées, hors
+>   versionnement. Leur historique est dans Git. Supprimable.
+>
+> ⏳ Reste à faire : `/histoire`, l'album `05. EVENTS CULTURELS - YANN`, le
+> press kit, le plan du site public, l'album extérieur, les vidéos du lieu,
+> et **les sauvegardes** (variables Vercel + KV Upstash) — voir
+> `NOTES-REFONTE.md`.
 
 ## Projet
 Site vitrine bilingue (FR/EN) pour **Chez Les Plombiers**, lieu événementiel de 200m² au 39 rue des Bourdonnais, 75001 Paris.
