@@ -80,6 +80,17 @@ const ANGLAIS: Array<[string, string]> = [
  * présentation du lieu.
  */
 const FRANCAIS: Array<[string, string]> = [
+  /*
+   * ⚠️ LES ADRESSES DE CHANTIER. Pendant deux jours tout le site a vécu sous
+   * `/refonte` : les onglets d'Étienne, ses favoris et les liens que je lui
+   * ai envoyés y pointent encore. Elles suivent la page à sa vraie adresse
+   * plutôt que de tomber en 404 le lendemain de la mise en ligne.
+   *
+   * ⚠️ Cette règle peut disparaître dans quelques mois — elle ne protège
+   * personne d'autre que nous, aucun lien public n'a jamais porté `/refonte`.
+   */
+  ["/refonte", "/"],
+  ["/refonte/:path*", "/:path*"],
   ["/services/fashion-shows", "/photos/defiles"],
   ["/services/petit-dejeuners", "/photos/diners"],
   ["/services/evenements-professionnels", "/photos"],
