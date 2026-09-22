@@ -46,36 +46,57 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const dict = await getDictionary(locale as Locale);
-  const meta = dict.metadata as Record<string, string>;
 
-  const isEn = locale === "en";
-  const baseUrl = isEn ? `${SITE_URL}/en` : SITE_URL;
+  /*
+   * ⚠️ `/en` ne sert plus que le temps d'une redirection 301, mais la route
+   * existe encore le temps que Next la résolve — on garde donc la canonique
+   * juste, plutôt que de déclarer l'accueil français depuis une adresse
+   * anglaise. Le jour où le segment `[locale]` disparaîtra, ces deux lignes
+   * partiront avec.
+   */
+  const baseUrl = locale === "en" ? `${SITE_URL}/en` : SITE_URL;
+
+  /*
+   * ⚠️ CE BLOC EST LE REPLI DE TOUT LE SITE, ET IL EST PLUS PUISSANT QU'IL
+   * N'EN A L'AIR. Les métadonnées de Next se fusionnent EN SURFACE : une page
+   * qui écrit `title` sans écrire `openGraph` hérite d'ICI son titre de
+   * partage, en entier. Il a donc suffi que ce bloc reste sur l'ancien site
+   * pour que les quatorze pages de la refonte s'envoient toutes dans WhatsApp
+   * sous le titre « Lieu Évènementiel Paris 1er — 200m² », avec une photo de
+   * L'ATELIER — y compris le lien de L'APPARTEMENT. Voir `lib/partage.ts`.
+   *
+   * ⚠️ NE PAS LE REBRANCHER SUR `meta.*`. Ces chaînes viennent de `fr.json`,
+   * le dictionnaire de l'ancien site, que la refonte n'alimente plus : il
+   * décrit un lieu unique de 200 m², alors qu'il y en a trois.
+   */
+  const titre = "Chez Les Plombiers — 3 lieux événementiels, Paris 1er";
+  const description =
+    "Trois espaces à la même adresse, au 39 rue des Bourdonnais. Showrooms, lancements presse, dîners privés, défilés, expositions. Dès 1 000 € HT/jour.";
 
   return {
-    title: meta.homeTitle,
-    description: meta.homeDescription,
+    title: titre,
+    description,
     openGraph: {
-      title: meta.homeTitle,
-      description: meta.homeOgDescription,
-      url: baseUrl,
+      title: titre,
+      description,
+      url: SITE_URL,
       siteName: "Chez Les Plombiers",
       images: [
         {
-          url: `${SITE_URL}/images/hero.png`,
+          url: `${SITE_URL}/og/defaut.jpg`,
           width: 1200,
           height: 630,
-          alt: "Chez Les Plombiers - Event venue Paris",
+          alt: titre,
         },
       ],
-      locale: isEn ? "en_US" : "fr_FR",
+      locale: "fr_FR",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: meta.homeTitle,
-      description: meta.homeOgDescription,
-      images: [`${SITE_URL}/images/hero.png`],
+      title: titre,
+      description,
+      images: [`${SITE_URL}/og/defaut.jpg`],
     },
     /*
      * ⚠️ Safari sur iPhone souligne tout seul ce qu'il prend pour une adresse
@@ -92,12 +113,15 @@ export async function generateMetadata({
       ],
       apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     },
+    /*
+     * ⚠️ PLUS D'ALTERNATE ANGLAIS. La bascule du 22/09 renvoie tout `/en/*`
+     * en 301 vers le français. Continuer à déclarer `en: /en` disait à Google
+     * qu'il existe une version anglaise, à une adresse qui le redirige aussi
+     * sec — une contradiction qu'il signale, et qui ne rapporte rien puisque
+     * la page cible est la française.
+     */
     alternates: {
       canonical: baseUrl,
-      languages: {
-        fr: SITE_URL,
-        en: `${SITE_URL}/en`,
-      },
     },
   };
 }

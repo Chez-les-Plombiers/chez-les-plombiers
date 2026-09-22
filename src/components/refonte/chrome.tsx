@@ -419,8 +419,19 @@ export function Pied() {
               </a>
             </p>
           </div>
+          {/*
+            ⚠️ CETTE LIGNE DISAIT « MAQUETTE DE TRAVAIL, NON PUBLIÉE », ET ELLE
+            L'A DIT EN PRODUCTION. Un garde-fou de chantier, juste tant que le
+            site vivait sous `/refonte` — et resté en place à la bascule du
+            22/09, en pied de TOUTES les pages. Un prospect qui descend jusqu'en
+            bas lisait donc que le site qu'il consulte n'est pas publié.
+
+            Rien ne l'a signalé : aucun lien mort, aucune erreur, aucun test qui
+            échoue. Les restes de chantier ne se trouvent qu'en lisant ce que la
+            page dit — et c'est le pied de page qu'on relit le moins.
+          */}
           <p className="font-clp text-[10px] uppercase tracking-[0.18em] text-[#5E5E5E]">
-            Maquette de travail, non publiée
+            Paris 1er
           </p>
         </div>
       </div>

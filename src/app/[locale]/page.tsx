@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { partage } from "@/lib/partage";
 import { RefonteHome } from "@/components/refonte/RefonteHome";
 
 /**
@@ -10,10 +11,13 @@ import { RefonteHome } from "@/components/refonte/RefonteHome";
  *
  * ⚠️ À supprimer une fois la refonte bascule sur les vraies pages.
  */
-export const metadata: Metadata = {
-  title: "Chez Les Plombiers — 3 lieux événementiels, Paris 1er",
-  description: "Trois espaces à la même adresse, au 39 rue des Bourdonnais. Showrooms, lancements presse, dîners privés, défilés, expositions. Dès 1 000 € HT/jour."
-};
+export const metadata: Metadata = partage({
+  titre: "Chez Les Plombiers — 3 lieux événementiels, Paris 1er",
+  description:
+    "Trois espaces à la même adresse, au 39 rue des Bourdonnais. Showrooms, lancements presse, dîners privés, défilés, expositions. Dès 1 000 € HT/jour.",
+  visuel: "defaut",
+  chemin: "/",
+});
 
 export default function RefontePage() {
   return <RefonteHome />;
