@@ -276,9 +276,9 @@ export const MOMENTS: readonly MomentRegles[] = [
  * en inventer une par souci de symétrie.
  */
 export const DEPOTS = [
-  { lieu: "L'Atelier", montant: "5 000 €" },
+  { lieu: "L'Atelier", montant: "5 000 €" },
   { lieu: "La Boutique", montant: "Aucun dépôt demandé" },
-  { lieu: "L'Appartement", montant: "3 000 €" },
+  { lieu: "L'Appartement", montant: "3 000 €" },
 ] as const;
 
 export const DEPOT_MODALITES =
