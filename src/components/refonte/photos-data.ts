@@ -93,7 +93,18 @@ function photosDe(slug: string): Photo[] {
  */
 export const GALERIE: EvenementGalerie[] = (() => {
   const out: EvenementGalerie[] = [];
-  const absorbes = new Set<string>();
+  /*
+   * ⚠️ LES ABSORBÉS SE CALCULENT AVANT LA BOUCLE, PAS PENDANT. En les
+   * marquant au fil de l'eau, la fusion ne marchait que si l'absorbeur
+   * passait en premier — et l'ordre vient du numéro de dossier, donc du
+   * hasard. `voitures-porsche` s'est ainsi affiché DEUX fois : une comme
+   * événement à lui, une dans Porsche qui venait de l'absorber.
+   */
+  const absorbes = new Set(
+    Object.values(SEL)
+      .map((s) => s.fusionneAvec)
+      .filter((x): x is string => Boolean(x))
+  );
 
   for (const e of [...EVENEMENTS].sort((a, b) => rang(a.slug) - rang(b.slug))) {
     const sel = SEL[e.slug];
@@ -106,7 +117,6 @@ export const GALERIE: EvenementGalerie[] = (() => {
     // La fusion : on annexe l'autre dossier et on l'écarte de la boucle.
     const autre = sel.fusionneAvec;
     if (autre && SEL[autre]) {
-      absorbes.add(autre);
       const sien = photosDe(autre);
       photos = [...photos, ...sien];
       if (couvertureNum === null && SEL[autre].couverture !== null) {
