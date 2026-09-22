@@ -124,16 +124,25 @@ const nextConfig: NextConfig = {
         destination: "https://www.chezlesplombiers.fr/:path*",
         permanent: true,
       },
+      /*
+       * ⚠️ TROIS REDIRECTIONS ONT ÉTÉ RETIRÉES ICI LE 22/09/2026, à la
+       * bascule : `/photos`, `/visiter` et `/histoire`. Elles renvoyaient
+       * vers des ancres de l'ancien accueil parce que ces adresses ne
+       * menaient nulle part. La refonte leur donne une vraie page — les
+       * laisser l'aurait rendue injoignable, par un 308 silencieux.
+       *
+       * ⚠️ `/equipements` ne va plus à une ancre mais à `/atelier/technique`,
+       * qui est la page qui répond vraiment.
+       *
+       * ⚠️ NE PAS EN AJOUTER SANS VÉRIFIER qu'aucune page ne porte ce nom.
+       */
       // Fix Google sitelinks pointing to non-existent pages
-      { source: "/l-histoire", destination: "/#about", permanent: true },
-      { source: "/histoire", destination: "/#about", permanent: true },
-      { source: "/photos", destination: "/#portfolio", permanent: true },
-      { source: "/galerie", destination: "/#portfolio", permanent: true },
-      { source: "/equipements", destination: "/#equipments", permanent: true },
-      { source: "/equipements-infos", destination: "/#equipments", permanent: true },
-      { source: "/visiter", destination: "/#contact", permanent: true },
-      { source: "/visite", destination: "/#contact", permanent: true },
-      { source: "/contact", destination: "/#contact", permanent: true },
+      { source: "/l-histoire", destination: "/", permanent: true },
+      { source: "/galerie", destination: "/photos", permanent: true },
+      { source: "/equipements", destination: "/atelier/technique", permanent: true },
+      { source: "/equipements-infos", destination: "/atelier/technique", permanent: true },
+      { source: "/visite", destination: "/visiter", permanent: true },
+      { source: "/contact", destination: "/visiter", permanent: true },
       // Fix GSC 404 errors
       { source: "/lieu", destination: "/", permanent: true },
       { source: "/en/fr", destination: "/en", permanent: true },

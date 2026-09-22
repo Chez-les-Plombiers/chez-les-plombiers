@@ -21,7 +21,7 @@
  * disparaître le site anglais et détournent une vingtaine d'adresses indexées.
  * C'est réversible — un `false` et un déploiement — mais ça se décide.
  */
-export const BASCULE = false;
+export const BASCULE = true;
 
 /**
  * ── LE SITE ANGLAIS S'ARRÊTE ──────────────────────────────────────────────

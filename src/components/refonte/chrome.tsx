@@ -72,19 +72,19 @@ export const TRAIT = "border-[var(--clp-bord)]";
 export const LABEL = "font-clp text-[10px] uppercase tracking-[0.2em] text-[#8A8A8A]";
 
 /**
- * ⚠️ LE JOUR DE LA BASCULE, C'EST ICI, ET NULLE PART AILLEURS.
+ * ⚠️ BASCULE FAITE LE 22/09/2026 — la fonction rend l'adresse telle quelle.
  *
- * Les données portent les URL DÉFINITIVES (`/atelier`, `/infos`, `/visiter`).
- * Tant que la refonte vit sous `/refonte`, cette fonction ajoute le préfixe.
- * Le jour de la mise en ligne, on renvoie `href` tel quel et tout le site
- * bascule d'un coup.
+ * Les données ont toujours porté les URL DÉFINITIVES (`/atelier`, `/infos`,
+ * `/visiter`). Tant que la refonte vivait sous `/refonte`, cette fonction
+ * ajoutait le préfixe ; le jour de la mise en ligne, une ligne a suffi.
  *
- * `/tarifs` en est exempté : ce n'est pas une page de cette application, c'est
- * l'autre zone Next, déjà en production à son adresse définitive.
+ * ⚠️ ELLE EST CONSERVÉE, ET TOUS SES APPELS AVEC. Un second chantier se
+ * préparerait de la même façon — sous un préfixe, sans toucher à un seul lien
+ * — et il faudrait alors la retrouver. La supprimer ferait gagner trente
+ * lignes et perdre le mécanisme.
  */
 export function lien(href: string): string {
-  if (href.startsWith("/tarifs")) return href;
-  return `/refonte${href}`;
+  return href;
 }
 
 /**

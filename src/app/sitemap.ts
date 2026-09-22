@@ -1,378 +1,59 @@
 import type { MetadataRoute } from "next";
+import { CATEGORIES_GALERIE, LIEUX_GALERIE } from "@/components/refonte/photos-data";
+
+/**
+ * Le plan du site, réécrit à la bascule du 22/09/2026.
+ *
+ * ⚠️ IL COMPTAIT 41 URL, DONT LA MOITIÉ EN ANGLAIS. Le site est désormais en
+ * français seul et les adresses `/en/*` partent en 301 (voir `bascule.ts`) :
+ * les annoncer ici enverrait Google sur des redirections, ce qui est le
+ * meilleur moyen de faire douter de tout le reste du fichier.
+ *
+ * ⚠️ ET IL ÉNUMÉRAIT LES PAGES À LA MAIN. Les catégories de photos et les
+ * lieux sont désormais lus depuis la photothèque : un événement ajouté au tri
+ * apparaît tout seul. Une liste écrite à la main diverge, c'est mécanique.
+ *
+ * ⚠️ Les pages d'événement (`/photos/diners/kim-attaf`) n'y sont PAS : il y en
+ * a une trentaine, elles n'ont ni texte propre ni intérêt de recherche, et
+ * elles se découvrent par leur catégorie. Un plan de site n'est pas un
+ * inventaire, c'est une liste de ce qu'on veut voir indexé.
+ */
+const SITE = "https://www.chezlesplombiers.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.chezlesplombiers.fr";
+  const maintenant = new Date();
+  const page = (
+    chemin: string,
+    priority: number,
+    changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] = "monthly"
+  ) => ({ url: `${SITE}${chemin}`, lastModified: maintenant, changeFrequency, priority });
 
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-      alternates: {
-        languages: { fr: baseUrl, en: `${baseUrl}/en` },
-      },
-    },
-    {
-      url: `${baseUrl}/en`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    /**
-     * Zone tarifs (application `chez-les-plombiers-pricing`, servie sous
-     * `/tarifs`). Indexée depuis le 19/09/2026 : dans ce marché personne
-     * n'affiche ses prix, ces pages sont donc le contenu le plus
-     * différenciant du site. Priorité haute et fréquence hebdomadaire — la
-     * grille et les disponibilités bougent.
-     *
-     * ⚠️ Ces URL ne sont pas générées par ce projet : si un lieu est ajouté
-     * dans `venues.ts` côté pricing, il faut l'ajouter ici à la main.
-     */
-    {
-      url: `${baseUrl}/tarifs`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
+    page("/", 1),
+    /* Les trois lieux : c'est ce qu'on loue. */
+    page("/atelier", 0.9),
+    page("/boutique", 0.9),
+    page("/appartement", 0.9),
     /*
-     * ⚠️ « atelier » n'est PAS dans cette liste : L'ATELIER vit à /tarifs, et
-     * /tarifs/atelier redirige en 308 depuis le 20/09/2026. Un plan de site ne
-     * doit annoncer que des URL canoniques qui répondent 200.
+     * Les tarifs sont servis par l'autre zone Next, sous le domaine
+     * principal. Hebdomadaire : la grille et les disponibilités bougent.
      */
-    ...["boutique", "appartement"].map((venue) => ({
-      url: `${baseUrl}/tarifs/${venue}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-    {
-      url: `${baseUrl}/appartement`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/appartement`,
-          en: `${baseUrl}/en/apartment`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/apartment`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/studio`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/studio`,
-          en: `${baseUrl}/en/studio`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/studio`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/notre-chef`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/notre-chef`,
-          en: `${baseUrl}/en/our-chef`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/our-chef`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/infos`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/infos`,
-          en: `${baseUrl}/en/info`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/info`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    // Service pages
-    {
-      url: `${baseUrl}/services/fashion-shows`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/services/fashion-shows`,
-          en: `${baseUrl}/en/services/fashion-shows`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/services/fashion-shows`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/services/petit-dejeuners`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/services/petit-dejeuners`,
-          en: `${baseUrl}/en/services/corporate-breakfasts`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/services/corporate-breakfasts`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/services/evenements-professionnels`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/services/evenements-professionnels`,
-          en: `${baseUrl}/en/services/professional-events`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/services/professional-events`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/services/diners-exception`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/services/diners-exception`,
-          en: `${baseUrl}/en/services/exceptional-dinners`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/services/exceptional-dinners`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/services/evenements-culturels`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/services/evenements-culturels`,
-          en: `${baseUrl}/en/services/cultural-events`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/services/cultural-events`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/services/seminaires-formations`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/services/seminaires-formations`,
-          en: `${baseUrl}/en/services/seminars-training`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/services/seminars-training`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/services/evenements-auto-moto`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/services/evenements-auto-moto`,
-          en: `${baseUrl}/en/services/automotive-events`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/services/automotive-events`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    // Guide
-    {
-      url: `${baseUrl}/guide`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/guide`,
-          en: `${baseUrl}/en/guide`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/guide`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    // Legal pages
-    {
-      url: `${baseUrl}/mentions-legales`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/mentions-legales`,
-          en: `${baseUrl}/en/legal-notice`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/legal-notice`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/politique-confidentialite`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/politique-confidentialite`,
-          en: `${baseUrl}/en/privacy-policy`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    // SEO landing pages
-    {
-      url: `${baseUrl}/lieu-evenementiel-paris`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/lieu-evenementiel-paris`,
-          en: `${baseUrl}/en/event-venue-paris`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/event-venue-paris`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/espace-atypique-paris`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/espace-atypique-paris`,
-          en: `${baseUrl}/en/unique-venue-paris`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/unique-venue-paris`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/seminaire-entreprise-paris`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/seminaire-entreprise-paris`,
-          en: `${baseUrl}/en/corporate-seminar-paris`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/corporate-seminar-paris`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/shooting-voiture-paris`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/shooting-voiture-paris`,
-          en: `${baseUrl}/en/car-photoshoot-paris`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/en/car-photoshoot-paris`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    page("/tarifs", 0.9, "weekly"),
+    page("/tarifs/boutique", 0.8, "weekly"),
+    page("/tarifs/appartement", 0.8, "weekly"),
+    /* Les pages qu'on envoie à quelqu'un. */
+    page("/infos", 0.8),
+    page("/atelier/technique", 0.8),
+    page("/photos", 0.8, "weekly"),
+    page("/conditions", 0.7),
+    page("/visiter", 0.7),
+    page("/partenaires", 0.6),
+    page("/visites-virtuelles", 0.6),
+    /* La photothèque, lue depuis le tri : rien à tenir à jour ici. */
+    ...LIEUX_GALERIE.map((l) => page(`/photos/${l.slug.replace(/^lieu-/, "")}`, 0.6)),
+    ...CATEGORIES_GALERIE.map((c) => page(`/photos/${c.slug}`, 0.6)),
+    /* Obligatoires, mais personne ne les cherche. */
+    page("/mentions-legales", 0.2, "yearly"),
+    page("/confidentialite", 0.2, "yearly"),
   ];
 }

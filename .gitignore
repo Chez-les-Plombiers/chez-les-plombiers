@@ -41,3 +41,9 @@ yarn-error.log*
 next-env.d.ts
 .env*.local
 .gstack/
+
+# ⚠️ Les pages de l'ancien site, mises de côté à la bascule du 22/09/2026.
+# Elles ne sont PAS versionnées : leur historique complet est dans Git, aux
+# commits antérieurs. Le dossier n'existe que le temps qu'Étienne confirme
+# qu'on n'y revient pas — après quoi il se supprime sans rien perdre.
+.archive-ancien-site/

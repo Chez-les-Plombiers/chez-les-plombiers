@@ -105,6 +105,13 @@ export const ZONES = [
 const photosDe = (slug: string) =>
   LIEUX_GALERIE.find((l) => l.slug === slug)?.photos.slice(0, 6) ?? [];
 
+/*
+ * ⚠️ EXPORTÉ POUR L'OUTIL DE CALAGE, qui a été supprimé à la bascule du
+ * 22/09/2026 une fois les cadres justes. Pour le retrouver le jour où la
+ * façade est rephotographiée :
+ *   git show d1ced09^:src/components/refonte/CalibreFacade.tsx
+ * Il glisse les cadres à la souris et sort le bloc à recopier ci-dessous.
+ */
 export const FACADE_SRC = FACADE;
 
 export function ScanFacade({
