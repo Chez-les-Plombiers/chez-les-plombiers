@@ -181,7 +181,7 @@ export const EVENEMENTS: readonly Evenement[] = [
    *    d'un autre comme si c'était le sien serait une faute, et elle se
    *    verrait.
    */
-  { slug: "25-diners-selection", nom: "Dîners", categorie: "diners" },
+  { slug: "25-diners-selection", nom: "Autres dîners", categorie: "diners" },
   { slug: "26-pfw-defiles", nom: "Paris Fashion Week — défilés", categorie: "defiles" },
   /*
    * L'exposition de Caroline FAINDT — peintre, une clé en métal dissimulée
