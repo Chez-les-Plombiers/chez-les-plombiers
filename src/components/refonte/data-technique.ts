@@ -137,29 +137,32 @@ export const TECHNIQUE: readonly Poste[] = [
  * Ne pas en refaire d'autres : ce sont les documents de l'architecte et du
  * géomètre, et ils font foi.
  */
+/*
+ * ⚠️ PLUS DE CHAMP `poids` ICI. Il y était, écrit à la main — et il a menti
+ * dès que « Vues et mesures » a changé de taille (7,2 Mo annoncés, 6,6 réels)
+ * en recevant une annotation. Un poids de fichier est une propriété du
+ * FICHIER : la page le lit sur le disque à la construction. Voir `poidsDe()`
+ * dans `RefonteTechnique.tsx`.
+ */
 export const PLANS = [
   {
     nom: "Plan du lieu",
     fichier: "/documents/plan-chez-les-plombiers.pdf",
     detail: "Le plan général de L'Atelier.",
-    poids: "195 Ko",
   },
   {
     nom: "Cotations architecte",
     fichier: "/documents/cotations-architecte-globales.pdf",
     detail: "Les cotes relevées par l'architecte, sur l'ensemble du lieu.",
-    poids: "1,8 Mo",
   },
   {
     nom: "Vues et mesures",
     fichier: "/documents/vues-mesures.pdf",
     detail: "Les élévations et les mesures, vue par vue.",
-    poids: "7,2 Mo",
   },
   {
     nom: "Implantation des lumières",
     fichier: "/documents/plan-implantation-lumieres.pdf",
     detail: "La position des points lumineux et des arrivées DMX.",
-    poids: "511 Ko",
   },
 ] as const;

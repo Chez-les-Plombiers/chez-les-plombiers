@@ -1,5 +1,30 @@
 import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour, lien } from "./chrome";
+import { statSync } from "node:fs";
+import path from "node:path";
 import { PLANS, TECHNIQUE } from "./data-technique";
+
+/**
+ * Le poids d'un fichier de `public/`, lu sur le disque à la construction.
+ *
+ * ⚠️ IL ÉTAIT ÉCRIT À LA MAIN DANS LES DONNÉES, et il a menti dès qu'un PDF a
+ * changé : « Vues et mesures » annonçait 7,2 Mo pour 6,6 réels après avoir
+ * reçu une annotation. Personne ne pense à corriger un chiffre décoratif —
+ * sauf que celui-ci sert à décider si on télécharge en 4G.
+ *
+ * ⚠️ Cette page est un composant SERVEUR : `statSync` s'exécute à la
+ * construction, jamais dans le navigateur. Y ajouter « use client » casserait
+ * la compilation, et ce serait le bon moment pour se demander pourquoi.
+ */
+function poidsDe(fichier: string): string {
+  try {
+    const o = statSync(path.join(process.cwd(), "public", fichier)).size;
+    return o >= 1024 * 1024
+      ? `${(o / 1024 / 1024).toFixed(1).replace(".", ",")}\u00A0Mo`
+      : `${Math.round(o / 1024)}\u00A0Ko`;
+  } catch {
+    return "PDF";
+  }
+}
 
 /**
  * `/atelier/technique` et `/atelier/plans` — la fiche du régisseur.
@@ -132,7 +157,7 @@ export function RefonteTechnique() {
                       </p>
                     </div>
                     <span className="font-mono text-[11px]" style={{ color: LAITON }}>
-                      PDF · {p.poids} ↓
+                      PDF · {poidsDe(p.fichier)} ↓
                     </span>
                   </a>
                 ))}
@@ -161,7 +186,7 @@ export function RefonteTechnique() {
                   Tout télécharger
                 </span>
                 <span className="font-mono text-[11px]" style={{ color: LAITON }}>
-                  ZIP · 9,6 Mo ↓
+                  ZIP · {poidsDe("/documents/plans-chez-les-plombiers.zip")} ↓
                 </span>
               </a>
             </section>
