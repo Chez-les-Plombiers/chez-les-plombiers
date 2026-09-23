@@ -1,0 +1,13 @@
+googleb3456fc12e5a6f1b.html — NE PAS SUPPRIMER
+
+C'est le fichier de validation de notre propriété Search Console
+(https://www.chezlesplombiers.fr/, créée le 23/09/2026 sous
+etienne@chezlesplombiers.fr).
+
+⚠️ Google le revérifie périodiquement. Le retirer fait perdre la propriété,
+et avec elle l'accès aux requêtes de recherche — la seule source qui dise ce
+que les gens tapent avant d'arriver ici.
+
+⚠️ La validation par Google Analytics a été essayée et REFUSÉE : Google exige
+l'extrait de suivi dans le <head>, or Next le pose dans le <body>. Ne pas
+réessayer par ce chemin en croyant faire plus propre.
