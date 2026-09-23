@@ -305,7 +305,7 @@ export function RefonteNouveauClient() {
             arrive par un lien, sans contexte : il doit comprendre en une
             ligne pourquoi on lui demande un SIRET.
           */}
-          <p className="mt-4 max-w-[70ch] text-[15px] leading-relaxed text-[#C9C4BC]">
+          <p className="mt-4 max-w-[86ch] text-[15px] leading-relaxed text-[#C9C4BC]">
             Vous avez une date en vue chez nous. Ces informations nous permettent
             d&apos;établir votre proposition tarifaire, que vous recevez sous 24 heures.
             Rien n&apos;est engagé tant que vous ne l&apos;avez pas acceptée.
@@ -313,41 +313,72 @@ export function RefonteNouveauClient() {
         </div>
 
         {/* ── Ce qu'il faut savoir avant de donner un SIRET ──────────────── */}
+        {/*
+          ── LA LARGEUR ────────────────────────────────────────────────────
+          Étienne, 23/09/2026 : « sur la page nouveau client, il faut utiliser
+          toute la largeur de la page ».
+
+          Le haut de page était plafonné à 70 caractères pendant que le
+          formulaire, juste en dessous, occupait les 1 130 px : la page se
+          lisait en deux moitiés, dont une vide à droite.
+
+          ⚠️ MAIS ON NE SUPPRIME PAS LA MESURE, ON LA RÉPARTIT. Une ligne de
+          prose de 1 130 px de large est illisible — l'œil perd le début de la
+          ligne suivante. Les quatre règles passent donc sur deux colonnes, et
+          la fourchette des dépôts vient à côté d'elles : la largeur est
+          occupée, et chaque colonne garde une mesure qui se lit.
+        */}
         <section className="py-10">
           <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
             {RESERVER.titre}
           </h2>
-          <div className="mt-5 max-w-[70ch] divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
-            {RESERVER.regles.map((r) => (
-              <div key={r.titre} className="py-4">
+          <div className="mt-5 grid gap-x-10 border-y border-[var(--clp-bord)] sm:grid-cols-2">
+            {RESERVER.regles.map((r, i) => (
+              <div
+                key={r.titre}
+                /*
+                  Le filet entre les règles suit la colonne, pas la page : sur
+                  deux colonnes, un `divide-y` global tracerait un trait en
+                  travers du vide.
+                */
+                className={`py-4 ${i >= 2 ? "sm:border-t sm:border-[var(--clp-bord)]" : ""} ${
+                  i > 0 ? "border-t border-[var(--clp-bord)] sm:border-t-0" : ""
+                }`}
+              >
                 <p className="font-mono text-[13px]" style={{ color: LAITON }}>
                   {r.titre}
                 </p>
-                <p className="mt-1.5 text-[14px] leading-relaxed text-[#C9C4BC]">{r.texte}</p>
+                <p className="mt-1.5 max-w-[62ch] text-[14px] leading-relaxed text-[#C9C4BC]">
+                  {r.texte}
+                </p>
               </div>
             ))}
           </div>
 
-          <h3 className="mt-8 font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
-            Le dépôt de garantie
-          </h3>
-          <dl className="mt-4 max-w-[70ch] divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
-            {DEPOTS.map((d) => (
-              <div key={d.lieu} className="py-3.5 sm:flex sm:gap-6">
-                <dt className="font-mono text-[12px] sm:w-44 sm:shrink-0" style={{ color: LAITON }}>
-                  {d.lieu}
-                </dt>
-                <dd className="mt-1 font-mono text-[14px] text-[#E8E4DC] sm:mt-0">{d.montant}</dd>
-              </div>
-            ))}
-          </dl>
-          <p className="mt-4 max-w-[70ch] text-[14px] leading-relaxed text-[#8A8A8A]">
-            {DEPOT_MODALITES}{" "}
-            <a href={lien("/conditions")} className="underline decoration-[var(--clp-bord)] underline-offset-4 hover:text-[#C9C4BC]">
-              Toutes les conditions de location
-            </a>
-            .
-          </p>
+          <div className="mt-8 grid gap-x-10 gap-y-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+            <div>
+              <h3 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
+                Le dépôt de garantie
+              </h3>
+              <dl className="mt-4 divide-y divide-[var(--clp-bord)] border-y border-[var(--clp-bord)]">
+                {DEPOTS.map((d) => (
+                  <div key={d.lieu} className="py-3.5 sm:flex sm:gap-6">
+                    <dt className="font-mono text-[12px] sm:w-44 sm:shrink-0" style={{ color: LAITON }}>
+                      {d.lieu}
+                    </dt>
+                    <dd className="mt-1 font-mono text-[14px] text-[#E8E4DC] sm:mt-0">{d.montant}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <p className="max-w-[62ch] self-end text-[14px] leading-relaxed text-[#8A8A8A]">
+              {DEPOT_MODALITES}{" "}
+              <a href={lien("/conditions")} className="underline decoration-[var(--clp-bord)] underline-offset-4 hover:text-[#C9C4BC]">
+                Toutes les conditions de location
+              </a>
+              .
+            </p>
+          </div>
         </section>
 
         {/* ── Le formulaire ──────────────────────────────────────────────── */}

@@ -137,6 +137,33 @@ export function RefonteTechnique() {
                   </a>
                 ))}
               </div>
+              {/*
+                ── TOUT PRENDRE D'UN COUP ──────────────────────────────────
+                Demande d'Étienne, 23/09/2026. Un régisseur qui prépare une
+                implantation les veut tous les quatre ; quatre clics, c'est
+                quatre occasions d'en oublier un.
+
+                ⚠️ L'ARCHIVE EST REFABRIQUÉE À CHAQUE DÉPLOIEMENT, par
+                `gen-plans-zip.mjs` en `prebuild`. C'est la seule protection
+                contre la dérive : un zip fabriqué une fois à la main devient
+                faux dès qu'un plan est remplacé, sans que rien ne le
+                signale — et c'est un document qu'on envoie à un prestataire.
+
+                ⚠️ Le poids est annoncé. 9,6 Mo sur un téléphone en 4G, ça se
+                décide avant de cliquer, pas après.
+              */}
+              <a
+                href="/documents/plans-chez-les-plombiers.zip"
+                download
+                className={`${CADRE} mt-3 inline-flex max-w-[68ch] items-center gap-3 px-5 py-4 transition-colors hover:border-[var(--clp-accent)]`}
+              >
+                <span className="font-clp text-[12px] font-bold uppercase tracking-[0.08em]">
+                  Tout télécharger
+                </span>
+                <span className="font-mono text-[11px]" style={{ color: LAITON }}>
+                  ZIP · 9,6 Mo ↓
+                </span>
+              </a>
             </section>
           </div>
         </div>

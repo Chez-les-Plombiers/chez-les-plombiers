@@ -7,6 +7,7 @@ import {
   BOUTIQUE,
   ESPACES,
 } from "./data";
+import { lieu as lieuGalerie } from "./photos-data";
 
 /**
  * La page d'un lieu — une seule, pour les trois.
@@ -38,12 +39,30 @@ export function RefonteLieu({ slug }: { slug: SlugLieu }) {
   const lieu = LIEUX[slug];
   const tuile = ESPACES.find((e) => e.slug === slug)!;
 
+  /*
+   * ⚠️ TOUTES LES PHOTOS DU LIEU, PAS LES TROIS DE L'ACCUEIL. Le carrousel
+   * d'ouverture tirait ses vues de `ESPACES`, la donnée des TUILES DE
+   * L'ACCUEIL — trois photos choisies pour tenir dans une vignette. Sur la
+   * fiche du lieu, c'est un contresens : on y vient justement pour voir le
+   * lieu, et `/photos/atelier` en montrait 39 à un clic de là.
+   *
+   * Étienne, 23/09/2026 : « quand on clique sur la photo, ça déroule les 39
+   * photos ». On prend donc la même source que la photothèque.
+   *
+   * ⚠️ Repli sur les trois vues de la tuile si la photothèque ne connaît pas
+   * ce lieu : mieux vaut trois photos qu'un cadre vide.
+   */
+  const galerie = lieuGalerie(`lieu-${slug}`);
+  const photos = galerie?.photos.length
+    ? galerie.photos.map((p) => p.src)
+    : tuile.photos;
+
   return (
     <Page theme={slug}>
       <Barre lieu={lieu.nom.toUpperCase()} />
       <Corps>
         <Retour href={lien("/")} texte="Accueil" />
-        <Ouverture lieu={lieu} tuile={tuile} />
+        <Ouverture lieu={lieu} tuile={tuile} photos={photos} />
         {lieu.enBref.length > 0 && <EnBref lignes={lieu.enBref} />}
         {lieu.equipement.length > 0 && <Equipement themes={lieu.equipement} />}
         <Suite pages={lieu.suite} />
@@ -58,7 +77,17 @@ type Tuile = (typeof ESPACES)[number];
 
 /* ────────────────────────────────────────────────────────────── Ouverture */
 
-function Ouverture({ lieu, tuile }: { lieu: Lieu; tuile: Tuile }) {
+function Ouverture({
+  lieu,
+  tuile,
+  photos,
+}: {
+  lieu: Lieu;
+  /** La donnée de la tuile d'accueil : surface, prix, lien tarifs. */
+  tuile: Tuile;
+  /** Les vues du carrousel — toute la photothèque du lieu. */
+  photos: readonly string[];
+}) {
   return (
     <section className="mt-3">
       <div className="grid gap-3 lg:grid-cols-[2fr_1fr]">
@@ -69,7 +98,7 @@ function Ouverture({ lieu, tuile }: { lieu: Lieu; tuile: Tuile }) {
             il n'y a plus rien à ouvrir ailleurs.
           */}
           <TuilePhotos
-            photos={tuile.photos}
+            photos={photos}
             agrandir
             priority
             lieu={lieu.nom}

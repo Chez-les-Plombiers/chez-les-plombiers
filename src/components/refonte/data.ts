@@ -178,7 +178,13 @@ export const ESPACES = [
  */
 export const PAGES = [
   { href: "/photos", titre: "Toutes les photos", detail: "Les trois lieux, et les événements par type", pret: true },
-  { href: "/atelier/technique", titre: "Fiche technique et plans", detail: "Puissances, connectique, emplacements, plans à télécharger", pret: true },
+  /*
+   * ⚠️ « FICHE TECHNIQUE ET PLANS » N'EST PLUS ICI, ET NE DOIT PAS Y REVENIR.
+   * Étienne, 23/09/2026 : « elle n'a rien à faire ici, puisque la home on a
+   * dit que c'était pour les trois lieux — cette fiche technique ne concerne
+   * que L'ATELIER ». Elle vit désormais en bas de `/atelier`, avec le reste
+   * de ce qui ne parle que de lui.
+   */
   { href: "/tarifs", titre: "Tarifs et disponibilités", detail: "Les prix jour par jour et le calendrier des trois lieux", pret: true },
   { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger, les horaires, pour qui", pret: true },
   { href: "/visiter", titre: "Réserver une visite", detail: "Gratuite, une demi-heure, du lundi au samedi", pret: true },
@@ -482,7 +488,21 @@ export const ATELIER = {
 
   suite: [
     { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger par l'impasse, les horaires", pret: true },
-        { href: "/atelier/technique", titre: "Fiche technique", detail: "Le détail : modèles, connectique, puissances", pret: false },
+    /*
+     * ⚠️ ELLE ÉTAIT GRISÉE (`pret: false`) ALORS QUE LA PAGE EXISTAIT. Un
+     * reste de l'époque où `/atelier/technique` n'était pas écrite : la fiche
+     * a été construite, et personne n'est revenu lever le drapeau ici. Le
+     * bouton annonçait donc « à venir » en pointant sur une page complète —
+     * qu'on ne pouvait plus atteindre que depuis l'accueil, d'où elle vient
+     * justement d'être retirée.
+     */
+    { href: "/atelier/technique", titre: "Fiche technique et plans", detail: "Puissances, connectique, emplacements, plans à télécharger", pret: true },
+    /*
+     * ⚠️ VERS `/photos/atelier`, PAS `/photos`. Le bouton doit ouvrir la
+     * grille de CE lieu et non le sommaire des trois : depuis la fiche d'un
+     * lieu, renvoyer au sommaire général fait reculer d'un cran.
+     */
+    { href: "/photos/atelier", titre: "Photos", detail: "Toutes les vues du lieu, en grille", pret: true },
     { href: "/tarifs", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
   ] as const,
 } as const;
@@ -534,7 +554,7 @@ export const BOUTIQUE = {
   ] as const,
   suite: [
     { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, les horaires, le quartier", pret: true },
-    { href: "/photos", titre: "Photos", detail: "Par type d'événement, et par marque", pret: true },
+    { href: "/photos/boutique", titre: "Photos", detail: "Toutes les vues du lieu, en grille", pret: true },
     { href: "/tarifs/boutique", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
     { href: "/conditions", titre: "Conditions de location", detail: "Réserver, payer, le dépôt de garantie", pret: true },
   ] as const,
@@ -562,7 +582,7 @@ export const APPARTEMENT = {
   equipement: [] as const,
   suite: [
     { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, circuler entre les lieux", pret: true },
-    { href: "/photos", titre: "Photos", detail: "Par type d'événement, et par marque", pret: true },
+    { href: "/photos/appartement", titre: "Photos", detail: "Toutes les vues du lieu, en grille", pret: true },
     { href: "/tarifs/appartement", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
     { href: "/conditions", titre: "Conditions de location", detail: "Réserver, payer, le dépôt de garantie", pret: true },
   ] as const,
