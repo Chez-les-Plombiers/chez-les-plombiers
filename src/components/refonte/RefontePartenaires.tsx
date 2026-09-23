@@ -23,7 +23,14 @@ export function RefontePartenaires() {
               Partenaires
             </span>
           </h1>
-          <p className="mt-4 max-w-[70ch] text-[15px] leading-relaxed text-[#C9C4BC]">
+          {/*
+            ⚠️ Pas de mesure : le chapô tient sur une ligne. Même demande qu'à
+            `/visiter`, 23/09/2026. Il fait 117 caractères pour 1 132 px de page.
+            ⚠️ Les autres chapôs du site gardent leur mesure — mesurés, ils vont de
+            163 à 227 caractères et se couperaient en deux lignes pleine largeur,
+            exactement ce qu'on cherche à éviter ici.
+          */}
+          <p className="mt-4 text-[15px] leading-relaxed text-[#C9C4BC]">
             Le lieu ne vient pas seul. Voici les personnes avec qui nous
             travaillons, et ce que nous pouvons organiser pour vous.
           </p>
