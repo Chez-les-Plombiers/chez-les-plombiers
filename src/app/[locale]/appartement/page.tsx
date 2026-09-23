@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { partage } from "@/lib/partage";
+import {
+  DonneesLieu,
+  LIEUX_STRUCTURES,
+} from "@/components/refonte/DonneesStructurees";
 import { RefonteLieu } from "@/components/refonte/RefonteLieu";
 
 /** Maquette de la page de lieu — deviendra `/appartement` à la bascule. */
@@ -12,5 +16,10 @@ export const metadata: Metadata = partage({
 });
 
 export default function Page() {
-  return <RefonteLieu slug="appartement" />;
+  return (
+    <>
+      <DonneesLieu lieu={LIEUX_STRUCTURES.appartement} />
+      <RefonteLieu slug="appartement" />
+    </>
+  );
 }

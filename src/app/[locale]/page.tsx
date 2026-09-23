@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { partage } from "@/lib/partage";
+import { DonneesMarque } from "@/components/refonte/DonneesStructurees";
 import { RefonteHome } from "@/components/refonte/RefonteHome";
 
 /**
@@ -20,5 +21,10 @@ export const metadata: Metadata = partage({
 });
 
 export default function RefontePage() {
-  return <RefonteHome />;
+  return (
+    <>
+      <DonneesMarque />
+      <RefonteHome />
+    </>
+  );
 }

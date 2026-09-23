@@ -52,6 +52,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     /* La photothèque, lue depuis le tri : rien à tenir à jour ici. */
     ...LIEUX_GALERIE.map((l) => page(`/photos/${l.slug.replace(/^lieu-/, "")}`, 0.6)),
     ...CATEGORIES_GALERIE.map((c) => page(`/photos/${c.slug}`, 0.6)),
+    /*
+     * ⚠️ LES PAGES D'ÉVÉNEMENTS MANQUAIENT, ET CE SONT LES PLUS UTILES.
+     * Elles existent et sont indexables depuis le 23/09/2026 — mais le sitemap
+     * s'arrêtait aux catégories, donc Google ne les découvrait qu'en suivant
+     * un lien, au hasard de son crawl.
+     *
+     * Ce sont pourtant les seules pages du site qui portent un nom que
+     * quelqu'un puisse chercher sans nous connaître : Litkovska, New Balance,
+     * Ray-Ban, Servaire. Tout le reste ne répond qu'à des recherches de
+     * marque — 96,6 % des clics Google, mesuré.
+     *
+     * ⚠️ Priorité 0,5 et pas 0,6 : elles sont nombreuses et inégales. Les
+     * mettre au niveau des catégories diluerait le signal au lieu de le
+     * renforcer.
+     */
+    ...CATEGORIES_GALERIE.flatMap((c) =>
+      c.evenements.map((e) => page(`/photos/${c.slug}/${e.slug}`, 0.5)),
+    ),
     /* Obligatoires, mais personne ne les cherche. */
     page("/mentions-legales", 0.2, "yearly"),
     page("/confidentialite", 0.2, "yearly"),
