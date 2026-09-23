@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Galerie } from "./Galerie";
-import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour } from "./chrome";
+import { Barre, CADRE, Corps, LAITON, lien, Page, Pied, Retour } from "./chrome";
 import { SelecteurPhotos, type Tuile } from "./SelecteurPhotos";
 import {
   CATEGORIES_GALERIE,
@@ -32,7 +32,17 @@ import {
  * Étienne a confirmé le 21/09/2026 qu'on peut tous les nommer.
  */
 
-const LIEN = "/refonte/photos";
+/*
+ * ⚠️ PASSER PAR `lien()`, JAMAIS ÉCRIRE L'ADRESSE EN DUR. Ce fichier gardait
+ * « /refonte/photos » : il a survécu à la bascule du 22/09 parce qu'il
+ * court-circuitait le helper, et il ne fonctionnait plus que grâce à la
+ * redirection de secours `/refonte/:path*` → `/:path*`.
+ *
+ * Ça marchait, donc rien ne l'a signalé — mais chaque clic payait un aller-
+ * retour 301, et l'adresse affichée était fausse le temps du rebond. Le jour
+ * où cette redirection de secours sera retirée, le lien tombe en 404.
+ */
+const LIEN = lien("/photos");
 
 /* ───────────────────────────────────────────────────── Les six catégories */
 
@@ -41,7 +51,7 @@ export function RefontePhotosIndex() {
     <Page>
       <Barre />
       <Corps>
-        <Retour href="/refonte" texte="Accueil" />
+        <Retour href={lien("/")} texte="Accueil" />
         {/*
           ⚠️ NI TITRE, NI TRAIT DE SÉPARATION. Deux retraits successifs
           d'Étienne le 21/09/2026 : d'abord l'adresse et la phrase

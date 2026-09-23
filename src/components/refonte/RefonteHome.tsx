@@ -389,7 +389,7 @@ function Photos() {
         {CATEGORIES_GALERIE.map((c) => (
           <Link
             key={c.slug}
-            href={`/refonte/photos/${c.slug}`}
+            href={lien(`/photos/${c.slug}`)}
             className={`${CADRE} group overflow-hidden transition-colors hover:border-[var(--clp-accent)]`}
           >
             <div className="relative aspect-[4/3] w-full">

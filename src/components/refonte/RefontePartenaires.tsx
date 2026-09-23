@@ -140,7 +140,7 @@ export function RefontePartenaires() {
             </figure>
           </div>
           <Link
-            href="/refonte/conditions"
+            href={lien("/conditions")}
             className="mt-5 inline-block font-mono text-[12px]"
             style={{ color: LAITON }}
           >
