@@ -186,8 +186,14 @@ export const PAGES = [
    * de ce qui ne parle que de lui.
    */
   { href: "/tarifs", titre: "Tarifs et disponibilités", detail: "Les prix jour par jour et le calendrier des trois lieux", pret: true },
-  { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger, les horaires, pour qui", pret: true },
+  /*
+   * ⚠️ « RÉSERVER UNE VISITE » PASSE AVANT « VENIR ET LIVRER ». Inversion
+   * demandée par Étienne le 23/09/2026, et l'ordre a un sens : on visite
+   * avant de louer, on cherche l'entrée et le quai de déchargement une fois
+   * la date posée. Le sommaire suivait l'ordre du parcours à l'envers.
+   */
   { href: "/visiter", titre: "Réserver une visite", detail: "Gratuite, une demi-heure, du lundi au samedi", pret: true },
+  { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger, les horaires, pour qui", pret: true },
   { href: "/conditions", titre: "Conditions de location", detail: "Ce qu'on vous demande, et pourquoi", pret: true },
   /*
    * ⚠️ Les visites virtuelles étaient enterrées au milieu de l'accueil de
