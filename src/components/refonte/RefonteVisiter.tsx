@@ -56,7 +56,21 @@ export function RefonteVisiter() {
               Réserver une visite
             </span>
           </h1>
-          <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[#C9C4BC]">
+          {/*
+            ⚠️ PAS DE MESURE ICI, LE CHAPÔ TIENT SUR UNE LIGNE. Étienne,
+            23/09/2026 : « mettre sur une seule ligne ». Bridé à 62
+            caractères, il se coupait en deux au milieu d'une proposition —
+            « on regarde ce que / votre projet demande » — alors que la page
+            a 1 132 px et que la phrase en demande 975.
+
+            ⚠️ CE N'EST PAS GÉNÉRALISABLE TEL QUEL. Une ligne de prose qui
+            court sur toute la largeur ne se lit bien que si elle est COURTE :
+            ici 137 caractères, une seule phrase. Les chapôs de `/conditions`
+            et `/partenaires` en font le double et gardent leur mesure — les
+            libérer produirait exactement l'inverse de ce qui est demandé ici,
+            un pavé que l'œil perd en changeant de ligne.
+          */}
+          <p className="mt-4 text-[15px] leading-relaxed text-[#C9C4BC]">
             Le plus simple est de venir voir. On fait le tour des trois espaces,
             on regarde ce que votre projet demande, et vous repartez avec un
             ordre de prix.
