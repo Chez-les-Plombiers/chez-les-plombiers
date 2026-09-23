@@ -133,6 +133,47 @@ export function RefontePhotosLieu({ l }: { l: LieuGalerie }) {
           {l.total} photos
         </p>
         <Galerie photos={l.photos} titre={l.nom} />
+        {/*
+          ── LE CHEMIN DE RETOUR VERS LE LIEU ──────────────────────────────
+
+          ⚠️ LA RELATION ÉTAIT À SENS UNIQUE. La fiche d'un lieu renvoie vers
+          ses photos par une tuile « Photos » ; l'inverse n'existait pas. On
+          arrivait ici depuis `/boutique` et on ne pouvait plus y retourner
+          autrement que par le bouton du navigateur. Étienne, 23/09/2026 :
+          « on ne peut plus revenir sur la fiche de la boutique ».
+
+          ⚠️ CE N'EST PAS UN BOUTON « RETOUR » AU SENS DU NAVIGATEUR, ET C'EST
+          DÉLIBÉRÉ. Ce site est fait pour être ENVOYÉ : un régisseur reçoit
+          `/infos` par message, un client reçoit `/photos/atelier`. Pour eux il
+          n'existe aucune page précédente — un bouton fondé sur l'historique ne
+          ferait rien, ou les sortirait du site, sans que son libellé puisse
+          les prévenir. Un lien nommé marche aussi bien qu'on arrive d'un clic
+          ou d'un lien reçu par message.
+
+          ⚠️ LE « ← TOUTES LES PHOTOS » DU HAUT RESTE. C'est le parent dans
+          l'adresse ; les deux chemins sont légitimes et ne se remplacent pas —
+          l'un remonte dans la photothèque, l'autre traverse vers le lieu.
+
+          ⚠️ Rien de tel sur les pages d'ÉVÉNEMENTS : un dîner ou un défilé
+          n'appartient pas à un lieu unique dans les données. Ne pas
+          généraliser ce lien par souci de symétrie.
+        */}
+        <a
+          href={lien(`/${l.slug.replace(/^lieu-/, "")}`)}
+          className={`${CADRE} mt-8 flex items-center justify-between gap-4 p-5 transition-colors hover:border-[var(--clp-accent)]`}
+        >
+          <span>
+            <span className="block font-clp text-[12px] font-bold uppercase tracking-[0.08em]">
+              La fiche de {l.nom}
+            </span>
+            <span className="mt-1.5 block text-[13px] leading-relaxed text-[#A8A29A]">
+              Dimensions, équipement, tarifs et disponibilités
+            </span>
+          </span>
+          <span className="shrink-0 font-mono text-[11px]" style={{ color: LAITON }}>
+            &rarr;
+          </span>
+        </a>
       </Corps>
       <Pied />
     </Page>
