@@ -54,31 +54,58 @@ export function RefonteVisitesVirtuelles() {
         </p>
 
         <div className="mt-8 space-y-3">
-          {VISITES.map((v) => (
-            <div key={v.lieu} className={`${CADRE} p-5`}>
-              <div className="flex flex-wrap items-baseline justify-between gap-3">
-                <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.08em]">
-                  {v.lieu}
-                </h2>
-                {v.url ? (
-                  <a
-                    href={v.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono text-[12px] transition-opacity hover:opacity-70"
-                    style={{ color: LAITON }}
-                  >
-                    Ouvrir la visite &rarr;
-                  </a>
-                ) : (
-                  <span className="font-mono text-[11px] text-[#8A8A8A]">à venir</span>
-                )}
+          {VISITES.map((v) => {
+            /*
+              ⚠️ TOUTE LA CARTE EST LE BOUTON, PAS LE SEUL LIEN DE DROITE.
+              Étienne, 23/09/2026 : « il faudrait que le bouton prenne tout
+              l'encadré et pas juste le lien texte à droite ».
+
+              Une carte encadrée qui ne réagit qu'à douze caractères dans son
+              coin se comporte autrement qu'elle n'en a l'air : on vise le
+              cadre, il ne se passe rien. C'est déjà la règle sur les tuiles
+              de lieu de l'accueil et sur « Pour aller plus loin » — cette
+              page était la dernière à ne pas la suivre.
+
+              ⚠️ LA CARTE SANS VISITE RESTE UN `<div>`. LA BOUTIQUE n'a pas
+              encore été scannée : un lien vers rien, même grisé, se clique et
+              déçoit. Elle porte son « à venir » et n'est pas cliquable.
+            */
+            const contenu = (
+              <>
+                <div className="flex flex-wrap items-baseline justify-between gap-3">
+                  <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.08em]">
+                    {v.lieu}
+                  </h2>
+                  {v.url ? (
+                    <span className="font-mono text-[12px]" style={{ color: LAITON }}>
+                      Ouvrir la visite &rarr;
+                    </span>
+                  ) : (
+                    <span className="font-mono text-[11px] text-[#8A8A8A]">à venir</span>
+                  )}
+                </div>
+                <p className="mt-2 text-[13px] leading-relaxed text-[#A8A29A]">
+                  {v.detail}
+                </p>
+              </>
+            );
+
+            return v.url ? (
+              <a
+                key={v.lieu}
+                href={v.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${CADRE} block p-5 transition-colors hover:border-[var(--clp-accent)]`}
+              >
+                {contenu}
+              </a>
+            ) : (
+              <div key={v.lieu} className={`${CADRE} p-5`}>
+                {contenu}
               </div>
-              <p className="mt-2 text-[13px] leading-relaxed text-[#A8A29A]">
-                {v.detail}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Corps>
       <Pied />

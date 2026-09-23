@@ -15,7 +15,25 @@ const csp = [
   // img-src large : widgets tiers (Elfsight/Instagram, Axeptio, avatars Google) servent depuis des CDN variables
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https://*.elfsightcdn.com https://fonts.gstatic.com https://fonts.axept.io",
-  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.clarity.ms https://c.bing.com https://*.elfsight.com https://*.elfsightcdn.com https://*.axept.io https://axeptio.imgix.net",
+  /*
+   * ⚠️ LES DEUX API DE L'ÉTAT SONT INDISPENSABLES AU FORMULAIRE, et leur
+   * absence ici le cassait en silence.
+   *
+   * `/nouveau-client` annonce « commencez à taper : l'annuaire des entreprises
+   * remplit le SIRET et la TVA ». Le navigateur bloquait l'appel au titre de
+   * cette politique : le champ ne proposait jamais rien, la page n'affichait
+   * aucune erreur, et la promesse écrite juste en dessous restait lettre
+   * morte. Signalé par Étienne le 23/09/2026.
+   *
+   * ⚠️ C'EST LE PIÈGE PROPRE À LA CSP : elle n'échoue jamais bruyamment. Le
+   * `fetch` renvoie « Failed to fetch », le `catch` vide la liste, et tout a
+   * l'air normal. Le seul endroit où ça se voit est la console du navigateur.
+   * Après toute CSP touchée, ouvrir la console, pas seulement la page.
+   *
+   *   recherche-entreprises.api.gouv.fr → raison sociale, SIRET, TVA
+   *   api-adresse.data.gouv.fr          → adresse postale de facturation
+   */
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.clarity.ms https://c.bing.com https://*.elfsight.com https://*.elfsightcdn.com https://*.axept.io https://axeptio.imgix.net https://recherche-entreprises.api.gouv.fr https://api-adresse.data.gouv.fr",
   // ⚠️ `calendly.com` ajouté le 20/09/2026 : la page /visiter intègre le
   // calendrier au lieu de rediriger. Sans cette entrée, l'iframe est bloquée
   // en silence — page blanche, aucune erreur visible.
