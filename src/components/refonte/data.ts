@@ -121,7 +121,7 @@ export const ESPACES = [
       "Lumières Philips Hue commandables",
       "Frigo",
       "Bar / desk",
-      "Toilettes et petite salle de bain",
+      "Toilettes",
       "Crochets au mur",
     ],
     page: "/boutique",
@@ -493,7 +493,24 @@ export const ATELIER = {
   ] as const,
 
   suite: [
-    { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger par l'impasse, les horaires", pret: true },
+    /*
+     * ⚠️ L'ORDRE EST CELUI DU REGARD, PAS CELUI DE L'ORGANISATION. Étienne,
+     * 23/09/2026 : « photos en premier, puis le calendrier, puis fiche
+     * technique et enfin venir et livrer ».
+     *
+     * Il suit la décision de louer : on regarde à quoi ça ressemble, on
+     * regarde si c'est libre et ce que ça coûte, on vérifie que sa technique
+     * rentre, et on cherche l'entrée en dernier — une fois la date posée.
+     * L'ancienne liste commençait par la logistique, c'est-à-dire par la
+     * question qu'on se pose en dernier.
+     */
+    /*
+     * ⚠️ VERS `/photos/atelier`, PAS `/photos`. Le bouton doit ouvrir la
+     * grille de CE lieu et non le sommaire des trois : depuis la fiche d'un
+     * lieu, renvoyer au sommaire général fait reculer d'un cran.
+     */
+    { href: "/photos/atelier", titre: "Photos", detail: "Toutes les vues du lieu, en grille", pret: true },
+    { href: "/tarifs", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
     /*
      * ⚠️ ELLE ÉTAIT GRISÉE (`pret: false`) ALORS QUE LA PAGE EXISTAIT. Un
      * reste de l'époque où `/atelier/technique` n'était pas écrite : la fiche
@@ -503,13 +520,7 @@ export const ATELIER = {
      * justement d'être retirée.
      */
     { href: "/atelier/technique", titre: "Fiche technique et plans", detail: "Puissances, connectique, emplacements, plans à télécharger", pret: true },
-    /*
-     * ⚠️ VERS `/photos/atelier`, PAS `/photos`. Le bouton doit ouvrir la
-     * grille de CE lieu et non le sommaire des trois : depuis la fiche d'un
-     * lieu, renvoyer au sommaire général fait reculer d'un cran.
-     */
-    { href: "/photos/atelier", titre: "Photos", detail: "Toutes les vues du lieu, en grille", pret: true },
-    { href: "/tarifs", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
+    { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, décharger par l'impasse, les horaires", pret: true },
   ] as const,
 } as const;
 
@@ -545,7 +556,9 @@ export const BOUTIQUE = {
       titre: "Le confort",
       lignes: [
         ["Climatisation", "Réversible"],
-        ["Sanitaires", "Toilettes et une petite salle de bain"],
+        /* ⚠️ Pas de salle de bain à LA BOUTIQUE — correction d'Étienne,
+           23/09/2026. Il n'y a que des toilettes. */
+        ["Sanitaires", "Toilettes"],
         ["Cuisine", "Un réfrigérateur"],
       ],
     },

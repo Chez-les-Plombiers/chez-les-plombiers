@@ -161,8 +161,18 @@ function Ouverture({
               sortie », pas « ménage » : le ménage quotidien d'un événement de
               plusieurs jours n'est pas inclus.
             */}
+            {/*
+              ⚠️ DEUX LIGNES, PAS UNE PHRASE QUI SE COUPE OÙ ELLE VEUT.
+              Étienne, 23/09/2026 : « il faut aller à la ligne, ménage de
+              sortie ». Les deux informations n'ont rien à voir — l'une dit
+              pourquoi le prix varie, l'autre ce qu'il comprend. Enchaînées,
+              le retour à la ligne tombait au hasard de la largeur de la
+              colonne, et coupait « Ménage de sortie / compris ».
+            */}
             <p className="mt-1 text-[12px] leading-relaxed text-[#8A8A8A]">
-              Le prix dépend du jour de la semaine. Ménage de sortie compris.
+              Le prix dépend du jour de la semaine.
+              <br />
+              Ménage de sortie compris.
             </p>
             {/*
               « Calendrier tarifaire » et pas « voir le calendrier » : le mot
