@@ -154,13 +154,22 @@ export default async function LieuEvenementielPage({
     sameAs: ["https://instagram.com/chezlesplombiers"],
     hasMap:
       "https://maps.google.com/?q=39+rue+des+Bourdonnais+75001+Paris",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "17",
-      bestRating: "5",
-      worstRating: "1",
-    },
+    /*
+     * ⚠️ UNE NOTE MOYENNE ÉCRITE EN DUR A ÉTÉ RETIRÉE ICI — « 5,0 sur 17 avis ».
+     * Trouvée le 24/09/2026 en cherchant pourquoi Search Console ouvrait un
+     * panneau « Extraits d'avis » alors que nous ne déclarons aucune note.
+     *
+     * ⚠️ C'EST UNE INFRACTION AUX RÈGLES DE GOOGLE, pas une approximation.
+     * `aggregateRating` doit refléter des avis recueillis SUR NOTRE SITE ; un
+     * chiffre figé dans le code ne se vérifie nulle part et ne bouge jamais.
+     * Google sanctionne ce cas par une action manuelle, qui frappe le DOMAINE
+     * entier — pas la seule page fautive.
+     *
+     * La page est redirigée depuis la bascule du 22/09, donc le balisage n'est
+     * plus servi. On le supprime quand même : le fichier reste dans le dépôt,
+     * et il suffirait de rouvrir la page — ou de la recopier comme modèle —
+     * pour le réintroduire sans y penser.
+     */
   };
 
   const faqDict = lieuDict?.faq as {
