@@ -232,9 +232,26 @@ export const MOMENTS: readonly MomentRegles[] = [
     chapo: PRINCIPE,
     regles: [
       {
+        /*
+         * ⚠️ LA CONSÉQUENCE EST DITE, ET C'EST NOUVEAU. La règle s'arrêtait à
+         * « notre équipe nettoie autour, et les cartons restent » — une
+         * description, pas une conséquence. On demandait sans dire ce qu'il
+         * advient quand ce n'est pas fait.
+         *
+         * Demande d'Étienne, 24/09/2026 : « rajouter que non seulement il ne
+         * faut pas le faire, mais que si c'est fait, les affaires risquent
+         * d'être jetées ».
+         *
+         * ⚠️ LE POURQUOI ACCOMPAGNE LA CONSÉQUENCE, sinon elle passe pour de la
+         * mauvaise volonté. Le ménage passe entre deux événements et n'a aucun
+         * moyen de distinguer un carton oublié d'un carton à évacuer. Le dire
+         * rend la règle évidente au lieu de la rendre sévère — c'est la
+         * convention de tout ce fichier.
+         */
         titre: "Remporter ce que vous avez apporté",
         texte:
-          "Décor, matériel, boissons, invendus. Si vous souhaitez nous laisser quelque chose — même avec la meilleure intention —, merci de nous en parler avant de partir et nous conviendrons ensemble d'un endroit. Sans cela, notre équipe nettoie autour, et les cartons restent.",
+          "Décor, matériel, boissons, invendus. Si vous souhaitez nous laisser quelque chose — même avec la meilleure intention —, merci de nous en parler avant de partir et nous conviendrons ensemble d'un endroit.\n\n" +
+          "Sans cela, ce qui reste est traité comme un déchet et jeté. Notre équipe de ménage passe entre deux événements : elle n'a aucun moyen de distinguer un carton oublié d'un carton à évacuer, et le lieu doit être rendu vide pour les suivants. Nous ne conservons rien, et nous ne pouvons rien rechercher après coup.",
       },
       {
         titre: "Trier les déchets",
