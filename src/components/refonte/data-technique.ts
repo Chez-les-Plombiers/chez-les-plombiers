@@ -43,17 +43,52 @@ export const TECHNIQUE: readonly Poste[] = [
     ],
   },
   {
+    /*
+     * ── LE SON, EN DÉTAIL ────────────────────────────────────────────────
+     *
+     * Complété le 24/09/2026 : un prestataire a demandé les spécifications, et
+     * la section n'en donnait aucune. « Sonos Port » et « entrée XLR » ne
+     * permettent de rien préparer.
+     *
+     * ⚠️ AUCUNE PUISSANCE N'EST ANNONCÉE, ET C'EST VOLONTAIRE. Elles n'ont pas
+     * été relevées sur les faces avant des amplificateurs. Un chiffre inventé
+     * sur une fiche technique se retrouve dans un plan de charge électrique —
+     * mieux vaut le dire et le relever à la demande. Voir la réserve.
+     *
+     * ⚠️ Le « 8 entrées / 8 sorties » est la définition du modèle MIMO88 ; il
+     * n'a pas été recompté sur l'appareil. Suffisant pour se repérer, à
+     * confirmer si un prestataire dimensionne dessus.
+     */
     titre: "Son",
     lignes: [
-      ["Diffusion", "Sonos Port, enceintes encastrées au plafond sur tout l'espace"],
-      ["Calibrage", "Réglées pour le lieu : certaines fréquences ont été réduites pour le voisinage"],
-      ["Sources", "AirPlay, Spotify Connect, ou l'application Sonos sur l'iPad du lieu"],
-      ["Votre régie", "Entrée XLR dans l'alcôve, près du mur cyclo"],
-      ["Micros", "Quatre micros HF"],
+      ["Installation", "Fixe, multi-zones, pilotée par une matrice numérique"],
+      [
+        "Trois zones",
+        "Entrée, Salle 2, Salle 3 — indépendantes. Chacune reçoit la source de votre choix, ou la même pour toutes",
+      ],
+      ["Matrice", "Ecler MIMO88SG — 8 entrées / 8 sorties, panneau de contrôle web intégré"],
+      ["Amplification", "Trois Blaze PowerZone Connect 254"],
+      ["Diffusion", "Enceintes fixes, installées et calibrées pour le lieu"],
+      [
+        "Calibrage",
+        "Certaines fréquences ont été réduites pour le voisinage — c'est ce qui nous permet de jouer jusqu'à 23h",
+      ],
+      [
+        "Source réseau",
+        "Sonos Port — Spotify Connect, AirPlay, application Sonos, par le Wi-Fi du lieu",
+      ],
+      ["Votre régie", "Deux prises XLR, en stéréo, dans l'alcôve à gauche du mur cyclorama"],
+      ["Son de l'image", "Celui du vidéoprojecteur, par HDMI"],
+      ["Micros", "Relacart EZ.M4 — quatre canaux HF"],
+      [
+        "Pilotage",
+        "Application UCP sur l'iPad de la régie : on choisit la ou les salles, puis la source",
+      ],
+      ["Baie technique", "L'ensemble est monté en baie, sur alimentation ondulée"],
       ["Réseau requis", "Le Wi-Fi du lieu — la musique et la projection passent par lui"],
     ],
     reserve:
-      "Nous vous demandons de ne pas ajouter d'enceintes de retour ni de caissons de basses : c'est le calibrage du lieu qui nous permet de jouer jusqu'à 23h, et une enceinte non calibrée le défait.",
+      "L'entrée ligne est en XLR uniquement : ni jack, ni Bluetooth. Nous vous demandons de ne pas ajouter d'enceintes de retour ni de caissons de basses — c'est le calibrage du lieu qui nous permet de jouer jusqu'à 23h, et une enceinte non calibrée le défait. Les puissances des amplificateurs ne figurent pas ici : nous préférons les relever sur les appareils plutôt que de les estimer, demandez-les si votre prestataire en a besoin.",
   },
   {
     titre: "Lumière",

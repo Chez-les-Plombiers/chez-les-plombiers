@@ -423,7 +423,12 @@ export const ATELIER = {
       titre: "Le son",
       lignes: [
         ["Diffusion", "Douze enceintes réparties dans le lieu, calibrées pour lui"],
-        ["Votre régie", "Une entrée XLR murale, pour brancher une platine"],
+        /*
+            ⚠️ DEUX prises, pas une : c'est une paire stéréo. La fiche annonçait
+            « une entrée XLR », ce qui laisse préparer un câblage mono. Corrigé
+            le 24/09/2026 sur le relevé de l'installation.
+          */
+          ["Votre régie", "Deux prises XLR murales, en stéréo, pour brancher une platine"],
         ["Micros", "Quatre micros HF, compris dans la location"],
       ],
     },
