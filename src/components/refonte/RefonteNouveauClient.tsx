@@ -114,8 +114,87 @@ function useFermetureExterne(ref: React.RefObject<HTMLDivElement | null>, fermer
   }, [ref, fermer]);
 }
 
+/**
+ * Pré-remplissage par l'adresse.
+ *
+ * ── POURQUOI ─────────────────────────────────────────────────────────────
+ *
+ * Étienne, 26/09/2026 : la plupart des demandes arrivent par téléphone. Le
+ * client donne sa date de vive voix, puis reçoit ce formulaire — et doit la
+ * retaper. Une date dictée puis resaisie, c'est une occasion de se tromper
+ * pour rien.
+ *
+ * `/nouveau-client?lieu=L'Atelier&debut=2026-11-12&creneau=Journée complète`
+ * ouvre donc le formulaire avec ces champs déjà posés. Rien n'est verrouillé :
+ * le client corrige s'il le faut.
+ *
+ * ⚠️ On valide chaque valeur contre les listes du formulaire au lieu de la
+ * recopier. Une URL est modifiable par n'importe qui : un `lieu` inventé
+ * passerait dans le `<select>` sans y figurer, et le champ ressortirait vide
+ * à l'envoi sans que personne comprenne pourquoi.
+ *
+ * ⚠️ C'est aussi la moitié qui manquait pour ne plus avoir deux formulaires
+ * distincts : le calendrier tarifaire pourra pointer ici avec la date et le
+ * lieu déjà choisis, au lieu de tenir sa propre saisie.
+ */
+/**
+ * Rapprochement tolérant d'une valeur d'URL et d'une option du formulaire.
+ *
+ * ⚠️ Un lien doit rester écrivable à la main. Les libellés portent accents,
+ * parenthèses et espaces insécables — `creneau=Journée%20complète` ne serait
+ * jamais tombé sur « Journée complète (7 h – 23 h) », et le champ serait resté
+ * vide sans un mot d'explication. On compare donc sur une forme réduite, et
+ * `journee` suffit.
+ */
+function proche(option: string, valeur: string): boolean {
+  const reduire = (t: string) =>
+    t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const a = reduire(option);
+  const b = reduire(valeur);
+  if (b.length < 3) return false;
+  // `inclut` et non `commence par` : « atelier » doit tomber sur « L'Atelier »,
+  // dont la forme réduite commence par l'article — « latelier ».
+  return a === b || a.includes(b) || b.includes(a);
+}
+
+function prefill(): Partial<Formulaire> {
+  if (typeof window === "undefined") return {};
+  const p = new URLSearchParams(window.location.search);
+  const out: Partial<Formulaire> = {};
+
+  const lieu = p.get("lieu");
+  if (lieu) out.espace = ESPACES.find((e) => proche(e, lieu));
+
+  const jour = /^\d{4}-\d{2}-\d{2}$/;
+  const debut = p.get("debut");
+  if (debut && jour.test(debut)) out.dateDebut = debut;
+  const fin = p.get("fin");
+  if (fin && jour.test(fin)) out.dateFin = fin;
+
+  // Le créneau dépend du lieu : sans lieu valide, il n'y a rien à valider contre.
+  const creneau = p.get("creneau");
+  if (creneau && out.espace) {
+    out.creneau = (CRENEAUX[out.espace] ?? []).find((c) => proche(c, creneau));
+  }
+
+  const invites = p.get("invites");
+  if (invites && /^\d{1,4}$/.test(invites)) out.invites = invites;
+
+  return out;
+}
+
 export function RefonteNouveauClient() {
   const [form, setForm] = useState<Formulaire>(VIDE);
+
+  // ⚠️ Dans un effet, pas dans l'initialiseur : le serveur ne voit pas l'URL
+  // du navigateur, et un `useState(() => prefill())` rendrait un formulaire
+  // vide côté serveur et rempli côté client — erreur d'hydratation à chaque
+  // chargement.
+  useEffect(() => {
+    const p = prefill();
+    if (Object.keys(p).length) setForm((f) => ({ ...f, ...p }));
+  }, []);
+
   const [envoye, setEnvoye] = useState(false);
   const [envoi, setEnvoi] = useState(false);
   const [erreur, setErreur] = useState("");

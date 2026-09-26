@@ -396,6 +396,36 @@ Page chatbot pour les clients ayant réservé le lieu. Interface de chat multi-t
 - **Infos renseignées** : grille/portail cour (code 5409), Wi-Fi (2 réseaux), éclairage (Kiosc, 5 scénarios, mode custom), cuisine (café, lave-vaisselle, verres), sono (Sonos + XLR via UCP), chauffage (Daikin), vidéoprojecteur (Optoma ZU820T, fiche technique complète), poubelles tri, vestiaire, toilettes, fin d'événement
 - **Infos encore manquantes** : couvre-feu bruit, responsable du lieu (nom + tel)
 
+### Pré-remplissage par l'adresse (26/09/2026)
+
+La plupart des demandes arrivent **par téléphone** : le client donne sa date de vive voix,
+puis reçoit ce formulaire et doit la retaper. Le lien accepte donc des paramètres :
+
+```
+/nouveau-client?lieu=atelier&debut=2026-11-12&creneau=matinee&invites=80
+```
+
+| Paramètre | Valeurs |
+|---|---|
+| `lieu` | `atelier` · `boutique` · `appartement` · `plusieurs` |
+| `debut`, `fin` | `AAAA-MM-JJ` |
+| `creneau` | `matinee` · `apresmidi` · `journee` — dépend du lieu |
+| `invites` | un nombre |
+
+⚠️ **Le rapprochement est tolérant mais validé** : `proche()` compare des formes réduites
+(sans accents ni ponctuation) et accepte l'inclusion, pour que `atelier` tombe sur
+`L'Atelier` et `journee` sur `Journée complète (7 h – 23 h)`. Mais une valeur qui ne
+correspond à **aucune** option est ignorée : une URL est modifiable par n'importe qui, et
+un `lieu` inventé recopié tel quel ressortirait vide à l'envoi, sans explication.
+
+⚠️ **Le pré-remplissage se fait dans un `useEffect`, jamais dans l'initialiseur de
+`useState`** : le serveur ne voit pas l'URL du navigateur, et l'initialiser là rendrait un
+formulaire vide au serveur et rempli au client — erreur d'hydratation à chaque chargement.
+
+⏳ C'est la moitié qui manquait pour n'avoir **qu'un seul formulaire** : le calendrier
+tarifaire pourra pointer ici avec la date et le lieu déjà choisis, au lieu de tenir sa
+propre saisie. Non fait — le reste dépend de l'écriture dans Pennylane.
+
 ## Page /nouveau-client (13/04/2026)
 Page privée (noindex) envoyée manuellement aux clients en cours de conversion. Collecte les infos de facturation et crée une fiche dans le CRM Notion.
 
@@ -414,3 +444,13 @@ Page privée (noindex) envoyée manuellement aux clients en cours de conversion.
 - Chez les Plombiers SAS — SIREN 928 788 157
 - Capital: 5 000 € — TVA: FR04 928 788 157
 - NAF/APE: 82 30Z
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
