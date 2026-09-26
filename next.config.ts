@@ -102,6 +102,20 @@ const nextConfig: NextConfig = {
       beforeFiles: [
         { source: "/tarifs", destination: `${PRICING_ZONE}/tarifs` },
         { source: "/tarifs/:path*", destination: `${PRICING_ZONE}/tarifs/:path*` },
+        /*
+         * L'administration, a la racine du domaine (26/09/2026).
+         *
+         * ⚠️ Seule la PAGE remonte d'un cran : l'application distante declare
+         * `basePath: "/tarifs"`, donc ses assets (`/tarifs/_next/*`) et ses
+         * API (`/tarifs/api/*`) continuent de passer par les deux lignes
+         * ci-dessus. Les supprimer laisserait `/admin` sans JavaScript.
+         *
+         * ⚠️ Le menu de l'administration utilise des `<a>` nus, pas
+         * `next/link` : le routeur client de la zone croit vivre sous
+         * `/tarifs` et reecrirait la barre d'adresse en `/tarifs/admin/...`.
+         */
+        { source: "/admin", destination: `${PRICING_ZONE}/tarifs/admin` },
+        { source: "/admin/:path*", destination: `${PRICING_ZONE}/tarifs/admin/:path*` },
       ],
       afterFiles: [],
       fallback: [],

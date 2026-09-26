@@ -25,6 +25,21 @@ export function proxy(request: NextRequest) {
   }
 
   /**
+   * `/admin` appartient a la meme autre application, et est reecrit vers
+   * `/tarifs/admin` (26/09/2026). Etienne : « il faut qu'on soit directement
+   * a la racine ». Meme sortie anticipee, meme raison — sans elle le chemin
+   * partirait en `/fr/admin` et n'atteindrait jamais la reecriture.
+   *
+   * ⚠️ Les ASSETS et les API de l'administration restent sous `/tarifs/*`,
+   * parce que l'application distante declare `basePath: "/tarifs"`. Seule la
+   * PAGE change d'adresse. C'est pourquoi la sortie `/tarifs` ci-dessus doit
+   * rester : la retirer viderait l'administration de son JavaScript.
+   */
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
+    return NextResponse.next();
+  }
+
+  /**
    * Laisser passer les fichiers : routes techniques, puis TOUT chemin dont le
    * dernier segment contient un point.
    *
