@@ -34,10 +34,12 @@ import { SITE_URL } from "@/lib/metadata";
  * Le calendrier tarifaire annonçait 200 ; Étienne a tranché à 150 le
  * 26/09/2026 et `venues.ts` a été corrigé. Les deux sources concordent.
  *
- * ⚠️ SURFACE DE L'APPARTEMENT : 100 m², et c'est bien la surface AU SOL, hors
- * mezzanine. Le lieu fait 120 m² au total, dont 20 de mezzanine. Le plan de
- * 2012 donne des cotes qui ne retombent pas là-dessus : il est antérieur au
- * réaménagement. Ne pas « corriger » ce 100 d'après le plan.
+ * ⚠️ SURFACE DE L'APPARTEMENT : 100 m², et surtout PAS 120. Le lieu fait bien
+ * 120 m² bâtis, mais les 20 m² de mezzanine sont le bureau d'Étienne : ils ne
+ * sont ni loués ni accessibles au client. Annoncer 120 vendrait une surface
+ * qu'on ne livre pas. Le plan de 2012 donne par ailleurs des cotes qui ne
+ * retombent sur aucun des deux : il est antérieur au réaménagement. Ne pas
+ * « corriger » ce 100 d'après le plan.
  */
 
 const ADRESSE_POSTALE = {

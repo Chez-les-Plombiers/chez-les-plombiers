@@ -25,15 +25,17 @@ export const TECHNIQUE_APPARTEMENT: readonly Poste[] = [
      */
     titre: "Surfaces",
     lignes: [
-      ["Surface totale", "120 m², mezzanine comprise"],
-      ["Surface au sol", "100 m², hors mezzanine"],
-      ["Mezzanine", "20 m²"],
+      ["Surface louée", "100 m² au sol"],
       ["Salon blanc", "environ 76 m² — le parquet peint, sous la mezzanine"],
       ["Pièce rose", "environ 20 à 25 m²"],
       ["Cuisine", "environ 13 m²"],
+      [
+        "Mezzanine",
+        "20 m² — bureau privé, NON compris dans la location et non accessible",
+      ],
     ],
     reserve:
-      "Les deux premiers chiffres sont sûrs. Le détail pièce par pièce est donné de mémoire, en attendant un relevé : prenez-le comme un ordre de grandeur, pas comme une cote.",
+      "La surface louée est sûre. Le détail pièce par pièce est donné de mémoire, en attendant un relevé : prenez-le comme un ordre de grandeur, pas comme une cote.",
   },
   {
     titre: "Image et son",

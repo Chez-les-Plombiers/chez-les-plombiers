@@ -599,9 +599,10 @@ export const APPARTEMENT = {
     "Il se loue seul — pour un dîner, une réunion, une prise de vue — ou en coulisses d'un événement qui se tient à L'Atelier. Attention : on y monte par l'escalier de l'immeuble, depuis la cour. Il n'y a pas de passage intérieur entre les deux.",
   ] as const,
   enBref: [
-    // 100 au sol, 120 avec la mezzanine. On annonce le sol : c'est la surface
-    // utile pour recevoir, et c'est aussi celle des données structurées.
-    ["Surface", "100 m² au sol, 120 m² avec la mezzanine"],
+    // ⚠️ 100 m², ET RIEN D'AUTRE. Le lieu fait 120 m² bâtis, mais les 20 m²
+    // de mezzanine sont le bureau d'Étienne : ils ne sont ni loués ni
+    // accessibles. Annoncer 120 vendrait une surface qu'on ne livre pas.
+    ["Surface", "100 m²"],
     ["Étage", "Premier"],
     ["Accès", "Par la cour"],
   ] as const,
