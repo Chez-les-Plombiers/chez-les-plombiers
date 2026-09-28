@@ -2,6 +2,57 @@ import { Barre, CADRE, Corps, LAITON, Page, Pied, Retour, lien } from "./chrome"
 import { statSync } from "node:fs";
 import path from "node:path";
 import { PLANS, TECHNIQUE } from "./data-technique";
+import { PLANS_APPARTEMENT, TECHNIQUE_APPARTEMENT } from "./data-technique-appartement";
+import type { Poste } from "./data-technique";
+
+interface Fiche {
+  theme: "atelier" | "appartement";
+  nom: string;
+  retourHref: string;
+  retourTexte: string;
+  titre: string;
+  chapo: string;
+  technique: readonly Poste[];
+  plans: readonly { nom: string; fichier: string; detail: string }[];
+  /** L'archive « tout télécharger » — seulement quand il y a de quoi. */
+  zip?: string;
+  /** Le chapô de la section plans : au pluriel ou non selon ce qu'il y a. */
+  chapoPlans: string;
+}
+
+/**
+ * ⚠️ UN SEUL COMPOSANT POUR LES DEUX LIEUX, DÉLIBÉRÉMENT. L'en-tête de
+ * `data-technique.ts` prévient : séparer ce qui répond à la même personne
+ * invite à la divergence. Le contenu diffère, la mise en page non — et une
+ * fiche technique qui change de forme d'un lieu à l'autre se lit moins bien.
+ */
+const FICHES: Record<"atelier" | "appartement", Fiche> = {
+  atelier: {
+    theme: "atelier",
+    nom: "L'ATELIER",
+    retourHref: "/atelier",
+    retourTexte: "L'Atelier",
+    titre: "Fiche technique — L'Atelier",
+    chapo:
+      "Les puissances, la connectique et les emplacements. Cette page est faite pour être envoyée telle quelle à un régisseur, un scénographe ou un prestataire technique.",
+    technique: TECHNIQUE,
+    plans: PLANS,
+    zip: "/documents/plans-chez-les-plombiers.zip",
+    chapoPlans: "Les documents de l'architecte et du géomètre, tels quels.",
+  },
+  appartement: {
+    theme: "appartement",
+    nom: "L'APPARTEMENT",
+    retourHref: "/appartement",
+    retourTexte: "L'Appartement",
+    titre: "Fiche technique — L'Appartement",
+    chapo:
+      "Ce qui est sur place et ce qui fonctionne : image, climat, cuisine, sanitaires. Le lieu se loue meublé et équipé — cette page dit avec quoi.",
+    technique: TECHNIQUE_APPARTEMENT,
+    plans: PLANS_APPARTEMENT,
+    chapoPlans: "Le plan de l'architecte, tel quel.",
+  },
+};
 
 /**
  * Le poids d'un fichier de `public/`, lu sur le disque à la construction.
@@ -41,22 +92,25 @@ function poidsDe(fichier: string): string {
  * ⚠️ Les réserves sont affichées, pas cachées. Un régisseur qui dimensionne
  * une installation doit savoir ce qui est vérifié et ce qui ne l'est pas.
  */
-export function RefonteTechnique() {
+export function RefonteTechnique({
+  lieu = "atelier",
+}: {
+  lieu?: "atelier" | "appartement";
+}) {
+  const f = FICHES[lieu];
   return (
-    <Page theme="atelier">
-      <Barre lieu="L'ATELIER" />
+    <Page theme={f.theme}>
+      <Barre lieu={f.nom} />
       <Corps>
-        <Retour href={lien("/atelier")} texte="L'Atelier" />
+        <Retour href={lien(f.retourHref)} texte={f.retourTexte} />
         <div className="border-b border-[var(--clp-bord)] pb-8 pt-4">
           <h1 className="font-clp uppercase">
             <span className="block text-sm font-bold leading-relaxed tracking-[0.1em]">
-              Fiche technique — L&apos;Atelier
+              {f.titre}
             </span>
           </h1>
           <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-[#C9C4BC]">
-            Les puissances, la connectique et les emplacements. Cette page est
-            faite pour être envoyée telle quelle à un régisseur, un scénographe
-            ou un prestataire technique.
+            {f.chapo}
           </p>
         </div>
 
@@ -76,7 +130,7 @@ export function RefonteTechnique() {
               paragraphe cassé. Elles s'alignent dès `sm`, où la place revient.
             */}
             <ul className="mt-3 space-y-2 sm:flex sm:flex-wrap sm:gap-x-5 sm:gap-y-2 sm:space-y-0 lg:block lg:space-y-2">
-              {TECHNIQUE.map((p) => (
+              {f.technique.map((p) => (
                 <li key={p.titre}>
                   <a
                     href={`#${slug(p.titre)}`}
@@ -91,14 +145,14 @@ export function RefonteTechnique() {
                   href="#plans"
                   className="font-mono text-[12px] text-[#A8A29A] transition-colors hover:text-[#E8E4DC]"
                 >
-                  Plans à télécharger
+                  {f.plans.length > 1 ? "Plans à télécharger" : "Plan à télécharger"}
                 </a>
               </li>
             </ul>
           </nav>
 
           <div className="min-w-0 flex-1">
-            {TECHNIQUE.map((poste) => (
+            {f.technique.map((poste) => (
               <section
                 key={poste.titre}
                 id={slug(poste.titre)}
@@ -134,13 +188,13 @@ export function RefonteTechnique() {
 
             <section id="plans" className="scroll-mt-8 py-8">
               <h2 className="font-clp text-[13px] font-bold uppercase tracking-[0.1em]">
-                Plans à télécharger
+                {f.plans.length > 1 ? "Plans à télécharger" : "Plan à télécharger"}
               </h2>
               <p className="mt-3 max-w-[62ch] text-[14px] leading-relaxed text-[#8A8A8A]">
-                Les documents de l&apos;architecte et du géomètre, tels quels.
+                {f.chapoPlans}
               </p>
               <div className="mt-5 grid max-w-[68ch] gap-3 sm:grid-cols-2">
-                {PLANS.map((p) => (
+                {f.plans.map((p) => (
                   <a
                     key={p.fichier}
                     href={p.fichier}
@@ -177,18 +231,22 @@ export function RefonteTechnique() {
                 ⚠️ Le poids est annoncé. 9,6 Mo sur un téléphone en 4G, ça se
                 décide avant de cliquer, pas après.
               */}
-              <a
-                href="/documents/plans-chez-les-plombiers.zip"
-                download
-                className={`${CADRE} mt-3 inline-flex max-w-[68ch] items-center gap-3 px-5 py-4 transition-colors hover:border-[var(--clp-accent)]`}
-              >
-                <span className="font-clp text-[12px] font-bold uppercase tracking-[0.08em]">
-                  Tout télécharger
-                </span>
-                <span className="font-mono text-[11px]" style={{ color: LAITON }}>
-                  ZIP · {poidsDe("/documents/plans-chez-les-plombiers.zip")} ↓
-                </span>
-              </a>
+              {/* Pas d'archive quand il n'y a qu'un plan : « tout
+                  télécharger » pour un seul fichier est un bouton qui ment. */}
+              {f.zip && (
+                <a
+                  href={f.zip}
+                  download
+                  className={`${CADRE} mt-3 inline-flex max-w-[68ch] items-center gap-3 px-5 py-4 transition-colors hover:border-[var(--clp-accent)]`}
+                >
+                  <span className="font-clp text-[12px] font-bold uppercase tracking-[0.08em]">
+                    Tout télécharger
+                  </span>
+                  <span className="font-mono text-[11px]" style={{ color: LAITON }}>
+                    ZIP · {poidsDe(f.zip)} ↓
+                  </span>
+                </a>
+              )}
             </section>
           </div>
         </div>

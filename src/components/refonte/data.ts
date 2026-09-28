@@ -608,6 +608,7 @@ export const APPARTEMENT = {
     { href: "/infos", titre: "Venir et livrer", detail: "Trouver l'entrée, circuler entre les lieux", pret: true },
     { href: "/photos/appartement", titre: "Photos", detail: "Toutes les vues du lieu, en grille", pret: true },
     { href: "/tarifs/appartement", titre: "Calendrier tarifaire", detail: "Les jours libres et le prix de chaque date", pret: true },
+    { href: "/appartement/technique", titre: "Fiche technique", detail: "L'équipement, et le plan coté", pret: true },
     { href: "/conditions", titre: "Conditions de location", detail: "Réserver, payer, le dépôt de garantie", pret: true },
   ] as const,
 } as const;

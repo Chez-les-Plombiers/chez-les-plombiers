@@ -44,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     /* Les pages qu'on envoie à quelqu'un. */
     page("/infos", 0.8),
     page("/atelier/technique", 0.8),
+    page("/appartement/technique", 0.8),
     page("/photos", 0.8, "weekly"),
     page("/conditions", 0.7),
     page("/visiter", 0.7),
