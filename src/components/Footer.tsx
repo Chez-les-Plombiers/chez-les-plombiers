@@ -25,8 +25,15 @@ export function Footer() {
 
   const mentionsPath =
     locale === "en" ? "/en/legal-notice" : "/mentions-legales";
-  const privacyPath =
-    locale === "en" ? "/en/privacy-policy" : "/politique-confidentialite";
+  /*
+   * ⚠️ `/confidentialite`, DIRECTEMENT, et dans les deux langues. Les deux
+   * anciennes adresses — `/politique-confidentialite` et `/en/privacy-policy`
+   * — n'existent plus que comme redirections 308 vers celle-ci. Pointer
+   * dessus faisait rebondir chaque visiteur par une étape inutile, et surtout
+   * ça masquait le fait que la page n'existait plus : une redirection de
+   * secours cache le défaut qu'elle rattrape.
+   */
+  const privacyPath = "/confidentialite";
 
   return (
     <footer className="bg-black text-white py-16">
