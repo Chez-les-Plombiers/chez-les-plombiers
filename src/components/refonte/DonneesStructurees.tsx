@@ -30,10 +30,14 @@ import { SITE_URL } from "@/lib/metadata";
  * d'ouverture (le lieu se visite sur rendez-vous), pas de capacité pour
  * LA BOUTIQUE (elle n'est pas faite pour recevoir).
  *
- * ⚠️ CAPACITÉ DE L'ATELIER : 150. Le site l'annonce partout — « 150 pax
- * debout · 80 assis · 60 à table ». Le calendrier tarifaire, lui, dit 200.
- * Les deux ne peuvent pas avoir raison ; en attendant l'arbitrage d'Étienne on
- * reprend le chiffre DE LA PAGE, puisque c'est elle que le bloc décrit.
+ * ⚠️ CAPACITÉ DE L'ATELIER : 150 — « 150 pax debout · 80 assis · 60 à table ».
+ * Le calendrier tarifaire annonçait 200 ; Étienne a tranché à 150 le
+ * 26/09/2026 et `venues.ts` a été corrigé. Les deux sources concordent.
+ *
+ * ⚠️ SURFACE DE L'APPARTEMENT : 100 m², et c'est bien la surface AU SOL, hors
+ * mezzanine. Le lieu fait 120 m² au total, dont 20 de mezzanine. Le plan de
+ * 2012 donne des cotes qui ne retombent pas là-dessus : il est antérieur au
+ * réaménagement. Ne pas « corriger » ce 100 d'après le plan.
  */
 
 const ADRESSE_POSTALE = {

@@ -18,10 +18,33 @@ import type { Poste } from "./data-technique";
  */
 export const TECHNIQUE_APPARTEMENT: readonly Poste[] = [
   {
+    /*
+     * Les surfaces en tête : c'est la première question, et c'est celle à
+     * laquelle le plan ci-dessous ne répond plus depuis le réaménagement.
+     * Les donner ici évite qu'on les déduise d'un document périmé.
+     */
+    titre: "Surfaces",
+    lignes: [
+      ["Surface totale", "120 m², mezzanine comprise"],
+      ["Surface au sol", "100 m², hors mezzanine"],
+      ["Mezzanine", "20 m²"],
+      ["Salon blanc", "environ 76 m² — le parquet peint, sous la mezzanine"],
+      ["Pièce rose", "environ 20 à 25 m²"],
+      ["Cuisine", "environ 13 m²"],
+    ],
+    reserve:
+      "Les deux premiers chiffres sont sûrs. Le détail pièce par pièce est donné de mémoire, en attendant un relevé : prenez-le comme un ordre de grandeur, pas comme une cote.",
+  },
+  {
     titre: "Image et son",
     lignes: [
       ["Téléviseur", "Un téléviseur au salon"],
-      ["Source sans fil", "Apple TV — AirPlay depuis un téléphone ou un ordinateur"],
+      ["Source vidéo sans fil", "Apple TV — AirPlay depuis un téléphone ou un ordinateur"],
+      ["Son", "Système Sonos, en AirPlay également"],
+      [
+        "Zones audio",
+        "Trois, indépendantes : le salon blanc, la pièce rose, et le téléviseur. On peut n'envoyer le son que dans l'une d'elles.",
+      ],
     ],
     reserve:
       "La diagonale du téléviseur n'a pas encore été relevée. Si vous prévoyez une diffusion dont le format dépend de la taille de l'écran, demandez-nous la mesure — nous la prendrons.",
@@ -62,6 +85,6 @@ export const PLANS_APPARTEMENT = [
     nom: "Plan coté",
     fichier: "/documents/plan-appartement-cotes.pdf",
     detail:
-      "Le plan de l'architecte, avec les cotes principales. ⚠️ Daté de 2012, antérieur à l'aménagement actuel : à vérifier avec nous avant de dimensionner quoi que ce soit.",
+      "Le plan de l'architecte, avec les cotes principales. ⚠️ Daté de 2012 : il est antérieur au réaménagement et ne montre plus la distribution actuelle. Les surfaces à jour sont en haut de cette page. Un relevé à jour est en préparation.",
   },
 ] as const;
