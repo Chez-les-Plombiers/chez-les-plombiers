@@ -242,6 +242,12 @@ export async function POST(request: Request) {
 </body>
 </html>`.trim();
 
+    const adresseClient = body.email?.trim();
+    const replyTo =
+      adresseClient && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(adresseClient)
+        ? adresseClient
+        : undefined;
+
     try {
       const emailResponse = await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -255,6 +261,24 @@ export async function POST(request: Request) {
             "etienne@chezlesplombiers.fr",
             "celine@chezlesplombiers.fr",
           ],
+          /*
+           * ⚠️ `reply_to` EN SNAKE_CASE : on appelle ici l'API REST de Resend
+           * directement, pas le SDK. Le calendrier tarifaire, lui, passe par
+           * le SDK et écrit `replyTo`. Une graphie pour l'autre serait
+           * ignorée sans la moindre erreur — le mail partirait, et
+           * « Répondre » continuerait d'écrire à la boîte technique.
+           *
+           * ⚠️ `from` NE CHANGE PAS. Le DMARC du domaine est en `p=reject` :
+           * expédier au nom du client ferait rejeter le message. `Reply-To`
+           * n'est pas authentifié, donc il échappe à cette contrainte.
+           *
+           * ⚠️ ON N'ENVOIE L'ADRESSE QUE SI ELLE TIENT DEBOUT. La route ne
+           * vérifie en amont que la PRÉSENCE du champ, jamais sa forme — une
+           * valeur invalide ferait rejeter tout l'envoi par Resend, et on
+           * perdrait la notification elle-même. Elle vaut bien plus que le
+           * confort du bouton « Répondre ».
+           */
+          ...(replyTo ? { reply_to: replyTo } : {}),
           subject: `Nouveau client ${body.company} — à traiter sous 48h`,
           html,
         }),
