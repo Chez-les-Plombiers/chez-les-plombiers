@@ -39,6 +39,23 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  /*
+   * Le suivi des porteurs d'OCA (30/09/2026) — meme sortie anticipee, ET une
+   * raison de plus.
+   *
+   * 🔴 LA NORMALISATION EN MINUSCULES PLUS BAS DETRUIRAIT LE JETON. L'adresse
+   * est `/obligataires/<jeton>`, ou le jeton est du base64url : il contient
+   * des MAJUSCULES. Sans cette sortie, `Kx7fQ...` partirait en `kx7fq...` par
+   * une redirection 301, le jeton ne resoudrait plus, et le porteur verrait
+   * « lien inconnu ou expire » sur un lien parfaitement valide. Pire : le 301
+   * serait mis en cache par son navigateur.
+   *
+   * Ne jamais deplacer ce bloc APRES la normalisation.
+   */
+  if (pathname.startsWith("/obligataires/")) {
+    return NextResponse.next();
+  }
+
   /**
    * Laisser passer les fichiers : routes techniques, puis TOUT chemin dont le
    * dernier segment contient un point.

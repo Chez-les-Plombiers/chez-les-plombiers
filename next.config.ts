@@ -116,6 +116,15 @@ const nextConfig: NextConfig = {
          */
         { source: "/admin", destination: `${PRICING_ZONE}/tarifs/admin` },
         { source: "/admin/:path*", destination: `${PRICING_ZONE}/tarifs/admin/:path*` },
+        /*
+         * Le suivi des porteurs d'OCA (30/09/2026).
+         *
+         * Meme mecanique que `/admin` : seule la PAGE remonte a la racine, les
+         * assets et l'API restent sous `/tarifs`. L'adresse compte ici plus
+         * qu'ailleurs — c'est un lien qu'Etienne envoie a des tiers, et
+         * `chezlesplombiers.fr/obligataires/...` se lit, la se lit moins bien.
+         */
+        { source: "/obligataires/:path*", destination: `${PRICING_ZONE}/tarifs/obligataires/:path*` },
       ],
       afterFiles: [],
       fallback: [],
