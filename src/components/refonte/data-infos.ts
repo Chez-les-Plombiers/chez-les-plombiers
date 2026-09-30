@@ -254,6 +254,21 @@ export const SECTIONS: readonly Section[] = [
       ],
       ["Musique", "Jusqu'à 23h, sans exception."],
       ["Fin d'événement", "Vos invités auront quitté les lieux à minuit."],
+      /*
+       * ⚠️ LE FAIT EST ICI, LA RÈGLE EST DANS /conditions — et ce n'est pas un
+       * doublon, c'est le partage habituel du site. Cette page répond « à
+       * quelle heure ? » en une ligne qu'on scanne ; la page des conditions
+       * explique les deux conditions cumulatives et ce qui est facturé.
+       *
+       * ⚠️ NE PAS Y RECOPIER LE DÉTAIL. Étienne demandait le 30/09/2026 de
+       * dupliquer l'information ; deux versions d'une règle tarifaire
+       * divergent à la première modification, et c'est celle qu'on n'a pas
+       * relue qu'un client opposera. Un fait court qui renvoie, pas une copie.
+       */
+      [
+        "Reprise du matériel",
+        "Le soir même, à la fin de votre créneau. Le lendemain avant 10h à titre exceptionnel, sur notre accord et si le lieu est libre ; au-delà de 10h, une demi-journée supplémentaire est facturée. Le détail est dans nos conditions de location.",
+      ],
       ["Visites du lieu", "Du lundi au samedi, de 10h à 18h, sur rendez-vous. Gratuites, une demi-heure."],
     ],
   },
