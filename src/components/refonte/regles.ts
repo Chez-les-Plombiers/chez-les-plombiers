@@ -278,6 +278,33 @@ export const MOMENTS: readonly MomentRegles[] = [
           "Avec le même code que la grille et le sous-sol, celui que nous vous aurons transmis par message avant votre date.\n\n" +
           "Et à chaque sortie, y compris sur un événement de plusieurs jours : la clé reste dans la boîte, elle ne quitte jamais le 39. Il n'y en a qu'une pour tous les prestataires, et le lendemain matin quelqu'un en aura besoin.",
       },
+      {
+        /*
+         * ⚠️ LA QUESTION LA PLUS POSÉE AU TÉLÉPHONE, et elle n'était écrite
+         * nulle part. Demande d'Étienne, 30/09/2026, après l'appel d'une
+         * cliente de plus : « on nous pose souvent la question de l'heure à
+         * laquelle on peut venir récupérer les affaires le lendemain ».
+         *
+         * ⚠️ LA RÈGLE EST « LE SOIR MÊME », ET LE RESTE EST UNE EXCEPTION. Ne
+         * pas inverser l'ordre en relisant : écrire d'abord « vous pouvez
+         * revenir le lendemain avant 10 h » ferait de la faveur la norme, et
+         * plus personne ne démonterait le soir.
+         *
+         * ⚠️ LES DEUX CONDITIONS SONT CUMULATIVES, et la seconde ne dépend pas
+         * de nous : notre accord exprès ET l'absence d'un autre événement tôt
+         * le matin. C'est pourquoi l'accord se donne au cas par cas et jamais
+         * à l'avance — le planning peut changer après la réservation.
+         *
+         * ⚠️ LE RENVOI AU CALENDRIER N'EST PAS UNE ESQUIVE. Le prix d'une
+         * matinée dépend du jour et du lieu : annoncer un montant ici serait
+         * faux six jours sur sept.
+         */
+        titre: "Reprendre vos affaires le soir même",
+        texte:
+          "Le démontage, l'enlèvement du mobilier loué et la reprise des livraisons se font à la fin de votre créneau, avant de rendre les clés.\n\n" +
+          "À titre exceptionnel, et uniquement avec notre accord exprès donné à l'avance, une reprise peut se faire le lendemain matin, jusqu'à 10 heures. Nous ne pouvons l'accorder que si aucun autre événement n'occupe le lieu tôt le matin — c'est une question de planning et non de bonne volonté, et c'est pourquoi la réponse se donne au cas par cas.\n\n" +
+          "Au-delà de 10 heures, la reprise mobilise le lieu sur la matinée : elle est alors facturée comme une demi-journée supplémentaire, au tarif de la matinée affiché sur notre calendrier des tarifs pour le jour concerné. Si votre prestataire ne peut pas venir avant 10 heures, dites-le-nous en amont : nous en tiendrons compte dans le devis plutôt que de vous le faire découvrir après.",
+      },
     ],
   },
 ];
